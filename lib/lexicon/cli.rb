@@ -51,6 +51,9 @@ module Lexicon
     desc 'remote', 'Minio related commands'
     subcommand 'remote', Commands::RemoteCommand
 
+    desc 'production', 'Production related commands'
+    subcommand 'production', Commands::ProductionCommand
+
     desc 'validate', 'Validate lexicon schema'
     def validate
       # @type [Array<Database::Validation::DatasourceValidationResult>]

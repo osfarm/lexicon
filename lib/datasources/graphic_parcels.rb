@@ -15,11 +15,10 @@ module Datasources
     REGIONS = {
       "LAMB93" => ["R11", "R24", "R27", "R28", "R32", "R44", "R52", 
                      "R53", "R75", "R76", "R84", "R93", "R94"], # France From 01 to 95 with no 20 and 2A 2B
-      "RGAF09UTM20" => ["R01"], # Guadeloupe
+      "RGAF09UTM20" => ["R01", "R02"], # Guadeloupe, Martinique
       "RGR92UTM40S" => ["R04"], # Réunion
       "UTM22RGFG95" => ["R03"], # Guyanne
-      "RGAF09UTM20" => ["R02"], # Martinique
-      "RGM04UTM38S" => ["R06"], # Mayotte
+      "RGM04UTM38S" => ["R06"] # Mayotte
     }.freeze
     
     def collect

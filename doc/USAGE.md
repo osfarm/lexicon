@@ -99,6 +99,10 @@ You to copy on the server `config/production.yml` and `.env`
 
 then you can use `docker compose up -d`
 
+### load and activate a version from S3
+
+`docker compose exec lexicon_runner ./lexicon-cli remote download <VERSION>`
+
 ### usage
 
 example from the host server, you can use `docker compose exec lexicon_runner ./lexicon-cli remote download <VERSION>` instead of `./lexicon remote download <VERSION>` in local dev.
@@ -112,3 +116,13 @@ example from the host server, you can use `docker compose exec lexicon_runner ./
     - All datasources are loaded in parallel.
     - By default, the integrity of the package is checked first. As it reads a lot of data, this can be a long operation. The `--no-validate` option disables this check.
 - `./lexicon production delete <VERSION>` Deletes the provided version from the production server.
+
+### troubleshooting
+
+#### when downloading a version from S3
+
+#<Errno::EACCES: Permission denied @ dir_s_mkdir - /lexicon/out/xxxxxxxxxxx>
+> Change permissions on `out` folder
+`sudo chmod -R 775 out`
+
+
