@@ -1,0 +1,11 @@
+.idea
+.git
+config/
+data/
+doc/
+log/
+raw/
+resources/
+tmp/
+
+reference.sql

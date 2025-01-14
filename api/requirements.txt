@@ -1,8 +1,0 @@
-fastapi
-pydantic
-pydantic_geojson
-uvicorn
-SQLAlchemy
-psycopg2 # sqlalchemy dependency
-geoalchemy2
-shapely

@@ -16,42 +16,9 @@ services:
     env_file:
       - .env
     ports:
-      - 0.0.0.0:5555:5432
+      - 5555:5432
     volumes:
       - lexicon_db_data:/var/lib/postgresql/data
-
-  api:
-    build:
-      context: ./api
-    volumes:
-      - ./api/app:/code/app
-    ports:
-      - "80:80"
-    env_file:
-      - .env
-    environment:
-      - DEBUG=1
-      - POSTGRES_PASSWORD=ekylibre
-      - POSTGRES_USER=lexicon
-      - POSTGRES_SERVER=db:5432
-      - POSTGRES_DB=lexicon
-    
-  web:
-    build:
-      context: ./web
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - ./web:/web
-    ports:
-      - "8000:8000"
-    env_file:
-      - .env
-    environment:
-      - DEBUG=1
-      - POSTGRES_PASSWORD=ekylibre
-      - POSTGRES_USER=lexicon
-      - POSTGRES_SERVER=db:5432
-      - POSTGRES_DB=lexicon
 
   lexicon_runner:
     restart: always

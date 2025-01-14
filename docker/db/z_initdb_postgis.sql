@@ -6,3 +6,5 @@ CREATE EXTENSION IF NOT EXISTS "unaccent" SCHEMA postgis;
 CREATE EXTENSION IF NOT EXISTS "pgcrypto" WITH SCHEMA postgis;
 CREATE EXTENSION IF NOT EXISTS "pg_trgm" WITH SCHEMA postgis;
 ALTER DATABASE "lexicon" SET intervalstyle='iso_8601';
+CREATE USER api_user WITH PASSWORD 'osfarm';
+GRANT SELECT ON DATABASE lexicon TO api_user;
