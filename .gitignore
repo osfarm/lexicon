@@ -15,6 +15,7 @@ __pycache__/
 .python-version
 /lexicon.rb
 .env
+config/production.yml
 /.yardoc/
 
 

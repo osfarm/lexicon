@@ -74,7 +74,7 @@ module Lexicon
             puts "[  OK ] The version #{semver} has been downloaded."
           else
             puts '[ NOK ] Error while downloading.'.red
-            log_error(result.error)
+            puts result.error.inspect.yellow
           end
         end
       end

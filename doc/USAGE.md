@@ -81,12 +81,27 @@ To use these commands, credentials for a S3 compatible server needs to be added 
     - Note that the package has to be created with the `dump` command before.
 - `./lexicon remote download <VERSION>` Download the given version from the S3 storage if it exists and you don't have it locally.
     - Files are downloaded in the `out` directory. Downloading a package is like `run` + `dump all`
-- ` ./lexicon remote delete <VERSION>` Deletes the given version from the remote storage. There is no going back!
+- `./lexicon remote delete <VERSION>` Deletes the given version from the remote storage. There is no going back!
 
 For open source version, you have to add a specific open source policy on minio serveur throught mc s3 client (see doc on Ekylibre Drive for that in Tech/Applicatifs plateforme/Minio)
 
 ## Production related commands
+
+### setup
+
 To use these commands, configuration for the production database to connect to have to be put in the `config/production.yml` file. See the sample file for an example.
+
+You to copy on the server `config/production.yml` and `.env`
+
+`scp .env eky-lhotse:/home/ubuntu/lexicon/`
+
+`scp config/production.yml eky-lhotse:/home/ubuntu/lexicon/config/`
+
+then you can use `docker compose up -d`
+
+### usage
+
+example from the host server, you can use `docker compose exec lexicon_runner ./lexicon-cli remote download <VERSION>` instead of `./lexicon remote download <VERSION>` in local dev.
 
 - `./lexicon config` Prints some config related to the configuration of the production commands
 - `./lexicon production loadable` Checks the `out directory`, list all packages that can be loaded and displays information about them.
