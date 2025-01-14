@@ -1,0 +1,6 @@
+reference_name,activity_family,fra,eng,specie,usage,started_on,stopped_on,agroedi_crop_code,season,life_duration,idea_botanic_family,idea_specie_family,idea_output_family
+milk_cow,animal_farming,Vaches laitières,Milk cows,bos_taurus,milk,01/09/00,31/08/01,,,20,,,
+meat_cow,animal_farming,Vaches allaitantes,Meat cows,bos_taurus,meat,01/09/00,31/08/01,,,20,,,
+heifer,animal_farming,Genisses,Heifer,bos_taurus,meat,01/09/00,31/08/01,,,20,,,
+young_bull,animal_farming,Taurillons,Young bull,bos_taurus,meat,01/09/00,31/08/01,,,20,,,
+calf,animal_farming,Veaux,Calf,bos_taurus,meat,01/09/00,31/08/01,,,20,,,

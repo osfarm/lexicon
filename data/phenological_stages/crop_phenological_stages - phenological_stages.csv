@@ -1,0 +1,26 @@
+bbch,label,variety
+00,Semis,zea_mays
+05,Germination,zea_mays
+11,Levée,zea_mays
+12,2 feuilles,zea_mays
+31,1 Nœud,zea_mays
+51,Floraison,zea_mays
+71,Grain aqueux,zea_mays
+73,Grain laiteux,zea_mays
+83,Grain pâteux mou,zea_mays
+89,Grain pâteux dur,zea_mays
+00,Semis,pisum
+05,Germination,pisum
+11,Levée,pisum
+31,1 Nœud,pisum
+32,2 Nœuds,pisum
+33,3 Nœuds,pisum
+51,Boutons floraux,pisum
+60,Début floraison,pisum
+71,10 % des gousses,pisum
+81,10 % des gousses mures,pisum
+82,20 % des gousses mures,pisum
+83,30 % des gousses mures,pisum
+84,40 % des gousses mures,pisum
+85,50 % des gousses mures,pisum
+89,100 % des gousses mures,pisum

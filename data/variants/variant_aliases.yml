@@ -1,0 +1,40 @@
+electricity:
+  - "Electricité Heures Normales"
+  - "Electricité Heures Pointe Mobile"
+  - "Contribution au Service Public de l''Electricité"
+  - "Taxe Départementale sur la Conso Finale Electricité"
+  - "Taxe Communale sur la Conso Finale Electricité"
+  - "Contribution Tarifaire d''Acheminement"
+equipment_part:
+  - "FILTRE DE CABINE"
+  - "ELEMENT RELEV . HYDR . FILTR"
+  - "ELEMENT FILTRANT"
+  - "FILTRE"
+oenological_product:
+  - "NUTRI PERFECT 1KG"
+  - "NUTRIVIT PH 1KG"
+  - "PHOSPHATE D''AMMONIUM 1KG"
+  - "RAPIDASE CLEAR EXTREM / CB 100G"
+  - "SOLUTION SO2 EURALIS 10 % 5KG"
+oil_and_lubricate:
+  - "AGRIMOT PROTEC 10W40 20L"
+  - "AGRISHIFT BLS 80W90 5L"
+  - "AGRISHIF GA12 60 L CLAAS"
+  - "GRAISSE MARIN 400GR LUB"
+maintenance_and_repair_service:
+  - "MO AG.DEPLACEMENT"
+  - "MO AG . NORMALE"
+painting:
+  - "STRATEMAIL FW ROUGE 1L"
+tools_and_equipments:
+  - "COLL BOUL INOX D50 60.63"
+  - "COLLIER BOULON D120 131.139"
+  - "TUYAU SPIRAL ACIER 50"
+  - "TUYAU SPIRAL ROUGE 120"
+  - "EPINETTE PLASTIQUE ROUGE COURT"
+  - "ROBINET DEGUSTATEUR VIS 1/2 SIMPLE"
+  - "SEAU VENDANGES NOIR 15L"
+waste_tax:
+  - "CONTRIBUTION DECHETS"
+  - "DECHETS"
+  - "Déchets"

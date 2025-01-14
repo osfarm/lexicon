@@ -1,0 +1,183 @@
+reference_name,fra,eng,nature,default_unit,mass_volume_density,nitrogen_concentration,phosphorus_concentration,potassium_concentration,sulfur_dioxide_concentration,magnesium_concentration,manganese_concentration,calcium_concentration,zinc_concentration,sodium_concentration,copper_concentration,target_specie
+0_0_18,0-0-18 | 32SO3 | 5MgO | 16CaO,0-0-18 | 32SO3 | 5MgO | 16CaO,mineral_fertilizer,kilogram,,,,18,32,5,,16,,,,
+0_0_30_6,0-0-30 SK | 43SO3 | 6CaO,0-0-30 SK | 43SO3 | 6CaO,mineral_fertilizer,kilogram,,,,30,43,,,6,,,,
+0_0_30_10,0-0-30 | 42.5SO3 | 10MgO,0-0-30 | 42.5SO3 | 10MgO,mineral_fertilizer,kilogram,,,,30,42.5,10,,,,,,
+0_0_54,0-0-54 | 24SO3,0-0-54 | 24SO3,mineral_fertilizer,kilogram,,,,54,24,,,,,,,
+0_10_20,0-10-20 | 10SO3,0-10-20 | 10SO3,mineral_fertilizer,kilogram,,,10,20,10,,,,,,,
+0_10_25,0-10-25 SK | 21SO3 | 19CaO | 3MgO,0-10-25 SK | 21SO3 | 19CaO | 3MgO,mineral_fertilizer,kilogram,,,10,25,21,3,,19,,,,
+0_10_30,0-10-30 | 9CaO | 3MgO,0-10-30 | 9CaO | 3MgO,mineral_fertilizer,kilogram,,,10,30,,3,,9,,,,
+0_13_26,0-13-26,0-13-26,mineral_fertilizer,kilogram,,,13,26,,,,,,,,
+0_13_26_12,0-13-26 | 12SO3,0-13-26 | 12SO3,mineral_fertilizer,kilogram,,,13,26,12,,,,,,,
+0_18_0,0-18-0 | 16SO3,0-18-0 | 16SO3,mineral_fertilizer,kilogram,,,18,,16,,,31,,,,
+0_20_10,0-20-10 | 18SO3,0-20-10 | 18SO3,mineral_fertilizer,kilogram,,,20,10,18,,,,,,,
+0_20_30,0-20-30,0-20-30,mineral_fertilizer,kilogram,,,20,30,,,,,,,,
+0_25_25,0-25-25,0-25-25,mineral_fertilizer,kilogram,,,25,25,,,,,,,,
+10_0_0,10-0-0 | 46SO3,10-0-0 | 46SO3,mineral_fertilizer,kilogram,,10,,,46,,,,,,,
+10_0_25,10-0-25,10-0-25,mineral_fertilizer,kilogram,,10,,25,,,,,,,,
+10_15_20,10-15-20 SK | 30SO3,10-15-20 SK | 30SO3,mineral_fertilizer,kilogram,,10,15,20,30,,,,,,,
+10_45_0,10-45-0 | 5SO3 | Zn | Mn,10-45-0 | 5SO3 | Zn | Mn,mineral_fertilizer,kilogram,,10,45,,5,,0.5,,0.5,,,
+10_5_18,10-5-18 | 5.5SO3 | 5MgO | 4.5Na ,10-5-18 | 5.5SO3 | 5MgO | 4.5Na ,mineral_fertilizer,kilogram,,10,5,18,5.5,5,,,,4.5,,
+12_27_0,12-27-0 | 20SO3,12-27-0 | 20SO3,mineral_fertilizer,kilogram,,12,27,,20,,,,,,,
+13_43_0,13.5-43.5-0 | Zn,13.5-43.5-0 | Zn,mineral_fertilizer,liter,1.35,13.5,43.5,,,,,,0.27,,,
+14_16_10,14-16-10 | 20SO3,14-16-10 | 20SO3,mineral_fertilizer,kilogram,,14,16,10,20,,,,,,,
+14_4_10,14-4-10 SK | 13SO3 | 3MgO,14-4-10 SK | 13SO3 | 3MgO,mineral_fertilizer,kilogram,,14,4,10,13,3,,,,,,
+14_48_0,14-48-0 ,14-48-0 ,mineral_fertilizer,liter,1.42,14,48,,,,,,,,,
+14_6_22,14-6-22 | 6SO3,14-6-22 | 6SO3,mineral_fertilizer,kilogram,,14,6,22,6,,,,,,,
+15_15_15_15,15-15-15 | 15SO3,15-15-15 | 15SO3,mineral_fertilizer,kilogram,,15,15,15,15,,,,,,,
+15_15_15_28,15-15-15 | 28SO3,15-15-15 | 28SO3,mineral_fertilizer,kilogram,,15,15,15,28,,,,,,,
+15_15_15_8,15-15-15 | 8SO3,15-15-15 | 8SO3,mineral_fertilizer,kilogram,,15,15,15,8,,,,,,,
+17_22_0,17-22-0 | 21SO3,17-22-0 | 21SO3,mineral_fertilizer,kilogram,,17,22,,21,,,,,,,
+18_46_0,18-46-0,18-46-0,mineral_fertilizer,kilogram,,18,46,,,,,,,,,
+20_10_10_18,20-10-10 | 18SO3,20-10-10 | 18SO3,mineral_fertilizer,kilogram,,20,10,10,18,,,,,,,
+20_10_10_3,20-10-10 | 3MgO,20-10-10 | 3MgO,mineral_fertilizer,kilogram,,20,10,10,,3,,,,,,
+20_8_16,20-8-16 | 21SO3,20-8-16 | 21SO3,mineral_fertilizer,kilogram,,20,8,16,21,,,,,,,
+22_22_0,22-22-0 | 16SO3,22-22-0 | 16SO3,mineral_fertilizer,kilogram,,22,22,,16,,,,,,,
+24_0_0_16,24-0-0 | 16SO3,24-0-0 | 16SO3,mineral_fertilizer,kilogram,,24,,,16,,,,,,,
+24_0_0_18,24-0-0 | 18SO3,24-0-0 | 18SO3,mineral_fertilizer,kilogram,,24,,,18,,,,,,,
+24_0_0_42,24-0-0 | 42SO3 | 3MgO,24-0-0 | 42SO3 | 3MgO,mineral_fertilizer,kilogram,,24,,,42,3,,,,,,
+24_0_0_43,24-0-0 | 43SO3,24-0-0 | 43SO3,mineral_fertilizer,kilogram,,24,,,43,,,,,,,
+25_0_0_28,25-0-0 | 28SO3,25-0-0 | 28SO3,mineral_fertilizer,kilogram,,25,,,28,,,,,,,
+26_0_0_32,26-0-0 | 32SO3,26-0-0 | 32SO3,mineral_fertilizer,kilogram,,26,,,32,,,,,,,
+26_0_0_33,26-0-0 | 33SO3,26-0-0 | 33SO3,mineral_fertilizer,kilogram,,26,,,33,,,,,,,
+26_0_0_37,26-0-0 | 37SO3,26-0-0 | 37SO3,mineral_fertilizer,kilogram,,26,,,37,,,,,,,
+26_0_0_20,26-0-0 | 20SO3 | 1.5MgO,26-0-0 | 20SO3 | 1.5MgO,mineral_fertilizer,kilogram,,26,,,20,1.5,,,,,,
+27_0_0,27-0-0 | 20SO3,27-0-0 | 20SO3,mineral_fertilizer,kilogram,,27,,,20,,,,,,,
+33_0_0,33-0-0 | 16SO3,33-0-0 | 16SO3,mineral_fertilizer,kilogram,,33,,,16,,,,,,,
+37_0_0,37-0-0 | 20SO3,37-0-0 | 20SO3,mineral_fertilizer,kilogram,,37,,,20,,,,,,,
+8_17_17,8-17-17 | 20SO3,8-17-17 | 20SO3,mineral_fertilizer,kilogram,,8,17,17,20,,,,,,,
+8_30_0,8-30-0 | 16.5SO3 | 3MgO,8-30-0 | 16.5SO3 | 3MgO,mineral_fertilizer,kilogram,,8,30,,16.5,3,,,,,,
+9_23_0,9-23-0 | 25SO3 | 12.5MgO,9-23-0 | 25SO3 | 12.5MgO,mineral_fertilizer,kilogram,,9,23,,25,12.5,,,,,,
+ammonitrate_27,Ammonitrate 27,Ammonitrate 27,mineral_fertilizer,kilogram,,27,,,,3,,9,,,,
+ammonitrate_33,Ammonitrate 33.5,Ammonitrate 33,mineral_fertilizer,kilogram,,33.5,,,,,,,,,,
+ammonitrate_34,Ammonitrate 34.4,Ammonitrate 34,mineral_fertilizer,kilogram,,34.4,,,,,,,,,,
+calcic_44,Calcique 44,Calcic 44,mineral_fertilizer,kilogram,,,,,19,4,,44,,,,
+calcic_mixed,Calcique mixte 40-10,Calcic mixed 40-10,mineral_fertilizer,kilogram,,,,,8,10,,40,,,,
+calcium_carbonate,Carbonate de calcium,Calcium carbonate,mineral_fertilizer,kilogram,,,,,,,,50,,,,
+quick_lime_83_10,Chaux vive 83-10,Quick lime 83-10,mineral_fertilizer,kilogram,,,,,,10,,83,,,,
+quick_lime_92,Chaux vive 92,Quick lime 92,mineral_fertilizer,kilogram,,,,,,,,92,,,,
+quick_lime_94,Chaux vive 94,Quick lime 94,mineral_fertilizer,kilogram,,,,,,,,94,,,,
+quick_lime_95,Chaux vive 95,Quick lime 95,mineral_fertilizer,kilogram,,,,,,,,95,,,,
+potassium_chloride,Chlorure de potasse,Potassium chloride,mineral_fertilizer,kilogram,,,,60,,,,,,,,
+dolomite,Dolomie,Dolomite,mineral_fertilizer,kilogram,,,,,,20,,30,,,,
+kieserite,Kiesérite,Kieserite,mineral_fertilizer,kilogram,,,,,50,25,,,,,,
+yara_glytrel_znp,YARA Glytrel ZNP,YARA Glytrel ZNP,mineral_fertilizer,liter,1.35,,8.4,,9,,,,7.4,,,
+yara_zeatrel,YARA Zeatrel,YARA Zeatrel,mineral_fertilizer,liter,1.49,,30.5,5,,4.3,,,3.1,,,
+nelix_40_20,Nelix 40 N 20 SO3,Nelix 40 N 20 SO3,mineral_fertilizer,kilogram,0.83,40,,,20,,,,,,,
+nelix_33_30,Nelix 33 N 30 SO3,Nelix 33 N 30 SO3,mineral_fertilizer,kilogram,0.83,33,,,30,,,,,,,
+map_12_61,MAP 12-61,MAP 12-61,mineral_fertilizer,kilogram,,12,61,,,,,,,,,
+calcium_nitrate,Nitrate de calcium,Calcium nitrate,mineral_fertilizer,kilogram,,15,,,,,,26,,,,
+magnesium_oxide,Oxyde de magnésium,Magnesium oxide,mineral_fertilizer,kilogram,,,,,,65,,,,,,
+polysulfate,Polysulfate SK,Polysulfate,mineral_fertilizer,kilogram,,,,14,48,6,,17,,,,
+nitrogen_solution_26,Solution azotée N26 | 17SO3,Nitrogen solution 26,mineral_fertilizer,liter,1.3,35,,,23,,,,,,,
+nitrogen_solution_29,Solution azotée N29 | 8SO3,Nitrogen solution 29,mineral_fertilizer,liter,1.33,37,,,12,,,,,,,
+nitrogen_solution_39,Solution azotée N39,Nitrogen solution 39,mineral_fertilizer,liter,1.3,39,,,,,,,,,,
+ssp_18,SSP Super 18,SSP 18,mineral_fertilizer,kilogram,,,18,,29,,,30,,,,
+ammonium_sulphate,Sulfate d'ammoniaque,Ammonium sulphate,mineral_fertilizer,kilogram,,21,,,60,,,,,,,
+copper_sulphate,Sulfate de cuivre,Copper sulphate,mineral_fertilizer,kilogram,,,,,32,,,,,,25,
+magnesium_sulphate,Sulfate de magnésie,Magnesium sulphate,mineral_fertilizer,kilogram,,,,,40,25,,,,,,
+potassium_sulphate,Sulfate de potasse,Potassium sulphate,mineral_fertilizer,kilogram,,,,50,45,,,,,,,
+ammonium_thiosulphate,Thiosulfate d'ammonium,Ammonium thiosulphate,mineral_fertilizer,liter,1.33,16.9,,,83.2,,,,,,,
+tsp_45,TSP Super 45,TSP 45,mineral_fertilizer,kilogram,,,45,,4.5,,,24,,,,
+urea_46,Urée 46,Urea 46,mineral_fertilizer,kilogram,,46,,,,,,,,,,
+accumulated_litter_pig_manure,Fumier de porcs de litière accumulée (32.9% MS),Accumulated litter pig manure (32.9% DM),organic_fertilizer,ton,,0.72,,,,,,,,,,sus
+beetroot_vinasse,Vinasse de betterave concentrée,Beetroot vinasse,organic_fertilizer,ton,,2,0.3,6,0.8,,,,,,,beta_vulgaris
+blood_meal,Farine de sang,Blood meal,organic_fertilizer,ton,,11.4,,,,,,,,,,animal
+bone_meal,Farine d'os,Bone meal,organic_fertilizer,ton,,7,,,,,,,,,,animal
+castor_oil_cake,Tourteaux de ricin,Castor oil cake,organic_fertilizer,ton,,4.8,1.6,1.1,,,,,,,,ricinus
+chicken_manure,Fumier de poulets de chair en sortie de bâtiment,Chicken manure,organic_fertilizer,ton,,2.9,,,,,,,,,,gallus_gallus_domesticus
+compost_cattle_manure,Compost de fumier de bovins,Compost cattle manure,organic_fertilizer,ton,,0.8,,,,,,,,,,bos
+compost_pig_manure,Compost de fumier de porcs,Compost pig manure,organic_fertilizer,ton,,0.67,,,,,,,,,,sus
+compost_sludge,Compost de boue (C/N=11.8),Compost sludge (C/N=11.8),organic_fertilizer,ton,,1.1,,,,,,,,,,bioproduct
+cowshed_cattle_manure,Fumier de bovins d'étable entravée,Cowshed cattle manure,organic_fertilizer,ton,,0.53,,,,,,,,,,bos
+decanter_digester_sludge,Boue décanteur digesteur (C/N=8.1),Decanter digester sludge (C/N=8.1),organic_fertilizer,cubic_meter,,0.23,,,,,,,,,,bioproduct
+decanter_sludge,Boue décanteur (C/N=6 à 9),Decanter sludge (C/N=6 à 9),organic_fertilizer,cubic_meter,,0.21,,,,,,,,,,bioproduct
+dehydrated_anaerobic_digested_sludge,Boue digérée anaérobie déshydratée (C/N=5.9),Dehydrated anaerobic digested sludge (C/N=5.9),organic_fertilizer,ton,,1,,,,,,,,,,bioproduct
+dehydrated_hen_dropping,Fiente de poules déshydratée,Dehydrated hen dropping,organic_fertilizer,ton,,2,,,,,,,,,,gallus_gallus_domesticus
+dehydrated_limed_activated_sludge,Boue activée déshydratée chaulée (C/N=5.3),Dehydrated limed activated sludge (C/N=5.3),organic_fertilizer,ton,,1,,,,,,,,,,bioproduct
+dehydrated_physico_chemical_sludge,Boue physico-chimique déshydratée (C/N=5.5 à 17),Dehydrated physico chemical sludge (C/N=5.5 to 17),organic_fertilizer,ton,,0.88,,,,,,,,,,bioproduct
+deliking_sludge,Boue de désencrage (40<C/N<70),Deliking sludge (40<C/N<70),organic_fertilizer,ton,,0.16,,,,,,,,,,bioproduct
+diluted_calf_slurry,Lisier de veaux dilué,Diluted calf slurry,organic_fertilizer,cubic_meter,,0.2,,,,,,,,,,bos
+diluted_cattle_liquid_manure,Purin de bovins dilué,Diluted cattle liquid manure,organic_fertilizer,cubic_meter,,0.04,,,,,,,,,,bos
+diluted_cattle_slurry,Lisier de bovins dilué,Diluted cattle slurry,organic_fertilizer,cubic_meter,,0.27,,,,,,,,,,bos
+distillery_vinasse,Vinasse de distillerie,Distillery vinasse,organic_fertilizer,cubic_meter,,0.26,0.07,1.6,,0.21,,0.28,,,,bioproduct
+drainage_material,Matière de vidange (C/N=11.8),Drainage material (C/N=11.8),organic_fertilizer,cubic_meter,,0.13,,,,,,,,,,bioproduct
+dry_activated_sludge,Boue activée séchée (C/N=6),Dry activated sludge (C/N=6),organic_fertilizer,ton,,0.43,,,,,,,,,,bioproduct
+dry_anaerobic_digested_sludge,Boue digérée anaérobie sèchée (C/N=6.1),Dry anaerobic digested sludge (C/N=6.1),organic_fertilizer,ton,,0.43,,,,,,,,,,bioproduct
+dry_chicken_manure,Fumier de poulets de chair stocké en conditions sèches,Dry chicken manure,organic_fertilizer,ton,,2.6,,,,,,,,,,gallus_gallus_domesticus
+dry_digestate,Fraction sèche après séparation de phase,Dry digestate,organic_fertilizer,ton,,0.2,,,,,,,,,,bioproduct
+dry_guinea_fowl_manure,Fumier de pintades stocké en conditions sèches,Dry guinea fowl manure,organic_fertilizer,ton,,2.9,,,,,,,,,,numididae
+dry_label_chicken_manure,Fumier de poulets label stocké en conditions sèches,Dry label chicken manure,organic_fertilizer,ton,,1.8,,,,,,,,,,gallus_gallus_domesticus
+dry_liquid_activated_sludge,Boue activée liquide égouttée IAA (C/N=4.4),Dry liquid activated sludge (C/N=4.4),organic_fertilizer,cubic_meter,,0.41,,,,,,,,,,bioproduct
+dry_litter_activated_sludge,Boue activée lit de séchage (C/N=5.4),Dry litter activated sludge (C/N=5.4),organic_fertilizer,ton,,0.2,,,,,,,,,,bioproduct
+dry_turkey_manure,Fumier de dindes stocké en conditions sèches,Dry turkey manure,organic_fertilizer,ton,,2.5,,,,,,,,,,meleagris
+duck_manure,Fumier de canards prêt à gaver,Duck manure,organic_fertilizer,ton,,0.5,,,,,,,,,,anatidae
+duck_slurry,Lisier de canards,Duck slurry,organic_fertilizer,cubic_meter,,0.25,,,,,,,,,,anatidae
+duck_slurry_10,Lisier de canards (10% MS),Duck slurry (10% DM),organic_fertilizer,cubic_meter,,0.44,,,,,,,,,,anatidae
+duck_slurry_10_15,Lisier de canards (10 à 15% MS),Duck slurry (10 to 15% DM),organic_fertilizer,cubic_meter,,0.59,,,,,,,,,,anatidae
+duck_slurry_15,Lisier de canards (> à 15% MS),Duck slurry (> 15% DM),organic_fertilizer,cubic_meter,,0.86,,,,,,,,,,anatidae
+feather_meal,Farine de plumes,Feather meal,organic_fertilizer,ton,,10,,,,,,,,,,aves
+filtered_pasty_activated_sludge,Boue activée pâteuse filtre à bandes (C/N=5.2),Filtered pasty activated sludge (C/N=5.2),organic_fertilizer,ton,,0.11,,,,,,,,,,bioproduct
+goat_manure,Fumier de caprins,Goat manure,organic_fertilizer,ton,,0.61,,,,,,,,,,capra
+grape_pomace,Marc de raisin,Grape pomace,organic_fertilizer,ton,,0.65,0.29,1.19,,0.07,,0.36,,,,vitis
+green_waste_compost,Compost de déchets verts,Green waste compost,organic_fertilizer,ton,,0.14,,,,,,,,,,plant
+guano,Guano,Guano,organic_fertilizer,ton,,16,,,,,,,,,,aves
+guinea_fowl_manure,Fumier de pintades en sortie de bâtiment,Guinea fowl manure,organic_fertilizer,ton,,3.2,,,,,,,,,,numididae
+hangar_dried_hen_dropping,Fiente de poules pondeuses séchées sous hangar (80% MS),Hangar dried hen dropping (80% DM),organic_fertilizer,ton,,4,,,,,,,,,,gallus_gallus_domesticus
+hen_dropping,Fiente de poules pondeuses (10% MS),Hen dropping (10% DM),organic_fertilizer,ton,,0.68,,,,,,,,,,gallus_gallus_domesticus
+hen_slurry,Lisier de pondeuses (10% MS),Hen slurry (10% DM),organic_fertilizer,cubic_meter,,0.68,,,,,,,,,,gallus_gallus_domesticus
+horse_manure,Fumier de chevaux,Horse manure,organic_fertilizer,ton,,0.82,,,,,,,,,,equus_caballus
+label_chicken_manure,Fumier de poulets label en sortie de bâtiment,Label chicken manure,organic_fertilizer,ton,,2,,,,,,,,,,gallus_gallus_domesticus
+lacting_sow_slurry,Lisier de truies allaitantes et sa portée,Lacting sow slurry,organic_fertilizer,cubic_meter,,0.35,,,,,,,,,,sus
+limed_ dehydrated_anaerobic_digested_sludge,Boue digérée anaérobie déshydratée chaulée (C/N=6),Limed  dehydrated anaerobic digested sludge (C/N=6),organic_fertilizer,ton,,0.95,,,,,,,,,,bioproduct
+limed_dehydrated_bacterial_litter_sludge,Boue lit bactérien déshydratée chaulée (C/N=5),Limed dehydrated bacterial litter sludge (C/N=5),organic_fertilizer,ton,,0.75,,,,,,,,,,bioproduct
+limed_dehydrated_physico_chemical_sludge,Boue physico-chimiques déshydratée chaulée (C/N=10 à 13),Limed dehydrated physico chemical sludge (C/N=10 to 13),organic_fertilizer,ton,,0.67,,,,,,,,,,bioproduct
+liquid_activated_sludge,Boue activée liquide IAA (C/N=4.4),Liquid activated sludge (C/N=4.4),organic_fertilizer,cubic_meter,,0.29,,,,,,,,,,bioproduct
+liquid_anaerobic_digested_sludge,Boue digérée anaérobie liquide IAA (C/N=4.2),Liquid anaerobic digested sludge (C/N=4.2),organic_fertilizer,cubic_meter,,0.21,,,,,,,,,,bioproduct
+liquid_bacterial_litter_sludge,Boue lit bactérien/disque bio liquide (C/N=7.5),Liquid bacterial litter sludge (C/N=7.5),organic_fertilizer,cubic_meter,,0.18,,,,,,,,,,bioproduct
+liquid_digestate,Fraction liquide après séparation de phase,Liquid digestate,organic_fertilizer,cubic_meter,,0.52,,,,,,,,,,bioproduct
+litter_cattle_manure,Fumier de bovins de litière accumulée,Litter cattle manure,organic_fertilizer,ton,,0.58,,,,,,,,,,bos
+meat_meal,Farine de viande,Meat meal,organic_fertilizer,ton,,8,,,,,,,,,,animal
+mixed_cattle_manure,Fumier de bovins mixte,Mixed cattle manure,organic_fertilizer,ton,,0.55,,,,,,,,,,bos
+paper_mixed_sludge,Boue mixte papetière,Paper mixed sludge,organic_fertilizer,ton,,0.16,,,,,,,,,,bioproduct
+paper_mixed_sludge_15,Boue mixte papetière (C/N<15),Paper mixed sludge (C/N<15),organic_fertilizer,ton,,0.48,,,,,,,,,,bioproduct
+paper_mixed_sludge_15_20,Boue mixte papetière (15<C/N<20),Paper mixed sludge (15<C/N<20),organic_fertilizer,ton,,0.42,,,,,,,,,,bioproduct
+paper_mixed_sludge_20_35,Boue mixte papetière (20<C/N<35),Paper mixed sludge (20<C/N<35),organic_fertilizer,ton,,0.28,,,,,,,,,,bioproduct
+pig_manure,Fumier de porcs,Pig manure,organic_fertilizer,ton,,0.41,,,,,,,,,,sus
+pig_slurry,Lisier de porcs,Pig slurry,organic_fertilizer,cubic_meter,,0.5,,,,,,,,,,sus
+piglet_slurry,Lisier de porcelets,Piglet slurry,organic_fertilizer,cubic_meter,,0.57,,,,,,,,,,sus
+pit_dried_hen_dropping,Fiente de poules pondeuses séchées en fosse profonde (80% MS),Pit dried hen dropping (80% DM),organic_fertilizer,ton,,3,,,,,,,,,,gallus_gallus_domesticus
+pit_pig_slurry,Lisier de porcs en fosse extérieure,Pit pig slurry,organic_fertilizer,cubic_meter,,0.415,,,,,,,,,,sus
+plum_effluents,Effluents prunicoles,Plum effluents,organic_fertilizer,cubic_meter,,0.002,,,,,,,,,,prunus_domestica
+poultry_manure,Fumier de volailles de chair,Poultry manure,organic_fertilizer,ton,,2.9,,,,,,,,,,aves
+pre_dried_hen_dropping,Fiente de poules pondeuses pré-séchées sur tapis (40% MS),Pre dried hen dropping (40% DM),organic_fertilizer,ton,,2.2,,,,,,,,,,gallus_gallus_domesticus
+pregnant_sow_slurry,Lisier de truies gestantes,Pregnant sow slurry,organic_fertilizer,cubic_meter,,0.28,,,,,,,,,,sus
+pressed_unlimed_activated_sludge,Boue activée filtre presse non chaulée (C/N=5.9),Pressed unlimed activated sludge (C/N=5.9),organic_fertilizer,ton,,0.13,,,,,,,,,,bioproduct
+pure_calf_slurry,Lisier de veaux pur,Pure calf slurry,organic_fertilizer,cubic_meter,,0.286,,,,,,,,,,bos
+pure_cattle_liquid_manure,Purin de bovins pur,Pure cattle liquid manure,organic_fertilizer,cubic_meter,,0.3,,,,,,,,,,bos
+pure_cattle_slurry,Lisier de bovins pur,Pure cattle slurry,organic_fertilizer,cubic_meter,,0.4,,,,,,,,,,bos
+rabbit_manure,Fumier de lapins,Rabbit manure,organic_fertilizer,ton,,0.7,,,,,,,,,,oryctolagus_cuniculus
+rabbit_slurry,Lisier de lapins,Rabbit slurry,organic_fertilizer,cubic_meter,,0.9,,,,,,,,,,oryctolagus_cuniculus
+raw_digestate,Digestat brut,Raw digestate,organic_fertilizer,ton,,0.6,,,,,,,,,,bioproduct
+rhizophytes_litter_activated_sludge,Boue activée lit à rhizophytes (C/N=5.9),Rhizophytes litter activated sludge (C/N=5.9),organic_fertilizer,ton,,0.8,,,,,,,,,,bioproduct
+rubbish_urban_compost,Compost d’ordures ménagères résiduelles,Rubbish urban compost,organic_fertilizer,ton,,1,,,,,,,,,,bioproduct
+scraped_litter_pig_manure,Fumier de porcs de litière raclée,Scraped litter pig manure,organic_fertilizer,ton,,0.91,,,,,,,,,,sus
+scraping_cattle_manure,Fumier de bovins de raclage,Scraping cattle manure,organic_fertilizer,ton,,0.45,,,,,,,,,,bos
+sheep_manure,Fumier d'ovins,Sheep manure,organic_fertilizer,ton,,01.08,,,,,,,,,,ovis
+sheep_manure_30,Fumier d'ovins (30% MS),Sheep manure (30% DM),organic_fertilizer,ton,,0.67,,,,,,,,,,ovis
+sheep_slurry,Lisier d'ovins,Sheep slurry,organic_fertilizer,cubic_meter,,0.77,,,,,,,,,,ovis
+slatted_floor_pig_slurry,Lisier de porcs en caillebotis,Slatted floor pig slurry,organic_fertilizer,cubic_meter,,0.79,,,,,,,,,,sus
+slope_cattle_manure,Fumier de bovins de pente paillée,Slope cattle manure,organic_fertilizer,ton,,0.49,,,,,,,,,,bos
+stalls_cattle_manure,Fumier de bovins de logettes,Stalls cattle manure,organic_fertilizer,ton,,0.51,,,,,,,,,,bos
+thermally_treated _digested_sludge,Boue digérée traitée thermiquement,Thermally treated  digested sludge,organic_fertilizer,cubic_meter,,1,,,,,,,,,,bioproduct
+turkey_manure,Fumier de dindes en sortie de bâtiment,Turkey manure,organic_fertilizer,ton,,2.7,,,,,,,,,,meleagris
+uncovered_cattle_slurry,Lisier de bovins en système non couvert,Uncovered cattle slurry,organic_fertilizer,cubic_meter,,0.16,,,,,,,,,,bos
+urban_dry_liquid_activated_sludge,Boue activée liquide égouttée urbaine (C/N=4.9),Urban dry liquid activated sludge (C/N=4.9),organic_fertilizer,cubic_meter,,0.33,,,,,,,,,,bioproduct
+urban_lagoon_sludge,Boue de curage de lagune urbaine (C/N=6 à 11),Urban lagoon sludge (C/N=6 to 11),organic_fertilizer,cubic_meter,,0.17,,,,,,,,,,bioproduct
+urban_liquid_activated_sludge,Boue activée liquide urbaine (C/N=4.9),Urban liquid activated sludge (C/N=4.9),organic_fertilizer,cubic_meter,,0.19,,,,,,,,,,bioproduct
+wet_chicken_manure,Fumier de poulets de chair stocké en conditions humides,Wet chicken manure,organic_fertilizer,ton,,2.2,,,,,,,,,,gallus_gallus_domesticus
+wet_guinea_fowl_manure,Fumier de pintades stocké en conditions humides,Wet guinea fowl manure,organic_fertilizer,ton,,2.4,,,,,,,,,,numididae
+wet_hen_dropping,Fiente de poules pondeuses humides (25% MS),Wet hen dropping (25% DM),organic_fertilizer,ton,,1.5,,,,,,,,,,gallus_gallus_domesticus
+wet_label_chicken_manure,Fumier de poulets label stocké en conditions humides,Wet label chicken manure,organic_fertilizer,ton,,1.2,,,,,,,,,,gallus_gallus_domesticus
+wet_poultry_manure,Fumier de volailles de chair stocké en conditions humides,Wet poultry manure,organic_fertilizer,ton,,2.2,,,,,,,,,,aves
+wet_turkey_manure,Fumier de dindes stocké en conditions humides,Wet turkey manure,organic_fertilizer,ton,,2.1,,,,,,,,,,meleagris
+wine_effluents,Effluents viticoles,Wine effluents,organic_fertilizer,cubic_meter,,0.01,,,,,,,,,,vitis

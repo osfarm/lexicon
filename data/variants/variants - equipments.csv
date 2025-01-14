@@ -1,0 +1,268 @@
+reference_name,fra,eng,category,nature,sub_family,main_indicator,id_agrovoc,pictogram
+alternative_harrow,Herse alternative,Alternative harrow,equipment,harrow,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_3498,uf91a-disc-harrow.svg
+animal_trailer,'Remorque de transport d''animaux',Animal trailer,equipment,animal_trailer,trailed_equipment,,,uf938-trailer.svg
+animal_vehicle,'Véhicule de transport d''animaux',Animal vehicle,equipment,animal_vehicle,motorized_equipment,,,ufa19-animal-vehicule.svg
+antidrift_panel,Panneau récupérateur,Antidrift panel,equipment,sprayer,trailed_equipment,rows_count,,ufa16-antidrift-panel.svg
+arboricultural_cultivator,Cultivateur arboricole,Arboricultural cultivator,equipment,superficial_plowing_equipment,trailed_equipment,,,uf93a-vibrocultivator.svg
+arboricultural_mounted_jet_sprayer,Pulvérisateur à jet porté arboricole,Arboricultural mounted jet sprayer,equipment,sprayer,trailed_equipment,nominal_storable_net_volume,,uf930-sprayer.svg
+arboricultural_platform,Passerelle de récolte arboricole,Arboricultural platform,equipment,platform,motorized_equipment,,,ufa15-arboricultural-platform.svg
+arboricultural_pneumatic_sprayer,Pulvérisateur pneumatique arboricole,Arboricultural pneumatic sprayer,equipment,sprayer,trailed_equipment,nominal_storable_net_volume,,uf930-sprayer.svg
+arboricultural_tractor,Tracteur arboricole,Arboricultural tractor,equipment,tractor,motorized_equipment,motor_power,,uf153-tractor.svg
+arboricultural_weeding_boom,Rampe de désherbage arboricole,Arboricultural weeding boom,equipment,sprayer,trailed_equipment,,,uf930-sprayer.svg
+automatic_feed_dispenser,Distributeur automatique de concentré,Automatic feed dispenser,equipment,food_distributor,fixed_equipment,,http://aims.fao.org/aos/agrovoc/c_25711,ufa18-feed-dispenser.svg
+back_arboricultural_wood_rake,Andaineur arboricole arrière,Back arboricultural wood rake,equipment,wood_rake,trailed_equipment,,,uf999-wood-rake.svg
+bale_collector,Groupeur de balles,Bale collector,equipment,bale_collector,trailed_equipment,,,uf997-bale-collector.svg
+baler_wrapper,Presse enrubanneuse,Baler wrapper,equipment,baler,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_793,uf917-baler-wrapper.svg
+barrel,Barrique,Barrel,equipment,tank,fixed_equipment,,,uf946-barrel.svg
+beet_harvester,Arracheuse de betteraves,Beet harvester,equipment,harvester,trailed_equipment,rows_count,,uf91e-harvester.svg
+beet_leaves_remover,Effeuilleuse de betteraves,Beet leaves remover,equipment,cutting_equipment,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25766,uf91c-grinder.svg
+beet_picker,Ramasseuse chargeuse de betteraves,Beet picker,equipment,harvester,trailed_equipment,nominal_storable_net_mass,,uf91e-harvester.svg
+blade_intercep_tv,Intercep lames | Vigne étroite,Blade intercep | Tiny vine,equipment,mechanical_weeder,trailed_equipment,element_count,,uf999-wood-rake.svg
+blade_intercep_vtv,Intercep lames | Vigne très étroite,Blade intercep | Very tiny vine,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf999-wood-rake.svg
+borehole,Forage,Borehole,equipment,water_extracter,fixed_equipment,length,http://aims.fao.org/aos/agrovoc/c_6370,ufa11-borehole.svg
+brush_intercep_tv,Intercep brosses | Vigne étroite,Brush intercep | Tiny vine,equipment,mechanical_weeder,trailed_equipment,element_count,,uf999-wood-rake.svg
+brush_intercep_vtv,Intercep brosses | Vigne très étroite,Brush intercep | Very tiny vine,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf999-wood-rake.svg
+cambridge_roller,Rouleau cambridge,Cambridge roller,equipment,roll,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_6636,uf92a-roll.svg
+car,Voiture,Car,equipment,vehicule,motorized_equipment,,,uf973-truck-pickup.svg
+carrot_harvester,Arracheuse de carottes,Carrot harvester,equipment,harvester,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25863,uf91e-harvester.svg
+cereal_hoe,Bineuse céréales,Cereal hoe,equipment,hoe,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_25733,uf922-hoe.svg
+chemical_trunck_cleaner,Épampreuse chimique,Chemical trunck cleaner,equipment,cutting_equipment,trailed_equipment,element_count,,uf974-trunck-cleaner.svg
+chisel,Chisel lourd,Chisel,equipment,superficial_plowing_equipment,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_2019,uf933-subsoil-plow.svg
+cider_apple_harvester,Ramasseuse de pommes à cidre,Cider apple harvester,equipment,harvester,trailed_equipment,nominal_storable_net_volume,,ufa17-apple-harvester.svg
+claw_interrow,Griffe inter-rang,Claw interrow,equipment,harrow,trailed_equipment,rows_count,,uf92d-seedbed-preparator.svg
+cleaning_equipment,Équipement de nettoyage,Cleaning equipment,equipment,cleaning_equipment,trailed_equipment,,,uf94c-cleaner.svg
+compost_spreader,Épandeur de compost,Compost spreader,equipment,spreader,trailed_equipment,nominal_storable_net_volume,,uf931-spreader-trailer.svg
+confined_sprayer,Pulvérisateur confiné,Confined sprayer,equipment,sprayer,trailed_equipment,rows_count,,uf930-sprayer.svg
+corker,Boucheuse,Corker,equipment,corker,fixed_equipment,,,uf94f-corker.svg
+corn_header,Cueilleur à maïs,Corn header,equipment,harvester,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25765,uf915-forager.svg
+corn_picker,Corn-picker,Corn-picker,equipment,harvester,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25765,uf915-forager.svg
+covering_equipment,Équipement de pose de protection,Covering equipment,equipment,covering_equipment,trailed_equipment,,,uf951-cover-implanter.svg
+crawler_tractor,Chenillard,Crawler tractor,equipment,tractor,motorized_equipment,motor_power,,uf99d-crawler-tractor.svg
+crop_duster,Poudreuse,Crop duster,equipment,sprayer,trailed_equipment,nominal_storable_net_volume,,uf932-spreader.svg
+croskill,Croskill,Croskill,equipment,roll,trailed_equipment,application_width,,uf92a-roll.svg
+cubic_baler,Presse balles cubiques,Cubic baler,equipment,baler,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_793,uf919-cubic-baler.svg
+cultipacker,Cultipacker,Cultipacker,equipment,roll,trailed_equipment,application_width,,uf92a-roll.svg
+bed_former,Cultirateau,Cultirateau,equipment,hiller,trailed_equipment,application_width,,uf934-superficial-plow.svg
+cultivator,Cultivateur lourd,Cultivator,equipment,superficial_plowing_equipment,trailed_equipment,application_width,,uf934-superficial-plow.svg
+destructive_roller,Rouleau destructeur,Destructive roller,equipment,roll,trailed_equipment,application_width,,uf92a-roll.svg
+disc_harrow,Pulvériseur,Disc harrow,equipment,soil_grinder,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_25794,uf91a-disc-harrow.svg
+disc_intercep,Intercep disques,Disc intercep,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf999-wood-rake.svg
+disc_sower,Semoir à disques,Disc sower,equipment,sower,trailed_equipment,application_width,,uf92f-sower.svg
+disc_stubble_cultivator,Déchaumeur à disques,Disc stubble cultivator,equipment,superficial_plowing_equipment,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_2019,uf91a-disc-harrow.svg
+distributor_trailer,Remorque distributrice,Distributor trailer,equipment,trailer,trailed_equipment,nominal_storable_net_volume,,uf99a-tipper-trailer.svg
+electric_pruning_shears,Sécateur électrique,Electric pruning shears,depreciable_tool,cutting_tool,tool,,,uf955-cutter.svg
+fertilizer_trailer,'Remorque ravitailleuse d''engrais',Fertilizer trailer,equipment,trailer,trailed_equipment,nominal_storable_net_volume,,uf99a-tipper-trailer.svg
+filler,Remplisseuse,Filler,equipment,filler,fixed_equipment,,,ufa0b-filler.svg
+fixed_pipe,Canalisation fixe,Fixed pipe,equipment,pipe,fixed_equipment,volume_flow,http://aims.fao.org/aos/agrovoc/c_25670,uf996-pipe.svg
+fixed_tower,Tour fixe,Fixed tower,equipment,frost_protection_equipment,fixed_equipment,application_width,,uf924-irrigation-pivot.svg
+flatbed_trailer,Plateau,Flatbed trailer,equipment,trailer,trailed_equipment,nominal_storable_net_mass,http://aims.fao.org/aos/agrovoc/c_7860,uf91b-forage-platform.svg
+flax_baler,Presse enrouleuse de lin,Flax baler,equipment,baler,trailed_equipment,,,uf92c-round-baler.svg
+flax_harvester,Arracheuse de lin automotrice,Flax harvester,equipment,self_propelled_harvester,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_3499,uf915-forager.svg
+flax_lifter,Souleveuse de lin,Flax lifter,equipment,lifter,trailed_equipment,rows_count,,uf95d-lifter.svg
+forager,Ensileuse automotrice,Forager,equipment,self_propelled_harvester,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_25763,uf915-forager.svg
+forager_trailer,Affourrageuse,Forager trailer,equipment,mower,trailed_equipment,nominal_storable_net_volume,,uf99a-tipper-trailer.svg
+front_arboricultural_wood_rake,Andaineur arboricole avant,Front arboricultural wood rake,equipment,wood_rake,trailed_equipment,,,uf91f-hay-rake.svg
+front_destructive_roller,Rouleau destructeur frontal,Front destructive roller,equipment,roll,trailed_equipment,application_width,,uf92a-roll.svg
+front_loader,Chargeur frontal,Front loader,equipment,handling_equipment,motorized_equipment,motor_power,,ufa1a-front-loader.svg
+front_tine_hoe,Bineuse à dents frontale,Front tine hoe,equipment,hoe,trailed_equipment,rows_count,,uf922-hoe.svg
+geolocation_box,Boîtier de géolocalisation,Geolocation box,equipment,connected_object,,,,ufa01-sensor.svg
+grape_harvester_lv,Machine à vendanger trainée | Vigne large,Grape harvester | Large vine,equipment,harvester,trailed_equipment,,,uf99c-grape-harvester.svg
+grape_harvester_tv,Machine à vendanger trainée | Vigne étroite,Grape harvester | Tiny vine,equipment,harvester,trailed_equipment,,,uf99c-grape-harvester.svg
+hand_tying,Pince à lier,Hand tying,depreciable_tool,tying_tool,tool,,,uf959-hand-tying.svg
+header_extension,Coupe avancée,Header extension,equipment,harvester,trailed_equipment,,http://aims.fao.org/aos/agrovoc/c_3499,ufa14-header extension.svg
+heavy_equipment,Engin de chantier,Heavy equipment,equipment,heavy_equipment,motorized_equipment,,,uf991-bulldozer.svg
+hedge_mower,Épareuse,Hedge mower,equipment,mower,trailed_equipment,application_width,,ufa13-hedge-mower.svg
+hive,Ruche,Hive,equipment,hive,fixed_equipment,,,uf947-bee-hive.svg
+horizontal_grinder,Broyeur axe horizontal,Horizontal grinder,equipment,plant_grinder,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_25889,uf91c-grinder.svg
+hose_reel,Enrouleur,Hose reel,equipment,water_spreader,fixed_equipment,volume_flow,http://aims.fao.org/aos/agrovoc/c_25677,uf93b-water-spreader.svg
+hydraulic_hill_remover_lv,Décavaillonneuse hydraulique | Vigne large,Hydraulic hill remover | Large vine,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf934-superficial-plow.svg
+hydraulic_hill_remover_tv,Décavaillonneuse hydraulique | Vigne étroite,Hydraulic hill remover | Tiny vine,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf934-superficial-plow.svg
+hydraulic_intercep,Intercep hydraulique,Hydraulic intercep,equipment,mechanical_weeder,trailed_equipment,,,uf999-wood-rake.svg
+hydraulic_trunck_cleaner,Épampreuse hydraulique,Hydraulic trunck cleaner,equipment,cutting_equipment,trailed_equipment,element_count,,uf974-trunck-cleaner.svg
+integrated_sower,Semoir intégré,Integrated sower,equipment,sower,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_26059,uf92f-sower.svg
+interrow_sower,Semoir inter-rang,Interrow sower,equipment,sower,trailed_equipment,application_width,,uf92f-sower.svg
+intervine_hill_remover,Décavaillonneuse,Intervine hill remover,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf934-superficial-plow.svg
+intervine_hiller,Chausseuse/Rechausseuse,Intervine hiller,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf934-superficial-plow.svg
+large_tine_hoe,Bineuse à dents (inter-rang large),Large tine hoe,equipment,hoe,trailed_equipment,rows_count,,uf922-hoe.svg
+lateral_move,Rampe frontale,Lateral move,equipment,water_spreader,fixed_equipment,length,http://aims.fao.org/aos/agrovoc/c_25677,ufa12-lateral-move.svg
+lateral_move_for_hose_reel,Rampe frontale pour enrouleur,Lateral move for hose reel,equipment,water_spreader,fixed_equipment,,http://aims.fao.org/aos/agrovoc/c_25677,ufa12-lateral-move.svg
+leaves_remover,Effeuilleuse,Leaves remover,equipment,cutting_equipment,trailed_equipment,,,uf95c-leaves-remover.svg
+leaves_remover_lv,Effeuilleuse | Vigne large,Leaves remover | Large vine,equipment,cutting_equipment,trailed_equipment,element_count,,uf95c-leaves-remover.svg
+leaves_remover_tv,Effeuilleuse | Vigne étroite,Leaves remover | Tiny vine,equipment,cutting_equipment,trailed_equipment,element_count,,uf95c-leaves-remover.svg
+liquid_deep_injector,'Enfouisseur d''engrais liquide',Liquid deep injector,equipment,spreader,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25754,uf932-spreader.svg
+livestock_trailer,Bétaillère,Livestock trailer,equipment,animal_trailer,trailed_equipment,length,http://aims.fao.org/aos/agrovoc/c_7860,uf938-trailer.svg
+located_treatment_sprayer,Pulvérisateur pour traitement localisé,Located treatment sprayer,equipment,sprayer,trailed_equipment,nominal_storable_net_volume,,uf930-sprayer.svg
+manure_spreader,Épandeur de fumier,Manure spreader,equipment,spreader,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_25990,uf99b-spreader-alt.svg
+manure_spreader_lv,Épandeur de fumier | Vigne large,Manure spreader | Large vine,equipment,spreader,trailed_equipment,,,uf99b-spreader-alt.svg
+manure_spreader_tv,Épandeur de fumier | Vigne étroite,Manure spreader | Tiny vine,equipment,spreader,trailed_equipment,nominal_storable_net_mass,,uf99b-spreader-alt.svg
+mechanical_beet_sower,Semoir à betteraves mécanique,Mechanical beet sower,equipment,sower,trailed_equipment,rows_count,,uf92f-sower.svg
+mechanical_hill_remover_lv,Décavaillonneuse mécanique | Vigne large,Mechanical hill remover | Large vine,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf934-superficial-plow.svg
+mechanical_hill_remover_tv,Décavaillonneuse mécanique | Vigne étroite,Mechanical hill remover | Tiny vine,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf934-superficial-plow.svg
+mechanical_pruner,Tailleuse mécanique,Mechanical pruner,equipment,cutting_equipment,trailed_equipment,,,uf978-vine-trimmer.svg
+mechanical_sower,Semoir mécanique,Mechanical sower,equipment,sower,trailed_equipment,application_width,,uf92f-sower.svg
+mechanical_weeding_tool,Outil de désherbage mécanique,Mechanical weeding tool,tool,mechanical_weeding_tool,tool,,,uf93c-weeder.svg
+milking_robot,Robot de traite,Milking robot,equipment,milking_robot,fixed_equipment,,http://aims.fao.org/aos/agrovoc/c_4836,uf960-milking.svg
+mixer_trailer,Remorque mélangeuse,Mixer trailer,equipment,trailer,trailed_equipment,nominal_storable_net_volume,,uf99a-tipper-trailer.svg
+mobile_pipe,Canalisation mobile,Mobile pipe,equipment,pipe,fixed_equipment,volume_flow,http://aims.fao.org/aos/agrovoc/c_25670,uf996-pipe.svg
+mobile_tower,Tour mobile,Mobile tower,equipment,frost_protection_equipment,fixed_equipment,application_width,,uf957-frost-protection.svg
+mounted_jet_sprayer_lv,Pulvérisateur jet porté | Vigne large,Mounted jet sprayer | Large vine,equipment,sprayer,trailed_equipment,nominal_storable_net_volume,,uf930-sprayer.svg
+mounted_jet_sprayer_tv,Pulvérisateur jet porté | Vigne étroite,Mounted jet sprayer | Tiny vine,equipment,sprayer,trailed_equipment,rows_count,,uf930-sprayer.svg
+mounted_jet_sprayer_vtv,Pulvérisateur jet porté | Vigne très étroite,Mounted jet sprayer | Very tiny vine,equipment,sprayer,trailed_equipment,rows_count,,uf930-sprayer.svg
+mounted_sprayer,Pulvérisateur porté,Mounted sprayer,equipment,sprayer,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_7333,uf930-sprayer.svg
+mower_conditioner,Faucheuse conditionneuse,Mower conditioner,equipment,mower,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_25726,uf926-mower-conditioner.svg
+office_equipment,Matériel de bureau,Office equipment,depreciable_office_equipment,office_equipment,fixed_equipment,,,ufa05-copy-machine.svg
+office_furniture,Mobilier de bureau,Office furniture,depreciable_office_furniture,office_equipment,fixed_equipment,,,ufa0f-chair.svg
+pea_header,Coupe pois,Pea header,equipment,harvester,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_25762,uf929-reaper.svg
+pivot,Pivot,Pivot,equipment,water_spreader,fixed_equipment,length,http://aims.fao.org/aos/agrovoc/c_25677,uf924-irrigation-pivot.svg
+plow_interrow,Charrue inter-rang,Plow interrow,equipment,superficial_plowing_equipment,trailed_equipment,rows_count,,uf922-hoe.svg
+pneumatic_beet_sower,Semoir à betteraves pneumatique,Pneumatic beet sower,equipment,sower,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_26059,uf92f-sower.svg
+pneumatic_granule_spreader,'Distributeur d''engrais pneumatique',Pneumatic granule spreader,equipment,spreader,trailed_equipment,nominal_storable_net_volume,,uf932-spreader.svg
+pneumatic_pruning_shears,Sécateur pneumatique,Pneumatic pruning shears,depreciable_tool,cutting_tool,tool,,,uf955-cutter.svg
+pneumatic_sprayer_lv,Pulvérisateur pneumatique | Vigne large,Pneumatic sprayer | Large vine,equipment,sprayer,trailed_equipment,nominal_storable_net_volume,,uf930-sprayer.svg
+pneumatic_sprayer_tv,Pulvérisateur pneumatique | Vigne étroite,Pneumatic sprayer | Tiny vine,equipment,sprayer,trailed_equipment,rows_count,,uf930-sprayer.svg
+pneumatic_sprayer_vtv,Pulvérisateur pneumatique | Vigne très étroite,Pneumatic sprayer | Very tiny vine,equipment,sprayer,trailed_equipment,rows_count,,uf930-sprayer.svg
+pollination_equipment,Équipement de pollinisation,Pollination equipment,equipment,pollination_equipment,trailed_equipment,,,uf95e-mechanical-kit.svg
+pollination_tool,Outil de pollinisation,Pollination tool,tool,pollination_tool,tool,,,uf95e-mechanical-kit.svg
+potato_grinder,Broyeur de fanes de pommes de terre,Potato grinder,equipment,cutting_equipment,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25889,uf91c-grinder.svg
+potato_harvester,Arracheuse de pommes de terre,Potato harvester,equipment,harvester,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25863,uf91e-harvester.svg
+potato_hiller,Butteuse de pommes de terre,Potato hiller,equipment,hiller,trailed_equipment,rows_count,,uf920-hiller.svg
+potato_planter,Planteuse de pommes de terre,Potato planter,equipment,implanter,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25759,uf923-implanter.svg
+pre_pruner,Prétailleuse,Pre pruner,equipment,cutting_equipment,trailed_equipment,element_count,,uf978-vine-trimmer.svg
+pre_pruner_pruner,Prétailleuse – Tailleuse,Pre pruner pruner,equipment,cutting_equipment,trailed_equipment,,,uf978-vine-trimmer.svg
+projected_jet_sprayer_tv,Pulvérisateur jet projeté | Vigne étroite,Projected jet sprayer | Tiny vine,equipment,sprayer,trailed_equipment,rows_count,,uf930-sprayer.svg
+projected_jet_sprayer_vtv,Pulvérisateur jet projeté | Vigne très étroite,Projected jet sprayer | Very tiny vine,equipment,sprayer,trailed_equipment,rows_count,,uf930-sprayer.svg
+projection_granule_spreader,'Distributeur d''engrais par projection',Projection granule spreader,equipment,spreader,trailed_equipment,nominal_storable_net_volume,,uf932-spreader.svg
+pump,Pompe,Pump,equipment,water_extracter,fixed_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_6370,uf998-pump.svg
+quad,Quad,Quad,equipment,vehicule,motorized_equipment,motor_power,,uf99f-quad.svg
+quad_anti_slug_sprayer,Distributeur anti-limace pour quad,Quad anti slug sprayer,equipment,sprayer,trailed_equipment,,,uf932-spreader.svg
+quad_sprayer,Pulvérisateur pour quad,Quad sprayer,equipment,sprayer,trailed_equipment,,,uf930-sprayer.svg
+quad_spreader,Distributeur d’engrais pour quad,Quad spreader,equipment,spreader,trailed_equipment,,,uf932-spreader.svg
+rake,Andaineur,Rake,equipment,rake,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_8400,uf91f-hay-rake.svg
+reaper,Moissonneuse-batteuse,Reaper,equipment,self_propelled_harvester,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_3499,uf929-reaper.svg
+repairing_tool,Outil de réparation,Repairing tool,tool,repairing_tool,tool,,,uf964-product-prepare.svg
+reversible_plow,Charrue réversible,Reversible plow,equipment,plow,trailed_equipment,plowshare_count,http://aims.fao.org/aos/agrovoc/c_25910,uf928-plow.svg
+rollstar_hoe,Bineuse à étoiles,Rollstar hoe,equipment,hoe,trailed_equipment,rows_count,,uf92b-rotary-hoe.svg
+rotary_cultivator,Cultivateur rotatif,Rotary cultivator,equipment,superficial_plowing_equipment,trailed_equipment,application_width,,uf934-superficial-plow.svg
+rotary_cultivator_lv,Cultivateur rotatif | Vigne large,Rotary cultivator | Large vine,equipment,superficial_plowing_equipment,trailed_equipment,application_width,,uf934-superficial-plow.svg
+rotary_cultivator_tv,Cultivateur rotatif | Vigne étroite,Rotary cultivator | Tiny vine,equipment,superficial_plowing_equipment,trailed_equipment,application_width,,uf934-superficial-plow.svg
+rotary_flail_intercep,Intercep rotofil,Rotary flail intercep,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf999-wood-rake.svg
+rotary_grinder_lv,Gyrobroyeur | Vigne large,Rotary grinder | Large vine,equipment,plant_grinder,trailed_equipment,application_width,,uf91c-grinder.svg
+rotary_grinder_tv,Gyrobroyeur | Vigne étroite,Rotary grinder | Tiny vine,equipment,plant_grinder,trailed_equipment,application_width,,uf91c-grinder.svg
+rotary_harrow,Herse rotative,Rotary harrow,equipment,harrow,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_3498,uf92b-rotary-hoe.svg
+rotary_hoe,Houe rotative,Rotary hoe,equipment,hoe,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_25733,uf92b-rotary-hoe.svg
+rotary_mower,Faucheuse rotative,Rotary mower,equipment,mower,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_4963,uf927-mower.svg
+rotary_spade_interrow,Rotobêche inter-rang,Rotary spade interrow,equipment,superficial_plowing_equipment,trailed_equipment,rows_count,,uf933-subsoil-plow.svg
+rotary_weeder,Roto-étrille,Rotary weeder,equipment,hoe,trailed_equipment,application_width,,uf95d-lifter.svg
+rotative_intercep,Intercep rotatif,Rotative intercep,equipment,mechanical_weeder,trailed_equipment,,,uf999-wood-rake.svg
+round_baler,Presse balles rondes,Round baler,equipment,baler,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_793,uf92c-round-baler.svg
+scarifier,Scarificateur,Scarifier,equipment,harrow,trailed_equipment,,,uf92d-seedbed-preparator.svg
+seed_corn_sprayer,Kit de pulvérisation maïs semence,Seed corn sprayer,equipment,sprayer,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_25754,uf930-sprayer.svg
+seed_corn_topper,Kit de castration maïs semence,Seed corn topper,equipment,topper,trailed_equipment,,http://aims.fao.org/aos/agrovoc/c_7816,uf918-corn-topper.svg
+seed_corn_tractor,Automotrice de maïs semence,Seed corn tractor,equipment,tractor,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_7847,uf92f-sower.svg
+self_loading_hay_trailer,Remorque autochargeuse pour le foin,Self loading hay trailer,equipment,trailer,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_7860,uf997-bale-collector.svg
+self_loading_silage_trailer,'Remorque autochargeuse pour l''ensilage',Self loading silage trailer,equipment,trailer,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_7860,uf997-bale-collector.svg
+self_propelled_beet_harvester,Récolteuse de betteraves automotrice,Self propelled beet harvester,equipment,self_propelled_harvester,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_25863,uf91e-harvester.svg
+self_propelled_carrier,Porteur automoteur,Self propelled carrier,equipment,tractor,motorized_equipment,motor_power,,uf99c-grape-harvester.svg
+self_propelled_cider_apple_harvester,Ramasseuse de pommes à cidre automotrice,Self propelled cider apple harvester,equipment,self_propelled_harvester,motorized_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_25764,ufa17-apple-harvester.svg
+self_propelled_cleaning_equipment,Équipement de nettoyage automoteur,Self propelled cleaning equipment,equipment,self_propelled_cleaning_equipment,motorized_equipment,,,ufa1b-cleaning-equipment.svg
+self_propelled_flax_baler,Presse enrouleuse de lin automotrice,Self propelled flax baler,equipment,self_propelled_baler,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_793,uf92c-round-baler.svg
+self_propelled_flax_turner,Retourneuse de lin automotrice,Self propelled flax turner,equipment,self_propelled_rake,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_25766,uf91f-hay-rake.svg
+self_propelled_grape_harvester_lv,Machine à vendanger automotrice | Vigne large,Self propelled grape harvester | Large vine,equipment,self_propelled_harvester,motorized_equipment,motor_power,,uf99c-grape-harvester.svg
+self_propelled_grape_harvester_tv,Machine à vendanger automotrice | Vigne étroite,Self propelled grape harvester | Tiny vine,equipment,self_propelled_harvester,motorized_equipment,motor_power,,uf99c-grape-harvester.svg
+self_propelled_hoe,Bineuse automotrice,Self propelled hoe,equipment,self_propelled_hoe,motorized_equipment,,,uf922-hoe.svg
+self_propelled_implanter,Planteuse automotrice,Self propelled implanter,equipment,self_propelled_implanter,motorized_equipment,,,uf923-implanter.svg
+self_propelled_mixer_unloader,Désileuse mélangeuse automotrice,Self propelled mixer unloader,equipment,self_propelled_unloader,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_15097,ufa07-unroller-straw-blower.svg
+self_propelled_mower,Faucheuse automotrice,Self propelled mower,equipment,self_propelled_mower,motorized_equipment,,,uf927-mower.svg
+self_propelled_potato_harvester,Arracheuse de pommes de terre automotrice,Self propelled potato harvester,equipment,self_propelled_harvester,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_25762,uf91e-harvester.svg
+self_propelled_pre_pruner,Prétailleuse automotrice,Self propelled pre pruner,equipment,self_propelled_cutting_equipment,motorized_equipment,,,uf978-vine-trimmer.svg
+self_propelled_sower,Semoir automoteur,Self propelled sower,equipment,self_propelled_sower,motorized_equipment,,,uf92f-sower.svg
+self_propelled_sprayer,Pulvérisateur automoteur,Self propelled sprayer,equipment,self_propelled_sprayer,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_7333,uf930-sprayer.svg
+self_propelled_spreader,Épandeur automoteur,Self propelled spreader,equipment,self_propelled_spreader,motorized_equipment,,,uf932-spreader.svg
+sensor,Capteur,Sensor,equipment,connected_object,,,,ufa01-sensor.svg
+sieve_shaker,Tamiseuse,Sieve shaker,equipment,sieve_shaker,trailed_equipment,,,uf969-sieve-shaker.svg
+silage_bucket,Godet désileur,Silage bucket,equipment,unloader,trailed_equipment,nominal_storable_net_volume,,ufa08-bucket.svg
+silo,Silo,Silo,equipment,tank,fixed_equipment,,,uf96f-storage-tank.svg
+simple_plow,Charrue simple,Simple plow,equipment,plow,trailed_equipment,plowshare_count,http://aims.fao.org/aos/agrovoc/c_99dd11f2,uf928-plow.svg
+single_grain_sower,Semoir monograine,Single grain sower,equipment,sower,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_26059,uf916-airplanter.svg
+slurry_spreader,Épandeur de lisier,Slurry spreader,equipment,spreader,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_7112,uf931-spreader-trailer.svg
+solid_deep_injector,'Enfouisseur d''engrais solide',Solid deep injector,equipment,spreader,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25754,uf932-spreader.svg
+sorting_equipment,Équipement de tri,Sorting equipment,equipment,sorting_equipment,fixed_equipment,,,uf969-sieve-shaker.svg
+spire_roller,Rouleau spire,Spire roller,equipment,roll,trailed_equipment,application_width,,uf92a-roll.svg
+spreader_lv,'Épandeur d''engrais | Vigne large',Spreader | Large vine,equipment,spreader,trailed_equipment,,,uf932-spreader.svg
+spreader_tv,'Épandeur d''engrais | Vigne étroite',Spreader | Tiny vine,equipment,spreader,trailed_equipment,application_width,,uf932-spreader.svg
+sprinkler,Asperseur,Sprinkler,equipment,frost_protection_equipment,fixed_equipment,element_count,,uf93b-water-spreader.svg
+star_intercep,Intercep étoiles,Star intercep,equipment,mechanical_weeder,trailed_equipment,rows_count,,uf999-wood-rake.svg
+steam_weeder,Désherbeur vapeur,Steam weeder,equipment,steam_weeder,trailed_equipment,,,uf96e-steam-engine.svg
+steam_weeding_tool,Outil de désherbage vapeur,Steam weeding tool,tool,steam_weeding_tool,tool,,,uf96e-steam-engine.svg
+stone_aligner,Aligneuse de pierres,Stone aligner,equipment,destoning_equipment,trailed_equipment,application_width,,uf91c-grinder.svg
+stone_grinder,Broyeur de pierres,Stone grinder,equipment,destoning_equipment,trailed_equipment,application_width,,uf91c-grinder.svg
+stone_picker,Ramasseuse de pierres,Stone picker,equipment,destoning_equipment,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_25992,uf91c-grinder.svg
+straddle_tractor,Enjambeur,Straddle tractor,equipment,tractor,motorized_equipment,motor_power,,uf153-tractor.svg
+strap_trunck_cleaner,Épampreuse à lanières,Strap trunck cleaner,equipment,cutting_equipment,trailed_equipment,element_count,,uf974-trunck-cleaner.svg
+straw_blower,Pailleuse,Straw blower,equipment,blower,trailed_equipment,,,ufa07-unroller-straw-blower.svg
+strip_till,Strip-till,Strip-till,equipment,superficial_plowing_equipment,trailed_equipment,element_count,,uf95d-lifter.svg
+subsoiler,Décompacteur,Subsoiler,equipment,soil_loosener,trailed_equipment,element_count,http://aims.fao.org/aos/agrovoc/c_25808,uf933-subsoil-plow.svg
+surface_pump,Pompe de surface,Surface pump,equipment,water_extracter,fixed_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_6370,uf998-pump.svg
+tank,Réservoir,Tank,equipment,tank,fixed_equipment,,,uf96f-storage-tank.svg
+tank_pump,Cuve et pompe,Tank pump,equipment,sprayer,trailed_equipment,nominal_storable_net_volume,,uf998-pump.svg
+tedder,Faneuse,Tedder,equipment,tedder,trailed_equipment,application_width,,uf935-tedder.svg
+telescopic,Télescopique,Telescopic,equipment,handling_equipment,motorized_equipment,motor_power,,ufa10-telescopic.svg
+thermal_leaves_remover,Effeuilleuse thermique,Thermal leaves remover,equipment,cutting_equipment,trailed_equipment,,,uf95c-leaves-remover.svg
+thermal_weeder,Désherbeur thermique,Thermal weeder,equipment,thermal_weeder,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_15296,uf958-gaz-engine.svg
+thermal_weeding_tool,Outil de désherbage thermique,Thermal weeding tool,tool,thermal_weeding_tool,tool,,,uf958-gaz-engine.svg
+tight_tine_hoe,Bineuse à dents (inter-rang étroit),Tight tine hoe,equipment,hoe,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25733,uf921-hoe-weeder.svg
+tine_sower,Semoir à dents,Tine sower,equipment,sower,trailed_equipment,application_width,,uf92f-sower.svg
+tine_stubble_cultivator,Déchaumeur à dents,Tine stubble cultivator,equipment,superficial_plowing_equipment,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_2019,uf93a-vibrocultivator.svg
+tipper_trailer,Benne,Tipper trailer,equipment,trailer,trailed_equipment,nominal_storable_net_mass,http://aims.fao.org/aos/agrovoc/c_7860,uf99a-tipper-trailer.svg
+topper,Écimeuse,Topper,equipment,topper,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_7816,uf918-corn-topper.svg
+topper_trimmer_lv,Écimeuse rogneuse | Vigne large,Topper trimmer | Large vine,equipment,topper,trailed_equipment,rows_count,,uf918-corn-topper.svg
+topper_trimmer_tv,Écimeuse rogneuse | Vigne étroite,Topper trimmer | Tiny vine,equipment,topper,trailed_equipment,rows_count,,uf918-corn-topper.svg
+tractor,Tracteur,Tractor,equipment,tractor,motorized_equipment,motor_power,http://aims.fao.org/aos/agrovoc/c_7847,uf153-tractor.svg
+tractor_console,Console de tracteur,Tractor console,equipment,connected_object,,,,ufa0e-console.svg
+trailed_sprayer,Pulvérisateur trainé,Trailed sprayer,equipment,sprayer,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_7333,uf930-sprayer.svg
+transporter_trailer,Transbordeur,Transporter trailer,equipment,trailer,trailed_equipment,nominal_storable_net_mass,,uf99a-tipper-trailer.svg
+trunck_cleaner,Épampreuse,Trunck cleaner,equipment,cutting_equipment,trailed_equipment,,,uf974-trunck-cleaner.svg
+uncovering_equipment,Équipement de retrait de protection,Uncovering equipment,equipment,uncovering_equipment,trailed_equipment,,,uf951-cover-implanter.svg
+unloader,Désileuse,Unloader,equipment,unloader,trailed_equipment,nominal_storable_net_volume,,ufa07-unroller-straw-blower.svg
+unroller_straw_blower,Dérouleuse pailleuse,Unroller straw blower,equipment,blower,trailed_equipment,,,ufa07-unroller-straw-blower.svg
+vertical_grinder,Broyeur axe vertical,Vertical grinder,equipment,plant_grinder,trailed_equipment,application_width,,uf91c-grinder.svg
+vibro_cultivator,Vibroculteur,Vibro cultivator,equipment,superficial_plowing_equipment,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_3498,uf93a-vibrocultivator.svg
+vine_and_arboricultural_tractor,Tracteur viticole et arboricole,Vine and arboricultural tractor,equipment,tractor,motorized_equipment,motor_power,,uf153-tractor.svg
+vine_compost_spreader,Épandeur de compost viticole,Vine compost spreader,equipment,spreader,trailed_equipment,nominal_storable_net_mass,,uf99b-spreader-alt.svg
+vine_cultivator_lv,Cultivateur viticole | Vigne large,Vine cultivator | Large vine,equipment,superficial_plowing_equipment,trailed_equipment,,,uf93a-vibrocultivator.svg
+vine_cultivator_tv,Cultivateur viticole | Vigne étroite,Vine cultivator | Tiny vine,equipment,superficial_plowing_equipment,trailed_equipment,,,uf93a-vibrocultivator.svg
+vine_destructive_roller,Rouleau destructeur viticole,Vine destructive roller,equipment,roll,trailed_equipment,application_width,,uf936-topper.svg
+vine_direct_sower,Semoir direct viticole,Vine direct sower,equipment,sower,trailed_equipment,application_width,,uf92f-sower.svg
+vine_disc_harrow,Pulvériseur viticole,Vine disc harrow,equipment,soil_grinder,trailed_equipment,,,uf91a-disc-harrow.svg
+vine_disc_stubble_cultivator,Déchaumeur à disques viticole,Vine disc stubble cultivator,equipment,superficial_plowing_equipment,trailed_equipment,,,uf91a-disc-harrow.svg
+vine_lifter,Arracheuse de vigne,Vine lifter,equipment,vine_lifter,trailed_equipment,,,uf97b-wire-lifter.svg
+vine_planter,Planteuse de vigne,Vine planter,equipment,implanter,trailed_equipment,rows_count,,uf923-implanter.svg
+vine_shoot_extractor,Tireuse de bois,Vine shoot extractor,equipment,vine_shoot_extractor,trailed_equipment,rows_count,,uf977-vine-extractor.svg
+vine_shoot_grinder,Broyeur de sarments,Vine shoot grinder,equipment,plant_grinder,trailed_equipment,,,uf968-shoot-grinder.svg
+vine_shoot_grinder_lv,Broyeur de sarments | Vigne large,Vine shoot grinder | Large vine,equipment,plant_grinder,trailed_equipment,application_width,,uf968-shoot-grinder.svg
+vine_shoot_grinder_tv,Broyeur de sarments | Vigne étroite,Vine shoot grinder | Tiny vine,equipment,plant_grinder,trailed_equipment,application_width,,uf968-shoot-grinder.svg
+vine_shoot_rake,Andaineur de sarments,Vine shoot rake,equipment,wood_rake,trailed_equipment,,,uf968-shoot-grinder.svg
+vine_stone_grinder,Broyeur de pierres viticole,Vine stone grinder,equipment,destoning_equipment,trailed_equipment,application_width,,uf91c-grinder.svg
+vine_subsoiler,Décompacteur viticole,Vine subsoiler,equipment,soil_loosener,trailed_equipment,,,uf933-subsoil-plow.svg
+vine_tipper_trailer,Benne viticole,Vine tipper trailer,equipment,trailer,trailed_equipment,nominal_storable_net_volume,,uf99a-tipper-trailer.svg
+vine_tractor,Tracteur viticole,Vine tractor,equipment,tractor,motorized_equipment,motor_power,,uf153-tractor.svg
+vine_trimmer,Rogneuse,Vine trimmer,equipment,cutting_equipment,trailed_equipment,rows_count,,uf978-vine-trimmer.svg
+weeder_harrow,Herse étrille,Weeder harrow,equipment,harrow,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_3498,uf93c-weeder.svg
+weeding_boom,Rampe de désherbage,Weeding boom,equipment,sprayer,trailed_equipment,rows_count,,uf930-sprayer.svg
+wine_press,Pressoir à vin,Wine press,equipment,wine_press,fixed_equipment,,,uf979-wine-press.svg
+wine_tank,Cuve à vin,Wine tank,equipment,tank,fixed_equipment,,,uf96f-storage-tank.svg
+wire_lifter,Releveuse,Wire lifter,equipment,lifter,trailed_equipment,,,uf97b-wire-lifter.svg
+wrapper,Enrubanneuse,Wrapper,equipment,baler,trailed_equipment,,,uf93d-wrapper.svg
+subsoil_plow,Sous soleuse,Subsoil plow,equipment,plow,trailed_equipment,plowshare_count,,uf928-plow.svg
+manual_weeding_tool,Outil de désherbage mannuel,Manual weeding tool,tool,mechanical_weeding_tool,tool,,,uf93c-weeder.svg
+horizontal_grinder_tool_service,Prestation de Broyage,Horizontal grinder tool service,equipment,plant_grinder,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_25889,uf91c-grinder.svg
+weeding_tool_service,Prestation de Désherbage,Manual weeding tool,equipment,plant_grinder,trailed_equipment,application_width,,uf968-shoot-grinder.svg
+disinfection_tool_service,Prestation de Désinfection,Desinfection  tool service,equipment,sprayer,trailed_equipment,,,uf930-sprayer.svg
+topper_tool_service,Prestation d’ecimage,Topper tool service,equipment,topper,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_7816,uf918-corn-topper.svg
+spreader_tool_service,Prestation d’épandange,Manure spreader tool service,equipment,spreader,trailed_equipment,nominal_storable_net_volume,http://aims.fao.org/aos/agrovoc/c_25990,uf99b-spreader-alt.svg
+harvest_tool_service,Prestation de récolte,Harvest tool service,equipment,harvester,trailed_equipment,rows_count,http://aims.fao.org/aos/agrovoc/c_25765,uf915-forager.svg
+sprayer_tool_service,Prestation de pulvérisation,Sprayer tool service,equipment,sprayer,trailed_equipment,,,uf930-sprayer.svg
+sower_tool_service,Prestation de semis,Sower tool service,equipment,sower,trailed_equipment,application_width,,uf92f-sower.svg
+hoe_tool_service,Prestation de travail du sol,Hoe tool service,equipment,hoe,trailed_equipment,application_width,http://aims.fao.org/aos/agrovoc/c_25733,uf922-hoe.svg
+trailer_tool_service,Prestation de transport,Trailer tool service,equipment,trailer,trailed_equipment,nominal_storable_net_mass,,uf99a-tipper-trailer.svg
+manual_tool_service,Prestation de service global,Manual too service,equipment,plant_grinder,trailed_equipment,,,uf968-shoot-grinder.svg

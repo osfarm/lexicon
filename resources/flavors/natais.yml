@@ -1,0 +1,30 @@
+---
+name: natais
+without:
+  - agroedi
+  - budgets
+  - cadastral_prices
+  - cadastre
+  - chart_of_accounts
+  - enterprises
+  - eu_market_prices
+  - hydrography
+  - intervention_models
+  - legal_positions
+  - phenological_stages
+  - prices
+  - protected_water_zones
+  - quality_and_origin_signs
+  - seed_varieties
+  - soil
+  - technical_workflows
+  - technical_workflow_sequences
+  - vine_varieties
+  - weather
+datasources:
+  graphic_parcels:
+    registered_graphic_parcels:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_GeomFromText('POINT(-0.87374 43.55297)',4326) , 4 )
+  productions:
+    master_crop_productions:
+      filter: WHERE reference_name IN ('popcorn', 'summery_cover', 'wintry_cover', 'relay_cover')

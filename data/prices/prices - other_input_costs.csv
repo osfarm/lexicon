@@ -1,0 +1,6 @@
+n,name,article,price,currency,packaging,date
+1,irrigation_water_bulk,irrigation_water,0.005,euro,cubic_meter_bulk,01/01/2019
+2,cow_food_bulk,cow_food,500,euro,ton_bulk,01/01/2019
+3,cow_vial_bulk,cow_vial,60,euro,unity_bulk,01/01/2019
+4,stake_bulk,stake,5,euro,unity_bulk,01/01/2019
+5,wire_bulk,wire,65,euro,kilometer_bulk,01/01/2019

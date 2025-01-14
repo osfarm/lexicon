@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Collects data in raw format
+require 'bundler'
+Bundler.require(:default)
+require 'active_support/core_ext/string/inflections'
+require 'active_support/core_ext/string/filters'
+$LOAD_PATH.unshift Pathname.new(__FILE__).dirname.join('lib')
+
+require 'lexicon'
+
+application = Lexicon::Application.new(ARGV, root: __dir__)
+application.start

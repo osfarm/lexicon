@@ -1,0 +1,6 @@
+reference_name,activity_family,fra,eng,specie,usage,started_on,stopped_on,agroedi_crop_code,season,life_duration,idea_botanic_family,idea_specie_family,idea_output_family
+winery,wine_making,Chai,winery,vine_grape_must,,01/01/00,31/12/00,,,20,,,
+wine_storehouse,wine_making,Élevage barrique,Wine barrel storehouse,wine,,01/01/00,31/12/00,,,20,,,
+meat_laboratory,processing,Transformation viande,Meat laboratory,meat,,01/01/00,31/12/00,,,20,,,
+milk_laboratory,processing,Transformation lait,Milk laboratory,milk,,01/01/00,31/12/00,,,20,,,
+vegetable_laboratory,processing,Transformation production végétale,Vegetal laboratory,,,01/01/00,31/12/00,,,20,,,

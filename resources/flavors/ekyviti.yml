@@ -1,0 +1,5 @@
+---
+name: ekyviti
+without:
+  - pesticide_frequency_indicator
+  - enterprises

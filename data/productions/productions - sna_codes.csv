@@ -1,0 +1,22 @@
+reference_name,nature,fra,eng,parent
+VG,sna_category,Végétation,Vegetation,
+V1,sna_type,Arbre,Tree,VG
+V2,sna_type,Arbres alignés,Lined up trees,VG
+V3,sna_type,Bosquet,Grove,VG
+V4,sna_type,Haie,Hedge,VG
+V5,sna_type,Forêt,Forest,VG
+V6,sna_type,Broussailles,Brush,VG
+V7,sna_type,Autre surface végétale non agricole,Autre surface végétale non agricole,VG
+V8,sna_type,Végétation non agricole non caractérisée,Uncharacterized non-agricultural vegetation,VG
+EA,sna_category,Eléments artificiels,Artificial elements,
+B1,sna_type,Bâtiment,Building,EA
+B2,sna_type,"Route, chemin ou voie ferrée","Road, path or railroad",EA
+B3,sna_type,Surface aménagée,Landscaped area,EA
+AT,sna_category,Autres éléments naturels,Other natural elements,
+A1,sna_type,Mare,Pond,AT
+A2,sna_type,Surface en eau non maçonnée,Non-masonry water surface,AT
+A3,sna_type,Surface en eau maçonnée,Masonry water surface,AT
+A4,sna_type,Fossé non maçonné,Non-masonry ditch,AT
+A5,sna_type,Fossé maçonné,Masonry ditch,AT
+A6,sna_type,Affleurement rocheux,Rock outcrop,AT
+A7,sna_type,Mur,Wall,AT

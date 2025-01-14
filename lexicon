@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -e
+
+[ -f .env ] || touch .env
+
+(docker compose up -d 2>&1 | grep -v 'up-to-date') || true
+
+LOCAL_HASH=$(sha1sum Dockerfile docker-compose.yml Gemfile requirements.txt lexicon)
+RUNNING_HASH=$(docker compose exec -T lexicon_runner cat build_hash.sha1)
+
+set +e
+DIFF=$(diff -b <(echo $LOCAL_HASH) <(echo $RUNNING_HASH))
+set -e
+
+if [[ "$DIFF" != "" ]];
+then
+  echo -e "\033[31mYour installation of the lexicon seems to be outdated. Updating...\033[00m"
+  docker compose build
+
+  echo -e "\033[32mRestarting...\033[00m"
+  (docker compose up -d 2>&1 | grep -v 'up-to-date') || true
+fi
+
+exec docker compose exec lexicon_runner ./lexicon-cli "$@"

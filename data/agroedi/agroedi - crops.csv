@@ -1,0 +1,443 @@
+agroedi_code,agroedi_name,production
+E01,Abricotier,apricot
+0,espèce culturale inconnue,
+E02,Achillée millefeuille,
+E03,Agrostide blanche,
+E04,Agrostide des chiens,
+E05,Agrostide jouet du vent,
+E06,Agrostide montana,
+E07,Agrostide stolonifère,
+E08,Aigremoine,
+E09,Ail des ours,
+E10,Ail rocambole,
+E11,Alchémille,
+E12,Alliaire,
+E13,Alpiste roseau,
+E14,Amandier,almond
+E15,Amaranthe,
+E16,Ambérique = pousse de soja,
+E17,Ananas,pineapple
+E18,Ancolie,
+E19,Anémone,
+E20,Aneth,dill
+E21,Angelique,angelica
+E22,Anis,anise
+E23,Argousier,
+E24,Armoise,
+E25,Arnica ,
+E26,Aunée,
+E27,Avocatier,avocado
+E28,Avoine brésilienne,winter_oat
+E29,Avoine byzantine,winter_oat
+E30,Avoine jaunâtre,winter_oat
+E31,Avoine nue,winter_oat
+E32,Ballote,
+E33,Balsamite,
+E34,Bananier,banana
+E35,Bardane,burdock
+E36,Basilic,basil
+E37,Belladone,
+E38,Benoîte,
+E39,Bouillon blanc (molène),
+E40,Bourrache,borage
+E41,Brome biebersteinii,bromus
+E42,Brome carinatus,bromus
+E43,Brome cathartique,bromus
+E44,Brome dressé,bromus
+E45,Brome faux-seigle,bromus
+E46,Brome fibreux,bromus
+E47,Brome inerme,bromus
+E48,Brome mou,bromus
+E49,Brome sitchensis,bromus
+E50,Brome stérile,bromus
+E51,Brunelle vulgaire,
+E52,Bugle rampant,bugle
+E53,Buplèvre,
+E54,Cameline,camelina
+E55,Camomille,chamomile
+E56,Capucine,
+E57,Caroube,carob
+E58,Carthame,
+E59,Carvi,caraway
+E60,Caseiller,
+E61,Cataire ou Chataire,
+E62,Centaurée bleuet,
+E63,Centaurée d'Espagne,
+E64,Centaurée du solstice,
+E65,Centaurée jacée,
+E66,Centaurée scabieuse,
+E67,Cerisier,cherry
+E68,Chardon,
+E69,Chataigner,chesnut
+E70,Chayotte - Christophine,
+E71,Chelidoine,
+E72,Chénopode,
+E73,Chiendent à crête,
+E74,Chiendent à tige courte,
+E75,Chiendent du désert,
+E76,Chiendent rampant,
+E77,Chiendent velu,
+E78,Chou marin,cabbage
+E79,Christe marine,
+E80,Chrysanthème,
+E81,Ciboule,
+E82,Ciboulette,chive
+E83,Citronnier,lemon
+E84,Clarkia,
+E85,Clémentinier,clementine
+E86,Cognassier,quince
+E87,Consoude,
+E88,Coriandre,coriander
+E89,Coton,cotton
+E90,Courge,pumpkin
+E91,Crambe d'abbyssinie,
+E92,Cresson alénois,cress
+E93,Cresson de terre,cress
+E94,Cresson des fontaines,watercress
+E95,Crosne,
+E96,Cumin,cumin
+E97,Dahlia,
+E98,Dauphinelle à grandes fleurs,
+E99,Dictame de crête,
+F01,Digitale,
+F02,Dimorphoteca,
+F03,Echalion,
+F04,Echinacée,
+F05,Eglantier,
+F06,Epilobe à 4 angles,
+F07,Eschscholtzia,
+F08,Estragon,tarragon
+F09,Eupatoire,
+F10,Euphraise,
+F11,Feijoa,
+F12,Fenugrec,fenugreek
+F13,Fétuque hétérophylle,fescue
+F14,Fétuque ovine,fescue
+F15,Fétuque rouge,fescue
+F16,Ficaire,
+F17,Figuier,fig
+F18,Fléole bulbeuse,timothy
+F19,Fruit de la passion,
+F20,Fumeterre,
+F21,Gaillet,galium
+F22,Garance,
+F23,Genêt,
+F24,Gentiane,
+F25,Ginkgo biloba,
+F26,Glaïeul – Acidanthera,
+F27,Goyavier,guava
+F28,Grand Mélilot,
+F29,Grande cigüe,
+F30,Grindelia,
+F31,Hamamelis,
+F32,Hysope,
+F33,Igname,yam
+F34,Immortelle,
+F35,Iris,
+F36,Ispaghul ou plantain des indes,
+F37,Jasmin,
+F38,Jujubier,
+F39,Jusquiame noire,
+F40,Kaki    (Plaqueminier),persimmon
+F41,Kenaf,
+F42,Kiwi (Actinidia),kiwi
+F43,Kiwi jaune,kiwi
+F44,Lamier Blanc (Ortie Blanche),nettle
+F45,Laser gallicum,
+F46,Laurier,cherry_laurel
+F47,Lavande,lavender
+F48,Lavatère,
+F49,Lespedeza capitata,
+F50,Lin vivace,winter_flax
+F51,Litchi,
+F52,Liveche,
+F53,Lotier des marais,birds_foot_trefoil
+F54,Mandarinier,mandarin
+F55,Manguier,
+F56,Marjolaine,marjoram
+F57,Marrube blanc,
+F58,Matricaire,
+F59,Matricaire camomille,
+F60,Mauve,mallow
+F61,Mélange Floristique,
+F62,Mélange Pollinique,
+F63,Mélilot blanc,melilot
+F64,Mélilot officinal,melilot
+F65,Mélisse,lemon_balm
+F66,Menthe,mint
+F67,Menyanthe,
+F68,Millet perlé,millet
+F69,Miscanthus,miscanthus
+F70,Monarde,
+F71,Moutarde épinard,mustard
+F72,Mûrier (Arbuste),mulberry
+F73,Mûrier (Ronce),blackberry
+F74,Muscari,
+F75,Myosotis,
+F76,Myosotis hybride,
+F77,Myosotis sylvatica,
+F78,Myrthe ou myrte,
+F79,Myrtille et airelles,bilberry
+F80,Nashi,
+F81,Nèfle du Japon ,
+F82,Néflier d'Europe,
+F83,Noisetier,hazelnut
+F84,Noyer,walnut
+F85,Œillet d'Inde,
+F86,Olivier,olive
+F87,Onagre,
+F88,Oranger,orange
+F89,Origan,oregano
+F90,Ortie,nettle
+F91,Oseille,sorrel
+F92,Oxalis petite-oseille,
+F93,Pamplemoussier (pomelo),grapefruit
+F94,Panais,parsnip
+F95,Panic érigé (switch grass),
+F96,Passiflore,
+F97,Pastel,
+F98,Patate douce,sweet_patato
+F99,Pâtisson,
+G01,Pâturin ampla,rough_bluegrass
+G02,Pâturin annuel,rough_bluegrass
+G03,Pâturin comprimé,rough_bluegrass
+G04,Pâturin des bois,rough_bluegrass
+G05,Pâturin des marais,rough_bluegrass
+G06,Pavot de Californie,
+G07,Pêcher,peach
+G08,Pensée,pansy
+G09,Phalaris,
+G10,Piloselle,
+G11,Piment ,chili
+G12,Pimprenelle,
+G13,Pissenlit,
+G14,Pistachier,pistachio
+G15,Plantain lancéolé,black_psyllium
+G16,Plantain majeur,black_psyllium
+G17,Plantain psyllium,black_psyllium
+G18,Plaqueminier (Kaki),
+G19,Plumcot ,
+G20,Poirier,pear
+G21,Pommier,apple
+G22,Potentille,
+G23,Potiron,sugar_pumpkin
+G24,Pourpier,purslane
+G25,Prêle,
+G26,Primevère,primrose
+G27,Prunellier,
+G28,Prunier,plum
+G29,Pyrethre,
+G30,Raifort,
+G31,Ray-grass annuel,annual_ryegrass
+G32,Reine des prés,
+G33,Reine marguerite,
+G34,Renoncule,
+G35,Renouée,
+G36,Renouée à feuilles de Patience,
+G37,Renouée des oiseaux,
+G38,Renouée liseron,
+G39,Renouée persicaire,
+G40,Romarin,rosemary
+G41,Roquette,rocket
+G42,Rose d'Inde,
+G43,Rosier,
+G44,Sainfoin d'Espagne,sainfoin
+G45,Salicaire,
+G46,Sarrasin de Tartarie,buckwheat
+G47,Sarriette des jardins,savory
+G48,Sarriette vivace,savory
+G49,Sauge officinale,sage
+G50,Sauge sclarée,sage
+G51,Scabieuse,
+G52,Scorsonère,
+G53,Scrofulaire,
+G54,Scutellaire,
+G55,Seigle forestier,winter_rye
+G56,Solidage,
+G57,Souci,
+G58,Sureau,black_elderberry
+G59,Sisymbre,
+G60,Tagete,
+G61,Tanaisie = chrysanthème,
+G62,Thym,thyme
+G63,Tilleul,
+G64,Topinambour,jerusalem_artichoke
+G65,Trèfle aggloméré,clover
+G66,Trèfle bardane,clover
+G67,Trèfle fraise,clover
+G68,Trèfle hérissé,clover
+G69,Trèfle renversé,clover
+G70,Trèfle souterrain,clover
+G71,Trèfle strié,clover
+G72,Tritonia,
+G73,Vanille,vanilla
+G74,Véronique,speedwell
+G75,Véronique à fleurs de gentiane,speedwell
+G76,Véronique en épi,speedwell
+G77,Verveine officinale,
+G78,Vesce à quatre graines,common_vetch
+G79,Vesce de Narbonne,common_vetch
+G80,Vesce hérissée,common_vetch
+G81,Vesce jaune,common_vetch
+G82,Violette,
+G83,Vipérine faux plantain,
+G84,Vulnéraire,
+G85,Vulpin des champs,
+G86,Vulpin des prés,
+G87,Vulpin genouille,
+G88,Zinnia,
+H67,Centaurée,
+H68,Lotier,birds_foot_trefoil
+I05,Canne à sucre,sugar_cane
+J01,Cultures fruitières,
+J02,Cultures légumières,
+J10ZAQZFA,blé dur de printemps,spring_hard_wheat
+J10ZAQZFB,blé dur d'hiver,winter_hard_wheat
+J10ZARZFA,blé tendre de printemps,spring_common_wheat
+J10ZARZFB,blé tendre d'hiver,winter_common_wheat
+ZA2,Betterave sucrière,beetroot
+ZAF,Agrostide,
+ZAG,Ail,garlic
+ZAH,Arbres à noyaux,
+ZAI,Arbres à pépins,
+ZAJ,Artichaut,artichoke
+ZAK,Asperge,asparagus
+ZAL,Aubergine,eggplant
+ZAM,Avoine,winter_oat
+ZAN,Betterave fourragère,fodder_beetroot
+ZAO,Betterave rouge,beetroot
+ZAP,Brocoli,broccoli
+ZAQ,Blé dur,winter_hard_wheat
+ZAR,Blé tendre,winter_common_wheat
+ZAS,Céléri,celery
+ZAT,Brome,bromus
+ZAU,Cardon,
+ZAV,Carotte,carrot
+ZAW,Cassis,blackcurrant
+ZAX,Céleri,celery
+ZAY,Cerfeuil,chervil
+ZAZ,Chanvre,hemp
+ZBA,Chicorée,root_chicory
+ZBB,Choux,cabbage
+ZBC,Choux fourrager,fodder_cabbage
+ZBD,Choux-fleur,cauliflower
+ZBE,Colza,winter_rape
+ZBF,Concombre,cucumber
+ZBG,Coquelicot,
+ZBH,Cornichon,pickle
+ZBI,Courgette,zucchini
+ZBJ,Dactyle,cocksfoot
+ZBK,Echalote,shallot
+ZBL,Endive,curly_endive
+ZBM,Epeautre,spelt
+ZBN,Epinard,winter_spinach
+ZBO,Fenouil,fennel
+ZBP,Festullolium,festulolium
+ZBQ,Fétuque élevée,fescue
+ZBR,Fétuque des prés,fescue
+ZBS,Fève,broad_bean
+ZBT,Fèverole,winter_field_bean
+ZBU,Fléole,
+ZBV,Fraise,strawberry
+ZBW,Framboise,raspberry
+ZBX,Friche,
+ZBY,Fromental (avoine élevée),
+ZBZ,Groseille,redcurrant
+ZCA,Haricot sec (graines),dried_bean
+ZCB,Haricot vert,green_bean
+ZCC,Houblon,hop
+ZCD,Jachère autre semée,fallow
+ZCE,Jachère en crucifères,fallow
+ZCF,Jachère en graminées,fallow
+ZCG,Jachère en légumineuses et en graminées,fallow
+ZCH,Jachère en légumineuses,fallow
+ZCJ,Laitue,lettuce
+ZCK,Lentilles,fresh_lentil
+ZCL,Lin,winter_flax
+ZCM,Lotier cornicule,birds_foot_trefoil
+ZCN,Lupin blanc,winter_sweet_lupin
+ZCO,Lupin jaune,winter_sweet_lupin
+ZCP,Lupin bleu,winter_sweet_lupin
+ZCQ,Luzerne,alfalfa
+ZCR,Mâche,cornsalad
+ZCS,Maïs,grain_corn
+ZCSZLD,Maïs grain,grain_corn
+ZCSZLE,Maïs semences,seed_corn
+ZCSZLF,Maïs fourrage,silage_corn
+ZCSZLL,Maïs doux,sweet_corn
+ZCU,Mélange graminées protéagineux,proteaginous_mix
+ZCV,Mélilot,melilot
+ZCW,Melon,melon
+ZCX,Millepertuis,st_johns_wort
+ZCY,Minette (syn: Luzerne lupuline),black_medick
+ZCZ,Moha,foxtail_millet
+ZDA,Moutarde blanche,mustard
+ZDB,Moutarde brune,mustard
+ZDC,Moutarde noire,mustard
+ZDD,Navet,early_turnip
+ZDE,Navette,summer_field_mustard
+ZDF,Oeillette,opium_poppy
+ZDG,Oignon,onion
+ZDH,Orge,spring_barley
+ZDHZMUZFA,Escourgeon 6 rangs Printemps,spring_barley
+ZDHZMUZFB,Escourgeon 6 rangs hiver,spring_barley
+ZDHZMVZFA,Orge 2 rangs Printemps,spring_barley
+ZDHZMVZFB,Orge 2 rangs Hiver,spring_barley
+ZDI,Paturin des prés,rough_bluegrass
+ZDJ,Paturin commun,rough_bluegrass
+ZDK,Persil,parsley
+ZDL,Phacélie,phacelia
+ZDM,Piment,chili
+ZDN,Poireau,leek
+ZDO,Pois protéagineux,dried_pea
+ZDP,Pois de conserve,pea
+ZDQ,Pois chiche,chickpea
+ZDR,Poivron,pepper
+ZDS,Pomme de terre,potato
+ZDT,Potiron,sugar_pumpkin
+ZDU,Prairie,meadow
+ZDV,Radis,radish
+ZDW,Radis fourrager,fodder_radish
+ZDX,Ray grass anglais,ryegrass
+ZDY,Ray grass hybride,ryegrass
+ZDZ,Ray grass italie,ryegrass
+ZEA,Riz,rice
+ZEB,Rutabaga,rutabaga
+ZEC,Sainfouin,sainfoin
+ZED,Salsifis,salsify
+ZEH,Sarrazin,buckwheat
+ZEJ,Seigle,winter_rye
+ZEK,Serradelle,birds_foot
+ZEL,Soja,soy
+ZEM,Spergule,
+ZEN,Tabac,tobacco
+ZFA,Orge de printemps 2 rangs,spring_barley
+ZFB,Orge d'hiver 2 rangs,spring_barley
+ZMA,Tomate,tomato
+ZMB,Tournesol,sunflower
+ZMC,Trèfle violet,clover
+ZMD,Trèfle blanc,clover
+ZME,Trèfle inarnat,clover
+ZMF,Trèfle hybride,clover
+ZMG,Trèfle alexandrie,clover
+ZMH,Trèfle de Perse,clover
+ZMI,Triticale,winter_triticale
+ZMJ,Valériane,valerian
+ZMK,Vesce commune,common_vetch
+ZML,Vesce de Cerdagne,common_vetch
+ZMM,Vesce de Panonie,common_vetch
+ZMN,Vesce velue,common_vetch
+ZMO,Vigne ,vine
+ZND,Pastèque,watermelon
+ZNE,Sorgho,sorghum
+ZNF,Alpiste,
+ZNG,Millet commun,millet
+ZNP,Chou chinois,napa_cabbage
+ZOC,Mélange chasse,
+ZOD,Pois chiche,chickpea
+ZOE,Rhubarbe,rhubarb
+ZOF,Ricin,castor_bean
+ZOG,Autres aromatiques et médicinales,
+ZOH,Autres ornementales,annual_ornamental_plant_and_mapp
+ZOI,Autre potagères,annual_vegetable
+ZOJ,Espèces diverses,

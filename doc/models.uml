@@ -1,0 +1,124 @@
+@startuml
+
+
+
+package "TechnicalWorkflows" {
+class technical_worflows << (L,orchid) >>
+class technical_worflow_procedures << (L,orchid) >>
+class technical_worflow_procedure_items << (L,orchid) >>
+}
+
+class technical_worflows {
+~family
+~specie
+~production_system
+~unit
+}
+
+class technical_worflow_procedures {
+~procedure_reference
+}
+
+class technical_worflow_procedure_items {
+~actor_reference
+~procedure_item_reference
+~unit
+}
+
+technical_worflows "1" *-- "n" technical_worflow_procedures
+technical_worflow_procedures "1" *-- "n" technical_worflow_procedure_items
+
+
+
+package "TechnicalWorkflowSequences" {
+class technical_worflow_sequences << (L,orchid) >>
+}
+
+class technical_worflow_sequences {
+~family
+~specie
+~production_system
+}
+
+technical_worflow_sequences "n" *-* "n" technical_worflows
+
+
+
+package "InterventionModels" {
+class intervention_models << (L,orchid) >>
+class intervention_model_items << (L,orchid) >>
+}
+
+class intervention_models {
+~procedure_reference
+}
+
+class intervention_model_items {
+~procedure_item_reference
+~indicator_name
+~indicator_unit
+}
+
+intervention_models "1" *-- "n" intervention_model_items
+intervention_models "1" *-- "n" technical_worflow_procedures
+
+
+
+package "Variants" {
+class variant_categories << (L,orchid) >>
+class variant_types << (L,orchid) >>
+class variants << (L,orchid) >>
+class variants << (L,orchid) >>
+class prices << (L,orchid) >>
+class units << (L,orchid) >>
+}
+
+articles ()- variants
+services ()- variants
+doers ()- variants
+equipements ()- variants
+
+variants "1" *-- "n" prices
+variant_types "1" *-- "n" variants
+variant_categories "1" *-- "n" variants
+prices "n" --* "1" units
+variants "1" *-- "n" intervention_model_items
+variants "1" *-- "n" technical_worflow_procedure_items
+
+package "Ephy" {
+class registered_phytosanitary_products << (L,orchid) >>
+class registered_phytosanitary_usages << (L,orchid) >>
+class registered_phytosanitary_risks << (L,orchid) >>
+class registered_phytosanitary_symbols << (L,orchid) >>
+class ephy_cropsets << (L,orchid) >>
+}
+
+class registered_phytosanitary_products {
+~france_maaid
+}
+
+class registered_phytosanitary_usages {
+~product_id
+~species
+}
+
+class registered_phytosanitary_risks {
+~product_id
+~risk_code
+}
+
+class registered_phytosanitary_symbols {
+~symbol_name
+}
+
+class ephy_cropsets {
+~name
+~crop_names
+}
+
+registered_phytosanitary_products "1" *-- "n" registered_phytosanitary_usages
+ephy_cropsets "0,1" *-- "n" registered_phytosanitary_usages
+registered_phytosanitary_products "n" *-* "n" registered_phytosanitary_risks
+registered_phytosanitary_symbols "1" *-- "n" registered_phytosanitary_risks
+
+@enduml

@@ -1,0 +1,46 @@
+reference_name,fra,eng,capacity,capacity_unit
+1000kg_big_bag,Big bag (1000 kg),Big bag (1000 kg),1000,kilogram
+10l_can,Bidon (10 l),Can (10 l),10,liter
+125tg_bag,Sac (125000 grains),Bag (125000 grains),125,thousand
+12kg_bag,Sac (12 kg),Bag (12 kg),12,kilogram
+13kg_bottle,Bouteille (13 kg),Bottle (13 kg),13,kilogram
+150tg_bag,Sac (150000 grains),Bag (150000 grains),150,thousand
+1l_bottle,Bouteille (1 l),Bottle (1 l),1,liter
+1l_can,Bidon (1 l),Can (1 l),1,liter
+20kg_bag,Sac (20 kg),Bag (20 kg),20,kilogram
+25kg_bag,Sac (25 kg),Bag (25 kg),25,kilogram
+300ml_jar,Pot (300 ml),Jar (300 ml),0.3,liter
+500kg_big_bag,Big bag (500 kg),Big bag (500 kg),500,kilogram
+50tg_bag,Sac (50000 grains),Bag (50000 grains),50,thousand
+5l_can,Bidon (5 l),Can (5 l),5,liter
+600kg_big_bag,Big bag (600 kg),Big bag (600v kg),600,kilogram
+75cl_bottle,Bouteille (75 cl),Bottle (75 cl),0.75,liter
+cubic_bale_120_130_260,Balle cubique 120x130x260,Cubic bale 120x130x260,4.06,cubic_meter
+cubic_bale_70_120_260,Balle cubique 70x120x260,Cubic bale 70x120x260,2.18,cubic_meter
+cubic_bale_80_80_260,Balle cubique 80x80x260,Cubic bale 80x80x260,1.66,cubic_meter
+cubic_bale_90_120_260,Balle cubique 90x120x260,Cubic bale 90x120x260,2.81,cubic_meter
+cubic_meter_bulk,Vrac (m³),Bulk (m³),1,cubic_meter
+half_bottle,Demi-bouteille,Half-bottle,0.375,liter
+hour_equipment,Heure d'utilisation d'équipement,Hour equipment,1,hour
+hour_worker,Heure de travail,Hour worker,1,hour
+kilo_bulk,Vrac (kg),Bulk (kg),1,kilogram
+liter_bulk,Vrac (l),Bulk (l),1,liter
+magnum,Magnum,Magnum,1.5,liter
+quintal_bulk,Vrac (q),Bulk (q),1,quintal
+round_bale_120_120,Balle ronde 120x120,Round bale 120x120,1.36,cubic_meter
+round_bale_120_160,Balle ronde 120x160,Round bale 120x160,2.41,cubic_meter
+round_bale_120_180,Balle ronde 120x180,Round bale 120x180,3.05,cubic_meter
+ton_bulk,Vrac (t),Bult (t),1,ton
+unity_bulk,Vrac (unité),Bulk (unity),1,unity
+kilometer_bulk,Vrac (km),Bulk (km),1,kilometer
+2l_bib,Bag-in-Box (2 l),Bag-in-Box (2 l),2,liter
+3l_bib,Bag-in-Box (3 l),Bag-in-Box (3 l),3,liter
+5l_bib,Bag-in-Box (5 l),Bag-in-Box (5 l),5,liter
+10l_bib,Bag-in-Box (10 l),Bag-in-Box (10 l),10,liter
+15l_bib,Bag-in-Box (15 l),Bag-in-Box (15 l),15,liter
+20l_bib,Bag-in-Box (20 l),Bag-in-Box (20 l),20,liter
+worked_hectare,Hectare travaillé,Worked hectare,1,hectare
+hectoliter_bulk,Vrac (hl),Bulk (hl),1,hectoliter
+head,Tête,Head,1,unity
+20l_can,Bidon (20 l),Can (20 l),20,liter
+barel_bulk,Vrac (tonneau),Bulk (barel),900,liter

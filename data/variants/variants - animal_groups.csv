@@ -1,0 +1,14 @@
+reference_name,fra,eng,category,nature,derivative_of,pictogram,sex,reproductor
+duck_herd,Groupe de canards,Duck herd,herd,animal_herd,anatidae,uf97e-duck.svg,undefined,false
+hen_herd,Groupe de poules,Hen herd,herd,animal_herd,gallus_gallus_domesticus,uf2ed-hen.svg,female,true
+pig_herd,Groupe de cochons,Pig herd,herd,animal_herd,sus_scrofa,uf97d-pig.svg,undefined,false
+rabbit_herd,Groupe de lapin,Rabbit herd,herd,animal_herd,oryctolagus_cuniculus,uf97f-rabbit.svg,undefined,false
+male_adult_goat_herd,Troupeau de boucs,Male adult goat herd,herd,animal_herd,capra_hircus,uf985-goat.svg,male,false
+cattle_herd,Troupeau de bovins,Cattle herd,herd,animal_herd,bos_taurus,uf05a-cow.svg,undefined,false
+female_adult_sheep_herd,Troupeau de brebis,Female adult sheep herd,herd,animal_herd,ovis_aries,uf2eb-sheep.svg,female,true
+horse_herd,Troupeau de chevaux,Horse herd,herd,animal_herd,equus_caballus,uf983-horse.svg,undefined,false
+female_adult_goat_herd,Troupeau de chèvres,Female adult goat herd,herd,animal_herd,capra_hircus,uf985-goat.svg,female,true
+female_young_cattle_herd,Troupeau de génisses,Female young cattle herd,herd,animal_herd,bos_taurus,uf05a-cow.svg,female,true
+male_adult_cattle_herd,Troupeau de taureaux,Male adult cattle herd,herd,animal_herd,bos_taurus,uf05a-cow.svg,male,false
+male_young_cattle_herd,Troupeau de taurillons,Male young cattle herd,herd,animal_herd,bos_taurus,uf05a-cow.svg,male,false
+female_adult_cattle_herd,Troupeau de vaches laitières,Female adult cattle herd,herd,animal_herd,bos_taurus,uf05a-cow.svg,female,true

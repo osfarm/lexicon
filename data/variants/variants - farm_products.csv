@@ -1,0 +1,262 @@
+reference_name,fra,eng,category,nature,default_unit,target_specie,indicator_1_name,indicator_1_value,indicator_1_unit,indicator_2_name,indicator_2_value,indicator_2_unit,indicator_3_name,indicator_3_value,indicator_3_unit,pictogram
+alcohol,Alcool,Alcohol,processed_product,alcohol,liter,,,,,,,,,,,uf28c-bottles.svg
+alfalfa_hay,Foin de Luzerne,Alfalfa hay,plant_derivative,hay,ton,medicago_sativa,mass_volume_density,130,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
+alfalfa_silage,Ensilage de Luzerne,Alfalfa silage,plant_derivative,silage,ton,medicago_sativa,,,,,,,,,,uf98d-silo.svg
+angelica,Angélique,Angelica,plant_derivative,plant_derivative,kilogram,angelica,,,,,,,,,,uf940-seedling-solid.svg
+anise_grain,Graine d'Anis,Anise grain,plant_derivative,grain,quintal,pimpinella_anisum,,,,,,,,,,uf989-seed.svg
+apple,Pomme,Apple,fruit_and_vegetable,fruit,ton,malus_domestica,,,,,,,,,,uf987-fruits.svg
+apricot,Abricot,Apricot,fruit_and_vegetable,fruit,ton,prunus_armeniaca,,,,,,,,,,uf987-fruits.svg
+artichoke,Artichaut,Artichoke,fruit_and_vegetable,vegetable,ton,cynara_scolymus,,,,,,,,,,uf988-carrot.svg
+asparagus,Asperge,Asparagus,fruit_and_vegetable,vegetable,ton,asparagus_officianalis,,,,,,,,,,uf988-carrot.svg
+avocado,Avocat,Avocado,fruit_and_vegetable,fruit,ton,persea_americana,,,,,,,,,,uf987-fruits.svg
+banana,Banane,Banana,fruit_and_vegetable,fruit,ton,musa,,,,,,,,,,uf987-fruits.svg
+barley_grain,Grain d'Orge,Barley grain,plant_derivative,grain,quintal,hordeum_vulgare,,,,,,,,,,uf989-seed.svg
+barley_silage,Ensilage d'Orge,Barley silage,plant_derivative,silage,ton,hordeum_vulgare,,,,,,,,,,uf98d-silo.svg
+barley_straw,Paille d'Orge,Barley straw,plant_derivative,straw,ton,hordeum_vulgare,mass_volume_density,100,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
+basil,Basilic,Basil,plant_derivative,plant_derivative,kilogram,ocimum_basilicum,,,,,,,,,,uf940-seedling-solid.svg
+batavia,Batavia,Batavia,fruit_and_vegetable,vegetable,ton,lactuca_sativa_capitata,,,,,,,,,,uf98a-salad.svg
+bean,Haricot,Bean,fruit_and_vegetable,vegetable,ton,phaseolus_vulgaris,,,,,,,,,,uf988-carrot.svg
+beetroot,Betterave,Beetroot,fruit_and_vegetable,vegetable,ton,beta_vulgaris_vulgaris,,,,,,,,,,uf988-carrot.svg
+beetroot_fodder,Fourrage de Betterave,Beetroot fodder,plant_derivative,fodder,ton,beta_vulgaris_vulgaris,,,,,,,,,,uf95a-hay.svg
+bilberry,Myrtille,Bilberry,fruit_and_vegetable,fruit,ton,vaccinium,,,,,,,,,,uf987-fruits.svg
+bird_egg,Œuf d'oiseau,Bird egg,animal_derivative,egg,unity,aves,,,,,,,,,,uf956-eggs.svg
+bird_meat,Viande d'oiseau,Bird meat,animal_derivative,meat,kilogram,aves,,,,,,,,,,uf994-meat.svg
+birds_foot_hay,Foin de Serradelle,Birds foot hay,plant_derivative,hay,ton,ornithopus_sativus,,,,,,,,,,uf95a-hay.svg
+birds_foot_trefoil_fodder,Fourrage de Lotier,Birds foot trefoil fodder,plant_derivative,fodder,ton,lotus_corniculatus,,,,,,,,,,uf95a-hay.svg
+black_elderberry_flower,Fleur de Sureau noir,Black elderberry flower,plant_derivative,flower,ton,sambucus_nigra,,,,,,,,,,uf686-flower.svg
+black_eyed_pea_grain,Grain de Cornille,Black eyed pea grain,plant_derivative,grain,quintal,vigna_unguiculata_unguiculata,,,,,,,,,,uf989-seed.svg
+black_medick_fodder,Fourrage de Minette,Black medick fodder,plant_derivative,fodder,ton,medicago_lupulina,,,,,,,,,,uf95a-hay.svg
+black_psyllium_grain,Graine de Plantain pucier,Black psyllium grain,plant_derivative,grain,quintal,plantago_afra,,,,,,,,,,uf989-seed.svg
+blackberry,Mûre (ronce),Blackberry,fruit_and_vegetable,fruit,ton,rubus,,,,,,,,,,uf987-fruits.svg
+blackcurrant,Cassis,Blackcurrant,fruit_and_vegetable,fruit,ton,ribes_nigrum,,,,,,,,,,uf987-fruits.svg
+blond_psyllium_gain,Graine d'Ispaghul,Blond psyllium grain,plant_derivative,grain,quintal,plantago_ovata,,,,,,,,,,uf989-seed.svg
+borage,Bourrache,Borage,plant_derivative,flower,ton,borago,,,,,,,,,,uf686-flower.svg
+broad_bean,Fève,Broad bean,plant_derivative,grain,quintal,vicia_faba,,,,,,,,,,uf989-seed.svg
+broccoli,Brocoli,Broccoli,fruit_and_vegetable,vegetable,ton,brassica_oleracea_italica,,,,,,,,,,uf988-carrot.svg
+bromus_hay,Foin de Brôme,Bromus hay,plant_derivative,hay,ton,bromus,,,,,,,,,,uf95a-hay.svg
+bromus_silage,Ensilage de Brôme,Bromus silage,plant_derivative,silage,ton,bromus,,,,,,,,,,uf98d-silo.svg
+brussels_sprout,Chou de Bruxelles,Brussels sprout,fruit_and_vegetable,vegetable,ton,brassica_oleracea_gemmifera,,,,,,,,,,uf988-carrot.svg
+buckwheat_grain,Grain de Sarrasin,Buckwheat grain,plant_derivative,grain,quintal,fagopyrum_esculentum,,,,,,,,,,uf989-seed.svg
+bugle,Bugle rampant,Bugle,plant_derivative,plant_derivative,ton,ajuga_reptans,,,,,,,,,,uf940-seedling-solid.svg
+burdock,Bardane,Burdock,plant_derivative,plant_derivative,ton,arctium,,,,,,,,,,uf940-seedling-solid.svg
+butternut_squash,Courge butternut,Butternut squash,fruit_and_vegetable,vegetable,ton,cucurbita_moschata,,,,,,,,,,uf988-carrot.svg
+cabbage,Chou,Cabbage,fruit_and_vegetable,vegetable,ton,brassica_oleracea,,,,,,,,,,uf988-carrot.svg
+cabbage_fodder,Fourrage de Chou,Cabbage fodder,plant_derivative,fodder,ton,brassica_oleracea,,,,,,,,,,uf95a-hay.svg
+cacao,Cacao,Cacao,fruit_and_vegetable,fruit,ton,theobroma_cacao,,,,,,,,,,uf989-seed.svg
+camelina_grain,Grain de Cameline,Camelina grain,plant_derivative,grain,quintal,camelina_sativa,,,,,,,,,,uf989-seed.svg
+canary_grass_grain,Grain d'Alpiste,Canary grass grain,plant_derivative,grain,quintal,phalaris_canariensis,,,,,,,,,,uf989-seed.svg
+caraway_grain,Graine de Carvi,Caraway grain,plant_derivative,grain,quintal,carum_carvi,,,,,,,,,,uf989-seed.svg
+carob,Caroube,Carob,fruit_and_vegetable,fruit,ton,ceratonia_siliqua,,,,,,,,,,uf989-seed.svg
+carrot,Carotte,Carrot,fruit_and_vegetable,vegetable,ton,daucus_carota,,,,,,,,,,uf988-carrot.svg
+carrot_fodder,Fourrage de Carotte,Carrot fodder,plant_derivative,fodder,ton,daucus_carota,,,,,,,,,,uf95a-hay.svg
+cassava,Manioc,Cassava,fruit_and_vegetable,vegetable,ton,manihot_esculenta,,,,,,,,,,uf940-seedling-solid.svg
+castor_bean_grain,Graine de Ricin,Castor bean grain,plant_derivative,grain,quintal,ricinus_communis,,,,,,,,,,uf989-seed.svg
+catjang_grain,Graine de Dolique,Catjang grain,plant_derivative,grain,quintal,vigna_unguiculata_cylindrica,,,,,,,,,,uf989-seed.svg
+cauliflower,Chou-fleur,Cauliflower,fruit_and_vegetable,vegetable,ton,brassica_oleracea_botrytis,,,,,,,,,,uf988-carrot.svg
+celeriac,Céleri-rave,Celeriac,fruit_and_vegetable,vegetable,ton,apium_graveolens_rapaceum,,,,,,,,,,uf988-carrot.svg
+celery,Céleri-branche,Celery,fruit_and_vegetable,vegetable,ton,apium_graveolens_dulce,,,,,,,,,,uf988-carrot.svg
+chamomile,Camomille,Chamomile,plant_derivative,flower,ton,chamaemelum,,,,,,,,,,uf686-flower.svg
+chard,Bette,Chard,fruit_and_vegetable,vegetable,ton,beta_vulgaris_cicla,,,,,,,,,,uf98a-salad.svg
+cherry,Cerise,Cherry,fruit_and_vegetable,fruit,ton,prunus_cerasus,,,,,,,,,,uf987-fruits.svg
+chervil,Cerfeuil,Chervil,plant_derivative,plant_derivative,kilogram,anthriscus_cerefolium,,,,,,,,,,uf940-seedling-solid.svg
+chestnut,Châtaigne,Chestnut,fruit_and_vegetable,fruit,ton,castanea,,,,,,,,,,uf989-seed.svg
+chickpea,Pois chiche,Chickpea,plant_derivative,grain,quintal,cicer_arietinum,,,,,,,,,,uf988-carrot.svg
+chili,Piment,Chili,fruit_and_vegetable,vegetable,ton,capsicum,,,,,,,,,,uf988-carrot.svg
+chive,Ciboulette,Chive,plant_derivative,plant_derivative,kilogram,allium_schoenoprasum,,,,,,,,,,uf940-seedling-solid.svg
+clementine,Clémentine,Clementine,fruit_and_vegetable,fruit,ton,citrus_clementina,,,,,,,,,,uf987-fruits.svg
+clover_hay,Foin de Trèfle,Clover hay,plant_derivative,hay,ton,trifolium,,,,,,,,,,uf95a-hay.svg
+clover_silage,Ensilage de Trèfle,Clover silage,plant_derivative,silage,ton,trifolium,,,,,,,,,,uf98d-silo.svg
+cocksfoot_hay,Foin de Dactyle,Cocksfoot hay,plant_derivative,hay,ton,dactylis,,,,,,,,,,uf95a-hay.svg
+coffee_grain,Graine de Café,Coffee grain,plant_derivative,grain,ton,coffea,,,,,,,,,,uf989-seed.svg
+common_daisy,Pâquerette,Common daisy,plant_derivative,flower,ton,bellis_perennis,,,,,,,,,,uf686-flower.svg
+common_vetch_hay,Foin de Vesce,Common vetch hay,plant_derivative,hay,ton,vicia_sativa,,,,,,,,,,uf95a-hay.svg
+common_wheat_grain,Grain de Blé tendre,Common wheat grain,plant_derivative,grain,quintal,triticum_aestivum,,,,,,,,,,uf989-seed.svg
+common_wheat_hay,Foin de Blé tendre,Common wheat hay,plant_derivative,hay,ton,triticum_aestivum,,,,,,,,,,uf95a-hay.svg
+common_wheat_straw,Paille de Blé tendre,Common wheat straw,plant_derivative,straw,ton,triticum_aestivum,mass_volume_density,100,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
+coriander_grain,Graine de Coriandre,Coriander grain,plant_derivative,grain,quintal,coriandrum_sativum,,,,,,,,,,uf989-seed.svg
+corn_grain,Grain de Maïs,Corn grain,plant_derivative,grain,quintal,zea_mays,,,,,,,,,,uf989-seed.svg
+corn_silage,Ensilage de Maïs,Corn silage,plant_derivative,silage,ton,zea_mays,,,,,,,,,,uf98d-silo.svg
+cornflower,Bleuet,Cornflower,plant_derivative,flower,ton,centaurea_cyanus,,,,,,,,,,uf686-flower.svg
+cornsalad,Mâche,Cornsalad,fruit_and_vegetable,vegetable,ton,valerianella_locusta,,,,,,,,,,uf98a-salad.svg
+cotton,Coton,Cotton,plant_derivative,plant_derivative,ton,gossypium,,,,,,,,,,uf686-flower.svg
+cow_cheese,Fromage de vache,Cow cheese,processed_product,cheese,unity,bos_taurus,,,,,,,,,,uf98b-cheese.svg
+cow_fermented_milk,Lait fermenté de vache,Cow fermented milk,processed_product,fermented_milk,liter,bos_taurus,,,,,,,,,,uf95f-milk.svg
+cow_meat,Viande de bovin,Cow meat,animal_derivative,meat,kilogram,bos_taurus,,,,,,,,,,uf994-meat.svg
+cow_milk,Lait de vache,Cow milk,animal_derivative,milk,liter,bos_taurus,,,,,,,,,,uf95f-milk.svg
+cranberry,Canneberge,Cranberry,fruit_and_vegetable,fruit,ton,vaccinium,,,,,,,,,,uf987-fruits.svg
+cress,Cresson alénois,Cress,fruit_and_vegetable,vegetable,ton,lepidium_sativum,,,,,,,,,,uf98a-salad.svg
+cucumber,Concombre,Cucumber,fruit_and_vegetable,vegetable,ton,cucumis_sativus,,,,,,,,,,uf988-carrot.svg
+cumin_grain,Graine de Cumin,Cumin grain,plant_derivative,grain,quintal,cuminum,,,,,,,,,,uf989-seed.svg
+curly_endive,Chicorée frisée,Curly endive,fruit_and_vegetable,vegetable,ton,cichorium_endivia_crispum,,,,,,,,,,uf98a-salad.svg
+dill,Aneth,Dill,plant_derivative,plant_derivative,kilogram,anethum_graveolens,,,,,,,,,,uf940-seedling-solid.svg
+eggplant,Aubergine,Eggplant,fruit_and_vegetable,vegetable,ton,solanum_melongena,,,,,,,,,,uf988-carrot.svg
+escarole,Scarole,Escarole,fruit_and_vegetable,vegetable,ton,cichorium_endivia_latifolium,,,,,,,,,,uf98a-salad.svg
+eucalyptus,Eucalyptus,Eucalyptus,plant_derivative,plant_derivative,kilogram,eucalyptus,,,,,,,,,,uf940-seedling-solid.svg
+fennel,Fenouil,Fennel,fruit_and_vegetable,vegetable,ton,foeniculum_vulgare,,,,,,,,,,uf940-seedling-solid.svg
+fenugreek_grain,Graine de Fenugrec,Fenugreek grain,plant_derivative,grain,quintal,trigonella_foenum_graecum,,,,,,,,,,uf989-seed.svg
+fescue_hay,Foin de Fétuque,Fescue hay,plant_derivative,hay,ton,festuca,,,,,,,,,,uf95a-hay.svg
+festulolium_hay,Foin de Festulolium,Festulolium hay,plant_derivative,hay,ton,x_festulolium,,,,,,,,,,uf95a-hay.svg
+field_bean,Féverole,Field bean,plant_derivative,grain,quintal,vicia_faba,,,,,,,,,,uf989-seed.svg
+field_bean_fodder,Fourrage de Féverole,Field bean fodder,plant_derivative,fodder,ton,vicia_faba,,,,,,,,,,uf95a-hay.svg
+field_mustard_grain,Grain de Navette,Field mustard grain,plant_derivative,grain,quintal,brassica_rapa_oleifera,,,,,,,,,,uf989-seed.svg
+fig,Figue,Fig,fruit_and_vegetable,fruit,ton,ficus_carica,,,,,,,,,,uf987-fruits.svg
+fish_egg,Œuf de poisson,Fish egg,animal_derivative,egg,unity,actinopterygii,,,,,,,,,,uf956-eggs.svg
+fish_meat,Viande de poisson,Fish meat,animal_derivative,meat,kilogram,actinopterygii,,,,,,,,,,uf2ec-fish.svg
+flageolet_bean,Flageolet,Flageolet bean,fruit_and_vegetable,vegetable,ton,phaseolus_vulgaris,,,,,,,,,,uf988-carrot.svg
+flax_fiber,Fibre de lin,Flax fiber,plant_derivative,plant_derivative,quintal,linum_usitatissimum,,,,,,,,,,uf95a-hay.svg
+flax_grain,Graine de Lin,Flax grain,plant_derivative,grain,quintal,linum_usitatissimum,,,,,,,,,,uf989-seed.svg
+foxtail_millet_grain,Grain de Moha,Foxtail millet grain,plant_derivative,grain,ton,setaria_italica,,,,,,,,,,uf989-seed.svg
+foxtail_millet_hay,Foin de Moha,Foxtail millet hay,plant_derivative,hay,ton,setaria_italica,,,,,,,,,,uf95a-hay.svg
+galium,Gaillet,Galium,plant_derivative,plant_derivative,kilogram,galium,,,,,,,,,,uf940-seedling-solid.svg
+garlic,Ail,Garlic,fruit_and_vegetable,vegetable,ton,allium_sativum,,,,,,,,,,uf988-carrot.svg
+geranium,Géranium,Geranium,plant_derivative,flower,ton,geranium,,,,,,,,,,uf686-flower.svg
+giant_granadilla,Barbadine,Giant granadilla,fruit_and_vegetable,fruit,ton,passiflora_quadrangularis,,,,,,,,,,uf987-fruits.svg
+goat_cheese,Fromage de chèvre,Goat cheese,processed_product,cheese,unity,capra_hircus,,,,,,,,,,uf98b-cheese.svg
+goat_fermented_milk,Lait fermenté de chèvre,Goat fermented milk,processed_product,fermented_milk,liter,capra_hircus,,,,,,,,,,uf95f-milk.svg
+goat_meat,Viande de caprin,Goat meat,animal_derivative,meat,kilogram,capra_hircus,,,,,,,,,,uf994-meat.svg
+goat_milk,Lait de chèvre,Goat milk,animal_derivative,milk,liter,capra_hircus,,,,,,,,,,uf95f-milk.svg
+grape_fermented_juice,Jus fermenté de raisin,Grape fermented juice,processed_product,fermented_juice,hectoliter,vitis,,,,,,,,,,uf946-barrel.svg
+grape_juice,Jus de raisin,Grape juice,processed_product,fruit_juice,hectoliter,vitis,,,,,,,,,,uf946-barrel.svg
+grape_bulk,Mout de raisin,Grape,fruit_and_vegetable,fruit,hectoliter,vitis,,,,,,,,,,uf2bf-grape.svg
+grape,Raisin,Grape,fruit_and_vegetable,fruit,ton,vitis,,,,,,,,,,uf2bf-grape.svg
+grapefruit,Pamplemousse,Grapefruit,fruit_and_vegetable,fruit,ton,citrus_maxima,,,,,,,,,,uf987-fruits.svg
+guava,Goyave,Guava,fruit_and_vegetable,fruit,ton,psidium_guajava,,,,,,,,,,uf987-fruits.svg
+hard_wheat_grain,Grain de Blé dur,Hard wheat grain,plant_derivative,grain,quintal,triticum_durum,,,,,,,,,,uf989-seed.svg
+hard_wheat_straw,Paille de Blé dur,Hard wheat straw,plant_derivative,straw,ton,triticum_durum,mass_volume_density,100,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
+hazelnut,Noisette,Hazelnut,fruit_and_vegetable,fruit,ton,corylus,,,,,,,,,,uf989-seed.svg
+hemp,Chanvre,Hemp,plant_derivative,plant_derivative,ton,cannabis_sativa,,,,,,,,,,uf940-seedling-solid.svg
+honey,Miel,Honey,animal_derivative,honey,kilogram,apis_mellifera,,,,,,,,,,uf98e-honey.svg
+hop_flower,Houblon,Hop flower,plant_derivative,flower,ton,humulus_lupulus,,,,,,,,,,uf940-seedling-solid.svg
+horse_meat,Viande d'équin,Horse meat,animal_derivative,meat,kilogram,equus_caballus,,,,,,,,,,uf994-meat.svg
+jerusalem_artichoke,Topinambour,Jerusalem artichoke,fruit_and_vegetable,vegetable,ton,helianthus_tuberosus,,,,,,,,,,uf988-carrot.svg
+kale,Chou frisé,Kale,fruit_and_vegetable,vegetable,ton,brassica_oleracea_sabellica,,,,,,,,,,uf988-carrot.svg
+kiwi,Kiwi,Kiwi,fruit_and_vegetable,fruit,ton,actinidia,,,,,,,,,,uf987-fruits.svg
+kohlrabi,Chou-rave,Kohlrabi,fruit_and_vegetable,vegetable,ton,brassica_oleracea_gongylodes,,,,,,,,,,uf988-carrot.svg
+lavandin,Lavandin,Lavandin,plant_derivative,flower,quintal,lavandula_x_intermedia,,,,,,,,,,uf686-flower.svg
+lavender,Lavande,Lavender,plant_derivative,flower,ton,lavandula,,,,,,,,,,uf686-flower.svg
+leek,Poireau,Leek,fruit_and_vegetable,vegetable,ton,allium_porrum,,,,,,,,,,uf988-carrot.svg
+lemon,Citron,Lemon,fruit_and_vegetable,fruit,ton,citrus_x_limon,,,,,,,,,,uf987-fruits.svg
+lemon_balm,Mélisse,Lemon balm,plant_derivative,plant_derivative,kilogram,melissa_officinalis,,,,,,,,,,uf940-seedling-solid.svg
+lentil,Lentille,Lentil,plant_derivative,grain,quintal,lens_culinaris,,,,,,,,,,uf989-seed.svg
+lentil_fodder,Fourrage de Lentille,Lentil fodder,plant_derivative,fodder,ton,lens_culinaris,,,,,,,,,,uf95a-hay.svg
+lettuce,Laitue,Lettuce,fruit_and_vegetable,vegetable,ton,lactuca_sativa,,,,,,,,,,uf98a-salad.svg
+longan,Longane,Longan,fruit_and_vegetable,fruit,ton,dimocarpus_longan,,,,,,,,,,uf987-fruits.svg
+lupin_grain,Graine de Lupin,Lupin grain,plant_derivative,grain,quintal,lupinus,,,,,,,,,,uf989-seed.svg
+lupin_hay,Foin de Lupin,Lupin hay,plant_derivative,hay,ton,lupinus,,,,,,,,,,uf95a-hay.svg
+mallow,Mauve,Mallow,plant_derivative,flower,ton,malva,,,,,,,,,,uf940-seedling-solid.svg
+mandarin,Mandarine,Mandarin,fruit_and_vegetable,fruit,ton,citrus_reticulata,,,,,,,,,,uf987-fruits.svg
+marian_thistle,Chardon Marie,Marian thistle,plant_derivative,plant_derivative,kilogram,silybum_marianum,,,,,,,,,,uf940-seedling-solid.svg
+marjoram,Marjolaine,Marjoram,plant_derivative,plant_derivative,kilogram,origanum_majorana,,,,,,,,,,uf940-seedling-solid.svg
+melilot_hay,Foin de Mélilot,Melilot hay,plant_derivative,hay,ton,melilotus,,,,,,,,,,uf95a-hay.svg
+melon,Melon,Melon,fruit_and_vegetable,fruit,ton,cucumis_melo,,,,,,,,,,uf987-fruits.svg
+millet_grain,Grain de Millet,Millet grain,plant_derivative,grain,quintal,panicum_miliaceum,,,,,,,,,,uf989-seed.svg
+mint,Menthe,Mint,plant_derivative,plant_derivative,kilogram,mentha,,,,,,,,,,uf940-seedling-solid.svg
+miscanthus,Miscanthus,Miscanthus,plant_derivative,plant_derivative,kilogram,miscanthus,,,,,,,,,,uf940-seedling-solid.svg
+mulberry,Mûre (arbre),Mulberry,fruit_and_vegetable,fruit,ton,morus,,,,,,,,,,uf987-fruits.svg
+mustard_grain,Graine de Moutarde,Mustard grain,plant_derivative,grain,quintal,brassica_nigra,,,,,,,,,,uf989-seed.svg
+napa_cabbage,Chou chinois,Napa cabbage,fruit_and_vegetable,vegetable,ton,brassica_rapa_pekinensis,,,,,,,,,,uf988-carrot.svg
+nectarine,Nectarine,Nectarine,fruit_and_vegetable,fruit,ton,prunus_persica_nucipersica,,,,,,,,,,uf987-fruits.svg
+nyger_grain,Graine de Nyger,Nyger grain,plant_derivative,grain,quintal,guizotia_abyssinica,,,,,,,,,,uf989-seed.svg
+oakleaf,Feuille de chêne,Oakleaf,fruit_and_vegetable,vegetable,ton,lactuca_sativa_crispa,,,,,,,,,,uf98a-salad.svg
+oat_grain,Grain d'Avoine,Oat grain,plant_derivative,grain,quintal,avena_sativa,,,,,,,,,,uf989-seed.svg
+oat_hay,Foin d'Avoine,Oat hay,plant_derivative,hay,ton,avena_sativa,,,,,,,,,,uf95a-hay.svg
+oat_straw,Paille d'Avoine,Oat straw,plant_derivative,straw,ton,avena_sativa,mass_volume_density,100,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
+olive,Olive,Olive,fruit_and_vegetable,fruit,ton,olea_europaea,,,,,,,,,,uf987-fruits.svg
+onion,Oignon,Onion,fruit_and_vegetable,vegetable,ton,allium_cepa,,,,,,,,,,uf988-carrot.svg
+opium_poppy_grain,Graine d'Œillette,Opium poppy grain,plant_derivative,grain,quintal,papaver_somniferum,,,,,,,,,,uf989-seed.svg
+orange,Orange,Orange,fruit_and_vegetable,fruit,ton,citrus_sinensis,,,,,,,,,,uf987-fruits.svg
+oregano,Origan,Oregano,plant_derivative,plant_derivative,kilogram,origanum_vulgare,,,,,,,,,,uf940-seedling-solid.svg
+oxeye_daisy,Marguerite,Oxeye daisy,plant_derivative,flower,ton,leucanthemum,,,,,,,,,,uf686-flower.svg
+pansy,Pensée,Pansy,plant_derivative,flower,kilogram,viola,,,,,,,,,,uf686-flower.svg
+parsley,Persil,Parsley,plant_derivative,plant_derivative,kilogram,petroselinum_crispum,,,,,,,,,,uf940-seedling-solid.svg
+parsnip,Panais,Parsnip,fruit_and_vegetable,vegetable,ton,pastinaca_sativa,,,,,,,,,,uf988-carrot.svg
+pea_grain,Pois,Pea,plant_derivative,grain,quintal,pisum_sativum,,,,,,,,,,uf988-carrot.svg
+pea_fodder,Fourrage de Pois,Pea fodder,plant_derivative,fodder,ton,pisum_sativum,,,,,,,,,,uf95a-hay.svg
+peach,Pêche,Peach,fruit_and_vegetable,fruit,ton,prunus_persica,,,,,,,,,,uf987-fruits.svg
+peanut,Cacahuète,Peanut,plant_derivative,fruit,quintal,arachis_hypogaea,,,,,,,,,,uf989-seed.svg
+pear,Poire,Pear,fruit_and_vegetable,fruit,ton,pyrus_communis,,,,,,,,,,uf987-fruits.svg
+pepper,Poivron,Pepper,fruit_and_vegetable,vegetable,ton,capsicum_annuum,,,,,,,,,,uf988-carrot.svg
+persimmon,Kaki,Persimmon,fruit_and_vegetable,fruit,ton,diospyros_kaki,,,,,,,,,,uf987-fruits.svg
+phacelia,Phacélie,Phacelia,plant_derivative,plant_derivative,kilogram,phacelia,,,,,,,,,,uf940-seedling-solid.svg
+pickle,Cornichon,Pickle,fruit_and_vegetable,vegetable,ton,cucumis_sativus,,,,,,,,,,uf988-carrot.svg
+pig_meat,Viande de porcin,Pig meat,animal_derivative,meat,kilogram,sus_scrofa,,,,,,,,,,uf994-meat.svg
+pineapple,Ananas,Pineapple,fruit_and_vegetable,fruit,ton,ananas_comosus,,,,,,,,,,uf987-fruits.svg
+pistachio,Pistache,Pistachio,fruit_and_vegetable,fruit,ton,pistacia_vera,,,,,,,,,,uf989-seed.svg
+plum,Prune,Plum,fruit_and_vegetable,fruit,ton,prunus_domestica,,,,,,,,,,uf987-fruits.svg
+pop_corn_grain,Grain de Maïs popcorn,Pop corn grain,plant_derivative,grain,quintal,zea_mays_everta,,,,,,,,,,uf989-seed.svg
+potato,Pomme de terre,Potato,fruit_and_vegetable,vegetable,ton,solanum_tuberosum,,,,,,,,,,uf988-carrot.svg
+primula,Primevère,Primula,plant_derivative,flower,kilogram,primula,,,,,,,,,,uf686-flower.svg
+processed_food,Nourriture transformée,Processed food,processed_product,processed_food,kilogram,,,,,,,,,,,uf98f-processed-food.svg
+pumpkin,Citrouille,Pumpkin,fruit_and_vegetable,vegetable,ton,cucurbita_pepo_pepo,,,,,,,,,,uf988-carrot.svg
+purslane,Pourpier,Purslane,plant_derivative,plant_derivative,kilogram,portulaca_oleracea,,,,,,,,,,uf98a-salad.svg
+quince,Coing,Quince,fruit_and_vegetable,fruit,ton,cydonia_oblonga,,,,,,,,,,uf987-fruits.svg
+quinoa_grain,Grain de Quinoa,Quinoa grain,plant_derivative,grain,quintal,chenopodium_quinoa,,,,,,,,,,uf989-seed.svg
+rabbit_meat,Viande de lapin,Rabbit meat,animal_derivative,meat,kilogram,oryctolagus_cuniculus,,,,,,,,,,uf994-meat.svg
+radish,Radis,Radish,fruit_and_vegetable,vegetable,ton,raphanus_sativus,,,,,,,,,,uf988-carrot.svg
+radish_fodder,Fourrage de Radis,Radish fodder,plant_derivative,fodder,ton,raphanus_sativus,,,,,,,,,,uf95a-hay.svg
+rape_grain,Grain de Colza,Rape grain,plant_derivative,grain,quintal,brassica_napus_napus,,,,,,,,,,uf989-seed.svg
+raspberry,Framboise,Raspberry,fruit_and_vegetable,fruit,ton,rubus_idaeus,,,,,,,,,,uf987-fruits.svg
+red_kuri,Potimarron,Red kuri,fruit_and_vegetable,vegetable,ton,cucurbita_maxima,,,,,,,,,,uf988-carrot.svg
+redcurrant,Groseille,Redcurrant,fruit_and_vegetable,fruit,ton,ribes,,,,,,,,,,uf987-fruits.svg
+rhubarb,Rhubarbe,Rhubarb,fruit_and_vegetable,vegetable,ton,rheum_rhabarbarum,,,,,,,,,,uf98a-salad.svg
+rice_grain,Grain de Riz,Rice grain,plant_derivative,grain,quintal,oryza_sativa,,,,,,,,,,uf989-seed.svg
+rocket,Roquette,Rocket,fruit_and_vegetable,vegetable,ton,eruca_vesicaria,,,,,,,,,,uf98a-salad.svg
+root_chicory,Chicorée industrielle,Root chicory,fruit_and_vegetable,vegetable,ton,cichorium_intybus_sativum,,,,,,,,,,uf988-carrot.svg
+rosemary,Romarin,Rosemary,plant_derivative,plant_derivative,kilogram,salvia_rosmarinus,,,,,,,,,,uf940-seedling-solid.svg
+rough_bluegrass_hay,Foin de Pâturin,Rough bluegrass hay,plant_derivative,hay,ton,poa_trivialis,,,,,,,,,,uf95a-hay.svg
+rutabaga,Rutabaga,Rutabaga,fruit_and_vegetable,vegetable,ton,brassica_napus_rapifera,,,,,,,,,,uf988-carrot.svg
+rye_grain,Grain de Seigle,Rye grain,plant_derivative,grain,quintal,secale_cereale,,,,,,,,,,uf989-seed.svg
+rye_silage,Ensilage de Seigle,Rye silage,plant_derivative,silage,ton,secale_cereale,,,,,,,,,,uf98d-silo.svg
+rye_straw,Paille de Seigle,Rye straw,plant_derivative,straw,ton,secale_cereale,mass_volume_density,100,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
+ryegrass_hay,Foin de Ray-grass,Ryegrass hay,plant_derivative,hay,ton,lolium,mass_volume_density,130,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
+ryegrass_silage,Ensilage de Ray-grass,Ryegrass silage,plant_derivative,silage,ton,lolium,,,,,,,,,,uf98d-silo.svg
+sage,Sauge,Sage,plant_derivative,plant_derivative,kilogram,salvia,,,,,,,,,,uf940-seedling-solid.svg
+sainfoin_hay,Foin de Sainfoin,Sainfoin hay,plant_derivative,hay,ton,onobrychis_viciifolia,,,,,,,,,,uf95a-hay.svg
+salsify,Salsifis,Salsify,fruit_and_vegetable,vegetable,ton,tragopogon_porrifolius,,,,,,,,,,uf988-carrot.svg
+savory,Sariette,Savory,plant_derivative,plant_derivative,kilogram,satureja,,,,,,,,,,uf940-seedling-solid.svg
+savoy_cabbage,Chou de Milan,Savoy cabbage,fruit_and_vegetable,vegetable,ton,brassica_oleracea_sabauda,,,,,,,,,,uf988-carrot.svg
+shallot,Échalote,Shallot,fruit_and_vegetable,vegetable,ton,allium_cepa_aggregatum,,,,,,,,,,uf988-carrot.svg
+sheep_cheese,Fromage de brebis,Sheep cheese,processed_product,cheese,unity,ovis_aries,,,,,,,,,,uf98b-cheese.svg
+sheep_fermented_milk,Lait fermenté de brebis,Sheep fermented milk,processed_product,fermented_milk,liter,ovis_aries,,,,,,,,,,uf95f-milk.svg
+sheep_meat,Viande d'ovin,Sheep meat,animal_derivative,meat,kilogram,ovis_aries,,,,,,,,,,uf994-meat.svg
+sheep_milk,Lait de brebis,Sheep milk,animal_derivative,milk,liter,ovis_aries,,,,,,,,,,uf95f-milk.svg
+sheep_wool,Laine de mouton,Sheep wool,animal_derivative,wool,kilogram,ovis_aries,,,,,,,,,,uf98c-wool.svg
+sorghum_grain,Grain de Sorgho,Sorghum grain,plant_derivative,grain,quintal,sorghum,,,,,,,,,,uf989-seed.svg
+sorrel,Oseille,Sorrel,plant_derivative,plant_derivative,kilogram,rumex,,,,,,,,,,uf98a-salad.svg
+soy_grain,Graine de Soja,Soy grain,plant_derivative,grain,quintal,glycine_max,,,,,,,,,,uf989-seed.svg
+speedwell,Véronique,Speedwell,plant_derivative,plant_derivative,kilogram,veronica,,,,,,,,,,uf686-flower.svg
+spelt_grain,Grain d'Épeautre,Spelt grain,plant_derivative,grain,quintal,triticum_spelta,,,,,,,,,,uf989-seed.svg
+spinach,Épinard,Spinach,fruit_and_vegetable,vegetable,ton,spinacia_oleracea,,,,,,,,,,uf98a-salad.svg
+squash,Courge musquée,Squash,fruit_and_vegetable,vegetable,ton,cucurbita_moschata,,,,,,,,,,uf988-carrot.svg
+st_johns_wort,Millepertuis,St John's wort,plant_derivative,flower,ton,hypericum,,,,,,,,,,uf940-seedling-solid.svg
+strawberry,Fraise,Strawberry,fruit_and_vegetable,fruit,ton,fragaria,,,,,,,,,,uf987-fruits.svg
+sugar_cane,Canne à sucre,Sugar cane,plant_derivative,plant_derivative,ton,saccharum_officinarum,,,,,,,,,,uf940-seedling-solid.svg
+sugar_pumpkin,Potiron,Sugar pumpkin,fruit_and_vegetable,vegetable,ton,cucurbita_maxima,,,,,,,,,,uf988-carrot.svg
+sunflower_grain,Grain de Tournesol,Sunflower grain,plant_derivative,grain,quintal,helianthus_annuus,,,,,,,,,,uf989-seed.svg
+sweet_corn_grain,Grain de Maïs doux,Sweet corn grain,plant_derivative,grain,quintal,zea_mays_saccharata,,,,,,,,,,uf989-seed.svg
+sweet_potato,Patate douce,Sweet potato,fruit_and_vegetable,vegetable,ton,ipomoea_batatas,,,,,,,,,,uf988-carrot.svg
+tarragon,Estragon,Tarragon,plant_derivative,plant_derivative,kilogram,artemisia_dracunculus,,,,,,,,,,uf940-seedling-solid.svg
+thyme,Thym,Thyme,plant_derivative,plant_derivative,kilogram,thymus,,,,,,,,,,uf940-seedling-solid.svg
+timothy_hay,Foin de Fléole,Timothy hay,plant_derivative,hay,ton,phleum,,,,,,,,,,uf95a-hay.svg
+tobacco,Tabac,Tobacco,plant_derivative,plant_derivative,ton,nicotiana_tabacum,,,,,,,,,,uf940-seedling-solid.svg
+tomato,Tomate,Tomato,fruit_and_vegetable,vegetable,ton,solanum_lycopersicum,,,,,,,,,,uf987-fruits.svg
+triticale_grain,Grain de Triticale,Triticale grain,plant_derivative,grain,quintal,x_triticosecale,,,,,,,,,,uf989-seed.svg
+triticale_straw,Paille de Triticale,Triticale straw,plant_derivative,straw,ton,x_triticosecale,mass_volume_density,100,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
+tufted_vetch_hay,Foin de Jarosse,Tufted vetch hay,plant_derivative,hay,ton,vicia_cracca,,,,,,,,,,uf95a-hay.svg
+turmeric,Curcuma,Turmeric,plant_derivative,plant_derivative,kilogram,curcuma_longa,,,,,,,,,,uf940-seedling-solid.svg
+turnip,Navet,Turnip,fruit_and_vegetable,vegetable,ton,brassica_rapa_rapa,,,,,,,,,,uf988-carrot.svg
+turnip_fodder,Fourrage de Navet,Turnip fodder,plant_derivative,fodder,ton,brassica_rapa_rapa,,,,,,,,,,uf95a-hay.svg
+urtica,Ortie,Urtica,plant_derivative,plant_derivative,kilogram,urtica,,,,,,,,,,uf940-seedling-solid.svg
+valerian,Valériane,Valerian,plant_derivative,plant_derivative,kilogram,valeriana,,,,,,,,,,uf686-flower.svg
+vanilla,Vanille,Vanilla,fruit_and_vegetable,fruit,ton,vanilla,,,,,,,,,,uf940-seedling-solid.svg
+vetiver,Vétiver,Vetiver,plant_derivative,plant_derivative,kilogram,chrysopogon,,,,,,,,,,uf940-seedling-solid.svg
+walnut,Noix,Walnut,fruit_and_vegetable,fruit,ton,juglans,,,,,,,,,,uf989-seed.svg
+watercress,Cresson de fontaine,Watercress,fruit_and_vegetable,vegetable,ton,nasturtium_officinale,,,,,,,,,,uf940-seedling-solid.svg
+watermelon,Pastèque,Watermelon,fruit_and_vegetable,fruit,ton,citrullus_lanatus,,,,,,,,,,uf987-fruits.svg
+white_cabbage,Chou pommé,White cabbage,fruit_and_vegetable,vegetable,ton,brassica_oleracea_capitata,,,,,,,,,,uf988-carrot.svg
+white_pea_grain,Graine de Gesse,White pea grain,plant_derivative,grain,quintal,lathyrus_sativus,,,,,,,,,,uf989-seed.svg
+wine,Vin,Wine,processed_product,wine,hectoliter,,,,,,,,,,,uf28c-bottles.svg
+witloof,Endive,Witloof,fruit_and_vegetable,vegetable,ton,cichorium_intybus_foliosum,,,,,,,,,,uf988-carrot.svg
+yam,Igname,Yam,fruit_and_vegetable,vegetable,ton,dioscorea,,,,,,,,,,uf987-fruits.svg
+ylang_ylang,Ylang-ylang,Ylang-ylang,plant_derivative,flower,ton,cananga_odorata,,,,,,,,,,uf686-flower.svg
+zucchini,Courgette,Zucchini,fruit_and_vegetable,vegetable,ton,cucurbita_pepo_pepo,,,,,,,,,,uf988-carrot.svg

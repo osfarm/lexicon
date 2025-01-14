@@ -1,0 +1,10 @@
+category_name,normalized
+HERBICIDE,herbicide
+HORS HERBICIDE,other
+FONGICIDE,fungicide
+INSECTICIDE_ACARICIDE,insecticide
+AUTRE,other
+Insecticides acaricides,insecticide
+Fongicides bactericides,fungicide
+Herbicides,herbicide
+Autres,other

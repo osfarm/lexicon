@@ -1,0 +1,61 @@
+reference_name,fra,eng,category,nature,default_unit,pictogram
+additional_activity,Activité annexe,Additional activity,additional_activity,fee_and_external_service,unity,uf5cd-industry.svg
+advertising_and_public_relation,Publicité et relation publique,Advertising and public relation,advertising_and_public_relation,fee_and_external_service,unity,ufa1c-bullhorn.svg
+animal_identification,Frais d'identification animale,Animal identification,animal_service,fee_and_external_service,unity,uf952-cow-alt.svg
+animal_product_tax,Taxe spécifique sur produit animal,Animal product tax,animal_product_tax,fee_and_external_service,unity,uf0e2-money.svg
+animal_rent,Location d'animal,Animal rent,animal_rent,fee_and_external_service,unity,uf952-cow-alt.svg
+animal_service,Prestation de service animal,Animal service,animal_service,agricultural_service,unity,ufa0a-service.svg
+animal_tax,Taxe spécifique sur animal,Animal tax,animal_tax,fee_and_external_service,unity,uf0e2-money.svg
+associate_social_contribution,Cotisation sociale de l'exploitant,Associate social contribution,associate_social_contribution,fee_and_external_service,unity,uf0e2-money.svg
+bank_service,Service bancaire,Bank service,bank_service,fee_and_external_service,unity,uf284-university.svg
+breeding_performance_control,Contrôle de performance élevage,Breeding performance control,animal_service,fee_and_external_service,unity,ufa0a-service.svg
+co_ownership_and_locative_charge,Charge locative et de copropriété,Co ownership and locative charge,co_ownership_and_locative_charge,fee_and_external_service,unity,uf0e2-money.svg
+congress,"Colloque, séminaire et conférence",Congress,congress,fee_and_external_service,unity,uf284-university.svg
+cooperative_participation,Participation à des coopératives,Cooperative participation,cooperative_participation,fee_and_external_service,unity,uf0e2-money.svg
+documentation,Documentation,Documentation,documentation,fee_and_external_service,unity,uf021-book-open.svg
+electricity,Électricité,Electricity,electricity,fee_and_external_service,kilowatt_hour,uf963-energy.svg
+equipment_rent,Location d'équipement,Equipment rent,equipment_rent,fee_and_external_service,hour,uf0e2-money.svg
+establishment_expense,Frais d'établissement,Establishment expense,establishment_expense,fee_and_external_service,unity,uf0e2-money.svg
+exceptional,Charge et produit exceptionnels,Exceptional,exceptional,fee_and_external_service,unity,uf0e2-money.svg
+exploitation_subsidy,Subvention d'exploitation,Exploitation subsidy,exploitation_subsidy,fee_and_external_service,unity,uf0e2-money.svg
+external_oenological_analysis,Analyse oenologique,Oenological analysis,study_and_research,fee_and_external_service,unity,uf0e2-money.svg
+external_soil_analysis,Analyse de sol,Soil analysis,study_and_research,fee_and_external_service,unity,uf0e2-money.svg
+fee,Rémunératon d'intermédiaire et honoraires,Fee,fee,fee_and_external_service,unity,uf0e2-money.svg
+government_payroll_tax,Impôt et taxe sur rémunération (administration des impôts),Government payroll tax,government_payroll_tax,fee_and_external_service,unity,uf0e2-money.svg
+government_tax,Impôt et taxe (administration des impôts),Government tax,government_tax,fee_and_external_service,unity,uf0e2-money.svg
+insurance,Prime et indemnité d'assurance,Insurance,insurance,fee_and_external_service,unity,uf0e2-money.svg
+it_services,Services informatiques,IT services,other_external_service,fee_and_external_service,unity,uf2da-server.svg
+land_rent,Fermage – Location de terrain,Land rent,land_rent,fee_and_external_service,unity,uf0e2-money.svg
+leasing,Redevance de crédit-bail,Leasing,leasing,fee_and_external_service,unity,uf0e2-money.svg
+licence,Redevance pour brevet et licence,Licence,licence,fee_and_external_service,unity,uf0e2-money.svg
+loan_interests,Charge d'intérêt,Loan interests,loan_interests,fee_and_external_service,unity,uf0e2-money.svg
+maintenance_and_repair_service,Entretien et réparation,Maintenance and repair service,maintenance_and_repair_service,fee_and_external_service,unity,uf941-tools.svg
+other_entity_payroll_tax,Impôt et taxe sur rémunération (autre organisme),Other entity payroll tax,other_entity_payroll_tax,fee_and_external_service,unity,uf0e2-money.svg
+other_entity_tax,Impôt et taxe (autre organisme),Other entity tax,other_entity_tax,fee_and_external_service,unity,uf0e2-money.svg
+other_external_service,Cotisation professionnelle,Other external service,other_external_service,fee_and_external_service,unity,uf0e2-money.svg
+other_financial,Charge et produit financier,Other financial,other_financial,fee_and_external_service,unity,uf0e2-money.svg
+other_packaging_expenses,Frais de conditionnement,Other packaging expenses,packaging,fee_and_external_service,unity,uf995-box.svg
+other_rent,Location,Other rent,other_rent,fee_and_external_service,unity,uf0e2-money.svg
+other_social_expense,Charge sociale,Other social expense,other_social_expense,fee_and_external_service,unity,uf0e2-money.svg
+other_staff_expense,Charge de personnel,Other staff expense,other_staff_expense,fee_and_external_service,unity,uf0e2-money.svg
+packaging_rent,Malus sur emballage,Packaging rent,packaging_rent,fee_and_external_service,unity,uf0e2-money.svg
+plant_product_tax,Taxe spécifique sur produit végétal,Plant product tax,plant_product_tax,fee_and_external_service,unity,uf0e2-money.svg
+processed_product_tax,Taxe spécifique sur produit transformé,Processed product tax,processed_product_tax,fee_and_external_service,unity,uf0e2-money.svg
+purchase_discount_and_reduction,"Rabais, remise et ristourne sur produit",Purchase discount and reduction,purchase_discount_and_reduction,fee_and_external_service,unity,uf0e2-money.svg
+rendering_expense,Frais d'équarrissage,Rendering expense,animal_service,fee_and_external_service,unity,uf0e2-money.svg
+reproduction,Frais de reproductions,Reproduction,animal_service,fee_and_external_service,unity,uf0e2-money.svg
+research_and_development,Recherche et développement,Research and development,research_and_development,fee_and_external_service,unity,ufa0d-user-chart.svg
+running_water,Eau courante,Running water,running_water,fee_and_external_service,cubic_meter,uf99e-faucet.svg
+self_consumption,Autoconsommation,Self consumption,self_consumption,fee_and_external_service,unity,uf994-meat.svg
+service_discount_and_reduction,"Rabais, remise et ristourne sur service",Service discount and reduction,service_discount_and_reduction,fee_and_external_service,unity,uf0e2-money.svg
+social_contribution,Sécurité sociale,Social contribution,social_contribution,fee_and_external_service,unity,uf0e2-money.svg
+study_and_research,Étude et recherche,Study and research,study_and_research,fee_and_external_service,unity,ufa0d-user-chart.svg
+subcontracting,Sous-traitance,Subcontracting,subcontracting,fee_and_external_service,unity,uf0e2-money.svg
+telecommunication,Télécommunication,Telecommunication,telecommunication,fee_and_external_service,unity,uf877-phone-iphone.svg
+transportation,Transport de biens et de personnel,Transportation,transportation,fee_and_external_service,unity,uf973-truck-pickup.svg
+trip,"Déplacement, mission et réception",Trip,trip,fee_and_external_service,unity,ufa02-trip.svg
+vegetal_service_duration,Prestation de service végétal (heure),Vegetal service,vegetal_service,agricultural_service,hour,uf940-seedling-solid.svg
+vegetal_service_surface,Prestation de service végétal (hectare),Vegetal service,vegetal_service,agricultural_service,hectare,uf940-seedling-solid.svg
+vegetal_service_flat,Prestation de service végétal (forfait),Vegetal service,vegetal_service,agricultural_service,unity,uf940-seedling-solid.svg
+veterinary,Vétérinaire,Veterinary,veterinary,fee_and_external_service,unity,uf166-user-md.svg
+waste_tax,Contribution aux déchets,Waste tax,waste_tax,fee_and_external_service,unity,Uf26e-recycle.svg

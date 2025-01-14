@@ -1,0 +1,8 @@
+inherit_from: https://gitlab.com/ekylibre/tools/rubocop/-/raw/0.2.0/.rubocop.yml
+
+AllCops:
+  Exclude:
+    - 'lib/datasources/**/*'
+
+Naming/AccessorMethodName:
+  Enabled: false

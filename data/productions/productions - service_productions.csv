@@ -1,0 +1,4 @@
+reference_name,activity_family,fra,eng,specie,usage,started_on,stopped_on,agroedi_crop_code,season,life_duration,idea_botanic_family,idea_specie_family,idea_output_family
+direct_sale,service_delivering,Vente directe,Direct sale,service,,01/01/00,31/12/00,,,20,,,
+indirect_sale,service_delivering,Vente indirecte,Indirect sale,service,,01/01/00,31/12/00,,,20,,,
+external_service,service_delivering,Prestation de service,External service,service,,01/01/00,31/12/00,,,20,,,

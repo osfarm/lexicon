@@ -1,0 +1,104 @@
+"id","name","normalized","ratio"
+26,"%","percent",1
+123,"bâtonnet/L de substrat",,
+69,"bidon/ha",,
+12,"cc/q",,
+62,"cm3/ql",,
+65,"comprimé/100l",,
+64,"comprimé/20l",,
+66,"comprimé/ha",,
+134,"comprimé/l",,
+85,"comprimé/m3",,
+61,"diffuseurs/ha",,
+29,"g","gram",1
+70,"g/100 kg de caïeux",,
+114,"g/100 kg de compost",,
+28,"g/100 m2","gram","0.01"
+27,"g/100 m3","gram_per_hectoliter","0.001"
+127,"g/10m2","gram","0.1"
+58,"g/25t","gram_per_kilogram","0.0025"
+57,"g/50t","gram_per_kilogram","0.005"
+53,"g/bouture",,
+84,"g/h/m3",,
+5,"g/ha","gram_per_square_meter","0.0001"
+6,"g/hl","gram_per_hectoliter",1
+11,"g/kg","gram_per_kilogram",1
+56,"g/l","gram_per_liter",1
+131,"g/L d'eau",,
+130,"g/L de substrat",,
+136,"g/m linéaire",,
+9,"g/m2","gram_per_square_meter",1
+132,"g/m2 de substrat",,
+13,"g/m3","gram_per_hectoliter","0.1"
+113,"g/palme",,
+55,"g/pied",,
+54,"g/plant",,
+7,"g/q","gram_per_kilogram","0.01"
+25,"g/t","gram_per_kilogram","0.001"
+126,"g/trou",,
+19,"g/u",,
+68,"granulés/ha",,
+74,"kg","kilogram",1
+83,"kg/100 kg de caieux",,
+50,"kg/100m2","kilogram_per_square_meter","0.01"
+51,"kg/100m3","kilogram_per_hectoliter","0.001"
+49,"kg/10l","kilogram_per_liter","0.1"
+48,"kg/10m2","kilogram_per_square_meter","0.1"
+79,"kg/25t",,
+78,"kg/50t",,
+75,"kg/bouture",,
+3,"kg/ha","kilogram_per_hectare",1
+4,"kg/hl","kilogram_per_hectoliter",1
+73,"kg/kg",,
+47,"kg/kg de vers de terre",,
+77,"kg/l","kilogram_per_liter",1
+45,"kg/m2","kilogram_per_square_meter",1
+46,"kg/m3","kilogram_per_hectoliter","0.1"
+76,"kg/pied",,
+44,"kg/plant",,
+18,"kg/q",,
+52,"kg/ql",,
+16,"kg/t",,
+17,"kg/u",,
+41,"l/100 m2","liter_per_hectare","0.01"
+42,"l/100 m3",,
+39,"l/1000 plants",,
+38,"l/10l",,
+37,"l/10m2","liter_per_hectare","0.001"
+82,"l/15 arbres",,
+1,"l/ha","liter_per_hectare",1
+2,"l/hl",,
+14,"l/kg",,
+40,"l/kg d'appat",,
+36,"l/l",,
+10,"l/m2","liter_per_square_meter",1
+35,"l/m3",,
+34,"l/pied",,
+8,"l/q",,
+80,"l/qf",,
+81,"l/ql",,
+15,"l/t",,
+33,"l/u",,
+86,"l/unité de 100000 graines",,
+125,"l/unité de 140000 graines",,
+71,"l/unité de 50000 graines",,
+99,"larves/5 à 10 m2",,
+116,"mg/plant",,
+111,"ml/10m2",,
+67,"ml/15 arbres",,
+115,"ml/application",,
+135,"ml/ha",,
+22,"ml/hl","milliliter_per_liter","0.01"
+32,"ml/l","milliliter_per_liter",1
+21,"ml/m2",,
+128,"ml/m2 de collets",,
+72,"ml/m3","milliliter_per_liter","0.001"
+31,"ml/qf",,
+63,"ml/ql",,
+112,"ml/t",,
+129,"ml/t de racines",,
+23,"ml/u",,
+0,"Pas d'unité",,
+124,"pièges/ha",,
+24,"u/ha","unity_per_hectare",1
+30,"uaak/mg",,

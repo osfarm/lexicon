@@ -1,0 +1,25 @@
+*~
+.~lock*
+log/*.log
+tmp/
+raw/
+out/
+lexicon.sql*
+.byebug_history
+.idea
+.python/env
+__pycache__/
+**/version.txt
+**\~$*
+.ruby-version
+.python-version
+/lexicon.rb
+.env
+/.yardoc/
+
+
+reference.sql
+
+# Remote rubocop configurations
+/.rubocop-*
+.bundle/

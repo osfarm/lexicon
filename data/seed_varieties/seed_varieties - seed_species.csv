@@ -1,0 +1,105 @@
+id,name,specie
+1,POMMES DE TERRE,solanum_tuberosum
+4,CHICOREE INDUSTRIELLE,cichorium_intybus_sativum
+5,BETTERAVE SUCRIERE,beta_vulgaris_vulgaris
+6,BETTERAVE FOURRAGERE,beta_vulgaris_vulgaris
+15,LIN TEXTILE,linum_usitatissimum
+16,LIN OLEAGINEUX,linum_usitatissimum
+17,CHANVRE MONOIQUE,cannabis_sativa
+18,CHANVRE DIOIQUE,cannabis_sativa
+24,TOURNESOL,helianthus_annuus
+27,SOJA,glycine_max
+34,BLE DUR,triticum_durum
+37,RIZ,oryza_sativa
+38,SEIGLE,secale_cereale
+39,TRITICALE,x_triticosecale
+40,SARRASIN,fagopyrum_esculentum
+41,EPEAUTRE,triticum_spelta
+43,ALPISTE,phalaris_canariensis
+56,RAY GRASS ANGLAIS,lolium_perenne
+57,RAY GRASS HYBRIDE,lolium_x_hybridum
+58,RAY GRASS D'ITALIE,lolium_multiflorum
+60,LOTIER CORNICULE,lotus_corniculatus
+61,LUZERNE,medicago_sativa
+62,TREFLE INCARNAT,trifolium_incarnatum
+63,TREFLE BLANC,trifolium_repens
+64,TREFLE VIOLET,trifolium_pratense
+66,MINETTE,medicago_lupulina
+67,TREFLE ALEXANDRIE,trifolium_alexandrinum
+70,FEVEROLE,vicia_faba
+71,POIS FOURRAGERS,pisum_sativum
+72,SAINFOIN,onobrychis_viciifolia
+73,VESCE COMMUNE,vicia_sativa
+87,PATURIN COMMUN,poa_trivialis
+90,RADIS FOURRAGER,raphanus_sativus
+91,CHOU FOURRAGER,brassica_oleracea
+92,CHOU NAVET RUTABAGA,brassica_napus_rapifera
+97,FENUGREC,trigonella_foenum_graecum
+101,POIS PROTEAGINEUX,pisum_sativum
+102,"POIS POTAGERS (RIDE, ROND, MANGE-TOUT",pisum_sativum
+104,POIS CHICHE,cicer_arietinum
+111,HARICOT NAIN,phaseolus_vulgaris
+112,HARICOT A RAMES,phaseolus_vulgaris
+120,LENTILLE,lens_culinaris
+121,FEVE,vicia_faba
+152,ARTICHAUT,cynara_scolymus
+163,POTIRON- POTIMARRON - GIRAUMON,cucurbita_maxima
+172,CIBOULETTE,allium_schoenoprasum
+176,MAIS DOUX,zea_mays_saccharata
+177,MAIS POP CORN,zea_mays_everta
+178,PORTE GREFFE CUCURBITACEES,cucurbitaceae
+179,PORTE GREFFE SOLANACEES,solanaceae
+200,ASPERGE (SEMENCES),asparagus_officianalis
+201,AUBERGINE,solanum_melongena
+202,BETTERAVE POTAGERE,beta_vulgaris_vulgaris
+203,CAROTTE,daucus_carota
+204,CELERI,apium_graveolens
+205,CERFEUIL,anthriscus_cerefolium
+206,CHICOREE FRISEE,cichorium_endivia_crispum
+207,CHICOREE SCAROLE,cichorium_endivia_latifolium
+208,CHICOREE WITLOOF (ENDIVE),cichorium_intybus_foliosum
+209,CHICOREE A FEUILLES (SAUVAGE),cichorium_intybus
+211,CHOU-FLEUR,brassica_oleracea_botrytis
+212,CHOU DE BRUXELLES,brassica_oleracea_gemmifera
+213,CHOU CABUS,brassica_oleracea_capitata
+214,CHOU FRISE,brassica_oleracea_sabellica
+215,CHOU DE MILAN,brassica_oleracea_sabauda
+216,CHOU RAVE,brassica_oleracea_gongylodes
+217,CHOU ROUGE,brassica_oleracea_capitata
+219,CONCOMBRE,cucumis_sativus
+220,COURGETTE - COURGE,cucurbita_pepo
+221,EPINARD,spinacia_oleracea
+222,FENOUIL,foeniculum_vulgare
+223,LAITUE,lactuca_sativa
+224,MACHE,valerianella_locusta
+225,MELON,cucumis_melo
+226,PASTEQUE (MELON D EAU),citrullus_lanatus
+227,NAVET,brassica_rapa_rapa
+228,OIGNON,allium_cepa
+229,PERSIL,petroselinum_crispum
+230,PIMENT POIVRON,capsicum_annuum
+231,POIREAU,allium_porrum
+232,POIREE,beta_vulgaris_cicla
+233,RADIS,raphanus_sativus
+235,TOMATE,solanum_lycopersicum
+236,CORNICHON,cucumis_sativus
+237,CHOU BROCOLI,brassica_oleracea_italica
+238,CHOU CHINOIS,brassica_rapa_pekinensis
+240,ECHALOTE (SEMENCES),allium_cepa_aggregatum
+241,ECHALION (SEMENCES),allium_cepa
+250,AIL,allium_sativum
+251,ECHALOTE (MULTIPLICATION VEGETATIVE),allium_cepa_aggregatum
+252,OIGNON (BULBILLES),allium_cepa
+260,FRAISIER (PLANTS),fragaria
+265,ASPERGE (GRIFFES),asparagus_officianalis
+407,TOURNESOL ORNEMENTAL,helianthus_annuus
+510,AVOINE,avena_sativa
+512,BLE TENDRE,triticum_aestivum
+515,ORGE,hordeum_vulgare
+527,FESTULOLIUM,x_festulolium
+570,MAIS,zea_mays
+580,COLZA OLEAGINEUX,brassica_napus_napus
+581,COLZA FOURRAGER,brassica_napus_napus
+582,NAVETTE FOURRAGERE,brassica_rapa_oleifera
+588,CAMELINE,camelina_sativa
+589,COTON,gossypium

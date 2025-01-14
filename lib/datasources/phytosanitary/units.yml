@@ -1,0 +1,176 @@
+percent:
+  \%: 1
+
+gram_per_square_meter:
+  g/ha: 0.0001
+
+  g/100 m²: 0.01
+
+  g/10 m²: 0.1
+
+  g/m²: 1
+
+gram_per_hectoliter:
+  g/100 m3: 0.001
+
+  g/10 m3: 0.01
+
+  g/m3: 0.1
+
+  g/m3 de substrat: 0.1
+
+  g/hL: 1
+
+  mg/m3: 0.01
+
+gram_per_liter:
+  g/L: 1
+
+  g/L de substrat: 1
+
+kilogram:
+  kg: 1
+
+gram_per_kilogram:
+  g/kg: 1
+
+  g/q: 0.01
+
+  g/t: 0.001
+
+  KG/KG VERS: 1000
+
+  g/100 kg de compost: 0.01
+
+  kg/q: 10
+
+  kg/t: 1
+
+kilogram_per_square_meter:
+  kg/100 m²: 0.01
+
+  kg/10 m²: 0.1
+
+  kg/m²: 1
+
+  kg/ha: 0.0001
+
+liter:
+  L: 1
+
+milliliter:
+  mL: 1
+
+kilogram_per_hectoliter:
+  kg/hL: 1
+
+  kg/m3: 0.1
+
+kilogram_per_liter:
+  kg/L: 1
+
+  kg/10 L: 0.1
+
+liter_per_square_meter:
+  L/m²: 1
+
+  L/10 m²: 0.1
+
+  L/100 m²: 0.01
+
+  mL/10 m²: 0.0001
+
+  mL/m²: 0.001
+
+liter_per_hectare:
+  L/ha: 1
+
+  mL/ha: 0.001
+
+  L/ha/an: 1
+
+milliliter_per_liter:
+  mL/L: 1
+
+  mL/10 L: 0.1
+
+  mL/hL: 0.01
+
+  mL/m3: 0.001
+
+unity_per_hectare:
+  unités/ha: 1
+
+  pièges/ha: 1
+
+  diffuseurs/ha: 1
+
+  diffuseurs/100 m²: 100
+
+  comprimés/ha: 1
+
+centiliter_per_liter:
+  L/L: 100
+
+  L/10 L: 10
+
+  L/hL: 1
+
+  L/100 m3: 0.001
+
+  L/m3: 0.1
+
+unity_per_liter:
+  tablettes/L: 1
+
+  batonnet/L de substrat: 1
+
+
+## Missing volume per mass dimension :
+## mL/q
+## mL/t
+## mL/kg
+## L/kg
+## L/q
+## L/t
+#
+## Missing volume per unit :
+## L/1000 PL.
+## L/Palmier
+## L/pied
+## L/unité
+## mL/injection
+## mL/plant
+## mL/unité
+#
+## Missing mass per unit :
+## kg/plant
+## kg/unité
+## g/trou de plantation
+## g/unité
+## g/bouture
+## g/pied
+## g/plant
+#
+#
+#..
+#CM3/QL
+#
+#
+#g.heure/m3
+#g.h/m3
+#
+#g/m.linéaire
+#
+#g SA/ha
+#g sa/m²
+#
+#
+#
+#
+#
+#SANS DOSE
+#
+#voir conditions d'emploi
+#VOIR ETIQUETAGE  FABRICANT
+#VOIR PARTICULARITES D'EMPLOI

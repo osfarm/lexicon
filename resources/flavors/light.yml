@@ -1,0 +1,11 @@
+---
+name: light
+without:
+  - enterprises
+  - graphic_parcels
+  - cadastre
+  - cadastral_prices
+  - hydrography
+  - pesticide_frequency_indicator
+  - postal_codes
+  - weather

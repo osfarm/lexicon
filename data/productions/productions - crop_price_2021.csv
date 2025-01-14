@@ -1,0 +1,27 @@
+year,month,zone,production_label,specie,waiting_price,final_price,price_unit,product_output_specie
+2021,7,France,Colza,brassica_napus_napus,0,331,ton,grain
+2021,7,France,Maïs,zea_mays,0,139,ton,grain
+2021,7,France,Orge de mout,hordeum_vulgare,0,133,ton,grain
+2021,7,France,Pois,pisum_sativum,0,185,ton,grain
+2021,7,France,Tournesol,helianthus_annuus,0,324,ton,grain
+2021,7,France,Triticale,x_triticosecale,0,137,ton,grain
+2021,7,France,Blé tendre,triticum_aestivum,0,147,ton,grain
+2021,7,France,Blé dur,triticum_durum,0,216,ton,grain
+2021,7,France,Seigle,secale_cereale,0,138,ton,grain
+2021,7,France,Avoine,avena_sativa,0,137,ton,grain
+2021,7,France,Sorgho,sorghum,0,129,ton,grain
+2021,7,France,Soja,glycine_max,0,322,ton,grain
+2021,7,France,Feverole,vicia_faba,0,218,ton,grain
+2021,10,France,Colza,brassica_napus_napus,0,357,ton,grain
+2021,10,France,Maïs,zea_mays,0,143,ton,grain
+2021,10,France,Orge de mout,hordeum_vulgare,0,143,ton,grain
+2021,10,France,Pois,pisum_sativum,0,199,ton,grain
+2021,10,France,Tournesol,helianthus_annuus,0,349,ton,grain
+2021,10,France,Triticale,x_triticosecale,0,146,ton,grain
+2021,10,France,Blé tendre,triticum_aestivum,0,162,ton,grain
+2021,10,France,Blé dur,triticum_durum,0,225,ton,grain
+2021,10,France,Seigle,secale_cereale,0,140,ton,grain
+2021,10,France,Avoine,avena_sativa,0,148,ton,grain
+2021,10,France,Sorgho,sorghum,0,136,ton,grain
+2021,10,France,Soja,glycine_max,0,332,ton,grain
+2021,10,France,Feverole,vicia_faba,0,230,ton,grain

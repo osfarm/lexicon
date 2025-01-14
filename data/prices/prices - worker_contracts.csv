@@ -1,0 +1,16 @@
+reference_name,fra,eng,worker_variant,salaried,contract_end,legal_monthly_working_time,legal_monthly_offline_time,min_raw_wage_per_hour,salary_charges_ratio,farm_charges_ratio
+permanent_salaried,Salarié CDI,Permanent contract,permanent_worker,true,undetermined,151.66,15,10.25,0.23,0.44
+permanent_manager_salaried,Salarié CDI Cadre,Permanent manager contract,permanent_worker,true,undetermined,151.66,15,15,0.21,0.52
+fixed_term_salaried, Salarié CDD,Fix term contract,temporary_worker,true,determined,151.66,15,10.25,0.23,0.54
+apprenticeship_16_17_1,Apprenti 16-17 ans 1ère année,Apprenticeship 16-18 years old (year 1),temporary_worker,true,determined,151.66,15,2.71,0.05,0
+apprenticeship_16_17_2,Apprenti 16-17 ans 2ème année,Apprenticeship 16-18 years old (year 2),temporary_worker,true,determined,151.66,15,3.91,0.05,0
+apprenticeship_16_17_3,Apprenti 16-17 ans 3ème année,Apprenticeship 16-18 years old (year 3,temporary_worker,true,determined,151.66,15,5.52,0.05,0
+apprenticeship_18_20_1,Apprenti 18-20 ans 1ère année,Apprenticeship 18-20 years old (year 1),temporary_worker,true,determined,151.66,15,4.31,0.05,0
+apprenticeship_18_20_2,Apprenti 18-20 ans 2ème année,Apprenticeship 18-20 years old (year 2),temporary_worker,true,determined,151.66,15,5.12,0.05,0
+apprenticeship_18_20_3,Apprenti 18-20 ans 3ème année,Apprenticeship 18-20 years old (year 3,temporary_worker,true,determined,151.66,15,6.72,0.05,0
+apprenticeship_21_25_1,Apprenti 21-25 ans 1ère année,Apprenticeship 21-25 years old (year 1),temporary_worker,true,determined,151.66,15,5.32,0.05,0
+apprenticeship_21_25_2,Apprenti 21-25 ans 2ème année,Apprenticeship 21-25 years old (year 2),temporary_worker,true,determined,151.66,15,6.12,0.05,0
+apprenticeship_21_25_3,Apprenti 21-25 ans 3ème année,Apprenticeship 21-25 years old (year 3,temporary_worker,true,determined,151.66,15,7.82,0.05,0
+internship,Stagiaire,Internship,temporary_worker,false,determined,151.66,0,3.75,0,0
+interim,Intérimaire,Interim,external_staff,false,determined,151.66,0,10.25,0.23,0.44
+main_unsalaried_farmer,Chef exploitation à titre principal,Farmer (unsalaried),permanent_worker,false,undetermined,220,0,10.25,0,0.44

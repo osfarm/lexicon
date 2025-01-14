@@ -1,0 +1,105 @@
+mention_danger,description_danger,code_pictogramme
+H200,Explosif instable,SGH01
+H201,Explosif : danger d'explosion en masse,SGH01
+H202,Explosif : danger sérieux de projection,SGH01
+H203,"Explosif : danger d'incendie, d'effet de souffle ou de projection",SGH01
+H204,Danger d'incendie ou de projection,SGH01
+H205,Danger d'explosion en masse en cas d'incendie,
+H220,Gaz extrêmement inflammable,SGH02
+H221,Gaz inflammable,
+H222,Aérosol extrêmement inflammable,SGH02
+H223,Aérosol inflammable,SGH02
+H224,Liquide et vapeurs extrêmement inflammables,SGH02
+H225,Liquide et vapeurs très inflammables,SGH02
+H226,Liquide et vapeurs inflammables,SGH02
+H227,Liquide combustible,
+H228,Matière solide inflammable,SGH02
+H229,Récipient sous pression : peut éclater sous l'effet de la chaleur.,
+H230,Peut exploser même en l'absence d'air.,
+H231,Peut exploser même en l'absence d'air à une pression et/ou une température élevée(s).,
+H240,Peut exploser en cas d'échauffement,SGH01
+H241,Peut s'enflammer ou exploser en cas d'échauffement,SGH01
+H242,Peut s'enflammer en cas d'échauffement,SGH02
+H250,S'enflamme spontanément au contact de l'air,SGH02
+H251,Matière auto-échauffante ; peut s'enflammer,SGH02
+H252,Matière auto-échauffante en grandes quantités ; peut s'enflammer,SGH02
+H260,"Dégage, au contact de l'eau, des gaz inflammables qui peuvent s'enflammer spontanément",SGH02
+H261,"Dégage, au contact de l'eau, des gaz inflammables",SGH02
+H262,,SGH02
+H270,Peut provoquer ou aggraver un incendie ; comburant,SGH03
+H271,Peut provoquer un incendie ou une explosion ; comburant puissant,SGH03
+H272,Peut aggraver un incendie ; comburant,SGH03
+H280,Contient un gaz sous pression ; peut exploser sous l'effet de la chaleur,SGH04
+H281,Contient un gaz réfrigéré ; peut causer des brûlures ou blessures cryogéniques,SGH04
+H290,Peut être corrosif pour les métaux,SGH05
+H300,Mortel en cas d'ingestion,SGH06
+H301,Toxique en cas d'ingestion,SGH06
+H302,Nocif en cas d'ingestion,SGH07
+H304,Peut être mortel en cas d'ingestion et de pénétration dans les voies respiratoires,SGH08
+H310,Mortel par contact cutané,SGH06
+H311,Toxique par contact cutané,SGH06
+H312,Nocif par contact cutané,SGH07
+H314,Provoque de graves brûlures de la peau et de graves lésions des yeux.,SGH05
+H315,Provoque une irritation cutanée,SGH07
+H317,Peut provoquer une allergie cutanée,SGH07
+H318,Provoque de graves lésions des yeux.,SGH05
+H319,Provoque une sévère irritation des yeux,SGH07
+H330,Mortel par inhalation,SGH06
+H331,Toxique par inhalation,SGH06
+H332,Nocif par inhalation,SGH07
+H334,Peut provoquer des symptômes allergiques ou d'asthme ou des difficultés respiratoires par inhalation,SGH08
+H335,Peut irriter les voies respiratoires,SGH07
+H336,Peut provoquer somnolence ou vertiges,SGH07
+H340,Peut induire des anomalies génétiques (indiquer la voie d'exposition s'il est formellement prouvé qu'aucune autre voie d'exposition ne conduit au même danger),SGH08
+H341,Susceptible d'induire des anomalies génétiques (indiquer la voie d'exposition s'il est formellement prouvé qu'aucune autre voie d'exposition ne conduit au même danger),SGH08
+H350,Peut provoquer le cancer (indiquer la voie d'exposition s'il est formellement prouvé qu'aucune autre voie d'exposition ne conduit au même danger),SGH08
+H350i,Peut provoquer le cancer par inhalation.,
+H351,Susceptible de provoquer le cancer (indiquer la voie d'exposition s'il est formellement prouvé qu'aucune autre voie d'exposition ne conduit au même danger),SGH08
+H360,Peut nuire à la Fertilité ou au fœtus (indiquer l'effet s'il est connu) (indiquer la voie d'exposition s'il est formellement prouvé qu'aucune autre voie d'exposition ne conduit au même danger),SGH08
+H360D,Peut nuire au fœtus.,
+H360Df,Peut nuire au fœtus. Susceptible de nuire à la Fertilité.,
+H360F,Peut nuire à la Fertilité.,
+H360Fd,Peut nuire à la Fertilité. Susceptible de nuire au fœtus.,
+H360FD,Peut nuire à la Fertilité. Peut nuire au fœtus.,
+H361,Susceptible de nuire à la Fertilité ou au fœtus (indiquer l'effet s'il est connu) (indiquer la voie d'exposition s'il est formellement prouvé qu'aucune autre voie d'exposition ne conduit au même danger),
+H361d,Susceptible de nuire au fœtus.,
+H361f,Susceptible de nuire à la Fertilité.,
+H361fd,Susceptible de nuire à la Fertilité. Susceptible de nuire au fœtus.,
+H362,Peut être nocif pour les bébés nourris au lait maternel,
+H370,"Risque avéré d'effets graves pour les organes (ou indiquer tous les organes affectés, s'ils sont connus) (indiquer la voie d'exposition s'il est formellement prouvé qu'aucune autre voie d'exposition ne conduit au même danger)",SGH08
+H371,"Risque présumé d'effets graves pour les organes (ou indiquer tous les organes affectés, s'ils sont connus) (indiquer la voie d'exposition s'il est formellement prouvé qu'aucune autre voie d'exposition ne conduit au même danger)",SGH08
+H372,"Risque avéré d'effets graves pour les organes (indiquer tous les organes affectés, s'ils sont connus) à la suite d'expositions répétées ou d'une exposition prolongée (indiquer la voie d'exposition s'il est formellement prouvé qu'aucune autre voie d'exposition ne conduit au même danger)",SGH08
+H373,"Risque présumé d'effets graves pour les organes (indiquer tous les organes affectés, s'ils sont connus) à la suite d'expositions répétées ou d'une exposition prolongée (indiquer la voie d'exposition s'il est formellement prouvé qu'aucune autre voie d'exposition ne conduit au même danger)",SGH08
+H400,Très toxique pour les organismes aquatiques,SGH09
+H403,Nocif pour les organismes aquatiques,
+H410,"Très toxique pour les organismes aquatiques, entraîne des effets à long terme",SGH09
+H411,"Toxique pour les organismes aquatiques, entraîne des effets à long terme",SGH09
+H412,"Nocif pour les organismes aquatiques, entraîne des effets à long terme",
+H413,Peut entraîner des effets néfastes à long terme pour les organismes aquatiques,
+H420,Nuit à la santé publique et à l’environnement en détruisant l’ozone dans la haute atmosphère,SGH07
+EUH001,Explosif à l'état sec,
+EUH006,Danger d'explosion en contact ou sans contact avec l'air,
+EUH014,Réagit violemment au contact de l'eau,
+EUH018,"Lors de l'utilisation, formation possible de mélange vapeur-air inflammable/explosif",
+EUH019,Peut former des peroxydes explosifs,
+EUH029,"Au contact de l'eau, dégage des gaz toxiques",
+EUH031,"Au contact d'un acide, dégage un gaz toxique",
+EUH032,"Au contact d'un acide, dégage un gaz très toxique",
+EUH044,Risque d'explosion si chauffé en ambiance confinée,
+EUH059,Dangereux pour la couche d'ozone,
+EUH066,L'exposition répétée peut provoquer dessèchement ou gerçures de la peau,
+EUH070,Toxiques par contact oculaire,
+EUH071,Corrosif pour les voies respiratoires,
+EUH201,Contient du plomb. Ne pas utiliser sur les objets susceptibles d'être mâchés ou sucés par des enfants.,
+EUH201A,Attention ! Contient du plomb,
+EUH202,Cyanoacrylate. Danger. Colle à la peau et aux yeux en quelques secondes. À conserver hors de portée des enfants.,
+EUH203,Contient du chrome (VI). Peut déclencher une réaction allergique.,
+EUH204,Contient des isocyanates. Peut produire une réaction allergique.,
+EUH205,Contient des composés époxydiques. Peut produire une réaction allergique.,
+EUH206,Attention ! Ne pas utiliser en combinaison avec d'autres produits. Peut libérer des gaz dangereux (chlore).,
+EUH207,Attention ! Contient du cadmium. Des fumées dangereuses se développent pendant l'utilisation. Voir les informations fournies par le fabricant. Respecter les consignes de sécurité.,
+EUH208,Contient du (de la) (nom de la substance sensibilisante). Peut produire une réaction allergique.,
+EUH209,Peut devenir facilement inflammable en cours d'utilisation,
+EUH209A,Peut devenir inflammable en cours d'utilisation,
+EUH210,Fiche de données de sécurité disponible sur demande,
+EUH401,Respecter les instructions d'utilisation afin d'éviter les risques pour la santé humaine et l'environnement.,

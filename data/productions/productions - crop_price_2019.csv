@@ -1,0 +1,702 @@
+year,month,zone,production_label,specie,waiting_price,final_price,price_unit,product_output_specie
+2020,1,Auvergne-Rhônes-Alpes,Maïs,zea_mays,0,0,ton,grain
+2020,1,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,0,"390,926870885016",ton,grain
+2020,1,Bourgogne-Franche-Comté,Maïs,zea_mays,0,"150,745985968089",ton,grain
+2020,1,Bourgogne-Franche-Comté,Tournesol,helianthus_annuus,0,"407,4",ton,grain
+2020,1,Bretagne,Triticale,x_triticosecale,0,"182,512743928007",ton,grain
+2020,1,Centre - Est,Orge brassic,hordeum_vulgare,0,"153,183333333333",ton,grain
+2020,1,Centre - Est,Orge brassic,hordeum_vulgare,0,"159,101666666667",ton,grain
+2020,1,Centre - Est,Orge de mout,hordeum_vulgare,0,"146,9025",ton,grain
+2020,1,Centre - Ouest,Maïs,zea_mays,0,"155,584544753783",ton,grain
+2020,1,Centre-Val de Loire,Colza,brassica_napus_napus,0,"347,364868528201",ton,grain
+2020,1,Centre-Val de Loire,Pois,pisum_sativum,0,"182,740343026522",ton,grain
+2020,1,Centre-Val de Loire,Tournesol,helianthus_annuus,0,"272,684245922629",ton,grain
+2020,1,Centre-Val de Loire,Triticale,x_triticosecale,0,"159,230622306135",ton,grain
+2020,1,Est,Maïs,zea_mays,0,"167,30077400172",ton,grain
+2020,1,Est,Orge brassic,hordeum_vulgare,0,"185,21",ton,grain
+2020,1,Est,Orge brassic,hordeum_vulgare,0,"193,321428571429",ton,grain
+2020,1,Est,Orge de mout,hordeum_vulgare,0,"174,35375",ton,grain
+2020,1,France,Colza,brassica_napus_napus,0,"360,087500002074",ton,grain
+2020,1,France,Maïs,zea_mays,0,"160,948081100178",ton,grain
+2020,1,France,Orge brassic,hordeum_vulgare,0,"176,461111111111",ton,grain
+2020,1,France,Orge brassic,hordeum_vulgare,0,"180,418531746032",ton,grain
+2020,1,France,Orge de mout,hordeum_vulgare,0,"167,534134615385",ton,grain
+2020,1,France,Pois,pisum_sativum,0,"195,602675040696",ton,grain
+2020,1,France,Tournesol,helianthus_annuus,0,"297,457467837727",ton,grain
+2020,1,France,Triticale,x_triticosecale,0,"166,958759920547",ton,grain
+2020,1,Grand Est,Colza,brassica_napus_napus,0,"367,45987224978",ton,grain
+2020,1,Grand Est,Pois,pisum_sativum,0,"205,173728161802",ton,grain
+2020,1,Hauts-de-France,Pois,pisum_sativum,0,"205,691935926387",ton,grain
+2020,1,Nord-Maritime,Orge brassic,hordeum_vulgare,0,"190,99",ton,grain
+2020,1,Nord-Maritime,Orge brassic,hordeum_vulgare,0,"188,8325",ton,grain
+2020,1,Nord-Maritime,Orge de mout,hordeum_vulgare,0,"181,346153846154",ton,grain
+2020,1,Normandie,Colza,brassica_napus_napus,0,"350,896100619625",ton,grain
+2020,1,Normandie,Pois,pisum_sativum,0,"200,240126797797",ton,grain
+2020,1,Nouvelle-Aquitaine,Colza,brassica_napus_napus,0,"350,386660068152",ton,grain
+2020,1,Nouvelle-Aquitaine,Tournesol,helianthus_annuus,0,"279,008794868565",ton,grain
+2020,1,Nouvelle-Aquitaine,Triticale,x_triticosecale,0,"160,67",ton,grain
+2020,1,Occitanie,Tournesol,helianthus_annuus,0,"330,816477293778",ton,grain
+2020,1,Occitanie,Triticale,x_triticosecale,0,"160,862404805024",ton,grain
+2020,1,Pays de la Loire,Maïs,zea_mays,0,170,ton,grain
+2020,1,Pays de la Loire,Tournesol,helianthus_annuus,0,"291,077929791702",ton,grain
+2020,1,Pays de la Loire,Triticale,x_triticosecale,0,"175,320772545713",ton,grain
+2020,1,Sud-Ouest,Maïs,zea_mays,0,"159,616777650633",ton,grain
+2020,2,Auvergne-Rhônes-Alpes,Maïs,zea_mays,0,0,ton,grain
+2020,2,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,0,"402,193281172826",ton,grain
+2020,2,Bourgogne-Franche-Comté,Maïs,zea_mays,0,"140,799908805756",ton,grain
+2020,2,Bourgogne-Franche-Comté,Tournesol,helianthus_annuus,0,0,ton,grain
+2020,2,Bretagne,Triticale,x_triticosecale,0,"174,273872023867",ton,grain
+2020,2,Centre - Est,Orge brassic,hordeum_vulgare,0,"147,018333333333",ton,grain
+2020,2,Centre - Est,Orge brassic,hordeum_vulgare,0,"151,522857142857",ton,grain
+2020,2,Centre - Est,Orge de mout,hordeum_vulgare,0,"144,565",ton,grain
+2020,2,Centre - Ouest,Blé tendre,triticum_aestivum,0,"175,764544258633",ton,grain
+2020,2,Centre - Ouest,Maïs,zea_mays,0,"158,331317105384",ton,grain
+2020,2,Centre-Val de Loire,Colza,brassica_napus_napus,0,"348,767361056314",ton,grain
+2020,2,Centre-Val de Loire,Pois,pisum_sativum,0,"192,990608664337",ton,grain
+2020,2,Centre-Val de Loire,Tournesol,helianthus_annuus,0,"274,797569723886",ton,grain
+2020,2,Centre-Val de Loire,Triticale,x_triticosecale,0,"157,80110953518",ton,grain
+2020,2,Est,Maïs,zea_mays,0,"159,394013168103",ton,grain
+2020,2,Est,Orge brassic,hordeum_vulgare,0,"155,157142857143",ton,grain
+2020,2,Est,Orge brassic,hordeum_vulgare,0,"159,15",ton,grain
+2020,2,Est,Orge de mout,hordeum_vulgare,0,"152,59875",ton,grain
+2020,2,France,Blé tendre,triticum_aestivum,0,"175,351838247679",ton,grain
+2020,2,France,Colza,brassica_napus_napus,0,"360,23823701088",ton,grain
+2020,2,France,Maïs,zea_mays,0,"157,79411767591",ton,grain
+2020,2,France,Orge brassic,hordeum_vulgare,0,"158,697380952381",ton,grain
+2020,2,France,Orge brassic,hordeum_vulgare,0,"171,996507936508",ton,grain
+2020,2,France,Orge de mout,hordeum_vulgare,0,"153,397147435897",ton,grain
+2020,2,France,Pois,pisum_sativum,0,"199,80829910579",ton,grain
+2020,2,France,Tournesol,helianthus_annuus,0,"305,414170968483",ton,grain
+2020,2,France,Triticale,x_triticosecale,0,"160,635985397518",ton,grain
+2020,2,Grand Est,Colza,brassica_napus_napus,0,"362,370760579421",ton,grain
+2020,2,Grand Est,Pois,pisum_sativum,0,"213,079287697839",ton,grain
+2020,2,Hauts-de-France,Pois,pisum_sativum,0,"172,646987819598",ton,grain
+2020,2,Nord-Est,Blé tendre,triticum_aestivum,0,"170,535870059339",ton,grain
+2020,2,Nord-Maritime,Blé tendre,triticum_aestivum,0,"179,787892812478",ton,grain
+2020,2,Nord-Maritime,Orge brassic,hordeum_vulgare,0,"173,916666666667",ton,grain
+2020,2,Nord-Maritime,Orge brassic,hordeum_vulgare,0,"205,316666666667",ton,grain
+2020,2,Nord-Maritime,Orge de mout,hordeum_vulgare,0,"163,027692307692",ton,grain
+2020,2,Normandie,Colza,brassica_napus_napus,0,"356,193646944294",ton,grain
+2020,2,Normandie,Pois,pisum_sativum,0,"198,115679778218",ton,grain
+2020,2,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,0,"172,727363559769",ton,grain
+2020,2,Nouvelle-Aquitaine,Colza,brassica_napus_napus,0,"354,685407901851",ton,grain
+2020,2,Nouvelle-Aquitaine,Tournesol,helianthus_annuus,0,"298,975975430601",ton,grain
+2020,2,Nouvelle-Aquitaine,Triticale,x_triticosecale,0,"158,45",ton,grain
+2020,2,Occitanie,Tournesol,helianthus_annuus,0,"327,472082073876",ton,grain
+2020,2,Occitanie,Triticale,x_triticosecale,0,"149,052249329014",ton,grain
+2020,2,Pays de la Loire,Maïs,zea_mays,0,162,ton,grain
+2020,2,Pays de la Loire,Tournesol,helianthus_annuus,0,"291,72430045211",ton,grain
+2020,2,Pays de la Loire,Triticale,x_triticosecale,0,"166,628606030024",ton,grain
+2020,2,Sud-Ouest,Maïs,zea_mays,0,"157,296871071982",ton,grain
+2020,3,Auvergne-Rhônes-Alpes,Maïs,zea_mays,0,0,ton,grain
+2020,3,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,0,"404,611717314519",ton,grain
+2020,3,Bourgogne-Franche-Comté,Maïs,zea_mays,0,"128,133967882634",ton,grain
+2020,3,Bretagne,Triticale,x_triticosecale,0,162,ton,grain
+2020,3,Centre - Est,Orge brassic,hordeum_vulgare,0,"139,425714285714",ton,grain
+2020,3,Centre - Est,Orge brassic,hordeum_vulgare,0,"145,363333333333",ton,grain
+2020,3,Centre - Est,Orge de mout,hordeum_vulgare,0,"140,6025",ton,grain
+2020,3,Centre - Ouest,Blé tendre,triticum_aestivum,0,"165,844217836627",ton,grain
+2020,3,Centre - Ouest,Maïs,zea_mays,0,"149,705795009154",ton,grain
+2020,3,Centre-Val de Loire,Colza,brassica_napus_napus,0,"341,920373869598",ton,grain
+2020,3,Centre-Val de Loire,Pois,pisum_sativum,0,"169,7329351041",ton,grain
+2020,3,Centre-Val de Loire,Tournesol,helianthus_annuus,0,"288,060401678934",ton,grain
+2020,3,Centre-Val de Loire,Triticale,x_triticosecale,0,135,ton,grain
+2020,3,Est,Maïs,zea_mays,0,"167,544010786569",ton,grain
+2020,3,Est,Orge brassic,hordeum_vulgare,0,"151,558333333333",ton,grain
+2020,3,Est,Orge brassic,hordeum_vulgare,0,"154,508333333333",ton,grain
+2020,3,Est,Orge de mout,hordeum_vulgare,0,"147,042857142857",ton,grain
+2020,3,France,Blé tendre,triticum_aestivum,0,"167,246660298294",ton,grain
+2020,3,France,Colza,brassica_napus_napus,0,"339,040591544542",ton,grain
+2020,3,France,Maïs,zea_mays,0,"155,591306072069",ton,grain
+2020,3,France,Orge brassic,hordeum_vulgare,0,"154,148015873016",ton,grain
+2020,3,France,Orge brassic,hordeum_vulgare,0,"156,790555555556",ton,grain
+2020,3,France,Orge de mout,hordeum_vulgare,0,"149,233928571429",ton,grain
+2020,3,France,Pois,pisum_sativum,0,"189,838809842906",ton,grain
+2020,3,France,Tournesol,helianthus_annuus,0,"301,18123365173",ton,grain
+2020,3,France,Triticale,x_triticosecale,0,"146,97477958842",ton,grain
+2020,3,Grand Est,Colza,brassica_napus_napus,0,"316,255324904983",ton,grain
+2020,3,Grand Est,Pois,pisum_sativum,0,"204,861196158405",ton,grain
+2020,3,Hauts-de-France,Pois,pisum_sativum,0,"193,726456976239",ton,grain
+2020,3,Nord-Est,Blé tendre,triticum_aestivum,0,"159,818104116712",ton,grain
+2020,3,Nord-Maritime,Blé tendre,triticum_aestivum,0,"172,28985624909",ton,grain
+2020,3,Nord-Maritime,Orge brassic,hordeum_vulgare,0,"171,46",ton,grain
+2020,3,Nord-Maritime,Orge brassic,hordeum_vulgare,0,"170,5",ton,grain
+2020,3,Nord-Maritime,Orge de mout,hordeum_vulgare,0,"160,056428571429",ton,grain
+2020,3,Normandie,Colza,brassica_napus_napus,0,"347,468504158981",ton,grain
+2020,3,Normandie,Pois,pisum_sativum,0,"191,10564425332",ton,grain
+2020,3,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,0,"161,06101723812",ton,grain
+2020,3,Nouvelle-Aquitaine,Colza,brassica_napus_napus,0,"336,696266479414",ton,grain
+2020,3,Nouvelle-Aquitaine,Tournesol,helianthus_annuus,0,"294,515194720547",ton,grain
+2020,3,Nouvelle-Aquitaine,Triticale,x_triticosecale,0,0,ton,grain
+2020,3,Occitanie,Tournesol,helianthus_annuus,0,"313,221448009115",ton,grain
+2020,3,Occitanie,Triticale,x_triticosecale,0,"145,728614456038",ton,grain
+2020,3,Pays de la Loire,Maïs,zea_mays,0,155,ton,grain
+2020,3,Pays de la Loire,Tournesol,helianthus_annuus,0,"305,191885038039",ton,grain
+2020,3,Pays de la Loire,Triticale,x_triticosecale,0,"155,750380410947",ton,grain
+2020,3,Sud-Ouest,Maïs,zea_mays,0,"152,745857983362",ton,grain
+2020,4,Auvergne-Rhônes-Alpes,Maïs,zea_mays,0,0,ton,grain
+2020,4,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,0,"367,906585095516",ton,grain
+2020,4,Bourgogne-Franche-Comté,Maïs,zea_mays,0,"144,809431773859",ton,grain
+2020,4,Bourgogne-Franche-Comté,Tournesol,helianthus_annuus,0,0,ton,grain
+2020,4,Bretagne,Triticale,x_triticosecale,0,"164,207839242946",ton,grain
+2020,4,Centre - Est,Orge brassic,hordeum_vulgare,0,"147,545714285714",ton,grain
+2020,4,Centre - Est,Orge brassic,hordeum_vulgare,0,"155,54375",ton,grain
+2020,4,Centre - Est,Orge de mout,hordeum_vulgare,0,"140,047",ton,grain
+2020,4,Centre - Ouest,Blé tendre,triticum_aestivum,0,"166,640691992999",ton,grain
+2020,4,Centre - Ouest,Maïs,zea_mays,0,"147,713796639875",ton,grain
+2020,4,Centre-Val de Loire,Colza,brassica_napus_napus,0,"344,06987435439",ton,grain
+2020,4,Centre-Val de Loire,Pois,pisum_sativum,0,"176,421028129993",ton,grain
+2020,4,Centre-Val de Loire,Tournesol,helianthus_annuus,0,"299,665255199203",ton,grain
+2020,4,Centre-Val de Loire,Triticale,x_triticosecale,0,"137,2240501546",ton,grain
+2020,4,Est,Maïs,zea_mays,0,"151,775669423652",ton,grain
+2020,4,Est,Orge brassic,hordeum_vulgare,0,"150,187142857143",ton,grain
+2020,4,Est,Orge brassic,hordeum_vulgare,0,"156,072857142857",ton,grain
+2020,4,Est,Orge de mout,hordeum_vulgare,0,"150,087142857143",ton,grain
+2020,4,France,Blé tendre,triticum_aestivum,0,"158,320138720443",ton,grain
+2020,4,France,Colza,brassica_napus_napus,0,"338,710767285602",ton,grain
+2020,4,France,Maïs,zea_mays,0,"148,329400521201",ton,grain
+2020,4,France,Orge brassic,hordeum_vulgare,0,"149,150952380952",ton,grain
+2020,4,France,Orge brassic,hordeum_vulgare,0,"163,872202380952",ton,grain
+2020,4,France,Orge de mout,hordeum_vulgare,0,"147,613199134199",ton,grain
+2020,4,France,Pois,pisum_sativum,0,"165,288618706961",ton,grain
+2020,4,France,Tournesol,helianthus_annuus,0,"341,88038749836",ton,grain
+2020,4,France,Triticale,x_triticosecale,0,"146,638019851748",ton,grain
+2020,4,Grand Est,Colza,brassica_napus_napus,0,"361,587628428354",ton,grain
+2020,4,Grand Est,Pois,pisum_sativum,0,"174,394503758945",ton,grain
+2020,4,Hauts-de-France,Pois,pisum_sativum,0,"144,296085819559",ton,grain
+2020,4,Nord-Est,Blé tendre,triticum_aestivum,0,"159,893635362619",ton,grain
+2020,4,Nord-Maritime,Blé tendre,triticum_aestivum,0,"151,353807251719",ton,grain
+2020,4,Nord-Maritime,Orge brassic,hordeum_vulgare,0,"149,72",ton,grain
+2020,4,Nord-Maritime,Orge brassic,hordeum_vulgare,0,180,ton,grain
+2020,4,Nord-Maritime,Orge de mout,hordeum_vulgare,0,"152,705454545455",ton,grain
+2020,4,Normandie,Colza,brassica_napus_napus,0,"316,556802615951",ton,grain
+2020,4,Normandie,Pois,pisum_sativum,0,"147,528176076162",ton,grain
+2020,4,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,0,"160,512053818916",ton,grain
+2020,4,Nouvelle-Aquitaine,Colza,brassica_napus_napus,0,"338,668549361568",ton,grain
+2020,4,Nouvelle-Aquitaine,Tournesol,helianthus_annuus,0,"296,781682013384",ton,grain
+2020,4,Nouvelle-Aquitaine,Triticale,x_triticosecale,0,148,ton,grain
+2020,4,Occitanie,Tournesol,helianthus_annuus,0,"371,965305877837",ton,grain
+2020,4,Occitanie,Triticale,x_triticosecale,0,"119,536570755019",ton,grain
+2020,4,Pays de la Loire,Maïs,zea_mays,0,157,ton,grain
+2020,4,Pays de la Loire,Tournesol,helianthus_annuus,0,"308,534962112442",ton,grain
+2020,4,Pays de la Loire,Triticale,x_triticosecale,0,"156,601383401686",ton,grain
+2020,4,Sud-Ouest,Maïs,zea_mays,0,"148,167881995928",ton,grain
+2020,5,Auvergne-Rhônes-Alpes,Maïs,zea_mays,0,0,ton,grain
+2020,5,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,0,"378,839270390155",ton,grain
+2020,5,Bourgogne-Franche-Comté,Maïs,zea_mays,0,"145,778961856164",ton,grain
+2020,5,Bretagne,Triticale,x_triticosecale,0,"157,50088100701",ton,grain
+2020,5,Centre - Est,Orge brassic,hordeum_vulgare,0,"140,016666666667",ton,grain
+2020,5,Centre - Est,Orge brassic,hordeum_vulgare,0,"144,964285714286",ton,grain
+2020,5,Centre - Est,Orge de mout,hordeum_vulgare,0,"134,45125",ton,grain
+2020,5,Centre - Ouest,Blé tendre,triticum_aestivum,0,"159,650886270888",ton,grain
+2020,5,Centre - Ouest,Maïs,zea_mays,0,"143,390197256457",ton,grain
+2020,5,Centre-Val de Loire,Colza,brassica_napus_napus,0,"345,094811055869",ton,grain
+2020,5,Centre-Val de Loire,Pois,pisum_sativum,0,"167,897392676024",ton,grain
+2020,5,Centre-Val de Loire,Tournesol,helianthus_annuus,0,"309,566594672426",ton,grain
+2020,5,Centre-Val de Loire,Triticale,x_triticosecale,0,"132,943606808106",ton,grain
+2020,5,Est,Maïs,zea_mays,0,"150,34262400543",ton,grain
+2020,5,Est,Orge brassic,hordeum_vulgare,0,"140,283333333333",ton,grain
+2020,5,Est,Orge brassic,hordeum_vulgare,0,"150,533333333333",ton,grain
+2020,5,Est,Orge de mout,hordeum_vulgare,0,"139,75",ton,grain
+2020,5,France,Blé tendre,triticum_aestivum,0,"162,344260692316",ton,grain
+2020,5,France,Colza,brassica_napus_napus,0,"351,38157715475",ton,grain
+2020,5,France,Maïs,zea_mays,0,"145,775960519883",ton,grain
+2020,5,France,Orge brassic,hordeum_vulgare,0,"144,46",ton,grain
+2020,5,France,Orge brassic,hordeum_vulgare,0,"148,499206349206",ton,grain
+2020,5,France,Orge de mout,hordeum_vulgare,0,"138,547824074074",ton,grain
+2020,5,France,Pois,pisum_sativum,0,"173,256606867201",ton,grain
+2020,5,France,Tournesol,helianthus_annuus,0,"307,321931524889",ton,grain
+2020,5,France,Triticale,x_triticosecale,0,"136,242594875602",ton,grain
+2020,5,Grand Est,Colza,brassica_napus_napus,0,"363,835269761103",ton,grain
+2020,5,Grand Est,Pois,pisum_sativum,0,"162,305327132438",ton,grain
+2020,5,Hauts-de-France,Pois,pisum_sativum,0,0,ton,grain
+2020,5,Nord-Est,Blé tendre,triticum_aestivum,0,"146,056306110104",ton,grain
+2020,5,Nord-Maritime,Blé tendre,triticum_aestivum,0,"170,779661623804",ton,grain
+2020,5,Nord-Maritime,Orge brassic,hordeum_vulgare,0,"153,08",ton,grain
+2020,5,Nord-Maritime,Orge brassic,hordeum_vulgare,0,150,ton,grain
+2020,5,Nord-Maritime,Orge de mout,hordeum_vulgare,0,"141,442222222222",ton,grain
+2020,5,Normandie,Colza,brassica_napus_napus,0,"347,991416431012",ton,grain
+2020,5,Normandie,Pois,pisum_sativum,0,"180,425433114628",ton,grain
+2020,5,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,0,"162,4",ton,grain
+2020,5,Nouvelle-Aquitaine,Colza,brassica_napus_napus,0,"337,748086784186",ton,grain
+2020,5,Nouvelle-Aquitaine,Tournesol,helianthus_annuus,0,"300,473989482992",ton,grain
+2020,5,Nouvelle-Aquitaine,Triticale,x_triticosecale,0,"141,5",ton,grain
+2020,5,Occitanie,Tournesol,helianthus_annuus,0,"325,924595671526",ton,grain
+2020,5,Occitanie,Triticale,x_triticosecale,0,"35,598874826841",ton,grain
+2020,5,Pays de la Loire,Maïs,zea_mays,0,151,ton,grain
+2020,5,Pays de la Loire,Tournesol,helianthus_annuus,0,"306,486667340033",ton,grain
+2020,5,Pays de la Loire,Triticale,x_triticosecale,0,"151,85876799489",ton,grain
+2020,5,Sud-Ouest,Maïs,zea_mays,0,"145,515898216168",ton,grain
+2020,6,Auvergne-Rhônes-Alpes,Maïs,zea_mays,0,0,ton,grain
+2020,6,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,0,"385,681020640621",ton,grain
+2020,6,Bourgogne-Franche-Comté,Maïs,zea_mays,0,"149,35236982625",ton,grain
+2020,6,Bourgogne-Franche-Comté,Tournesol,helianthus_annuus,0,320,ton,grain
+2020,6,Bretagne,Triticale,x_triticosecale,0,"162,711185115231",ton,grain
+2020,6,Centre - Est,Orge brassic,hordeum_vulgare,0,"145,848333333333",ton,grain
+2020,6,Centre - Est,Orge brassic,hordeum_vulgare,0,"144,597142857143",ton,grain
+2020,6,Centre - Est,Orge de mout,hordeum_vulgare,0,"137,778571428571",ton,grain
+2020,6,Centre - Ouest,Blé tendre,triticum_aestivum,0,"167,797504229329",ton,grain
+2020,6,Centre - Ouest,Maïs,zea_mays,0,"144,140762620113",ton,grain
+2020,6,Centre-Val de Loire,Colza,brassica_napus_napus,0,349,ton,grain
+2020,6,Centre-Val de Loire,Pois,pisum_sativum,0,157,ton,grain
+2020,6,Centre-Val de Loire,Tournesol,helianthus_annuus,0,282,ton,grain
+2020,6,Centre-Val de Loire,Triticale,x_triticosecale,0,138,ton,grain
+2020,6,Est,Maïs,zea_mays,0,"151,95",ton,grain
+2020,6,Est,Orge brassic,hordeum_vulgare,0,"135,2",ton,grain
+2020,6,Est,Orge brassic,hordeum_vulgare,0,"141,2",ton,grain
+2020,6,Est,Orge de mout,hordeum_vulgare,0,"137,583333333333",ton,grain
+2020,6,France,Blé tendre,triticum_aestivum,0,"163,773266184613",ton,grain
+2020,6,France,Colza,brassica_napus_napus,0,"339,426722919128",ton,grain
+2020,6,France,Maïs,zea_mays,0,"148,58458316091",ton,grain
+2020,6,France,Orge brassic,hordeum_vulgare,0,"144,349444444444",ton,grain
+2020,6,France,Orge brassic,hordeum_vulgare,0,"146,682380952381",ton,grain
+2020,6,France,Orge de mout,hordeum_vulgare,0,"140,214338624339",ton,grain
+2020,6,France,Pois,pisum_sativum,0,"158,713120308915",ton,grain
+2020,6,France,Tournesol,helianthus_annuus,0,"319,256491701805",ton,grain
+2020,6,France,Triticale,x_triticosecale,0,"151,374630165496",ton,grain
+2020,6,Grand Est,Colza,brassica_napus_napus,0,"323,61492093372",ton,grain
+2020,6,Grand Est,Pois,pisum_sativum,0,"157,443178312742",ton,grain
+2020,6,Hauts-de-France,Pois,pisum_sativum,0,0,ton,grain
+2020,6,Nord-Est,Blé tendre,triticum_aestivum,0,"152,199089026125",ton,grain
+2020,6,Nord-Maritime,Blé tendre,triticum_aestivum,0,"166,744405694192",ton,grain
+2020,6,Nord-Maritime,Orge brassic,hordeum_vulgare,0,152,ton,grain
+2020,6,Nord-Maritime,Orge brassic,hordeum_vulgare,0,"154,25",ton,grain
+2020,6,Nord-Maritime,Orge de mout,hordeum_vulgare,0,"145,281111111111",ton,grain
+2020,6,Normandie,Colza,brassica_napus_napus,0,"353,003956689756",ton,grain
+2020,6,Normandie,Pois,pisum_sativum,0,"180,91987778395",ton,grain
+2020,6,Nouvelle-Aquitaine,Colza,brassica_napus_napus,0,346,ton,grain
+2020,6,Nouvelle-Aquitaine,Triticale,x_triticosecale,0,0,ton,grain
+2020,6,Occitanie,Tournesol,helianthus_annuus,0,"328,419658190652",ton,grain
+2020,6,Occitanie,Triticale,x_triticosecale,0,"138,877236842505",ton,grain
+2020,6,Pays de la Loire,Maïs,zea_mays,0,163,ton,grain
+2020,6,Pays de la Loire,Tournesol,helianthus_annuus,0,315,ton,grain
+2020,6,Pays de la Loire,Triticale,x_triticosecale,0,"154,542461077484",ton,grain
+2020,6,Sud-Ouest,Maïs,zea_mays,0,"147,837536978722",ton,grain
+2019,7,Auvergne-Rhônes-Alpes,Maïs,zea_mays,"120,214919493128",0,ton,grain
+2019,7,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,"334,350171012572","354,585517768164",ton,grain
+2019,7,Bourgogne-Franche-Comté,Maïs,zea_mays,146,0,ton,grain
+2019,7,Centre - Est,Orge brassic,hordeum_vulgare,"135,471428571429","144,545",ton,grain
+2019,7,Centre - Est,Orge brassic,hordeum_vulgare,"151,51","148,551666666667",ton,grain
+2019,7,Centre - Est,Orge de mout,hordeum_vulgare,"124,125","135,257142857143",ton,grain
+2019,7,Centre - Ouest,Blé tendre,triticum_aestivum,"140,02315023459","147,122141102321",ton,grain
+2019,7,Centre - Ouest,Maïs,zea_mays,151,"133,82353386515",ton,grain
+2019,7,Centre-Val de Loire,Colza,brassica_napus_napus,338,"320,227883727676",ton,grain
+2019,7,Centre-Val de Loire,Pois,pisum_sativum,165,150,ton,grain
+2019,7,Centre-Val de Loire,Tournesol,helianthus_annuus,0,"306,932643141216",ton,grain
+2019,7,Centre-Val de Loire,Triticale,x_triticosecale,0,"123,574205511158",ton,grain
+2019,7,France,Blé tendre,triticum_aestivum,"135,794397439962","150,704183888761",ton,grain
+2019,7,France,Colza,brassica_napus_napus,"325,639992200831","335,217344557135",ton,grain
+2019,7,France,Maïs,zea_mays,"136,448609024293","146,988941021338",ton,grain
+2019,7,France,Orge brassic,hordeum_vulgare,"135,471428571429","144,545",ton,grain
+2019,7,France,Orge brassic,hordeum_vulgare,"151,51","148,551666666667",ton,grain
+2019,7,France,Orge de mout,hordeum_vulgare,"129,0625","145,191071428571",ton,grain
+2019,7,France,Pois,pisum_sativum,"161,78851710744","146,175304727813",ton,grain
+2019,7,France,Tournesol,helianthus_annuus,0,"129,790691289557",ton,grain
+2019,7,France,Triticale,x_triticosecale,"115,808577565981","141,592667177855",ton,grain
+2019,7,Nord-Est,Blé tendre,triticum_aestivum,"137,505864995248","141,659507507814",ton,grain
+2019,7,Nord-Maritime,Blé tendre,triticum_aestivum,"127,420958824313","166,454335234026",ton,grain
+2019,7,Nord-Maritime,Orge de mout,hordeum_vulgare,134,"155,125",ton,grain
+2019,7,Normandie,Colza,brassica_napus_napus,"288,582628407665","337,247796314467",ton,grain
+2019,7,Normandie,Pois,pisum_sativum,150,"132,13584471656",ton,grain
+2019,7,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,135,162,ton,grain
+2019,7,Nouvelle-Aquitaine,Colza,brassica_napus_napus,"332,551643537854","328,58331758738",ton,grain
+2019,7,Nouvelle-Aquitaine,Triticale,x_triticosecale,110,0,ton,grain
+2019,7,Occitanie,Tournesol,helianthus_annuus,0,0,ton,grain
+2019,7,Occitanie,Triticale,x_triticosecale,"118,51238425934","135,736439753769",ton,grain
+2019,7,Pays de la Loire,Maïs,zea_mays,0,158,ton,grain
+2019,7,Pays de la Loire,Triticale,x_triticosecale,"119,714305152742","150,141602859247",ton,grain
+2019,7,Sud-Ouest,Maïs,zea_mays,"130,17","155,140583169101",ton,grain
+2019,8,Auvergne-Rhônes-Alpes,Maïs,zea_mays,"116,785510757681",0,ton,grain
+2019,8,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,"291,329953487281","365,008498496397",ton,grain
+2019,8,Bourgogne-Franche-Comté,Maïs,zea_mays,146,0,ton,grain
+2019,8,Bretagne,Triticale,x_triticosecale,130,"165,673899762785",ton,grain
+2019,8,Centre - Est,Orge brassic,hordeum_vulgare,"130,4","147,926",ton,grain
+2019,8,Centre - Est,Orge brassic,hordeum_vulgare,"147,5","166,425",ton,grain
+2019,8,Centre - Est,Orge de mout,hordeum_vulgare,"118,333333333333","140,834",ton,grain
+2019,8,Centre - Ouest,Blé tendre,triticum_aestivum,"144,67080243481","176,371890035916",ton,grain
+2019,8,Centre - Ouest,Maïs,zea_mays,171,"18,5662743663813",ton,grain
+2019,8,Centre-Val de Loire,Colza,brassica_napus_napus,361,"338,285681323343",ton,grain
+2019,8,Centre-Val de Loire,Pois,pisum_sativum,180,"163,951486368929",ton,grain
+2019,8,Centre-Val de Loire,Tournesol,helianthus_annuus,0,"146,34474767877",ton,grain
+2019,8,Centre-Val de Loire,Triticale,x_triticosecale,0,"147,346369616949",ton,grain
+2019,8,Est,Maïs,zea_mays,0,165,ton,grain
+2019,8,Est,Orge brassic,hordeum_vulgare,"126,637142857143","197,576666666667",ton,grain
+2019,8,Est,Orge brassic,hordeum_vulgare,"131,494285714286","224,81",ton,grain
+2019,8,Est,Orge de mout,hordeum_vulgare,"115,9325","179,101428571429",ton,grain
+2019,8,France,Blé tendre,triticum_aestivum,"140,80763512193","184,002350431942",ton,grain
+2019,8,France,Colza,brassica_napus_napus,"312,597158872549","356,443264454973",ton,grain
+2019,8,France,Maïs,zea_mays,"147,195285254807","99,9529262805443",ton,grain
+2019,8,France,Orge brassic,hordeum_vulgare,"126,512380952381","179,500888888889",ton,grain
+2019,8,France,Orge brassic,hordeum_vulgare,"133,831428571429","203,745",ton,grain
+2019,8,France,Orge de mout,hordeum_vulgare,"120,326706349206","168,62430952381",ton,grain
+2019,8,France,Pois,pisum_sativum,"155,061798442464","191,403512365739",ton,grain
+2019,8,France,Tournesol,helianthus_annuus,0,"177,795915777587",ton,grain
+2019,8,France,Triticale,x_triticosecale,"124,732370720076","165,046219773605",ton,grain
+2019,8,Grand Est,Colza,brassica_napus_napus,"288,378199187702","365,222542966454",ton,grain
+2019,8,Grand Est,Pois,pisum_sativum,"138,675333681694","209,390835822224",ton,grain
+2019,8,Hauts-de-France,Pois,pisum_sativum,"147,431259044863",200,ton,grain
+2019,8,Nord-Est,Blé tendre,triticum_aestivum,"122,847516381136","175,591093738518",ton,grain
+2019,8,Nord-Maritime,Blé tendre,triticum_aestivum,"141,301122096839","187,445188353246",ton,grain
+2019,8,Nord-Maritime,Orge brassic,hordeum_vulgare,"122,5",193,ton,grain
+2019,8,Nord-Maritime,Orge brassic,hordeum_vulgare,"122,5",220,ton,grain
+2019,8,Nord-Maritime,Orge de mout,hordeum_vulgare,"126,714285714286","185,9375",ton,grain
+2019,8,Normandie,Colza,brassica_napus_napus,"302,131452002801","360,914110510054",ton,grain
+2019,8,Normandie,Pois,pisum_sativum,"145,715142036853","201,649807955501",ton,grain
+2019,8,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,0,183,ton,grain
+2019,8,Nouvelle-Aquitaine,Colza,brassica_napus_napus,"324,3909531356","346,485356383377",ton,grain
+2019,8,Nouvelle-Aquitaine,Triticale,x_triticosecale,110,0,ton,grain
+2019,8,Occitanie,Tournesol,helianthus_annuus,0,"191,737455182917",ton,grain
+2019,8,Occitanie,Triticale,x_triticosecale,"103,258836382317","155,920277796921",ton,grain
+2019,8,Pays de la Loire,Maïs,zea_mays,0,180,ton,grain
+2019,8,Pays de la Loire,Triticale,x_triticosecale,"139,566551065744","178,688186411204",ton,grain
+2019,8,Sud-Ouest,Maïs,zea_mays,0,"150,571159749907",ton,grain
+2019,9,Auvergne-Rhônes-Alpes,Maïs,zea_mays,"131,718218331581",0,ton,grain
+2019,9,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,"349,163169990507","377,309840877345",ton,grain
+2019,9,Bourgogne-Franche-Comté,Maïs,zea_mays,135,160,ton,grain
+2019,9,Bourgogne-Franche-Comté,Tournesol,helianthus_annuus,"323,321361393284","362,076754872307",ton,grain
+2019,9,Bretagne,Triticale,x_triticosecale,130,"148,848562883584",ton,grain
+2019,9,Centre - Est,Orge brassic,hordeum_vulgare,"139,343333333333","156,125",ton,grain
+2019,9,Centre - Est,Orge brassic,hordeum_vulgare,"154,34","163,752857142857",ton,grain
+2019,9,Centre - Est,Orge de mout,hordeum_vulgare,"122,195","140,794285714286",ton,grain
+2019,9,Centre - Ouest,Blé tendre,triticum_aestivum,"156,486086104998","177,006862968236",ton,grain
+2019,9,Centre - Ouest,Maïs,zea_mays,"131,060357127099","157,650759129528",ton,grain
+2019,9,Centre-Val de Loire,Colza,brassica_napus_napus,"333,058313146403","350,72783394334",ton,grain
+2019,9,Centre-Val de Loire,Pois,pisum_sativum,0,"182,769851726869",ton,grain
+2019,9,Centre-Val de Loire,Tournesol,helianthus_annuus,"318,349782261763","270,986204319155",ton,grain
+2019,9,Centre-Val de Loire,Triticale,x_triticosecale,0,"157,303133738425",ton,grain
+2019,9,Est,Maïs,zea_mays,150,161,ton,grain
+2019,9,Est,Orge brassic,hordeum_vulgare,"149,816666666667","184,918333333333",ton,grain
+2019,9,Est,Orge brassic,hordeum_vulgare,"167,983333333333","213,151666666667",ton,grain
+2019,9,Est,Orge de mout,hordeum_vulgare,"138,2375","170,033333333333",ton,grain
+2019,9,France,Blé tendre,triticum_aestivum,"153,613937163701","174,134695045863",ton,grain
+2019,9,France,Colza,brassica_napus_napus,"325,012730670432","336,394908715515",ton,grain
+2019,9,France,Maïs,zea_mays,"134,982830804245","150,304639314059",ton,grain
+2019,9,France,Orge brassic,hordeum_vulgare,"144,56","172,574444444444",ton,grain
+2019,9,France,Orge brassic,hordeum_vulgare,"161,712222222222","185,694841269841",ton,grain
+2019,9,France,Orge de mout,hordeum_vulgare,"133,843333333333","162,046706349206",ton,grain
+2019,9,France,Pois,pisum_sativum,"197,25204419885","152,906457000867",ton,grain
+2019,9,France,Tournesol,helianthus_annuus,"294,804133212472","294,39922721196",ton,grain
+2019,9,France,Triticale,x_triticosecale,"119,882258087479","157,108242774783",ton,grain
+2019,9,Grand Est,Colza,brassica_napus_napus,"315,24917494267","355,719846407994",ton,grain
+2019,9,Grand Est,Pois,pisum_sativum,"217,742427731129","209,239988132783",ton,grain
+2019,9,Hauts-de-France,Pois,pisum_sativum,"201,770197481909","129,993970197146",ton,grain
+2019,9,Nord-Est,Blé tendre,triticum_aestivum,"155,83227024555","166,835583933725",ton,grain
+2019,9,Nord-Maritime,Blé tendre,triticum_aestivum,"151,268071842979","174,675450691322",ton,grain
+2019,9,Nord-Maritime,Orge brassic,hordeum_vulgare,"144,52","176,68",ton,grain
+2019,9,Nord-Maritime,Orge brassic,hordeum_vulgare,"162,813333333333","180,18",ton,grain
+2019,9,Nord-Maritime,Orge de mout,hordeum_vulgare,"141,0975","175,3125",ton,grain
+2019,9,Normandie,Colza,brassica_napus_napus,"310,231675426297","287,02073708307",ton,grain
+2019,9,Normandie,Pois,pisum_sativum,"167,32977081457","68,3585275620006",ton,grain
+2019,9,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,0,"171,644123757549",ton,grain
+2019,9,Nouvelle-Aquitaine,Colza,brassica_napus_napus,"329,364122682322","345,006628785897",ton,grain
+2019,9,Nouvelle-Aquitaine,Triticale,x_triticosecale,110,"159,11",ton,grain
+2019,9,Occitanie,Tournesol,helianthus_annuus,284,"289,639759265136",ton,grain
+2019,9,Occitanie,Triticale,x_triticosecale,"108,705055771769","151,652318205195",ton,grain
+2019,9,Pays de la Loire,Maïs,zea_mays,0,167,ton,grain
+2019,9,Pays de la Loire,Tournesol,helianthus_annuus,280,"304,919695169868",ton,grain
+2019,9,Pays de la Loire,Triticale,x_triticosecale,0,"169,084534905244",ton,grain
+2019,9,Sud-Ouest,Maïs,zea_mays,130,"141,330404127608",ton,grain
+2019,10,Auvergne-Rhônes-Alpes,Maïs,zea_mays,"150,122213289193",0,ton,grain
+2019,10,Bourgogne-Franche-Comté,Avoine,avena_sativa,"95,3361924572988","96,0258316658862",ton,grain
+2019,10,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,"349,07639003587","387,775798480561",ton,grain
+2019,10,Bourgogne-Franche-Comté,Maïs,zea_mays,"123,268773952496","86,8487771788642",ton,grain
+2019,10,Bourgogne-Franche-Comté,Tournesol,helianthus_annuus,"336,283412979339","301,775853948533",ton,grain
+2019,10,Bretagne,Avoine,avena_sativa,120,"161,036738351254",ton,grain
+2019,10,Bretagne,Triticale,x_triticosecale,130,"184,310134979234",ton,grain
+2019,10,Centre - Est,Orge brassic,hordeum_vulgare,"143,614","154,12",ton,grain
+2019,10,Centre - Est,Orge brassic,hordeum_vulgare,"159,422","166,546",ton,grain
+2019,10,Centre - Est,Orge de mout,hordeum_vulgare,"129,69","144,23125",ton,grain
+2019,10,Centre - Ouest,Blé tendre,triticum_aestivum,"157,549726946192","177,077754097335",ton,grain
+2019,10,Centre - Ouest,Maïs,zea_mays,"71,3828594622225","94,4851778577553",ton,grain
+2019,10,Centre-Val de Loire,Avoine,avena_sativa,130,"72,6157632648389",ton,grain
+2019,10,Centre-Val de Loire,Blé dur,triticum_durum,"195,923758448853","188,829802275884",ton,grain
+2019,10,Centre-Val de Loire,Colza,brassica_napus_napus,363,"60,5436645914691",ton,grain
+2019,10,Centre-Val de Loire,Pois,pisum_sativum,190,"189,220225150882",ton,grain
+2019,10,Centre-Val de Loire,Tournesol,helianthus_annuus,"337,349188573342","291,094560103295",ton,grain
+2019,10,Centre-Val de Loire,Triticale,x_triticosecale,0,"152,65",ton,grain
+2019,10,Est,Maïs,zea_mays,"133,253563238481","153,719845348027",ton,grain
+2019,10,Est,Orge brassic,hordeum_vulgare,"157,478","190,908",ton,grain
+2019,10,Est,Orge brassic,hordeum_vulgare,"177,731666666667","208,388",ton,grain
+2019,10,Est,Orge de mout,hordeum_vulgare,"138,731666666667","178,495",ton,grain
+2019,10,France,Avoine,avena_sativa,"114,064146062505","140,206543583482",ton,grain
+2019,10,France,Blé dur,triticum_durum,"184,083247981435","191,936098037714",ton,grain
+2019,10,France,Blé tendre,triticum_aestivum,"154,218121692415","180,448981954558",ton,grain
+2019,10,France,Colza,brassica_napus_napus,"338,339702899631","284,303443259338",ton,grain
+2019,10,France,Maïs,zea_mays,"130,925857410594","140,664439836388",ton,grain
+2019,10,France,Orge brassic,hordeum_vulgare,"149,424","177,642666666667",ton,grain
+2019,10,France,Orge brassic,hordeum_vulgare,"166,412888888889","184,596888888889",ton,grain
+2019,10,France,Orge de mout,hordeum_vulgare,"138,303055555556","169,203365384615",ton,grain
+2019,10,France,Pois,pisum_sativum,"182,56032258878","192,169611617233",ton,grain
+2019,10,France,Tournesol,helianthus_annuus,"286,820250445405","293,48221574497",ton,grain
+2019,10,France,Triticale,x_triticosecale,"117,918659274597","166,00883587841",ton,grain
+2019,10,Grand Est,Avoine,avena_sativa,"120,056091470431","141,876192530429",ton,grain
+2019,10,Grand Est,Colza,brassica_napus_napus,"330,508870465605","373,779389617396",ton,grain
+2019,10,Grand Est,Pois,pisum_sativum,"185,36622281368","210,685355921625",ton,grain
+2019,10,Hauts-de-France,Avoine,avena_sativa,"125,19567538708",170,ton,grain
+2019,10,Hauts-de-France,Pois,pisum_sativum,"178,959408649603","148,026360055141",ton,grain
+2019,10,Nord-Est,Blé tendre,triticum_aestivum,"148,350619250279","175,995199426125",ton,grain
+2019,10,Nord-Maritime,Blé tendre,triticum_aestivum,"154,436070502921","184,43681510328",ton,grain
+2019,10,Nord-Maritime,Orge brassic,hordeum_vulgare,"147,18","187,9",ton,grain
+2019,10,Nord-Maritime,Orge brassic,hordeum_vulgare,"162,085","178,856666666667",ton,grain
+2019,10,Nord-Maritime,Orge de mout,hordeum_vulgare,"146,4875","184,883846153846",ton,grain
+2019,10,Normandie,Avoine,avena_sativa,100,"149,589694272898",ton,grain
+2019,10,Normandie,Colza,brassica_napus_napus,"310,008848552921","356,976245212199",ton,grain
+2019,10,Normandie,Pois,pisum_sativum,"169,940916516399","200,527354621326",ton,grain
+2019,10,Nouvelle-Aquitaine,Blé dur,triticum_durum,"189,39","193,092998985386",ton,grain
+2019,10,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,155,"176,82995346568",ton,grain
+2019,10,Nouvelle-Aquitaine,Colza,brassica_napus_napus,"352,74","354,81981777277",ton,grain
+2019,10,Nouvelle-Aquitaine,Tournesol,helianthus_annuus,"282,863058772252","281,349872453646",ton,grain
+2019,10,Nouvelle-Aquitaine,Triticale,x_triticosecale,110,"160,1",ton,grain
+2019,10,Occitanie,Blé dur,triticum_durum,"174,970356143168","193,311494099561",ton,grain
+2019,10,Occitanie,Tournesol,helianthus_annuus,"275,599017472566","302,218827612842",ton,grain
+2019,10,Occitanie,Triticale,x_triticosecale,"120,786242291957","149,024150162626",ton,grain
+2019,10,Pays de la Loire,Avoine,avena_sativa,0,150,ton,grain
+2019,10,Pays de la Loire,Blé dur,triticum_durum,0,0,ton,grain
+2019,10,Pays de la Loire,Maïs,zea_mays,0,165,ton,grain
+2019,10,Pays de la Loire,Tournesol,helianthus_annuus,"283,112277986263","292,180492439721",ton,grain
+2019,10,Pays de la Loire,Triticale,x_triticosecale,0,"172,028107498235",ton,grain
+2019,10,Provence-Alpes-Côte d'Azur,Blé dur,triticum_durum,160,0,ton,grain
+2019,10,Sud-Ouest,Maïs,zea_mays,"142,079231577868","152,889249553633",ton,grain
+2019,11,Auvergne-Rhônes-Alpes,Maïs,zea_mays,"148,350071997017",0,ton,grain
+2019,11,Bourgogne-Franche-Comté,Avoine,avena_sativa,"115,766860996005","130,42",ton,grain
+2019,11,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,"342,486781544211","390,999478326698",ton,grain
+2019,11,Bourgogne-Franche-Comté,Maïs,zea_mays,"133,915755585199","150,566459065796",ton,grain
+2019,11,Bourgogne-Franche-Comté,Tournesol,helianthus_annuus,"352,00297862019","130,064380451995",ton,grain
+2019,11,Bretagne,Avoine,avena_sativa,0,"136,173271489408",ton,grain
+2019,11,Bretagne,Triticale,x_triticosecale,140,"177,97997940838",ton,grain
+2019,11,Centre - Est,Orge brassic,hordeum_vulgare,"144,165","151,64",ton,grain
+2019,11,Centre - Est,Orge brassic,hordeum_vulgare,"158,218","157,56",ton,grain
+2019,11,Centre - Est,Orge de mout,hordeum_vulgare,"130,366","147,56",ton,grain
+2019,11,Centre - Ouest,Blé tendre,triticum_aestivum,"156,277025674319","176,283922783051",ton,grain
+2019,11,Centre - Ouest,Maïs,zea_mays,"148,565361942676","154,975350449761",ton,grain
+2019,11,Centre-Val de Loire,Avoine,avena_sativa,130,"128,383978981983",ton,grain
+2019,11,Centre-Val de Loire,Blé dur,triticum_durum,142,"185,002492585759",ton,grain
+2019,11,Centre-Val de Loire,Colza,brassica_napus_napus,363,"348,154534827797",ton,grain
+2019,11,Centre-Val de Loire,Pois,pisum_sativum,190,"183,923495816177",ton,grain
+2019,11,Centre-Val de Loire,Tournesol,helianthus_annuus,"335,058280194055","273,384996529153",ton,grain
+2019,11,Centre-Val de Loire,Triticale,x_triticosecale,0,153,ton,grain
+2019,11,Est,Maïs,zea_mays,"158,605759262121","161,584661128803",ton,grain
+2019,11,Est,Orge brassic,hordeum_vulgare,"154,85","193,2",ton,grain
+2019,11,Est,Orge brassic,hordeum_vulgare,"171,58","209,4375",ton,grain
+2019,11,Est,Orge de mout,hordeum_vulgare,"138,186666666667","172,91",ton,grain
+2019,11,France,Avoine,avena_sativa,"120,901145158187","141,77630475474",ton,grain
+2019,11,France,Blé dur,triticum_durum,"147,590542507015","179,987033766837",ton,grain
+2019,11,France,Blé tendre,triticum_aestivum,"150,645815285086","172,610512977298",ton,grain
+2019,11,France,Colza,brassica_napus_napus,"333,587162901398","357,700290129588",ton,grain
+2019,11,France,Maïs,zea_mays,"145,099285195204","154,531895054075",ton,grain
+2019,11,France,Orge brassic,hordeum_vulgare,"148,268333333333","175,613333333333",ton,grain
+2019,11,France,Orge brassic,hordeum_vulgare,"170,196","191,8325",ton,grain
+2019,11,France,Orge de mout,hordeum_vulgare,"135,350888888889","167,823333333333",ton,grain
+2019,11,France,Pois,pisum_sativum,"188,345577148804","187,332650721491",ton,grain
+2019,11,France,Tournesol,helianthus_annuus,"282,462442248617","289,703999110073",ton,grain
+2019,11,France,Triticale,x_triticosecale,"116,523060557561","160,828379432025",ton,grain
+2019,11,Grand Est,Avoine,avena_sativa,"134,5",128,ton,grain
+2019,11,Grand Est,Colza,brassica_napus_napus,"321,237736795608","356,569269969514",ton,grain
+2019,11,Grand Est,Pois,pisum_sativum,"199,454929874967","183,826309446484",ton,grain
+2019,11,Hauts-de-France,Avoine,avena_sativa,0,170,ton,grain
+2019,11,Hauts-de-France,Pois,pisum_sativum,"179,86","186,956075250259",ton,grain
+2019,11,Nord-Est,Blé tendre,triticum_aestivum,"141,560688287959","149,334445376304",ton,grain
+2019,11,Nord-Maritime,Blé tendre,triticum_aestivum,"151,65524596612","182,337036358202",ton,grain
+2019,11,Nord-Maritime,Orge brassic,hordeum_vulgare,"145,79",182,ton,grain
+2019,11,Nord-Maritime,Orge brassic,hordeum_vulgare,"180,79","208,5",ton,grain
+2019,11,Nord-Maritime,Orge de mout,hordeum_vulgare,"137,5",183,ton,grain
+2019,11,Normandie,Avoine,avena_sativa,100,"151,036167932288",ton,grain
+2019,11,Normandie,Colza,brassica_napus_napus,310,"359,734341140194",ton,grain
+2019,11,Normandie,Pois,pisum_sativum,170,"201,191826995027",ton,grain
+2019,11,Nouvelle-Aquitaine,Blé dur,triticum_durum,"190,269493478327","183,105494310536",ton,grain
+2019,11,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,155,"177,941383088624",ton,grain
+2019,11,Nouvelle-Aquitaine,Colza,brassica_napus_napus,"354,57","351,964503279677",ton,grain
+2019,11,Nouvelle-Aquitaine,Tournesol,helianthus_annuus,"287,29936825079","283,084898647696",ton,grain
+2019,11,Nouvelle-Aquitaine,Triticale,x_triticosecale,110,"157,25",ton,grain
+2019,11,Occitanie,Blé dur,triticum_durum,"136,93953170069","167,174942298388",ton,grain
+2019,11,Occitanie,Tournesol,helianthus_annuus,"239,429433152455","321,564349246045",ton,grain
+2019,11,Occitanie,Triticale,x_triticosecale,"116,117702289214","158,784885070279",ton,grain
+2019,11,Pays de la Loire,Avoine,avena_sativa,0,"151,347864896772",ton,grain
+2019,11,Pays de la Loire,Blé dur,triticum_durum,0,"194,538340565684",ton,grain
+2019,11,Pays de la Loire,Maïs,zea_mays,0,166,ton,grain
+2019,11,Pays de la Loire,Tournesol,helianthus_annuus,"293,101369256542","285,658435143888",ton,grain
+2019,11,Pays de la Loire,Triticale,x_triticosecale,0,"167,050577937544",ton,grain
+2019,11,Provence-Alpes-Côte d'Azur,Blé dur,triticum_durum,160,0,ton,grain
+2019,11,Sud-Ouest,Maïs,zea_mays,"136,195171756116","150,696202955887",ton,grain
+2019,12,Auvergne-Rhônes-Alpes,Maïs,zea_mays,"146,744684986419",0,ton,grain
+2019,12,Bourgogne-Franche-Comté,Avoine,avena_sativa,"124,188956123749","126,511041731406",ton,grain
+2019,12,Bourgogne-Franche-Comté,Colza,brassica_napus_napus,"367,04367407282","394,782204052466",ton,grain
+2019,12,Bourgogne-Franche-Comté,Maïs,zea_mays,"128,136903735247","145,743567644218",ton,grain
+2019,12,Bourgogne-Franche-Comté,Tournesol,helianthus_annuus,"300,46404549216","346,408659549229",ton,grain
+2019,12,Bretagne,Avoine,avena_sativa,0,161,ton,grain
+2019,12,Bretagne,Triticale,x_triticosecale,0,"185,04832118134",ton,grain
+2019,12,Centre - Est,Orge brassic,hordeum_vulgare,"145,266","149,473333333333",ton,grain
+2019,12,Centre - Est,Orge brassic,hordeum_vulgare,"157,778","156,12",ton,grain
+2019,12,Centre - Est,Orge de mout,hordeum_vulgare,"131,458","142,67",ton,grain
+2019,12,Centre - Ouest,Blé tendre,triticum_aestivum,"157,235105946525","176,673392840578",ton,grain
+2019,12,Centre - Ouest,Maïs,zea_mays,"156,492043996885","155,841168107824",ton,grain
+2019,12,Centre-Val de Loire,Avoine,avena_sativa,130,"143,048259641913",ton,grain
+2019,12,Centre-Val de Loire,Blé dur,triticum_durum,119,"178,913511387132",ton,grain
+2019,12,Centre-Val de Loire,Colza,brassica_napus_napus,360,"345,144808501982",ton,grain
+2019,12,Centre-Val de Loire,Pois,pisum_sativum,190,"179,622010263815",ton,grain
+2019,12,Centre-Val de Loire,Tournesol,helianthus_annuus,340,"272,431382517983",ton,grain
+2019,12,Centre-Val de Loire,Triticale,x_triticosecale,0,"103,290405940735",ton,grain
+2019,12,Est,Maïs,zea_mays,"149,180771672013","162,86360377794",ton,grain
+2019,12,Est,Orge brassic,hordeum_vulgare,"162,763333333333","187,901428571429",ton,grain
+2019,12,Est,Orge brassic,hordeum_vulgare,"180,225714285714","196,558571428571",ton,grain
+2019,12,Est,Orge de mout,hordeum_vulgare,"148,382857142857","178,902857142857",ton,grain
+2019,12,France,Avoine,avena_sativa,"115,985264906422","152,006810186665",ton,grain
+2019,12,France,Blé dur,triticum_durum,"135,719845290143","181,438382976082",ton,grain
+2019,12,France,Blé tendre,triticum_aestivum,"154,828164781962","180,497787960399",ton,grain
+2019,12,France,Colza,brassica_napus_napus,"336,553150875458","360,092954659964",ton,grain
+2019,12,France,Maïs,zea_mays,"145,279159862769","153,649304110521",ton,grain
+2019,12,France,Orge brassic,hordeum_vulgare,"158,378111111111","177,458253968254",ton,grain
+2019,12,France,Orge brassic,hordeum_vulgare,"173,187904761905","183,559523809524",ton,grain
+2019,12,France,Orge de mout,hordeum_vulgare,"140,391396825397","168,662896825397",ton,grain
+2019,12,France,Pois,pisum_sativum,"184,479788135553","187,636579431267",ton,grain
+2019,12,France,Tournesol,helianthus_annuus,"271,741230004286","292,749399230011",ton,grain
+2019,12,France,Triticale,x_triticosecale,"108,404013275291","152,10919812835",ton,grain
+2019,12,Grand Est,Avoine,avena_sativa,"116,664210308129","141,626839522104",ton,grain
+2019,12,Grand Est,Colza,brassica_napus_napus,"336,741217004855","369,624543591671",ton,grain
+2019,12,Grand Est,Pois,pisum_sativum,"178,661515157278","193,16608768263",ton,grain
+2019,12,Hauts-de-France,Avoine,avena_sativa,0,173,ton,grain
+2019,12,Hauts-de-France,Pois,pisum_sativum,"183,618812867407","193,744599678298",ton,grain
+2019,12,Nord-Est,Blé tendre,triticum_aestivum,"153,260763372193","177,446285516312",ton,grain
+2019,12,Nord-Maritime,Blé tendre,triticum_aestivum,"153,984380371411","184,052150605544",ton,grain
+2019,12,Nord-Maritime,Orge brassic,hordeum_vulgare,"167,105",195,ton,grain
+2019,12,Nord-Maritime,Orge brassic,hordeum_vulgare,"181,56",198,ton,grain
+2019,12,Nord-Maritime,Orge de mout,hordeum_vulgare,"141,333333333333","184,415833333333",ton,grain
+2019,12,Normandie,Avoine,avena_sativa,"107,348983953243","151,118228790586",ton,grain
+2019,12,Normandie,Colza,brassica_napus_napus,"307,695894783011","358,489039679676",ton,grain
+2019,12,Nouvelle-Aquitaine,Blé dur,triticum_durum,"190,246761646314","180,694558421988",ton,grain
+2019,12,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,0,"177,78",ton,grain
+2019,12,Nouvelle-Aquitaine,Colza,brassica_napus_napus,"285,836086399428","348,074268434646",ton,grain
+2019,12,Nouvelle-Aquitaine,Tournesol,helianthus_annuus,"287,480697204828","279,850646099804",ton,grain
+2019,12,Nouvelle-Aquitaine,Triticale,x_triticosecale,110,159,ton,grain
+2019,12,Occitanie,Blé dur,triticum_durum,"136,233950044652","173,725483864732",ton,grain
+2019,12,Occitanie,Tournesol,helianthus_annuus,"213,424862828737","323,217866219321",ton,grain
+2019,12,Occitanie,Triticale,x_triticosecale,103,"160,804846467051",ton,grain
+2019,12,Pays de la Loire,Avoine,avena_sativa,0,"150,303162919425",ton,grain
+2019,12,Pays de la Loire,Blé dur,triticum_durum,0,"199,691475263453",ton,grain
+2019,12,Pays de la Loire,Maïs,zea_mays,0,169,ton,grain
+2019,12,Pays de la Loire,Tournesol,helianthus_annuus,0,"284,493371855702",ton,grain
+2019,12,Pays de la Loire,Triticale,x_triticosecale,0,"175,654965217952",ton,grain
+2019,12,Sud-Ouest,Maïs,zea_mays,"142,33181609736","152,430908601533",ton,grain
+2020,1,Bourgogne-Franche-Comté,Avoine,avena_sativa,0,121,ton,grain
+2020,1,Bretagne,Avoine,avena_sativa,0,162,ton,grain
+2020,1,Centre - Ouest,Blé tendre,triticum_aestivum,0,"177,387834682986",ton,grain
+2020,1,Centre-Val de Loire,Avoine,avena_sativa,0,"117,764635767662",ton,grain
+2020,1,Centre-Val de Loire,Blé dur,triticum_durum,0,"185,075111903272",ton,grain
+2020,1,France,Avoine,avena_sativa,0,"137,454410243871",ton,grain
+2020,1,France,Blé dur,triticum_durum,0,"182,682220845661",ton,grain
+2020,1,France,Blé tendre,triticum_aestivum,0,"178,62754437359",ton,grain
+2020,1,Grand Est,Avoine,avena_sativa,0,"136,706330232181",ton,grain
+2020,1,Hauts-de-France,Avoine,avena_sativa,0,170,ton,grain
+2020,1,Nord-Est,Blé tendre,triticum_aestivum,0,"174,055801950699",ton,grain
+2020,1,Nord-Maritime,Blé tendre,triticum_aestivum,0,"182,184730026249",ton,grain
+2020,1,Normandie,Avoine,avena_sativa,0,"132,404482866512",ton,grain
+2020,1,Nouvelle-Aquitaine,Blé dur,triticum_durum,0,"187,347587284239",ton,grain
+2020,1,Nouvelle-Aquitaine,Blé tendre,triticum_aestivum,0,"182,850496361164",ton,grain
+2020,1,Occitanie,Blé dur,triticum_durum,0,"173,122745774997",ton,grain
+2020,1,Pays de la Loire,Avoine,avena_sativa,0,"151,352871121806",ton,grain
+2020,1,Pays de la Loire,Blé dur,triticum_durum,0,"198,837530904113",ton,grain
+2020,1,Provence-Alpes-Côte d'Azur,Blé dur,triticum_durum,0,0,ton,grain
+2020,2,Bourgogne-Franche-Comté,Avoine,avena_sativa,0,"14,8253084487786",ton,grain
+2020,2,Bretagne,Avoine,avena_sativa,0,162,ton,grain
+2020,2,Centre-Val de Loire,Avoine,avena_sativa,0,"147,133774080283",ton,grain
+2020,2,Centre-Val de Loire,Blé dur,triticum_durum,0,"190,309280310349",ton,grain
+2020,2,France,Avoine,avena_sativa,0,"140,3886919567",ton,grain
+2020,2,France,Blé dur,triticum_durum,0,"182,178114685843",ton,grain
+2020,2,Grand Est,Avoine,avena_sativa,0,"136,169940933855",ton,grain
+2020,2,Hauts-de-France,Avoine,avena_sativa,0,172,ton,grain
+2020,2,Normandie,Avoine,avena_sativa,0,"148,33375035851",ton,grain
+2020,2,Nouvelle-Aquitaine,Blé dur,triticum_durum,0,"193,564896359485",ton,grain
+2020,2,Occitanie,Blé dur,triticum_durum,0,"171,820732231248",ton,grain
+2020,2,Pays de la Loire,Avoine,avena_sativa,0,146,ton,grain
+2020,2,Pays de la Loire,Blé dur,triticum_durum,0,184,ton,grain
+2020,3,Bourgogne-Franche-Comté,Avoine,avena_sativa,0,0,ton,grain
+2020,3,Bretagne,Avoine,avena_sativa,0,"141,106292303836",ton,grain
+2020,3,Centre-Val de Loire,Avoine,avena_sativa,0,"134,991711160868",ton,grain
+2020,3,Centre-Val de Loire,Blé dur,triticum_durum,0,"192,112594646135",ton,grain
+2020,3,France,Avoine,avena_sativa,0,"142,375764451421",ton,grain
+2020,3,France,Blé dur,triticum_durum,0,"185,626949037787",ton,grain
+2020,3,Grand Est,Avoine,avena_sativa,0,"146,985644491125",ton,grain
+2020,3,Hauts-de-France,Avoine,avena_sativa,0,0,ton,grain
+2020,3,Normandie,Avoine,avena_sativa,0,"144,361621653903",ton,grain
+2020,3,Nouvelle-Aquitaine,Blé dur,triticum_durum,0,"189,06031595818",ton,grain
+2020,3,Occitanie,Blé dur,triticum_durum,0,"173,001991129597",ton,grain
+2020,3,Pays de la Loire,Avoine,avena_sativa,0,"140,335459619547",ton,grain
+2020,3,Pays de la Loire,Blé dur,triticum_durum,0,"198,595625652926",ton,grain
+2020,3,Provence-Alpes-Côte d'Azur,Blé dur,triticum_durum,0,0,ton,grain
+2020,4,Bourgogne-Franche-Comté,Avoine,avena_sativa,0,"8,14287445081398",ton,grain
+2020,4,Bretagne,Avoine,avena_sativa,0,155,ton,grain
+2020,4,Centre-Val de Loire,Avoine,avena_sativa,0,"136,246950064879",ton,grain
+2020,4,Centre-Val de Loire,Blé dur,triticum_durum,0,"188,255881437944",ton,grain
+2020,4,France,Avoine,avena_sativa,0,"118,482482001381",ton,grain
+2020,4,France,Blé dur,triticum_durum,0,"183,661238156311",ton,grain
+2020,4,Grand Est,Avoine,avena_sativa,0,"139,421447967154",ton,grain
+2020,4,Normandie,Avoine,avena_sativa,0,"141,253465240212",ton,grain
+2020,4,Nouvelle-Aquitaine,Blé dur,triticum_durum,0,"190,204644227166",ton,grain
+2020,4,Occitanie,Blé dur,triticum_durum,0,"174,88932487092",ton,grain
+2020,4,Pays de la Loire,Avoine,avena_sativa,0,"140,104815864023",ton,grain
+2020,4,Pays de la Loire,Blé dur,triticum_durum,0,192,ton,grain
+2020,4,Provence-Alpes-Côte d'Azur,Blé dur,triticum_durum,0,0,ton,grain
+2020,5,Bourgogne-Franche-Comté,Avoine,avena_sativa,0,"148,617920673388",ton,grain
+2020,5,Bretagne,Avoine,avena_sativa,0,"135,194573341362",ton,grain
+2020,5,Centre-Val de Loire,Avoine,avena_sativa,0,"138,89814647105",ton,grain
+2020,5,Centre-Val de Loire,Blé dur,triticum_durum,0,"188,41614926992",ton,grain
+2020,5,France,Avoine,avena_sativa,0,"118,270170522948",ton,grain
+2020,5,France,Blé dur,triticum_durum,0,"185,206706941459",ton,grain
+2020,5,Grand Est,Avoine,avena_sativa,0,157,ton,grain
+2020,5,Normandie,Avoine,avena_sativa,0,"54,1427461156836",ton,grain
+2020,5,Nouvelle-Aquitaine,Blé dur,triticum_durum,0,"187,360829810457",ton,grain
+2020,5,Occitanie,Blé dur,triticum_durum,0,"170,73654403527",ton,grain
+2020,5,Pays de la Loire,Avoine,avena_sativa,0,"126,493150684932",ton,grain
+2020,5,Pays de la Loire,Blé dur,triticum_durum,0,195,ton,grain
+2020,5,Provence-Alpes-Côte d'Azur,Blé dur,triticum_durum,0,0,ton,grain
+2020,6,Bourgogne-Franche-Comté,Avoine,avena_sativa,0,"6,99048960942108",ton,grain
+2020,6,Bretagne,Avoine,avena_sativa,0,"149,545454545455",ton,grain
+2020,6,Centre-Val de Loire,Blé dur,triticum_durum,0,"190,04046892825",ton,grain
+2020,6,France,Avoine,avena_sativa,0,"84,8232576084902",ton,grain
+2020,6,France,Blé dur,triticum_durum,0,"180,138361316804",ton,grain
+2020,6,Grand Est,Avoine,avena_sativa,0,"27,5571763020905",ton,grain
+2020,6,Hauts-de-France,Avoine,avena_sativa,0,170,ton,grain
+2020,6,Normandie,Avoine,avena_sativa,0,"93,2390207889001",ton,grain
+2020,6,Nouvelle-Aquitaine,Blé dur,triticum_durum,0,180,ton,grain
+2020,6,Occitanie,Blé dur,triticum_durum,0,"167,052446775041",ton,grain
+2020,6,Pays de la Loire,Avoine,avena_sativa,0,"125,254237288136",ton,grain
+2020,6,Pays de la Loire,Blé dur,triticum_durum,0,195,ton,grain
+2019,7,Bourgogne-Franche-Comté,Avoine,avena_sativa,"106,728850529351","144,662355934727",ton,grain
+2019,7,Centre-Val de Loire,Avoine,avena_sativa,0,65,ton,grain
+2019,7,Centre-Val de Loire,Blé dur,triticum_durum,0,154,ton,grain
+2019,7,France,Avoine,avena_sativa,"107,62392315713","109,075385743527",ton,grain
+2019,7,France,Blé dur,triticum_durum,"168,77221997551","185,003067776056",ton,grain
+2019,7,Normandie,Avoine,avena_sativa,"110,246323157641","103,215635896739",ton,grain
+2019,7,Nouvelle-Aquitaine,Blé dur,triticum_durum,"175,791616900774","191,312627529887",ton,grain
+2019,7,Occitanie,Blé dur,triticum_durum,"172,965652594454","197,184622279344",ton,grain
+2019,7,Pays de la Loire,Avoine,avena_sativa,"106,133351388145","110,235726613513",ton,grain
+2019,7,Pays de la Loire,Blé dur,triticum_durum,"155,023659123133",205,ton,grain
+2019,7,Provence-Alpes-Côte d'Azur,Blé dur,triticum_durum,"159,834033180191",0,ton,grain
+2019,8,Bourgogne-Franche-Comté,Avoine,avena_sativa,"103,076376818791","187,177888006379",ton,grain
+2019,8,Bretagne,Avoine,avena_sativa,120,"140,323059719747",ton,grain
+2019,8,Centre-Val de Loire,Avoine,avena_sativa,0,"99,98",ton,grain
+2019,8,Centre-Val de Loire,Blé dur,triticum_durum,205,"204,17",ton,grain
+2019,8,France,Avoine,avena_sativa,"111,509759817537","140,185262550093",ton,grain
+2019,8,France,Blé dur,triticum_durum,"174,499964874258","182,254426292873",ton,grain
+2019,8,Grand Est,Avoine,avena_sativa,"102,814440638745","135,761897700804",ton,grain
+2019,8,Hauts-de-France,Avoine,avena_sativa,"122,151517757331",155,ton,grain
+2019,8,Normandie,Avoine,avena_sativa,"107,618041923317","144,800057049616",ton,grain
+2019,8,Nouvelle-Aquitaine,Blé dur,triticum_durum,"174,969553351051","205,773807521229",ton,grain
+2019,8,Occitanie,Blé dur,triticum_durum,"137,020525435667","142,238993398212",ton,grain
+2019,8,Pays de la Loire,Avoine,avena_sativa,"109,770278748966","143,526119867807",ton,grain
+2019,8,Pays de la Loire,Blé dur,triticum_durum,150,0,ton,grain
+2019,8,Provence-Alpes-Côte d'Azur,Blé dur,triticum_durum,"158,754043597909",0,ton,grain
+2019,9,Bourgogne-Franche-Comté,Avoine,avena_sativa,"116,603894769734","173,398141025495",ton,grain
+2019,9,Bretagne,Avoine,avena_sativa,120,"8,32472774140656",ton,grain
+2019,9,Centre-Val de Loire,Avoine,avena_sativa,130,"118,10459739042",ton,grain
+2019,9,Centre-Val de Loire,Blé dur,triticum_durum,"196,322370053012","210,447134264866",ton,grain
+2019,9,France,Avoine,avena_sativa,"131,908093578268","134,97141094308",ton,grain
+2019,9,France,Blé dur,triticum_durum,"189,56871486195","200,447817620742",ton,grain
+2019,9,Grand Est,Avoine,avena_sativa,"124,072465920488","136,351732695197",ton,grain
+2019,9,Hauts-de-France,Avoine,avena_sativa,"139,497142857143",160,ton,grain
+2019,9,Normandie,Avoine,avena_sativa,140,"149,204338812857",ton,grain
+2019,9,Nouvelle-Aquitaine,Blé dur,triticum_durum,"189,815879303009","200,501313989955",ton,grain
+2019,9,Occitanie,Blé dur,triticum_durum,"174,867849704388","188,323220816153",ton,grain
+2019,9,Pays de la Loire,Avoine,avena_sativa,0,150,ton,grain
+2019,9,Pays de la Loire,Blé dur,triticum_durum,200,0,ton,grain
+2019,9,Provence-Alpes-Côte d'Azur,Blé dur,triticum_durum,160,0,ton,grain

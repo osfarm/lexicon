@@ -1,0 +1,1596 @@
+N°,name,previous_name,label_fr,fr_pcg82,fr_pcga
+1,depreciation_for_diminution_in_value_of_long_term_equity_interests,,Titres de participation,2961,
+2,depreciation_for_diminution_in_value_of_other_categories_of_participating_interests,,Autres formes de participation,2966,
+3,depreciation_for_diminution_in_value_of_debts_receivable_to_participating_interests,,Créances rattachées à des participations,2967,
+4,,,Intégration fiscale – Charges,6981,
+5,,,Intégration fiscale – Produits,6989,
+6,,capitals,Comptes de capitaux,1,1
+7,,capital,Capital,101,101
+8,,initial_individual_capital,Capital individuel initial au../../..,,1011
+9,,initial_individual_capital_variations,Variation de capital individuel,,1012
+10,subscribed_capital_uncalled,initial_individual_capital,Capital souscrit - non appelé,1011,1013
+11,subscribed_capital_called_up_and_unpaid,initial_individual_capital_variations,"Capital souscrit - appelé, non versé",1012,1014
+12,subscribed_capital_called_up_and_paid,initial_society_capital,"Capital souscrit - appelé, versé",1013,1015
+13,capital_not_written_off,,Capital non amorti,10131,10151
+14,capital_written_off,,Capital amorti,10132,10152
+15,subscribed_capital_subject_to_particular_regulations,,Capital souscrit soumis à des réglementations particulières,1018,1018
+16,,share_capital_bonus,Primes liées au capital social,104,104
+17,share_premiums,,Primes d'émission,1041,1041
+18,merger_premiums,,Primes de fusion,1042,1042
+19,premiums_contribution,,Primes d'apport,1043,1043
+20,premium_on_conversion_of_bond_into_shares,,Primes de conversion d'obligations en actions,1044,1044
+21,,reevaluation_gaps,Écarts de réévaluation,105,105
+22,special_revaluation_reserve,,Réserve spéciale de réévaluation,1051,1051
+23,voluntary_revaluation_difference,,Écart de réévaluation libre,1052,1052
+24,revaluation_reserve,,Réserve de réévaluation,1053,1053
+25,revaluation_difference_on_other_legal_transactions,,Écarts de réévaluation (autres opérations légales),1055,1055
+26,other_revaluation_difference_in_france,,Autres écarts de réévaluation en France,1057,1057
+27,other_revaluation_difference_outside_france,,Autres écarts de réévaluation à l'étranger,1058,1058
+28,,reserves,Réserves,106,106
+29,,legal_reserves,Réserve légale,1061,1061
+30,basic_legal_reserves,,Réserve légale proprement dite,10611,10611
+31,net_long_term_capital_gain_legal_reserves,,Plus-values nettes à long terme,10612,10612
+32,undistributable_reserves,,Réserves indisponibles,1062,1062
+33,statutory_or_contractual_reserves,,Réserves statutaires ou contractuelles,1063,1063
+34,tax_regulated_reserves,,Réserves réglementées,1064,1064
+35,net_long_term_capital_gain_on_tax_regulated_reserves,,Plus-values nettes à long terme,10641,10641
+36,reserves_consequent_on_award_of_investment_grants,,Réserves consécutives à l'octroi de subventions d'investissement,10643,10643
+37,other_tax_regulated_reserves,,Autres réserves réglementées,10648,10648
+38,,other_reserves,Autres réserves,1068,1068
+39,self_insurance_reserve,,Réserve de propre assureur,10681,10681
+40,sundry_reserves,,Réserves diverses,10688,10688
+41,,owner_account,Compte de l'exploitant,108,108
+42,shareholders_and_partners_subscribed_capital_uncalled,,Actionnaires : capital souscrit - non appelé,109,109
+43,shareholders_uncalled_capital,,Actionnaires : capital souscrit - non appelé,,1091
+44,partners_uncalled_up_capital,,Partenaires : capital souscrit - non appelé,,1095
+45,profit_or_loss_carried_forward,retained_earnings,Report à nouveau (solde créditeur ou débiteur),11,11
+46,profit_carried_forward,credit_retained_earnings,Report à nouveau (solde créditeur),110,110
+47,loss_carried_forward,debit_retained_earnings,Report à nouveau (solde débiteur),119,119
+48,profit_or_loss_for_the_financial_year,financial_year_result,Résultat de l'exercice (bénéfice ou perte),12,12
+49,profit_for_the_financial_year,financial_year_result_profit,Résultat de l'exercice (bénéfice),120,120
+50,,financial_year_result_balance,,128,128
+51,loss_for_the_financial_year,financial_year_result_loss,Résultat de l'exercice (perte),129,129
+52,investment_grants,,Subventions d'investissement,13,13
+53,equipment_grants,equipment_subventions,Subventions d'équipement,131,131
+54,other_investment_grants,other_investment_subventions,Autres subventions d'investissement,138,138
+55,investment_grants_credited_to_the_profit_and_loss_account,other_investment_subventions_in_earnings_statement,Subventions d'investissement inscrites au compte de résultat,139,139
+56,equipment_grants_credited_to_the_profit_and_loss_account,,Subventions d'équipement inscrites au compte de résultat,1391,1391
+57,other_investment_grants_credited_to_the_profit_and_loss_account,,Subventions d’investissement inscrites au compte de résultat,1398,1398
+58,tax_regulated_provisions,,Provisions réglementées,14,14
+59,tax_regulated_provisions_related_to_fixed_assets,,Provisions réglementées relatives aux immobilisations,142,142
+60,provisions_for_investment_employee_profit_share,,Provisions pour investissement (participation des salariés),1424,1424
+61,tax_regulated_provisions_relating_to_stocks,,Provisions réglementées relatives aux stocks,143,143
+62,tax_regulated_provisions_for_price_increase_relating_to_stocks,,Provisions réglementées relatives aux stocks : hausse de prix,1431,1431
+63,tax_regulated_provisions_relating_to_other_asset_components,,Provisions réglementées relatives aux autres éléments de l'actif,144,144
+64,amortization_by_derogation,,Amortissements dérogatoires,145,145
+65,special_revaluation_provision,,Provision spéciale de réévaluation,146,146
+66,capital_gain_reinvested,,Plus-values réinvesties,147,147
+67,other_tax_related_provisions,,Autres provisions réglementées,148,148
+68,provisions_for_liability_and_charges,,Provisions (Règl. CRC 2005-9),15,15
+69,provisions_for_liability,,Provisions pour risques,151,151
+70,provisions_for_litigation,,Provisions pour litiges,1511,1511
+71,provisions_for_customer_warranties,,Provisions pour garanties données aux clients,1512,1512
+72,provisions_for_losses_on_futures,,Provisions pour pertes sur marchés à terme,1513,1513
+73,provisions_for_fines_and_penalties,,Provisions pour amendes et pénalités,1514,1514
+74,provisions_for_foreign_exchange_losses,,Provisions pour pertes de change,1515,1515
+75,provisions_for_losses_on_contract,,Provisions pour pertes sur contrats (Règl. CRC 2000-6),1516,1516
+76,other_provisions_for_liabilities,,Autres provisions pour risques,1518,1518
+77,provisions_for_pensions_and_similar_obligations,,Provisions pour pensions et obligations similaires,153,153
+78,provisions_for_restructuring,,Provisions pour restructurations (Règl. CRC 2000-6),154,154
+79,provisions_for_taxation,,Provisions pour impôts,155,155
+80,provisions_for_fixed_asset_renewal_concession_entities,,Provisions pour renouvellement des immobilisations (entreprises concessionnaires),156,156
+81,provisions_for_deferred_charges,,Provisions pour charges à répartir sur plusieurs exercices,157,157
+82,provisions_for_major_repairs,,Provisions pour gros entretien ou grandes révisions (Règl. CRC 2003-7),1572,1572
+83,other_provisions_for_charges,,Autres provisions pour charges,158,158
+84,provisions_for_restoration,,Provisions pour remises en état (Règl. CRC 2000-6),1581,1581
+85,loans_and_similar_debts_payable,,Emprunts et dettes assimilées,16,16
+86,convertible_debenture_loans,,Emprunts obligataires convertibles,161,161
+87,other_debenture_loans,,Autres emprunts obligataires,163,163
+88,loans_from_credit_institutions,loans,Emprunts auprès des établissements de crédit,164,164
+89,,land_loans,Emprunts fonciers,,1641
+90,other_medium_and_long_term_loans,long_term_loans,Autres emprunts à moyen et long terme,,1642
+91,,short_term_loans,Emprunts à court terme,,1643
+92,deposit_and_sureties_recieved,,Dépôts et cautionnements reçus,165,165
+93,deposits,,Dépôts,1651,1651
+94,sureties,,Cautionnements,1655,1655
+95,employee_profit_share,,Participation des salariés aux résultats de l’entreprise,166,166
+96,blocked_accounts,,Comptes bloqués,1661,1661
+97,profit_share_funds,,Fonds de participation,1662,1662
+98,loans_and_debts_payable_subject_to_particular_conditions,,Emprunts et dettes assortis de conditions particulières,167,167
+99,issues_of_non_voting_shares,,Emissions de titres participatifs,1671,1671
+100,advances_by_the_state_subject_to_conditions,,Avances conditionnées de l'Etat,1674,1674
+101,participating_loans,,Emprunts participatifs,1675,1675
+102,other_loans_and_similar_debts_payable,,Autres emprunts et dettes assimilées,168,168
+103,other_loans,,Autres emprunts,1681,1681
+104,capitalised_life_annuities,,Rentes viagères capitalisées,1685,1685
+105,other_debts_payable,,Autres dettes,1687,1687
+106,,accrued_interests,Intérêts courus,1688,1688
+107,accrued_interests_on_convertible_debenture_loans,,Intérêts courus sur emprunts obligataires convertibles,16881,16881
+108,accrued_interests_on_other_debenture_loans,,Intérêts courus sur autres emprunts obligataires,16883,16883
+109,accrued_interests_on_loans_from_credit_institutions,accrued_interests_on_bank,Intérêts courus sur emprunts auprès des établissements de crédit,16884,16884
+110,accrued_interests_on_deposits_and_sureties_recieved,,Intérêts courus sur dépôts et cautionnements reçus,16885,16885
+111,accrued_interests_on_employee_profit_share,,Intérêts courus sur participation des salariés aux résultats,16886,16886
+112,accrued_interests_on_loans_and_debts_payable_subject_to_particular_conditions,,Intérêts courus sur emprunts et dettes assortis de conditions particulières,16887,16887
+113,accrued_interests_on_other_loans_and_similar_debts_payable,,Intérêts courus sur autres emprunts et dettes assimilées,16888,16888
+114,debt_redemption_premiums,,Primes de remboursement des obligations,169,169
+115,debts_payable_related_to_participating_interest,,Dettes rattachées à des participations,17,17
+116,debts_payable_related_to_participating_interests_(group),,Dettes rattachées à des participations (groupe),171,171
+117,debts_payable_related_to_participating_interests_(apart_from_group),,Dettes rattachées à des participations (hors groupe),174,174
+118,debts_payable_related_to_joint_venture,,Dettes rattachées à des sociétés en participation,178,178
+119,principal_on_debts_payable_related_to_joint_venture,,Principal,1781,1781
+120,accrued_interests_on_debts_payable_related_to_joint_venture,,Intérêts courus,1788,1788
+121,reciprocal_branch_and_joint_venture_accounts,,Comptes de liaison des établissements et sociétés en participation,18,18
+122,reciprocal_branch_accounts,,Comptes de liaison des établissements,181,181
+123,goods_and_services_exchanged_between_establishments_(charges),,Biens et prestations de services échangés entre établissements (charges),186,186
+124,goods_and_services_exchanged_between_establishments_(income),,Biens et prestations de services échangés entre établissements (produits),187,187
+125,reciprocal_joint_venture_accounts,,Comptes de liaison des sociétés en participation,188,188
+126,,fixed_assets,Comptes d’immobilisations,2,2
+127,,incorporeal_assets,Immobilisations incorporelles,20,20
+128,,establishment_charge_assets,Frais d’établissement,201,201
+129,incorporation_costs,,Frais de constitution,2011,2011
+130,start_up_costs,,Frais de premier établissement,2012,2012
+131,commercial_assesment_costs,,Frais de prospection,20121,20121
+132,marketing_costs,,Frais de publicité,20122,20122
+133,"capital_increase_and_sundry_transaction_costs_(mergers,_demergers,_restructurations)",,"Frais d’augmentation de capital et d’opérations diverses (fusion, scissions, transformations)",2013,2013
+134,,research_and_development_charge_assets,Frais de recherche et développement,203,203
+135,,brands_and_patents_assets,"Concessions et droits similaires, brevets, licences, marques, procédés, logiciels, droits et valeurs similaires",205,205
+136,lease_premium,,Droit au bail,206,206
+137,commercial_property,,Fonds commercial,207,207
+138,residual_gap_on_goodwill,,Écart résiduel sur fonds agricole,,2071
+139,,other_incorporeal_assets,Autres immobilisations incorporelles,208,208
+140,single_farm_payment,,Droits à paiement unique,,2081
+141,,corporeal_assets,Immobilisations corporelles (hors biens vivants),21,21
+142,,global_land_parcel_assets,Terrains,211,211
+143,undeveloped_land,land_parcel_assets,Terrains nus,2111,2111
+144,undeveloped_land_with_owner_farming,,Terrains nus exploités en faire-valoir direct,,21111
+145,other_undeveloped_land,,Autres terrains nus,,21112
+146,serviced_land,,Terrains aménagés,2112,2112
+147,undergroud_and_aboveground_sites,,Sous-sols et sur-sols,2113,2113
+148,minig_sites,,Terrains de gisement,2114,2114
+149,developed_land,,Terrains bâtis,2115,2115
+150,developed_land_assigned_to_agricultural_property_complexes,,Affectés à la production agricole,,21151
+151,developed_land_assigned_to_other_professional_activity,,Affectés à une autres activité professionnelle,,21155
+152,developed_land_assigned_to_non_professional_activity,,Affectés à des opérations non professionnelles,,21158
+153,suspense_account_for_non_amortizable_fixed_asset,,Compte d'ordre sur immobilisations (art. 6 du décret n° 78-737 du 11-7-1978 art. 6),2116,2116
+154,site_development,land_parcel_construction_assets,Agencement et aménagement de terrains,212,212
+155,amortizable_site_development,,Amortissables,,2121
+156,non_amortizable_site_development,,Non amortissables,,2125
+157,,construction_on_own_land_parcel_assets,Constructions (sur sol propre),213,213
+158,,building_assets,Bâtiments,2131,2131
+159,buildings_assigned_to_agricultural_property_complexes,,Affectés à la production agricole,,21311
+160,buildings_assigned_to_other_professional_activity,,Affectés à une autres activité professionnelle,,21315
+161,buildings_assigned_to_non_professional_activity,,Affectés à des opérations non professionnelles,,21318
+162,buildings_fixtures_and_fittings,general_installation_assets,Installations générales - agencements – aménagements des constructions,2135,2135
+163,buildings_fixtures_and_fittings_assigned_to_agricultural_property_complexes,,Affectés à la production agricole,,21351
+164,buildings_fixtures_and_fittings_assigned_to_other_professional_activity,,Affectés à une autres activité professionnelle,,21355
+165,buildings_fixtures_and_fittings_assigned_to_non_professional_activity,,Affectés à des opérations non professionnelles,,21358
+166,infrastructure_works,,Ouvrages d'infrastructure,2138,2138
+167,constructions_on_third_party_sites,construction_on_other_land_parcel_assets,Construction sur sol d’autrui,214,214
+168,building_assets_on_third_party_sites,,Bâtiments,2141,2141
+169,buildings_assigned_to_agricultural_property_complexes_on_third_party_sites,,Affectés à la production agricole,,21411
+170,buildings_assigned_to_other_professional_activity_on_third_party_sites,,Affectés à une autres activité professionnelle,,21415
+171,buildings_assigned_to_non_professional_activity_on_third_party_sites,,Affectés à des opérations non professionnelles,,21418
+172,buildings_fixtures_and_fittings_on_third_party_sites,,Installations générales - agencements – aménagements des constructions,2145,2145
+173,buildings_fixtures_and_fittings_assigned_to_agricultural_property_complexes_on_third_party_sites,,Affectés à la production agricole,,21451
+174,buildings_fixtures_and_fittings_assigned_to_other_professional_activity_on_third_party_sites,,Affectés à une autres activité professionnelle,,21455
+175,buildings_fixtures_and_fittings_assigned_to_non_professional_activity_on_third_party_sites,,Affectés à des opérations non professionnelles,,21458
+176,infrastructure_development_on_third_party_sites,,Ouvrages d'infrastructure,2148,2148
+177,,technical_installation_equipment_and_tools_assets,"Installations techniques, matériels et outillage",215,215
+178,technical_installation_on_own_site,technical_installation_on_own_land_parcel_assets,Installations techniques (sur sol propre),,2151
+179,technical_installation_on_third_party_site,technical_installation_on_other_land_parcel_assets,Installations techniques (sur sol d’autrui),,2152
+180,,equipment_assets,Matériel,2154,2154
+181,,tools_assets,Outillage,2155,2155
+182,fixtures_and_fittings_for_equipment_and_tools,,Agencements et aménagements du matériel et outillage,2157,2157
+183,improvement_of_commercial_property,,Améliorations du fonds,,217
+184,other_tangible_fixed_assets,other_corporeal_assets,Autres immobilisations corporelles (hors biens vivants),218,218
+185,sundry_general_fixture_and_fittings,other_general_installation_assets,"Installations générales, agencements, aménagements divers",2181,2181
+186,transport_equipment,transport_vehicle_assets,Matériel de transport,2182,2182
+187,office_and_computing_equipment,office_equipment_assets,Matériel de bureau et matériel informatique,2183,2183
+188,furnishing,office_furniture_assets,Mobilier,2184,2184
+189,recoverable_packaging,sustainable_packaging_assets,Emballages récupérables,2186,2186
+190,other_type_of_other_tangible_fixed_assets,other_assets,Autres,,2188
+191,fixed_assets_in_concession,concession_assets,Immobilisations mises en concession,22,22
+192,fixed_assets_in_progress,outstanding_assets,Immobilisations en cours,23,23
+193,tangible_fixed_asset_in_progress,outstanding_corporeal_assets,Immobilisations corporelles en cours (hors biens vivants),231,231
+194,land_tangible_fixed_asset_in_progress,outstanding_land_parcel_assets,Terrains,2312,2311
+195,constructions_on_own_land__tangible_fixed_asset_in_progress,outstanding_construction_on_own_land_parcel_assets,Constructions (sur sol propre),,2313
+196,constructions_on_third_party_land__tangible_fixed_asset_in_progress,outstanding_construction_on_other_land_parcel_assets,Constructions (sur sol d’autrui),,2314
+197,technical_installation_equipment_and_tools_fixed_asset_in_progress,outstanding_equipment_assets,"Installations techniques, matériel et outillage industriels",2315,2315
+198,other_tangible_fixed_asset_in_progress,outstanding_other_general_installation_assets,Autres immobilisations corporelles (hors biens vivants),2318,2318
+199,intangible_fixed_asset_in_progress,,Immobilisations incorporelles en cours,232,232
+200,living_tangible_fixed_asset_in_progress,outstanding_living_corporeal_assets,Immobilisations corporelles en cours (biens vivants),,234
+201,breeding_animals_young_for_renewal_tangible_fixed_asset_in_progress,outstanding_adult_animal_assets,Animaux reproducteurs (jeunes de renouvellement),,2341
+202,,outstanding_young_animal_assets,,,2342
+203,service_animals_tangible_fixed_asset_in_progress,outstanding_service_animal_assets,Animaux de service,,2343
+204,long_term_plantation_tangible_fixed_asset_in_progress,outstanding_sustainables_plants_assets,Plantations pérennes,,2346
+205,other_plants_tangible_fixed_asset_in_progress,,Autres végétaux immobilisés,,2347
+206,payments_on_account_on_intangible_fixed_assets,,Avances et acomptes versés sur immobilisations incorporelles,237,237
+207,payments_on_account_on_orders_for_tangible_fixed_assets,,Avances et acomptes versés sur commandes d'immobilisations corporelles,238,238
+208,payments_on_account_on_orders_for_tangible_fixed_assets_except_for_livestock,,Immobilisations corporelles (hors biens vivants),,2381
+209,payments_on_account_on_orders_for_tangible_fixed_assets_for_livestock,,Immobilisations corporelles (biens vivants),,2384
+210,tangible_fixed_assets_for_living_goods,living_corporeal_assets,Immobilisations corporelles (biens vivants),,24
+211,adult_breeding_animals_tangible_fixed_asset,adult_animal_assets,Animaux reproducteurs (adultes),,241
+212,breeding_animals_young_for_renewal_tangible_fixed_asset,young_animal_assets,Animaux reproducteurs (jeunes de renouvellement),,242
+213,service_animals_tangible_fixed_asset,service_animal_assets,Animaux de service (adultes),,243
+214,long_term_plantation_tangible_fixed_asset,sustainables_plants_assets,Plantations pérennes,,246
+215,,sustainables_plants_on_own_land_parcel_assets,,,2461
+216,,sustainables_plants_on_other_land_parcel_assets,,,2465
+217,,installation_sustainable_plant_assets,,,2467
+218,other_immobilized_plants,,Autres végétaux immobilisés,,247
+219,shares_in_and_receivables_due_from_affiliated_entites,,Parts dans des entreprises liées et créances sur des entreprises liées,25,25
+220,participated_interest_and_related_debts_receivable,participations,Participations et créances rattachées à des participations,26,26
+221,long_term_equity_interests,equity_securities,Titres de participation,261,261
+222,shares_from_long_term_equity_interests,,Actions,2611,2611
+223,other_securities_fromlong_term_equity_interests,,Autres titres,2618,2618
+224,professional_agricultural_organization_interests,professional_agricultural_organization_assets,Participations à des organismes professionnels agricoles autres que des établissements de crédit,,262
+225,cooperative_participation_interests,cooperative_participation_assets,Sociétés coopératives agricoles (sauf Cuma),,2621
+226,equipment_cooperative_participation_interests,equipment_cooperative_participation_assets,Cuma,,2622
+227,collective_agricultural_interest_companies_interests,industrial_cooperative_participation_assets,Sica,,2624
+228,other_professional_agricultural_participation_interests,other_professional_agricultural_participation_assets,Autres,,2628
+229,other_categories_of_participating_interest,,Autres formes de participation,266,266
+230,debt_receivable_related_to_participating_interest,,Créances rattachées à des participations,267,267
+231,debt_receivable_related_to_participating_interest_in_the_group,,Créances rattachées à des participations (groupe),2671,2671
+232,debt_receivable_related_to_participating_interest_in_professional_agricultural_organization_interests,,Créances rattachées à des participations à des organismes professionnels agricoles (autres que les établissements de crédit),,2672
+233,debt_receivable_related_to_participating_interest_in_agricultural_cooperative_companies,,Sociétés coopératives agricoles (sauf Cuma),,26721
+234,debt_receivable_related_to_participating_interest_in_equipment_cooperative_companies,,Cuma,,26722
+235,debt_receivable_related_to_participating_interest_in_collective_agricultural_interest_companies,,Sica,,26724
+236,debt_receivable_related_to_participating_interest_in_other_agricultural_companies,,Autres,,26728
+237,debt_receivable_related_to_participating_interest_apart_from_the_group,,Créances rattachées à des participations (hors groupe),2674,2674
+238,payments_representing_non_capitalisez_contributions_call_for_funds,,Versements représentatifs d'apports non capitalisés (appel de fonds),2675,2675
+239,long_term_capital_advances,,Avances consolidables,2676,2676
+240,debt_receivable_related_to_joint_venture,,Créances rattachées à des sociétés en participation,268,268
+241,principal_of_debt_receivable_related_to_joint_venture,,Principal,2681,2681
+242,accrued_interest,,Intérêts courus,2688,2688
+243,unpaid_instalments_on_unpaid_long_term_equity_interests,,Versements restant à effectuer sur des titres de participation non libérés,269,269
+244,unpaid_instalments_on_unpaid_long_term_equity_interests_on_equity_securities,,Sur titres de participation,,2691
+245,unpaid_instalments_on_unpaid_long_term_equity_interests_on_participation_in_professional_agricultural_organizations,,Sur participation à des organismes professionnels agricoles (autres que les établissements de crédit),,2692
+246,unpaid_instalments_on_unpaid_long_term_equity_interests_on_other_form_of_participation,,Sur autres formes de participation,,2696
+247,other_financial_fixed_asset,,Autres immobilisations financières,27,27
+248,ownership_of_fixed_securities,ownership_assets,Titres immobilisés (droit de propriété),,271
+249,ownership_of_fixed_shares,,Actions,2711,2711
+250,ownership_of_fixed_shareholding_in_financial_institution,,Parts dans les établissements de crédit,,2715
+251,ownership_of_fixed_other_securities,,Autres titres,2718,2718
+252,long_term_investment_debt_securities,,Titres immobilisés (droits de créance),272,272
+253,long_term_investment_debt_securities_in_bonds,,Obligations,2721,2721
+254,long_term_investment_debt_securities_in_warrants,,Bons,2722,2722
+255,long_term_investment_debt_securities_in_cooperative_development_funds_share_certificates,,Certificat de fonds de développement coopératif,,2723
+256,portfolio_long_term_investment_securities,,Titres immobilisés de l’activité de portefeuille,273,273
+257,loans,ownership_loan,Prêts,274,274
+258,participating_loans,,Prêts participatifs,2741,2741
+259,loans_to_partners_or_associates,,Prêts aux associés,2742,2742
+260,loans_to_personnel,,Prêts personnels,2743,2743
+261,other_loans,,Autres prêts,2748,2748
+262,deposits_and_sureties_advanced,payment_guarantees,Dépôts et cautionnements versés,275,275
+263,deposits_advanced,,Dépôts,2751,2751
+264,sureties_advanced,,Cautionnements,2755,2755
+265,other_capitalised_debts_receivable,,Autres créances immobilisées,276,276
+266,sundry_debts_receivable,,Créances diverses,2761,2761
+267,accrued_interests_on_other_capitalised_debts_receivable,,Intérêts courus,2768,2768
+268,accrued_interests_on_other_capitalised_long_term_investment_debts_securities,,Sur titres immobilisés (droits de créance),27682,27682
+269,accrued_interests_on_other_capitalised_loans,,Sur prêts,27684,27684
+270,accrued_interests_on_other_capitalised_deposits_and_sureties,,Sur dépôts et cautionnements,27685,27685
+271,accrued_interests_on_other_capitalised_sundry_debts_receivable,,Sur créances diverses,27688,27688
+272,own_shares,,(Actions propres ou parts propres),277,277
+273,unpaid_instalments_on_unpaid_long_term_investment_securities,,Versements restant à effectuer sur des titres immobilisés non libérés,279,279
+274,cumulative_amortization_on_fixed_assets,fixed_asset_depreciations,AMORTISSEMENT DES IMMOBILISATIONS,28,28
+275,amortization_on_intangible_fixed_assets,incorporeal_asset_depreciations,Amortissement des immobilisations incorporelles,280,280
+276,establishment_charge_assets_amortization,,Frais d’établissement,2801,2801
+277,incorporation_costs_amortization,,Frais de constitution,28011,28011
+278,start_up_costs_amortization,,Frais de premier établissement,28012,28012
+279,commercial_assesment_costs_amortization,,Frais de prospection,280121,280121
+280,marketing_costs_amortization,,Frais de publicité,280122,280122
+281,amortization_on_capital_increase_and_sundry_transaction_costs_on_mergers_demergers_restructurations,,"Frais d’augmentation de capital et d’opérations diverses (fusion, scissions, transformations)",28013,28013
+282,research_and_development_charge_assets_amortization,,Frais de recherche et développement,2803,2803
+283,brands_and_patents_assets_amortization,,"Concessions et droits similaires, brevets, licences, logiciels, droits et valeurs similaires",2805,2805
+284,commercial_property_amortization,,Fonds commercial,2807,2807
+285,amortization_on_other_intangible_fixed_assets,other_incorporeal_asset_depreciations,Autres immobilisations incorporelles,2808,2808
+286,amortization_on_tangible_fixed_assets,corporeal_asset_depreciations,Amortissement des immobilisations corporelles,281,281
+287,mining_site_amortization,land_parcel_asset_depreciations,Terrains de gisement,2811,2811
+288,site_development_amortization,land_parcel_construction_asset_depreciations,Agencement et aménagement de terrains amortissables,2812,2812
+289,construction_amortization,own_building_asset_depreciations,Constructions sur sol propre,2813,2813
+290,building_assets_amortization,,Bâtiments,28131,28131
+291,buildings_assigned_to_agricultural_property_complexes_amortization,,Affectés à la production agricole,,281311
+292,buildings_assigned_to_other_professional_activity_amortization,,Affectés à une autres activité professionnelle,,281315
+293,buildings_assigned_to_non_professional_activity_amortization,,Affectés à des opérations non professionnelles,,281318
+294,general_installation_assets_amortization,,Installations générales - agencements – aménagements des constructions,28135,28135
+295,buildings_fixtures_and_fittings_assigned_to_agricultural_property_complexes_amortization,,Affectés à la production agricole,,281351
+296,buildings_fixtures_and_fittings_assigned_to_other_professional_activity_amortization,,Affectés à une autres activité professionnelle,,281355
+297,buildings_fixtures_and_fittings_assigned_to_non_professional_activity_amortization,,Affectés à des opérations non professionnelles,,281358
+298,infrastructure_works_amortization,,Ouvrages d'infrastructure,28138,28138
+299,constructions_on_third_party_sites_amortization,other_building_asset_depreciations,Construction sur sol d’autrui,2814,2814
+300,building_assets_on_third_party_sites_amortization,,Bâtiments,28141,28141
+301,buildings_assigned_to_agricultural_property_complexes_on_third_party_sites_amortization,,Affectés à la production agricole,,281411
+302,buildings_assigned_to_other_professional_activity_on_third_party_sites_amortization,,Affectés à une autres activité professionnelle,,281415
+303,buildings_assigned_to_non_professional_activity_on_third_party_sites_amortization,,Affectés à des opérations non professionnelles,,281418
+304,buildings_fixtures_and_fittings_on_third_party_sites_amortization,,Installations générales - agencements – aménagements des constructions,28145,28145
+305,buildings_fixtures_and_fittings_assigned_to_agricultural_property_complexes_on_third_party_sites_amortization,,Affectés à la production agricole,,281451
+306,buildings_fixtures_and_fittings_assigned_to_other_professional_activity_on_third_party_sites_amortization,,Affectés à une autres activité professionnelle,,281455
+307,buildings_fixtures_and_fittings_assigned_to_non_professional_activity_on_third_party_sites_amortization,,Affectés à des opérations non professionnelles,,281458
+308,infrastructure_development_on_third_party_sites_amortization,,Ouvrages d'infrastructure,28148,28148
+309,technical_installation_equipment_and_tools_amortization,equipment_asset_depreciations,"Installations techniques, matériels et outillage",2815,2815
+310,technical_installation_on_own_land_parcel_assets_amortization,,Installations techniques (sur sol propre),,28151
+311,technical_installation_on_other_land_parcel_assets_amortization,,Installations techniques (sur sol d’autrui),,28152
+312,equipment_assets_amortization,,Matériel,28154,28154
+313,tools_assets_amortization,,Outillage,28155,28155
+314,fixtures_and_fittings_for_equipment_and_tools_amortization,,Agencements et aménagements du matériel et outillage,28157,28157
+315,improvement_of_commercial_property_amortization,,Améliorations du fonds,,2817
+316,other_tangible_fixed_assets_amortization,other_corporeal_asset_depreciations,Autres immobilisations corporelles (hors biens vivants),2818,2818
+317,sundry_general_fixture_and_fittings_amortization,general_installation_asset_depreciations,"Installations générales, agencements, aménagements divers",28181,28181
+318,transport_equipment_amortization,transport_vehicle_asset_depreciations,Matériel de transport,28182,28182
+319,office_and_computing_equipment_amortization,office_equipment_asset_depreciations,Matériel de bureau et matériel informatique,28183,28183
+320,furnishing_amortization,office_furniture_asset_depreciations,Mobilier,28184,28184
+321,recoverable_packaging_amortization,sustainable_packaging_asset_depreciations,Emballages récupérables,28186,28186
+322,other_type_of_other_tangible_fixed_assets_amortization,other_asset_depreciations,Autres,,28188
+323,amortization_on_depreciation_on_fixed_assets_in_concession,concession_asset_depreciations,Amortissement des immobilisations en concession,282,282
+324,amortization_on_tangible_fixed_assets_for_living_goods,biocorporeal_asset_depreciations,Immobilisations corporelles (biens vivants),,284
+325,amortization_on_adult_breeding_animals_tangible_fixed_asset,adult_animal_asset_depreciations,Animaux reproducteurs (adultes),,2841
+326,amortization_on_breeding_animals_young_for_renewal_tangible_fixed_asset,young_animal_asset_depreciations,Animaux reproducteurs (jeunes de renouvellement),,2842
+327,amortization_on_service_animals_tangible_fixed_asset,service_animal_asset_depreciations,Animaux de service (adultes),,2843
+328,amortization_on_long_term_plantation_tangible_fixed_asset,sustainables_plants_asset_depreciations,Plantations pérennes,,2846
+329,other_immobilized_plants_amortization,,Autres végétaux immobilisés,,2847
+330,depreciation_for_diminution_in_value_of_fixed_assets,asset_impairment_losses,Dépréciation des immobilisations (Règl. CRC 2002-10),29,29
+331,depreciation_for_diminution_in_value_of_intangible_fixed_assets,,Dépréciation des immobilisations incorporelles (Règl. CRC 2002-10),290,290
+332,depreciation_for_diminution_in_value_of_trade_marks_processes_rights_and_similar_assets,,"Marques, procédés, droits et valeurs similaires",2905,2905
+333,depreciation_for_diminution_in_value_of_lease_premium,,Droit au bail,2906,2906
+334,depreciation_for_diminution_in_value_of_goodwill,,Fonds commercial et fonds agricole,2907,2907
+335,depreciation_for_diminution_in_value_of_other_intangible_fixed_assets,,Autres immobilisations incorporelles,2908,2908
+336,depreciation_for_diminution_in_value_of_single_farm_payment,,Droits à payement unique,,29081
+337,depreciation_for_diminution_in_value_of_tangible_fixed_assets,,Dépréciation des immobilisations corporelles (hors biens vivants) (Règl.CRC 2002-10),291,291
+338,depreciation_for_diminution_in_value_of_global_land_parcel_assets,,Terrains,2911,2911
+339,depreciation_for_diminution_in_value_of_undeveloped_land,,Terrains nus,29111,29111
+340,depreciation_for_diminution_in_value_of_undeveloped_land_with_owner_farming,,Terrains nus exploités en faire-valoir direct,,291111
+341,depreciation_for_diminution_in_value_of_other_undeveloped_land,,Autres terrains nus,,291112
+342,depreciation_for_diminution_in_value_of_serviced_land,,Terrains aménagés,29112,29112
+343,depreciation_for_diminution_in_value_of_undergroud_and_aboveground_sites,,Sous-sols et sur-sols,29113,29113
+344,depreciation_for_diminution_in_value_of_minig_sites,,Terrains de gisement,29114,29114
+345,depreciation_for_diminution_in_value_of_developed_land,,Terrains bâtis,29115,29115
+346,depreciation_for_diminution_in_value_of_developed_land_assigned_to_agricultural_property_complexes,,Affectés à la production agricole,,291151
+347,depreciation_for_diminution_in_value_of_developed_land_assigned_to_other_professional_activity,,Affectés à une autres activité professionnelle,,291155
+348,depreciation_for_diminution_in_value_of_developed_land_assigned_to_non_professional_activity,,Affectés à des opérations non professionnelles,,291158
+349,depreciation_for_diminution_in_value_of_suspense_account_for_non_amortizable_fixed_asset,,Compte d'ordre sur immobilisations (art. 6 du décret n° 78-737 du 11-7-1978 art. 6),29116,29116
+350,depreciation_for_diminution_in_value_of_site_development,,Agencement et aménagement de terrains,2912,2912
+351,depreciation_for_diminution_in_value_of_amortizable_site_development,,Amortissables,,29121
+352,depreciation_for_diminution_in_value_of_non_amortizable_site_development,,Non amortissables,,29125
+353,depreciation_for_diminution_in_value_of_construction_on_own_land_parcel_assets,,Constructions (sur sol propre),2913,2913
+354,depreciation_for_diminution_in_value_of_building_assets,,Bâtiments,29131,29131
+355,depreciation_for_diminution_in_value_of_buildings_assigned_to_agricultural_property_complexes,,Affectés à la production agricole,,291311
+356,depreciation_for_diminution_in_value_of_buildings_assigned_to_other_professional_activity,,Affectés à une autres activité professionnelle,,291315
+357,depreciation_for_diminution_in_value_of_buildings_assigned_to_non_professional_activity,,Affectés à des opérations non professionnelles,,291318
+358,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings,,Installations générales - agencements – aménagements des constructions,29135,29135
+359,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_assigned_to_agricultural_property_complexes,,Affectés à la production agricole,,291351
+360,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_assigned_to_other_professional_activity,,Affectés à une autres activité professionnelle,,291355
+361,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_assigned_to_non_professional_activity,,Affectés à des opérations non professionnelles,,291358
+362,depreciation_for_diminution_in_value_of_infrastructure_development,,Ouvrages d'infrastructure,29138,29138
+363,depreciation_for_diminution_in_value_of_constructions_on_third_party_sites,,Construction sur sol d’autrui,2914,2914
+364,depreciation_for_diminution_in_value_of_building_assets_on_third_party_sites,,Bâtiments,29141,29141
+365,depreciation_for_diminution_in_value_of_buildings_assigned_to_agricultural_property_complexes_on_third_party_sites,,Affectés à la production agricole,,291411
+366,depreciation_for_diminution_in_value_of_buildings_assigned_to_other_professional_activity_on_third_party_sites,,Affectés à une autres activité professionnelle,,291415
+367,depreciation_for_diminution_in_value_of_buildings_assigned_to_non_professional_activity_on_third_party_sites,,Affectés à des opérations non professionnelles,,291418
+368,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_on_third_party_sites,,Installations générales - agencements – aménagements des constructions,29145,29145
+369,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_assigned_to_agricultural_property_complexes_on_third_party_sites,,Affectés à la production agricole,,291451
+370,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_assigned_to_other_professional_activity_on_third_party_sites,,Affectés à une autres activité professionnelle,,291455
+371,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_assigned_to_non_professional_activity_on_third_party_sites,,Affectés à des opérations non professionnelles,,291458
+372,depreciation_for_diminution_in_value_of_infrastructure_development_on_third_party_sites,,Ouvrages d'infrastructure,29148,29148
+373,depreciation_for_diminution_in_value_of_technical_installation_equipment_and_tools,,"Installations techniques, matériels et outillage",2915,2915
+374,depreciation_for_diminution_in_value_of_technical_installation_on_own_site,,Installations techniques (sur sol propre),,29151
+375,depreciation_for_diminution_in_value_of_technical_installation_on_third_party_site,,Installations techniques (sur sol d’autrui),,29152
+376,depreciation_for_diminution_in_value_of_equipment_assets,,Matériel,29154,29154
+377,depreciation_for_diminution_in_value_of_tools_assets,,Outillage,29155,29155
+378,depreciation_for_diminution_in_value_of_fixtures_and_fittings_for_equipment_and_tool_assets,,Agencements et aménagements du matériel et outillage,29157,29157
+379,depreciation_for_diminution_in_value_of_fund_improvement,,Améliorations du fonds,,2917
+380,depreciation_for_diminution_in_value_of_other_tangible_fixed_assets,,Autres immobilisations corporelles (hors biens vivants),2918,2918
+381,depreciation_for_diminution_in_value_of_sundry_general_fixture_and_fittings,,"Installations générales, agencements, aménagements divers",29181,29181
+382,depreciation_for_diminution_in_value_of_transport_equipment,,Matériel de transport,29182,29182
+383,depreciation_for_diminution_in_value_of_office_and_computing_equipment,,Matériel de bureau et matériel informatique,29183,29183
+384,depreciation_for_diminution_in_value_of_furnishing,,Mobilier,29184,29184
+385,depreciation_for_diminution_in_value_of_recoverable_packaging,,Emballages récupérables,29186,29186
+386,depreciation_for_diminution_in_value_of_other_type_of_other_tangible_fixed_assets,,Autres,,29188
+387,depreciation_for_diminution_in_value_of_fixed_assets_in_concession,,Dépréciation des immobilisations mises en concession (Règl. CRC 2002-10),292,292
+388,depreciation_for_diminution_in_value_of_fixed_assets_in_progress,,Dépréciation des immobilisations en cours (Règl. CRC 2002-10),293,293
+389,depreciation_for_diminution_in_value_of_tangible_fixed_assets_in_progress,,Immobilisations corporelles en cours (hors biens vivants),2931,2931
+390,depreciation_for_diminution_in_value_of_intangible_fixed_assets_in_progress,,Immobilisations incorporelles en cours,2932,2932
+391,depreciation_for_diminution_in_value_of_living_tangible_fixed_assets_in_progress,,Immobilisations corporelles en cours (biens vivants),,2934
+392,depreciation_for_diminution_in_value_of_living_tangible_fixed_assets,,Dépréciation des immobilisations corporelles ( biens vivants) (Règl.CRC 2002-10),,294
+393,depreciation_for_diminution_in_value_of_adult_breeding_animals_tangible_fixed_asset,,Animaux reproducteurs (adultes),,2941
+394,depreciation_for_diminution_in_value_of_breeding_animals_young_for_renewal_tangible_fixed_asset,,Animaux reproducteurs (jeunes de renouvellement),,2942
+395,depreciation_for_diminution_in_value_of_service_animals_tangible_fixed_asset,,Animaux de service (adultes),,2943
+396,depreciation_for_diminution_in_value_of_long_term_plantation_tangible_fixed_asset,,Plantations pérennes,,2946
+397,depreciation_for_diminution_in_value_of_other_plants_tangible_fixed_asset,,Autres végétaux immobilisés,,2947
+398,depreciation_for_diminution_in_value_of_participating_interests_and_related_debts_receivable,equity_security_asset_impairment_losses,Dépréciation des participations et créances rattachées à des participations,296,296
+399,depreciation_for_diminution_in_value_of_debt_receivable_related_to_participating_interest_in_the_group,,Créances rattachées à des participations (groupe),29671,29671
+400,depreciation_for_diminution_in_value_of_debt_receivable_related_to_participating_interest_in_professional_agricultural_organization_interests,,Créances rattachées à des participations à des organismes professionnels agricoles (autres que les établissements de crédit),,29672
+401,depreciation_for_diminution_in_value_of_debt_receivable_related_to_participating_interest_in_agricultural_cooperative_companies,,Sociétés coopératives agricoles (sauf Cuma),,296721
+402,depreciation_for_diminution_in_value_of_debt_receivable_related_to_participating_interest_in_equipment_cooperative_companies,,Cuma,,296722
+403,depreciation_for_diminution_in_value_of_debt_receivable_related_to_participating_interest_in_collective_agricultural_interest_companies,,Sica,,296724
+404,depreciation_for_diminution_in_value_of_debt_receivable_related_to_participating_interest_in_other_agricultural_companies,,Autres,,296728
+405,depreciation_for_diminution_in_value_of_debt_receivable_related_to_participating_interest_apart_from_the_group,,Créances rattachées à des participations (hors groupe),29674,29674
+406,depreciation_for_diminution_in_value_of_payments_representing_non_capitalisez_contributions_call_for_funds,,Versements représentatifs d'apports non capitalisés (appel de fonds),29675,29675
+407,depreciation_for_diminution_in_value_of_long_term_capital_advances,,Avances consolidables,29676,29676
+408,depreciation_for_diminution_in_value_of_debts_receivable_related_to_joint_ventures,,Créances rattachées à des sociétés en participation,2968,2968
+409,depreciation_for_diminution_in_value_of_principal_of_debt_receivable_related_to_joint_venture,,Principal,29681,29681
+410,depreciation_for_diminution_in_value_of_accrued_interest_fo_debt_receivable_related_to_joint_venture,,Intérêts courus,29688,29688
+411,depreciation_for_diminution_in_value_of_other_financial_fixed_assets,,Dépréciations des autres immobilisations financières (Règl. CRC2005-09),297,297
+412,depreciation_for_diminution_in_value_of_ownership_of_fixed_securities,,Titres immobilisés (droit de propriété),,2971
+413,depreciation_for_diminution_in_value_of_ownership_of_fixed_shares,,Actions,29711,29711
+414,depreciation_for_diminution_in_value_of_ownership_of_fixed_shareholding_in_financial_institution,,Parts dans les établissements de crédit,,29715
+415,depreciation_for_diminution_in_value_of_ownership_of_fixed_other_securities,,Autres titres,29718,29718
+416,depreciation_for_diminution_in_value_of_long_term_investment_debt_securities,,Titres immobilisés (droits de créance),2972,2972
+417,depreciation_for_diminution_in_value_of_long_term_investment_debt_securities_in_bonds,,Obligations,29721,29721
+418,depreciation_for_diminution_in_value_of_long_term_investment_debt_securities_in_warrants,,Bons,29722,29722
+419,depreciation_for_diminution_in_value_of_long_term_investment_debt_securities_in_cooperative_development_funds_share_certificates,,Certificat de fonds de développement coopératif,,29723
+420,depreciation_for_diminution_in_value_of_loans,,Prêts,2974,2974
+421,depreciation_for_diminution_in_value_of_participating_loans,,Prêts participatifs,29741,29741
+422,depreciation_for_diminution_in_value_of_loans_to_partners_or_associates,,Prêts aux associés,29742,29742
+423,depreciation_for_diminution_in_value_of_loans_to_personnel,,Prêts personnels,29743,29743
+424,depreciation_for_diminution_in_value_of_other_loans,,Autres prêts,29748,29748
+425,depreciation_for_diminution_in_value_of_deposits_and_sureties_advanced,,Dépôts et cautionnements versés,2975,2975
+426,depreciation_for_diminution_in_value_of_deposits_advanced,,Dépôts,29751,29751
+427,depreciation_for_diminution_in_value_of_sureties_advanced,,Cautionnements,29755,29755
+428,depreciation_for_diminution_in_value_of_other_capitalised_debts_receivable,,Autres créances immobilisées,2976,2976
+429,depreciation_for_diminution_in_value_of_sundry_debts_receivable,,Créances diverses,29761,29761
+430,depreciation_for_diminution_in_value_of_accrued_interests_on_other_capitalised_debts_receivable,,Intérêts courus,29768,29768
+431,depreciation_for_diminution_in_value_of_accrued_interests_on_other_capitalised_long_term_investment_debts_securities,,Sur titres immobilisés (droits de créance),297682,297682
+432,depreciation_for_diminution_in_value_of_accrued_interests_on_other_capitalised_loans,,Sur prêts,297684,297684
+433,depreciation_for_diminution_in_value_of_accrued_interests_on_other_capitalised_deposits_and_sureties,,Sur dépôts et cautionnements,297685,297685
+434,depreciation_for_diminution_in_value_of_accrued_interests_on_other_capitalised_sundry_debts_receivable,,Sur créances diverses,297688,297688
+435,,stocks,Comptes de stocks et en-cours,3,3
+436,supplies_and_commodities,,Approvisionnements et marchandises,,30
+437,,supply_stock,Approvisionnements,,301
+438,,fertilizer_stock,Engrais et amendements,,3011
+439,,seed_stock,Semences et plants,,3012
+440,,plant_medicine_stock,Produits de défense des végétaux,,3013
+441,,livestock_feed_stock,Aliments du bétail,,3014
+442,,animal_medicine_stock,Produits de défense des animaux,,3015
+443,,animal_reproduction_stock,Produits de reproduction animal,,3016
+444,packaging_stock,,Emballages,,3017
+445,non_returnable_packaging_stock,,Emballages perdus,,30171
+446,non_identifiable_recoverable_packaging_stock,,Emballages récupérables non-identifiables,,30175
+447,mixed_use_packaging_stock,,Emballages à usage mixte,,30177
+448,fuel_stock,gas_stock,Combustibles,,3018
+449,other_supplies_stock,,Autres approvisionnements,,302
+450,fuels_and_lubricants_stock,fuel_stock,Carburants et lubrifiants,,3021
+451,maintenance_products_stock,maintenances_consumables_stock,Produits d'entretien,,3022
+452,workshop_and_warehouse_supplies_stock,workshop_supplies_stock,Fournitures d'atelier et de magasin,,3023
+453,office_supplies_stock,,Fournitures de bureau,,3024
+454,staff_supply_stock,,Denrées et fournitures pour le personnel,,3025
+455,miscellaneous_materials_stock,other_materials_stock,Matériaux divers,,3026
+456,other_consumable_supplies_stock,other_consumables_stock,Autres fournitures consommables,,3027
+457,raw_matters_stock,raw_product_stock,Matières premières,,3028
+458,goods_stock,,Marchandises,,307
+459,animals_in_long_cycle_stock,long_time_animal_stock,Animaux (cycle long),,31
+460,animals_in_short_cycle_stock,short_time_animal_stock,Animaux (cycle court),,32
+461,,long_cycle_vegetals_stock,Végétaux (cycle long),,33
+462,,long_cycle_cultivation_advances,Avances aux cultures,,331
+463,nursery_stock,,Pépinières,,332
+464,other_plants_stock,,Autres végétaux,,338
+465,,short_cycle_vegetals_stock,Végétaux (cycle court),,34
+466,,short_cycle_cultivation_advances,Avances aux cultures,,341
+467,,short_cycle_cultivation_advances_fertilizers,,,3411
+468,,short_cycle_cultivation_advances_seeds,,,3412
+469,,short_cycle_cultivation_advances_plants_medicines,,,3413
+470,,short_cycle_cultivation_advances_culturals_ways,,,3415
+471,other_short_cycle_plants_stock,,Autres végétaux,,348
+472,,long_cycle_products_stock,En-cours de production de biens et de services (cycle long),,35
+473,,long_cycle_products_wines_stock,Vins,,351
+474,,long_cycle_products_liquors_stock,Alcools,,352
+475,other_goods_or_services_in_progress,,Autres biens,,356
+476,custom_work,,Travaux à façon,,357
+477,supply_of_services_in_progress_for_long_cycle_products,,Autres services,,358
+478,,short_cycle_products_stock,En-cours de production de biens et de services (cycle court),,36
+479,short_cycle_products_vegetal_stock,,Produits végétaux,,361
+480,short_cycle_products_animal_stock,,Produits animaux,,362
+481,short_cycle_products_wines_stock,,Vins,,363
+482,short_cycle_products_liquors_stock,,Alcools,,364
+483,short_cycle_other_processed_products_stock,,Autres produits transformés,,365
+484,short_cycle_other_goods_for_ancillary_activities,,Autres biens (activités annexes),,366
+485,short_cycle_products_supply_of_services_in_progress,,Travaux à façon,,367
+486,short_cycle_products_supply_of_other_services_in_progress,,Autres services,,368
+487,,end_products_stock,Produits,,37
+488,plant_intermediate_products,,Produits intermédiaires végétaux,,371
+489,animal_intermediate_products,,Produits intermédiaires animaux,,372
+490,processed_intermediate_products,,Produits intermédiaires transformés,,373
+491,,plant_derivative_stock,Produits finis végétaux,,374
+492,,animal_derivative_stock,Produits finis animaux,,375
+493,processed_products_stocks,processing_products_stock,Produits finis transformés,,376
+494,,residual_products_stock,Produits résiduels,,377
+495,products_for_ancillary_activities,,Produits (activités annexes),,378
+496,products_outside_warehouse,,"Stocks hors magasin (lorsque l’entreprise tient un inventaire permanent en comptabilité générale, le compte 38 peut être utilisé pour comptabiliser les stocks en voie d’acheminement, mis en dépôt ou donnés en consignation)",38,38
+497,impairment_provision,,Dépréciation des stocks et en-cours (Règl. CRC 2005-9),39,39
+498,impairment_provision_for_supplies_and_goods,,Dépréciation des approvisionnements et des marchandises (Règl. CRC 2005-9),,390
+499,impairment_provisions_for_diminution_in_value_of_long_cycle_animals,,Déprécation des animaux à cycle long (Règl. CRC 2005-9),,391
+500,impairment_provisions_for_diminution_in_value_of_short_cycle_animals,,Déprécation des animaux à cycle court (Règl. CRC 2005-9),,392
+501,impairment_provisions_for_diminution_in_value_of_long_cycle_vegetals,,Dépréciation des végétaux à cycle long (Règl. CRC 2005-9),,393
+502,impairment_provisions_for_diminution_in_value_of_long_cycle_cultivation_advances,,Dépréciation des avances aux cultures,,3931
+503,impairment_provisions_for_diminution_in_value_of_long_cycle_cultivation_nursery,,Dépréciation des pépinières,,3932
+504,impairment_provisions_for_diminution_in_value_of_long_cycle_cultivation_other_vegetals,,Dépréciation des autres végétaux,,3938
+505,,,Dépréciation des végétaux à cycle court (Règl. CRC 2005-9),,394
+506,,,Déprécation des avances aux cultures,,3941
+507,,,Dépréciation des autres végétaux,,3948
+508,,,Dépréciation des en-cours de production de biens et de services à cycle long (Règl. CRC 2005-9),,395
+509,,,Vins,,3951
+510,,,Alcools,,3952
+511,,,Autres biens,,3956
+512,,,Travaux à façon,,3957
+513,,,Autres services,,3958
+514,,,Dépréciation des en-cours de production de biens et de services à cycle court (Règl. CRC 2005-9),,396
+515,,,Dépréciation des produits (Règl. CRC 2005-9),,397
+516,accounts_for_debts_receivable_and_payable,third_party,Comptes de tiers,4,4
+517,suppliers_and_related_accounts,,Fournisseurs et comptes rattachés,40,40
+518,,suppliers,Fournisseurs,401,401
+519,,suppliers_balance_after_compensation,Fournisseurs – Soldes après compensation,,402
+520,suppliers_bills_payable,,Fournisseurs – Effets à payer,403,403
+521,,fixed_assets_suppliers,Fournisseurs d’immobilisations,404,404
+522,suppliers_fixed_assets_bills_payable,,Fournisseurs d’immobilisations – Effets à payer,405,405
+523,,suppliers_invoices_not_received,Fournisseurs – Factures non parvenues,408,408
+524,suppliers_invoices_outstanding,,Fournisseurs,4081,4081
+525,fixed_asset_suppliers_invoices_ouststanding,,Fournisseurs d’immobilisations,4084,4084
+526,suppliers_accrued_interests,,Fournisseurs – intérêts courus,4088,4088
+527,,debtor_suppliers,Fournisseurs débiteurs,409,409
+528,suppliers_payements_on_account_on_orders,,Fournisseurs - Avances et acomptes versés sur commandes,4091,4091
+529,suppliers_debts_receivable_for_returnable_packaging_and_equipment,,Fournisseurs - Créances pour emballages et matériel à rendre,4096,4096
+530,suppliers_other_debits,,Fournisseurs - Autres avoirs,4097,4097
+531,,,"Rabais, remises, ristournes à obtenir et autres avoirs non encore reçus",4098,4098
+532,,,Clients et comptes rattachés,41,41
+533,,clients,Clients,411,411
+534,,,Clients – Solde après compensation,,412
+535,,,Clients – Effets à recevoir,413,413
+536,,litigious_clients,Clients douteux ou litigieux,416,416
+537,,invoice_to_create_clients,Clients - Produits non encore facturés,418,418
+538,,,Clients - Factures à établir,4181,4181
+539,,,Clients - Intérêts courus,4188,4188
+540,,creditor_clients,Clients créditeurs,419,419
+541,,,Clients - Avances et acomptes reçus sur commandes,4191,4191
+542,,,Clients - Dettes sur emballages et matériels consignés,4196,4196
+543,,,Clients - Autres avoirs,4197,4197
+544,,,"Rabais, remises, ristournes à accorder et autres avoirs à établir",4198,4198
+545,,staff_and_linked_accounts,Personnel et comptes rattachés,42,42
+546,,staff_due_remunerations,Personnel - Rémunérations dues,421,421
+547,,employee_representative_committees,"Comités d'entreprises, d'établissement.",422,422
+548,,staff_bonus_participation,Participation des salariés aux résultats,424,424
+549,,,Réserve spéciale,4246,4246
+550,,,Comptes courants,4248,4248
+551,,staff_advances,Personnel - Avances et acomptes,425,425
+552,,staff_submissions,Personnel – Dépôts,426,426
+553,,staff_oppositions,Personnel – Oppositions,427,427
+554,,staff_expense_to_sold,Personnel - Charges à payer et produits à recevoir,428,428
+555,,,Dettes provisionnées pour congés à payer,4282,4282
+556,,,Dettes provisionnées pour participation des salariés aux résultats,4284,4284
+557,,,Autres charges à payer,4286,4286
+558,,,Produits à recevoir,4287,4287
+559,,,Mutualité sociale agricole et autres organismes sociaux,,43
+560,social_security,social_agricultural_mutuality,Sécurité sociale,,431
+561,,other_social_organisation,Autres organismes sociaux,437,437
+562,,social_expense_on_vacations,Organismes sociaux - Charges à payer et produits à recevoir,438,438
+563,,,Charges sociales sur congés à payer,4382,4382
+564,,,Autres charges à payer,4386,4386
+565,,,Produits à recevoir,4387,4387
+566,,state_and_other_public_entities,État et autres collectivités publiques,44,44
+567,,subsidy_to_receive,État - Subventions à recevoir,441,441
+568,,,Subventions d'investissement,4411,4411
+569,,,Subventions d'exploitation,4417,4417
+570,,,Subventions d'équilibre,4418,4418
+571,,,Avances sur subventions,4419,4419
+572,,entity_collectable_taxes,État - Impôts et taxes recouvrables sur des tiers,442,442
+573,,,Retenues et prélèvements sur les distributions,4423,4423
+574,levies_and_taxes_from_distributions,,Obligataires,4424,4424
+575,,,Associés,4425,4425
+576,,,Autres,,4428
+577,,particular_operation_with_state,"Opérations particulières avec L’État, les collectivités publiques, les organismes Internationaux",443,443
+578,,income_taxes,État – Impôts sur les bénéfices,444,444
+579,,vat,État - Taxes sur le chiffre d'affaires,445,445
+580,,,TVA due intracommunautaire,4452,4452
+581,,,Taxes sur le chiffre d'affaires à décaisser,4455,4455
+582,,vat_to_pay,TVA à décaisser,44551,44551
+583,,,Taxes assimilées à la TVA,44558,44558
+584,,enterprise_deductible_vat,Taxes sur le chiffre d'affaires déductibles,4456,4456
+585,,deductible_asset_vat,TVA sur immobilisations,44562,44562
+586,,,TVA transférée par d'autres entreprises,44563,44563
+587,,deductible_vat_to_resolve,,44565,44565
+588,,deductible_vat,TVA sur autres biens et services,44566,44566
+589,,report_vat_credit,Crédit de TVA à reporter,44567,44567
+590,,,Taxes assimilées à la TVA,44568,44568
+591,,enterprise_collected_vat,Taxes sur le chiffre d'affaires collectées par l'entreprise,4457,4457
+592,,collected_vat,TVA collectée,44571,44571
+593,,collected_vat_to_resolve,,44575,44575
+594,,,Taxes assimilées à la TVA,44578,44578
+595,,waiting_vat,Taxes sur le chiffre d'affaires à régulariser ou en attente,4458,4458
+596,,,Acomptes - Régime simplifié d'imposition,44581,44581
+597,,,Acomptes - Régime de forfait,44582,44582
+598,,,Remboursement de taxes sur le chiffre d'affaires demandé,44583,44583
+599,,,TVA récupérée d'avance,44584,44584
+600,,,Taxes sur le chiffre d'affaires sur factures non parvenues,44586,44586
+601,,,Taxes sur le chiffre d'affaires sur factures à établir,44587,44587
+602,,guaranteed_obligations,Obligations cautionnées,446,446
+603,,others_taxes_and_assimilated_payments,"Autres impôts, taxes et versements assimilés",447,447
+604,,fiscal_expense_on_vacations,État - Charges à payer et produits à recevoir,448,448
+605,,,Charges fiscales sur congés à payer,4482,4482
+606,,,Autres charges à payer,4486,4486
+607,,,Produits à recevoir,4487,4487
+608,,state_emission_quota_to_restitute,Quotas d’émission à restituer à l’État (Règl. CRC 2004-8),449,449
+609,,holding_company_and_associate_accounts,"Groupe, communauté d’exploitation et associés",,45
+610,,holding_accounts,Groupe,451,451
+611,,,Associés – Opérations faites en commun (Gaec partiels),,452
+612,,,Opérations courantes,,4521
+613,,,Intérêts courus,,4528
+614,,,Associés – Opérations faites en commun et en GIE (banque de travail),,453
+615,,,Opérations courantes,,4531
+616,,,Intérêts courus,,4538
+617,,,Associés – Opérations faites en commun (autres communautés d’exploitations faites à objets particuliers),,454
+618,,,Opérations courantes,,4541
+619,,,Intérêts courus,,4548
+620,,associates_current_accounts,Associés - Comptes courants,455,455
+621,,principal_associates_current_accounts,Associés - Comptes courants (principal),4551,4551
+622,,usual_associates_current_accounts,Associés - Comptes courants (intérêts courus),,4552
+623,,associates_frozen_accounts,Associés - Comptes bloqués (principal),,4553
+624,,,Associés - Comptes bloqués (intérêts courus),,4554
+625,,,Associés - Opérations sur le capital,456,456
+626,,,Associés - Comptes d'apport en société,4561,4561
+627,,,Apports en nature,45611,45611
+628,,,Apports en numéraire,45615,45615
+629,,,"Actionnaires et associés - Capital appelé, non versé",4562,4562
+630,,,"Actionnaires - Capital souscrit et appelé, non versé",45621,45621
+631,,,"Associés - Capital appelé, non versé",45625,45625
+632,,,Associés - Versements reçus sur augmentation de capital,4563,4563
+633,partners_or_associates_advance_payments,,Associés - Versements anticipés,4564,4564
+634,,,Actionnaires défaillants,4566,4566
+635,,,Associés - Capital à rembourser,4567,4567
+636,partners_or_associates_dividends_payable,,Associés - Dividendes à payer,457,457
+637,,,Associés - Opérations faites en commun et en GIE,458,458
+638,,,Opérations courantes,4581,4581
+639,,,Intérêts courus,4588,4588
+640,,,Débiteurs divers et créditeurs divers,46,46
+641,,,Caisse de péréquation des prix,,461
+642,,,Créances sur cessions d'immobilisations,462,462
+643,,,Dettes sur acquisitions de valeurs mobilières de placement,464,464
+644,,,Créances sur cessions de valeurs mobilières de placement,465,465
+645,other_debtors_and_creditors,attorneys,Autres comptes débiteurs ou créditeurs,467,
+646,other_debtors_and_creditors,sundry_debtors_and_creditors,Autres comptes débiteurs ou créditeurs,,467
+647,,,Divers - Charges à payer et produits à recevoir,468,468
+648,,,Charges à payer,4686,4686
+649,,,Produits à recevoir,4687,4687
+650,,temporary_operations,Comptes transitoires ou d'attente,47,47
+651,,,comptes d’attente,471,471
+652,,,Augmentation des créances,4771,4771
+653,,compensation_operations,Opérations de compensation (convention de compte courant),,472
+654,,,comptes d’attente,473,473
+655,,,comptes d’attente,474,474
+656,,,comptes d’attente,475,475
+657,,,Différence de conversion - Actif,476,476
+658,,,Diminution des créances,4761,4761
+659,,,Augmentation des dettes,4762,4762
+660,,,Différences compensées par couverture de change,4768,4768
+661,,,Différences de conversion - Passif,477,477
+662,,,Diminution des dettes,4772,4772
+663,,,Différences compensées par couverture de change,4778,4778
+664,,,Autres comptes transitoires,478,478
+665,,regularisation_accounts,Comptes de régularisation,48,48
+666,,deferred_expense_accounts,Charges à répartir sur plusieurs exercices (Règl. CRC 2004-6),481,481
+667,,,Frais d'émission des emprunts,4816,4816
+668,,advance_noticed_charges_accounts,Charges constatées d'avance,486,486
+669,,accrued_interests_on_bank,Produits constatés d'avance,487,487
+670,,,Comptes de répartition périodique des charges et des produits,488,488
+671,,,Charges,4886,4886
+672,,,Produits,4887,4887
+673,,,Quotas d’émission alloués par l’État (Règl. CRC 2004-8),,489
+674,,deprecated_entity_accounts,Dépréciations des comptes de tiers (Règl. CRC 2005-9),49,49
+675,,deprecated_client_entity_accounts,Dépréciations des comptes de clients (Règl. CRC 2005-9),491,491
+676,,,"Dépréciations des comptes du groupe, des communautés d’exploitation et des associés (Règl. CRC 2005-9)",,495
+677,,,Comptes du groupe,4951,4951
+678,,,Associés – Opérations faites en commun (Gaec partiels),,4952
+679,,,Associés – Opérations faites en commun et en GIE (banque de travail),,4953
+680,,,Associés – Opérations faites en commun (autres communautés d’exploitations faites à objets particuliers),,4954
+681,,,Comptes courants des associés,4955,4955
+682,,,Opérations faites en commun et en GIE,4958,4958
+683,,,Dépréciations des comptes de débiteurs divers (Règl. CRC 2005-9),496,496
+684,,,Caisse de péréquation des prix,,4961
+685,,,Créances sur cessions d'immobilisations,4962,4962
+686,,,Créances sur cessions de valeurs mobilières de placement,4965,4965
+687,,,Autres comptes débiteurs,4967,4967
+688,,finances,Comptes financiers,5,5
+689,,,Parts dans des entreprises liées,501,501
+690,,,Actions propres,502,502
+691,,,Actions,503,503
+692,,,Titres cotés,5031,5031
+693,,,Titres non cotés,5035,5035
+694,,,Autres titres conférant un droit de propriété,504,504
+695,,,Obligations et bons émis par la société et rachetés par elle,505,505
+696,,,Obligations,506,506
+697,,,Titres cotés,5061,5061
+698,,,Titres non cotés,5062,5062
+699,,,Bons du Trésor et bons de caisse à court terme,507,507
+700,,,Autres valeurs mobilières de placement et autres créances assimilées,508,508
+701,,,Autres valeurs mobilières,5081,5081
+702,,,"Intérêts courus sur obligations, bons et valeurs assimilés",5088,5088
+703,,,Versements restant à effectuer sur valeurs mobilières de placement non libérées,509,509
+704,,banks_and_similar,"Banques, établissements financiers et assimilés",51,51
+705,,pending_deposit_payments,Valeurs à l'encaissement,511,511
+706,,,Coupons échus à l'encaissement,5111,5111
+707,,,Chèques à encaisser,5112,5112
+708,,,Effets à l'encaissement,5113,5113
+709,,,Effets à l'escompte,5114,5114
+710,,banks,Banques,512,512
+711,,,Chèques postaux,514,514
+712,,,Chèques postaux,515,515
+713,,,Sociétés de bourse,516,516
+714,,,Autres organismes financiers,517,517
+715,,accrued_bank_interests,Intérêts courus,518,518
+716,,,Intérêts courus à payer,5186,5186
+717,,,Intérêts courus à recevoir,5187,5187
+718,,usual_bank_overdraft,Concours bancaires courants,519,519
+719,,,Crédits bancaires de campagne,,5191
+720,,,Crédit de mobilisation de créances,,5197
+721,,,Intérêts courus sur concours bancaires courants,5198,5198
+722,,,Instruments de trésorerie,52,52
+723,,cashes,Caisse,53,53
+724,,,Régies d'avances et accréditifs,54,54
+725,,internal_transfers,Virements internes,58,58
+726,,,Dépréciations des comptes financiers (Règl. CRC 2005-9),59,59
+727,,,Dépréciations des valeurs mobilières de placement (Règl. CRC 2005-9),590,590
+728,,,Actions,5903,5903
+729,,,Autres titres conférant un droit de propriété,5904,5904
+730,,,Obligations,5906,5906
+731,,,Autres valeurs mobilières et créances assimilées,5908,5908
+732,,expenses,Comptes de charges,6,6
+733,,,Achats (sauf 603),60,60
+734,,,Achats d’approvisionnements,,601
+735,,fertilizer_expenses,Engrais et amendements,,6011
+736,,seed_expenses,Semences et plants,,6012
+737,,plant_medicine_matter_expenses,Produits de défense des végétaux,,6013
+738,,livestock_feed_matter_expenses,Aliments du bétail,,6014
+739,,animal_medicine_matter_expenses,Produits de défense des animaux,,6015
+740,,animal_reproduction_matter_expenses,Produits de reproduction animale,,6016
+741,,packaging,Emballages,,6017
+742,,,Emballages perdus,,60171
+743,,,Emballages récupérables non identifiables,,60175
+744,,,Emballages à usage mixte,,60177
+745,,,Combustibles,,6018
+746,,other_supply_expenses,Achats d’autres approvisionnements,602,602
+747,,fuel_matter_expenses,Carburants et lubrifiants,,6021
+748,,maintenances_consumables_expenses,Produits d'entretien,,6022
+749,workshop_and_warehouse_supplies_expenses,,Fournitures d'atelier et de magasin,,6023
+750,,office_supply_matter_expenses,Fournitures de bureau,,6024
+751,staff_supply_expenses,,Denrées et fournitures pour le personnel,,6025
+752,,materials_expenses,Matériaux divers,,6026
+753,,other_consumable_matter_expenses,Autres fournitures consommables,,6027
+754,,raw_material_expenses,Matières premières,,6028
+755,,stocks_variation,Variation des stocks (approvisionnements et marchandises),603,603
+756,,supply_stocks_variation,Variation des stocks d’approvisionnements,,6031
+757,,fertilizer_stocks_variation,Engrais et amendements,,60311
+758,,seed_stocks_variation,Semences et plants,,60312
+759,,plant_medicine_stocks_variation,Produits de défense des végétaux,,60313
+760,,livestock_feed_stocks_variation,Aliments du bétail,,60314
+761,,animal_medicine_stocks_variation,Produits de défense des animaux,,60315
+762,,animal_reproduction_stocks_variation,Produits de reproduction animale,,60316
+763,packaging_stocks_variation,,Emballages,,60317
+764,,,Emballages perdus,,603171
+765,,,Emballages récupérables non identifiables,,603175
+766,,,Emballages à usage mixte,,603177
+767,,,Combustibles,,60318
+768,,other_supply_stocks_variation,Variation de stocks des autres approvisionnements,6032,6032
+769,,,Carburants et lubrifiants,,60321
+770,maintenances_consumables_stocks_variation,,Produits d'entretien,,60322
+771,workshop_and_warehouse_supplies_stocks_variation,,Fournitures d'atelier et de magasin,,60323
+772,office_supply_matter_stocks_variation,,Fournitures de bureau,,60324
+773,staff_supply_stocks_variation,,Denrées et fournitures pour le personnel,,60325
+774,materials_stocks_variation,,Matériaux divers,,60326
+775,other_consumable_matter_stocks_variation,,Autres fournitures consommables,,60327
+776,raw_material_stocks_variation,,Matières premières,,60328
+777,,merchandising_stocks_variation,Variation des stocks de marchandises,6037,6037
+778,animal_purchase_expenses,services_expenses,Achats d’animaux,,604
+779,,adult_animal_expenses,,,6041
+780,,young_animal_expenses,,,6042
+781,,other_animal_expenses,,,6045
+782,,making_services_expenses,Achats de travaux et services incorporés aux produits,,605
+783,,vegetals_making_services_expenses,,,6051
+784,animals_making_expenses,animals_making_expenses_expenses,Achats de prestations de services (productions animales),,6054
+785,,unstorable_expenses,Achats non stockés de fournitures,606,606
+786,,,"Fournitures non stockables (eau, énergie, …)",,6061
+787,,gas_expenses,Gaz,,6062
+788,,electricity_expenses,Électricité,,6063
+789,,fuels_expenses,Carburants et lubrifiants,,6064
+790,,irrigation_expenses,Eau d’irrigation,,6065
+791,,little_office_equipment_expenses,Fournitures d'entretien et de petit équipement,,6066
+792,,,Autres fournitures non stockées,,6068
+793,,merchandising_expenses,Achats de marchandises,607,607
+794,,merchandising_accessory_expenses,"(Compte réservé, le cas échéant, à la récapitulation des frais accessoires incorporés aux achats)",608,608
+795,,discount_and_reductions_expenses,"Rabais, remises et ristournes obtenus sur achats",609,609
+796,,,D’approvisionnements,,6091
+797,,,d'autres approvisionnements stockés,6092,6092
+798,,,D’animaux,,6094
+799,,,De travaux et services incorporés aux produits,,6095
+800,,,De fournitures non stockées,,6096
+801,,,De marchandises,6097,6097
+802,,,"Rabais, remises et ristournes non affectés",6098,6098
+803,,external_service_expenses,Services extérieurs,61,61
+804,,subcontracting_expenses,Sous-traitance générale,611,611
+805,,leasing_expenses,Redevances de crédit-bail,612,612
+806,,,Crédit-bail mobilier,6122,6122
+807,,,Crédit-bail immobilier,6125,6125
+808,,rent_expenses,Locations,613,613
+809,,land_parcel_rent_expenses,Fermages et loyers du foncier,,6131
+810,,equipment_rent_expenses,Locations de matériel,,6132
+811,animal_rent_expenses,,Locations d’animaux,,6134
+812,packaging_rent_expenses,,Malis sur emballages,6136,6136
+813,other_rent_expenses,,Autres locations,,6138
+814,,co_ownership_and_locative_expenses,Charges locatives et de copropriété,614,614
+815,,land_parcel_locative_expenses,Charges locatives du foncier,,6141
+816,,equipment_locative_expenses,Charges locatives du matériel,,6142
+817,,animal_locative_expenses,Charges locatives des animaux,,6144
+818,,,Autres charges locatives de copropriété,,6148
+819,,maintenance_expenses,Entretien et réparations,615,615
+820,,own_building_expenses,,6153,6153
+821,,other_building_expenses,,6154,6154
+822,,insurance_expenses,Primes d'assurances,616,616
+823,,,Multirisques,6161,6161
+824,,,Assurance obligatoire dommage construction,6162,6162
+825,,,Assurance – transport (sur achats),,6163
+826,,,Assurance – transport (sur ventes),,6164
+827,,,Assurance – transport (sur autres biens),,6165
+828,,exploitation_risk_insurance_expenses,Risques d’exploitation,,6166
+829,,,Insolvabilité clients,,6167
+830,,infirmity_and_death_insurance_expenses,Autres,,6168
+831,,studies_and_research_expenses,Études et recherches,617,617
+832,,other_expenses,Divers,618,618
+833,,,Documentation générale,6181,6181
+834,,,Documentation technique,6183,6183
+835,,congress_and_symposium_expenses,"Frais de colloques, séminaires, conférences",6185,6185
+836,,service_discount_and_reductions_expenses,"Rabais, remises et ristournes obtenus sur services extérieurs",619,619
+837,,external_expenses,Autres services extérieurs,62,62
+838,,external_staff_expenses,Personnel extérieur à l'entreprise,621,621
+839,,,Personnel intérimaire,6211,6211
+840,,,Personnel détaché ou prêté à l'entreprise,6214,6214
+841,,fees_expenses,Rémunérations d'intermédiaires et honoraires,622,622
+842,,,Commissions et courtages sur achats,6221,6221
+843,,,Commissions et courtages sur ventes,6222,6222
+844,,forwarding_agent_fees_expenses,Rémunérations des transitaires,,6223
+845,,veterinary_fees_expenses,Honoraires vétérinaires,,6225
+846,,other_fees_expenses,Autres honoraires,6226,6226
+847,,,Frais d'actes et de contentieux,6227,6227
+848,,,Divers,6228,6228
+849,,advertising_expenses,"Publicité, publications, relations publiques",623,623
+850,,advertisement_expenses,Annonces et insertions,6231,6231
+851,,,Échantillons,6232,6232
+852,,trade_show_expenses,Foires et expositions,6233,6233
+853,,,Cadeaux à la clientèle,6234,6234
+854,,,Primes,6235,6235
+855,,catalog_and_print_expenses,Catalogues et imprimés,6236,6236
+856,,,Publications,6237,6237
+857,,,"Divers (pourboires, dons courants, …)",6238,6238
+858,,transports_expenses,Transports de biens et transports collectifs du personnel,624,624
+859,,,Transports sur achats,6241,6241
+860,,,Transports sur ventes,6242,6242
+861,,,Transports entre établissements ou chantiers,6243,6243
+862,,,Transports administratifs,6244,6244
+863,,,Transports collectifs du personnel,6247,6247
+864,,,Divers,6248,6248
+865,,travels_expenses,"Déplacements, missions et réceptions",625,625
+866,,,Voyages et déplacements,6251,6251
+867,,,Frais de déménagement,6255,6255
+868,,,Missions,6256,6256
+869,,,Réceptions,6257,6257
+870,,telecommunications_expenses,Frais postaux et de télécommunications,626,626
+871,,banks_services_expenses,Services bancaires et assimilés,627,627
+872,,,"Frais sur titres (achat, vente, garde)",6271,6271
+873,,,Commissions et frais sur émission d'emprunts,6272,6272
+874,,,"Frais sur effets (commissions d’endos, etc.)",6275,6275
+875,,,Location de coffres,6276,6276
+876,,,Autres frais et commissions sur prestations de services,6278,6278
+877,,professional_subscriptions_expenses,Divers,628,628
+878,,,Cotisations professionnelles,,6281
+879,,,Frais de recrutement de personnel,,6287
+880,,,Autres services extérieurs divers,,6288
+881,,,"Rabais, remises et ristournes obtenus sur autres services extérieurs",629,629
+882,,taxes_expenses,"Impôts, taxes et versements assimilés",63,63
+883,,government_payroll_tax_expenses,"Impôts, taxes et versements assimilés sur rémunérations (administrations des impôts)",631,631
+884,,,Taxe sur les salaires,6311,6311
+885,,,Taxe d'apprentissage,6312,6312
+886,,,Participation des employeurs à la formation professionnelle continue,6313,6313
+887,,,Cotisation pour défaut d'investissement obligatoire dans la construction,6314,6314
+888,,,Autres,6318,6318
+889,,other_entities_payroll_tax_expenses,"Impôts, taxes et versements assimilés sur rémunérations (autres organismes)",633,633
+890,,,Versement de transport,6331,6331
+891,,,Allocations logement,6332,6332
+892,,,Participation des employeurs à la formation professionnelle continue,6333,6333
+893,,,Participation des employeurs à l'effort de construction,6334,6334
+894,,,Versements libératoires ouvrant droit à l'exonération de la taxe d'apprentissage,6335,6335
+895,,,Autres,6338,6338
+896,,products_specials_taxes,Taxes spécifiques sur les produits de l’exploitation,,634
+897,products_specials_taxes_for_plant_products,,Produits végétaux,,6341
+898,products_specials_taxes_for_animal_products,,Produits animaux,,6342
+899,products_specials_taxes_for_processed_products,,Produits transformés,,6343
+900,products_specials_taxes_for_animals,,Animaux,,6344
+901,,,Autres produits,,6348
+902,,government_tax_expenses,"Autres impôts, taxes et versements assimilés (administrations des impôts)",635,635
+903,,,Contribution économique territoriale,,6351
+904,,,Taxes foncières,,6352
+905,,,Autres impôts locaux,,6353
+906,,,Autres impôts directs (sauf impôts sur les sociétés),,6354
+907,,,Taxes sur le chiffre d’affaire non récupérable,6352,6355
+908,,,Impôts indirects,6353,6356
+909,,,Droits d’enregistrement et de timbre,6354,6357
+910,,,Autres droits,6358,6358
+911,,other_entities_tax_expenses,"Autres impôts, taxes et versements assimilés (autres organismes)",637,637
+912,,,Contribution sociale de solidarité à la charge des sociétés,6371,6371
+913,,,Taxes perçues par les organismes publics internationaux,6372,6372
+914,,,Impôts et taxes exigibles à l'étranger,6374,6374
+915,,,Taxes diverses,6378,6378
+916,,staff_expenses,Charges de personnel,64,64
+917,,staff_remuneration,Rémunérations du personnel,641,641
+918,,staff_salary,Salaires (personnel salarié),,6411
+919,permanent_staff_salary,,Personnel permanent ou régulier,,64111
+920,temporary_staff_salary,,Personnel temporaire ou occasionnel,,64115
+921,associates_salary,,Rémunérations (associés d’exploitation),,6412
+922,managing_associates_salary,associates_salary,"Rémunérations (administrateurs, gérants, associés)",,6413
+923,paid_vacation,,Congés payés,6412,6415
+924,,bonus_staff_expenses,Primes et gratifications,6413,6416
+925,,,Indemnités et avantages divers,6414,6417
+926,,,Avantages en nature,,6418
+927,,owner_remuneration,Rémunération du travail de l'exploitant,644,644
+928,,salary_social_contribution_expenses,Charges de sécurité sociale et de prévoyance,645,645
+929,,,Cotisations à la Mutualité sociale agricole,,6451
+930,,,Cotisations aux mutuelles,6452,6452
+931,,,Cotisations aux caisses de retraites,6453,6453
+932,,,Cotisations aux caisses de chômage,,6454
+933,,,Cotisations aux autres organismes sociaux,6458,6458
+934,,associate_social_contribution_expenses,Cotisations sociales personnelles de l'exploitant,646,646
+935,,other_social_expenses,Autres charges sociales,647,647
+936,,,Versements aux comités d'entreprise et d'établissement,6472,6472
+937,,,Versements aux autres œuvres sociales,6474,6474
+938,,,"Médecine du travail, pharmacie",6475,6475
+939,,,Autres charges sociales diverses,,6478
+940,,other_staff_expenses,Autres charges de personnel,648,648
+941,,other_day_to_day_management_expenses,Autres charges de gestion courante,65,65
+942,,licences_expenses,"Redevances pour concessions, brevets, licences, marques, procédés, logiciels, droits et valeurs similaires",651,651
+943,,,Jetons de présence,653,653
+944,,irrecoverable_losses_on_debt_obligation_expenses,Pertes sur créances irrécouvrables,654,654
+945,,,Créances de l'exercice,6541,6541
+946,,,Créances des exercices antérieurs,6544,6544
+947,,shared_result_operations_expenses,Quote-part de résultat sur opérations faites en commun,655,655
+948,,,Quote-part de bénéfice transférée (comptabilité du gérant),6551,6551
+949,,,Quote-part de perte supportée (comptabilité des associés non gérants),6555,6555
+950,,,Valeur comptable des éléments d’actif cédés,,656
+951,,other_usual_running_expenses,Charges diverses de gestion courante,658,658
+952,,financial_expenses,Charges financières,66,66
+953,,loans_interests,Charges d'intérêts,661,661
+954,,land_loans_interests,Emprunts fonciers,,6611
+955,,long_term_loans_interests,Autres emprunts à moyen et long terme,,6612
+956,,short_term_loans_interests,Emprunts à court terme,,6613
+957,,campaigns_interests,Crédits bancaires de campagne,,6614
+958,,,Intérêts des dettes rattachées à des participations à des organismes professionnels agricoles (autres que les établissements de crédit),,6615
+959,,,Intérêts des dettes rattachées à d’autres participations,,6616
+960,,,Intérêts du crédit fournisseur,,6617
+961,,other_interests_expenses,Intérêts des autres dettes,6618,6618
+962,,,Autres intérêts bancaires,,66181
+963,,,Intérêts des comptes courants et dépôts créditeurs,,66182
+964,,,Intérêts des obligations cautionnées,,66183
+965,,other_various_interests_expenses,Intérêts des autres dettes,66188,66188
+966,,participation_losses_on_debt_obligation_expenses,Pertes sur créances liées à des participations,664,664
+967,,discount_granted_expenses,Escomptes accordés,665,665
+968,,foreign_exchange_expenses,Pertes de change,666,666
+969,,short_term_investment_transfer_expenses,Charges nettes sur cessions de valeurs mobilières de placement,667,667
+970,,other_financial_expenses,Autres charges financières,668,668
+971,,exceptional_expenses,Charges exceptionnelles,67,67
+972,,management_operation_exceptional_expenses,Charges exceptionnelles sur opérations de gestion,671,671
+973,penalties_on_stock_exchange_exceptional expenses,market_fine_exceptional_expenses,Pénalités sur marchés (et dédits payés sur achats et ventes),6711,6711
+974,,fiscal_fine_exceptional_expenses,"Pénalités, amendes fiscales et pénales",6712,6712
+975,,donation_exceptional_expenses,"Dons, libéralités",6713,6713
+976,,,Créances devenues irrécouvrables dans l'exercice,6714,6714
+977,,,Subventions accordées,6715,6715
+978,,,Rappel d'impôts (autres qu'impôts sur les bénéfices),6717,6717
+979,,,Autres charges exceptionnelles sur opérations de gestion,6718,6718
+980,,previous_fiscal_year_expenses,"(Compte à la disposition des entités pour enregistrer, en cours d'exercice, les charges sur exercices antérieurs)",672,672
+981,,,Charges exceptionnelles relatives aux pénalités statutaire,,673
+982,,,Indemnités compensatrices (voir statuts types des sociétés coopératives agricoles),,6731
+983,,,Pénalités subies en tant qu’associés défaillant (voir statuts types des sociétés coopératives agricoles),,6733
+984,,,Frais de poursuite,,6735
+985,,fixed_assets_values,Valeurs comptables des éléments d'actif cédés,675,675
+986,,,Immobilisations incorporelles,6751,6751
+987,,,Immobilisations corporelles (hors biens vivants),6752,6752
+988,,,Immobilisations corporelles (biens vivants),,6754
+989,,,Immobilisations financières,6756,6756
+990,,,Autres charges exceptionnelles,678,678
+991,,,Malis provenant de clauses d'indexation,6781,6781
+992,,,Lots,6782,6782
+993,,,Malis provenant du rachat par l'entreprise d'actions et obligations émises par elle-même,6783,6783
+994,,,Charges exceptionnelles diverses,6788,6788
+995,,depreciations_inputations_expenses,"Dotations aux amortissements, aux dépréciations et aux provisions (Règl. CRC 2005-9)",68,68
+996,,exploitation_depreciations_inputations_expenses,"Dotations aux amortissements, aux dépréciations et aux provisions – Charges d'exploitation (Règl. CRC 2005-9)",681,681
+997,,corporeals_and_incorporeals_depreciations_inputations_expenses,Dotations aux amortissements sur immobilisations incorporelles et corporelles,6811,6811
+998,,incorporeals_depreciations_inputations_expenses,Immobilisations incorporelles,68111,68111
+999,corporeal_depreciations_inputations_expenses,land_parcel_construction_depreciations_inputations_expenses,Immobilisations corporelles (hors biens vivants),68112,68112
+1000,,building_depreciations_inputations_expenses,,68113,68113
+1001,corporeal_depreciations_inputations_expenses_living_goods,animals_depreciations_inputations_expenses,Immobilisations corporelles (biens vivants),,68114
+1002,,equipment_depreciations_inputations_expenses,,,68115
+1003,,others_corporeals_depreciations_inputations_expenses,,,68118
+1004,,,Dotations aux amortissements des charges d'exploitation à répartir,6812,6812
+1005,,,Dotations aux provisions d'exploitation (Règl. CRC 2005-9),6815,6815
+1006,,,Dotations pour dépréciations des immobilisations incorporelles et corporelles (Règl. CRC 2002-10),6816,6816
+1007,,,Immobilisations incorporelles,68161,68161
+1008,,,Immobilisations corporelles (hors biens vivants),68162,68162
+1009,,,Immobilisations corporelles (biens vivants),,68164
+1010,,,Dotations pour dépréciations des actifs circulants (Règl. CRC 2005-9),6817,6817
+1011,,,Stocks et en-cours,68173,68173
+1012,,,Créances,68174,68174
+1013,,financial_depreciations_inputations_expenses,"Dotations aux amortissements, aux dépréciations et aux provisions – Charges financières (Règl. CRC 2005-9)",686,686
+1014,,,Dotations aux amortissements des primes de remboursement des obligations,6861,6861
+1015,,,Dotations aux provisions financières (Règl. CRC 2005-9),6865,6865
+1016,,,Dotations pour dépréciations des éléments financiers (Règl. CRC 2005-9),6866,6866
+1017,,,Immobilisations financières,68662,68662
+1018,,,Valeurs mobilières de placement,68665,68665
+1019,,,Autres dotations,6868,6868
+1020,exceptional_depreciations_imputations_expenses,exceptionnal_depreciations_inputations_expenses,"Dotations aux amortissements, aux dépréciations et aux provisions – Charges exceptionnelles (Règl. CRC 2005-9)",687,687
+1021,exceptional_depreciations_imputations_expenses_for_fixed_assets,,Dotations aux amortissements exceptionnels des immobilisations,6871,6871
+1022,,,Dotations aux provisions réglementées (immobilisations),6872,6872
+1023,,,Amortissements dérogatoires,68725,68725
+1024,,,Dotations aux provisions réglementées (stocks),6873,6873
+1025,,,Dotations aux autres provisions réglementées,6874,6874
+1026,,,Dotations aux provisions exceptionnelles (Règl. CRC 2005-9),6875,6875
+1027,,,Dotations pour dépréciations exceptionnelles (Règl. CRC 2002-10),6876,6876
+1028,,employee_participation_and_income_taxes_and_assimilated_payments_expenses,Participation des salariés - Impôts sur les bénéfices et assimilés,69,69
+1029,,employee_participation_expenses,Participation des salariés aux résultats,691,691
+1030,,income_taxes_expenses,Impôts sur les bénéfices,695,695
+1031,,,Impôts dus en France,6951,6951
+1032,,,Impôts dus à l'étranger,6954,6954
+1033,,flat_rate_taxes_expenses,Imposition forfaitaire annuelle des sociétés,,697
+1034,,previous_product_deferral_expenses,Produits - Reports en arrière des déficits,699,699
+1035,,revenues,Comptes de produits,7,7
+1036,,,Ventes,,70
+1037,,plant_derivatives_revenues,Ventes de produits végétaux,,701
+1038,,animal_derivatives_revenues,Ventes de produits animaux,,702
+1039,,processing_products_revenues,Ventes de produits transformés,,703
+1040,,animal_revenues,Ventes d’animaux,,704
+1041,,adult_animal_revenues,,,7041
+1042,,young_animal_revenues,,,7042
+1043,,other_animal_revenues,,,7045
+1044,,residual_products_revenues,Ventes de produits résiduels,,705
+1045,,services_revenues,Travaux à façon,,706
+1046,,merchandising_revenues,Ventes de marchandises,707,707
+1047,,product_accessory_revenues,Produits des activités annexes,708,708
+1048,,discount_and_reductions_revenues,"Rabais, remises et ristournes accordés par l'entreprise",709,709
+1049,,,Sur ventes de produits végétaux,,7091
+1050,,,Sur ventes de produits animaux,,7092
+1051,,,Sur ventes de produits transformés,,7093
+1052,,,Sur ventes d’animaux,,7094
+1053,,,Sur ventes de produits résiduels,,7095
+1054,,,Sur travaux à façon,,7096
+1055,,,Sur ventes de marchandises,7097,7097
+1056,,,Sur produits des activités annexes,7098,7098
+1057,,inventory_variations,"Variations d’inventaire : biens vivants, en-cours de production de biens et services, produits",,71
+1058,,,Variations d’inventaire : animaux reproducteurs immobilisés,,712
+1059,,adult_reproductor_animals_inventory_variations,Animaux reproducteurs (adultes),,7121
+1060,,young_reproductor_animals_inventory_variations,Animaux reproducteurs (jeunes de renouvellement),,7122
+1061,,product_inventory_variations,"Variations d’inventaire : biens vivants non immobilisés, en-cours de production de biens et services, produits",,713
+1062,,long_cycle_animals_inventory_variations,Animaux (cycle long),,7131
+1063,,short_cycle_animals_inventory_variations,Animaux (cycle court),,7132
+1064,,long_cycle_vegetals_inventory_variations,Végétaux (cycle long),,7133
+1065,,short_cycle_vegetals_inventory_variations,Végétaux (cycle court),,7134
+1066,,long_cycle_product_inventory_variations,En-cours de production de biens ou de services (cycle long),,7135
+1067,,short_cycle_product_inventory_variations,En-cours de production de biens ou de services (cycle court),,7136
+1068,,products_inventory_variations,Produits,,7137
+1069,,capitalized_revenues,Production immobilisée,72,72
+1070,,incorporeal_asset_revenues,Production immobilisée – Immobilisations incorporelles,721,721
+1071,corporeal_asset_revenues_except_livestock,corporeal_asset_revenues,Production immobilisée – Immobilisations corporelles (hors biens vivants),,722
+1072,corporeal_asset_revenues_of_livestock,,Production immobilisée – Immobilisations corporelles (biens vivants),,724
+1073,,home_consumption_production,Production autoconsommée,,726
+1074,,partial_net_product_on_long_term_operation_revenues,,,73
+1075,,exploitation_subsidies_and_compensations,Indemnités et subventions d’exploitation,,74
+1076,insurance_compensations,,Indemnités d’assurance,,742
+1077,,agricultural_disasters_compensations,Indemnités du fonds national de garantie des calamités agricoles,,743
+1078,,other_compensations,Autres indemnités d’exploitation,,744
+1079,,subsidies,Subventions d’exploitation,,745
+1080,,plants_subsidies,Subventions aux produits,,7451
+1081,,exploitation_subsidies,Subventions aux structures,,7452
+1082,,revenue_subsidies,Subventions au revenu,,7453
+1083,,animals_subsidies,,,7454
+1084,,other_exploitation_subsidies,Autres subventions d’exploitation,,7458
+1085,,other_day_to_day_management_revenues,Autres produits de gestion courante,75,75
+1086,licenses_revenues,,"Redevances pour concessions, brevets, licences, marques, procédés, logiciels, droits et valeurs similaires",751,751
+1087,,,Revenus des immeubles non affectés à des activités professionnelles,752,752
+1088,,,"Jetons de présence, rémunérations et indemnités d'administrateurs, etc.",753,753
+1089,,discount_from_cooperatives,Ristournes perçues des coopératives (provenant des excédents),754,754
+1090,,,Quote-part de résultat sur opérations faites en commun,755,755
+1091,,,Quote-part de perte transférée (comptabilité du gérant),7551,7551
+1092,,,Quote-part de bénéfice attribuée (comptabilité des associés non – gérants),7555,7555
+1093,,,Produits des cessions d’éléments d’actifs,756,756
+1094,,other_usual_running_profits,Produits divers de gestion courante,758,758
+1095,,financials_revenues,Produits financiers,76,76
+1096,,participation_financials_revenues,Produits de participations,761,761
+1097,,,Revenus des titres de participation,7611,7611
+1098,,,Revenus des participations à des organismes professionnels agricoles (autres que les établissements de crédit),,7612
+1099,,,Revenus sur autres formes de participation,7616,7616
+1100,,,Revenus des créances rattachées à des participations,7617,7617
+1101,,,Créances rattachées à des participations (groupe),76171,76171
+1102,,,Créances rattachées à des participations à des organismes professionnels agricoles (autres que les établissements de crédit),,76172
+1103,,,Sociétés coopératives agricoles (sauf Cuma),,761721
+1104,,,Cuma,,761722
+1105,,,Sica,,761724
+1106,,,Autres,,761728
+1107,,,Créances rattachées à des participations (hors groupe),76174,76174
+1108,,,Versements représentatifs d'apports non capitalisés (appel de fonds),76175,76175
+1109,,,Avances consolidables,76176,76176
+1110,,other_financials_asset_revenues,Produits des autres immobilisations financières,762,762
+1111,,,Revenus des titres immobilisés,7621,7621
+1112,,,Revenus des prêts,7626,7624
+1113,,,Revenus des autres créances immobilisées,7627,7627
+1114,,other_debt_obligation_financials_revenues,Revenus des autres créances immobilisées,763,763
+1115,,,Revenus des créances commerciales,7631,7631
+1116,,,Revenus des créances diverses,7638,7638
+1117,,short_term_investment_financials_revenues,Revenus des valeurs mobilières de placement,764,764
+1118,,reductions,Escomptes obtenus,765,765
+1119,,foreign_exchange_financials_revenues,Gains de change,766,766
+1120,,short_term_investment_transfer_financials_revenues,Produits nets sur cessions de valeurs mobilières de placement,767,767
+1121,,other_financials_revenues,Autres produits financiers,768,768
+1122,,exceptional_revenues,Produits exceptionnels,77,77
+1123,,management_operation_exceptional_revenues,Produits exceptionnels sur opérations de gestion,771,771
+1124,,,Dédits et pénalités perçus sur achats et sur ventes,7711,7711
+1125,,,Libéralités reçues,7713,7713
+1126,,,Rentrées sur créances amorties,7714,7714
+1127,,,Subventions d'équilibre,7715,7715
+1128,,,Dégrèvements d'impôts autres qu'impôts sur les bénéfices,7717,7717
+1129,,,Autres produits exceptionnels sur opérations de gestion,7718,7718
+1130,,previous_fiscal_year_exceptional_revenues,"(Compte à la disposition des entités pour enregistrer, en cours d'exercice, les produits sur exercices antérieurs)",772,772
+1131,,sales_assets_revenues,Produits des cessions d'éléments d'actif,775,775
+1132,intangible_fixed_assets_revenues,,Immobilisations incorporelles,7751,7751
+1133,tangible_fixed_assets_revenues_without_livestock,,Immobilisations corporelles (hors biens vivants),,7752
+1134,tangible_fixed_assets_revenues_livestock,,Immobilisations corporelles (biens vivants),,7754
+1135,,,Immobilisations financières,7756,7756
+1136,,share_asset_subsidies,Quote-part des subventions d'investissement virée au résultat de l'exercice,777,777
+1137,,various_exceptional_revenues,Autres produits exceptionnels,778,778
+1138,,,Bonis provenant de clauses d'indexation,7781,7781
+1139,,,Lots,7782,7782
+1140,,,Bonis provenant du rachat par l'entreprise d'actions et d'obligations émises par elle-même,7783,7783
+1141,,,Produits exceptionnels divers,7788,7788
+1142,,depreciation_revenues,"Reprises sur amortissements, dépréciations et provisions (Règl. CRC 2005-9)",78,78
+1143,,incorporeal_asset_depreciation_revenues,"Reprises sur amortissements, dépréciations et provisions (à inscrire dans les produits d'exploitation)",781,781
+1144,,,Immobilisations corporelles (hors biens vivants),,78112
+1145,,,Immobilisations corporelles (biens vivants),,78114
+1146,,,Reprises sur provisions d'exploitation (Règl. CRC 2005-9),7815,7815
+1147,,,Reprises sur dépréciations des immobilisations incorporelles et corporelles (Règl. CRC 2002-10),7816,7816
+1148,,,Immobilisations incorporelles,78161,78161
+1149,,,Immobilisations corporelles (hors biens vivants),,78162
+1150,,,Immobilisations corporelles (biens vivants),,78164
+1151,,,Reprises sur dépréciations des actifs circulants (Règl. CRC 2005-9),7817,7817
+1152,,,Stocks et en-cours,78173,78173
+1153,,,Créances,78174,78174
+1154,,financial_asset_depreciation_revenues,Reprises sur provisions pour risques et dépréciations (à inscrire dans les produits financiers) (Règl. CRC 2005-9),786,786
+1155,,,Reprises sur provisions financières (Règl. CRC 2005-9),7865,7865
+1156,,,Reprises sur dépréciations des éléments financiers (Règl. CRC 2005-9),7866,7866
+1157,,,Immobilisations financières,78662,78662
+1158,,,Valeurs mobilières de placements,78665,78665
+1159,exceptional_depreciations_inputations_revenues,,Reprises sur provisions et dépréciations (à inscrire dans les produits exceptionnels) (Règl. CRC 2005-9),,787
+1160,exceptional_depreciations_inputations_revenues,exceptionnal_incorporeal_asset_depreciation_revenues,Reprises sur provisions et dépréciations (à inscrire dans les produits exceptionnels) (Règl. CRC 2005-9),787,
+1161,,,Reprises sur provisions réglementées (immobilisations),7872,7872
+1162,,,Amortissements dérogatoires,78725,78725
+1163,,,Provision spéciale de réévaluation,78726,78726
+1164,,,Plus-values réinvesties,78727,78727
+1165,,,Reprises sur provisions réglementées (stocks),7873,7873
+1166,,,Reprises sur autres provisions réglementées,7874,7874
+1167,,,Reprises sur autres provisions réglementées (Règl. CRC 2005-9),7875,7875
+1168,,,Reprises sur dépréciations exceptionnelles (Règl. CRC 2002-10),7876,7876
+1169,,transfer_revenues,Transferts de charges,79,79
+1170,,exploitation_expenses_transfers,Transferts de charges d'exploitation,791,791
+1171,,financial_charge_transfer_revenues,Transferts de charges financières,796,796
+1172,exceptional_charge_transfer_revenues,exceptionnal_charge_transfer_revenues,Transferts de charges exceptionnelles,797,797
+1173,Equity_warrants,,Bons de souscription d'actions,1045,
+1174,difference_on_equity_accounted_investments,,Écart d'équivalence,107,
+1175,state_equipment_grants,,Subventions d'équipement de l’État,1311,
+1176,region_equipment_grants,,Subventions d'équipement des régions,1312,
+1177,department_equipment_grants,,Subventions d'équipement des départements,1313,
+1178,municipalities_equipment_grants,,Subventions d'équipement des communes,1314,
+1179,public_authorities_equipment_grants,,Subventions d'équipement des collectivités publiques,1315,
+1180,public_enterprises_equipment_grants,,Subventions d'équipement des entreprises publiques,1316,
+1181,enterprise_and_private_bodies_equipment_grants,,Subventions d'équipement des entreprises et organismes privés,1317,
+1182,other_equipment_grants_from_other_entity,,Subventions d’équipement autre,1318,
+1183,state_investment_grants,,Subventions d'investissement de l’État,1381,
+1184,regions_investment_grants,,Subventions d'investissement des régions,1382,
+1185,departments_investment_grants,,Subventions d'investissement des départements,1383,
+1186,municipalities_investment_grants,,Subventions d'investissement des communes,1384,
+1187,public_authorities_investment_grants,,Subventions d'investissement des collectivités publiques,1385,
+1188,public_enterprises_investment_grants,,Subventions d'investissement des entreprises publiques,1386,
+1189,enterprise_and_private_bodies_investment_grants,,Subventions d'investissement des entreprises et organismes privés,1387,
+1190,other_investment_grants_from_other_entity,,Subventions d’investissement autre,1388,
+1191,state_equipment_grants_credited_to_the_profit_and_loss_account,,Subventions d'équipement de l’État inscrites au compte de résultat,13911,
+1192,region_equipment_grants_credited_to_the_profit_and_loss_account,,Subventions d'équipement des régions inscrites au compte de résultat,13912,
+1193,department_equipment_grants_credited_to_the_profit_and_loss_account,,Subventions d'équipement des départements inscrites au compte de résultat,13913,
+1194,municipalities_equipment_grants_credited_to_the_profit_and_loss_account,,Subventions d'équipement des communes inscrites au compte de résultat,13914,
+1195,public_authority_equipment_grants_credited_to_the_profit_and_loss_account,,Subventions d'équipement des collectivités publiques inscrites au compte de résultat,13915,
+1196,public_company_equipment_grants_credited_to_the_profit_and_loss_account,,Subventions d'équipement des entreprises publiques inscrites au compte de résultat,13916,
+1197,private_company_equipment_grants_credited_to_the_profit_and_loss_account,,Subventions d'équipement des entreprises et organismes privés inscrites au compte de résultat,13917,
+1198,equipment_grants_from_other_entity_credited_to_the_profit_and_loss_account,,Subventions d'équipement autre inscrites au compte de résultat,13918,
+1199,other_state_investment_grants_credited_to_the_profit_and_loss_account,,Subventions d’investissement de l’État inscrites au compte de résultat,13981,
+1200,other_region_investment_grants_credited_to_the_profit_and_loss_account,,Subventions d’investissement des régions inscrites au compte de résultat,13982,
+1201,other_department_investment_grants_credited_to_the_profit_and_loss_account,,Subventions d’investissement des départements inscrites au compte de résultat,13983,
+1202,other_municipalities_investment_grants_credited_to_the_profit_and_loss_account,,Subventions d’investissement des communes inscrites au compte de résultat,13984,
+1203,other_public_authority_investment_grants_credited_to_the_profit_and_loss_account,,Subventions d’investissement des collectivités publiques inscrites au compte de résultat,13985,
+1204,other_public_company_investment_grants_credited_to_the_profit_and_loss_account,,Subventions d’investissement des entreprises publiques inscrites au compte de résultat,13986,
+1205,other_private_company_investment_grants_credited_to_the_profit_and_loss_account,,Subventions d’investissement des entreprises et organismes privés inscrites au compte de résultat,13987,
+1206,other_investment_grants_from_other_entity_credited_to_the_profit_and_loss_account,,Subventions d’investissement autre inscrites au compte de résultat,13988,
+1207,provisions_for_reconstitution_of_mining_and_petroleum_deposit,,Provisions pour reconstitution des gisements miniers et pétroliers,1423,
+1208,tax_regulated_provisions_for_exchange_rate_fluctuation_relating_to_stocks,,Provisions réglementées relatives aux stocks : fluctuation des cours,1432,
+1209,provisions_for_social_security_and_tax_charges_on_holiday_pay,,Provisions pour charges sociales et taxes sur les congés payés,1582,
+1210,quarries,,Carrières,21141,
+1211,industrial_property_complexes,,Ensembles immobiliers industriels,21151,
+1212,administrative_and_commercial_property_complexes,,Ensembles immobiliers administratifs et commerciaux,21155,
+1213,other_property_complexes,,Autres ensembles immobiliers,21158,
+1214,other_property_assigned_to_professional_activity,,Affectés aux opérations professionnelles,211581,
+1215,other_property_assigned_to_non_professional_activity,,Affectés aux opérations non professionnelles,211588,
+1216,site_development_on_undeveloped_land,redeemable_land_parcel_construction_assets,Terrains nus,2121,
+1217,site_development_on_serviced_land,,Terrains aménagés,2122,
+1218,site_development_on_undergroud_and_aboveground_sites,,Sous-sols et sur-sols,2123,
+1219,site_development_on_minig_sites,,Terrains de gisement,2124,
+1220,site_development_on_quarries,,Carrières,21241,
+1221,site_development_on_developed_land,,Terrains bâtis,2125,
+1222,site_development_on_industrial_property_complexes,,Ensembles immobiliers industriels,21251,
+1223,site_development_on_administrative_and_commercial_property_complexes,,Ensembles immobiliers administratifs et commerciaux,21255,
+1224,site_development_on_other_property_complexes,,Autres ensembles immobiliers,21258,
+1225,site_development_on_other_property_assigned_to_professional_activity,,Affectés aux opérations professionnelles,212581,
+1226,site_development_on_other_property_assigned_to_non_professional_activity,,Affectés aux opérations non professionnelles,212588,
+1227,site_development_on_suspense_account_for_non_amortizable_fixed_asset,,Compte d'ordre sur immobilisations (art. 6 du décret n° 78-737 du 11 juillet 1978),2126,
+1228,buildings_for_industrial_property_complexes,,Ensembles immobiliers industriels,21311,
+1229,buildings_for_administrative_and_commercial_property_complexes,,Ensembles immobiliers administratifs et commerciaux,21315,
+1230,buildings_for_other_property_complexes,,Autres ensembles immobiliers,21318,
+1231,buildings_on_property_assigned_to_normal_entity_operations,,Affectés aux opérations professionnelles,213181,
+1232,buildings_on_property_assigned_to_other_than_normal_entity_operations,,Affectés aux opérations non professionnelles,213188,
+1233,buildings_fixtures_and_fittings_for_industrial_property_complexes,,Ensembles immobiliers industriels,21351,
+1234,buildings_fixtures_and_fittings_for_administrative_and_commercial_property_complexes,,Ensembles immobiliers administratifs et commerciaux,21355,
+1235,buildings_fixtures_and_fittings_for_other_property_complexes,,Autres ensembles immobiliers,21358,
+1236,buildings_fixtures_and_fittings_on_property_assigned_to_normal_entity_operations,,Affectés aux opérations professionnelles,213581,
+1237,buildings_fixtures_and_fittings_on_property_assigned_to_other_than_normal_entity_operations,,Affectés aux opérations non professionnelles,213588,
+1238,roadways,,Voies de terre,21381,
+1239,railways,,Voies de fer,21382,
+1240,water_channels,,Voies d’eau,21383,
+1241,dams,,Barrages,21384,
+1242,airfields,,Pistes d’aérodromes,21385,
+1243,buildings_for_industrial_property_complexes_on_third_party_sites,,Ensembles immobiliers industriels,21411,
+1244,buildings_for_administrative_and_commercial_property_complexes_on_third_party_sites,,Ensembles immobiliers administratifs et commerciaux,21415,
+1245,buildings_for_other_property_complexes_on_third_party_sites,,Autres ensembles immobiliers,21418,
+1246,buildings_on_property_assigned_to_normal_entity_operations_on_third_party_sites,,Affectés aux opérations professionnelles,214181,
+1247,buildings_on_property_assigned_to_other_than_normal_entity_operations_on_third_party_sites,,Affectés aux opérations non professionnelles,214188,
+1248,buildings_fixtures_and_fittings_for_industrial_property_complexes_on_third_party_sites,,Ensembles immobiliers industriels,21451,
+1249,buildings_fixtures_and_fittings_for_administrative_and_commercial_property_complexes_on_third_party_sites,,Ensembles immobiliers administratifs et commerciaux,21455,
+1250,buildings_fixtures_and_fittings_for_other_property_complexes_on_third_party_sites,,Autres ensembles immobiliers,21458,
+1251,buildings_fixtures_and_fittings_on_property_assigned_to_normal_entity_operations_on_third_party_sites,,Affectés aux opérations professionnelles,214581,
+1252,buildings_fixtures_and_fittings_on_property_assigned_to_other_than_normal_entity_operations_on_third_party_sites,,Affectés aux opérations non professionnelles,214588,
+1253,roadways_on_third_party_sites,,Voies de terre,21481,
+1254,railways_on_third_party_sites,,Voies de fer,21482,
+1255,water_channels_on_third_party_sites,,Voies d’eau,21483,
+1256,dams_on_third_party_sites,,Barrages,21484,
+1257,airfields_on_third_party_sites,,Pistes d’aérodromes,21485,
+1258,specialised_complex_installations,technical_installation_on_own_land_parcel_assets,Installations complexes spécialisées,2151,
+1259,specialised_complex_installations_on_own_site,,Sur sol propre,21511,
+1260,specialised_complex_installations_on_third_party_site,,Sur sol d’autrui,21514,
+1261,installations_of_specific_nature,,Installations à caractère spécifique,2153,
+1262,installations_of_specific_nature_on_own_site,,Sur sol propre,21531,
+1263,installations_of_specific_nature_on_third_party_site,,Sur sol d’autrui,21534,
+1264,livestock,,Cheptel,2185,
+1265,merger_loss_on_tangible_assets,,Mali de fusion sur actifs corporels,2187,
+1266,constructions_tangible_fixed_asset_in_progress,outstanding_land_parcel_construction_assets,Constructions,2313,
+1267,payments_on_account_on_orders_for_tangible_fixed_assets_for_land,,Terrains,2382,
+1268,payments_on_account_on_orders_for_tangible_fixed_assets_for_constructions,,Constructions,2383,
+1269,payments_on_account_on_orders_for_tangible_fixed_assets_for_technical_installation_equipment_and_tools,,"Installations techniques, matériel et outillage industriels",2385,
+1270,payments_on_account_on_orders_for_other_tangible_fixed_assets,,Autres immobilisations corporelles,2388,
+1271,other_debts_receivable_related_to_participating_interests,,Autres créances rattachées à des participations,2677,
+1272,long_term_investment_equity_securities_other_than_portfolio_long_term_investment_equity_securities,ownership_assets,Titres immobilisés autres que les titres immobilisés de l’activité de portefeuille (droit de propriété),271,
+1273,own_shares_or_own_equity,,Actions propres ou parts propres,2771,
+1274,own_shares_in_process_of_cancellation,,Actions propres ou parts propres en voie d’annulation,2772,
+1275,merger_loss_on_financial_assets,,Mali de fusion sur actifs financiers,278,
+1276,site_development_amortization_on_undeveloped_land,,Terrains nus,28121,
+1277,site_development_amortization_on_serviced_land,,Terrains aménagés,28122,
+1278,site_development_amortization_on_undergroud_and_aboveground_sites,,Sous-sols et sur-sols,28123,
+1279,site_development_amortization_on_minig_sites,,Terrains de gisement,28124,
+1280,site_development_amortization_on_quarries,,Carrières,281241,
+1281,site_development_amortization_on_developed_land,,Terrains bâtis,28125,
+1282,site_development_amortization_on_industrial_property_complexes,,Ensembles immobiliers industriels,281251,
+1283,site_development_amortization_on_administrative_and_commercial_property_complexes,,Ensembles immobiliers administratifs et commerciaux,281255,
+1284,site_development_amortization_on_other_property_complexes,,Autres ensembles immobiliers,281258,
+1285,site_development_amortization_on_other_property_assigned_to_professional_activity,,Affectés aux opérations professionnelles,2812581,
+1286,site_development_amortization_on_other_property_assigned_to_non_professional_activity,,Affectés aux opérations non professionnelles,2812588,
+1287,site_development_amortization_on_suspense_account_for_non_amortizable_fixed_asset,,Compte d'ordre sur immobilisations (art. 6 du décret n° 78-737 du 11 juillet 1978),28126,
+1288,buildings_for_industrial_property_complexes_amortization,,Ensembles immobiliers industriels,281311,
+1289,buildings_for_administrative_and_commercial_property_complexes_amortization,,Ensembles immobiliers administratifs et commerciaux,281315,
+1290,buildings_for_other_property_complexes_amortization,,Autres ensembles immobiliers,281318,
+1291,buildings_on_property_assigned_to_normal_entity_operations_amortization,,Affectés aux opérations professionnelles,2813181,
+1292,buildings_on_property_assigned_to_other_than_normal_entity_operations_amortization,,Affectés aux opérations non professionnelles,2813188,
+1293,buildings_fixtures_and_fittings_for_industrial_property_complexes_amortization,,Ensembles immobiliers industriels,281351,
+1294,buildings_fixtures_and_fittings_for_administrative_and_commercial_property_complexes_amortization,,Ensembles immobiliers administratifs et commerciaux,281355,
+1295,buildings_fixtures_and_fittings_for_other_property_complexes_amortization,,Autres ensembles immobiliers,281358,
+1296,buildings_fixtures_and_fittings_on_property_assigned_to_normal_entity_operations_amortization,,Affectés aux opérations professionnelles,2813581,
+1297,buildings_fixtures_and_fittings_on_property_assigned_to_other_than_normal_entity_operations_amortization,,Affectés aux opérations non professionnelles,2813588,
+1298,roadways_amortization,,Voies de terre,281381,
+1299,railways_amortization,,Voies de fer,281382,
+1300,water_channels_amortization,,Voies d’eau,281383,
+1301,dams_amortization,,Barrages,281384,
+1302,airfields_amortization,,Pistes d’aérodromes,281385,
+1303,buildings_for_industrial_property_complexes_on_third_party_sites_amortization,,Ensembles immobiliers industriels,281411,
+1304,buildings_for_administrative_and_commercial_property_complexes_on_third_party_sites_amortization,,Ensembles immobiliers administratifs et commerciaux,281415,
+1305,buildings_for_other_property_complexes_on_third_party_sites_amortization,,Autres ensembles immobiliers,281418,
+1306,buildings_on_property_assigned_to_normal_entity_operations_on_third_party_sites_amortization,,Affectés aux opérations professionnelles,2814181,
+1307,buildings_on_property_assigned_to_other_than_normal_entity_operations_on_third_party_sites_amortization,,Affectés aux opérations non professionnelles,2814188,
+1308,buildings_fixtures_and_fittings_for_industrial_property_complexes_on_third_party_sites_amortization,,Ensembles immobiliers industriels,281451,
+1309,buildings_fixtures_and_fittings_for_administrative_and_commercial_property_complexes_on_third_party_sites_amortization,,Ensembles immobiliers administratifs et commerciaux,281455,
+1310,buildings_fixtures_and_fittings_for_other_property_complexes_on_third_party_sites_amortization,,Autres ensembles immobiliers,281458,
+1311,buildings_fixtures_and_fittings_on_property_assigned_to_normal_entity_operations_on_third_party_sites_amortization,,Affectés aux opérations professionnelles,2814581,
+1312,buildings_fixtures_and_fittings_on_property_assigned_to_other_than_normal_entity_operations_on_third_party_sites_amortization,,Affectés aux opérations non professionnelles,2814588,
+1313,roadways_on_third_party_sites_amortization,,Voies de terre,281481,
+1314,railways_on_third_party_sites_amortization,,Voies de fer,281482,
+1315,water_channels_on_third_party_sites_amortization,,Voies d’eau,281483,
+1316,dams_on_third_party_sites_amortization,,Barrages,281484,
+1317,airfields_on_third_party_sites_amortization,,Pistes d’aérodromes,281485,
+1318,specialised_complex_installations_amortization,,Installations complexes spécialisées,28151,
+1319,specialised_complex_installations_on_own_site_amortization,,Sur sol propre,281511,
+1320,specialised_complex_installations_on_third_party_site_amortization,,Sur sol d’autrui,281514,
+1321,installations_of_specific_nature_amortization,,Installations à caractère spécifique,28153,
+1322,installations_of_specific_nature_on_own_site_amortization,,Sur sol propre,281531,
+1323,installations_of_specific_nature_on_third_party_site_amortization,,Sur sol d’autrui,281534,
+1324,livestock_amortization,,Cheptel,28185,
+1325,merger_loss_on_tangible_assets_amortization,,Mali de fusion sur actifs corporels,28187,
+1326,depreciation_for_diminution_in_value_of_merger_loss_on_intangible_fixed_assets,,Dépréciation de mali de fusion sur actifs incorporels,29081,
+1327,depreciation_for_diminution_in_value_of_quarries,,Carrières,291141,
+1328,depreciation_for_diminution_in_value_of_industrial_property_complexes,,Ensembles immobiliers industriels,291151,
+1329,depreciation_for_diminution_in_value_of_administrative_and_commercial_property_complexes,,Ensembles immobiliers administratifs et commerciaux,291155,
+1330,depreciation_for_diminution_in_value_of_other_property_complexes,,Autres ensembles immobiliers,291158,
+1331,depreciation_for_diminution_in_value_of_other_property_assigned_to_professional_activity,,Affectés aux opérations professionnelles,2911581,
+1332,depreciation_for_diminution_in_value_of_other_property_assigned_to_non_professional_activity,,Affectés aux opérations non professionnelles,2911588,
+1333,depreciation_for_diminution_in_value_of_site_development_on_undeveloped_land,,Terrains nus,29121,
+1334,depreciation_for_diminution_in_value_of_site_development_on_serviced_land,,Terrains aménagés,29122,
+1335,depreciation_for_diminution_in_value_of_site_development_on_undergroud_and_aboveground_sites,,Sous-sols et sur-sols,29123,
+1336,depreciation_for_diminution_in_value_of_site_development_on_minig_sites,,Terrains de gisement,29124,
+1337,depreciation_for_diminution_in_value_of_site_development_on_quarries,,Carrières,291241,
+1338,depreciation_for_diminution_in_value_of_site_development_on_developed_land,,Terrains bâtis,29125,
+1339,depreciation_for_diminution_in_value_of_site_development_on_industrial_property_complexes,,Ensembles immobiliers industriels,291251,
+1340,depreciation_for_diminution_in_value_of_site_development_on_administrative_and_commercial_property_complexes,,Ensembles immobiliers administratifs et commerciaux,291255,
+1341,depreciation_for_diminution_in_value_of_site_development_on_other_property_complexes,,Autres ensembles immobiliers,291258,
+1342,depreciation_for_diminution_in_value_of_site_development_on_other_property_assigned_to_professional_activity,,Affectés aux opérations professionnelles,2912581,
+1343,depreciation_for_diminution_in_value_of_site_development_on_other_property_assigned_to_non_professional_activity,,Affectés aux opérations non professionnelles,2912588,
+1344,depreciation_for_diminution_in_value_of_site_development_on_suspense_account_for_non_amortizable_fixed_asset,,Compte d'ordre sur immobilisations (art. 6 du décret n° 78-737 du 11 juillet 1978),29126,
+1345,depreciation_for_diminution_in_value_of_buildings_for_industrial_property_complexes,,Ensembles immobiliers industriels,291311,
+1346,depreciation_for_diminution_in_value_of_buildings_for_administrative_and_commercial_property_complexes,,Ensembles immobiliers administratifs et commerciaux,291315,
+1347,depreciation_for_diminution_in_value_of_buildings_for_other_property_complexes,,Autres ensembles immobiliers,291318,
+1348,depreciation_for_diminution_in_value_of_buildings_on_property_assigned_to_normal_entity_operations,,Affectés aux opérations professionnelles,2913181,
+1349,depreciation_for_diminution_in_value_of_buildings_on_property_assigned_to_other_than_normal_entity_operations,,Affectés aux opérations non professionnelles,2913188,
+1350,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_for_industrial_property_complexes,,Ensembles immobiliers industriels,291351,
+1351,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_for_administrative_and_commercial_property_complexes,,Ensembles immobiliers administratifs et commerciaux,291355,
+1352,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_for_other_property_complexes,,Autres ensembles immobiliers,291358,
+1353,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_on_property_assigned_to_normal_entity_operations,,Affectés aux opérations professionnelles,2913581,
+1354,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_on_property_assigned_to_other_than_normal_entity_operations,,Affectés aux opérations non professionnelles,2913588,
+1355,depreciation_for_diminution_in_value_of_roadways,,Voies de terre,291381,
+1356,depreciation_for_diminution_in_value_of_railways,,Voies de fer,291382,
+1357,depreciation_for_diminution_in_value_of_water_channels,,Voies d’eau,291383,
+1358,depreciation_for_diminution_in_value_of_dams,,Barrages,291384,
+1359,depreciation_for_diminution_in_value_of_airfields,,Pistes d’aérodromes,291385,
+1360,depreciation_for_diminution_in_value_of_buildings_for_industrial_property_complexes_on_third_party_sites,,Ensembles immobiliers industriels,291411,
+1361,depreciation_for_diminution_in_value_of_buildings_for_administrative_and_commercial_property_complexes_on_third_party_sites,,Ensembles immobiliers administratifs et commerciaux,291415,
+1362,depreciation_for_diminution_in_value_of_buildings_for_other_property_complexes_on_third_party_sites,,Autres ensembles immobiliers,291418,
+1363,depreciation_for_diminution_in_value_of_buildings_on_property_assigned_to_normal_entity_operations_on_third_party_sites,,Affectés aux opérations professionnelles,2914181,
+1364,depreciation_for_diminution_in_value_of_buildings_on_property_assigned_to_other_than_normal_entity_operations_on_third_party_sites,,Affectés aux opérations non professionnelles,2914188,
+1365,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_for_industrial_property_complexes_on_third_party_sites,,Ensembles immobiliers industriels,291451,
+1366,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_for_administrative_and_commercial_property_complexes_on_third_party_sites,,Ensembles immobiliers administratifs et commerciaux,291455,
+1367,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_for_other_property_complexes_on_third_party_sites,,Autres ensembles immobiliers,291458,
+1368,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_on_property_assigned_to_normal_entity_operations_on_third_party_sites,,Affectés aux opérations professionnelles,2914581,
+1369,depreciation_for_diminution_in_value_of_buildings_fixtures_and_fittings_on_property_assigned_to_other_than_normal_entity_operations_on_third_party_sites,,Affectés aux opérations non professionnelles,2914588,
+1370,depreciation_for_diminution_in_value_of_roadways_on_third_party_sites,,Voies de terre,291481,
+1371,depreciation_for_diminution_in_value_of_railways_on_third_party_sites,,Voies de fer,291482,
+1372,depreciation_for_diminution_in_value_of_water_channels_on_third_party_sites,,Voies d’eau,291483,
+1373,depreciation_for_diminution_in_value_of_dams_on_third_party_sites,,Barrages,291484,
+1374,depreciation_for_diminution_in_value_of_airfields_on_third_party_sites,,Pistes d’aérodromes,291485,
+1375,depreciation_for_diminution_in_value_of_specialised_complex_installations,,Installations complexes spécialisées,29151,
+1376,depreciation_for_diminution_in_value_of_specialised_complex_installations_on_own_site,,Sur sol propre,291511,
+1377,depreciation_for_diminution_in_value_of_specialised_complex_installations_on_third_party_site,,Sur sol d’autrui,291514,
+1378,depreciation_for_diminution_in_value_of_installations_of_specific_nature,,Installations à caractère spécifique,29153,
+1379,depreciation_for_diminution_in_value_of_installations_of_specific_nature_on_own_sitedepreciation_for_diminution_in_value_of_,,Sur sol propre,291531,
+1380,depreciation_for_diminution_in_value_of_installations_of_specific_nature_on_third_party_site,,Sur sol d’autrui,291534,
+1381,depreciation_for_diminution_in_value_of_livestock,,Cheptel,29185,
+1382,depreciation_for_diminution_in_value_of_merger_loss_on_tangible_assets,,Mali de fusion sur actifs corporels,29187,
+1383,depreciation_for_diminution_in_value_of_other_debts_receivable_related_to_participating_interests,,Autres créances rattachées à des participations,29677,
+1384,depreciation_for_diminution_in_value_of_long_term_investment_equity_securities_other_than_portfolio_long_term_investment_equity_securities,,Titres immobilisés autres que les titres immobilisés de l’activité de portefeuille (droit de propriété),2971,
+1385,depreciation_for_diminution_in_value_of_portfolio_long_term_investment_securities,,Titres immobilisés de l’activité de portefeuille,2973,
+1386,depreciation_for_diminution_in_value_of_merger_loss_on_financial_assets,,Dépréciation de mali de fusion sur actifs financier,29787,
+1387,raw_matters_and_supplies,raw_material_and_supplies,Matières premières,31,
+1388,other_consumables,other_supplies,Autres approvisionnements,32,
+1389,consumable_materials,,Matières consommables,321,
+1390,consumable_supplies,,Fournitures consommables,322,
+1391,fuels_consumable_supplies,,Combustibles,3221,
+1392,cleaning_products_consumable_supplies,,Produits d'entretien,3222,
+1393,workshop_and_factory_consumable_supplies,,Fournitures d’atelier et d’usine,3223,
+1394,store_consumable_supplies,,Fournitures de magasin,3224,
+1395,office_consumable_supplies,,Fournitures de bureau,3225,
+1396,packaging_consumables,,Emballages,326,
+1397,non_returnable_packaging_consumables,,Emballages perdus,3261,
+1398,unidentified_recorevable_packaging_consumables,,Emballages récupérables non-identifiables,3265,
+1399,mixed_usage_packaging_consumables,,Emballages à usage mixte,3267,
+1400,,in_cycle_products_stock,En-cours de production de biens,33,
+1401,products_in_progress_for_goods,,Produits en cours,331,
+1402,works_in_progress,,Travaux en cours,335,
+1403,,in_cycle_services_stock,En-cours de production de services,34,
+1404,project_studies_in_progress,,Etudes en cours,341,
+1405,supply_of_services_in_progress,,Prestations de service en commun,345,
+1406,,products_stock,Stock de produits,35,
+1407,semi_finished_products,,Produits intermédiaires,351,
+1408,finished_products,,Produits finis,355,
+1409,residual_products_or_recoverable_materials,,Produits résiduels (ou matières de récupération),358,
+1410,waste,,Déchets,3581,
+1411,refuse,,Rebuts,3585,
+1412,recoverable_materials,,Matières de récupération,3586,
+1413,,assets_products_stock,"(comptes à ouvrir, le cas échéant, sous l’intitulé « Stocks provenant d’immobilisations »)",36,
+1414,,merchandising_products_stock,Stock de marchandises,37,
+1415,impairment_provisions_for_diminution_in_value_of_raw_materials_and_supplies,,Dépréciation des matières premières (et fournitures),391,
+1416,impairment_provisions_for_diminution_in_value_of_other_consumables,,Dépréciation des autres approvisionnements,392,
+1417,impairment_provisions_for_diminution_in_value_of_consumable_materials,,Matières consommables,3921,
+1418,impairment_provisions_for_diminution_in_value_of_consumable_supplies,,Fournitures consommables,3922,
+1419,impairment_provisions_for_diminution_in_value_of_fuels_consumable_supplies,,Combustibles,39221,
+1420,impairment_provisions_for_diminution_in_value_of_cleaning_products_consumable_supplies,,Produits d'entretien,39222,
+1421,impairment_provisions_for_diminution_in_value_of_workshop_and_factory_consumable_supplies,,Fournitures d’atelier et d’usine,39223,
+1422,impairment_provisions_for_diminution_in_value_of_store_consumable_supplies,,Fournitures de magasin,39224,
+1423,impairment_provisions_for_diminution_in_value_of_office_consumable_supplies,,Fournitures de bureau,39225,
+1424,impairment_provisions_for_diminution_in_value_of_packaging_consumables,,Emballages,3926,
+1425,impairment_provisions_for_diminution_in_value_of_non_returnable_packaging_consumables,,Emballages perdus,39261,
+1426,impairment_provisions_for_diminution_in_value_of_unidentified_recorevable_packaging_consumables,,Emballages récupérables non-identifiables,39265,
+1427,impairment_provisions_for_diminution_in_value_of_mixed_usage_packaging_consumables,,Emballages à usage mixte,39267,
+1428,impairment_provisions_for_diminution_in_value_of_work_in_progress_goods,,Dépréciation des en-cours de production de biens,393,
+1429,impairment_provisions_for_diminution_in_value_of_products_in_progress,,Produits en cours,3931,
+1430,impairment_provisions_for_diminution_in_value_of_works_in_progress,,Travaux en cours,3935,
+1431,impairment_provisions_for_diminution_in_value_of_work_in_progress_services,,Déprécation des en-cours de production de services,394,
+1432,impairment_provisions_for_diminution_in_value_of_project_studies_in_progress,,Études en cours,3941,
+1433,impairment_provisions_for_diminution_in_value_of_supply_of_product_stocks,,Dépréciation des stocks de produits,395,
+1434,impairment_provisions_for_diminution_in_value_of_semi_finished_products,,Produits intermédiaires,3951,
+1435,impairment_provisions_for_diminution_in_value_of_finished_products,,Produits finis,3955,
+1436,impairment_provisions_for_diminution_in_value_of_stocks_of_goods_for_resale,,Dépréciation des stocks de marchandises,397,
+1437,suppliers_purchases_of_goods_and_services,,Fournisseurs – Achats de biens et prestations de services,4011,
+1438,suppliers_contract_performance_holdbacks,,Fournisseurs – Retenue de garanties,4017,
+1439,suppliers_fixed_assets_purchases,,Fournisseurs – Achats d’immobilisations,4041,
+1440,suppliers_fixed_assets_contract_performance_holdbacks,,Fournisseurs d’immobilisations – Retenues de garanties,4047,
+1441,operating_suppliers,,Fournisseurs d'exploitation,40971,
+1442,fixed_asset_suppliers,,Fournisseurs d'immobilisations,40974,
+1443,,,Clients et comptes rattachés,410,
+1444,,,Clients - Ventes de biens ou de prestations de services,4111,
+1445,,,Clients - Retenues de garantie,4117,
+1446,,,Sécurité sociale et autres organismes sociaux,43,
+1447,,social_security,Mutualité sociale agricole,431,
+1448,,,Créances sur L’État résultant de la suppression de la règle du décalage d'un mois en matière de TVA,4431,
+1449,,,Intérêts courus sur créances figurant au 4431,4438,
+1450,,holding_company_and_associate_accounts,Groupe et associés,45,
+1451,,,Associés - Comptes courants (intérêts courus),4558,
+1452,,,comptes d’attente,472,
+1453,,,Dépréciations des comptes du groupe et des associés,495,
+1454,,,Actions destinées à être attribuées aux employés et affectées à des plans déterminés,5021,
+1455,,,Actions disponibles pour être attribuées aux employés ou pour la régularisation des cours de bourse,5022,
+1456,,,Bons de souscription,5082,
+1457,,,Comptes en monnaie nationale,5121,
+1458,,,Comptes en devises,5124,
+1459,,,Crédit de mobilisation de créances commerciales,5191,
+1460,,,Mobilisation de créances nées à l'étranger,5193,
+1461,,,Caisse siège social,531,
+1462,,,Caisse en monnaie nationale,5311,
+1463,,,Caisse en devises,5314,
+1464,,,Caisse succursale (ou usine) A,532,
+1465,,,Caisse succursale (ou usine) B,533,
+1466,,raw_matter_expenses,Achats stockés - Matières premières (et fournitures),601,
+1467,,,Matières (ou groupe) A,6011,
+1468,,,Matières (ou groupe) B,6012,
+1469,,,"Fournitures A, B, C",6017,
+1470,,,Matières consommables,6021,
+1471,,,Matières (ou groupe) C,60211,
+1472,,,Matières (ou groupe) D,60212,
+1473,,,Fournitures consommables,6022,
+1474,,,Combustibles,60221,
+1475,,,Produits d'entretien,60222,
+1476,,,Fournitures d’atelier et d’usine,60223,
+1477,,,Fournitures de magasin,60224,
+1478,,,Fournitures de bureau,60225,
+1479,,,Emballages,6026,
+1480,,,Emballages perdus,60261,
+1481,,,Emballages récupérables non-identifiables,60265,
+1482,,,Emballages à usage mixte,60267,
+1483,,supply_stocks_variation,Variation des stocks de matières premières (et fournitures),6031,
+1484,,services_expenses,Achats d'études et prestations de services,604,
+1485,,equipment_expenses,"Achats de matériels, équipements et travaux",605,
+1486,non_inventoriable_supplies,water_expenses,Eau,6061,
+1487,little_office_equipment_expenses,,Fournitures d'entretien et de petit équipement,6063,
+1488,,,Fournitures administratives,6064,
+1489,,,Autres matières et fournitures,6068,
+1490,,,de matières premières (et fournitures),6091,
+1491,,,d'études et prestations de services,6094,
+1492,,,"de matériel, équipements et travaux",6095,
+1493,,,d'approvisionnements non stockés,6096,
+1494,,,Locations immobilières,6132,
+1495,,,Locations mobilières,6135,
+1496,,,Sur biens immobiliers,6152,
+1497,,equipment_maintenance_expenses,Sur biens mobiliers,6155,
+1498,,,Maintenance,6156,
+1499,,,Assurance – transport,6163,
+1500,,,sur achats,61636,
+1501,,,sur ventes,61637,
+1502,,,sur autres biens,61638,
+1503,,,Risques d’exploitation,6164,
+1504,,,Insolvabilité clients,6165,
+1505,,forwarding_agent_fees_expenses,Rémunérations des transitaires,6224,
+1506,,,Rémunérations d'affacturage,6225,
+1507,,,"Concours divers (cotisations, )",6281,
+1508,,,Frais de recrutement de personnel,6284,
+1509,,,Impôts directs (sauf impôts sur les bénéfices),6351,
+1510,,,Contribution économique territoriale,63511,
+1511,,,Taxes foncières,63512,
+1512,,,Autres impôts locaux,63513,
+1513,,,Taxe sur les véhicules des sociétés,63514,
+1514,,,Droits de mutation,63541,
+1515,,staff_salary,"Salaires, appointements",6411,
+1516,,,Supplément familial,6415,
+1517,,,Cotisations à l'URSSAF,6451,
+1518,,,Cotisations aux ASSEDIC,6454,
+1519,,,Prestations directes,6471,
+1520,,,Versements aux comités d'hygiène et de sécurité,6473,
+1521,,,"Redevances pour concessions, brevets, licences, marques, procédés, logiciels",6511,
+1522,,,Droits d'auteur et de reproduction,6516,
+1523,,,Autres droits et valeurs similaires,6518,
+1524,,,Intérêts des emprunts et dettes,6611,
+1525,,,des emprunts et dettes assimilées,66116,
+1526,,,des dettes rattachées à des participations,66117,
+1527,,,"Charges de la fiducie, résultat de la période",6612,
+1528,,,Intérêts des comptes courants et des dépôts créditeurs,6615,
+1529,,,"Intérêts bancaires et sur opérations de financement (escompte,…)",6616,
+1530,,,Intérêts des obligations cautionnées,6617,
+1531,,,des dettes commerciales,66181,
+1532,,trust_creation_operation_expenses,Opérations de constitution ou liquidation des fiducies,674,
+1533,,,Opérations liées à la constitution de fiducie – Transfert des éléments,6741,
+1534,,,Opérations liées à la liquidation de la fiducie,6742,
+1535,,,Autres éléments d'actif,6758,
+1536,,,Contribution additionnelle à l'impôt sur les bénéfices,6952,
+1537,,additionnal_taxes_on_distribution_entity_expenses,Suppléments d'impôt sur les sociétés liés aux distributions,696,
+1538,,fiscal_integration_expenses,Intégration fiscale,698,
+1539,,,"Ventes de produits fabriqués, prestations de services, marchandises",70,
+1540,,,Ventes de produits finis,701,
+1541,,,Ventes de produits intermédiaires,702,
+1542,,,Ventes de produits résiduels,703,
+1543,,,Travaux,704,
+1544,,,Études,705,
+1545,,services_revenues,Prestations de services,706,
+1546,,,Produits des services exploités dans l'intérêt du personnel,7081,
+1547,,,Commissions et courtages,7082,
+1548,,,Locations diverses,7083,
+1549,,making_services_revenues,Mise à disposition de personnel facturée,7084,
+1550,,merchandising_accessory_revenues,Ports et frais accessoires facturés,7085,
+1551,,,Bonis sur reprises d'emballages consignés,7086,
+1552,,fill_up_price_revenues,Bonifications obtenues des clients et primes sur ventes,7087,
+1553,,,"Autres produits d'activités annexes (cessions d'approvisionnements,)",7088,
+1554,,,Sur ventes de produits finis,7091,
+1555,,,Sur ventes de produits intermédiaires,7092,
+1556,,,Sur travaux,7094,
+1557,,,Sur études,7095,
+1558,,,Sur prestations de services,7096,
+1559,,inventory_variations,Production stockée (ou déstockage),71,
+1560,,product_inventory_variations,"Variation des stocks (en-cours de production, produits)",713,
+1561,,,Variation des en-cours de production de biens,7133,
+1562,,,Produits en cours,71331,
+1563,,,Travaux en cours,71335,
+1564,,,Variation des en-cours de production de services,7134,
+1565,,,Études en cours,71341,
+1566,,,Prestations de services en cours,71345,
+1567,,,Variation des stocks de produits,7135,
+1568,,,Produits intermédiaires,71351,
+1569,,,Produits finis,71355,
+1570,,,Produits résiduels,71358,
+1571,,corporeal_asset_revenues,Production immobilisée – Immobilisations corporelles,722,
+1572,,exploitation_subsidies_and_compensations,Subventions d’exploitation,74,
+1573,,,"Redevances pour concessions, brevets, licences, marques, procédés, logiciels",7511,
+1574,,,Droits d'auteur et de reproduction,7516,
+1575,,,Autres droits et valeurs similaires,7518,
+1576,,,"Produits de la fiducie, résultat de la période",7612,
+1577,,,Autres créances rattachées à des participations,76177,
+1578,,,Opérations de constitution ou liquidation des fiducies,774,
+1579,,,Opérations liées à la constitution de fiducie – Transfert des éléments,7741,
+1580,,,Opérations liées à la liquidation de la fiducie,7742,
+1581,tangible_fixed_assets_revenues_without_livestock,land_parcel_sell_revenues,Immobilisations corporelles,7752,
+1582,,,Autres éléments d'actif,7758,
+1583,,,Reprises sur amortissements des immobilisations incorporelles et corporelles,7811,
+1584,,,Immobilisations incorporelles,78111,
+1585,,,Immobilisations corporelles,78112,
+1586,,,Immobilisations corporelles,78162,
+1587,impairment_provisions_for_diminution_in_value_of_supply_of_services_in_progress,,Prestations de services en cours,3945,
+1588,,,Clients douteux ou litigieux – Créances clients et comptes rattachés,4161,4161
+1589,,,Clients douteux ou litigieux – Créances autres clients et comptes rattachés,4162,4162
+1590,,,Factures à établir – Créances clients et comptes rattachés,41811,41811
+1591,,,Factures à établir – Créances autres clients et comptes rattachés,41812,41812
+1592,,,Intérêts courus – Créances clients et comptes rattachés,41881,41881
+1593,,,Intérêts courus – Créances autres clients et comptes rattachés,41882,41882
+1594,,,Dépréciations des comptes de clients – Créances clients et comptes rattachés,4911,4911
+1595,,,Dépréciations des comptes de clients – Créances autres clients et comptes rattachés,4912,4912

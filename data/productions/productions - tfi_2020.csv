@@ -1,0 +1,249 @@
+tfi_code,tfi_label,production,tfi_crop_group
+1001,Abricotier,apricot,GCU2
+1002,Ail,garlic,GCU3
+1003,Airelle,,GCU2
+1004,Amandier,almond,GCU2
+1197,Amarantes,,GCU1
+1005,Ananas,pineapple,GCU5
+1006,Arachide,peanut,GCU1
+1007,Arbres et arbustes,,GCU5
+1008,Artichaut,artichoke,GCU3
+1009,Asperge,asparagus,GCU3
+1010,Aubergine,eggplant,GCU3
+1203,Autres agrumes,citrus,GCU2
+1012,Autres anacardiacées,,GCU5
+1013,Autres choux à inflorescence,,GCU3
+1014,Autres choux feuillus,,GCU3
+1015,Autres choux pommés,,GCU3
+1016,Autres cucurbitacées à peau comestible,,GCU3
+1017,Autres cucurbitacées à peau non comestible,,GCU3
+1011,Autres oignons verts,,GCU3
+1018,Autres salades,batavia,GCU3
+1019,Avocatier,avocado,GCU5
+1020,Avoine,spring_oat,GCU1
+1020,Avoine,winter_oat,GCU1
+1021,Azerolier,,GCU2
+1022,Bananier,banana,GCU5
+1023,Barbadines,giant_granadilla,GCU5
+1024,Barbe de capucin,,GCU3
+1210,Betterave à sucre ou industrielle,beetroot,GCU1
+1209,Betterave fourragère,beetroot,GCU1
+1025,Betterave industrielle et fourragère,fodder_beetroot,GCU1
+1026,Betterave potagère,beetroot,GCU3
+1027,Blé,spring_common_wheat,GCU1
+1027,Blé,spring_hard_wheat,GCU1
+1027,Blé,winter_common_wheat,GCU1
+1027,Blé,spring_hard_wheat,GCU1
+1028,Bourrache,borage,GCU1
+1029,Brocoli,broccoli,GCU3
+1030,Bulbes ornementaux,,GCU5
+1031,Cameline,camelina,GCU1
+1032,Canne à sucre,sugar_cane,GCU5
+1033,Carambole,,GCU5
+1034,Cardon,,GCU3
+1035,Carotte,carrot,GCU3
+1035,Carotte,fodder_carrot,GCU3
+1035,Carotte,early_seasonal_carrot,GCU3
+1035,Carotte,autumn_seasonal_carrot,GCU3
+1035,Carotte,summer_seasonal_carrot,GCU3
+1201,Carthame,,GCU5
+1036,Cassissier,blackcurrant,GCU2
+1038,Céleri-branche,celery,GCU3
+1037,Céleri rave,celeriac,GCU3
+1039,Cerisier,cherry,GCU2
+1040,Champignons de couche,,GCU3
+1046,Champignons sauvages,,GCU3
+1041,Chanvre,hemp,GCU1
+1042,Chataignier,chesnut,GCU2
+1198,Chènevis,,GCU5
+1043,Cherimole,,GCU5
+1044,Chicorée frisée,curly_endive,GCU3
+1045,Chicorée scarole,escarole,GCU3
+1047,Chicorées production de racines,root_chicory,GCU3
+1048,Chou-fleur,cauliflower,GCU3
+1049,Choux chinois,napa_cabbage,GCU3
+1050,Choux de bruxelles,brussels_sprout,GCU3
+1051,Choux pommés,white_cabbage,GCU3
+1053,Choux-raves,kohlrabi,GCU3
+1052,Choux verts type non pommés,,GCU3
+1054,Ciboule,chive,GCU3
+1055,Citronnier,lemon,GCU2
+1056,Clémentinier,clementine,GCU2
+1057,Cognassier,quince,GCU2
+1058,Colza,spring_rape,GCU1
+1058,Colza,winter_rape,GCU1
+1059,Concombre,cucumber,GCU3
+1060,Cornichon,pickle,GCU3
+1061,Corossol,,GCU5
+1199,Courge à graines,,GCU5
+1062,Courgette,zucchini,GCU3
+1063,Cresson alenois,cress,GCU3
+1064,Cresson de fontaine,watercress,GCU3
+1065,Cultures florales et plantes vertes,,GCU5
+1066,Cynhorodon,,GCU2
+1067,Dachine,,GCU5
+1068,Échalote,shallot,GCU3
+1069,Endive,witloof,GCU3
+1070,Épeautre,spelt,GCU1
+1071,Epices,,GCU5
+1072,Epinard,spring_spinach,GCU3
+1072,Epinard,winter_spinach,GCU3
+1073,Fenouil,fennel,GCU3
+1074,Feuilles de bette,chard,GCU3
+1077,Feverole,spring_field_bean,GCU1
+1077,Feverole,spring_fodder_field_bean,GCU1
+1077,Feverole,winter_field_bean,GCU1
+1077,Feverole,winter_fodder_field_bean,GCU1
+1076,Fève sèche,broad_bean,GCU3
+1078,Figuier,fig,GCU2
+1079,Fines Herbes,,GCU5
+1081,Fraisier,strawberry,GCU3
+1082,Framboisier,raspberry,GCU2
+1084,Fruit de la passion,,GCU5
+1083,Fruit de l'arbre à pain,,GCU5
+1085,Goyavier,guava,GCU5
+1086,Graminées fourragères,ryegrass,GCU1
+1086,Graminées fourragères,annual_ryegrass,GCU1
+1087,Graminées ornementales,,GCU5
+1206,Grenadier,,GCU2
+1088,Grenadilles,,GCU5
+1089,Groseillier,redcurrant,GCU2
+1090,Haricot sec,dried_bean,GCU3
+1204,Haricots écossés frais,,GCU3
+1091,Haricots et pois non écossés frais,,GCU3
+1093,Houblon,hop,GCU1
+1094,Igname,yam,GCU5
+1095,Infusions séchées,,GCU5
+1096,Jachères et cultures intermédiaires,spring_fallow,GCU1
+1096,Jachères et cultures intermédiaires,fallow,GCU1
+1097,Jachères faunistiques fleuries,fallow,GCU1
+1098,Jujubier,,GCU2
+1195,Kaki,persimmon,GCU2
+1208,Kiwai,,GCU2
+1099,Kiwi,kiwi,GCU2
+1203,Kumquat,,GCU2
+1100,Laitue,lettuce,GCU3
+1101,Lentille fraîche,fresh_lentil,GCU3
+1102,Lentille sèche,dried_lentil,GCU3
+1104,Limettes,,GCU2
+1105,Lin,fiber_flax,GCU1
+1105,Lin,spring_flax,GCU1
+1105,Lin,winter_flax,GCU1
+1106,Litchi,,GCU5
+1107,Longanis,longan,GCU5
+1108,Lotier,birds_foot_trefoil,GCU1
+1109,Lupin,spring_fodder_lupin,GCU1
+1109,Lupin,spring_sweet_lupin,GCU1
+1109,Lupin,winter_fodder_lupin,GCU1
+1109,Lupin,winter_sweet_lupin,GCU1
+1110,Luzerne,alfalfa,GCU1
+1110,Luzerne,dehydrated_alfalfa,GCU1
+1111,Mâche,cornsalad,GCU3
+1112,Maïs,grain_corn,GCU1
+1112,Maïs,silage_corn,GCU1
+1112,Maïs,seed_corn,GCU1
+1113,Maïs doux,sweet_corn,GCU3
+1114,Mandarinier,mandarin,GCU2
+1115,Manguier,,GCU5
+1116,Manioc,cassava,GCU5
+1117,Melon,melon,GCU3
+1118,Millet,millet,GCU1
+1119,Mirabellier,,GCU2
+1120,Miscanthus,miscanthus,GCU1
+1121,Moha,foxtail_millet,GCU1
+1122,Moutarde,mustard,GCU1
+1123,Mûre morus sp,mulberry,GCU2
+1125,Mûres des haies,,GCU2
+1124,Mûres rubus sp,blackberry,GCU2
+1126,Myrtillier,bilberry,GCU2
+1127,Nashi,,GCU2
+1128,Navet,early_turnip,GCU3
+1128,Navet,fodder_turnip,GCU3
+1128,Navet,winter_turnip,GCU3
+1129,Navette,summer_field_mustard,GCU1
+1129,Navette,winter_field_mustard,GCU1
+1130,Nectarinier,nectarine,GCU2
+1131,Néflier,,GCU2
+1133,Noisetier,hazelnut,GCU2
+1134,Noyer,walnut,GCU2
+1135,Oignon,onion,GCU3
+1136,Oignon de printemps,spring_onion,GCU3
+1137,Olivier,olive,GCU2
+1200,Onagre,,GCU5
+1138,Oranger,orange,GCU2
+1139,Orge,spring_barley,GCU1
+1139,Orge,winter_barley,GCU1
+1140,Palmiers alimentaires,,GCU5
+1141,Pamplemoussier,grapefruit,GCU2
+1142,Panais,parsnip,GCU3
+1143,Papayer,,GCU5
+1144,Pastèque,watermelon,GCU3
+1145,Patate douce,sweet_patato,GCU5
+1146,Pavot,,GCU5
+1147,Pêcher,peach,GCU2
+1148,Persil à grosse racine et cerfeuil tubéreux,,GCU3
+1149,Piment,chili,GCU3
+1150,Pissenlit,,GCU3
+1207,Pistachier,,GCU2
+1151,Plantes d'intérieur et balcons,,GCU5
+1152,Poireau,leek,GCU3
+1153,Poirier,pear,GCU2
+1154,Pois chiche,chickpea,GCU3
+1155,Pois écossés frais,,GCU3
+1156,Pois fourrager,spring_fodder_pea,GCU1
+1156,Pois fourrager,winter_fodder_pea,GCU1
+1157,Pois protéagineux,spring_proteaginous_pea,GCU1
+1157,Pois protéagineux,winter_proteaginous_pea,GCU1
+1159,Pois sec,dried_pea,GCU3
+1160,Poivron,pepper,GCU3
+1161,Pomme de terre,potato,GCU6
+1161,Pomme de terre,potato_starch,GCU6
+1162,Pommette,,GCU2
+1163,Pommier,apple,GCU2
+1164,Potiron,sugar_pumpkin,GCU3
+1165,Pourpier,purslane,GCU3
+1205,PPAMC,annual_fruit,GCU5
+1205,PPAMC,annual_vegetable,GCU5
+1166,PPAM - non alimentaires,annual_ornamental_plant_and_mapp,GCU5
+1167,Prairies,meadow,GCU1
+1168,Prunier,plum,GCU2
+1212,Prunier du Japon,,GCU2
+1196,Quinoa,quinoa,GCU1
+1169,Radis,fodder_radish,GCU3
+1169,Radis,radish,GCU3
+1170,Raifort,,GCU3
+1171,Ramboutan,,GCU5
+1172,Rhubarbe,rhubarb,GCU3
+1202,Ricin,castor_bean,GCU5
+1173,Riz,rice,GCU1
+1174,Roquette,rocket,GCU3
+1174,Roquette,cultivated_rocket,GCU3
+1174,Roquette,wild_rocket,GCU3
+1175,Rosier,,GCU5
+1176,Rutabaga,rutabaga,GCU3
+1177,Sainfoin,dehydrated_sainfoin,GCU1
+1177,Sainfoin,sainfoin,GCU1
+1178,Salsifis,salsify,GCU3
+1179,Sarrasin,buckwheat,GCU1
+1180,Scorsonère,,GCU3
+1181,Seigle,spring_rye,GCU1
+1181,Seigle,winter_rye,GCU1
+1182,Sésame,,GCU1
+1183,Soja,soy,GCU1
+1184,Songe,,GCU5
+1185,Sorgho,sorghum,GCU1
+1186,Sureau noir,black_elderberry,GCU2
+1187,Tabac,tobacco,GCU1
+1188,Tomate,tomato,GCU3
+1189,Topinambour et crosne,jerusalem_artichoke,GCU3
+1190,Tournesol,sunflower,GCU1
+1190,Tournesol,seed_sunflower,GCU1
+1191,Trèfle,clover,GCU1
+1191,Trèfle,dehydrated_clover,GCU1
+1192,Triticale,spring_triticale,GCU1
+1192,Triticale,winter_triticale,GCU1
+1211,Tritordeum et autres hybrides du blé,cereal,GCU1
+1211,Tritordeum et autres hybrides du blé,cereal_mix,GCU1
+1193,Vesce,common_vetch,GCU1
+1193,Vesce,dehydrated_common_vetch,GCU1
+1194,Vigne,vine,GCU4

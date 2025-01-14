@@ -1,0 +1,9 @@
+numpy
+pandas
+psycopg2-binary
+requests
+tqdm
+unidecode
+lxml
+pyyaml
+jsonslicer

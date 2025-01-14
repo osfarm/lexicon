@@ -1,0 +1,30 @@
+bbch_code,biaggiolini,eichhorn_lorenz,chasselas_date,label_fr,description_fr
+00,A,1,,Bourgeon d'hiver,"Dormance : les bourgeons d’hiver sont pointus à arrondis, suivant le cépage,  ils sont brun clair à foncé et les écailles sont plus ou moins appliquées aux bourgeons"
+01,,2,,Début gonflement des bourgeons,Début du gonflement des bourgeons : les bourgeons s’allongent à l’intérieur des écailles
+03,,2,,Fin du gonflement des bourgeons,"Fin du gonflement des bourgeons, les bourgeons ne sont pas encore verts"
+05,B,3,,Bourgeon dans le coton,"L'œil gonfle, ses écailles s'écartent et la bourre (protection cotonneuse) est très visible."
+07,,4,,Début débourrement,"Début de l’éclatement des bourgeons (débourrement), l’extrémité verte de la jeune pousse est juste visible"
+09,C,5,19/03,Débourrement,L'œil continue à gonfler et à s'allonger. Il présente une pointe verte nettement visible constituée par la jeune pousse. 50% des bourgeons ont atteint le stade pointe verte
+11,D,7,,Sortie des feuilles,Des feuilles rudimentaires rassemblées en rosette apparaissent. Leur base est encore protégée par la bourre progressivement rejetée hors des écailles. Première feuille étalée et écartée de la pousse
+13,E,9,,2 à 3 feuilles étalées,Les 2-3 premières feuilles sont totalement dégagées et présentent les caractères variétaux. Le rameau est nettement visible.
+14,,11,,4 feuilles étalées,"4 feuilles étalées, stade grappes visibles possible"
+53,F,12,,Grappes visibles,Des grappes (inflorescences) rudimentaires apparaissent au sommet de la pousse. Quatre à six feuilles étalées sont visibles.
+55,G,15,,Boutons floraux encore agglomérés,Les grappes s'espacent et s'allongent sur la pousse. Les boutons floraux sont encore agglomérés
+57,H,17,,Boutons floraux séparés,Les grappes sont bien développées. Les boutons floraux sont nettement isolés. La forme typique de l’inflorescence apparaît.
+60,,19,,Début floraison,"Les premiers capuchons floraux se détachent de la base du capuchon, les étamines et le pistil sont visibles."
+65,I,23,27/05,Floraison,Pleine floraison : 50 % des capuchons floraux sont détachés/tombés
+69,,26,,Fin floraison,Fin de la floraison
+71,,27,,Nouaison,"Nouaison : début du développement des fruits, toutes les pièces florales sont tombées"
+73,,29,,Plombs de chasse,"Les fruits (baies) ont la grosseur de plombs de chasse, les grappes commencent à s’incliner vers le bas"
+75,K,31,,Petit pois,Les baies ont la taille d'un petit pois. Les grappes pendent en position verticale.
+77,L,32,,Début fermeture de la grappe,Début de la fermeture de la grappe : les baies atteignent une taille suffisante pour se toucher.
+79,,33,,Fin fermeture de la grappe,"La fermeture de la grappe est complète, les fruits ont fini de grossir"
+81,,35,,Début véraison,Début de la maturation : les baies commencent à s’éclaircir pour le raisin blanc ou se colorent pour le raisin noir.
+85,M,36,20/07,Véraison,Véraison : 50% des baies ont vérées (changement de couleur et ramolissement)
+88,,37,,Fin véraison,Fin véraison : 100% des baies ont vérées
+89,N,38,13/08,Maturité,Les baies sont prêtes pour la récolte car elles ont atteint leur maturité technologique.
+91,,41,,Aoûtement des bois,Après la vendange : l’aoûtement des bois est terminé
+93,O,43,,Début de la chute des feuilles,Début de la chute des feuilles
+95,,45,,Chute des feuilles,50 % des feuilles sont tombées
+97,,47,,Fin chute des feuilles,Fin de la chute des feuilles
+99,,47,,Repos végétatif,Repos végétatif

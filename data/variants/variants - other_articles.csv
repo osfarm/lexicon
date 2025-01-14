@@ -1,0 +1,63 @@
+reference_name,fra,eng,category,nature,default_unit,target_specie,indicator_1_name,indicator_1_value,indicator_1_unit,indicator_2_name,indicator_2_value,indicator_2_unit,indicator_3_name,indicator_3_value,indicator_3_unit,pictogram
+acidifier,Acidifiant nettoyage machine à traite,Acidifier for cleaning milking robot,maintenance_consumable,acidifier,liter,,,,,,,,,,,uf990-can.svg
+alkalinizer,Alcalin nettoyage machine à traite,Alkalinizer for cleaning milking robot,maintenance_consumable,alkalinizer,liter,,,,,,,,,,,uf990-can.svg
+animal_litter,Litière pour animal,Animal litter,other_consumable,animal_litter,ton,,,,,,,,,,,ufa06-animal-litter.svg
+back_label,Contre-étiquette,Back label,packaging_wine_dry_material,packaging,unity,,,,,,,,,,,uf0d8-matter.svg
+bird_food,Nourriture pour oiseau,Bird food,animal_food,animal_food,kilogram,aves,,,,,,,,,,uf0da-medkit.svg
+bird_medicine,Médicament pour oiseau,Bird medicine,animal_medicine,animal_medicine,liter,aves,,,,,,,,,,uf94a-candles.svg
+bottle_box,Carton à bouteille,Bottle box,packaging_wine_dry_material,packaging,unity,,,,,,,,,,,uf990-can.svg
+bottle_dry_material,Bouteille (matière sèche),Bottle (dry material),packaging_wine_dry_material,bottle,unity,,,,,,,,,,,uf94b-chemical-product.svg
+candle,Bougie,Candle,other_consumable,antifreeze,unity,,,,,,,,,,,uf950-corks.svg
+cap,Capsule,Cap,packaging_wine_dry_material,packaging,unity,,,,,,,,,,,uf0d8-matter.svg
+clarification_solution,Solution clarifiante,Clarification solution,raw_material,clarification_solution,liter,,,,,,,,,,,uf0da-medkit.svg
+cleaning_product,Produit de nettoyage,Cleaning product,other_consumable,cleaning_product,liter,,,,,,,,,,,uf970-vial.svg
+cork,Bouchon,Cork,packaging_wine_dry_material,cork,unity,,,,,,,,,,,uf94b-chemical-product.svg
+cow_food,Nourriture pour bovin,Cow food,animal_food,animal_food,kilogram,bos_taurus,,,,,,,,,,uf94b-chemical-product.svg
+cow_medicine,Médicament pour bovin,Cow medicine,animal_medicine,animal_medicine,liter,bos_taurus,,,,,,,,,,uf996-pipe.svg
+cow_vial,Paillette d'insémination pour bovin,Cow vial,animal_reproduction,vial,unity,bos_taurus,,,,,,,,,,uf0d8-matter.svg
+disinfectant_product,Produit désinfectant,Disinfectant product,other_consumable,disinfectant_product,liter,,,,,,,,,,,uf966-replacement-part.svg
+disinfectant_teat,Desinfectant trayons,Disinfectant teat,maintenance_consumable,animal_medicine,liter,bos_taurus,,,,,,,,,,uf993-feather.svg
+draining_item,Pièce de drainage,Draining item,other_consumable,draining_item,unity,,,,,,,,,,,uf0d8-matter.svg
+enzyme,Enzyme,Enzyme,raw_material,enzyme,liter,,,,,,,,,,,uf0da-medkit.svg
+equipment_part,Pièce d'équipement,Equipment part,other_consumable,equipment_part,unity,,,,,,,,,,,uf44c-local-gas-station.svg
+feather,Plume,Feather,animal_derivative,feather,ton,aves,,,,,,,,,,uf08c-fire.svg
+fish_food,Nourriture pour poisson,Fish food,animal_food,animal_food,kilogram,actinopterygii,,,,,,,,,,uf0d8-matter.svg
+fish_medicine,Médicament pour poisson,Fish medicine,animal_medicine,animal_medicine,liter,actinopterygii,,,,,,,,,,uf0da-medkit.svg
+fuel,Essence,Fuel,fuel,fuel,liter,,,,,,,,,,,uf970-vial.svg
+gas,Gaz,Gas,gas,gas,kilogram,,,,,,,,,,,uf0d8-matter.svg
+goat_food,Nourriture pour caprin,Goat food,animal_food,animal_food,kilogram,capra_hircus,,,,,,,,,,uf0da-medkit.svg
+goat_medicine,Médicament pour caprin,Goat medicine,animal_medicine,animal_medicine,liter,capra_hircus,,,,,,,,,,uf970-vial.svg
+goat_vial,Paillette d'insémination pour caprin,Goat vial,animal_reproduction,vial,unity,capra_hircus,,,,,,,,,,uf99e-faucet.svg
+horse_food,Nourriture pour équin,Horse food,animal_food,animal_food,kilogram,equus_caballus,,,,,,,,,,uf949-bricks.svg
+horse_medicine,Médicament pour équin,Horse medicine,animal_medicine,animal_medicine,liter,equus_caballus,,,,,,,,,,ufa04-net.svg
+horse_vial,Paillette d'insémination pour équin,Horse vial,animal_reproduction,vial,unity,equus_caballus,,,,,,,,,,uf0d8-matter.svg
+irrigation_water,Eau d'irrigation,Irrigation water,irrigation_water,water,cubic_meter,,,,,,,,,,,uf297-calculator.svg
+label,Étiquette,Label,packaging_wine_dry_material,packaging,unity,,,,,,,,,,,uf962-oil-jerrycan.svg
+material,Matériel,Material,material,material,unity,,,,,,,,,,,uf0d8-matter.svg
+net,Filet,Net,other_consumable,plant_protection,unity,,,,,,,,,,,uf0da-medkit.svg
+oenological_product,Produit oenologique,Oenological product,raw_material,oenological_product,kilogram,,,,,,,,,,,uf970-vial.svg
+office_supply,Fourniture de bureau,Office supply,office_supply,supply,unity,,,,,,,,,,,uf0d8-matter.svg
+oil_and_lubricate,Huile / lubrifiant,Oil / lubricate,fuel,oil_and_lubricate,liter,,,,,,,,,,,uf0da-medkit.svg
+painting,Peinture / Produit anti corrosion,Paint / Anti corrossive,maintenance_consumable,oil_and_lubricate,liter,,,,,,,,,,,uf94b-chemical-product.svg
+pallet_box,Caisse palette,Pallet box,packaging,packaging,unity,,,,,,,,,,,uf0d8-matter.svg
+pig_food,Nourriture pour porcin,Pig food,animal_food,animal_food,kilogram,sus_scrofa,,,,,,,,,,uf0d8-matter.svg
+pig_medicine,Médicament pour porcin,Pig medicine,animal_medicine,animal_medicine,liter,sus_scrofa,,,,,,,,,,uf0da-medkit.svg
+pig_vial,Paillette d'insémination pour porcin,Pig vial,animal_reproduction,vial,unity,sus_scrofa,,,,,,,,,,uf970-vial.svg
+rabbit_food,Nourriture pour lapin,Rabbit food,animal_food,animal_food,kilogram,oryctolagus_cuniculus,,,,,,,,,,uf0d8-matter.svg
+rabbit_medicine,Médicament pour lapin,Rabbit medicine,animal_medicine,animal_medicine,liter,oryctolagus_cuniculus,,,,,,,,,,ufa09-hard-hat.svg
+raw_material,Matière première,Raw material,raw_material,raw_material,kilogram,,,,,,,,,,,uf96d-stakes.svg
+sheep_food,Nourriture pour ovin,Sheep food,animal_food,animal_food,kilogram,ovis_aries,,,,,,,,,,uf0d8-matter.svg
+sheep_medicine,Médicament pour ovin,Sheep medicine,animal_medicine,animal_medicine,liter,ovis_aries,,,,,,,,,,uf967-roll-alt.svg
+sheep_vial,Paillette d'insémination pour ovin,Sheep vial,animal_reproduction,vial,unity,ovis_aries,,,,,,,,,,uf967-roll-alt.svg
+so2_solution,Solution de SO2,SO2 solution,raw_material,so2_solution,liter,,,,,,,,,,,uf975-tunnel.svg
+staff_supply,Fourniture pour le personnel,Staff supply,staff_supply,supply,unity,,,,,,,,,,,uf97a-wire-fence.svg
+stake,Piquet,Stake,material,stake,unity,,,,,,,,,,,uf941-tools.svg
+sugar,Sucre,Sugar,raw_material,sugar,kilogram,,,,,,,,,,,uf0d8-matter.svg
+tarpaulin,Bâche,Tarpaulin,other_consumable,plant_protection,unity,,,,,,,,,,,
+tools_and_equipments,"Fournitures, petits matériels, outillages",Tools and equipments,tool,supply,unity,,,,,,,,,,,
+tree_guard,Manchon de protection,Tree guard,other_consumable,plant_protection,unity,,,,,,,,,,,
+tunnel,Tunnel / chenille,Tunnel,other_consumable,plant_protection,unity,,,,,,,,,,,
+wire,Fil,Wire,material,wire,meter,,,,,,,,,,,
+workshop_supply,Fourniture d'atelier,Workshop supply,workshop_supply,supply,unity,,,,,,,,,,,
+yeast,Levure,Yeast,raw_material,yeast,kilogram,fungus,,,,,,,,,,
+oil_plant_medicine,Huile / Adjuvant phytosanitaire,Oil – Adjuvant plant medicine,plant_medicine,plant_medicine,liter,,,,,,,,,,,

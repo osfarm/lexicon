@@ -1,0 +1,259 @@
+ephy_name,pfi_id,pfi_name,default_pfi_treatment_type_id
+Acariens,1,Acariens,T22
+Acariens et phytoptes,2,Acariens et phytoptes,T22
+Acariens galligènes,3,Acariens galligènes,T22
+"Acariens, phytoptes et tarsonèmes",4,"Acariens, phytopes et tarsonèmes",T22
+Act. Chute Feuilles,134,Régulation croissance,T24
+Act. Chute Fruits,134,Régulation croissance,T24
+Act. Chute Organes,134,Régulation croissance,T24
+Act. Conserv. Qual. Plantes et Fleurs,,,T24
+Act. Croiss. Florais,134,Régulation croissance,T24
+Act. Croiss. Org. Aériens,134,Régulation croissance,T24
+Act. Croissance,134,Régulation croissance,T24
+Act. Débourrement,134,Régulation croissance,T24
+Act. Floraison,134,Régulation croissance,T24
+Act. Germination,134,Régulation croissance,T24
+Act. Greffage,,,T24
+Act. Nouaison,134,Régulation croissance,T24
+Act. Product. Gousses,,,T24
+Act. Qual chicons,,,T24
+Act. Qual. Fruits,,,T24
+Act. Ramification,134,Régulation croissance,T24
+Act. Rhizogénèse,134,Régulation croissance,T24
+Act. Tubérisation,134,Régulation croissance,T24
+Ag. chim. Hybridation,,,T24
+Aleurodes,6,Aleurodes,T22
+Anthracnoses,8,Anthracnose(s),T23
+Antitranspirant,9,Antitranspirant,T24
+Autres chenilles phytophages,11,Autres chenilles phytophages,T22
+Bactérioses,12,Bactéries,T24
+Balanin,13,Balanin,T22
+Bitter pit,14,Bitter pit,T24
+Black rot,15,Black rot,T23
+Bouil. Fongicide,,,T23
+Bouil. Herbicide,,,T21
+Bouil. Insecticide,,,T22
+Bouil. Répulsive,,,T24
+Brunissures,16,Brunissures,T23
+Cercosporioses,20,Cercosporioses,T23
+Cervidés,,,T24
+Champignons autres que pythiacées,23,Champignons autres que pythiacées,T23
+Champignons compétiteurs,24,Champignons compétiteurs,T23
+Champignons producteurs d'ochratoxine a,25,Champignons producteurs d’ota,T23
+Champignons pythiacées,22,Champignons (pythiacées),T23
+Chancre du collet,26,Chancre du collet,T23
+Chancre européen,27,Chancre européen,T23
+Chancres à champignons,28,Chancres à champignons,T23
+Charançon aquatique,,,T22
+Charançon rouge du palmier,29,Charançon rouge du palmier,T22
+Charançons du feuillage et des fruits,30,Charançons du feuillage et des fruits,T22
+Charbon des inflorescences,31,Charbons,T21
+Charbons,31,Charbons,T21
+Chenilles défoliatrices,32,Chenilles défoliatrices,T22
+Chenilles foreuses des fruits,33,Chenilles foreuses des fruits,T22
+Chenilles phytophages,34,Chenilles phytophages,T22
+Chironomides,35,Chironomides,T22
+Cicadelles,36,Cicadelles,T22
+Cicadelles et cercopides,,,T22
+"Cicadelles, cercopides et psylles",37,"Cicadelles, cercopides et psylles",T22
+"Cicadelles, punaises et psylles",38,"Cicadelles, punaises et psylles",T22
+Cloques,39,Cloque(s),T23
+Cochenilles,40,Cochenilles,T22
+Coloration,,,T24
+Coléoptères phytophages,41,Coléoptères phytophages,T22
+Conserv. ensilage,,,T24
+Conserv. foin,,,T24
+Conserv. grains,,,T24
+Conserv. pulpes,,,T24
+Conserv. tourteaux,,,T24
+Conservateur,,,T24
+Contrôle Broussaill,,,T24
+Contrôle Pl. parasites,,,T24
+Corbeaux,,,T24
+Corticium fuciforme,,,T23
+Coryneum et polystigma,42,Coryneum et polystigma,T23
+Cylindrosporiose,43,Cylindrosporiose,T23
+Cèphe du poirier,19,Cèphe du poirier,T22
+Cécidomyies,17,Cécidomyies,T22
+Cécidomyies des fleurs,172,Cécidomyies des fleurs,T22
+Dessication,,,T24
+Destruct. Algues,,,T24
+Destruct. Mousses,,,T24
+Destruct. Souches,,,T24
+Dollar spot,,,T23
+Débroussaillage,,,T21
+Défanage,,,T24
+Dégagement,,,T24
+Dépérissement cryptogamique,,,T23
+Désherb. total,,,T21
+Désherbage,5,Adventices,T21
+"Désherbage*All. PJT, Abords non plant",5,Adventices,T21
+"Désherbage*All. PJT, Cimet. , Voies",5,Adventices,T21
+Désherbage*Avt Mise Cult,5,Adventices,T21
+Désherbage*Avt Plantation,5,Adventices,T21
+Désherbage*Avt Récolte,5,Adventices,T21
+Désherbage*Bord. Plans d'eau,5,Adventices,T21
+Désherbage*Conteneur,5,Adventices,T21
+Désherbage*Cult. Installées,5,Adventices,T21
+Désherbage*Intercultures,5,Adventices,T21
+Désherbage*Pl. terre,5,Adventices,T21
+Désherbage*Plans d'eau,5,Adventices,T21
+Désherbage*Plantat. Pl. terre,5,Adventices,T21
+Désherbage*Pépi. Jeunes plantat,5,Adventices,T21
+Désherbage*Pépi. Pl. terre,5,Adventices,T21
+Désherbage*Voies ferrées,5,Adventices,T21
+Désherbage*Zones Cult,5,Adventices,T21
+Désherbage*Zones Cult. Avt Plantat,5,Adventices,T21
+Désherbage*Zones herbeuses,5,Adventices,T21
+Désherbage*Zones non cult,5,Adventices,T21
+Désinfection,,,T24
+Désinsectisation,,,T22
+Dévital. Broussailles,44,Dévitalisation,T24
+Dévitalisation,44,Dévitalisation,T24
+Dévitalisation*Arb. sur pied Souches,44,Dévitalisation,T24
+Eaux Irrig. Sol. Nut,,,T24
+Echaudure,,,T24
+Epamprage,46,Epamprage,T24
+Erinose,47,Erinose,T22
+Esca et black dead arm,48,Esca et black dead arm,T23
+Escargots,49,Escargots,T24
+Eutypiose,50,Eutypiose,T23
+Excoriose,51,Excoriose,T23
+Feu bactérien,12,Bactéries,T24
+Fil rouge,,,T23
+Fongicide,,,T23
+Forficules,52,Forficules,T22
+Fourmis,53,Fourmis,T22
+Fusariose à microdochium,54,Fusariose à microdochium,T23
+Fusarioses,55,Fusarioses,T23
+"Fusarioses, complexe à helminthosporioses",55,Fusarioses,T23
+Fusicoccum,56,Fusicoccum,T23
+Gloeosporiose et autres maladies de conservation,57,Gloeosporiose et autres maladies de conservation,T23
+Glu,58,Glu,T23
+Graphiose,59,Graphiose,T23
+Helminthosporiose,61,Helminthosporiose,T23
+Helminthosporiose et ramulariose,62,Helminthosporiose et ramulariose,T23
+Hylobes des conifères,64,Hylobes des conifères,T22
+Induct. Mise à fruit,134,Régulation croissance,T24
+Inhib. suppr. rejets,,,T24
+Inoculation,,,T24
+Insectes du sol,,,T22
+Insectes phytophages,66,Insectes phytophages,T22
+Insectes piqueurs,67,Insectes piqueurs,T22
+Insectes xylophages,69,Insectes xylophages,T22
+Insectes xylophages et sous corticaux,70,Insectes xylophages et sous-corticaux,T22
+Insecticide,,,T22
+Lapin et lièvre,,,T24
+Limaces et escargots,71,Limaces et escargots,T24
+Limit. Croiss. Org. Aériens,134,Régulation croissance,T24
+Limit. Destruct. Germes,,,T24
+Limit. Pousse Fructif,134,Régulation croissance,T24
+Limit. Risq. Explosion,,,T24
+Lixus,73,Lixus,T22
+Locx Ordures Déchets,,,T24
+Locx Struct. Matér. POA,,,T24
+Locx Struct. Matér. POV,,,T24
+Lutte contre Limnées,72,Limnées,T24
+Lutte contre Rongeurs,137,Rongeurs,T24
+Lutte contre le feu,,,T24
+Lutte contre le gel,74,Lutte contre le gel,T24
+Maladie de l'oeil de paon,75,Maladie de l'oeil de paon,T23
+Maladie des inflorescences,168,Maladie des inflorescences,T23
+Maladies de conservation,78,Maladies de conservation,T24
+"Maladies des feuilles, tiges et panicules",79,"Maladies des feuilles, tiges et panicules",T24
+Maladies des fruits,169,Maladie des fruits,T24
+Maladies des ramules et des aiguilles,80,Maladies des ramules et des aiguilles,T24
+Maladies des taches brunes,81,Maladies des tâches brunes,T23
+Maladies des taches foliaires,82,Maladies des taches foliaires,T23
+Maladies des taches noires,83,Maladies des taches noires,T23
+Maladies diverses,84,Maladies diverses,T24
+Maladies du feuillage,85,Maladies du feuillage,T24
+Maladies fongiques,87,Maladies fongiques,T23
+Maladies fongiques des siliques,88,Maladies fongiques des siliques,T23
+Maladies précoces des fruits,89,Maladies précoces des fruits,T24
+Maladies vasculaires,90,Maladies vasculaires,T24
+Maladies à sclérotes,77,Maladies à sclérotes,T23
+Matér. Transp. Ordures Déchets,,,T24
+Mildiou et rouille blanche,91,Mildiou et rouille blanche,T23
+Mildious,92,Mildiou(s),T23
+Moles et toiles,93,Moles et toiles,T24
+Monilioses,94,Monilioses,T23
+Mouche de l'olive,95,Mouche de l'olive,T22
+Moucherons,96,Moucherons,T22
+Mouches,97,Mouches,T22
+Mouches des fruits,98,Mouches des fruits,T22
+Mouches mineuses,100,Mouches mineuses,T22
+Mousses,,,T24
+"Mousses, lichens, algues",,,T24
+Moustiques,101,Moustiques,T22
+Nématodes,103,Nématodes,T22
+Nématodes du feuillage,104,Nématodes du feuillage,T22
+Oïdiums,106,Oïdium(s),T23
+Papillon palmivore,107,Papillon palmivore,T22
+Passereaux,,,T24
+Petits rongeurs,137,Rongeurs,T24
+Phoma,108,Phoma,T23
+Phomopsis,109,Phomopsis,T23
+Phytophthora,111,Phytophthora,T23
+Piétin verse,112,Piétin verse,T23
+Plomb parasitaire,113,Plomb parasitaire,T23
+Pourridiés,114,Pourridiés,T23
+Pourriture grise,115,Pourriture grise,T23
+Pourriture grise et sclérotinioses,116,Pourriture grise et sclérotinioses,T23
+Pourritures,,,T23
+Pourritures des fruits,117,Pourritures des fruits,T23
+Pourritures du système racinaire,118,Pourritures du système racinaire,T23
+Prot. Plaies,119,Prot. Plaies,T24
+Psylle du prunier,120,Psylle du prunier,T22
+Psylles,121,Psylle(s),T22
+Puceron lanigère,122,Puceron lanigère,T22
+Pucerons,123,Pucerons,T22
+Pucerons galligènes et laineux,124,Pucerons galligènes et laineux,T22
+Punaises,125,Punaises,T22
+Punaises et tigres,126,Punaises et tigres,T22
+Pyrales,127,Pyrale(s),T22
+Rat,137,Rongeurs,T24
+Ravageurs des denrées stockées,,,T24
+Ravageurs des inflorescences,129,Ravageurs des inflorescences,T24
+Ravageurs des parties aériennes,130,Ravageurs des parties aériennes,T24
+Ravageurs divers,131,Ravageurs divers,T24
+Ravageurs du feuillage,132,Ravageurs du feuillage,T24
+Ravageurs du sol,133,Ravageurs du sol,T24
+Rhizoctone,135,Rhizoctone,T23
+Rhynchosporiose,136,Rhynchosporiose,T23
+Rot blanc,138,Rot blanc,T23
+Rougeot parasitaire,139,Rougeot parasitaire,T23
+Rouille couronnée,140,Rouille couronnée,T23
+Rouille noire,141,Rouille(s),T23
+Rouilles,141,Rouille(s),T23
+Répulsif Corbeaux,,,T24
+Sacs Emballages POV,,,T24
+Sanglier,,,T24
+Sclérotiniose,143,Sclérotiniose,T23
+Septoriose et kabatiella polyspora,144,Septoriose et kabatiella (polyspora),T23
+Septorioses,145,Septoriose(s),T23
+Sites Indust,,,T24
+Souris,137,Rongeurs,T24
+Stad. Hivern. Ravageurs,146,Stad. Hivern. Ravageurs,T24
+Stemphyliose,147,Stemphyliose,T23
+Stimul. Croiss. Org. Aériens,134,Régulation croissance,T24
+Stimul. Déf. Naturelles,148,Stimul. Déf. Naturelles,T24
+Stimul. Rhizogénèse,134,Régulation croissance,T24
+Subst. Croiss,134,Régulation croissance,T24
+Taphrina,149,Taphrina,T23
+Taupe,,,T24
+Taupins,150,Taupins,T22
+Tavelures,151,Tavelure(s),T23
+Tenthrède limace,152,Tenthrède limace,T22
+Thrips,153,Thrips,T22
+Tigres,171,Tigres,T22
+Tipules,154,Tipules,T22
+Tordeuses,155,Tordeuses,T22
+Tordeuses de la grappe,156,Tordeuses de la grappe,T22
+Trachéomycoses,158,Trachéomycoses,T23
+Trt Sol*Avt Plantation,160,Traitement sol avant plantation,T24
+Vers de terre,,,T24
+Virus,,,T24
+Virus non persistants,161,Virus non persistants,T24
+Zabre,162,Zabre,T22
+Zeuzère,163,Zeuzère,T22

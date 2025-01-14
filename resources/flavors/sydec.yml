@@ -1,0 +1,30 @@
+---
+name: sydec
+without:
+  - pesticide_frequency_indicator
+  - enterprises
+datasources:
+  cadastre:
+    registered_cadastral_parcels:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.35 43.85)',4326) , 0.15)
+  cadastral_prices:
+    registered_cadastral_prices:
+      filter: WHERE postal_code LIKE '40%' ORDER BY id
+  graphic_parcels:
+    registered_graphic_parcels:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.35 43.85)',4326) , 0.15) ORDER BY id
+  hydrography:
+    registered_hydrographic_items:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.35 43.85)',4326) , 0.15)
+    registered_area_items:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.35 43.85)',4326) , 0.15)
+    registered_cadastral_buildings:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.35 43.85)',4326) , 0.15)
+  postal_codes:
+    registered_postal_codes:
+      filter: WHERE postal_code LIKE '40%'
+  weather:
+    registered_weather_stations:
+      filter: WHERE country = 'FR' AND country_zone = '40'
+    registered_hourly_weathers:
+      filter: WHERE station_id LIKE 'FR40%'

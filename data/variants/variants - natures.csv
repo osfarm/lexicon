@@ -1,0 +1,164 @@
+reference_name,fra,eng,family,population_counting,frozen_indicators,variable_indicators,abilities,variety,derivative_of,pictogram
+acidifier,Acidifiant,Acidifier,article,decimal,"net_mass, net_volume",,"acidify(fermented_juice), transform(wine)",preparation,,uf990-can.svg
+agricultural_service,Prestation de service agricole,Agricultural service,service,decimal,"usage_duration, net_surface_area, net_mass, net_volume, members_count",,,service,,ufa0a-service.svg
+alcohol,Alcool,Alcohol,article,decimal,net_volume,,,alcohol,,uf152-tint.svg
+alkalinizer,Alcalinisant,Alkalinizer,article,decimal,"net_mass, net_volume",,"alkalinize(fermented_juice), transform(wine)",preparation,,uf990-can.svg
+animal_division,Habitat des animaux,Animal division,zone,unitary,,"shape, nominal_storable_net_volume, nominal_storable_easement_area, net_surface_area",store(animal),building_division,,uf018-barn.svg
+animal_food,Aliment pour animal,Animal food,article,decimal,"net_mass, net_volume",,feed(animal),preparation,animal,uf964-product-prepare.svg
+animal_litter,Litière pour animal,Animal litter,article,decimal,"net_mass, net_volume",,cover(building_division),preparation,,ufa06-animal-litter.svg
+animal_medicine,Médicament pour animal,Animal medicine,article,decimal,"net_mass, net_volume, meat_withdrawal_period, milk_withdrawal_period",,care(animal),preparation,animal,uf0da-medkit.svg
+animal_trailer,Remorque de transport d'animaux,Animal trailer,equipment,unitary,"length, nominal_storable_net_mass, nominal_storable_net_volume", geolocation,store(animal),trailed_equipment,,uf938-trailer.svg
+animal_vehicle,Véhicule de transport d'animaux,Animal vehicle,equipment,unitary,"length, nominal_storable_net_mass, nominal_storable_net_volume","fuel_consumption, motor_power, geolocation","store(animal), consume(oil), consume(fuel)",self_propelled_equipment,,uf938-trailer.svg
+antifreeze,Antigel,Antifreeze,article,integer,,,heat,preparation,,uf94b-chemical-product.svg
+bale_collector,Groupeur de balles,Bale collector,equipment,unitary,,geolocation,"catch(straw), store(straw)",trailed_equipment,,uf997-bale-collector.svg
+baler,Presse à balles,Baler,equipment,unitary,nominal_storable_net_volume,geolocation,bunch,trailed_equipment,,uf92c-round-baler.svg
+bird_band,Groupe d'oiseaux,Bird band,animal,integer,"reproductor, sex",,"consume(water), consume(plant), consume(preparation), produce(excrement), produce(egg)",aves,,uf986-goose.svg
+bivalve_band,Groupe de bivalves,Bivalve band,animal,integer,,,consume(preparation),bivalvia,,uf984-shell.svg
+blower,Pailleuse,Blower,equipment,unitary,nominal_storable_net_volume,"motor_power, geolocation",blow,trailed_equipment,,ufa07-unroller-straw-blower.svg
+bottle,Bouteille,Bottle,article,integer,net_volume,,store(matter),bottle,,uf28b-bottle.svg
+building,Bâtiment,Building,zone,unitary,,"shape, net_surface_area",store(building_division),building,,uf018-barn.svg
+building_division,Zone de bâtiment,Building division,zone,unitary,,"nominal_storable_net_mass, nominal_storable_net_volume, shape, net_surface_area","store(preparation), store(equipment)",building_division,,uf018-barn.svg
+caregiver,Soigneur,Caregiver,worker,unitary,,,"administer_care(animal), milk(mammalia)",worker,,uf166-user-md.svg
+cereal_crop,Culture de céréale,Cereal crop,crop,decimal,net_surface_area," fresh_mass, plant_life_state, plant_reproduction_state, plants_count, shape, tiller_count","consume(water), consume(preparation), produce(grain), produce(straw)",plant,,uf16f-wheat.svg
+cheese,Fromage,Cheese,article,decimal,"net_mass, net_volume","temperature, total_bacteria_concentration",,cheese,mammalia,uf98b-cheese.svg
+clarification_solution,Solution clarifiante,Clarification solution,article,decimal,"net_mass, net_volume",,"clarify(fermented_juice), transform(wine)",preparation,,uf990-can.svg
+cleaning_equipment,Équipement de nettoyage,Cleaning equipment,equipment,unitary,application_width,geolocation,clean(building_division),trailed_equipment,,uf94c-cleaner.svg
+cleaning_product,Produit de nettoyage,Cleaning product,article,decimal,"net_mass, net_volume",,clean(building_division),preparation,,uf94b-chemical-product.svg
+connected_object,Objet connecté,Connected object,equipment,unitary,,geolocation,,connected_object,,uf2ba-wifi.svg
+cork,Bouchon,Cork,article,integer,,,close(bottle),cork,,uf950-corks.svg
+corker,Boucheuse,Corker,equipment,unitary,,,close(bottle),fixed_equipment,,uf94f-corker.svg
+covering_equipment,Équipement de pose de protection,Covering equipment,equipment,unitary,application_width,,cover(plant),trailed_equipment,,uf951-cover-implanter.svg
+crop,Culture,Crop,crop,decimal,net_surface_area,"fresh_mass, plant_life_state, plant_reproduction_state, plants_count, shape, tiller_count","consume(water), consume(preparation), produce(straw)",plant,,uf0c1-leaf.svg
+cultivable_zone,Zone cultivable,Cultivable zone,zone,unitary,net_surface_area," fence_perimeter, soil_cultural_state, shape","consume(water), consume(seed), produce(plant), store(plant), store(animal), store(fungus)",cultivable_zone,,uf179-land-parcels.svg
+cutting_equipment,Équipement de coupe,Cutting equipment,equipment,unitary,"application_width, element_count, rows_count",,cut,trailed_equipment,,uf939-trimmer.svg
+cutting_tool,Outil de coupe,Cutting tool,equipment,unitary,,,cut,portable_equipment,,uf955-cutter.svg
+destoning_equipment,Équipement d'épierrage,Destoning equipment,equipment,unitary,"application_width, nominal_storable_net_volume",,grind(cultivable_zone),trailed_equipment,,uf91c-grinder.svg
+disinfectant_product,Produit désinfectant,Disinfectant product,article,decimal,"net_mass, net_volume",,"clean(building_division), kill(bacteria)",preparation,,uf94b-chemical-product.svg
+draining_item,Pièce de drainage,Draining item,article,integer,,"diameter, length",drain,equipment_part,,uf996-pipe.svg
+driver,Conducteur,Driver,worker,unitary,,,drive(equipment),worker,,uf0d5-male.svg
+egg,Œuf,Egg,article,integer,net_mass,,,egg,animal,uf956-eggs.svg
+enzyme,Enzyme,Enzyme,article,decimal,"net_mass, net_volume",,"catalyze(wine), transform(wine)",preparation,,uf964-product-prepare.svg
+equipment_part,Pièce d'équipement,Equipment part,article,integer,,,,equipment_part,,uf966-replacement-part.svg
+fallow,Jachère,Fallow,crop,decimal,net_surface_area,"fresh_mass, plant_life_state, plant_reproduction_state, plants_count, shape, tiller_count","consume(water), consume(preparation)",plant,,uf0c1-leaf.svg
+feather,Plume,Feather,article,decimal,"net_mass, net_volume",,,preparation,aves,uf993-feather.svg
+fee_and_external_service,Frais et service extérieur,Fee and external service,service,decimal,"usage_duration, net_surface_area, net_mass, net_volume, energy",,,service,,uf0e2-money.svg
+fermented_juice,Jus fermenté,Fermented juice,article,decimal,"net_mass, net_volume",,"produce(wine), produce(alcohol)",fermented_juice,,uf152-tint.svg
+fermented_milk,Lait fermenté,Fermented milk,article,decimal,"net_mass, net_volume",,,fermented_milk,mammalia,uf95f-milk.svg
+filler,Remplisseuse,Filler,equipment,unitary,element_count,volume_flow,fill(bottle),fixed_equipment,,ufa0b-filler.svg
+fish_band,Groupe de poissons,Fish band,animal,integer,sex,,consume(preparation),actinopterygii,,uf2ec-fish.svg
+flower,Fleur,Flower,article,decimal,"net_mass, net_volume",,,flower,plant,uf686-flower.svg
+fodder,Fourrage,Fodder,article,decimal,"net_mass, net_volume, mass_volume_density",dry_matter_rate,feed(animal),grass,plant,uf95a-hay.svg
+food_distributor,Distributeur d'aliments,Food distributor,equipment,unitary,"nominal_storable_net_volume, nominal_storable_net_mass", geolocation,deliver(preparation),fixed_equipment,,uf99a-tipper-trailer.svg
+frost_protection_equipment,Équipement de protection contre le gel,Frost protection equipment,equipment,unitary,"application_width, element_count",,heat,fixed_equipment,,uf957-frost-protection.svg
+fruit,Fruit,Fruit,article,decimal,"net_mass, net_volume","sucrose_concentration, impurity_concentration, water_content_rate","feed(animal), produce(juice)",fruit,plant,uf987-fruits.svg
+fruit_crop,Culture fruitière,Fruit crop,crop,decimal,net_surface_area,"plant_life_state, plants_count, plants_interval, rows_interval, shape","consume(water), consume(preparation), produce(fruit), produce(straw)",plant,,uf0c1-leaf.svg
+fruit_juice,Jus de fruit,Fruit juice,article,decimal,"net_mass, net_volume","sucrose_concentration, impurity_concentration, water_content_rate",produce(fermented_juice),juice,,uf152-tint.svg
+fuel,Essence,Fuel,article,decimal,"net_mass, net_volume",,,fuel,,uf44c-local-gas-station.svg
+gardening_crop,Culture maraîchère,Gardening crop,crop,decimal,net_surface_area,"fresh_mass, plant_life_state, plant_reproduction_state, plants_count, shape, tiller_count","consume(water), consume(preparation), produce(vegetable)",plant,,uf0c1-leaf.svg
+gas,Gaz,Gas,article,decimal,"net_mass, net_volume",,,gas,,uf08c-fire.svg
+grain,Grain,Grain,article,decimal,net_mass,"hagberg_falling_number, impurity_concentration, protein_concentration, specific_weight, water_content_rate",feed(animal),grain,plant,uf989-seed.svg
+handling_equipment,Équipement de manutention,Handling equipment,equipment,unitary,"motor_power,  height","fuel_consumption,nominal_storable_net_mass,  geolocation","consume(oil), consume(fuel), catch(matter), lift(matter)",handling_equipment,,uf992-forklift.svg
+harrow,Herse,Harrow,equipment,unitary,"application_width, rows_count",geolocation,"plow_superficially, kill(plant)",trailed_equipment,,uf91d-harrow.svg
+harvester,Récolteuse,Harvester,equipment,unitary,"application_width, nominal_storable_net_mass, nominal_storable_net_volume, rows_count",geolocation,harvest(plant),trailed_equipment,,ufa0c-trailed-harvester.svg
+hay,Foin,Hay,article,decimal,"net_mass, net_volume, mass_volume_density",dry_matter_rate,feed(animal),hay,plant,uf95a-hay.svg
+heavy_equipment,Engin de chantier,Heavy equipment,equipment,unitary,"motor_power, height","fuel_consumption,geolocation",catch(matter),heavy_equipment,,uf991-bulldozer.svg
+hiller,Butteuse,Hiller,equipment,unitary,"application_width, rows_count",geolocation,earth_up,trailed_equipment,,uf920-hiller.svg
+hive,Ruche,Hive,equipment,unitary,,geolocation,"store(apis), store(honey)",fixed_equipment,,uf947-bee-hive.svg
+hoe,Bineuse,Hoe,equipment,unitary,"application_width, rows_count",geolocation,"hoe, plow_superficially, kill(plant)",trailed_equipment,,uf922-hoe.svg
+honey,Miel,Honey,article,decimal,"net_mass, net_volume","sucrose_concentration, temperature",,honey,apis,uf98e-honey.svg
+horticultural_crop,Culture horticole,Horticultural crop,crop,decimal,net_surface_area,"fresh_mass, plant_life_state, plant_reproduction_state, plants_count, shape, tiller_count","consume(water), consume(preparation), produce(flower)",plant,,uf0c1-leaf.svg
+implanter,Planteuse,Implanter,equipment,unitary,"application_width, rows_count",geolocation,implant,trailed_equipment,,uf923-implanter.svg
+inseminator,Inséminateur,Inseminator,worker,unitary,,,administer_inseminate(animal),worker,,uf166-user-md.svg
+installation,Installation,Installation,zone,unitary,,shape,"store(building), store(building_division), store(equipment)",settlement,,uf018-barn.svg
+land_parcel,Parcelle,Land parcel,zone,unitary,,"aluminium_concentration, available_water_capacity_per_area, boron_concentration, calcium_concentration, cation_exchange_capacity, cation_exchange_capacity_analysis_method, copper_concentration, iron_concentration, magnesium_concentration, manganese_concentration, molybdenum_concentration, nitrogen_concentration, organic_matter_concentration, phosphorus_analysis_method, phosphorus_concentration, potassium_concentration, potential_hydrogen, soil_depth, soil_nature, sulfur_concentration, zinc_concentration, shape",,land_parcel,,uf179-land-parcels.svg
+lifter,Releveuse,Lifter,equipment,unitary,rows_count,geolocation,lift(plant),trailed_equipment,,uf97b-wire-lifter.svg
+mammal,Mammifère,Mammal,animal,unitary,"reproductor, sex","animal_life_state, economical_milk_index, fat_matter_concentration_index, healthy, lactating, last_birth_children_count, livestock_unit, mammalia_birth_condition, mammalia_birth_count, mammalia_reproduction_event_abortion, mammalia_reproduction_method_embryo_transplant, mammalia_reproduction_state, milk_daily_production, net_mass, protein_concentration_index, unique_synthesis_index","consume(water), consume(plant), consume(preparation), produce(excrement), produce(milk), produce(mammalia)",mammalia,,uf952-cow-alt.svg
+mammal_band,Bande de mammifères,Mammal band,animal,integer,"reproductor, sex","animal_life_state, livestock_unit","consume(water), consume(plant), consume(preparation), produce(excrement), produce(milk)",mammalia,,uf952-cow-alt.svg
+material,Matériel,Material,article,decimal,,"diameter, height, length",,preparation,,uf949-bricks.svg
+meadow,Prairie,Meadow,crop,decimal,net_surface_area,"fresh_mass, plant_life_state, plant_reproduction_state, plants_count, shape, tiller_count","consume(water), consume(preparation), produce(hay)",plant,,uf0c1-leaf.svg
+meat,Viande,Meat,article,decimal,net_mass,"temperature, total_bacteria_concentration",,meat,animal,uf994-meat.svg
+mechanic,Mécanicien,Mechanic,worker,unitary,,,repair(equipment),worker,,uf0d5-male.svg
+mechanical_weeder,Désherbeur mécanique,Mechanical weeder,equipment,unitary,"application_width, element_count, rows_count",geolocation,"kill(plant), earth_up, plow",trailed_equipment,,uf93c-weeder.svg
+mechanical_weeding_tool,Outil de désherbage mécanique,Mechanical weeding tool,equipment,unitary,,,kill(plant),portable_equipment,,uf93c-weeder.svg
+milk,Lait,Milk,article,decimal,"net_mass, net_volume","clostridial_spores_concentration, fat_matters_concentration, freezing_point_temperature, immunoglobulins_concentration, inhibitors_presence, lipolysis, protein_matters_concentration, somatic_cell_concentration, temperature, total_bacteria_concentration, urea_concentration",feed(mammalia),milk,mammalia,uf95f-milk.svg
+milking_robot,Robot de traite,Milking robot,equipment,unitary,element_count,,milk(mammalia),fixed_equipment,,uf960-milking.svg
+mineral_fertilizer,Engrais minéral,Mineral fertilizer,article,decimal,"net_mass, net_volume, mass_volume_density, nitrogen_concentration, phosphorus_concentration, potassium_concentration, sulfur_dioxide_concentration, magnesium_concentration, manganese_concentration, calcium_concentration, zinc_concentration, sodium_concentration, copper_concentration",,fertilize,preparation,,uf0d8-matter.svg
+mower,Faucheuse,Mower,equipment,unitary,"application_width, nominal_storable_net_volume",geolocation,mow,trailed_equipment,,uf927-mower.svg
+oenological_product,Produit oenologique,Oenological product,article,decimal,"net_mass, net_volume",,transform(wine),preparation,,uf0d8-matter.svg
+office_equipment,Équipement de bureau,Office equipment,equipment,unitary,,,,fixed_equipment,,ufa05-copy-machine.svg
+oil_and_lubricate,Huile et lubrifiant,Oil and lubricate,article,decimal,net_volume,,lubricate(equipment),oil,,uf962-oil-jerrycan.svg
+oleaginous_crop,Culture d'oléagineux,Oleaginous crop,crop,decimal,net_surface_area,"fresh_mass, plant_life_state, plant_reproduction_state, plants_count, shape, tiller_count","consume(water), consume(preparation), produce(grain), produce(fruit)",plant,,uf0c1-leaf.svg
+organic_fertilizer,Engrais organique,Organic fertilizer,article,decimal,"net_mass, net_volume","mass_volume_density, nitrogen_concentration, phosphorus_concentration, potassium_concentration, sulfur_dioxide_concentration, magnesium_concentration, manganese_concentration, calcium_concentration, zinc_concentration, sodium_concentration, copper_concentration",fertilize,excrement,bioproduct,uf965-raised-manure.svg
+packaging,Conditionnement,Packaging,article,integer,,,"store_liquid, store_fluid, store(matter)",packaging,,uf995-box.svg
+pipe,Tuyau,Pipe,equipment,unitary,volume_flow,length,deliver(water),fixed_equipment,,uf996-pipe.svg
+plant_derivative,Produit végétal,Plant derivative,article,decimal,net_mass,,,preparation,plant,uf940-seedling-solid.svg
+plant_grinder,Broyeur de plantes,Plant grinder,equipment,unitary,"application_width, rows_count",geolocation,grind(plant),trailed_equipment,,uf91c-grinder.svg
+plant_medicine,Produit phytosanitaire,Plant medicine,article,decimal,"net_mass, net_volume",,care(plant),preparation,,uf1bd-flask.svg
+plant_protection,Protection de culture,Plant protection,article,decimal,"net_mass, length, width",,cover(plant),canvas_cover,,uf967-roll-alt.svg
+platform,Plateforme,Platform,equipment,unitary,,geolocation,lift(worker),self_propelled_equipment,,uf91b-forage-platform.svg
+plow,Charrue,Plow,equipment,unitary,"application_width, plowshare_count, rows_count",geolocation,plow,trailed_equipment,,uf928-plow.svg
+pollination_equipment,Équipement de pollinisation,Pollination equipment,equipment,unitary,,,pollinate(plant),trailed_equipment,,uf95e-mechanical-kit.svg
+pollination_tool,Outil de pollinisation,Pollination tool,equipment,unitary,,,pollinate(plant),portable_equipment,,uf95e-mechanical-kit.svg
+processed_food,Nourriture transformée,Processed food,article,decimal,net_mass,best_before_period,,preparation,,uf98f-processed-food.svg
+proteaginous_crop,Culture de protéagineux,Proteaginous crop,crop,decimal,net_surface_area,"fresh_mass, plant_life_state, plant_reproduction_state, plants_count, shape, tiller_count","consume(water), consume(preparation), produce(grain)",plant,,uf0c1-leaf.svg
+rake,Andaineur,Rake,equipment,unitary,application_width,geolocation,"rake(hay), rake(straw)",trailed_equipment,,uf91f-hay-rake.svg
+raw_material,Matière première,Raw material,article,decimal,"net_mass, net_volume",,,preparation,,uf0d8-matter.svg
+repairing_tool,Outil de réparation,Repairing tool,equipment,unitary,,,repair(equipment),portable_equipment,,uf941-tools.svg
+roll,Rouleau,Roll,equipment,unitary,application_width,geolocation,tamp,trailed_equipment,,uf92a-roll.svg
+seed,Semence,Seed,article,decimal,"net_mass, grains_count", thousand_grains_mass,grow,seed,plant,uf0d8-matter.svg
+seedling,Plant,Seedling,article,integer,items_counts,,grow,seedling,plant,uf0d8-matter.svg
+self_propelled_baler,Presse automotrice,Self propelled baler,equipment,unitary,"application_width,motor_power",geolocation,"bunch, consume(oil), consume(fuel)",self_propelled_equipment,,uf919-cubic-baler.svg
+self_propelled_cleaning_equipment,Équipement de nettoyage automoteur,Self propelled cleaning equipment,equipment,unitary,"application_width, fuel_consumption, motor_power, geolocation","fuel_consumption, geolocation","clean(building_division), consume(oil), consume(fuel)",self_propelled_equipment,,uf94c-cleaner.svg
+self_propelled_cutting_equipment,Équipement de coupe automoteur,Self propelled cutting equipment,equipment,unitary,"application_width, element_count, motor_power, rows_count","fuel_consumption, geolocation","cut, consume(oil), consume(fuel)",self_propelled_equipment,,uf939-trimmer.svg
+self_propelled_harvester,Récolteuse automotrice,Self propelled harvester,equipment,unitary,"application_width, motor_power, nominal_storable_net_volume, rows_count","fuel_consumption, geolocation","harvest(plant), consume(oil), consume(fuel)",self_propelled_equipment,,uf91e-harvester.svg
+self_propelled_hoe,Bineuse automotrice,Self propelled hoe,equipment,unitary,"application_width, rows_count, motor_power","fuel_consumption, geolocation","hoe, plow_superficially, kill(plant), consume(oil), consume(fuel)",self_propelled_equipment,,uf922-hoe.svg
+self_propelled_implanter,Planteuse automotrice,Self propelled implanter,equipment,unitary,"application_width, rows_count, motor_power","fuel_consumption, geolocation","implant, consume(oil), consume(fuel)",self_propelled_equipment,,uf923-implanter.svg
+self_propelled_mower,Faucheuse automotrice,Self propelled mower,equipment,unitary,"application_width, nominal_storable_net_volume, motor_power","fuel_consumption, geolocation","mow, consume(oil), consume(fuel)",self_propelled_equipment,,uf927-mower.svg
+self_propelled_rake,Andaineur automoteur,Self propelled rake,equipment,unitary,"application_width, motor_power","fuel_consumption, geolocation","rake(hay), rake(straw), consume(oil), consume(fuel)",self_propelled_equipment,,uf91f-hay-rake.svg
+self_propelled_sower,Semoir automoteur,Self propelled sower,equipment,unitary,"application_width, nominal_storable_net_volume, rows_count, motor_power","fuel_consumption, geolocation","sow, store_fluid, consume(oil), consume(fuel)",self_propelled_equipment,,uf92f-sower.svg
+self_propelled_sprayer,Pulvérisateur automoteur,Self propelled sprayer,equipment,unitary,"application_width, motor_power, nominal_storable_net_volume","fuel_consumption, geolocation","spray, store_liquid, store_fluid, consume(oil), consume(fuel)",self_propelled_equipment,,uf930-sprayer.svg
+self_propelled_spreader,Épandeur automoteur,Self propelled spreader,equipment,unitary,"application_width, nominal_storable_net_mass, nominal_storable_net_volume, rows_count,  motor_power","fuel_consumption, geolocation","spread(preparation), consume(oil), consume(fuel)",self_propelled_equipment,,uf932-spreader.svg
+self_propelled_unloader,Désileuse automotrice,Self propelled unloader,equipment,unitary,"motor_power, nominal_storable_net_volume","fuel_consumption, geolocation","deliver(preparation), consume(oil), consume(fuel)",self_propelled_equipment,,ufa07-unroller-straw-blower.svg
+sieve_shaker,Tamiseuse,Sieve shaker,equipment,unitary,application_width,"fuel_consumption, geolocation",sieve,trailed_equipment,,uf969-sieve-shaker.svg
+silage,Ensilage,Silage,article,decimal,"net_mass, net_volume","dry_matter_rate, mass_volume_density",feed(animal),silage,plant,uf98d-silo.svg
+so2_solution,Solution de SO2,So2 solution,article,decimal,"net_mass, net_volume, sulfur_dioxide_concentration",,"sulfurize(wine), transform(wine)",preparation,,uf0d8-matter.svg
+soil_grinder,Broyeur de sol,Soil grinder,equipment,unitary,"application_width, rows_count",geolocation,grind(cultivable_zone),trailed_equipment,,uf91c-grinder.svg
+soil_loosener,Décompacteur,Soil loosener,equipment,unitary,"application_width, element_count, rows_count",geolocation,uncompact,trailed_equipment,,uf92e-soil-loosener.svg
+sorting_equipment,Équipement de tri,Sorting equipment,equipment,unitary,,length,sort(matter),fixed_equipment,,uf969-sieve-shaker.svg
+sower,Semoir,Sower,equipment,unitary,"application_width, nominal_storable_net_volume, rows_count",geolocation,"sow, store_fluid",trailed_equipment,,uf92f-sower.svg
+sprayer,Pulvérisateur,Sprayer,equipment,unitary,,"geolocation, application_width, element_count, nominal_storable_net_volume, rows_count, theoretical_working_speed","spray, store_liquid, store_fluid",trailed_equipment,,uf930-sprayer.svg
+spreader,Épandeur,Spreader,equipment,unitary,"application_width, nominal_storable_net_mass, nominal_storable_net_volume, rows_count",geolocation,"spread(preparation), store_liquid, store_fluid",trailed_equipment,,uf932-spreader.svg
+stake,Piquet,Stake,article,integer,,,enclose,stake,,uf96d-stakes.svg
+steam_weeder,Désherbeur vapeur,Steam weeder,equipment,unitary,"application_width, nominal_storable_net_volume",geolocation,"kill(plant), store_liquid",trailed_equipment,,uf96e-steam-engine.svg
+steam_weeding_tool,Outil de désherbage vapeur,Steam weeding tool,equipment,unitary,nominal_storable_net_volume,,"kill(plant), store_liquid",portable_equipment,,uf96e-steam-engine.svg
+straw,Paille,Straw,article,decimal,"net_mass, net_volume, mass_volume_density",,"cover(building_division), cover(plant), feed(animal)",straw,plant,uf95a-hay.svg
+sugar,Sucre,Sugar,article,decimal,"net_mass, net_volume",,"chaptelise(wine), transform(wine)",preparation,,uf0d8-matter.svg
+superficial_plowing_equipment,Équipement de travail superficiel du sol,Superficial plowing equipment,equipment,unitary,"application_width, element_count, rows_count",geolocation,"plow_superficially, kill(plant)",trailed_equipment,,uf934-superficial-plow.svg
+supply,Fourniture,Supply,article,integer,,,,preparation,,uf0d8-matter.svg
+tank,Réservoir,Tank,equipment,unitary,"nominal_storable_net_mass, nominal_storable_net_volume",,"store_liquid, store_fluid, store(matter)",tank,,uf96f-storage-tank.svg
+tedder,Faneuse,Tedder,equipment,unitary,application_width,geolocation,"rake(hay), rake(straw)",trailed_equipment,,uf935-tedder.svg
+thermal_weeder,Désherbeur thermique,Thermal weeder,equipment,unitary,"application_width, nominal_storable_net_volume, rows_count",geolocation,"kill(plant), store_gaz",trailed_equipment,,uf958-gaz-engine.svg
+thermal_weeding_tool,Outil de désherbage thermique,Thermal weeding tool,equipment,unitary,nominal_storable_net_volume,,"kill(plant), store_gaz",portable_equipment,,uf958-gaz-engine.svg
+topper,Écimeuse,Topper,equipment,unitary,"application_width, rows_count",geolocation,"cut, castrate(plant)",trailed_equipment,,uf936-topper.svg
+tractor,Tracteur,Tractor,equipment,unitary,,"fuel_consumption,geolocation, motor_power, hour_counter, ground_speed","tow(equipment), consume(oil), consume(fuel)",tractor,,uf153-tractor.svg
+trailer,Remorque,Trailer,equipment,unitary,"nominal_storable_net_mass, nominal_storable_net_volume","length, geolocation","store_liquid, store_fluid, store(matter)",trailed_equipment,,uf938-trailer.svg
+tying_tool,Outil d'attache,Tying tool,equipment,unitary,,,tie(plant),portable_equipment,,uf959-hand-tying.svg
+uncovering_equipment,Équipement de retrait de protection,Uncovering equipment,equipment,unitary,application_width,,uncover(plant),trailed_equipment,,uf951-cover-implanter.svg
+unloader,Désileuse,Unloader,equipment,unitary,nominal_storable_net_volume,geolocation,deliver(preparation),trailed_equipment,,ufa07-unroller-straw-blower.svg
+vegetable,Légume,Vegetable,article,decimal,"net_mass, net_volume",,feed(animal),vegetable,plant,uf988-carrot.svg
+vehicule,Véhicule,Vehicule,equipment,unitary,motor_power,"fuel_consumption, geolocation","tow(equipment), consume(oil), consume(fuel)",motorized_vehicle,,uf973-truck-pickup.svg
+vial,Paillette d'insémination,Vial,article,integer,,"net_mass, economical_milk_index, sex, unique_synthesis_index",inseminate(animal),vial,animal,uf970-vial.svg
+vine_crop,Culture de vigne,Vine crop,crop,decimal,net_surface_area,"certification, certification_label, complanted_vine_stock, dead_vine_stock, layered_vine_stock, missing_vine_stock, plants_count, plants_interval, plant_life_state, vine_stock_bud_charge, rows_interval, shape, vine_pruning_system, cut_vine","consume(water), consume(preparation), produce(grape)",vitis,,uf0c1-leaf.svg
+vine_lifter,Arracheuse de vigne,Vine lifter,equipment,unitary,,geolocation,remove(plant),trailed_equipment,,uf977-vine-extractor.svg
+vine_shoot_extractor,Tireuse de bois,Vine shoot extractor,equipment,unitary,rows_count,geolocation,extract(plant),trailed_equipment,,uf977-vine-extractor.svg
+water,Eau,Water,article,decimal,net_volume,"nitrogen_concentration, potential_hydrogen",,water,,uf152-tint.svg
+water_extracter,Extracteur d'eau,Water extracter,equipment,unitary,"length, motor_power",,extract(water),fixed_equipment,,uf998-pump.svg
+water_spreader,Pulvérisateur d'eau,Water spreader,equipment,unitary,"application_width, spans_count, length, volume_flow",diameter,spread(water),fixed_equipment,,uf93b-water-spreader.svg
+wine,Vin,Wine,article,decimal,net_volume,"certification, reference_year, temperature, total_bacteria_concentration",,wine,,uf946-barrel.svg
+wine_press,Pressoir à vin,Wine press,equipment,unitary,nominal_storable_net_volume,,press(grape),fixed_equipment,,uf979-wine-press.svg
+wire,Fil,Wire,article,decimal,net_length,,enclose,wire,,uf97a-wire-fence.svg
+wood_rake,Andaineur de bois,Wood rake,equipment,unitary,application_width,geolocation,extract(plant),trailed_equipment,,uf999-wood-rake.svg
+wool,Laine,Wool,article,decimal,"net_mass, net_volume",,,preparation,ovis,uf98c-wool.svg
+worker,Travailleur,Worker,worker,unitary,,,"administer_care(animal), drive(equipment), milk(mammalia), repair(equipment), move",worker,,uf0d5-male.svg
+yeast,Levure,Yeast,article,decimal,"net_mass, net_volume",cells_mass_concentration,"fermentize(wine), transform(wine)",preparation,fungus,uf0d8-matter.svg
+animal_herd,Troupeau ou Groupe d’animaux,Animal herd,animal,unitary,"reproductor, sex",,,animal_group,animal,uf952-cow-alt.svg

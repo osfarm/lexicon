@@ -1,0 +1,137 @@
+@startuml
+
+/'Lexicon'/
+
+package "TechnicalWorkflows" {
+class technical_worflows << (L,orchid) >>
+class technical_worflow_procedures << (L,orchid) >>
+class technical_worflow_procedure_items << (L,orchid) >>
+}
+
+class technical_worflows {
+~family
+~specie
+~production_system
+~unit
+}
+
+class technical_worflow_procedures {
+~procedure_reference
+}
+
+class technical_worflow_procedure_items {
+~actor_reference
+~procedure_item_reference
+~unit
+}
+
+package "TechnicalWorkflowSequences" {
+class technical_worflow_sequences << (L,orchid) >>
+}
+
+class technical_worflow_sequences {
+~family
+~specie
+~production_system
+}
+
+package "InterventionModels" {
+class intervention_models << (L,orchid) >>
+class intervention_model_items << (L,orchid) >>
+}
+
+class intervention_models {
+~procedure_reference
+}
+
+class intervention_model_items {
+~procedure_item_reference
+~indicator_name
+~indicator_unit
+}
+
+package "Variants" {
+class variant_categories << (L,orchid) >>
+class variant_types << (L,orchid) >>
+class variants << (L,orchid) >>
+class variants << (L,orchid) >>
+class prices << (L,orchid) >>
+class units << (L,orchid) >>
+}
+
+articles ()- variants
+services ()- variants
+doers ()- variants
+equipements ()- variants
+
+variants "1" *-- "n" intervention_model_items
+variants "1" *-- "n" technical_worflow_procedure_items
+
+variants "1" *-- "n" prices
+variant_types "1" *-- "n" variants
+variant_categories "1" *-- "n" variants
+prices "n" --* "1" units
+
+intervention_models "1" *-- "n" intervention_model_items
+intervention_models "1" *-- "n" technical_worflow_procedures
+technical_worflows "1" *-- "n" technical_worflow_procedures
+technical_worflow_procedures "1" *-- "n" technical_worflow_procedure_items
+technical_worflow_sequences "n" *-* "n" technical_worflows
+
+/'Ekylibre'/
+
+package "Plannification / ITK" {
+class activity_ext << (P,#FF7700) >>
+class activity_production_ext << (P,#FF7700) >>
+class activity_production_batches << (P,#FF7700) >>
+class activity_production_irregular_batches << (P,#FF7700) >>
+class intervention_template_activities << (P,#FF7700) >>
+class intervention_templates << (P,#FF7700) >>
+class intervention_template_product_parameters << (P,#FF7700) >>
+class technical_itineraries << (P,#FF7700) >>
+class technical_itinerary_intervention_templates << (P,#FF7700) >>
+}
+
+package "Production / Budget" {
+class campaigns << (P,blue) >>
+class activities << (P,blue) >>
+class activity_productions << (P,blue) >>
+class activity_budgets << (P,blue) >>
+class activity_budget_items << (P,blue) >>
+class product_natures << (P,blue) >>
+class product_nature_variants << (P,blue) >>
+}
+
+campaigns "n" --- "n" activities
+activities "1" --- "n" activity_productions
+activity_budgets "n" --- "1" campaigns
+activity_budgets "n" --- "1" activities
+activity_budgets "1" --- "n" activity_budget_items
+activity_budget_items "1" --- "1" product_nature_variants
+
+activity_ext "n" --- "n" intervention_template_activities
+activity_production_ext "n" --- "1" technical_itineraries : technical_itinerary
+activity_production_ext "1" --- "1" activity_production_batches : batch
+activity_production_batches "n" --- "1" activity_productions
+activity_production_batches "1" --- "n" activity_production_irregular_batches : irregular_batches
+
+intervention_templates "1" --- "n" intervention_template_product_parameters
+intervention_templates "n" --- "1" campaigns
+intervention_templates "1" --- "n" intervention_template_activities
+intervention_templates "1" --- "n" technical_itinerary_intervention_templates
+intervention_templates "1" --- "1" intervention_templates : linked_intervention_template
+intervention_templates "n" --- "1" intervention_templates : originator
+
+intervention_template_product_parameters "n" --- "1" product_natures
+intervention_template_product_parameters "n" --- "1" product_nature_variants
+
+intervention_template_activities "n" --- "1" activities
+
+technical_itineraries "1" --- "n" technical_itinerary_intervention_templates
+technical_itineraries "1" --- "n" activity_productions
+technical_itineraries "n" --- "1" campaigns
+technical_itineraries "n" --- "1" activities
+technical_itineraries "1" --- "1" technical_itineraries : linked_technical_itinerary
+technical_itineraries "n" --- "1" technical_itineraries : originator
+
+@enduml

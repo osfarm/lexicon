@@ -1,0 +1,96 @@
+reference_name,fra,eng,family,fixed_asset_account,fixed_asset_allocation_account,fixed_asset_expenses_account,charge_account,product_account,stock_account,stock_movement_account,depreciation_percentage,default_vat_rate,payment_frequency_value,payment_frequency_unit,pictogram
+additional_activity,Activité annexe,Additional activity,service,,,,,product_accessory_revenues,,,,20,,,uf5cd-industry.svg
+adult_breeding_animal,Animal reproducteur adulte,Adult breeding animal,animal,adult_animal_assets,adult_animal_asset_depreciations,corporeal_depreciations_inputations_expenses_living_goods,outstanding_adult_animal_assets,tangible_fixed_assets_revenues_livestock,long_time_animal_stock,adult_reproductor_animals_inventory_variations,20,10,,,uf05a-cow.svg
+advertising_and_public_relation,Publicité et relation publique,Advertising and public relation,service,,,,advertising_expenses,,,,,20,,,ufa1c-bullhorn.svg
+animal_derivative,Produit animal,Animal derivative,article,,,,,animal_derivatives_revenues,animal_derivative_stock,products_inventory_variations,,5.5,,,uf994-meat.svg
+animal_food,Aliment pour animal,Animal food,article,,,,livestock_feed_matter_expenses,,livestock_feed_stock,livestock_feed_stocks_variation,,10,,,uf964-product-prepare.svg
+animal_medicine,Produit de défense animal,Animal medicine,article,,,,animal_medicine_matter_expenses,,animal_medicine_stock,animal_medicine_stocks_variation,,20,,,uf0da-medkit.svg
+animal_product_tax,Taxe spécifique sur produit animal,Animal product tax,service,,,,products_specials_taxes_for_animals,,,,,20,,,uf0e2-money.svg
+animal_rent,Location d'animal,Animal rent,service,,,,animal_rent_expenses,product_accessory_revenues,,,,20,,,uf952-cow-alt.svg
+animal_reproduction,Produit de reproduction animal,Animal reproduction,article,,,,animal_reproduction_matter_expenses,,animal_reproduction_stock,animal_reproduction_stocks_variation,,10,,,uf970-vial.svg
+animal_service,Prestation de service animal,Animal service,service,,,,animals_making_expenses,,,,,20,,,uf166-user-md.svg
+animal_tax,Taxe spécifique sur animal,Animal tax,service,,,,products_specials_taxes_for_animals,,,,,20,,,uf0e2-money.svg
+associate,Associé d'exploitation,Associate,worker,,,,associates_salary,,,,,20,1,per_month,uf0d5-male.svg
+associate_social_contribution,Cotisation sociale de l'exploitant,Associate social contribution,service,,,,associate_social_contribution_expenses,,,,,20,,,uf0e2-money.svg
+bank_service,Service bancaire,Bank service,service,,,,banks_services_expenses,,,,,20,,,uf284-university.svg
+building,Bâtiment,Building,zone,building_assets,building_assets_amortization,corporeal_depreciations_inputations_expenses,outstanding_construction_on_own_land_parcel_assets,tangible_fixed_assets_revenues_without_livestock,,,5,20,,,uf018-barn.svg
+building_division,Zone de bâtiment,Building division,zone,,,,,,,,,,,,uf018-barn.svg
+herd,Groupe d’animaux,Animal group,animal,,,,,,,,,,,,uf05a-cow.svg
+co_ownership_and_locative_charge,Charge locative et de copropriété,Co ownership and locative charge,service,,,,co_ownership_and_locative_expenses,,,,,20,,,uf0e2-money.svg
+congress,Colloque. séminaire et conférence,Congress,service,,,,congress_and_symposium_expenses,,,,,20,,,uf284-university.svg
+cooperative_participation,Participation à des coopératives,Cooperative participation,service,cooperative_participation_assets,equity_security_asset_impairment_losses,financial_depreciations_inputations_expenses,cooperative_participation_assets,sales_assets_revenues,,,,20,,,uf0e2-money.svg
+depreciable_office_equipment,Matériel de bureau amortissable,Depreciable office equipment,equipment,office_equipment_assets,office_equipment_asset_depreciations,corporeal_depreciations_inputations_expenses,outstanding_equipment_assets,tangible_fixed_assets_revenues_without_livestock,,,20,20,,,uf7c9-computer.svg
+depreciable_office_furniture,Mobilier de bureau amortissable,Depreciable office furniture,equipment,office_furniture_assets,office_furniture_asset_depreciations,corporeal_depreciations_inputations_expenses,outstanding_equipment_assets,tangible_fixed_assets_revenues_without_livestock,,,20,20,,,ufa0f-chair.svg
+depreciable_tool,Outillage amortissable,Depreciable tool,equipment,tools_assets,tools_assets_amortization,corporeal_depreciations_inputations_expenses,outstanding_equipment_assets,tangible_fixed_assets_revenues_without_livestock,,,20,20,,,ufa03-depreciable-tool.svg
+documentation,Documentation,Documentation,service,,,,other_expenses,,,,,20,,,uf7d3-description.svg
+electricity,Électricité,Electricity,service,,,,electricity_expenses,,,,,20,1,per_month,uf963-energy.svg
+equipment,Équipement,Equipment,equipment,equipment_assets,equipment_assets_amortization,corporeal_depreciations_inputations_expenses,outstanding_equipment_assets,tangible_fixed_assets_revenues_without_livestock,,,15,20,,,uf153-tractor.svg
+equipment_rent,Location d'équipement,Equipment rent,service,,,,equipment_rent_expenses,product_accessory_revenues,,,,20,,,uf0e2-money.svg
+establishment_expense,Frais d'établissement,Establishment expense,service,establishment_charge_assets,establishment_charge_assets_amortization,incorporeals_depreciations_inputations_expenses,establishment_charge_assets,,,,33.33,20,,,uf0e2-money.svg
+exceptional,Charge et produit exceptionnels,Exceptional,service,,,,exceptional_expenses,exceptional_revenues,,,,20,,,uf0e2-money.svg
+exploitation_subsidy,Subvention d'exploitation,Exploitation subsidy,service,,,,,subsidies,,,,20,1,per_year,uf0e2-money.svg
+external_staff,Personnel extérieur,External staff,worker,,,,external_staff_expenses,,,,,20,1,per_month,uf0d5-male.svg
+fee,Rémunératon d'intermédiaire et honoraires,Fee,service,,,,fees_expenses,,,,,20,,,uf0e2-money.svg
+fertilizer,Engrais et amendement,Fertilizer,article,,,,fertilizer_expenses,,fertilizer_stock,fertilizer_stocks_variation,,20,,,uf0d8-matter.svg
+fruit_and_vegetable,Fruit et légume,Fruit and vegetable,article,,,,,plant_derivatives_revenues,plant_derivative_stock,products_inventory_variations,,5.5,,,uf987-fruits.svg
+fuel,Carburant et lubrifiant,Fuel,article,,,,fuels_expenses,,,,,20,,,uf44c-local-gas-station.svg
+gas,Gaz,Gas,article,,,,gas_expenses,,,,,20,,,uf08c-fire.svg
+government_payroll_tax,Impôt et taxe sur rémunération (administration des impôts),Government payroll tax,service,,,,government_payroll_tax_expenses,,,,,20,1,per_year,uf0e2-money.svg
+government_tax,Impôt et taxe (administration des impôts),Government tax,service,,,,taxes_expenses,,,,,20,1,per_year,uf0e2-money.svg
+installation,Installation,Installation,zone,general_installation_assets,general_installation_assets_amortization,corporeal_depreciations_inputations_expenses,outstanding_land_parcel_construction_assets,tangible_fixed_assets_revenues_without_livestock,,,10,20,,,uf018-barn.svg
+insurance,Prime et indemnité d'assurance,Insurance,service,,,,insurance_expenses,insurance_compensations,,,,20,,,uf0e2-money.svg
+irrigation_water,Eau d'irrigation,Irrigation water,article,,,,irrigation_expenses,,,,,5.5,1,per_year,uf99e-faucet.svg
+land,Terrain,Land,zone,global_land_parcel_assets,land_parcel_asset_depreciations,corporeal_depreciations_inputations_expenses,outstanding_land_parcel_assets,tangible_fixed_assets_revenues_without_livestock,,,,20,,,uf179-land-parcels.svg
+land_rent,Location de terrain,Land rent,service,,,,land_parcel_locative_expenses,product_accessory_revenues,,,,20,1,per_year,uf0e2-money.svg
+leasing,Redevance de crédit-bail,Leasing,service,,,,leasing_expenses,,,,,20,1,per_year,uf0e2-money.svg
+licence,Redevance pour brevet et licence,Licence,service,,,,licences_expenses,product_accessory_revenues,,,,20,,,uf0e2-money.svg
+loan_interests,Charge d'intérêt,Loan interests,service,,,,other_interests_expenses,,,,,20,,,uf0e2-money.svg
+long_cycle_animal,Animal à cycle long,Long cycle animal,animal,,,,animal_expenses,animal_revenues,long_time_animal_stock,long_cycle_animals_inventory_variations,,10,,,uf05a-cow.svg
+maintenance_and_repair_service,Entretien et réparation,Maintenance and repair service,service,,,,maintenance_expenses,,,,,20,,,uf941-tools.svg
+maintenance_consumable,Produit d'entretien,Maintenance consumable,article,,,,maintenances_consumables_expenses,,packaging_stock,maintenances_consumables_stocks_variation,,20,,,uf94b-chemical-product.svg
+manager,Administateur et gérant,Manager,worker,,,,managing_associates_salary,,,,,20,1,per_month,uf0d5-male.svg
+material,Matériau,Material,article,,,,materials_expenses,,other_materials_stock,materials_stocks_variation,,20,,,uf949-bricks.svg
+office_supply,Fourniture de bureau,Office supply,article,,,,office_supply_matter_expenses,,office_supplies_stock,office_supply_matter_stocks_variation,,20,,,uf297-calculator.svg
+other_consumable,Fourniture consommable,Other consumable,article,,,,other_consumable_matter_expenses,,other_consumables_stock,other_consumable_matter_stocks_variation,,20,,,uf990-can.svg
+other_entity_payroll_tax,Impôt et taxe sur rémunération (autre organisme),Other entity payroll tax,service,,,,other_entities_payroll_tax_expenses,,,,,20,,,uf0e2-money.svg
+other_entity_tax,Impôt et taxe (autre organisme),Other entity tax,service,,,,other_entities_tax_expenses,,,,,20,,,uf0e2-money.svg
+other_external_service,Cotisation professionnelle,Other external service,service,,,,professional_subscriptions_expenses,,,,,20,,,uf0e2-money.svg
+other_financial,Charge et produit financier,Other financial,service,,,,other_financial_expenses,other_financials_revenues,,,,20,,,uf0e2-money.svg
+other_rent,Location,Other rent,service,,,,other_rent_expenses,product_accessory_revenues,,,,20,,,uf0e2-money.svg
+other_social_expense,Charge sociale,Other social expense,service,,,,other_social_expenses,,,,,20,,,uf0e2-money.svg
+other_staff_expense,Charge de personnel,Other staff expense,service,,,,other_staff_expenses,,,,,20,1,per_month,uf0e2-money.svg
+owner,Exploitant,Owner,worker,,,,owner_remuneration,,,,,20,1,per_month,uf0d5-male.svg
+packaging,Conditionnement et emballage,Packaging,article,,,,packaging,,packaging_stock,packaging_stocks_variation,,20,,,uf995-box.svg
+packaging_wine_dry_material,Matière sèche (vin),Dry material (wine),article,,,,packaging,,packaging_stock,packaging_stocks_variation,,20,,,uf28b-bottle.svg
+packaging_rent,Malus sur emballage,Packaging rent,service,,,,packaging_rent_expenses,,,,,20,,,uf0e2-money.svg
+perennial_crop,Culture pérenne,Perennial crop,crop,sustainables_plants_assets,sustainables_plants_asset_depreciations,corporeal_depreciations_inputations_expenses_living_goods,outstanding_sustainables_plants_assets,tangible_fixed_assets_revenues_livestock,long_cycle_vegetals_stock,long_cycle_vegetals_inventory_variations,5,20,,,uf0c1-leaf.svg
+permanent_worker,Personnel permanent,Permanent worker,worker,,,,permanent_staff_salary,,,,,20,1,per_month,uf0d5-male.svg
+plant_derivative,Produit végétal,Plant derivative,article,,,,,plant_derivatives_revenues,plant_derivative_stock,products_inventory_variations,,10,,,uf940-seedling-solid.svg
+plant_medicine,Produit phytosanitaire,Plant medicine,article,,,,plant_medicine_matter_expenses,,plant_medicine_stock,plant_medicine_stocks_variation,,20,,,uf1bd-flask.svg
+plant_product_tax,Taxe spécifique sur produit végétal,Plant product tax,service,,,,products_specials_taxes_for_plant_products,,,,,20,,,uf0e2-money.svg
+processed_product,Produit transformé,Processed product,article,,,,,processing_products_revenues,processing_products_stock,products_inventory_variations,,5.5,,,uf98f-processed-food.svg
+processed_product_tax,Taxe spécifique sur produit transformé,Processed product tax,service,,,,products_specials_taxes_for_processed_products,,,,,20,,,uf0e2-money.svg
+purchase_discount_and_reduction,Rabais. remise et ristourne sur produit,Purchase discount and reduction,service,,,,discount_and_reductions_expenses,discount_and_reductions_revenues,,,,20,,,uf0e2-money.svg
+raw_material,Matière première,Raw material,article,,,,raw_material_expenses,,raw_product_stock,raw_material_stocks_variation,,20,,,uf0d8-matter.svg
+research_and_development,Recherche et développement,Research and development,service,research_and_development_charge_assets,research_and_development_charge_assets_amortization,incorporeals_depreciations_inputations_expenses,research_and_development_charge_assets,intangible_fixed_assets_revenues,,,20,20,,,ufa0d-user-chart.svg
+running_water,Eau courante,Running water,service,,,,water_expenses,,,,,5.5,1,per_month,uf99e-faucet.svg
+seed_and_plant,Semence et plant,Seed and plant,article,,,,seed_expenses,plant_derivatives_revenues,seed_stock,seed_stocks_variation,,10,,,uf0d8-matter.svg
+self_consumption,Autoconsommation,Self consumption,service,,,,,home_consumption_production,,,,20,,,uf994-meat.svg
+service_animal,Animal de service,Service animal,animal,service_animal_assets,service_animal_asset_depreciations,corporeal_depreciations_inputations_expenses_living_goods,outstanding_service_animal_assets,tangible_fixed_assets_revenues_livestock,,,20,20,,,uf983-horse.svg
+service_discount_and_reduction,"Rabais, remise et ristourne sur service",Service discount and reduction,service,,,,service_discount_and_reductions_expenses,,,,,20,,,uf0e2-money.svg
+short_cycle_animal,Animal à cycle court,Short cycle animal,animal,,,,animal_expenses,animal_revenues,short_time_animal_stock,short_cycle_animals_inventory_variations,,10,,,uf2ed-hen.svg
+short_cycle_crop,Culture à cycle court,Short cycle crop,crop,,,,,,short_cycle_vegetals_stock,short_cycle_vegetals_inventory_variations,,20,,,uf0c1-leaf.svg
+social_contribution,Sécurité sociale,Social contribution,service,,,,salary_social_contribution_expenses,,,,,20,,,uf0e2-money.svg
+staff_supply,Fourniture pour le personnel,Staff supply,article,,,,staff_supply_expenses,,staff_supply_stock,staff_supply_stocks_variation,,20,,,ufa09-hard-hat.svg
+study_and_research,Étude et recherche,Study and research,service,,,,studies_and_research_expenses,,,,,20,,,ufa0d-user-chart.svg
+subcontracting,Sous-traitance,Subcontracting,service,,,,subcontracting_expenses,,,,,20,,,uf0e2-money.svg
+telecommunication,Télécommunication,Telecommunication,service,,,,telecommunications_expenses,,,,,20,1,per_month,uf877-phone-iphone.svg
+temporary_worker,Personnel temporaire,Temporary worker,worker,,,,temporary_staff_salary,,,,,20,1,per_month,uf0d5-male.svg
+tool,Outillage,Tool,equipment,,,,little_office_equipment_expenses,,,,,20,,,uf941-tools.svg
+transportation,Transport de biens et de personnel,Transportation,service,,,,transports_expenses,product_accessory_revenues,,,,20,,,uf973-truck-pickup.svg
+trip,"Déplacement, mission et réception",Trip,service,,,,travels_expenses,,,,,20,,,ufa02-trip.svg
+vegetal_service,Prestation de service végétal,Vegetal service,service,,,,vegetals_making_services_expenses,,,,,20,,,ufa0a-service.svg
+veterinary,Vétérinaire,Veterinary,service,,,,veterinary_fees_expenses,,,,,20,,,uf166-user-md.svg
+workshop_supply,Fourniture d'atelier,Workshop supply,article,,,,workshop_and_warehouse_supplies_expenses,,workshop_supplies_stock,workshop_and_warehouse_supplies_stocks_variation,,20,,,uf941-tools.svg
+young_breeding_animal,Animal reproducteur jeune,Young breeding animal,animal,young_animal_assets,young_animal_asset_depreciations,corporeal_depreciations_inputations_expenses_living_goods,outstanding_young_animal_assets,tangible_fixed_assets_revenues_livestock,long_time_animal_stock,young_reproductor_animals_inventory_variations,20,10,,,uf05a-cow.svg
+waste_tax,Contributions aux traitement des déchets,Waste tax,service,,,,waste_contribution,,,,,20,,,Uf26e-recycle.svg

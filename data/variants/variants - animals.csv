@@ -1,0 +1,56 @@
+reference_name,fra,eng,category,nature,specie,pictogram
+breeding_bunny,Lapereau,Breeding bunny,young_breeding_animal,mammal,oryctolagus_cuniculus,uf97f-rabbit.svg
+breeding_calf,Veau reproducteur,Breeding calf,young_breeding_animal,mammal,bos_taurus,uf05a-cow.svg
+breeding_cat,Chat reproducteur,Breeding cat,adult_breeding_animal,mammal,felis_silvestris_catus,uf980-cat.svg
+breeding_colt,Ânon reproducteur,Breeding colt,young_breeding_animal,mammal,equus_asinus,uf982-donkey.svg
+breeding_cow,Vache,Breeding cow,adult_breeding_animal,mammal,bos_taurus,uf05a-cow.svg
+breeding_dog,Chien reproducteur,Breeding dog,adult_breeding_animal,mammal,canis_lupus_familiaris,uf981-dog.svg
+breeding_donkey,Âne reproducteur,Breeding donkey,adult_breeding_animal,mammal,equus_asinus,uf982-donkey.svg
+breeding_foal,Poulain reproducteur,Breeding foal,young_breeding_animal,mammal,equus_caballus,uf983-horse.svg
+breeding_goat,Chèvre,Breeding goat,adult_breeding_animal,mammal,capra_hircus,uf985-goat.svg
+breeding_hare,Lièvre,Breeding hare,adult_breeding_animal,mammal,lepus_europaeus,uf97f-rabbit.svg
+breeding_horse,Cheval reproducteur,Breeding horse,adult_breeding_animal,mammal,equus_caballus,uf983-horse.svg
+breeding_kid,Chevreau reproducteur,Breeding kid,young_breeding_animal,mammal,capra_hircus,uf985-goat.svg
+breeding_kitten,Chaton,Breeding kitten,young_breeding_animal,mammal,felis_silvestris_catus,uf980-cat.svg
+breeding_lamb,Agneau reproducteur,Breeding lamb,young_breeding_animal,mammal,ovis_aries,uf2eb-sheep.svg
+breeding_leveret,Levraut,Breeding leveret,young_breeding_animal,mammal,lepus_europaeus,uf97f-rabbit.svg
+breeding_pig,Porc,Breeding pig,adult_breeding_animal,mammal,sus_scrofa,uf97d-pig.svg
+breeding_piglet,Porcelet,Breeding piglet,young_breeding_animal,mammal,sus_scrofa,uf97d-pig.svg
+breeding_puppy,Chiot,Breeding puppy,young_breeding_animal,mammal,canis_lupus_familiaris,uf981-dog.svg
+breeding_rabbit,Lapin,Breeding rabbit,adult_breeding_animal,mammal,oryctolagus_cuniculus,uf97f-rabbit.svg
+breeding_sheep,Mouton,Breeding sheep,adult_breeding_animal,mammal,ovis_aries,uf2eb-sheep.svg
+calf,Veau,Calf,short_cycle_animal,mammal,bos_taurus,uf05a-cow.svg
+cat_band,Bande de chats,Cat band,long_cycle_animal,mammal_band,felis_silvestris_catus,uf980-cat.svg
+colt,Ânon,Colt,short_cycle_animal,mammal,equus_asinus,uf982-donkey.svg
+cow_band,Bande de vaches,Cow band,long_cycle_animal,mammal_band,bos_taurus,uf05a-cow.svg
+dog_band,Bande de chiens,Dog band,long_cycle_animal,mammal_band,canis_lupus_familiaris,uf981-dog.svg
+donkey_band,Bande d'ânes,Donkey band,long_cycle_animal,mammal_band,equus_asinus,uf982-donkey.svg
+duck_band,Bande de canards,Duck band,short_cycle_animal,bird_band,anatidae,uf97e-duck.svg
+foal,Poulain,Foal,short_cycle_animal,mammal,equus_caballus,uf983-horse.svg
+goat_band,Bande de chèvres,Goat band,long_cycle_animal,mammal_band,capra_hircus,uf985-goat.svg
+goose_band,Bande d'oies,Goose band,short_cycle_animal,bird_band,anser,uf986-goose.svg
+guinea_fowl_band,Bande de pintades,Guinea fowl band,short_cycle_animal,bird_band,numididae,uf986-goose.svg
+hare_band,Bande de lièvres,Hare band,short_cycle_animal,mammal_band,lepus_europaeus,uf97f-rabbit.svg
+hen_band,Bande de poules,Hen band,short_cycle_animal,bird_band,gallus_gallus_domesticus,uf2ed-hen.svg
+horse_band,Groupe de chevaux,Horse band,long_cycle_animal,mammal_band,equus_caballus,uf983-horse.svg
+kid,Chevreau,Kid,short_cycle_animal,mammal,capra_hircus,uf985-goat.svg
+kitten_band,Groupe de chatons,Kitten band,short_cycle_animal,mammal_band,felis_silvestris_catus,uf980-cat.svg
+lamb,Agneau,Lamb,short_cycle_animal,mammal,ovis_aries,uf2eb-sheep.svg
+mussel_band,Groupe de moules,Mussel band,short_cycle_animal,bivalve_band,mytilus,uf984-shell.svg
+ostrich_band,Groupe d'autruches,Ostrich band,long_cycle_animal,bird_band,struthio,uf986-goose.svg
+oyster_band,Groupe d'huîtres,Oyster band,long_cycle_animal,bivalve_band,crassostrea,uf984-shell.svg
+peacok_band,Groupe de paons,Peacok band,short_cycle_animal,bird_band,pavo,uf986-goose.svg
+pheasant_band,Groupe de faisans,Pheasant band,short_cycle_animal,bird_band,phasianus,uf986-goose.svg
+pig_band,Groupe de porcs,Pig band,long_cycle_animal,mammal_band,sus_scrofa,uf97d-pig.svg
+pigglet_band,Groupe de porcelets,Pigglet band,short_cycle_animal,mammal_band,sus_scrofa,uf97d-pig.svg
+puppy_band,Groupe de chiots,Puppy band,short_cycle_animal,mammal_band,canis_lupus_familiaris,uf981-dog.svg
+rabbit_band,Groupe de lapins,Rabbit band,short_cycle_animal,mammal_band,oryctolagus_cuniculus,uf97f-rabbit.svg
+salmon_band,Groupe de saumons,Salmon band,long_cycle_animal,fish_band,salmo,uf2ec-fish.svg
+scallop_band,Groupe de coquilles Saint-Jacques,Scallop band,long_cycle_animal,bivalve_band,pecten_maximus,uf984-shell.svg
+service_cat,Chat,Service cat,service_animal,mammal,felis_silvestris_catus,uf980-cat.svg
+service_dog,Chien,Service dog,service_animal,mammal,canis_lupus_familiaris,uf981-dog.svg
+service_donkey,Âne,Service donkey,service_animal,mammal,equus_asinus,uf982-donkey.svg
+service_horse,Cheval,Service horse,service_animal,mammal,equus_caballus,uf983-horse.svg
+sheep_band,Groupe de moutons,Sheep band,long_cycle_animal,mammal_band,ovis_aries,uf2eb-sheep.svg
+sturgeon_band,Groupe d'esturgeons,Sturgeon band,long_cycle_animal,fish_band,acipenser,uf2ec-fish.svg
+turkey_band,Groupe de dindes,Turkey band,short_cycle_animal,bird_band,meleagris,uf986-goose.svg

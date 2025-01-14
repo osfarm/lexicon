@@ -1,0 +1,32 @@
+reference_name,fra,eng,symbol
+amount_of_substance,Quantité de matière,Amount of substance,mol
+amount_of_substance_density,Densité de quantité de matière,Amount of substance density,mol/kg
+angle,Angle,Angle,rad
+concentration,Concentration,Concentration,./m³
+distance,Distance,Distance,m
+distance_speed,Vitesse (distance),Distance speed,m/s
+electric_current,Intensité,Electric current,A
+energy,Énergie,Energy,J
+heat_flux_density,Rayonnement solaire,Heat flux density,W/m²
+luminous_intensity,Intensité lumineuse,Luminous intensity,cd
+mass,Masse,Mass,kg
+mass_area_density,Masse par unité de surface,Mass area density,kg/m²
+mass_concentration,Concentration massique,Mass concentration,kg/m³
+mass_density,Quantité de matière par unité de matière,Mass density,./kg
+mass_flow,Débit massique,Mass flow,kg/s
+mass_unity_density,Masse par unité,Mass unity density,kg/.
+none,Aucune,None,.
+power,Puissance,Power,J/s
+pressure,Pression,Pressure,N/m²
+specific_volume,Volume spécifique,Specific volume,m³/kg
+surface_area,Superficie,Surface area,m²
+surface_area_density,Densité surfacique,Surface area density,./m²
+surface_area_flow,Débit surfacique,Surface area flow,m²/s
+temperature,Température,Temperature,K
+time,Temps,Time,s
+unity_unity_density,Quantité de matière par unité,Unity unity density,'÷’
+volume,Volume,Volume,m³
+volume_area_density,Volume par surface,Volume area density,m³/m²
+volume_concentration,Concentration volumique,Volume concentration,m³/m³
+volume_flow,Débit volumique,Volume flow,m³/s
+volume_unity_density,Volume par unité,Volume unity density,m³/.

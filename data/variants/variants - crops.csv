@@ -1,0 +1,226 @@
+reference_name,fra,eng,category,nature,specie
+alfalfa_crop,Culture de Luzerne,Alfalfa crop,short_cycle_crop,proteaginous_crop,medicago_sativa
+angelica_crop,Culture d'Angélique,Angelica crop,short_cycle_crop,crop,angelica
+anise_crop,Culture d'Anis,Anise crop,short_cycle_crop,crop,pimpinella_anisum
+apple_crop,Culture de Pommier,Apple crop,perennial_crop,fruit_crop,malus_domestica
+apricot_crop,Culture d'Abricotier,Apricot crop,perennial_crop,fruit_crop,prunus_armeniaca
+artichoke_crop,Culture d'Artichaut,Artichoke crop,short_cycle_crop,gardening_crop,cynara_scolymus
+asparagus_crop,Culture d'Asperge,Asparagus crop,short_cycle_crop,gardening_crop,asparagus_officianalis
+avena_crop,Culture de Céréale de genre Avena,Avena crop,short_cycle_crop,cereal_crop,avena
+avocado_crop,Culture d'Avocatier,Avocado crop,perennial_crop,fruit_crop,persea_americana
+banana_crop,Culture de Bananier,Banana crop,perennial_crop,fruit_crop,musa
+barley_crop,Culture d'Orge,Barley crop,short_cycle_crop,cereal_crop,hordeum_vulgare
+basil_crop,Culture de Basilic,Basil crop,short_cycle_crop,crop,ocimum_basilicum
+batavia_crop,Culture de Batavia,Batavia crop,short_cycle_crop,gardening_crop,lactuca_sativa_capitata
+bean_crop,Culture de Haricot,Bean crop,short_cycle_crop,gardening_crop,phaseolus_vulgaris
+beetroot_crop,Culture de Betterave,Beetroot crop,short_cycle_crop,gardening_crop,beta_vulgaris_vulgaris
+bilberry_crop,Culture de Myrtillier,Bilberry crop,perennial_crop,fruit_crop,vaccinium
+birds_foot_crop,Culture de Serradelle,Birds foot crop,short_cycle_crop,proteaginous_crop,ornithopus_sativus
+birds_foot_trefoil_crop,Culture de Lotier,Birds foot trefoil crop,perennial_crop,crop,lotus_corniculatus
+black_elderberry_crop,Culture de Sureau noir,Black elderberry crop,perennial_crop,crop,sambucus_nigra
+black_eyed_pea_crop,Culture de Cornille,Black eyed pea crop,short_cycle_crop,proteaginous_crop,vigna_unguiculata_unguiculata
+black_medick_crop,Culture de Minette,Black medick crop,short_cycle_crop,crop,medicago_lupulina
+black_psyllium_crop,Culture de Plantain pucier,Black psyllium crop,short_cycle_crop,crop,plantago_afra
+blackberry_crop,Culture de Mûre (ronce),Blackberry crop,perennial_crop,fruit_crop,rubus
+blackcurrant_crop,Culture de Cassissier,Blackcurrant crop,perennial_crop,fruit_crop,ribes_nigrum
+blond_psyllium_crop,Culture de Ispaghul,Blond psyllium crop,short_cycle_crop,crop,plantago_ovata
+borage_crop,Culture de Bourrache,Borage crop,short_cycle_crop,crop,borago
+brassica_napus_crop,Culture d'Oléagineux d’espèce Brassica napus,Brassica napus crop,short_cycle_crop,oleaginous_crop,brassica_napus
+brassica_rapa_crop,Culture d'Oléagineux d’espèce Brassica rapa,Brassica rapa crop,short_cycle_crop,oleaginous_crop,brassica_rapa
+broad_bean_crop,Culture de Fève,Broad bean crop,short_cycle_crop,proteaginous_crop,vicia_faba
+broccoli_crop,Culture de Brocoli,Broccoli crop,short_cycle_crop,gardening_crop,brassica_oleracea_italica
+bromus_crop,Culture de Brôme,Bromus crop,perennial_crop,crop,bromus
+brussels_sprout_crop,Culture de Chou de Bruxelles,Brussels sprout crop,short_cycle_crop,gardening_crop,brassica_oleracea_gemmifera
+buckwheat_crop,Culture de Sarrasin,Buckwheat crop,short_cycle_crop,cereal_crop,fagopyrum_esculentum
+bugle_crop,Culture de Bugle rampant,Bugle crop,short_cycle_crop,crop,ajuga_reptans
+burdock_crop,Culture de Bardane,Burdock crop,short_cycle_crop,crop,arctium
+butternut_squash_crop,Culture de Courge butternut,Butternut squash crop,short_cycle_crop,gardening_crop,cucurbita_moschata
+cabbage_crop,Culture de Chou,Cabbage crop,short_cycle_crop,gardening_crop,brassica_oleracea
+cacao_crop,Culture de Cacaoyer,Cacao crop,perennial_crop,fruit_crop,theobroma_cacao
+camelina_crop,Culture de Cameline,Camelina crop,short_cycle_crop,oleaginous_crop,camelina_sativa
+canary_grass_crop,Culture d'Alpiste,Canary grass crop,short_cycle_crop,cereal_crop,phalaris_canariensis
+caraway_crop,Culture de Carvi,Caraway crop,perennial_crop,crop,carum_carvi
+carob_crop,Culture de Caroubier,Carob crop,perennial_crop,fruit_crop,ceratonia_siliqua
+carrot_crop,Culture de Carotte,Carrot crop,short_cycle_crop,gardening_crop,daucus_carota
+cassava_crop,Culture de Manioc,Cassava crop,short_cycle_crop,gardening_crop,manihot_esculenta
+castor_bean_crop,Culture de Ricin,Castor bean crop,short_cycle_crop,oleaginous_crop,ricinus_communis
+catjang_crop,Culture de Dolique,Catjang crop,short_cycle_crop,proteaginous_crop,vigna_unguiculata_cylindrica
+cauliflower_crop,Culture de Chou-fleur,Cauliflower crop,short_cycle_crop,gardening_crop,brassica_oleracea_botrytis
+celeriac_crop,Culture de Céleri-rave,Celeriac crop,short_cycle_crop,gardening_crop,apium_graveolens_rapaceum
+celery_crop,Culture de Céleri-branche,Celery crop,short_cycle_crop,gardening_crop,apium_graveolens_dulce
+chamomile_crop,Culture de Camomille,Chamomile crop,short_cycle_crop,crop,chamaemelum
+chard_crop,Culture de Bette,Chard crop,short_cycle_crop,gardening_crop,beta_vulgaris_cicla
+cherry_crop,Culture de Cerisier,Cherry crop,perennial_crop,fruit_crop,prunus_cerasus
+cherry_laurel_crop,Culture de Laurier cerise,Cherry laurel crop,perennial_crop,crop,prunus_laurocerasus
+chervil_crop,Culture de Cerfeuil,Chervil crop,short_cycle_crop,crop,anthriscus_cerefolium
+chestnut_crop,Culture de Châtaignier,Chestnut crop,perennial_crop,fruit_crop,castanea
+chickpea_crop,Culture de Pois chiche,Chickpea crop,short_cycle_crop,proteaginous_crop,cicer_arietinum
+chili_crop,Culture de Piment,Chili crop,short_cycle_crop,gardening_crop,capsicum
+chive_crop,Culture de Ciboulette,Chive crop,short_cycle_crop,crop,allium_schoenoprasum
+clementine_crop,Culture de Clémentinier,Clementine crop,perennial_crop,fruit_crop,citrus_clementina
+clover_crop,Culture de Trèfle,Clover crop,perennial_crop,proteaginous_crop,trifolium
+cocksfoot_crop,Culture de Dactyle,Cocksfoot crop,perennial_crop,crop,dactylis
+coffee_crop,Culture de Caféier,Coffee crop,perennial_crop,crop,coffea
+common_daisy_crop,Culture de Pâquerette,Common daisy crop,short_cycle_crop,crop,bellis_perennis
+common_vetch_crop,Culture de Vesce,Common vetch crop,short_cycle_crop,proteaginous_crop,vicia_sativa
+common_wheat_crop,Culture de Blé tendre,Common wheat crop,short_cycle_crop,cereal_crop,triticum_aestivum
+coriander_crop,Culture de Coriandre,Coriander crop,short_cycle_crop,crop,coriandrum_sativum
+corn_crop,Culture de Maïs,Corn crop,short_cycle_crop,cereal_crop,zea_mays
+cornflower_crop,Culture de Bleuet,Cornflower crop,short_cycle_crop,crop,centaurea_cyanus
+cornsalad_crop,Culture de Mâche,Cornsalad crop,short_cycle_crop,gardening_crop,valerianella_locusta
+cotton_crop,Culture de Cotonnier,Cotton crop,short_cycle_crop,crop,gossypium
+cranberry_crop,Culture de Canneberge,Cranberry crop,perennial_crop,fruit_crop,vaccinium
+cress_crop,Culture de Cresson alénois,Cress crop,short_cycle_crop,gardening_crop,lepidium_sativum
+cucumber_crop,Culture de Concombre,Cucumber crop,short_cycle_crop,gardening_crop,cucumis_sativus
+cumin_crop,Culture de Cumin,Cumin crop,short_cycle_crop,crop,cuminum
+curly_endive_crop,Culture de Chicorée frisée,Curly endive crop,short_cycle_crop,gardening_crop,cichorium_endivia_crispum
+dill_crop,Culture d'Aneth,Dill crop,short_cycle_crop,crop,anethum_graveolens
+durum_wheat_crop,Culture de Blé dur,Durum wheat crop,short_cycle_crop,cereal_crop,triticum_durum
+eggplant_crop,Culture d'Aubergine,Eggplant crop,short_cycle_crop,gardening_crop,solanum_melongena
+escarole_crop,Culture de Scarole,Escarole crop,short_cycle_crop,gardening_crop,cichorium_endivia_latifolium
+eucalyptus_crop,Culture d'Eucalyptus,Eucalyptus crop,perennial_crop,crop,eucalyptus
+fagopyrum_crop,Culture de Céréale de genre Fagopyrum,Fagopyrum crop,short_cycle_crop,cereal_crop,fagopyrum
+fallow,Jachère,Fallow,perennial_crop,fallow,plant
+fennel_crop,Culture de Fenouil,Fennel crop,short_cycle_crop,gardening_crop,foeniculum_vulgare
+fenugreek_crop,Culture de Fenugrec,Fenugreek crop,short_cycle_crop,proteaginous_crop,trigonella_foenum_graecum
+fescue_crop,Culture de Fétuque,Fescue crop,perennial_crop,crop,festuca
+festulolium_crop,Culture de Festulolium,Festulolium crop,perennial_crop,crop,x_festulolium
+field_bean_crop,Culture de Féverole,Field bean crop,short_cycle_crop,proteaginous_crop,vicia_faba
+field_mustard_crop,Culture de Navette,Field mustard crop,short_cycle_crop,gardening_crop,brassica_rapa_oleifera
+fig_crop,Culture de Figuier,Fig crop,perennial_crop,fruit_crop,ficus_carica
+flax_crop,Culture de Lin,Flax crop,short_cycle_crop,oleaginous_crop,linum_usitatissimum
+foxtail_millet_crop,Culture de Moha,Foxtail millet crop,short_cycle_crop,cereal_crop,setaria_italica
+galium_crop,Culture de Gaillet,Galium crop,short_cycle_crop,crop,galium
+garlic_crop,Culture d'Ail,Garlic crop,short_cycle_crop,gardening_crop,allium_sativum
+geranium_crop,Culture de Géranium,Geranium crop,short_cycle_crop,horticultural_crop,geranium
+giant_granadilla_crop,Culture de Barbadine,Giant granadilla crop,perennial_crop,fruit_crop,passiflora_quadrangularis
+grapefruit_crop,Culture de Pamplemoussier,Grapefruit crop,perennial_crop,fruit_crop,citrus_maxima
+guava_crop,Culture de Goyavier,Guava crop,perennial_crop,fruit_crop,psidium_guajava
+hazelnut_crop,Culture de Noisetier,Hazelnut crop,perennial_crop,fruit_crop,corylus
+helianthus_crop,Culture d'Oléagineux de genre Helianthus,Helianthus crop,short_cycle_crop,oleaginous_crop,helianthus
+hemp_crop,Culture de Chanvre,Hemp crop,short_cycle_crop,crop,cannabis_sativa
+hop_crop,Culture de Houblon,Hop crop,short_cycle_crop,crop,humulus_lupulus
+hordeum_crop,Culture de Céréale de genre Hordeum,Hordeum crop,short_cycle_crop,cereal_crop,hordeum
+jerusalem_artichoke_crop,Culture de Topinambour,Jerusalem artichoke crop,short_cycle_crop,gardening_crop,helianthus_tuberosus
+kale_crop,Culture de Chou frisé,Kale crop,short_cycle_crop,gardening_crop,brassica_oleracea_sabellica
+kiwi_crop,Culture de Kiwi,Kiwi crop,perennial_crop,fruit_crop,actinidia
+kohlrabi_crop,Culture de Chou-rave,Kohlrabi crop,short_cycle_crop,gardening_crop,brassica_oleracea_gongylodes
+lavandin_crop,Culture de Lavandin,Lavandin crop,perennial_crop,crop,lavandula_x_intermedia
+lavender_crop,Culture de Lavande,Lavender crop,short_cycle_crop,crop,lavandula
+leek_crop,Culture de Poireau,Leek crop,short_cycle_crop,gardening_crop,allium_porrum
+lemon_balm_crop,Culture de Mélisse,Lemon balm crop,short_cycle_crop,crop,melissa_officinalis
+lemon_crop,Culture de Citronnier,Lemon crop,perennial_crop,fruit_crop,citrus_x_limon
+lentil_crop,Culture de Lentille,Lentil crop,short_cycle_crop,crop,lens_culinaris
+lettuce_crop,Culture de Laitue,Lettuce crop,short_cycle_crop,gardening_crop,lactuca_sativa
+longan_crop,Culture de Longanier,Longan crop,perennial_crop,fruit_crop,dimocarpus_longan
+lupin_crop,Culture de Lupin,Lupin crop,short_cycle_crop,proteaginous_crop,lupinus
+mallow_crop,Culture de Mauve,Mallow crop,short_cycle_crop,crop,malva
+mandarin_crop,Culture de Mandarinier,Mandarin crop,perennial_crop,fruit_crop,citrus_reticulata
+marian_thistle_crop,Culture de Chardon Marie,Marian thistle crop,short_cycle_crop,crop,silybum_marianum
+marjoram_crop,Culture de Marjolaine,Marjoram crop,short_cycle_crop,crop,origanum_majorana
+meadow,Prairie,Meadow,perennial_crop,meadow,plant
+melilot_crop,Culture de Mélilot,Melilot crop,short_cycle_crop,proteaginous_crop,melilotus
+melon_crop,Culture de Melon,Melon crop,short_cycle_crop,gardening_crop,cucumis_melo
+millet_crop,Culture de Millet,Millet crop,short_cycle_crop,cereal_crop,panicum_miliaceum
+mint_crop,Culture de Menthe,Mint crop,short_cycle_crop,crop,mentha
+miscanthus_crop,Culture de Miscanthus,Miscanthus crop,short_cycle_crop,crop,miscanthus
+mix_crop,Culture de Mélange,Mix crop,short_cycle_crop,crop,plant
+mulberry_crop,Culture de Mûrier,Mulberry crop,perennial_crop,fruit_crop,morus
+mustard_crop,Culture de Moutarde,Mustard crop,short_cycle_crop,oleaginous_crop,brassica_nigra
+napa_cabbage_crop,Culture de Chou chinois,Napa cabbage crop,short_cycle_crop,gardening_crop,brassica_rapa_pekinensis
+nectarine_crop,Culture de Nectarinier,Nectarine crop,perennial_crop,fruit_crop,prunus_persica_nucipersica
+nyger_crop,Culture de Nyger,Nyger crop,short_cycle_crop,oleaginous_crop,guizotia_abyssinica
+oak_crop,Culture de Chêne,Oak crop,perennial_crop,crop,quercus
+oakleaf_crop,Culture de Feuille de chêne,Oakleaf crop,short_cycle_crop,gardening_crop,lactuca_sativa_crispa
+oat_crop,Culture d'Avoine,Oat crop,short_cycle_crop,cereal_crop,avena_sativa
+olive_crop,Culture d'Olivier,Olive crop,perennial_crop,fruit_crop,olea_europaea
+onion_crop,Culture d'Oignon,Onion crop,short_cycle_crop,gardening_crop,allium_cepa
+opium_poppy_crop,Culture d'Œillette,Opium poppy crop,short_cycle_crop,oleaginous_crop,papaver_somniferum
+orange_crop,Culture d'Oranger,Orange crop,perennial_crop,fruit_crop,citrus_sinensis
+oregano_crop,Culture d'Origan,Oregano crop,perennial_crop,crop,origanum_vulgare
+oxeye_daisy_crop,Culture de Marguerite,Oxeye daisy crop,short_cycle_crop,crop,leucanthemum
+panicum_crop,Culture de Céréale de genre Panicum,Panicum crop,short_cycle_crop,cereal_crop,panicum
+pansy_crop,Culture de Pensée,Pansy crop,short_cycle_crop,horticultural_crop,viola
+parsley_crop,Culture de Persil,Parsley crop,short_cycle_crop,crop,petroselinum_crispum
+parsnip_crop,Culture de Panais,Parsnip crop,short_cycle_crop,gardening_crop,pastinaca_sativa
+pea_crop,Culture de Pois,Pea crop,short_cycle_crop,proteaginous_crop,pisum_sativum
+peach_crop,Culture de Pêcher,Peach crop,perennial_crop,fruit_crop,prunus_persica
+peanut_crop,Culture d'Arachide,Peanut crop,short_cycle_crop,fruit_crop,arachis_hypogaea
+pear_crop,Culture de Poirier,Pear crop,perennial_crop,fruit_crop,pyrus_communis
+pepper_crop,Culture de Poivron,Pepper crop,short_cycle_crop,gardening_crop,capsicum_annuum
+persimmon_crop,Culture de Plaqueminier,Persimmon crop,perennial_crop,fruit_crop,diospyros_kaki
+phacelia_crop,Culture de Phacélie,Phacelia crop,perennial_crop,meadow,phacelia
+phalaris_crop,Culture de Céréale de genre Phalaris,Phalaris crop,short_cycle_crop,cereal_crop,phalaris
+pickle_crop,Culture de Cornichon,Pickle crop,short_cycle_crop,gardening_crop,cucumis_sativus
+pineapple_crop,Culture d'Ananas,Pineapple crop,perennial_crop,fruit_crop,ananas_comosus
+pistachio_crop,Culture de Pistachier,Pistachio crop,perennial_crop,fruit_crop,pistacia_vera
+plum_crop,Culture de Prunier,Plum crop,perennial_crop,fruit_crop,prunus_domestica
+pop_corn_crop,Culture de Maïs popcorn,Pop corn crop,short_cycle_crop,cereal_crop,zea_mays_everta
+potato_crop,Culture de Pomme de terre,Potato crop,short_cycle_crop,gardening_crop,solanum_tuberosum
+primula_crop,Culture de Primevère,Primula crop,short_cycle_crop,horticultural_crop,primula
+proteaginous_crop,Culture de Protéagineux,Proteaginous crop,short_cycle_crop,proteaginous_crop,fabaceae
+pumpkin_crop,Culture de Citrouille,Pumpkin crop,short_cycle_crop,gardening_crop,cucurbita_pepo_pepo
+purslane_crop,Culture de Pourpier,Purslane crop,short_cycle_crop,crop,portulaca_oleracea
+quince_crop,Culture de Cognassier,Quince crop,perennial_crop,fruit_crop,cydonia_oblonga
+quinoa_crop,Culture de Quinoa,Quinoa crop,short_cycle_crop,cereal_crop,chenopodium_quinoa
+radish_crop,Culture de Radis,Radish crop,short_cycle_crop,gardening_crop,raphanus_sativus
+rape_crop,Culture de Colza,Rapeseed crop,short_cycle_crop,oleaginous_crop,brassica_napus_napus
+raspberry_crop,Culture de Framboisier,Raspberry crop,perennial_crop,fruit_crop,rubus_idaeus
+red_kuri_crop,Culture de Potimarron,Red kuri crop,short_cycle_crop,gardening_crop,cucurbita_maxima
+redcurrant_crop,Culture de Groseiller,Redcurrant crop,perennial_crop,fruit_crop,ribes
+rhubarb_crop,Culture de Rhubarbe,Rhubarb crop,perennial_crop,gardening_crop,rheum_rhabarbarum
+rice_crop,Culture de Riz,Rice crop,short_cycle_crop,cereal_crop,oryza_sativa
+rocket_crop,Culture de Roquette,Rocket crop,short_cycle_crop,gardening_crop,eruca_vesicaria
+root_chicory_crop,Culture de Chicorée industrielle,Root chicory crop,short_cycle_crop,gardening_crop,cichorium_intybus_sativum
+rosemary_crop,Culture de Romarin,Rosemary crop,perennial_crop,crop,salvia_rosmarinus
+rough_bluegrass_crop,Culture de Paturin commun,Rough bluegrass crop,perennial_crop,crop,poa_trivialis
+rutabaga_crop,Culture de Rutabaga,Rutabaga crop,short_cycle_crop,gardening_crop,brassica_napus_rapifera
+rye_crop,Culture de Seigle,Rye crop,short_cycle_crop,cereal_crop,secale_cereale
+ryegrass_crop,Culture de Ray-grass,Ryegrass crop,short_cycle_crop,crop,lolium
+sage_crop,Culture de Sauge,Sage crop,short_cycle_crop,crop,salvia
+sainfoin_crop,Culture de Sainfoin,Sainfoin crop,short_cycle_crop,proteaginous_crop,onobrychis_viciifolia
+salsify_crop,Culture de Salsifis,Salsify crop,short_cycle_crop,gardening_crop,tragopogon_porrifolius
+savory_crop,Culture de Sariette,Savory crop,short_cycle_crop,crop,satureja
+savoy_cabbage_crop,Culture de Chou de Milan,Savoy cabbage crop,short_cycle_crop,gardening_crop,brassica_oleracea_sabauda
+secale_crop,Culture de Céréale de genre Secale,Secale crop,short_cycle_crop,cereal_crop,secale
+setaria_crop,Culture de Céréale de genre Setaria,Setaria crop,short_cycle_crop,cereal_crop,setaria
+shallot_crop,Culture d'Échalote,Shallot crop,short_cycle_crop,gardening_crop,allium_cepa_aggregatum
+sorghum_crop,Culture de Sorgho,Sorghum crop,short_cycle_crop,cereal_crop,sorghum
+sorrel_crop,Culture d'Oseille,Sorrel crop,short_cycle_crop,crop,rumex
+soy_crop,Culture de Soja,Soy crop,short_cycle_crop,oleaginous_crop,glycine_max
+speedwell_crop,Culture de Véronique,Speedwell crop,short_cycle_crop,crop,veronica
+spelt_crop,Culture d'Épeautre,Spelt crop,short_cycle_crop,cereal_crop,triticum_spelta
+spinach_crop,Culture d'Épinard,Spinach crop,short_cycle_crop,gardening_crop,spinacia_oleracea
+squash_crop,Culture de Courge musquée,Squash crop,short_cycle_crop,gardening_crop,cucurbita_moschata
+st_johns_wort_crop,Culture de Millepertuis,St John's wort crop,short_cycle_crop,crop,hypericum
+strawberry_crop,Culture de Fraise,Strawberry crop,short_cycle_crop,fruit_crop,fragaria
+sugar_cane_crop,Culture de Canne à sucre,Sugar cane crop,short_cycle_crop,crop,saccharum_officinarum
+sugar_pumpkin_crop,Culture de Potiron,Sugar pumpkin crop,short_cycle_crop,gardening_crop,cucurbita_maxima
+sunflower_crop,Culture de Tournesol,Sunflower crop,short_cycle_crop,oleaginous_crop,helianthus_annuus
+sweet_corn_crop,Culture de Maïs doux,Sweet corn crop,short_cycle_crop,cereal_crop,zea_mays_saccharata
+sweet_potato_crop,Culture de Patate douce,Sweet potato crop,short_cycle_crop,gardening_crop,ipomoea_batatas
+tarragon_crop,Culture d'Estragon,Tarragon crop,short_cycle_crop,crop,artemisia_dracunculus
+thyme_crop,Culture de Thym,Thyme crop,perennial_crop,crop,thymus
+timothy_crop,Culture de Fléole,Timothy crop,perennial_crop,crop,phleum
+tobacco_crop,Culture de Tabac,Tobacco crop,short_cycle_crop,crop,nicotiana_tabacum
+tomato_crop,Culture de Tomate,Tomato crop,short_cycle_crop,gardening_crop,solanum_lycopersicum
+triticale_crop,Culture de Triticale,Triticale crop,short_cycle_crop,cereal_crop,x_triticosecale
+triticum_crop,Culture de Céréale de genre Triticum,Triticum crop,short_cycle_crop,cereal_crop,triticum
+tufted_vetch_crop,Culture de Jarosse,Tufted vetch crop,short_cycle_crop,proteaginous_crop,vicia_cracca
+turmeric_crop,Culture de Curcuma,Turmeric crop,short_cycle_crop,crop,curcuma_longa
+turnip_crop,Culture de Navet,Turnip crop,short_cycle_crop,gardening_crop,brassica_rapa_rapa
+urtica_crop,Culture d'Ortie,Urtica crop,short_cycle_crop,crop,urtica
+valerian_crop,Culture de Valériane,Valerian crop,perennial_crop,crop,valeriana
+vanilla_crop,Culture de Vanillier,Vanilla crop,perennial_crop,fruit_crop,vanilla
+vetiver_crop,Culture de Vétiver,Vetiver crop,short_cycle_crop,crop,chrysopogon
+vine_crop,Culture de Vigne,Vine crop,perennial_crop,vine_crop,vitis
+walnut_crop,Culture de Noyer,Walnut crop,perennial_crop,fruit_crop,juglans
+watercress_crop,Culture de Cresson de fontaine,Watercress crop,short_cycle_crop,gardening_crop,nasturtium_officinale
+watermelon_crop,Culture de Pastèque,Watermelon crop,short_cycle_crop,gardening_crop,citrullus_lanatus
+white_cabbage_crop,Culture de Chou pommé,White cabbage crop,short_cycle_crop,gardening_crop,brassica_oleracea_capitata
+white_pea_crop,Culture de Gesse,White pea crop,short_cycle_crop,proteaginous_crop,lathyrus_sativus
+witloof_crop,Culture d'Endive,Witloof crop,short_cycle_crop,gardening_crop,cichorium_intybus_foliosum
+yam_crop,Culture d'Igname,Yam crop,short_cycle_crop,gardening_crop,dioscorea
+ylang_ylang_crop,Culture de Ylang-ylang,Ylang-ylang crop,perennial_crop,crop,cananga_odorata
+zea_crop,Culture de Céréale de genre Zea,Zea crop,short_cycle_crop,cereal_crop,zea
+zucchini_crop,Culture de Courgette,Zucchini crop,short_cycle_crop,gardening_crop,cucurbita_pepo_pepo

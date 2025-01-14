@@ -1,0 +1,3 @@
+reference_name,activity_family,fra,eng,specie,usage,started_on,stopped_on,agroedi_crop_code,season,life_duration,idea_botanic_family,idea_specie_family,idea_output_family
+administrative,administering,Gestion administrative,Administrative,service,,01/01/00,31/12/00,,,20,,,
+maintenance,tool_maintaining,Maintenance équipements,Maintenance,service,,01/01/00,31/12/00,,,20,,,

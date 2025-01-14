@@ -1,0 +1,11 @@
+reference_name,fra,eng,category,nature
+associate,Associé d'exploitation,Associate,associate,worker
+caregiver,Soigneur,Caregiver,permanent_worker,caregiver
+chief_operating_officer,Chef d'exploitation,Chief operating officer,owner,worker
+driver,Conducteur,Driver,permanent_worker,driver
+external_staff,Travailleur extérieur,External staff,external_staff,worker
+inseminator,Inséminateur,Inseminator,external_staff,inseminator
+manager,Manager,Manager,manager,worker
+mechanic,Mécanicien,Mechanic,external_staff,mechanic
+permanent_worker,Travailleur permanent,Permanent worker,permanent_worker,worker
+temporary_worker,Travailleur temporaire,Temporary worker,temporary_worker,worker

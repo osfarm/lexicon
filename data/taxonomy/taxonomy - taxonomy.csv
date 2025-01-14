@@ -1,0 +1,856 @@
+reference_name,fra,eng,parent,taxonomic_rank
+acer,Érable,Acer,sapindaceae,genus
+acer_buergerianum,Érable trident,Acer buergerianum,acer,specie
+acer_ginnala,Érable Ginnala,Acer ginnala,acer,specie
+acer_pseudoplatanus,Érable sycomore,Acer pseudoplatanus,acer,specie
+acer_saccharinum,Érable argenté,Acer saccharinum,acer,specie
+acer_saccharum,Érable à sucre,Acer saccharum,acer,specie
+acer_spicatum,Érable à épis,Acer spicatum,acer,specie
+acer_tataricum,Érable de Tartarie,Acer tataricum,acer,specie
+acipenser,Esturgeon,Acipenser,acipenseridae,genus
+acipenser_baerii,Esturgeon sibérien,Acipenser baerii,acipenser,specie
+acipenser_sturio,Esturgeon d’Europe,Acipenser sturio,acipenser,specie
+acipenser_transmontanus,Esturgeon blanc,Acipenser transmontanus,acipenser,specie
+acipenseridae,Acipenseridé,Acipenseridae,actinopterygii,family
+actinidia,Kiwi,Kiwi,actinidiaceae,genus
+actinidia_chinensis,Actinidia chinensis,Actinidia chinensis,actinidia,specie
+actinidia_deliciosa,Actinidia deliciosa,Actinidia deliciosa,actinidia,specie
+actinidiaceae,Actinidiaceae,Actinidiaceae,plant,family
+actinopterygii,Actinoptérygien,Actinopterygii,animal,class
+adoxa,Adoxe,Adoxa,adoxaceae,genus
+adoxaceae,Adoxacée,Adoxaceae,plant,family
+aix,Aix,Aix,anatidae,genus
+aix_galericulata,Canard mandarin,Aix galericulata,aix,specie
+aix_sponsa,Canard branchu,Aix sponsa,aix,specie
+ajuga,Bugle,Ajuga,lamiaceae,genus
+ajuga_reptans,Bugle rampante,Ajuga reptans,ajuga,specie
+allium,Allium,Garlic,amaryllidaceae,genus
+allium_ampeloprasum,Poireau d’été,Broadleaf wild leek,allium,specie
+allium_cepa,Oignon,Onion,allium,specie
+allium_cepa_aggregatum,Échalote,Shallot,allium_cepa,variety
+allium_fistulosum,Oignon ciboule,Wesh onion,allium,specie
+allium_oleraceum,Ail des jardins,Field garlic,allium,specie
+allium_porrum,Poireau,Allium porrum,allium,specie
+allium_sativum,Ail cultivé,Cultivated garlic,allium,specie
+allium_schoenoprasum,Ciboulette,Chives,allium,specie
+allium_scorodoprasum,Ail rocambole,Sand leek,allium,specie
+allium_tricoccum,Ail des bois,Wild leek,allium,specie
+allium_triquetrum,Ail à 3 angles,Threecorner leek,allium,specie
+allium_ursinum,Ail des ours,Bear garlic,allium,specie
+allium_victorialis,Ail de la Sainte-Victoire,Victory onion,allium,specie
+allium_vineale,Ail des vignes,Wild garlic,allium,specie
+alnus,Aulne,Alnus,betulaceae,genus
+alnus_cordata,Aulne cordata,Alnus cordata,alnus,specie
+alnus_glutinosa,Aulne glutinosa,Alnus glutinosa,alnus,specie
+alnus_japonica,Aulne japonica,Alnus japonica,alnus,specie
+alnus_maritima,Aulne maritima,Alnus maritima,alnus,specie
+alnus_nepalensis,Aulne nepalensis,Alnus nepalensis,alnus,specie
+alnus_oblongifolia,Aulne oblongifolia,Alnus oblongifolia,alnus,specie
+alnus_pendula,Aulne pendula,Alnus pendula,alnus,specie
+alnus_rhombifolia,Aulne rhombifolia,Alnus rhombifolia,alnus,specie
+alnus_rubra,Aulne rubra,Alnus rubra,alnus,specie
+alnus_serrulata,Aulne serrulata,Alnus serrulata,alnus,specie
+alnus_trabeculosa,Aulne trabeculosa,Alnus trabeculosa,alnus,specie
+alnus_viridis,Aulne viridis,Alnus viridis,alnus,specie
+althaea,Guimauve,Althaea,malvaceae,genus
+amaranthaceae,Amaranthacée,Amaranthaceae,plant,family
+amaryllidaceae,Amaryllidacée,Amaryllidaceae,plant,family
+anacardiaceae,Anacardiacée,Anacardiaceae,plant,family
+anacardium,Anacardium,Anacardium,anacardiaceae,genus
+anacardium_occidentale,Anacardier,Cashew,anacardium,specie
+ananas,Ananas,Ananas,bromeliaceae,genus
+ananas_comosus,Ananas commun,Pineapple,ananas,specie
+anas,Anas,Anas,anatidae,genus
+anas_bahamensis,Canard des Bahamas,Anas bahamensis,anas,specie
+anas_laysanensis,Canard de Laysan,Anas laysanensis,anas,specie
+anas_platyrhynchos,Canard Colvert,Anas platyrhynchos,anas,specie
+anatidae,Anatidé,Anatidae,aves,family
+anethum,Anethum,Anethum,apiaceae,genus
+anethum_graveolens,Aneth,Dill,anethum,specie
+angelica,Angelica,Angelica,apiaceae,genus
+animal,Animal,Animal,bioproduct,
+animal_group,Groupe d’animaux,Animal group,bioproduct,
+annona,Annones,Annona,annonaceae,genus
+annona_cherimola,Chérimolier,Cherimoya,annona,specie
+annona_glabra,Mammier,Pond apple,annona,specie
+annona_montana,Corossol bâtard,Mountain soursop,annona,specie
+annona_muricata,Corossolier,Soursop,annona,specie
+annona_reticulata,Cachiman,Custard apple,annona,specie
+annona_senegalensis,Pommier-canelle du Sénégal,Wild custard-apple,annona,specie
+annona_squamosa,Attier,Sweet sop,annona,specie
+annonaceae,Annonacée,Annonaceae,plant,family
+anser,Oie,Anser,anatidae,genus
+anser_anser,Oie cendrée,Anser anser,anser,specie
+anser_cygnoides,Oie cygnoïde,Anser cygnoides,anser,specie
+anthriscus,Anthrisque,Chervil,apiaceae,genus
+anthriscus_cerefolium,Cerfeuil,Garden Chervil,anthriscus,specie
+anthriscus_nitida,Cerfeuil Alpestre,Alpine Chervil,anthriscus,specie
+aphidoidea,Pucerons,Aphidoidea,insecta,superfamily
+apiaceae,Apiacée,Apiaceae,plant,family
+apidae,Apidée,Apidae,insecta,family
+apis,Apis,Apis,apidae,genus
+apis_mellifera,Abeille,Apis mellifera,apis,specie
+apium,Apium,Celery,apiaceae,genus
+apium_graveolens,Céleri,Wild Celery,apium,specie
+apium_graveolens_dulce,Céleri Branche,Wild Celery Dulce,apium_graveolens,variety
+apium_graveolens_rapaceum,Céleri Rave,Celeriac,apium_graveolens,variety
+apium_graveolens_secalinum,Céleri Chinois,Chinese celery,apium_graveolens,variety
+arachis,Arachis,Arachis,fabaceae,genus
+arachis_hypogaea,Arachide commune,Common peanut,arachis,specie
+arachis_pintoi,Arachide Pintoi,Pintoi peanut,arachis,specie
+arctium,Bardane,Arctium,asteraceae,genus
+arctium_lappa,Grande bardane,Arctium lappa,arctium,specie
+arctium_minus,Petite bardane,Arctium minus,arctium,specie
+arecaceae,Palmier,Palm tree,plant,family
+argania,Argania,Argania,sapotaceae,genus
+argania_spinosa,Arganier,Argan,argania,specie
+artemisia,Armoise,Artemisia,asteraceae,genus
+artemisia_dracunculus,Estragon,Artemisia dracunculus,artemisia,specie
+artocarpus,Artocarpus,Breadfruit family,moraceae,genus
+artocarpus_altilis,Arbre à pain,Breadfruit,artocarpus,specie
+artocarpus_elasticus,Artocarpus elasticus,Elasticus artocarpus,artocarpus,specie
+artocarpus_heterophyllus,Jacquier,Jackfruit,artocarpus,specie
+artocarpus_hirsutus,Artocarpus hirsutus,Wilde Jack ,artocarpus,specie
+artocarpus_integer,Cempedak,Chempedak,artocarpus,specie
+artocarpus_mariannensis,Dugdug,Dugdug,artocarpus,specie
+artocarpus_odoratissimus,Madang,Marang,artocarpus,specie
+artocarpus_rigidus,Artocarpus rigidus,Monkey Jack,artocarpus,specie
+artocarpus_tamaran,Artocarpus Tamaran,Tamaran artocarpus,artocarpus,specie
+asparagaceae,Asparagacée,Asparagaceae,plant,family
+asparagus,Asperge,Asparagus,asparagaceae,genus
+asparagus_africanus,Asperge africaine,Asparagus africanus,asparagus,specie
+asparagus_officianalis,Asperge commune,Garden asparagus,asparagus,specie
+asteraceae,Astéracée,Asteraceae,plant,family
+avena,Avoine,Avena,poaceae,genus
+avena_sativa,Avoine cultivée,Oat,avena,specie
+aves,Oiseau,Bird,animal,class
+bacteria,Bacteria,Bacteria,bioproduct,
+bambusa,Bambou,Bamboo,poaceae,genus
+bellis,Bellis,Bellis,asteraceae,genus
+bellis_perennis,Pâquerette,Bellis perennis,bellis,specie
+berberidaceae,Berberidacée,Berberidaceae,plant,family
+berberis,Berbéris,Berberis,berberidaceae,genus
+berberis_x_ottawensis,Berberis x ottawensis,Berberis x ottawensis,berberis,specie
+beta,Betterave,Beta,amaranthaceae,genus
+beta_vulgaris,Betterave commune,Beet,beta,specie
+beta_vulgaris_cicla,Blette,Chard,beta_vulgaris,subspecie
+beta_vulgaris_vulgaris,Betterave rouge,Beetroot,beta_vulgaris,subspecie
+betula,Bouleau,Birch,betulaceae,genus
+betula_pendula,Bouleau verruqueux,Silver birch,betula,specie
+betulaceae,Betulacée,Betulaceae,plant,family
+bioproduct,Produit vivant,Bioproduct,,
+bison,Bison,Bison,bovidae,genus
+bison_bison,Bison d’amérique,American Bison,bison,specie
+bison_bonasus,Bison européen,European Bison,bison,specie
+bivalvia,Bivalve,Bivalvia,animal,class
+bombus,Bombus,Bombus,apidae,genus
+bombus_terrestris,Bombus terrestris,Bombus terrestris,bombus,specie
+boraginaceae,Boraginacée,Boraginaceae,plant,family
+borago,Bourrache,Borago,boraginaceae,genus
+borago_officinalis,Bourrache officinale,Borage,borago,specie
+bos,Bovin,Bos,bovidae,genus
+bos_taurus,Bovin commun,Cow,bos,specie
+botrytis,Botrytis,Botrytis,sclerotiniaceae,genus
+botrytis_cinerea,Botrytis cinerea,Botrytis cinerea,botrytis,specie
+bovidae,Bovidae,Bovidae,mammalia,family
+brassica,Brassica,Brassica,brassicaceae,genus
+brassica_napus,Colza,Rapeseed,brassica,specie
+brassica_napus_napus,Colza d’hiver,Brassica napus napus,brassica_napus,subspecie
+brassica_napus_rapifera,Rutabaga,Rutabaga,brassica_napus,subspecie
+brassica_nigra,Moutarde noire,Black mustard,brassica,specie
+brassica_oleracea,Chou,Cabbage,brassica,specie
+brassica_oleracea_alboglabra,Broccoli chinois,Chinese broccoli,brassica_oleracea,variety
+brassica_oleracea_botrytis,Chou fleur,Cauliflower,brassica_oleracea,variety
+brassica_oleracea_capitata,Chou pommé,Apple cabbage,brassica_oleracea,variety
+brassica_oleracea_costata,Chou à grosses côtes,Tronchunda cabbage,brassica_oleracea,variety
+brassica_oleracea_gemmifera,Chou de Bruxelles,Brussels sprout,brassica_oleracea,variety
+brassica_oleracea_gongylodes,Chou-rave,Kohirabi,brassica_oleracea,variety
+brassica_oleracea_italica,Brocoli,Broccoli,brassica_oleracea,variety
+brassica_oleracea_medullosa,Chou moellier,Marrow-stem Kale,brassica_oleracea,variety
+brassica_oleracea_palmifolia,Chou palmier,Palm kale,brassica_oleracea,variety
+brassica_oleracea_ramosa,Chou vivace,Branching cabbage,brassica_oleracea,variety
+brassica_oleracea_sabauda,Chou de Milan,Savoy cabbage,brassica_oleracea,variety
+brassica_oleracea_sabellica,Chou frisé,Kale,brassica_oleracea,variety
+brassica_oleracea_viridis,Chou cavalier,Collards greens,brassica_oleracea,variety
+brassica_rapa,Brassica rapa,Brassica rapa,brassica,specie
+brassica_rapa_oleifera,Navette,Turnip rape,brassica_rapa,subspecie
+brassica_rapa_pekinensis,Chou chinois,Chinese Cabbage,brassica_rapa,subspecie
+brassica_rapa_rapa,Navet,Turnip,brassica_rapa,subspecie
+brassicaceae,Crucifère,Brassicaceae,plant,family
+bromeliaceae,Bromeliacée,Bromeliaceae,plant,family
+bromus,Bromus,Bromes,poaceae,genus
+cairina,Cairina,Cairina,anatidae,genus
+cairina_moschata,Canard musqué,Muscovy duck,cairina,specie
+camelina,Camelina,Camelina,brassicaceae,genus
+camelina_sativa,Cameline,Camelina sativa,camelina,specie
+cananga,Cananga,Cananga,annonaceae,genus
+cananga_odorata,Ylang-ylang (Cananga odorata),Cananga odorata,cananga,specie
+canidae,Canidé,Canidae,mammalia,family
+canis,Canis,Canis,canidae,genus
+canis_lupus,Canis lupus,Canis lupus,canis,specie
+canis_lupus_familiaris,Chien domestique,Domestic dog,canis_lupus,subspecie
+cannabaceae,Cannabacée,Cannabaceae,plant,family
+cannabis,Cannabis,Cannabis,cannabaceae,genus
+cannabis_antal,Chanvre Antal,Hemp Antal,cannabis,specie
+cannabis_sativa,Chanvre,Hemp,cannabis,specie
+capra,Caprin,Capra,bovidae,genus
+capra_hircus,Chèvre domestique,Domestic goat,capra,specie
+capsicum,Piment,Pepper,solanaceae,genus
+capsicum_annuum,Poivron,Bell Pepper,capsicum,specie
+capsicum_baccatum,Piment Chien,Locoto,capsicum,specie
+capsicum_chinense,Piment Habanero,Habanero Pepper,capsicum,specie
+capsicum_frutescens,Poivre Rouge,Hot Pepper,capsicum,specie
+capsicum_pubescens,Rocoto,Rocoto,capsicum,specie
+carica,Papayers,Carica,caricaceae,genus
+carica_papaya,Papayer,Papaya,carica,specie
+caricaceae,Caricacées,Caricaceae,plant,family
+carpinus,Charme,Carpinus,betulaceae,genus
+carpinus_betulus,Carpinus betulus,Carpinus betulus,carpinus,specie
+carpinus_caroliniana,Carpinus caroliniana,Carpinus caroliniana,carpinus,specie
+carum,Carum,Carum,apiaceae,genus
+carum_carvi,Carvi,Carum carvi,carum,specie
+castanea,Châtaignier,Chestnut,fagaceae,genus
+castanea_bantarde,Châtaignier Bantarde,Chestnut Bantarde,castanea,specie
+castanea_bossue,Châtaignier Bossue,Chestnut Bossue,castanea,specie
+castanea_bouchaud,Châtaignier Bouchaud,Chestnut Bouchaud,castanea,specie
+castanea_jaunan,Châtaignier Jaunan,Chestnut Jaunan,castanea,specie
+castanea_nousillade,Châtaignier Nousillade,Chestnut Nousillade,castanea,specie
+castanea_perote,Châtaignier Pérote,Chestnut Pérote,castanea,specie
+castanea_pillemongrin,Châtaignier Pillemongrin,Chestnut Pillemongrin,castanea,specie
+castanea_pointue,Châtaignier Pointue,Chestnut Pointue,castanea,specie
+castanea_rouillaud,Châtaignier Rouillaud,Chestnut Rouillaud,castanea,specie
+castanea_torse,Châtaignier Torse,Chestnut Torse,castanea,specie
+centaurea,Centaurée,Centaurea,asteraceae,genus
+centaurea_cyanus,Bleuet,Centaurea cyanus,centaurea,specie
+cerambycidae,Cerambycidée,Cerambycidae,insecta,family
+ceratonia,Ceratonia,Ceratonia,fabaceae,genus
+ceratonia_siliqua,Caroubier,Carob tree,ceratonia,specie
+cercis,Cercis,Cercis,fabaceae,genus
+cercis_siliquastrum,Arbre de Judée,Cercis siliquastrum,cercis,specie
+cervidae,Cervidé,Cervidae,mammalia,family
+chamaemelum,Chamaemelum,Chamaemelum,asteraceae,genus
+chenopodium,Chénopode,Chenopodium,amaranthaceae,genus
+chenopodium_album,Chénopode blanc,Chenopodium album,chenopodium,specie
+chenopodium_quinoa,Quinoa,Chenopodium quinoa,chenopodium,specie
+chloris,Chloris,Chloris,poaceae,genus
+chloris_gayana,Herbe de Rhodes,Rhodes grass,chloris,specie
+chrysophyllum,Chrysophyllum,Goldenleaf,sapotaceae,genus
+chrysophyllum_africanum,Longhi,Chrysophyllum africanum,chrysophyllum,specie
+chrysophyllum_albidum,Caïmite africaine,White star apple,chrysophyllum,specie
+chrysophyllum_argenteum,Caïmitier bois,Bastard redwood,chrysophyllum,specie
+chrysophyllum_cainito,Caïmitier,Star apple,chrysophyllum,specie
+chrysophyllum_mexicanum,Chrysophyllum mexicanum,Mexican star apple,chrysophyllum,specie
+chrysophyllum_oliviforme,Chrysophyllum oliviforme,Saffron-tree,chrysophyllum,specie
+chrysophyllum_pauciflorum,Chrysophyllum pauciflorum,Chrysophyllum pauciflorum,chrysophyllum,specie
+chrysopogon,Chrysopogon,Chrysopogon,poaceae,genus
+chrysopogon_zizanioides,Chrysopogon zizanioides,Chrysopogon zizanioides,chrysopogon,specie
+cicer,Cicer,Cicer,fabaceae,genus
+cicer_arietinum,Pois chiche,Chickpea,cicer,specie
+cichorium,Chicorée,Cichorium,asteraceae,genus
+cichorium_endivia,Chicorée endive,Endive chicory,cichorium,specie
+cichorium_endivia_crispum,Chicorée frisée,Frisee chicory,cichorium_endivia,variety
+cichorium_endivia_latifolium,Chicorée scarole,Endive Scarole,cichorium_endivia,variety
+cichorium_intybus,Chicorée sauvage,Chicory Intybus,cichorium,specie
+cichorium_intybus_foliosum,Endive,Witloof,cichorium_intybus,variety
+cichorium_intybus_sativum,Chicorée industrielle,Root chicory,cichorium_intybus,variety
+cinnamomum,Cinnamomum,Cinnamon family,lauraceae,genus
+cinnamomum_burmannii,Cannelier de Malaisie,Padang cassia,cinnamomum,specie
+cinnamomum_camphora,Camphrier,Camphortree,cinnamomum,specie
+cinnamomum_cassia,Cannelier de Chine,Chinese cassia,cinnamomum,specie
+cinnamomum_tamala,Malabarthe,Indian bark,cinnamomum,specie
+cinnamomum_verum,Cannelier de Ceylan,Cinnamon,cinnamomum,specie
+citrullus,Pastèque,Watermelon,cucurbitaceae,genus
+citrullus_colocynthis,Coloquinte,Colocynth,citrullus,specie
+citrullus_lanatus,Pastèque Commune,Watermelon Common,citrullus,specie
+citrus,Citrus,Citrus,rutaceae,genus
+citrus_clementina,Clémentinier,Clementine,citrus,specie
+citrus_maxima,Pamplemoussier,Shaddock,citrus,specie
+citrus_medica,Cedratier,Citron,citrus,specie
+citrus_reticulata,Mandarinier,Tangerine,citrus,specie
+citrus_sinensis,Oranger,Orange,citrus,specie
+citrus_x_limon,Citronnier,Lemon,citrus,specie
+coccoidea,Cochenilles,Coccoidea,insecta,superfamily
+coffea,Caféier,Coffea,rubiaceae,genus
+coffea_arabica,Caféier - Coffea d’Arabie,Coffea arabica,coffea,specie
+coffea_benghalensis,Caféier - Coffea benghalensis,Coffea benghalensis,coffea,specie
+coffea_canephora,Caféier robusta,Coffea canephora,coffea,specie
+coffea_congensis,Caféier - Coffea congensis,Coffea congensis,coffea,specie
+coffea_liberica,Caféier du Liberia,Coffea liberica,coffea,specie
+coffea_stenophylla,Caféier - Coffea stenophylla,Coffea stenophylla,coffea,specie
+convolvulaceae,Convolvulacée,Convolvulaceae,plant,family
+coriandrum,Coriandrum,Coriandrum,apiaceae,genus
+coriandrum_sativum,Coriandre,Coriander,coriandrum,specie
+corylus,Noisetier,Hazel,betulaceae,genus
+corylus_avellana,Noisetier commun,Common hazel,corylus,specie
+crambe,Crambé,Crambe,brassicaceae,genus
+crambe_maritima,Chou marin,Sea kale,crambe,specie
+crassostrea,Crassostrea,Crassostrea,ostreidae,genus
+crassostrea_ariakensis,Huître ariakensis,Crassostrea ariakensis,crassostrea,specie
+crassostrea_gigas,Huître creuse,Crassostrea gigas,crassostrea,specie
+crassostrea_virginica,Huître virginica,Crassostrea virginica,crassostrea,specie
+crataegus,Aubépine,Crataegus,rosaceae,genus
+crataegus_monogyna,Aubépine monogyne,Crataegus monogyna,crataegus,specie
+crocus,Crocus,Crocus,iridaceae,genus
+crocus_sativus,Safran,Saffron crocus,crocus,specie
+croesus_septentrionalis,Croesus septentrionalis,Croesus septentrionalis,insecta,specie
+cucumis,Cucumis,Cucumis,cucurbitaceae,genus
+cucumis_anguria,Concombre des Antilles,Bur Cucumber,cucumis,specie
+cucumis_dipsaceus,Concombre Chardon,Hedgehog Cucumber,cucumis,specie
+cucumis_melo,Melon,Cantaloup,cucumis,specie
+cucumis_metuliferus,Concombre Épineux,Horny Cucumber,cucumis,specie
+cucumis_sativus,Concombre,Cucumber,cucumis,specie
+cucurbita,Cucurbita,Cucurbita,cucurbitaceae,genus
+cucurbita_argyrosperma,Courge du Mexique,Cushaw,cucurbita,specie
+cucurbita_ficifolia,Courge de Siam,Figleaf Gourd,cucurbita,specie
+cucurbita_maxima,Potiron,Winter squash,cucurbita,specie
+cucurbita_moschata,Courge musquée,crookneck squash,cucurbita,specie
+cucurbita_pepo,Citrouille,Field Pumpkin,cucurbita,specie
+cucurbita_pepo_ovifera,Pâtisson,Egg Field Pumpkin,cucurbita_pepo,variety
+cucurbita_pepo_pepo,Courgette,Zucchini,cucurbita_pepo,variety
+cucurbitaceae,Cucurbitacée,Cucurbitaceae,plant,family
+cuminum,Cuminum,Cuminum,apiaceae,genus
+curculio_nucum,Curculio nucum,Curculio nucum,insecta,specie
+curcuma,Curcuma,Curcuma,zingiberaceae,genus
+curcuma_longa,Curcuma aromatique,Turmeric,curcuma,specie
+cydia_pomonella,Cydia pomonella,Cydia pomonella,insecta,specie
+cydonia,Cydonia,Cydonia,rosaceae,genus
+cydonia_oblonga,Cognassier,Quince,cydonia,specie
+cynara,Cynara,Artichoke,asteraceae,genus
+cynara_scolymus,Artichaut,Globe artichoke,cynara,specie
+dactylis,Dactyle,Dactylis,poaceae,genus
+dactylis_lazuly,Dactyle Lazuly,Dactylis Lazuly,dactylis,specie
+damaliscus,Damalisque,Damaliscus,bovidae,genus
+damaliscus_korrigum,Damalisque korrigum,Damaliscus korrigum,damaliscus,specie
+damaliscus_lunatus,Damalisque lunatus,Damaliscus lunatus,damaliscus,specie
+damaliscus_pygargus,Damalisque pygargus,Damaliscus pygargus,damaliscus,specie
+daucus,Carotte,Daucus,apiaceae,genus
+daucus_carota,Carotte commune,Carrot,daucus,specie
+diervillaceae,Diervillacée,Diervillaceae,plant,family
+dimocarpus,Dimocarpus,Dimocarpus,sapindaceae,genus
+dimocarpus_longan,Longanier,Longan,dimocarpus,specie
+diplotaxis,Diplotaxis,Diplotaxis,brassicaceae,genus
+diplotaxis_tenuifolia,Roquette sauvage,Diplotaxis_tenuifolia,diplotaxis,specie
+dioscorea,Famille des ignames,Yam,dioscoreaceae,genus
+dioscorea_alata,Igname ailée,Winged yam,dioscorea,specie
+dioscorea_altissima,Dunguey,Dunguey,dioscorea,specie
+dioscorea_bulbifera,Pomme en l'air,Air potato,dioscorea,specie
+dioscorea_cayenensis,Igname de Guinée jaune,Yellow guinea yam,dioscorea,specie
+dioscorea_dumetorum,Igname amère,Bitter yam,dioscorea,specie
+dioscorea_elephantipes,Pain des Hottentots,Hottentot-bread,dioscorea,specie
+dioscorea_esculenta,Petite igname,Lesser yam,dioscorea,specie
+dioscorea_floridana,Igname de FLoride,Florida yam,dioscorea,specie
+dioscorea_hispida,Igname épineuse amère,Intoxicating yam,dioscorea,specie
+dioscorea_japonica,Igname du Japon,Japanese yam,dioscorea,specie
+dioscorea_mexicana,Igname du Mexique,Dioscorea mexican yam,dioscorea,specie
+dioscorea_nummularia,Igname aplatie,Flattened yam,dioscorea,specie
+dioscorea_oppositifolia,Igname khmer,Khmer yam,dioscorea,specie
+dioscorea_pentaphylla,Igname rouge,Fiveleaf yam,dioscorea,specie
+dioscorea_pilosiuscula,Igname bulbeux,Bulbous yam,dioscorea,specie
+dioscorea_polygonoides,Igname amère de Jamaïque,Jamaican bitter yam,dioscorea,specie
+dioscorea_polystachya,Igname de Chine,Chinese yam,dioscorea,specie
+dioscorea_praehensilis,Igname de brousse,Bush yam,dioscorea,specie
+dioscorea_preussii,Dioscorea preussii,Preuss' dioscorea,dioscorea,specie
+dioscorea_rotundata,Igname de Guinée blanche,Guinea yam,dioscorea,specie
+dioscorea_sansibarensis,Igname de Zanzibar,Zanzibar yam,dioscorea,specie
+dioscorea_trifida,Igname couche-couche,Indian yam,dioscorea,specie
+dioscorea_villosa,Igname sauvage,Wild yam,dioscorea,specie
+dioscoreaceae,Dioscoreaceae,Yam family,plant,family
+diospyros,Diospyros,Persimmons,ebenaceae,genus
+diospyros_kaki,Plaqueminier,Chinese persimmon,diospyros,specie
+ebenaceae,Ébénacée,Ebony,plant,family
+elaeagnaceae,Éléagnacée,Elaeagnaceae,plant,family
+elaeagnus,Elaeagnus,Elaeagnus,elaeagnaceae,genus
+empoasca_vitis,Empoasca vitis (cicadelle des grillures),Empoasca vitis,insecta,specie
+eotetranychus_coryli,Eotetranychus coryli,Eotetranychus coryli,insecta,specie
+equidae,Équidé,Equidae,mammalia,family
+equus,Équin,Equine,equidae,genus
+equus_asinus,Âne,Donkey,equus,specie
+equus_caballus,Cheval,Horse,equus,specie
+equus_zebra,Zèbre,Zebra,equus,specie
+eremocitrus,Eremocitrus,Eremocitrus,rutaceae,genus
+ericaceae,Éricacée,Ericaceae,plant,family
+eruca,Eruca,Eruca,brassicaceae,genus
+eruca_sativa,Roquette cultivée,Eruca_sativa,eruca,specie
+eruca_vesicaria,Roquette,Eruca vesicaria,eruca,specie
+erysiphaceae,Erysiphacée,Erysiphaceae,fungus,family
+eucalyptus,Eucalyptus,Eucalyptus,myrtaceae,genus
+euphorbiaceae,Euphorbiacée,Euphorbiaceae,plant,family
+euterpe,Euterpe,Euterpe,arecaceae,genus
+euterpe_oleracea,Palmier pinot,Assai palm,euterpe,specie
+fabaceae,Fabacée,Fabaceae,plant,family
+fagaceae,Fagacée,Fagaceae,plant,family
+fagopyrum,Sarrasin,Buckwheat,polygonaceae,genus
+fagopyrum_esculentum,Sarrasin commun,Common buckwheat,fagopyrum,specie
+fagopyrum_tataricum,Sarrasin japonais,Japanese buckwheat,fagopyrum,specie
+fagus,Hêtre,Beech,fagaceae,genus
+felidae,Felidé,Felidae,mammalia,family
+felis,Felis,Felis,felidae,genus
+felis_silvestris,Felis silvestris,Felis silvestris,felis,specie
+felis_silvestris_catus,Chat domestique,Domestic cat,felis_silvestris,subspecie
+festuca,Fétuque,Fescue,poaceae,genus
+ficus,Ficus,Ficus,moraceae,genus
+ficus_carica,Figuier,Common fig,ficus,specie
+foeniculum,Fenouil,Fennel,apiaceae,genus
+foeniculum_vulgare,Fenouil Doux,Sweet Fennel,foeniculum,specie
+fomitiporia,Fomitiporia,Fomitiporia,hymenochaetaceae,genus
+forsythia,Forsythia,Forsythia,oleaceae,genus
+forsythia_europaea,Forsythia europaea,Forsythia europaea,forsythia,specie
+forsythia_x_intermedia,Forsythia x intermedia,Forsythia x intermedia,forsythia,specie
+fortunella,Kumquat,Fortunella,rutaceae,genus
+fortunella_japonica,Kumquat rond,Round kumquat,fortunella,specie
+fortunella_margarita,Kumquat ovale,Oval kumquat,fortunella,specie
+fragaria,Fraisier,Fragaria,rosaceae,genus
+fragaria_ananassa,Fraisier × Ananassa,Fragaria × Ananassa,fragaria,specie
+fraxinus,Frêne,Ash,oleaceae,genus
+fraxinus_excelsior,Frêne commun,Common ash,fraxinus,specie
+fungus,Champignon,Fungus,bioproduct,
+galium,Galium,Galium,rubiaceae,genus
+gallus,Galinacée,Gallus,phasianidae,genus
+gallus_gallus,Gallus gallus,Gallus gallus,gallus,specie
+gallus_gallus_domesticus,Poule domestique,Domesticated chicken,gallus_gallus,subspecie
+gastropoda,Gastropode,Gastropoda,animal,class
+geraniaceae,Geraniaceae,Geraniaceae,plant,family
+geranium,Geranium,Geranium,geraniaceae,genus
+gleditsia,Févier,Gleditsia,fabaceae,genus
+glycine,Glycine,Glycine,fabaceae,genus
+glycine_max,Soja,Soy bean,glycine,specie
+gossypium,Cotonnier,Gossypium,malvaceae,genus
+gossypium_barbadense,Cotonnier créole,Creole cotton,gossypium,specie
+gossypium_hirsutum,Cotonnier mexicain,Upland cotton,gossypium,specie
+grossulariaceae,Grossulariacée,Grossulariaceae,plant,family
+guizotia,Guizotia,Guizotia,asteraceae,genus
+guizotia_abyssinica,Guizotia abyssinica ‒ Nyger,Niger,guizotia,specie
+helianthus,Tournesol,Sunflower,asteraceae,genus
+helianthus_annuus,Tournesol annuel,Annual sunflower,helianthus,specie
+helianthus_tuberosus,Topinambour,Jerusalem artichoke,helianthus,specie
+helicidae,Helicidé,Helicidae,gastropoda,family
+helix,Helix,Helix,helicidae,genus
+helix_aperta,Helix aperta,Helix aperta,helix,specie
+helix_aspersa,Escargot Petit-Gris,Garden snail,helix,specie
+helix_pomatia,Escargot de Bourgogne,Burgundy snail,helix,specie
+hevea,Hévéa,Hevea,euphorbiaceae,genus
+hibiscus,Hibiscus,Hibiscus,malvaceae,genus
+hibiscus_syriacus,Hibiscus syriacus,Hibiscus syriacus,hibiscus,specie
+hippophae,Hippophae,Hippophae,elaeagnaceae,genus
+hippophae_rhamnoides,Argousier,Hippophae rhamnoides,hippophae,specie
+hordeum,Orge,Barley,poaceae,genus
+hordeum_vulgare,Orge commune,Common Barley,hordeum,specie
+humulus,Humulus,Humulus,cannabaceae,genus
+humulus_lupulus,Houblon,Hop,humulus,specie
+hydrangeaceae,Hydrangeacée,Hydrangeaceae,plant,family
+hymenochaetaceae,Hymenochaetacée,Hymenochaetaceae,fungus,family
+hypericaceae,Hypericacée,Hypericaceae,plant,family
+hypericum,Millepertuis,Hypericum,hypericaceae,genus
+insecta,Insecte,Insecta,animal,class
+ipomoea,Ipomée,Ipomoea,convolvulaceae,genus
+ipomoea_batatas,Patate douce,Sweet potato,ipomoea,specie
+iridaceae,Iridacée,Iridaceae,plant,family
+jarilla,jarilla,Jarilla,caricaceae,genus
+jarilla_heterophylla,Jarilla heterophylla,Jarilla heterophylla,jarilla,specie
+juglandaceae,Juglandacée,Juglandaceae,plant,family
+juglans,Noyer,Juglans,juglandaceae,genus
+juglans_regia,Noyer commun,Common walnut,juglans,specie
+koelreuteria,Koelreuteria,Koelreuteria,sapindaceae,genus
+koelreuteria_bipinnata,Koelreuteria bipinnata,Koelreuteria bipinnata,koelreuteria,specie
+koelreuteria_elegans,Koelreuteria elegans,Koelreuteria elegans,koelreuteria,specie
+koelreuteria_paniculata,Savonnier,Koelreuteria paniculata,koelreuteria,specie
+laburnum,Laburnum,Laburnum,fabaceae,genus
+laburnum_anagyroides,Cytise faux ébenier,Laburnum anagyroides,laburnum,specie
+lactuca,Laitue,Lactuca,asteraceae,genus
+lactuca_sativa,Laitue cultivée,Lettuce,lactuca,specie
+lactuca_sativa_capitata,Batavia,Batavia,lactuca_sativa,variety
+lactuca_sativa_crispa,Feuille de chêne,Oakleaf,lactuca_sativa,variety
+lamiaceae,Lamiacée,Lamiaceae,plant,family
+lathyrus,Lathyrus,Lathyrus,fabaceae,genus
+lathyrus_sativus,Gesse commune,Lathyrus sativus,lathyrus,specie
+lauraceae,Lauracée,Lauraceae,plant,family
+lavandula,Lavande,Lavandula,lamiaceae,genus
+lavandula_x_intermedia,Lavandin,Lavandin,lavandula,specie
+lens,Lentille,Lens,fabaceae,genus
+lens_culinaris,Lentille - Lens culinaris,Lens culinaris,lens,specie
+lepidium,Lepidium,Lepidium,brassicaceae,genus
+lepidium_sativum,Cresson alénois,Garden cress,lepidium,specie
+leporidae,Leporidé,Leporidae,mammalia,family
+lepus,Lagomorphe,Lepus,leporidae,genus
+lepus_europaeus,Lièvre,Brown hare,lepus,specie
+leucanthemum,Leucanthemum,Leucanthemum,asteraceae,genus
+ligustrum,Troène,Ligustrum,oleaceae,genus
+ligustrum_ovalifolium,Troène de Californie,Ligustrum ovalifolium,ligustrum,specie
+ligustrum_vulgare,Troène commun,Ligustrum vulgare,ligustrum,specie
+limacidae,Limacidé,Limacidae,gastropoda,family
+limonium,Limonium,Limonium,plumbaginaceae,genus
+limonium_vulgare,Lavande de mer,Common sea-lavender,limonium,specie
+linaceae,Linacée,Linaceae,plant,family
+linum,Lin,Linum,linaceae,genus
+linum_usitatissimum,Linum cultivé,Linum usitatissimum,linum,specie
+lolium,Ray grass,Ryegrass,poaceae,genus
+lolium_multiflorum,Ray grass Italien,Ryegrass multiflorum,lolium,specie
+lolium_perenne,Ray grass Anglais,Ryegrass perenne,lolium,specie
+lolium_x_hybridum,Ray grass hybride,Hybrid ryegrass,lolium,specie
+lotus,Lotus,Lotus,fabaceae,genus
+lotus_corniculatus,Lotier corniculé,Lotus corniculatus,lotus,specie
+lupinus,Lupin,Lupine,fabaceae,genus
+malus,Pommier,Malus,rosaceae,genus
+malus_domestica,Pommier commun,Apple-tree,malus,specie
+malva,Malva,Malva,malvaceae,genus
+malva_sylvestris,Mauve,Mallow,malva,specie
+malvaceae,Malvacée,Malvaceae,plant,family
+mammalia,Mammifère,Mammalia,animal,class
+mangifera,Mangifera,Mangifera,anacardiaceae,genus
+manihot,Manioc,Manioc,euphorbiaceae,genus
+manihot_esculenta,Manioc,Cassava,manihot,specie
+manilkara,Manilkara,Manilkara,sapotaceae,genus
+manilkara_zapota,Sapotillier,Sapodilla,manilkara,specie
+medicago,Luzerne,Medicago,fabaceae,genus
+medicago_lupulina,Luzerne lupuline,Black medick,medicago,specie
+medicago_sativa,Luzerne cultivée,Lucerne,medicago,specie
+meleagris,Dinde,Turkey,phasianidae,genus
+meleagris_gallopavo,Dinde domestique,Domestic turkey,meleagris,specie
+meleagris_ocellata,Dinde ocellée,Ocellated turkey,meleagris,specie
+melilotus,Mélilot,Melilotus,fabaceae,genus
+melissa,Mélisse,Melissa,lamiaceae,genus
+melissa_officinalis,Mélisse officinale,Lemon balm,melissa,specie
+mentha,Menthe,Mentha,lamiaceae,genus
+microcitrus,Microcitrus,Microcitrus,rutaceae,genus
+miscanthus,Miscanthus,Miscanthus,poaceae,genus
+moraceae,Moracée,Moraceae,plant,family
+morus,Mûrier,Morus,moraceae,genus
+morus_alba,Mûrier Blanc,Morus alba,morus,specie
+morus_microphylla,Morus microphylla,Morus microphylla,morus,specie
+morus_nigra,Mûrier Noir,Morus nigra,morus,specie
+morus_rubra,Mûrier Rouge,Morus rubra,morus,specie
+musa,Bananier,Musa,musaceae,genus
+musa_acuminata,Bananier - Musa acuminata,Musa acuminata,musa,specie
+musa_balbisiana,Bananier - Musa balbisiana,Musa balbisiana,musa,specie
+musa_textilis,Bananier - Musa textilis,Musa textilis,musa,specie
+musa_velutina,Bananier - Musa velutina,Musa velutina,musa,specie
+musaceae,Musacée,Musaceae,plant,family
+musca,Mouche,Fly,insecta,genus
+musca_domestica,Mouche domestique,House fly,musca,specie
+myocastoridae,Myocastoridé,Myocastoridae,mammalia,family
+myrtaceae,Myrtacée,Myrtaceae,plant,family
+mytilidae,Mytilidé,Mytilidae,bivalvia,family
+mytilus,Mytilus,Mytilus,mytilidae,genus
+mytilus_californianus,Moule de Californie,California mussel,mytilus,specie
+mytilus_edulis,Moule commune,Blue mussel,mytilus,specie
+mytilus_galloprovincialis,Moule méditerranéenne,Mediterranean mussel,mytilus,specie
+mytilus_trossulus,Moule trossulus,Bay mussel,mytilus,specie
+nasturtium,Nasturtium,Nasturtium,brassicaceae,genus
+nasturtium_officinale,Cresson de fontaine,Watercress,nasturtium,specie
+nematoda,Nématode,Nematode,animal,phylum
+nicotiana,Tabac,Nicotiana,solanaceae,genus
+nicotiana_tabacum,Tabac commun,Cultivated tobacco,nicotiana,specie
+numida,Numidé,Numida,numididae,genus
+numida_meleagris,Pintade de Numidie,Helmeted guineafowl,numida,specie
+numididae,Numididé,Numididae,aves,family
+ocimum,Ocimum,Ocimum,lamiaceae,genus
+ocimum_basilicum,Basilic,Ocimum basilicum,ocimum,specie
+olea,Oléa,Olea,oleaceae,genus
+olea_europaea,Olivier,Olive tree,olea,specie
+oleaceae,Oleacée,Oleaceae,plant,family
+onobrychis,Sainfoin,Onobrychis,fabaceae,genus
+onobrychis_viciifolia,Sainfoin commun,Common sainfoin,onobrychis,specie
+operophtera_brumata,Operophtera brumata,Operophtera brumata,insecta,specie
+orchidaceae,Orchidée,Orchidaceae,plant,family
+origanum,Origanum,Origanum,lamiaceae,genus
+origanum_vulgare,Origan,Oregano,origanum,specie
+origanum_majorana,Marjolaine,Origanum majorana,origanum,specie
+ornithopus,Ornithope,Ornithopus,fabaceae,genus
+ornithopus_sativus,Ornithope cultivé,Ornithopus sativus,ornithopus,specie
+oryctolagus,Oryctolagus,Oryctolagus,leporidae,genus
+oryctolagus_cuniculus,Lapin commun,Common rabbit,oryctolagus,specie
+oryza,Riz,Rice,poaceae,genus
+oryza_sativa,Riz cultivé,Cultivated rice,oryza,specie
+ostreidae,Ostréïdé,Ostreidae,bivalvia,family
+ovis,Ovin,Ovis,bovidae,genus
+ovis_aries,Mouton,Sheep,ovis,specie
+palaquium,Palaquium,Palaquium,sapotaceae,genus
+palaquium_gutta,Gutta-percha,Gutta percha,palaquium,specie
+panicum,Panic,Panicum,poaceae,genus
+panicum_miliaceum,Millet commun,Common millet,panicum,specie
+papaver,Pavot,Papaver,papaveraceae,genus
+papaver_somniferum,Pavot somnifère,Papaver somniferum,papaver,specie
+papaveraceae,Papavéracée,Papaveraceae,plant,family
+passiflora,Passiflores,Passionflower family,passifloraceae,genus
+passiflora_affinis,Passiflora affinis,Bracted passionflower,passiflora,specie
+passiflora_anadenia,Passiflora anadenia,Tropical passionflower,passiflora,specie
+passiflora_antioquiensis,Passiflora antioquiensis,Antioquiensis passionflower,passiflora,specie
+passiflora_arizonica,Passiflore d'Arizona,Arizona passionflower,passiflora,specie
+passiflora_berteroana,Passiflora berteroana,Berteroana passionflower,passiflora,specie
+passiflora_bicornis,Passiflora bicornis,wingleaf passionflower,passiflora,specie
+passiflora_biflora,Passiflora biflora,Passiflora biflora,passiflora,specie
+passiflora_bilobata,Passiflora bilobata,Twoflower passionflower,passiflora,specie
+passiflora_bryonioides,Passiflora bryonioides,Cupped passionflower,passiflora,specie
+passiflora_caerulea,Passiflore bleue,Blue passionflower,passiflora,specie
+passiflora_ciliata,Passiflora ciliata,Fringed passionflower,passiflora,specie
+passiflora_cincinnata,Passiflore de Crato,Crato passionvine,passiflora,specie
+passiflora_coccinea,Passiflore écarlate,Scarlet passionflower,passiflora,specie
+passiflora_edulis,Grenadille,Passionflower,passiflora,specie
+passiflora_filipes,Passiflora filipes,Slender passionflower,passiflora,specie
+passiflora_foetida,Passiflore fétide,Stinking passionflower,passiflora,specie
+passiflora_gracilis,Passiflora gracilis,Crinkled passionflower,passiflora,specie
+passiflora_incarnata,Passiflore officinale,Purple passionflower,passiflora,specie
+passiflora_laurifolia,Pomme liane,Golden bellapple,passiflora,specie
+passiflora_ligularis,Grenadelle,Yellow passionfruit,passiflora,specie
+passiflora_lutea,Passiflore jaune,Yellow passionflower,passiflora,specie
+passiflora_maliformis,Pomme calebasse,Conch apple,passiflora,specie
+passiflora_manicata,Passiflore rouge,Red passionflower,passiflora,specie
+passiflora_mexicana,Passiflore du Mexique,Mexican passionflower,passiflora,specie
+passiflora_mixta,Passiflora mixta,Mixta passionflower,passiflora,specie
+passiflora_morifolia,Passiflora morifolia,Woodland passionflower,passiflora,specie
+passiflora_multiflora,Passiflore à fleurs blanches,Whiteflower passionflower,passiflora,specie
+passiflora_murucuja,Passiflora murujuca,Virgin Island passionflower,passiflora,specie
+passiflora_pallens,Passiflora pallens,Pineland passionflower,passiflora,specie
+passiflora_pallida,Passiflora pallida,Corkystem passionflower,passiflora,specie
+passiflora_quadrangularis,Barbadine,Giant granadilla,passiflora,specie
+passiflora_racemosa,Passiflore à fleurs en racèmes,Racemes passionflower,passiflora,specie
+passiflora_rubra,Passiflora rubra,Dutchman's laudanum,passiflora,specie
+passiflora_serratodigitata,Passiflora serratodigitata,Tagua Tagua,passiflora,specie
+passiflora_sexflora,Passiflora sexflora,Goatsfoot,passiflora,specie
+passiflora_suberosa,Passiflore grain d'encre,Corky passionflower,passiflora,specie
+passiflora_subpeltata,Passiflora subpeltata,White passionflower,passiflora,specie
+passiflora_tarminiana,Passiflore banane,Banana poka,passiflora,specie
+passiflora_tenuiloba,Passiflora tenuiloba,Birdwing passionflower,passiflora,specie
+passiflora_tripartita,Passiflore tripartite,Banana passionfruit,passiflora,specie
+passiflora_tuberosa,Passiflora tuberosa,Tuberous passionflower,passiflora,specie
+passiflora_tulae,Passiflora tulae,Mountain love in the mist,passiflora,specie
+passiflora_vitifolia,Passiflore à feuilles de vigne,Perfumed passionflower,passiflora,specie
+passifloraceae,Passifloraceae,Passifloraceae,plant,family
+pastinaca,Pastinaca,Pastinaca,apiaceae,genus
+pastinaca_sativa,Panais,Parsnip,pastinaca,specie
+pavo,Paon,Peafowl,phasianidae,genus
+pavo_cristatus,Paon bleu,Indian peafowl,pavo,specie
+pecten,Pecten,Pecten,pectinidae,genus
+pecten_maximus,Coquille Saint-Jacques,Great scallop,pecten,specie
+pectinidae,Pectinidé,Pectinidae,bivalvia,family
+peronosporaceae,Peronosporaceae,Peronosporaceae,fungus,family
+persea,Persea,Persea,lauraceae,genus
+persea_americana,Avocatier,Avocado,persea,specie
+petroselinum,Persil,Parsley,apiaceae,genus
+petroselinum_crispum,Persil commun,Common Parsley,petroselinum,specie
+petroselinum_crispum_crispum,Persil Frisé,Curly Parsley,petroselinum_crispum,variety
+petroselinum_crispum_neapolitanum,Persil Plat,Italian Parsley,petroselinum_crispum,variety
+petroselinum_crispum_tuberosum,Persil Tubéreux,Hamburg Parsley,petroselinum_crispum,variety
+petroselinum_segetum,Persil des moissons,Corn Parsley,petroselinum,specie
+phacelia,Phacélie,Phacelia,boraginaceae,genus
+phalaris,Phalaris,Phalaris,poaceae,genus
+phalaris_canariensis,Alpiste,Canary grass,phalaris,specie
+phaseolus,Haricots,Phaseolus,fabaceae,genus
+phaseolus_vulgaris,Haricot,Bean,phaseolus,specie
+phasianidae,Phasianidé,Phasianidae,aves,family
+phasianus,Faisan,Phasianus,phasianidae,genus
+phasianus_colchicus,Faisan commun,Common pheasant,phasianus,specie
+philadelphus,Philadelphus,Philadelphus,hydrangeaceae,genus
+phleum,Fléole,Phleum,poaceae,genus
+phytoptus_avellanae,Phytoptus avellanae,Phytoptus avellanae,insecta,specie
+pimpinella,Pimpinella,Pimpinella,apiaceae,genus
+pimpinella_anisum,Pimpinella anisum,Pimpinella anisum,pimpinella,specie
+piriqueta,Piriqueta,Stripeseed,passifloraceae,genus
+piriqueta_cistoides,Bouton d'or,Pitted stripeseed,piriqueta,specie
+piriqueta_racemosa,Piriqueta racemosa,Rigid stripeseed,piriqueta,specie
+piriqueta_viscosa,Piriqueta viscosa,Purple stripeseed,piriqueta,specie
+pistacia,Pistachier,Pistacia,anacardiaceae,genus
+pistacia_vera,Pistachier commun,Pistacia vera,pistacia,specie
+pisum,Pois,Pisum,fabaceae,genus
+pisum_sativum,Pois commun,Pea,pisum,specie
+plant,Culture,Plant,bioproduct,
+plantaginaceae,Plantaginacée,Plantaginaceae,plant,family
+plantago,Plantago,Plantago,plantaginaceae,genus
+plantago_afra,Plantain pucier,Black psyllium,plantago,specie
+plantago_ovata,Ispaghul,Blond psyllium,plantago,specie
+plantago_psyllium,Plantain des sables,Plantago psyllium,plantago,specie
+plasmopara,Plasmopara,Plasmopara,peronosporaceae,genus
+plasmopara_viticola,Plasmopara viticola,Plasmopara viticola,plasmopara,specie
+plumbaginaceae,Plumbaginacée,Plumbaginaceae,plant,family
+poa,Pâturin,Poa,poaceae,genus
+poa_trivialis,Pâturin commun,Rough bluegrass,poa,specie
+poaceae,Graminée,Poaceae,plant,family
+polygonaceae,Polygonacée,Polygonaceae,plant,family
+poncirus,Citronnier épineux,Prickly lemon tree,rutaceae,genus
+portulaca,Portulaca,Portulaca,portulacaceae,genus
+portulaca_oleracea,Pourpier,Purslane,portulaca,specie
+portulacaceae,Portulacée,Portulacaceae,plant,family
+pouteria,Pouteria,Eggfruit,sapotaceae,genus
+pouteria_caimito,Abiu,Abiu,pouteria,specie
+pouteria_campechiana,Pouteria campechiana,Canistel,pouteria,specie
+pouteria_lucuma,Pouteria lucuma,Lucuma,pouteria,specie
+pouteria_sapota,Sapotier,Mamey Sapote,pouteria,specie
+primula,Primevère,Primula,primulaceae,genus
+primulaceae,Primulacée,Primulaceae,plant,family
+pringlea,Pringlea,Pringlea,brassicaceae,genus
+pringlea_antiscorbutica,Chou de Kerguelen,Kerguelen cabbage,pringlea,specie
+prunus,Prunier,Prunus,rosaceae,genus
+prunus_armeniaca,Abricotier,Apricot tree,prunus,specie
+prunus_avium,Merisier,Wild cherry tree,prunus,specie
+prunus_cerasifera,Prunier-cerise (Myrobolan),Cherry plum tree,prunus,specie
+prunus_cerasus,Prunus cerasus,Sour cherry tree,prunus,specie
+prunus_domestica,Prunier domestique,Plum tree,prunus,specie
+prunus_dulcis,Amandier,Almond,prunus,specie
+prunus_laurocerasus,Laurier Cerise,Prunus laurocerasus,prunus,specie
+prunus_mahaleb,Merisier Ste Lucie,Prunus mahaleb,prunus,specie
+prunus_persica,Pêcher,Peach tree,prunus,specie
+prunus_persica_nucipersica,Nectarine,Nectarine tree,prunus_persica,variety
+prunus_salicina,Prunier du Japon,Prunus salicina,prunus,specie
+psidium,Goyaviers,Guavas,myrtaceae,genus
+psidium_amplexicaule,Psidium amplexicaule,Mountain guava,psidium,specie
+psidium_calyptranthoides,Psidium calyptranthoides,Luquillo Mountain guava,psidium,specie
+psidium_cattleianum,Goyavier de Chine,Cattley guava,psidium,specie
+psidium_friedrichsthalianum,Goyavier du Costa Rica,Wild guava,psidium,specie
+psidium_guajava,Goyavier,Guava,psidium,specie
+pyrus,Poirier,Pyrus,rosaceae,genus
+pyrus_communis,Poirier commun,Pear tree,pyrus,specie
+quercus,Chêne,Oak,fagaceae,genus
+rajania,Rajania,Rajania,dioscoreaceae,genus
+rajania_cordata,Rajania cordata,Himber,rajania,specie
+raphanus,Raphanus,Raphanus,brassicaceae,genus
+raphanus_sativus,Radis,Radish,raphanus,specie
+rhagoletis_completa,Rhagoletis completa,Rhagoletis completa,insecta,specie
+rheum,Rhubarbe,Rhubarb,polygonaceae,genus
+rheum_rhabarbarum,Rhubarbe des jardins,Garden rhubarb,rheum,specie
+ribes,Groseiller,Ribes,grossulariaceae,genus
+ribes_nigrum,Cassissier,Blackcurrant,ribes,specie
+ribes_rubrum,Groseiller à grappes,Redcurrant,ribes,specie
+ricinus,Ricin,Castor oil plant,euphorbiaceae,genus
+ricinus_communis,Ricin commun,Castor bean,ricinus,specie
+robinia,Robinier,Robinia,fabaceae,genus
+robinia_hispida,Robinia hispida,Robinia hispida,robinia,specie
+robinia_neomexicana,Robinia neomexicana,Robinia neomexicana,robinia,specie
+robinia_pseudoacacia,Robinier faux_acacia,Robinia pseudoacacia,robinia,specie
+robinia_viscosa,Robinia viscosa,Robinia viscosa,robinia,specie
+rosa,Rosier,Rosa,rosaceae,genus
+rosa_centifolia,Rosier cent-feuilles,Rosa centifolia,rosa,specie
+rosa_dades,Rosier du Dadès,Rosa dades,rosa,specie
+rosa_gallica,Rosier de France,Rosa gallica,rosa,specie
+rosa_recht,Rosier de Recht,Rosa recht,rosa,specie
+rosaceae,Rosacée,Rosaceae,plant,family
+rubiaceae,Rubiacée,Rubiaceae,plant,family
+rubus,Ronce,Rubus,rosaceae,genus
+rubus_idaeus,Framboisier,Red raspberry,rubus,specie
+rumex,Oseille,Rumex,polygonaceae,genus
+rutaceae,Rutacée,Rutaceae,plant,family
+saccharomyces,Saccharomyces,Saccharomyces,saccharomycetaceae,genus
+saccharomyces_cerevisiae,Saccharomyces cerevisiae,Saccharomyces cerevisiae,saccharomyces,specie
+saccharomycetaceae,Saccharomycetacée,Saccharomycetaceae,fungus,family
+saccharum,Saccharum,Saccharum,poaceae,genus
+saccharum_officinarum,Canne à sucre,Saccharum officinarum,saccharum,specie
+salicaceae,Salicacée,Salicaceae,plant,family
+salix,Saule,Salix,salicaceae,genus
+salix_purpurea,Saule pourpre,Salix purpurea,salix,specie
+salix_rosmarinifolia,Saule Rosmarinifolia,Salix rosmarinifolia,salix,specie
+salmo,Saumon,Salmo,salmonidae,genus
+salmo_carpio,Saumon Carpione,Carpione,salmo,specie
+salmo_salar,Saumon Atlantique,Atlantic salmon,salmo,specie
+salmo_trutta,Truite,Brown trout,salmo,specie
+salmonidae,Salmonidé,Salmonidae,actinopterygii,family
+salvia,Sauge,Salvia,lamiaceae,genus
+salvia_rosmarinus,Romarin,Rosemary,salvia,specie
+sambucus,Sureau,Sambucus,adoxaceae,genus
+sambucus_nigra,Sambucus nigra,Sambucus nigra,sambucus,specie
+sapindaceae,Sapindacée,Sapindaceae,plant,family
+sapotaceae,Sapotacées,Sapotaceae,plant,family
+satureja,Sarriette,Satureja,lamiaceae,genus
+scaphoideus_titanus,Scaphoideus titanus (cicadelle de la flavescence dorée),Scaphoideus titanus,insecta,specie
+sclerotiniaceae,Sclerotiniacée,Sclerotiniaceae,fungus,family
+secale,Sécale,Secale,poaceae,genus
+secale_cereale,Seigle,Rye,secale,specie
+setaria,Sétaire,Foxtail,poaceae,genus
+setaria_italica,Sétaire d’Italie,Foxtail millet,setaria,specie
+shepherdia,Shépherdie,Shepherdia,elaeagnaceae,genus
+silybum,Silybum,Silybum,asteraceae,genus
+silybum_marianum,Chardon-Marie,Silybum marianum,silybum,specie
+solanaceae,Solanacée,Solanaceae,plant,family
+solanum,Morelle,Solanum,solanaceae,genus
+solanum_lycopersicum,Tomate,Tomato,solanum,specie
+solanum_melongena,Aubergine,Eggplant,solanum,specie
+solanum_muricatum,Pepino,Pepino dulce,solanum,specie
+solanum_quitoense,Morelle de Quito,Naranjilla,solanum,specie
+solanum_torvum,Aubergine pois,Devil’s Fig,solanum,specie
+solanum_tuberosum,Pomme de terre,Potato,solanum,specie
+sorghum,Sorgho,Sorghum,poaceae,genus
+spinacia,Spinacia,Spinacia,amaranthaceae,genus
+spinacia_oleracea,Épinard,Spinach,spinacia,specie
+spiraea,Spirée,Spiraea,rosaceae,genus
+spiraea_x_billiardii,Spirée x billiardii,Spiraea x billiardii,spiraea,specie
+struthio,Struthio,Struthio,struthionidae,genus
+struthio_camelus,Autruche,Ostrich,struthio,specie
+struthionidae,Struthionidé,Struthionidae,aves,family
+suidae,Suidé,Suidae,mammalia,family
+sus,Porcin,Sus,suidae,genus
+sus_scrofa,Porc domestique,Domestic pig,sus,specie
+theobroma,Theobroma,Theobroma,malvaceae,genus
+theobroma_cacao,Cacaoyer,Cocoa tree,theobroma,specie
+theobroma_grandiflorum,Capuaçu,Theobroma grandiflorum,theobroma,specie
+thymus,Thym,Thymus,lamiaceae,genus
+tieghemella,Tieghemella,Tieghemella,sapotaceae,genus
+tieghemella_heckelii,Tieghemella heckelii,Cherry Mahogany,tieghemella,specie
+tilia,Tilleul,Tilia,malvaceae,genus
+tilia_americana,Tilleul américain,Tilia americana,tilia,specie
+tilia_cordata,Tilleul à petites feuilles,Tilia cordata,tilia,specie
+tragopogon,Salsifis,Salsify,asteraceae,genus
+tragopogon_porrifolius,Salsifis cultivé,Common salsify,tragopogon,specie
+trifolium,Trèfle,Clover,fabaceae,genus
+trifolium_alexandrinum,Trèfle d’alexandrie,Trifolium alexandrinum,trifolium,specie
+trifolium_incarnatum,Trèfle incarnat,Trifolium incarnatum,trifolium,specie
+trifolium_pratense,Trèfle violet,Trifolium pratense,trifolium,specie
+trifolium_repens,Trèfle blanc,Trifolium repens,trifolium,specie
+trigonella,Trigonelle,Trigonella,fabaceae,genus
+trigonella_foenum_graecum,Trigonelle fenugrec,Fenugreek,trigonella,specie
+triticum,Blé,Wheat,poaceae,genus
+triticum_aestivum,Blé tendre,Common wheat,triticum,specie
+triticum_durum,Blé dur,Durum wheat,triticum,specie
+triticum_spelta,Épeautre,Spelt,triticum,specie
+turnera,Turnera,Turnera,passifloraceae,genus
+turnera_coerula,Turnera coerula,Turnera coerula,turnera,specie
+turnera_diffusa,Damiana,Damiana,turnera,specie
+turnera_pumilea,Turnera pumilea,Yellow alder,turnera,specie
+turnera_ulmifolia,Turnera ulmifolia,Ramgoat dashalong,turnera,specie
+uncinula,Uncinula,Uncinula,erysiphaceae,genus
+uncinula_necator,Uncinula necator,Uncinula necator,uncinula,specie
+urtica,Ortie,Nettle,urticaceae,genus
+urticaceae,Urticaceae,Urticaceae,plant,family
+vaccinium,Airelle,Vaccinium,ericaceae,genus
+valeriana,Valériane,Valeriana,valerianaceae,genus
+valerianaceae,Valérianacée,Valerianaceae,plant,family
+valerianella,Valerianella,Valerianella,valerianaceae,genus
+valerianella_locusta,Mâche,Corn salad,valerianella,specie
+vanilla,Vanille,Vanilla,orchidaceae,genus
+vanilla_planifolia,Vanilla planifolia,Vanilla planifolia,vanilla,specie
+vanilla_pompona,Vanillon,Vanilla pompona,vanilla,specie
+vasconcellea,Vasconcellea,Vasconcellea,caricaceae,genus
+vasconcellea_monoica,Vasconcellea monoica,Col de monte,vasconcellea,specie
+vasconcellea_pubescens,Papayer de montagne,Mountain papaya,vasconcellea,specie
+vasconcellea_quercifolia,Papayer à feuilles de chêne,Oak leaf papaya,vasconcellea,specie
+veronica,Véronique,Veronica,plantaginaceae,genus
+viburnum,Viorne,Viburnum,adoxaceae,genus
+viburnum_opulus,Viorne obier,Viburnum opulus,viburnum,specie
+vicia,Vesce,Vicia,fabaceae,genus
+vicia_cracca,Vesce craque,Vicia cracca,vicia,specie
+vicia_faba,Fève ou féverole,Horsebean,vicia,specie
+vicia_sativa,Vesce cultivée,Vicia sativa,vicia,specie
+vicia_villosa,Vesce villosa,Vicia villosa,vicia,specie
+vigna,Vigna,Vigna,fabaceae,genus
+vigna_unguiculata,Vigna unguiculata ‒ Voème,Cowpea,vigna,specie
+vigna_unguiculata_cylindrica,Dolique,Catjang,vigna_unguiculata,subspecie
+vigna_unguiculata_unguiculata,Cornille,Black eyed pea,vigna_unguiculata,subspecie
+viola,Pensée,Viola,violaceae,genus
+viola_arvensis,Pensée des champs,Viola arvensis,viola,specie
+violaceae,Violacée,Violaceae,plant,family
+vitaceae,Vitacée,Vitaceae,plant,family
+vitellaria,Vitellaria,Vitellaria,sapotaceae,genus
+vitellaria_paradoxa,Karité,Shea tree,vitellaria,specie
+vitex,Vitex,Vitex,lamiaceae,genus
+vitex_agnus_castus,Gattilier,Vitex agnus castus,vitex,specie
+vitis,Vigne,Vitis,vitaceae,genus
+weigela,Weigela,Weigela,diervillaceae,genus
+weigela_floribunda,Weigela floribunda,Weigela floribunda,weigela,specie
+x_festulolium,X-Festulolium,X-Festulolium,poaceae,genus
+x_triticosecale,Triticale,Triticale,poaceae,genus
+xanthomonadaceae,Xanthomonadacée,Xanthomonadaceae,bacteria,family
+xanthomonas,Xanthomonas,Xanthomonas,xanthomonadaceae,genus
+xanthomonas_arboricola,Xanthomonas arboricola,Xanthomonas arboricola,xanthomonas,specie
+zea,Téosinte,Zea,poaceae,genus
+zea_mays,Maïs,Corn,zea,specie
+zea_mays_everta,Pop corn,Pop corn,zea_mays,variety
+zea_mays_saccharata,Maïs doux,Sweet Corn,zea_mays,variety
+zeuzera_pyrina,Zeuzera pyrina,Zeuzera pyrina,insecta,specie
+zingiberaceae,Zingibéracée,Zingiberaceae,plant,family

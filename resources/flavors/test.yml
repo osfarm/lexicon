@@ -1,0 +1,31 @@
+---
+name: test
+without:
+  - pesticide_frequency_indicator
+  - enterprises
+datasources:
+  cadastre:
+    registered_cadastral_parcels:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+  cadastral_prices:
+    registered_cadastral_prices:
+      filter: WHERE postal_code = '17250' ORDER BY id
+  graphic_parcels:
+    registered_graphic_parcels:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10) ORDER BY id
+  hydrography:
+    registered_hydrographic_items:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+    registered_area_items:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+    registered_cadastral_buildings:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+  postal_codes:
+    registered_postal_codes:
+      filter: WHERE postal_code = '17250'
+  weather:
+    registered_weather_stations:
+      filter: WHERE country = 'FR' AND country_zone = '17'
+    registered_hourly_weathers:
+      filter: WHERE station_id LIKE 'FR17%'
+  

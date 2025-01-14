@@ -1,0 +1,573 @@
+campaign,zone,production_label,specie,production,yield_value,yield_unit
+2020,ILE-DE-FRANCE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"75,6",quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"59,4",quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"59,5",quintal_per_hectare
+2020,NORMANDIE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"76,4",quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"87,7",quintal_per_hectare
+2020,GRAND EST,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"78,5",quintal_per_hectare
+2020,PAYS DE LA LOIRE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"55,7",quintal_per_hectare
+2020,BRETAGNE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"67,8",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"52,1",quintal_per_hectare
+2020,OCCITANIE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"43,9",quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"55,7",quintal_per_hectare
+2020,PACA,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"34,6",quintal_per_hectare
+2020,CORSE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,35,quintal_per_hectare
+2019,ILE-DE-FRANCE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"87,7",quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"76,1",quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"69,7",quintal_per_hectare
+2019,NORMANDIE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"89,7",quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"94,5",quintal_per_hectare
+2019,GRAND EST,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"77,8",quintal_per_hectare
+2019,PAYS DE LA LOIRE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,78,quintal_per_hectare
+2019,BRETAGNE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"79,9",quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"74,2",quintal_per_hectare
+2019,OCCITANIE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"61,2",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"58,4",quintal_per_hectare
+2019,PACA,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"34,4",quintal_per_hectare
+2019,CORSE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,40,quintal_per_hectare
+2018,ILE-DE-FRANCE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"76,6",quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"68,6",quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"65,3",quintal_per_hectare
+2018,NORMANDIE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"77,1",quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"84,6",quintal_per_hectare
+2018,GRAND EST,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"73,5",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"62,1",quintal_per_hectare
+2018,BRETAGNE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"68,1",quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"60,7",quintal_per_hectare
+2018,OCCITANIE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"45,7",quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"59,3",quintal_per_hectare
+2018,PACA,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"32,8",quintal_per_hectare
+2018,CORSE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,35,quintal_per_hectare
+2017,ILE-DE-FRANCE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"80,1",quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"71,7",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"68,3",quintal_per_hectare
+2017,NORMANDIE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"84,3",quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"87,3",quintal_per_hectare
+2017,GRAND EST,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"70,4",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"72,5",quintal_per_hectare
+2017,BRETAGNE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,79,quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"63,3",quintal_per_hectare
+2017,OCCITANIE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"55,9",quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"62,2",quintal_per_hectare
+2017,PACA,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"34,9",quintal_per_hectare
+2017,CORSE,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,35,quintal_per_hectare
+2020,ILE-DE-FRANCE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"69,2",quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"64,8",quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"43,7",quintal_per_hectare
+2020,NORMANDIE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,50,quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"61,6",quintal_per_hectare
+2020,GRAND EST,Blé dur d'hiver,triticum_durum,winter_hard_wheat,55,quintal_per_hectare
+2020,PAYS DE LA LOIRE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"53,8",quintal_per_hectare
+2020,BRETAGNE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"46,3",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"54,4",quintal_per_hectare
+2020,OCCITANIE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"40,4",quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"53,2",quintal_per_hectare
+2020,PACA,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"35,1",quintal_per_hectare
+2020,CORSE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,35,quintal_per_hectare
+2019,ILE-DE-FRANCE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"71,5",quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"76,6",quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Blé dur d'hiver,triticum_durum,winter_hard_wheat,61,quintal_per_hectare
+2019,NORMANDIE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,60,quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"68,9",quintal_per_hectare
+2019,GRAND EST,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"47,8",quintal_per_hectare
+2019,PAYS DE LA LOIRE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"76,2",quintal_per_hectare
+2019,BRETAGNE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,51,quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"73,9",quintal_per_hectare
+2019,OCCITANIE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"55,2",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Blé dur d'hiver,triticum_durum,winter_hard_wheat,54,quintal_per_hectare
+2019,PACA,Blé dur d'hiver,triticum_durum,winter_hard_wheat,34,quintal_per_hectare
+2019,CORSE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,40,quintal_per_hectare
+2018,ILE-DE-FRANCE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"70,7",quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,69,quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"61,2",quintal_per_hectare
+2018,NORMANDIE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"57,1",quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"60,4",quintal_per_hectare
+2018,GRAND EST,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"52,8",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"64,3",quintal_per_hectare
+2018,BRETAGNE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,0,quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"58,8",quintal_per_hectare
+2018,OCCITANIE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"37,8",quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"50,6",quintal_per_hectare
+2018,PACA,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"33,7",quintal_per_hectare
+2018,CORSE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,35,quintal_per_hectare
+2017,ILE-DE-FRANCE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"65,4",quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"64,6",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"62,1",quintal_per_hectare
+2017,NORMANDIE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"59,1",quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"60,4",quintal_per_hectare
+2017,GRAND EST,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"59,5",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"65,8",quintal_per_hectare
+2017,BRETAGNE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,0,quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"60,3",quintal_per_hectare
+2017,OCCITANIE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,53,quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Blé dur d'hiver,triticum_durum,winter_hard_wheat,62,quintal_per_hectare
+2017,PACA,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"43,1",quintal_per_hectare
+2017,CORSE,Blé dur d'hiver,triticum_durum,winter_hard_wheat,35,quintal_per_hectare
+2020,ILE-DE-FRANCE,Colza d'hiver,brassica_napus_napus,winter_rape,"33,8",quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Colza d'hiver,brassica_napus_napus,winter_rape,"29,8",quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Colza d'hiver,brassica_napus_napus,winter_rape,"28,6",quintal_per_hectare
+2020,NORMANDIE,Colza d'hiver,brassica_napus_napus,winter_rape,"29,4",quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Colza d'hiver,brassica_napus_napus,winter_rape,"33,8",quintal_per_hectare
+2020,GRAND EST,Colza d'hiver,brassica_napus_napus,winter_rape,"27,6",quintal_per_hectare
+2020,PAYS DE LA LOIRE,Colza d'hiver,brassica_napus_napus,winter_rape,"27,1",quintal_per_hectare
+2020,BRETAGNE,Colza d'hiver,brassica_napus_napus,winter_rape,"27,5",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Colza d'hiver,brassica_napus_napus,winter_rape,"27,9",quintal_per_hectare
+2020,OCCITANIE,Colza d'hiver,brassica_napus_napus,winter_rape,"22,5",quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Colza d'hiver,brassica_napus_napus,winter_rape,"27,3",quintal_per_hectare
+2020,PACA,Colza d'hiver,brassica_napus_napus,winter_rape,"18,2",quintal_per_hectare
+2020,CORSE,Colza d'hiver,brassica_napus_napus,winter_rape,0,quintal_per_hectare
+2019,ILE-DE-FRANCE,Colza d'hiver,brassica_napus_napus,winter_rape,"30,6",quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Colza d'hiver,brassica_napus_napus,winter_rape,"31,2",quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Colza d'hiver,brassica_napus_napus,winter_rape,27,quintal_per_hectare
+2019,NORMANDIE,Colza d'hiver,brassica_napus_napus,winter_rape,"34,9",quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Colza d'hiver,brassica_napus_napus,winter_rape,"36,8",quintal_per_hectare
+2019,GRAND EST,Colza d'hiver,brassica_napus_napus,winter_rape,"29,9",quintal_per_hectare
+2019,PAYS DE LA LOIRE,Colza d'hiver,brassica_napus_napus,winter_rape,"32,7",quintal_per_hectare
+2019,BRETAGNE,Colza d'hiver,brassica_napus_napus,winter_rape,"36,3",quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Colza d'hiver,brassica_napus_napus,winter_rape,30,quintal_per_hectare
+2019,OCCITANIE,Colza d'hiver,brassica_napus_napus,winter_rape,"27,9",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Colza d'hiver,brassica_napus_napus,winter_rape,"26,8",quintal_per_hectare
+2019,PACA,Colza d'hiver,brassica_napus_napus,winter_rape,"15,9",quintal_per_hectare
+2019,CORSE,Colza d'hiver,brassica_napus_napus,winter_rape,0,quintal_per_hectare
+2018,ILE-DE-FRANCE,Colza d'hiver,brassica_napus_napus,winter_rape,"33,8",quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Colza d'hiver,brassica_napus_napus,winter_rape,"30,6",quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Colza d'hiver,brassica_napus_napus,winter_rape,"30,5",quintal_per_hectare
+2018,NORMANDIE,Colza d'hiver,brassica_napus_napus,winter_rape,"32,8",quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Colza d'hiver,brassica_napus_napus,winter_rape,"36,2",quintal_per_hectare
+2018,GRAND EST,Colza d'hiver,brassica_napus_napus,winter_rape,"31,6",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Colza d'hiver,brassica_napus_napus,winter_rape,26,quintal_per_hectare
+2018,BRETAGNE,Colza d'hiver,brassica_napus_napus,winter_rape,34,quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Colza d'hiver,brassica_napus_napus,winter_rape,"24,7",quintal_per_hectare
+2018,OCCITANIE,Colza d'hiver,brassica_napus_napus,winter_rape,25,quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Colza d'hiver,brassica_napus_napus,winter_rape,"31,4",quintal_per_hectare
+2018,PACA,Colza d'hiver,brassica_napus_napus,winter_rape,"21,6",quintal_per_hectare
+2018,CORSE,Colza d'hiver,brassica_napus_napus,winter_rape,0,quintal_per_hectare
+2017,ILE-DE-FRANCE,Colza d'hiver,brassica_napus_napus,winter_rape,"41,1",quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Colza d'hiver,brassica_napus_napus,winter_rape,"36,8",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Colza d'hiver,brassica_napus_napus,winter_rape,"37,6",quintal_per_hectare
+2017,NORMANDIE,Colza d'hiver,brassica_napus_napus,winter_rape,"40,7",quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Colza d'hiver,brassica_napus_napus,winter_rape,"43,2",quintal_per_hectare
+2017,GRAND EST,Colza d'hiver,brassica_napus_napus,winter_rape,"37,5",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Colza d'hiver,brassica_napus_napus,winter_rape,"39,2",quintal_per_hectare
+2017,BRETAGNE,Colza d'hiver,brassica_napus_napus,winter_rape,"39,8",quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Colza d'hiver,brassica_napus_napus,winter_rape,33,quintal_per_hectare
+2017,OCCITANIE,Colza d'hiver,brassica_napus_napus,winter_rape,28,quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Colza d'hiver,brassica_napus_napus,winter_rape,36,quintal_per_hectare
+2017,PACA,Colza d'hiver,brassica_napus_napus,winter_rape,"21,4",quintal_per_hectare
+2017,CORSE,Colza d'hiver,brassica_napus_napus,winter_rape,0,quintal_per_hectare
+2020,ILE-DE-FRANCE,Avoine d'hiver,avena_sativa,winter_oat,50,quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Avoine d'hiver,avena_sativa,winter_oat,"36,5",quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Avoine d'hiver,avena_sativa,winter_oat,"31,2",quintal_per_hectare
+2020,NORMANDIE,Avoine d'hiver,avena_sativa,winter_oat,"50,6",quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Avoine d'hiver,avena_sativa,winter_oat,"60,4",quintal_per_hectare
+2020,GRAND EST,Avoine d'hiver,avena_sativa,winter_oat,"40,8",quintal_per_hectare
+2020,PAYS DE LA LOIRE,Avoine d'hiver,avena_sativa,winter_oat,"38,5",quintal_per_hectare
+2020,BRETAGNE,Avoine d'hiver,avena_sativa,winter_oat,"50,2",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Avoine d'hiver,avena_sativa,winter_oat,"33,5",quintal_per_hectare
+2020,OCCITANIE,Avoine d'hiver,avena_sativa,winter_oat,31,quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Avoine d'hiver,avena_sativa,winter_oat,"32,6",quintal_per_hectare
+2020,PACA,Avoine d'hiver,avena_sativa,winter_oat,25,quintal_per_hectare
+2020,CORSE,Avoine d'hiver,avena_sativa,winter_oat,30,quintal_per_hectare
+2019,ILE-DE-FRANCE,Avoine d'hiver,avena_sativa,winter_oat,62,quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Avoine d'hiver,avena_sativa,winter_oat,"49,1",quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Avoine d'hiver,avena_sativa,winter_oat,"39,9",quintal_per_hectare
+2019,NORMANDIE,Avoine d'hiver,avena_sativa,winter_oat,"59,6",quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Avoine d'hiver,avena_sativa,winter_oat,"67,2",quintal_per_hectare
+2019,GRAND EST,Avoine d'hiver,avena_sativa,winter_oat,47,quintal_per_hectare
+2019,PAYS DE LA LOIRE,Avoine d'hiver,avena_sativa,winter_oat,61,quintal_per_hectare
+2019,BRETAGNE,Avoine d'hiver,avena_sativa,winter_oat,"53,1",quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Avoine d'hiver,avena_sativa,winter_oat,"42,2",quintal_per_hectare
+2019,OCCITANIE,Avoine d'hiver,avena_sativa,winter_oat,"33,2",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Avoine d'hiver,avena_sativa,winter_oat,"40,2",quintal_per_hectare
+2019,PACA,Avoine d'hiver,avena_sativa,winter_oat,25,quintal_per_hectare
+2019,CORSE,Avoine d'hiver,avena_sativa,winter_oat,30,quintal_per_hectare
+2018,ILE-DE-FRANCE,Avoine d'hiver,avena_sativa,winter_oat,60,quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Avoine d'hiver,avena_sativa,winter_oat,"48,4",quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Avoine d'hiver,avena_sativa,winter_oat,"44,7",quintal_per_hectare
+2018,NORMANDIE,Avoine d'hiver,avena_sativa,winter_oat,"58,1",quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Avoine d'hiver,avena_sativa,winter_oat,61,quintal_per_hectare
+2018,GRAND EST,Avoine d'hiver,avena_sativa,winter_oat,"48,9",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Avoine d'hiver,avena_sativa,winter_oat,"51,3",quintal_per_hectare
+2018,BRETAGNE,Avoine d'hiver,avena_sativa,winter_oat,"51,8",quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Avoine d'hiver,avena_sativa,winter_oat,"39,9",quintal_per_hectare
+2018,OCCITANIE,Avoine d'hiver,avena_sativa,winter_oat,"30,8",quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Avoine d'hiver,avena_sativa,winter_oat,"43,9",quintal_per_hectare
+2018,PACA,Avoine d'hiver,avena_sativa,winter_oat,25,quintal_per_hectare
+2018,CORSE,Avoine d'hiver,avena_sativa,winter_oat,30,quintal_per_hectare
+2017,ILE-DE-FRANCE,Avoine d'hiver,avena_sativa,winter_oat,60,quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Avoine d'hiver,avena_sativa,winter_oat,"48,7",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Avoine d'hiver,avena_sativa,winter_oat,40,quintal_per_hectare
+2017,NORMANDIE,Avoine d'hiver,avena_sativa,winter_oat,"59,9",quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Avoine d'hiver,avena_sativa,winter_oat,"58,9",quintal_per_hectare
+2017,GRAND EST,Avoine d'hiver,avena_sativa,winter_oat,"49,2",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Avoine d'hiver,avena_sativa,winter_oat,"63,3",quintal_per_hectare
+2017,BRETAGNE,Avoine d'hiver,avena_sativa,winter_oat,"57,4",quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Avoine d'hiver,avena_sativa,winter_oat,"41,1",quintal_per_hectare
+2017,OCCITANIE,Avoine d'hiver,avena_sativa,winter_oat,"32,2",quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Avoine d'hiver,avena_sativa,winter_oat,"48,1",quintal_per_hectare
+2017,PACA,Avoine d'hiver,avena_sativa,winter_oat,25,quintal_per_hectare
+2017,CORSE,Avoine d'hiver,avena_sativa,winter_oat,30,quintal_per_hectare
+2020,ILE-DE-FRANCE,Maïs grain,zea_mays,grain_corn,"68,5",quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Maïs grain,zea_mays,grain_corn,"85,1",quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Maïs grain,zea_mays,grain_corn,"64,9",quintal_per_hectare
+2020,NORMANDIE,Maïs grain,zea_mays,grain_corn,"78,7",quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Maïs grain,zea_mays,grain_corn,"76,2",quintal_per_hectare
+2020,GRAND EST,Maïs grain,zea_mays,grain_corn,"92,6",quintal_per_hectare
+2020,PAYS DE LA LOIRE,Maïs grain,zea_mays,grain_corn,"79,2",quintal_per_hectare
+2020,BRETAGNE,Maïs grain,zea_mays,grain_corn,"90,6",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Maïs grain,zea_mays,grain_corn,"81,6",quintal_per_hectare
+2020,OCCITANIE,Maïs grain,zea_mays,grain_corn,"92,8",quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Maïs grain,zea_mays,grain_corn,"82,7",quintal_per_hectare
+2020,PACA,Maïs grain,zea_mays,grain_corn,"95,1",quintal_per_hectare
+2020,CORSE,Maïs grain,zea_mays,grain_corn,120,quintal_per_hectare
+2019,ILE-DE-FRANCE,Maïs grain,zea_mays,grain_corn,"81,9",quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Maïs grain,zea_mays,grain_corn,"78,4",quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Maïs grain,zea_mays,grain_corn,"73,7",quintal_per_hectare
+2019,NORMANDIE,Maïs grain,zea_mays,grain_corn,80,quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Maïs grain,zea_mays,grain_corn,"88,2",quintal_per_hectare
+2019,GRAND EST,Maïs grain,zea_mays,grain_corn,"95,2",quintal_per_hectare
+2019,PAYS DE LA LOIRE,Maïs grain,zea_mays,grain_corn,"80,1",quintal_per_hectare
+2019,BRETAGNE,Maïs grain,zea_mays,grain_corn,"88,6",quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Maïs grain,zea_mays,grain_corn,"93,8",quintal_per_hectare
+2019,OCCITANIE,Maïs grain,zea_mays,grain_corn,"97,9",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Maïs grain,zea_mays,grain_corn,"86,1",quintal_per_hectare
+2019,PACA,Maïs grain,zea_mays,grain_corn,"96,8",quintal_per_hectare
+2019,CORSE,Maïs grain,zea_mays,grain_corn,120,quintal_per_hectare
+2018,ILE-DE-FRANCE,Maïs grain,zea_mays,grain_corn,"83,2",quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Maïs grain,zea_mays,grain_corn,"99,6",quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Maïs grain,zea_mays,grain_corn,"72,6",quintal_per_hectare
+2018,NORMANDIE,Maïs grain,zea_mays,grain_corn,89,quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Maïs grain,zea_mays,grain_corn,"83,4",quintal_per_hectare
+2018,GRAND EST,Maïs grain,zea_mays,grain_corn,"94,2",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Maïs grain,zea_mays,grain_corn,90,quintal_per_hectare
+2018,BRETAGNE,Maïs grain,zea_mays,grain_corn,"93,2",quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Maïs grain,zea_mays,grain_corn,"92,4",quintal_per_hectare
+2018,OCCITANIE,Maïs grain,zea_mays,grain_corn,"92,6",quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Maïs grain,zea_mays,grain_corn,93,quintal_per_hectare
+2018,PACA,Maïs grain,zea_mays,grain_corn,"113,8",quintal_per_hectare
+2018,CORSE,Maïs grain,zea_mays,grain_corn,120,quintal_per_hectare
+2017,ILE-DE-FRANCE,Maïs grain,zea_mays,grain_corn,"110,6",quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Maïs grain,zea_mays,grain_corn,"106,3",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Maïs grain,zea_mays,grain_corn,"100,4",quintal_per_hectare
+2017,NORMANDIE,Maïs grain,zea_mays,grain_corn,"91,7",quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Maïs grain,zea_mays,grain_corn,"99,2",quintal_per_hectare
+2017,GRAND EST,Maïs grain,zea_mays,grain_corn,"113,4",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Maïs grain,zea_mays,grain_corn,"93,7",quintal_per_hectare
+2017,BRETAGNE,Maïs grain,zea_mays,grain_corn,94,quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Maïs grain,zea_mays,grain_corn,"107,3",quintal_per_hectare
+2017,OCCITANIE,Maïs grain,zea_mays,grain_corn,"105,4",quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Maïs grain,zea_mays,grain_corn,"98,9",quintal_per_hectare
+2017,PACA,Maïs grain,zea_mays,grain_corn,"109,2",quintal_per_hectare
+2017,CORSE,Maïs grain,zea_mays,grain_corn,120,quintal_per_hectare
+2020,ILE-DE-FRANCE,Orge d'hiver,hordeum_vulgare,winter_barley,"64,8",quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Orge d'hiver,hordeum_vulgare,winter_barley,"51,1",quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Orge d'hiver,hordeum_vulgare,winter_barley,"46,4",quintal_per_hectare
+2020,NORMANDIE,Orge d'hiver,hordeum_vulgare,winter_barley,"64,5",quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Orge d'hiver,hordeum_vulgare,winter_barley,"80,4",quintal_per_hectare
+2020,GRAND EST,Orge d'hiver,hordeum_vulgare,winter_barley,"60,2",quintal_per_hectare
+2020,PAYS DE LA LOIRE,Orge d'hiver,hordeum_vulgare,winter_barley,"48,5",quintal_per_hectare
+2020,BRETAGNE,Orge d'hiver,hordeum_vulgare,winter_barley,"62,3",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Orge d'hiver,hordeum_vulgare,winter_barley,"46,4",quintal_per_hectare
+2020,OCCITANIE,Orge d'hiver,hordeum_vulgare,winter_barley,"39,5",quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Orge d'hiver,hordeum_vulgare,winter_barley,"45,1",quintal_per_hectare
+2020,PACA,Orge d'hiver,hordeum_vulgare,winter_barley,"41,1",quintal_per_hectare
+2020,CORSE,Orge d'hiver,hordeum_vulgare,winter_barley,35,quintal_per_hectare
+2019,ILE-DE-FRANCE,Orge d'hiver,hordeum_vulgare,winter_barley,"78,4",quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Orge d'hiver,hordeum_vulgare,winter_barley,"71,8",quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Orge d'hiver,hordeum_vulgare,winter_barley,"67,4",quintal_per_hectare
+2019,NORMANDIE,Orge d'hiver,hordeum_vulgare,winter_barley,"78,9",quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Orge d'hiver,hordeum_vulgare,winter_barley,"85,7",quintal_per_hectare
+2019,GRAND EST,Orge d'hiver,hordeum_vulgare,winter_barley,73,quintal_per_hectare
+2019,PAYS DE LA LOIRE,Orge d'hiver,hordeum_vulgare,winter_barley,72,quintal_per_hectare
+2019,BRETAGNE,Orge d'hiver,hordeum_vulgare,winter_barley,73,quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Orge d'hiver,hordeum_vulgare,winter_barley,64,quintal_per_hectare
+2019,OCCITANIE,Orge d'hiver,hordeum_vulgare,winter_barley,"57,9",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Orge d'hiver,hordeum_vulgare,winter_barley,"58,7",quintal_per_hectare
+2019,PACA,Orge d'hiver,hordeum_vulgare,winter_barley,"41,4",quintal_per_hectare
+2019,CORSE,Orge d'hiver,hordeum_vulgare,winter_barley,40,quintal_per_hectare
+2018,ILE-DE-FRANCE,Orge d'hiver,hordeum_vulgare,winter_barley,"71,2",quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Orge d'hiver,hordeum_vulgare,winter_barley,"65,4",quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Orge d'hiver,hordeum_vulgare,winter_barley,"62,1",quintal_per_hectare
+2018,NORMANDIE,Orge d'hiver,hordeum_vulgare,winter_barley,"69,1",quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Orge d'hiver,hordeum_vulgare,winter_barley,76,quintal_per_hectare
+2018,GRAND EST,Orge d'hiver,hordeum_vulgare,winter_barley,"67,9",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Orge d'hiver,hordeum_vulgare,winter_barley,60,quintal_per_hectare
+2018,BRETAGNE,Orge d'hiver,hordeum_vulgare,winter_barley,"66,3",quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Orge d'hiver,hordeum_vulgare,winter_barley,"56,8",quintal_per_hectare
+2018,OCCITANIE,Orge d'hiver,hordeum_vulgare,winter_barley,"42,7",quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Orge d'hiver,hordeum_vulgare,winter_barley,"54,1",quintal_per_hectare
+2018,PACA,Orge d'hiver,hordeum_vulgare,winter_barley,"36,5",quintal_per_hectare
+2018,CORSE,Orge d'hiver,hordeum_vulgare,winter_barley,35,quintal_per_hectare
+2017,ILE-DE-FRANCE,Orge d'hiver,hordeum_vulgare,winter_barley,"75,4",quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Orge d'hiver,hordeum_vulgare,winter_barley,"65,4",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Orge d'hiver,hordeum_vulgare,winter_barley,"62,6",quintal_per_hectare
+2017,NORMANDIE,Orge d'hiver,hordeum_vulgare,winter_barley,"74,1",quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Orge d'hiver,hordeum_vulgare,winter_barley,"82,9",quintal_per_hectare
+2017,GRAND EST,Orge d'hiver,hordeum_vulgare,winter_barley,"62,7",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Orge d'hiver,hordeum_vulgare,winter_barley,"67,1",quintal_per_hectare
+2017,BRETAGNE,Orge d'hiver,hordeum_vulgare,winter_barley,"69,6",quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Orge d'hiver,hordeum_vulgare,winter_barley,"55,9",quintal_per_hectare
+2017,OCCITANIE,Orge d'hiver,hordeum_vulgare,winter_barley,"50,5",quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Orge d'hiver,hordeum_vulgare,winter_barley,"57,4",quintal_per_hectare
+2017,PACA,Orge d'hiver,hordeum_vulgare,winter_barley,"38,1",quintal_per_hectare
+2017,CORSE,Orge d'hiver,hordeum_vulgare,winter_barley,35,quintal_per_hectare
+2020,ILE-DE-FRANCE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"35,5",quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,25,quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"16,8",quintal_per_hectare
+2020,NORMANDIE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"29,8",quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,35,quintal_per_hectare
+2020,GRAND EST,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"30,9",quintal_per_hectare
+2020,PAYS DE LA LOIRE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,8",quintal_per_hectare
+2020,BRETAGNE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"37,1",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"30,1",quintal_per_hectare
+2020,OCCITANIE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"21,9",quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,22,quintal_per_hectare
+2020,PACA,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"22,9",quintal_per_hectare
+2020,CORSE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,18,quintal_per_hectare
+2019,ILE-DE-FRANCE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"50,5",quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"40,4",quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"37,3",quintal_per_hectare
+2019,NORMANDIE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"42,2",quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"48,3",quintal_per_hectare
+2019,GRAND EST,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"40,8",quintal_per_hectare
+2019,PAYS DE LA LOIRE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"42,1",quintal_per_hectare
+2019,BRETAGNE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"39,8",quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"43,1",quintal_per_hectare
+2019,OCCITANIE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,7",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"26,9",quintal_per_hectare
+2019,PACA,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,17,quintal_per_hectare
+2019,CORSE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,18,quintal_per_hectare
+2018,ILE-DE-FRANCE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"38,1",quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"35,1",quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"36,3",quintal_per_hectare
+2018,NORMANDIE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,34,quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"40,4",quintal_per_hectare
+2018,GRAND EST,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"40,5",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"38,3",quintal_per_hectare
+2018,BRETAGNE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"35,5",quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"33,6",quintal_per_hectare
+2018,OCCITANIE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,22,quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,5",quintal_per_hectare
+2018,PACA,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"18,5",quintal_per_hectare
+2018,CORSE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,18,quintal_per_hectare
+2017,ILE-DE-FRANCE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,44,quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"38,8",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"36,5",quintal_per_hectare
+2017,NORMANDIE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"39,3",quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"42,6",quintal_per_hectare
+2017,GRAND EST,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"32,1",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"38,4",quintal_per_hectare
+2017,BRETAGNE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"42,9",quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"32,7",quintal_per_hectare
+2017,OCCITANIE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"26,9",quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"31,8",quintal_per_hectare
+2017,PACA,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"19,2",quintal_per_hectare
+2017,CORSE,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,18,quintal_per_hectare
+2020,ILE-DE-FRANCE,Soja,glycine_max,soy,28,quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Soja,glycine_max,soy,"23,2",quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Soja,glycine_max,soy,"16,2",quintal_per_hectare
+2020,NORMANDIE,Soja,glycine_max,soy,22,quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Soja,glycine_max,soy,30,quintal_per_hectare
+2020,GRAND EST,Soja,glycine_max,soy,22,quintal_per_hectare
+2020,PAYS DE LA LOIRE,Soja,glycine_max,soy,"22,5",quintal_per_hectare
+2020,BRETAGNE,Soja,glycine_max,soy,"25,3",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Soja,glycine_max,soy,"24,8",quintal_per_hectare
+2020,OCCITANIE,Soja,glycine_max,soy,"21,7",quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Soja,glycine_max,soy,"25,6",quintal_per_hectare
+2020,PACA,Soja,glycine_max,soy,"24,7",quintal_per_hectare
+2020,CORSE,Soja,glycine_max,soy,0,quintal_per_hectare
+2019,ILE-DE-FRANCE,Soja,glycine_max,soy,28,quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Soja,glycine_max,soy,"21,9",quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Soja,glycine_max,soy,"24,9",quintal_per_hectare
+2019,NORMANDIE,Soja,glycine_max,soy,25,quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Soja,glycine_max,soy,30,quintal_per_hectare
+2019,GRAND EST,Soja,glycine_max,soy,"25,8",quintal_per_hectare
+2019,PAYS DE LA LOIRE,Soja,glycine_max,soy,"22,4",quintal_per_hectare
+2019,BRETAGNE,Soja,glycine_max,soy,"25,6",quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Soja,glycine_max,soy,"26,4",quintal_per_hectare
+2019,OCCITANIE,Soja,glycine_max,soy,"26,5",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Soja,glycine_max,soy,"29,3",quintal_per_hectare
+2019,PACA,Soja,glycine_max,soy,"23,9",quintal_per_hectare
+2019,CORSE,Soja,glycine_max,soy,0,quintal_per_hectare
+2018,ILE-DE-FRANCE,Soja,glycine_max,soy,28,quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Soja,glycine_max,soy,28,quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Soja,glycine_max,soy,"21,3",quintal_per_hectare
+2018,NORMANDIE,Soja,glycine_max,soy,25,quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Soja,glycine_max,soy,30,quintal_per_hectare
+2018,GRAND EST,Soja,glycine_max,soy,"27,9",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Soja,glycine_max,soy,"21,6",quintal_per_hectare
+2018,BRETAGNE,Soja,glycine_max,soy,27,quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Soja,glycine_max,soy,"26,9",quintal_per_hectare
+2018,OCCITANIE,Soja,glycine_max,soy,"26,2",quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Soja,glycine_max,soy,"30,7",quintal_per_hectare
+2018,PACA,Soja,glycine_max,soy,"25,2",quintal_per_hectare
+2018,CORSE,Soja,glycine_max,soy,0,quintal_per_hectare
+2017,ILE-DE-FRANCE,Soja,glycine_max,soy,28,quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Soja,glycine_max,soy,"25,9",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Soja,glycine_max,soy,"30,2",quintal_per_hectare
+2017,NORMANDIE,Soja,glycine_max,soy,0,quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Soja,glycine_max,soy,40,quintal_per_hectare
+2017,GRAND EST,Soja,glycine_max,soy,"32,9",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Soja,glycine_max,soy,"28,1",quintal_per_hectare
+2017,BRETAGNE,Soja,glycine_max,soy,"28,8",quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Soja,glycine_max,soy,"27,7",quintal_per_hectare
+2017,OCCITANIE,Soja,glycine_max,soy,"27,5",quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Soja,glycine_max,soy,"34,7",quintal_per_hectare
+2017,PACA,Soja,glycine_max,soy,"27,2",quintal_per_hectare
+2017,CORSE,Soja,glycine_max,soy,0,quintal_per_hectare
+2020,ILE-DE-FRANCE,Sorgho,sorghum,sorghum,70,quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Sorgho,sorghum,sorghum,"44,4",quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Sorgho,sorghum,sorghum,43,quintal_per_hectare
+2020,NORMANDIE,Sorgho,sorghum,sorghum,45,quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Sorgho,sorghum,sorghum,"52,9",quintal_per_hectare
+2020,GRAND EST,Sorgho,sorghum,sorghum,"43,9",quintal_per_hectare
+2020,PAYS DE LA LOIRE,Sorgho,sorghum,sorghum,"51,7",quintal_per_hectare
+2020,BRETAGNE,Sorgho,sorghum,sorghum,"48,8",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Sorgho,sorghum,sorghum,"47,9",quintal_per_hectare
+2020,OCCITANIE,Sorgho,sorghum,sorghum,"46,2",quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Sorgho,sorghum,sorghum,"47,4",quintal_per_hectare
+2020,PACA,Sorgho,sorghum,sorghum,"37,4",quintal_per_hectare
+2020,CORSE,Sorgho,sorghum,sorghum,37,quintal_per_hectare
+2019,ILE-DE-FRANCE,Sorgho,sorghum,sorghum,74,quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Sorgho,sorghum,sorghum,50,quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Sorgho,sorghum,sorghum,"74,5",quintal_per_hectare
+2019,NORMANDIE,Sorgho,sorghum,sorghum,45,quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Sorgho,sorghum,sorghum,"53,5",quintal_per_hectare
+2019,GRAND EST,Sorgho,sorghum,sorghum,"46,3",quintal_per_hectare
+2019,PAYS DE LA LOIRE,Sorgho,sorghum,sorghum,"56,2",quintal_per_hectare
+2019,BRETAGNE,Sorgho,sorghum,sorghum,"50,7",quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Sorgho,sorghum,sorghum,"52,5",quintal_per_hectare
+2019,OCCITANIE,Sorgho,sorghum,sorghum,"46,9",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Sorgho,sorghum,sorghum,"51,9",quintal_per_hectare
+2019,PACA,Sorgho,sorghum,sorghum,"36,9",quintal_per_hectare
+2019,CORSE,Sorgho,sorghum,sorghum,37,quintal_per_hectare
+2018,ILE-DE-FRANCE,Sorgho,sorghum,sorghum,73,quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Sorgho,sorghum,sorghum,51,quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Sorgho,sorghum,sorghum,"63,1",quintal_per_hectare
+2018,NORMANDIE,Sorgho,sorghum,sorghum,60,quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Sorgho,sorghum,sorghum,"54,2",quintal_per_hectare
+2018,GRAND EST,Sorgho,sorghum,sorghum,"55,5",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Sorgho,sorghum,sorghum,"59,7",quintal_per_hectare
+2018,BRETAGNE,Sorgho,sorghum,sorghum,"60,8",quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Sorgho,sorghum,sorghum,"51,8",quintal_per_hectare
+2018,OCCITANIE,Sorgho,sorghum,sorghum,"51,1",quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Sorgho,sorghum,sorghum,"54,3",quintal_per_hectare
+2018,PACA,Sorgho,sorghum,sorghum,"48,9",quintal_per_hectare
+2018,CORSE,Sorgho,sorghum,sorghum,30,quintal_per_hectare
+2017,ILE-DE-FRANCE,Sorgho,sorghum,sorghum,75,quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Sorgho,sorghum,sorghum,"59,7",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Sorgho,sorghum,sorghum,"91,1",quintal_per_hectare
+2017,NORMANDIE,Sorgho,sorghum,sorghum,60,quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Sorgho,sorghum,sorghum,"53,9",quintal_per_hectare
+2017,GRAND EST,Sorgho,sorghum,sorghum,"61,7",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Sorgho,sorghum,sorghum,"64,8",quintal_per_hectare
+2017,BRETAGNE,Sorgho,sorghum,sorghum,"63,2",quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Sorgho,sorghum,sorghum,"55,6",quintal_per_hectare
+2017,OCCITANIE,Sorgho,sorghum,sorghum,"55,4",quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Sorgho,sorghum,sorghum,"60,1",quintal_per_hectare
+2017,PACA,Sorgho,sorghum,sorghum,"48,6",quintal_per_hectare
+2017,CORSE,Sorgho,sorghum,sorghum,30,quintal_per_hectare
+2020,ILE-DE-FRANCE,Tournesol,helianthus_annuus,sunflower,"28,5",quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Tournesol,helianthus_annuus,sunflower,"21,8",quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Tournesol,helianthus_annuus,sunflower,"23,3",quintal_per_hectare
+2020,NORMANDIE,Tournesol,helianthus_annuus,sunflower,22,quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Tournesol,helianthus_annuus,sunflower,"32,5",quintal_per_hectare
+2020,GRAND EST,Tournesol,helianthus_annuus,sunflower,"23,1",quintal_per_hectare
+2020,PAYS DE LA LOIRE,Tournesol,helianthus_annuus,sunflower,"24,2",quintal_per_hectare
+2020,BRETAGNE,Tournesol,helianthus_annuus,sunflower,"20,1",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Tournesol,helianthus_annuus,sunflower,"20,1",quintal_per_hectare
+2020,OCCITANIE,Tournesol,helianthus_annuus,sunflower,"17,8",quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Tournesol,helianthus_annuus,sunflower,23,quintal_per_hectare
+2020,PACA,Tournesol,helianthus_annuus,sunflower,"17,5",quintal_per_hectare
+2020,CORSE,Tournesol,helianthus_annuus,sunflower,0,quintal_per_hectare
+2019,ILE-DE-FRANCE,Tournesol,helianthus_annuus,sunflower,"30,2",quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Tournesol,helianthus_annuus,sunflower,"20,2",quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Tournesol,helianthus_annuus,sunflower,"20,1",quintal_per_hectare
+2019,NORMANDIE,Tournesol,helianthus_annuus,sunflower,25,quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Tournesol,helianthus_annuus,sunflower,"29,6",quintal_per_hectare
+2019,GRAND EST,Tournesol,helianthus_annuus,sunflower,"22,5",quintal_per_hectare
+2019,PAYS DE LA LOIRE,Tournesol,helianthus_annuus,sunflower,23,quintal_per_hectare
+2019,BRETAGNE,Tournesol,helianthus_annuus,sunflower,"20,4",quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Tournesol,helianthus_annuus,sunflower,"22,4",quintal_per_hectare
+2019,OCCITANIE,Tournesol,helianthus_annuus,sunflower,"20,6",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Tournesol,helianthus_annuus,sunflower,"22,8",quintal_per_hectare
+2019,PACA,Tournesol,helianthus_annuus,sunflower,"16,9",quintal_per_hectare
+2019,CORSE,Tournesol,helianthus_annuus,sunflower,0,quintal_per_hectare
+2018,ILE-DE-FRANCE,Tournesol,helianthus_annuus,sunflower,"28,5",quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Tournesol,helianthus_annuus,sunflower,"24,9",quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Tournesol,helianthus_annuus,sunflower,"24,4",quintal_per_hectare
+2018,NORMANDIE,Tournesol,helianthus_annuus,sunflower,25,quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Tournesol,helianthus_annuus,sunflower,23,quintal_per_hectare
+2018,GRAND EST,Tournesol,helianthus_annuus,sunflower,"25,2",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Tournesol,helianthus_annuus,sunflower,"26,4",quintal_per_hectare
+2018,BRETAGNE,Tournesol,helianthus_annuus,sunflower,20,quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Tournesol,helianthus_annuus,sunflower,22,quintal_per_hectare
+2018,OCCITANIE,Tournesol,helianthus_annuus,sunflower,"20,8",quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Tournesol,helianthus_annuus,sunflower,24,quintal_per_hectare
+2018,PACA,Tournesol,helianthus_annuus,sunflower,"19,7",quintal_per_hectare
+2018,CORSE,Tournesol,helianthus_annuus,sunflower,0,quintal_per_hectare
+2017,ILE-DE-FRANCE,Tournesol,helianthus_annuus,sunflower,"33,4",quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Tournesol,helianthus_annuus,sunflower,"31,2",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Tournesol,helianthus_annuus,sunflower,"30,3",quintal_per_hectare
+2017,NORMANDIE,Tournesol,helianthus_annuus,sunflower,27,quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Tournesol,helianthus_annuus,sunflower,"28,4",quintal_per_hectare
+2017,GRAND EST,Tournesol,helianthus_annuus,sunflower,"31,3",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Tournesol,helianthus_annuus,sunflower,"31,1",quintal_per_hectare
+2017,BRETAGNE,Tournesol,helianthus_annuus,sunflower,"19,3",quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Tournesol,helianthus_annuus,sunflower,"28,4",quintal_per_hectare
+2017,OCCITANIE,Tournesol,helianthus_annuus,sunflower,"24,3",quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Tournesol,helianthus_annuus,sunflower,"25,8",quintal_per_hectare
+2017,PACA,Tournesol,helianthus_annuus,sunflower,"18,6",quintal_per_hectare
+2017,CORSE,Tournesol,helianthus_annuus,sunflower,22,quintal_per_hectare
+2020,ILE-DE-FRANCE,Triticale,x_triticosecale,winter_triticale,55,quintal_per_hectare
+2020,CENTRE-VAL DE LOIRE,Triticale,x_triticosecale,winter_triticale,"37,5",quintal_per_hectare
+2020,BOURGOGNE-FRANCHE-COMTÉ,Triticale,x_triticosecale,winter_triticale,42,quintal_per_hectare
+2020,NORMANDIE,Triticale,x_triticosecale,winter_triticale,"55,1",quintal_per_hectare
+2020,HAUTS-DE-FRANCE,Triticale,x_triticosecale,winter_triticale,"65,7",quintal_per_hectare
+2020,GRAND EST,Triticale,x_triticosecale,winter_triticale,"59,8",quintal_per_hectare
+2020,PAYS DE LA LOIRE,Triticale,x_triticosecale,winter_triticale,"45,4",quintal_per_hectare
+2020,BRETAGNE,Triticale,x_triticosecale,winter_triticale,"58,6",quintal_per_hectare
+2020,NOUVELLE AQUITAINE,Triticale,x_triticosecale,winter_triticale,"42,5",quintal_per_hectare
+2020,OCCITANIE,Triticale,x_triticosecale,winter_triticale,"40,3",quintal_per_hectare
+2020,AUVERGNE-RHÔNE-ALPES,Triticale,x_triticosecale,winter_triticale,"48,8",quintal_per_hectare
+2020,PACA,Triticale,x_triticosecale,winter_triticale,"39,5",quintal_per_hectare
+2020,CORSE,Triticale,x_triticosecale,winter_triticale,40,quintal_per_hectare
+2019,ILE-DE-FRANCE,Triticale,x_triticosecale,winter_triticale,62,quintal_per_hectare
+2019,CENTRE-VAL DE LOIRE,Triticale,x_triticosecale,winter_triticale,"53,2",quintal_per_hectare
+2019,BOURGOGNE-FRANCHE-COMTÉ,Triticale,x_triticosecale,winter_triticale,"51,6",quintal_per_hectare
+2019,NORMANDIE,Triticale,x_triticosecale,winter_triticale,60,quintal_per_hectare
+2019,HAUTS-DE-FRANCE,Triticale,x_triticosecale,winter_triticale,"73,6",quintal_per_hectare
+2019,GRAND EST,Triticale,x_triticosecale,winter_triticale,"62,4",quintal_per_hectare
+2019,PAYS DE LA LOIRE,Triticale,x_triticosecale,winter_triticale,64,quintal_per_hectare
+2019,BRETAGNE,Triticale,x_triticosecale,winter_triticale,"61,5",quintal_per_hectare
+2019,NOUVELLE AQUITAINE,Triticale,x_triticosecale,winter_triticale,"52,7",quintal_per_hectare
+2019,OCCITANIE,Triticale,x_triticosecale,winter_triticale,"44,1",quintal_per_hectare
+2019,AUVERGNE-RHÔNE-ALPES,Triticale,x_triticosecale,winter_triticale,"50,5",quintal_per_hectare
+2019,PACA,Triticale,x_triticosecale,winter_triticale,"39,4",quintal_per_hectare
+2019,CORSE,Triticale,x_triticosecale,winter_triticale,40,quintal_per_hectare
+2018,ILE-DE-FRANCE,Triticale,x_triticosecale,winter_triticale,60,quintal_per_hectare
+2018,CENTRE-VAL DE LOIRE,Triticale,x_triticosecale,winter_triticale,"44,3",quintal_per_hectare
+2018,BOURGOGNE-FRANCHE-COMTÉ,Triticale,x_triticosecale,winter_triticale,"49,5",quintal_per_hectare
+2018,NORMANDIE,Triticale,x_triticosecale,winter_triticale,"47,2",quintal_per_hectare
+2018,HAUTS-DE-FRANCE,Triticale,x_triticosecale,winter_triticale,"65,6",quintal_per_hectare
+2018,GRAND EST,Triticale,x_triticosecale,winter_triticale,"60,3",quintal_per_hectare
+2018,PAYS DE LA LOIRE,Triticale,x_triticosecale,winter_triticale,"51,4",quintal_per_hectare
+2018,BRETAGNE,Triticale,x_triticosecale,winter_triticale,"54,1",quintal_per_hectare
+2018,NOUVELLE AQUITAINE,Triticale,x_triticosecale,winter_triticale,"42,9",quintal_per_hectare
+2018,OCCITANIE,Triticale,x_triticosecale,winter_triticale,"37,4",quintal_per_hectare
+2018,AUVERGNE-RHÔNE-ALPES,Triticale,x_triticosecale,winter_triticale,"48,7",quintal_per_hectare
+2018,PACA,Triticale,x_triticosecale,winter_triticale,39,quintal_per_hectare
+2018,CORSE,Triticale,x_triticosecale,winter_triticale,35,quintal_per_hectare
+2017,ILE-DE-FRANCE,Triticale,x_triticosecale,winter_triticale,60,quintal_per_hectare
+2017,CENTRE-VAL DE LOIRE,Triticale,x_triticosecale,winter_triticale,"48,2",quintal_per_hectare
+2017,BOURGOGNE-FRANCHE-COMTÉ,Triticale,x_triticosecale,winter_triticale,"52,8",quintal_per_hectare
+2017,NORMANDIE,Triticale,x_triticosecale,winter_triticale,"58,8",quintal_per_hectare
+2017,HAUTS-DE-FRANCE,Triticale,x_triticosecale,winter_triticale,"66,4",quintal_per_hectare
+2017,GRAND EST,Triticale,x_triticosecale,winter_triticale,"53,5",quintal_per_hectare
+2017,PAYS DE LA LOIRE,Triticale,x_triticosecale,winter_triticale,"61,3",quintal_per_hectare
+2017,BRETAGNE,Triticale,x_triticosecale,winter_triticale,"62,7",quintal_per_hectare
+2017,NOUVELLE AQUITAINE,Triticale,x_triticosecale,winter_triticale,"48,7",quintal_per_hectare
+2017,OCCITANIE,Triticale,x_triticosecale,winter_triticale,"43,5",quintal_per_hectare
+2017,AUVERGNE-RHÔNE-ALPES,Triticale,x_triticosecale,winter_triticale,"50,2",quintal_per_hectare
+2017,PACA,Triticale,x_triticosecale,winter_triticale,"39,1",quintal_per_hectare
+2017,CORSE,Triticale,x_triticosecale,winter_triticale,35,quintal_per_hectare

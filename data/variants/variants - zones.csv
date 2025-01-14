@@ -1,0 +1,6 @@
+reference_name,fra,eng,category,nature,default_unit,pictogram
+animal_division,Zone de bâtiment d'élevage,Livestock building division,building_division,animal_division,unity,uf28a-barn-o.svg
+building,Bâtiment,Building,building,building,unity,uf231-building.svg
+building_division,Zone de bâtiment,Building division,building_division,building_division,unity,uf28a-barn-o.svg
+installation,Installation,Installation,installation,installation,unity,uf5cd-industry.svg
+land_parcel,Parcelle,Land parcel,land,land_parcel,unity,uf179-land-parcels.svg

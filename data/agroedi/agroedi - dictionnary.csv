@@ -1,0 +1,1373 @@
+repository_id,reference_id,reference_code,reference_label,ekylibre_scope,ekylibre_value
+2,19941,AAA15,Table de référence,,
+2,19942,AAA16,Calcul logiciel,,
+2,19943,AAA17,Saisie logiciel,,
+2,19944,AAA18,Analyse,,
+2,19945,AAA19,Inconnue,,
+2,19947,AAA32,Agriculture intégrée,,
+2,19948,AAA33,Agriculture biologique,,
+2,19949,AAA34,Agro foresterie,,
+2,19910,ABF00,Non calcaire (0 à 5%),,
+2,19911,ABF01,Calcaire (>5%),,
+2,19912,ABF02,Argileux (>30% A ou >25% A et >55%S),,
+2,19913,ABF03,Limoneux (<55% S et <18% A),,
+2,19914,ABF04,Limon-argileux (<55% S et 18%<A<35%),,
+2,19915,ABF05,Sableux (>55% S et <25% A),,
+2,19916,ABF06,Limono-sableux (15%<S<55% et <18% A),,
+2,19917,ABF07,Sablo-limoneux (>55% S et <15% A),,
+2,19918,ABF08,Non caillouteux (<5%),,
+2,19919,ABF09,Caillouteux (>15%),,
+2,19920,ABF10,Peu caillouteux (5-15%),,
+2,19925,ABF12,hydromorphe (<60cm),,
+2,19926,ABF13,non hydromorphe,,
+2,19927,ABF14,drainé,,
+2,20399,ZAA,Agriculture raisonnée,,
+2,20400,ZAB,Certification ISO 9000,,
+2,20381,ZAC,Certification ISO 14000,,
+2,20402,ZAD,Référentiel Quali'terre,,
+2,20403,ZAE,Référentiel FARRE,,
+2,19889,ZFD,Non renseigné,,
+2,19890,ZFE,Limon,,
+2,19891,ZFF,Limon argileux,,
+2,19892,ZFG,Argileux,,
+2,19893,ZFH,Argile lourde (sol a plus de 50 % d'argile),,
+2,19894,ZFI,Argilo-limoneux,,
+2,19895,ZFJ,Argilo-calcaire,,
+2,19896,ZFK,Argile limono-sableuse,,
+2,19909,ZFL,Argilo-sableux,,
+2,19897,ZFM,Sable,,
+2,19898,ZFM,Limon sableux,,
+2,19899,ZFO,Limon sablo-argileux,,
+2,19902,ZFS,Sablo-argileux,,
+2,19903,ZFT,Sablo-limoneux,,
+2,19904,ZFU,sables limono-argileux,,
+2,19905,ZFX,Terre de craie,,
+2,19906,ZFY,Sol organique (y compris tourbe),,
+2,19928,ZGB,Très acide,,
+2,19929,ZGC,Acide,,
+2,19930,ZGD,Neutre,,
+2,19931,ZGE,Basique,,
+2,19901,ZGF,Limon non battant,,
+2,19921,ZGF,Très superficiel,,
+2,19922,ZGG,Superficiel,,
+2,19923,ZGH,Moyen (limon...),,
+2,19924,ZGI,Profond,,
+2,20404,ZGN,Contrat de production,,
+2,20425,ZGP,Certification agriculture biologique,,
+2,20386,ZGQ,Contrat de production sous Agriconfiance,,
+2,20387,ZGR,Charte de production Céréales,,
+2,20388,ZGS,Label,,
+2,20429,ZGT,Certificat de conformité produit,,
+2,20410,ZGU,Cahier des charges d'agriculture durable,,
+2,20411,ZGV,Charte de l'agriculture paysanne,,
+2,20412,ZHA,Mesures agro-environnementales,,
+2,20413,ZHB,Référentiel GLOBAL GAP,,
+2,20394,ZHC,"Norme Production ""Pomme de terre"" NF V25 111",,
+2,20415,ZHD,Contrat de production Semences/Plants Certifiés,,
+2,20436,ZHE,Autres opérations ou contrat,,
+2,19907,ZHK,Limon argilo-sableux,,
+2,19932,ZJ2,Calibre,,
+2,19933,ZJ3,PMG (Poids de Mille Grains),,
+2,19934,ZJ4,Humidité,,
+2,19935,ZJ5,PS (Poids Spécifique),,
+2,19936,ZJ6,Taux d'impuretés,,
+2,19937,ZJ7,Taux de Protéines,,
+2,19938,ZJ8,Calibrage,,
+2,19939,ZJ9,Taux de MS,,
+2,19940,ZK1,Taux de nitrates,,
+2,27341,ZK2,Teneur en huile,,
+2,20397,ZLB,Plan Environnement Agriculture,,
+2,20418,ZLC,Autre type d'agriculture,,
+2,19900,ZQE,Limon battant,,
+2,19908,ZRE,Argile sablo-limoneuse,,
+2,20439,ZUA,Zone vulnérable,,
+2,20440,ZUB,Zone d'excédent structurel,,
+2,20441,ZUC,Zone d'actions complémentaires,,
+2,20442,ZUD,Site Natura 2000,,
+2,20443,ZUE,Zone d'érosion (arrêté préfectotal),,
+2,20444,ZUF,Périmètre de protection de captage,,
+2,20445,ZUG,Parcelle ayant reçu des boues de station d'épuration,,
+2,22293,ZUH,Zone d'actions renforcées,,
+2,22294,ZUI,Appellation d’origine contrôlée ou protégée (AOC ou AOP),,
+2,22295,ZUJ,Indication géographique protégée (IGP),,
+2,22296,ZUK,Spécialité traditionnelle garantie (STG),,
+2,22297,ZUL,Charte de production du maïs doux ARVALIS - Institut du végétal/IRTAC,,
+2,22298,ZUM,Charte de production des protéagineux ARVALIS - Institut du végétal / IRTAC,,
+2,22299,ZUN,Charte qualité maïs grand sud ouest,,
+2,22300,ZUO,Norme Agriconfiance NF V01 – 007 (environnement).,,
+3,20109,ABC00,Température,,
+3,20110,ABC01,Vitesse du vent,,
+3,20111,ABC02,Précipitations,,
+3,20112,ABC03,Inondations,,
+3,20101,ZHP,Pluies,,
+3,20102,ZHQ,Orages,,
+3,20103,ZHR,Grêle,,
+3,20104,ZHS,Gel,,
+3,20105,ZHT,Sécheresse,,
+3,20106,ZHU,Chaleur,,
+3,20107,ZHV,Météo sans incidence,,
+3,20108,ZHW,Vent,,
+5,20125,U60,Eléments fertilisants préconisés,ProductNature,mineral_fertilizer
+5,22303,U61,Biocides,ProductNature,plant_medicine
+5,27511,U62,Stimulateur des défenses naturelles,ProductNature,plant_medicine
+5,186,ZIU,Herbicide,ProductNature,plant_medicine
+5,187,ZIV,Fongicide,ProductNature,plant_medicine
+5,188,ZIW,Insecticide,ProductNature,plant_medicine
+5,189,ZIX,Molluscicide / hélicide,ProductNature,plant_medicine
+5,190,ZIY,Nématicide,ProductNature,plant_medicine
+5,191,ZIZ,Régulateur,ProductNature,plant_medicine
+5,192,ZJA,Divers (huiles),ProductNature,plant_medicine
+5,193,ZJB,Effluents d'élevage,ProductNature,organic_fertilizer
+5,194,ZJC,Fertilisation minérale,ProductNature,mineral_fertilizer
+5,195,ZJD,Fertirrigation,ProductNature,mineral_fertilizer
+5,196,ZJE,Irrigation,ProductNature,water
+5,197,ZJF,Semence,ProductNature,seed
+5,198,ZJG,Traitement de semence,ProductNature,plant_medicine
+5,199,ZJJ,Acaricides,ProductNature,plant_medicine
+5,200,ZJK,Bactéricides,ProductNature,plant_medicine
+5,201,ZJL,Moyens biologiques,ProductNature,plant_medicine
+5,202,ZJN,Rodenticides,ProductNature,plant_medicine
+5,203,ZJO,Taupicides,ProductNature,plant_medicine
+5,204,ZJP,Corvicides,ProductNature,plant_medicine
+5,205,ZJQ,Corvifuges,ProductNature,plant_medicine
+5,206,ZJR,Répulsifs oiseaux-gibiers,ProductNature,plant_medicine
+5,207,ZJS,Substance de croissance,ProductNature,plant_medicine
+5,208,ZJT,Plants,ProductNature,seed
+5,209,ZKA,Sous-produits et déchets issus de filières alimentaires,ProductNature,organic_fertilizer
+5,210,ZKB,Sous-produits et déchets issus de filières non alimentaires,ProductNature,organic_fertilizer
+5,211,ZKC,Boues résiduaires de station d'épuration et de compost urbain,ProductNature,organic_fertilizer
+5,212,ZKD,Fertilisation minérale type Bulk,ProductNature,mineral_fertilizer
+5,213,ZKE,Amendements calco-magnésiens,ProductNature,mineral_fertilizer
+5,214,ZMT,Inhibiteurs de germination,ProductNature,plant_medicine
+5,215,ZQG,Adjuvants,ProductNature,plant_medicine
+5,216,ZSU,Fertilisation organo-minérale,ProductNature,mineral_fertilizer
+6,217,SCA,Fumier de bovins,ProductNatureVariant,litter_cattle_manure
+6,218,SCB,Lisiers de bovins,ProductNatureVariant,pure_cattle_slurry
+6,219,SCC,Purin de bovins,ProductNatureVariant,pure_cattle_liquid_manure
+6,220,SCD,Fumier de porcins,ProductNatureVariant,pig_manure
+6,221,SCE,Lisier de porcins,ProductNatureVariant,pig_slurry
+6,222,SCF,Fumier d'ovins,ProductNatureVariant,sheep_manure
+6,223,SCG,Lisier d'ovins,,
+6,224,SCH,Fumier de caprins,,
+6,225,SCI,Lisier de caprins,,
+6,226,SCJ,Fumier de chevaux,,
+6,227,SCK,Fumier de dindes,,
+6,228,SCL,Fientes de dinde,,
+6,229,SCM,Lisier de dindes,,
+6,230,SCN,Lisier de canards,,
+6,231,SCO,Fumier de canards,,
+6,232,SCP,Lisier de pintades,,
+6,233,SCQ,Fientes de pintades,,
+6,234,SCR,Fumier de pintades,,
+6,235,SCS,Fientes de poules pondeuses,,
+6,236,SCT,Fumier de poules pondeuses,,
+6,237,SCU,Fumier de poulets de chair,,
+6,238,SCV,Fientes fraîches de poulets de chair,,
+6,239,SCW,Lisier de poulets de chair,,
+6,240,SCY,Lisier de lapins,,
+6,241,SDA,Vinasses de betteraves,,
+6,2056,SDB,Ecumes de sucrerie,,
+6,243,SDC,Fumier de champignons,,
+6,244,SDD,Lombricompost,,
+6,245,SDE,Tourbe,,
+6,246,SDF,Refus de tamisage fumier de porc,,
+6,247,SDG,Soluble de pomme de terre,,
+6,248,SDH,Marc de raisin,,
+6,249,SDI,Compost de déchet vert,,
+6,250,SDJ,Autres sous produits et déchets issus des filières alimentaires,,
+6,2047,SDK,Carbonate de Calcium,,
+6,252,SDL,Boue d'épuration,,
+6,253,SDQ,Effluents viticoles,,
+6,254,SDR,Compost urbain,,
+6,255,SDS,Autres boues résiduaires de station d'épuration et de compost urbain,,
+6,256,SDT,Terre de récupération,,
+6,257,SDU,Eaux de lavage,,
+6,258,SDV,Eaux de lavage produits terreux,,
+6,259,SDW,Eaux de lavage produits non terreux,,
+6,260,SDX,Autres sous-produits et déchets de filières non alimentaires,,
+6,261,SDY,Boues de papeterie,,
+6,1761,SJA,pur,,
+6,1762,SJB,dilué,,
+6,1763,SJC,très dilué (non couvert),,
+6,1764,SJD,très pailleux,,
+6,1765,SJE,composté sec,,
+6,1766,SJF,composté humide,,
+6,1767,SJG,pas de compost,,
+6,1768,SJH,engraissement,,
+6,1769,SJI,litière accumulée,,
+6,1770,SJJ,litière raclée,,
+6,1771,SJK,mous de logette,,
+6,1772,SJL,étable entravée,,
+6,1773,SJM,pente paillée,,
+6,1774,SJN,alimentation classique,,
+6,1775,SJO,alimentation biphase,,
+6,1776,SJP,paille,,
+6,1777,SJQ,sciure,,
+6,1778,SJR,copeaux,,
+6,1779,SJS,% Matière sèche ?????,,
+6,1780,SJT,label (oui/non),,
+6,1781,SJU,chaulée (oui/non),,
+6,1782,SJV,origine urbaine,,
+6,1783,SKA,origine papeterie,,
+6,1784,SKB,origine laiterie,,
+6,1785,SKC,abattoir,,
+6,1786,SKD,brut,,
+6,1787,SKE,centrifugé,,
+6,1788,SKF,humides,,
+6,1789,SKG,préséchées,,
+6,1790,SKH,séchées,,
+6,1791,SKI,avant stockage,,
+6,1792,SKJ,après stockage conditions humides,,
+6,1793,SKK,après stockage conditions sèches,,
+6,1794,SKL,frais,,
+6,1795,SKM,mûr,,
+6,1796,SKN,Solide,,
+6,1797,SKO,liquide,,
+6,1798,SKP,Compact,,
+6,2043,U01,Craie,,
+6,2044,U02,Maërl,,
+6,2045,U03,Marne,,
+6,2046,U04,Dolomie,,
+6,2048,U05,Carbonate de magnésium,,
+6,2049,U06,Chaux vive,,
+6,2050,U07,Chaux éteinte,,
+6,2051,U08,Chaux calcique,,
+6,2052,U09,Chaux magnésienne,,
+6,2053,U10,Chaux calco-magnésienne,,
+6,2054,U11,Amendement calcique mixte,,
+6,2055,U12,Amendement magnésien mixte,,
+6,2057,U14,Amendement basique sidérurgique,,
+6,2058,U15,Craie broyée,,
+6,2059,U16,Craie phosphatée,,
+6,2060,U17,Coquilles d’œufs,,
+6,2061,U18,Autre amendement calco-magnésien,,
+6,20124,U50,Semences non certifiées,,
+6,262,ZOK,Lisier de veau,,
+6,1751,ZQA,Semences certifiées,,
+6,1749,ZQB,Non OGM,,
+6,1750,ZQC,OGM,,
+6,1752,ZQD,Semences de ferme,,
+6,1753,ZQE,Génération G0,,
+6,1754,ZQF,Génération G1,,
+6,1755,ZQG,Génération G2,,
+6,1756,ZQH,Génération G3,,
+6,1757,ZQI,Génération G4,,
+6,1758,ZQJ,Génération R1,,
+6,1759,ZQK,Génération R2,,
+6,1760,ZQL,Génération R3,,
+9,263,ZMS,Plan de fumure,,
+9,264,ZMT,Plan phyto,,
+9,265,ZMU,Avertissement,,
+9,266,ZMV,Préconisation,,
+9,267,ZMW,Autre conseil,,
+9,268,ZMX,Analyse de sol,,
+9,269,ZMY,Analyse de plantes cultivées,,
+9,270,ZMZ,Adventices,,
+9,271,ZNA,Parasites,,
+9,272,ZNB,Conditions météorologiques,,
+9,273,ZNC,Autres mesures/OAD,,
+9,274,ZND,Tour de plaine,,
+9,275,ZNE,Autre observation,,
+9,276,ZRA,Tours d'eau,,
+9,277,ZRB,Bilan hydrique,,
+9,278,ZRC,Bilan fertilisation,,
+9,279,ZRD,Réglementation,,
+11,20116,ABD01,Préconisé,,
+11,20117,ABD02,Pas de traitement préconisé,,
+11,20114,ZK1,Evènement prévu,,
+11,20115,ZK2,Evènement réalisé,,
+14,27542,AAT00,Bouturage,,
+14,27543,AAT01,Distançage,,
+14,27544,AAT02,Eboutonnage,,
+14,27545,AAT03,Effleurage,,
+14,27546,AAT04,Empotage,,
+14,27547,AAT05,Entretien de nichoirs / gîtes,,
+14,27548,AAT06,Entretien des aménagements paysagers,,
+14,27549,AAT07,Fauche des drageons,,
+14,27550,AAT08,Gestion d'animaux pour la gestion des bioagresseurs,,
+14,27551,AAT09,Greffage,,
+14,27552,AAT10,Manipulation de protection anti-grêle,,
+14,27553,AAT11,Manipulation de protection anti-insecte mono-parcelle,,
+14,27554,AAT12,Manipulation de protection anti-insecte mono-rang,,
+14,27555,AAT13,Manipulation de protection anti-pluie,,
+14,27556,AAT14,Nettoyage de plantes,,
+14,27557,AAT15,Pincement,,
+14,27558,AAT16,Préparation d'extraits végétaux,,
+14,27559,AAT17,Relevé de piègeage massif,,
+14,27560,AAT18,Relevé de pièges campagnols,,
+14,27561,AAT19,Relevé de pièges monitoring,,
+14,27562,AAT20,Rempotage / repiquage,,
+14,27563,AAT21,Repiquage,,
+14,27564,AAT22,Suppression des organes contaminés,,
+14,27565,AAT23,Surfaçage,,
+14,27566,AAT24,Taille des racines,,
+14,27567,AAT25,Tuteurage,,
+14,27568,AAT26,Utilisation d'OAD,,
+14,1959,SEA,Arrachage,,
+14,1960,SEB,Binage,Procedo,hoeing
+14,1961,SEC,Broyage cailloux,Procedo,crop_residues_grinding
+14,1962,SED,Buttage,Procedo,hoeing
+14,1963,SEE,Déchaumage,Procedo,superficial_plowing
+14,1964,SEF,Décompactage,Procedo,superficial_plowing
+14,1965,SEG,Défanage,Procedo,topkilling
+14,1966,SEH,Andainage,Procedo,swathing
+14,1967,SEI,Enfouissement,Procedo,hoeing
+14,1968,SEJ,Ensilage,Procedo,direct_silage
+14,1969,SEK,Epandage organique,Procedo,fertilizing
+14,1970,SEL,Fauchage,Procedo,plant_mowing
+14,2007,SEM,Fertilisation,Procedo,fertilizing
+14,1972,SEN,Hersage,Procedo,raking
+14,1973,SEO,Irrigation,Procedo,plant_watering
+14,1974,SEP,Labour,Procedo,plowing
+14,1975,SEQ,Moisson,Procedo,harvesting_with_plant_or_land_parcel
+14,1976,SER,Récolte,Procedo,harvesting_with_plant_or_land_parcel
+14,2000,SES,Roulage,Procedo,rolling
+14,2018,SET,Semis classique,Procedo,sowing_without_plant_output
+14,1979,SEU,Semis direct,Procedo,sowing_without_plant_output
+14,1980,SEV,Sous solage,Procedo,rolling
+14,1981,SEW,Plantation,Procedo,sowing_without_plant_output
+14,1982,SEX,Traitement phytosanitaire,Procedo,spraying
+14,1983,SFA,Epuration,Procedo,plant_grinding
+14,1984,SFB,Paillage,Procedo,generic_covering
+14,1985,SFC,Castration,Procedo,plant_grinding
+14,1986,SFD,Triage au champ,,
+14,1987,SFE,Pressage,Procedo,straw_bunching
+14,1988,SFG,Billonnage,,
+14,1989,SFH,Solarisation,,
+14,1990,SFI,Bâchage,Procedo,plastic_mulching
+14,1991,SFJ,Tamisage et/ou Epierrage,,
+14,1992,SFK,Broyage des résidus,Procedo,crop_residues_grinding
+14,1997,V85,Aménagement foncier,Procedo,earth_work
+14,1998,V86,Désinfection,,
+14,2002,V87,Surgreffage,,
+14,2003,V88,Piquetage/Marquants,,
+14,2004,V89,Dévitalisation,,
+14,2006,V90,Installation de protection,,
+14,2009,V91,Observation carences,,
+14,2010,V92,Complantation/recépage/marcotage,Procedo,vine_complanting
+14,2011,V93,Décavaillonage,,
+14,2012,V94,Cavaillonage,,
+14,2013,V95,Désherbage,Procedo,spraying
+14,2015,V96,"Travail de surface (binage, hersage, griffage, ...)",Procedo,hoeing
+14,2017,V97,Palissage (mise en place et entretien),Procedo,trellising
+14,2019,V98,Tonte,Procedo,land_parcel_grinding
+14,2020,V99,"Brulage enherbement (estivage, ..)",,
+14,2021,W01,Taille (badigeonnage compris),Procedo,vine_pruning
+14,2022,W02,Pré -taille,Procedo,vine_pre_pruning
+14,2023,W03,Broyage des bois de taille,Procedo,crop_residues_grinding
+14,2024,W04,Tirage et/ou Brûlage des bois,Procedo,trellising
+14,2025,W05,Liage/Attachage/Pliage,Procedo,trellising
+14,2026,W06,Pliage (à la taille),Procedo,trellising
+14,2027,W07,"Relevage, accolage",Procedo,trellising
+14,2028,W08,Egourmandage (=epamprage),Procedo,trellising
+14,2029,W09,Rognage / Ecimage,Procedo,land_parcel_grinding
+14,2030,W10,Ebourgeonnage,Procedo,trellising
+14,2031,W11,Effeuillage,Procedo,vine_leaves_removing
+14,2032,W12,Eclaircissage,Procedo,land_parcel_grinding
+14,2033,W13,"Vendange en vert (grapillonnage, ...)",,
+14,2034,W14,Taille en vert,Procedo,vine_pruning
+14,2035,W15,Rajout de terre,,
+14,2036,W16,Lutte biologique,Procedo,vine_capsuls_dispersing
+14,2038,W18,Protection climatique,,
+14,2039,W19,Vendange,Procedo,harvesting_with_plant_or_land_parcel
+14,2040,W20,Contrôle maturité,,
+14,2041,W21,Observation ravageurs et maladies,,
+14,2042,W22,Autres observations,,
+14,22733,W23,Fanage,Procedo,swathing
+14,22736,W24,Transport,,
+14,22742,W25,Pâturage,Procedo,pasturing
+14,27229,W26,Brûlage des résidus,,
+14,27339,W27,Engaignage,,
+14,27340,W28,Haubanage,,
+14,1993,ZKE,Semis de précision,Procedo,sowing_without_plant_output
+14,1994,ZTA,Destruction des mâles (maïs),Procedo,plant_grinding
+14,1995,ZTB,Fermeture du silo,,
+14,1996,ZTC,Autre type de travail,Procedo,sowing_without_plant_output
+15,1829,W78,Raisin de table,ProductNatureVariant,grape
+15,1830,W79,Raisin de cuve,ProductNatureVariant,grape
+15,1831,W80,Raisin apyrène,ProductNatureVariant,grape
+15,1832,W81,Double fin,ProductNatureVariant,matter
+15,318,ZJH,"Produit principal (grain, racine, tubercule)",ProductNatureVariant,grain
+15,319,ZJI,Coproduit (paille),ProductNatureVariant,straw
+17,1659,H57,Fleur,,
+17,1660,H58,Aromatique,,
+17,1661,H59,Bois,,
+17,1662,H60,bourgeons,,
+17,1663,H61,Cuve,,
+17,1664,H62,feuilles et fruits,,
+17,1665,H63,Fruit,,
+17,1666,H64,racines fraîches,,
+17,1667,H65,racines séchées,,
+17,1668,H66,Table,,
+17,1528,H72,Autre,,
+17,1870,V46,Vin,,
+17,1871,V47,Raisin de table,,
+17,1872,V48,Raisin sec,,
+17,1873,V49,Jus de raisin,,
+17,1874,V50,alcool de distillerie,,
+17,1875,V51,Vinaigre,,
+17,1876,V52,Autre destination,,
+17,1670,ZEO,pâturée,,
+17,1671,ZEP,fauchée,,
+17,1672,ZEQ,pâturée et fauchée,,
+17,1673,ZER,Fibre,,
+17,1674,ZER,fibre,,
+17,1675,ZET,papeterie,,
+17,1676,ZEX,textile,,
+17,1677,ZLD,Grain(es),,
+17,1678,ZLE,Semence,,
+17,1679,ZLF,Fourrage(r.) = Prairie,,
+17,1680,ZLG,Biscuit,,
+17,1681,ZLH,Meunier,,
+17,1682,ZLI,Ethanol,,
+17,1683,ZLJ,Amidon,,
+17,1684,ZLO,Plant (générique),,
+17,1685,ZLQ,Frais,,
+17,1686,ZLR,conso,,
+17,1687,ZLS,Transformation,,
+17,1688,ZMP,Potager,,
+17,1689,ZMW,Primeur,,
+17,1690,ZNA,Destruction (générique),,
+17,1691,ZNS,industrie,,
+17,1692,ZPA,Déshydraté,,
+18,1107,E01,Abricotier,MasterProduction,apricot
+18,1108,E02,Achillée millefeuille,MasterProduction,crop_production
+18,1109,E03,Agrostide blanche,MasterProduction,crop_production
+18,1110,E04,Agrostide des chiens,MasterProduction,crop_production
+18,1111,E05,Agrostide jouet du vent,MasterProduction,crop_production
+18,1112,E06,Agrostide montana,MasterProduction,crop_production
+18,1113,E07,Agrostide stolonifère,MasterProduction,crop_production
+18,1115,E08,Aigremoine,MasterProduction,crop_production
+18,1117,E09,Ail des ours,MasterProduction,crop_production
+18,1118,E10,Ail rocambole,MasterProduction,crop_production
+18,1119,E11,Alchémille,MasterProduction,crop_production
+18,1120,E12,Alliaire,MasterProduction,crop_production
+18,1122,E13,Alpiste roseau,MasterProduction,crop_production
+18,1123,E14,Amandier,MasterProduction,almond
+18,1124,E15,Amaranthe,MasterProduction,crop_production
+18,1125,E16,Ambérique = pousse de soja,MasterProduction,crop_production
+18,1126,E17,Ananas,MasterProduction,pineapple
+18,1127,E18,Ancolie,MasterProduction,crop_production
+18,1128,E19,Anémone,MasterProduction,crop_production
+18,1129,E20,Aneth,MasterProduction,dill
+18,1130,E21,Angelique,MasterProduction,angelica
+18,1131,E22,Anis,MasterProduction,anise
+18,1132,E23,Argousier,MasterProduction,crop_production
+18,1133,E24,Armoise,MasterProduction,crop_production
+18,1134,E25,Arnica,MasterProduction,crop_production
+18,1138,E26,Aunée,MasterProduction,crop_production
+18,1139,E27,Avocatier,MasterProduction,avocado
+18,1141,E28,Avoine brésilienne,MasterProduction,spring_oat
+18,1142,E29,Avoine byzantine,MasterProduction,spring_oat
+18,1143,E30,Avoine jaunâtre,MasterProduction,spring_oat
+18,1144,E31,Avoine nue,MasterProduction,spring_oat
+18,1145,E32,Ballote,MasterProduction,crop_production
+18,1146,E33,Balsamite,MasterProduction,crop_production
+18,1147,E34,Bananier,MasterProduction,banana
+18,1148,E35,Bardane,MasterProduction,burdock
+18,1149,E36,Basilic,MasterProduction,basil
+18,1150,E37,Belladone,MasterProduction,crop_production
+18,1151,E38,Benoîte,MasterProduction,crop_production
+18,1155,E39,Bouillon blanc (molène),MasterProduction,crop_production
+18,1156,E40,Bourrache,MasterProduction,borage
+18,1157,E41,Brome biebersteinii,MasterProduction,bromus
+18,1158,E42,Brome carinatus,MasterProduction,bromus
+18,1159,E43,Brome cathartique,MasterProduction,bromus
+18,1161,E44,Brome dressé,MasterProduction,bromus
+18,1162,E45,Brome faux-seigle,MasterProduction,bromus
+18,1163,E46,Brome fibreux,MasterProduction,bromus
+18,1164,E47,Brome inerme,MasterProduction,bromus
+18,1165,E48,Brome mou,MasterProduction,bromus
+18,1166,E49,Brome sitchensis,MasterProduction,bromus
+18,1167,E50,Brome stérile,MasterProduction,bromus
+18,1168,E51,Brunelle vulgaire,MasterProduction,crop_production
+18,1169,E52,Bugle rampant,MasterProduction,bugle
+18,1170,E53,Buplèvre,MasterProduction,crop_production
+18,1171,E54,Cameline,MasterProduction,camelina
+18,1172,E55,Camomille,MasterProduction,chamomile
+18,1173,E56,Capucine,MasterProduction,crop_production
+18,1176,E57,Caroube,MasterProduction,carob
+18,1177,E58,Carthame,MasterProduction,crop_production
+18,1178,E59,Carvi,MasterProduction,caraway
+18,1179,E60,Caseiller,MasterProduction,crop_production
+18,1181,E61,Cataire ou Chataire,MasterProduction,crop_production
+18,1184,E62,Centaurée bleuet,MasterProduction,cornflower
+18,1185,E63,Centaurée d'Espagne,MasterProduction,cornflower
+18,1186,E64,Centaurée du solstice,MasterProduction,cornflower
+18,1187,E65,Centaurée jacée,MasterProduction,cornflower
+18,1188,E66,Centaurée scabieuse,MasterProduction,cornflower
+18,1190,E67,Cerisier,MasterProduction,cherry
+18,1192,E68,Chardon,MasterProduction,crop_production
+18,1194,E69,Châtaignier,MasterProduction,chesnut
+18,1195,E70,Chayotte = Christophine,MasterProduction,crop_production
+18,1196,E71,Chelidoine,MasterProduction,crop_production
+18,1197,E72,Chénopode,MasterProduction,crop_production
+18,1199,E73,Chiendent à crête,MasterProduction,crop_production
+18,1200,E74,Chiendent à tige courte,MasterProduction,crop_production
+18,1201,E75,Chiendent du désert,MasterProduction,crop_production
+18,1202,E76,Chiendent rampant,MasterProduction,crop_production
+18,1203,E77,Chiendent velu,MasterProduction,crop_production
+18,1204,E78,Chou marin,MasterProduction,cabbage
+18,1208,E79,Christe marine,MasterProduction,crop_production
+18,1209,E80,Chrysanthème,MasterProduction,crop_production
+18,1210,E81,Ciboule,MasterProduction,crop_production
+18,1211,E82,Ciboulette,MasterProduction,chive
+18,1212,E83,Citronnier,MasterProduction,lemon
+18,1213,E84,Clarkia,MasterProduction,crop_production
+18,1214,E85,Clémentinier,MasterProduction,clementine
+18,1215,E86,Cognassier,MasterProduction,quince
+18,1218,E87,Consoude,MasterProduction,crop_production
+18,1220,E88,Coriandre,MasterProduction,coriander
+18,1221,E89,Coton,MasterProduction,cotton
+18,1222,E90,Courge,MasterProduction,pumpkin
+18,1224,E91,Crambe d'abbyssinie,MasterProduction,crop_production
+18,1225,E92,Cresson alénois,MasterProduction,cress
+18,1226,E93,Cresson de terre,MasterProduction,cress
+18,1227,E94,Cresson des fontaines,MasterProduction,watercress
+18,1228,E95,Crosne,MasterProduction,crop_production
+18,1229,E96,Cumin,MasterProduction,cumin
+18,1231,E97,Dahlia,MasterProduction,crop_production
+18,1232,E98,Dauphinelle à grandes fleurs,MasterProduction,crop_production
+18,1233,E99,Dictame de crête,MasterProduction,crop_production
+18,1234,F01,Digitale,MasterProduction,crop_production
+18,1235,F02,Dimorphoteca,MasterProduction,crop_production
+18,1236,F03,Echalion,MasterProduction,crop_production
+18,1238,F04,Echinacée,MasterProduction,crop_production
+18,1239,F05,Eglantier,MasterProduction,crop_production
+18,1241,F06,Epilobe à 4 angles,MasterProduction,crop_production
+18,1243,F07,Eschscholtzia,MasterProduction,crop_production
+18,1244,F08,Estragon,MasterProduction,tarragon
+18,1245,F09,Eupatoire,MasterProduction,crop_production
+18,1246,F10,Euphraise,MasterProduction,crop_production
+18,1247,F11,Feijoa,MasterProduction,crop_production
+18,1249,F12,Fenugrec,MasterProduction,fenugreek
+18,1253,F13,Fétuque hétérophylle,MasterProduction,fescue
+18,1254,F14,Fétuque ovine,MasterProduction,fescue
+18,1255,F15,Fétuque rouge,MasterProduction,fescue
+18,1258,F16,Ficaire,MasterProduction,crop_production
+18,1259,F17,Figuier,MasterProduction,fig
+18,1260,F18,Fléole bulbeuse,MasterProduction,timothy
+18,1265,F19,Fruit de la passion,MasterProduction,crop_production
+18,1266,F20,Fumeterre,MasterProduction,crop_production
+18,1267,F21,Gaillet,MasterProduction,galium
+18,1268,F22,Garance,MasterProduction,crop_production
+18,1269,F23,Genêt,MasterProduction,crop_production
+18,1270,F24,Gentiane,MasterProduction,crop_production
+18,1271,F25,Ginkgo biloba,MasterProduction,crop_production
+18,1272,F26,Glaïeul=Acidanthera,MasterProduction,crop_production
+18,1273,F27,Goyavier,MasterProduction,guava
+18,1274,F28,Grand Mélilot,MasterProduction,crop_production
+18,1275,F29,Grande cigüe,MasterProduction,crop_production
+18,1276,F30,Grindelia,MasterProduction,crop_production
+18,1278,F31,Hamamelis,MasterProduction,crop_production
+18,1281,F32,Hysope,MasterProduction,crop_production
+18,1282,F33,Igname,MasterProduction,yam
+18,1283,F34,Immortelle,MasterProduction,crop_production
+18,1284,F35,Iris,MasterProduction,crop_production
+18,1285,F36,Ispaghul ou plantain des indes,MasterProduction,crop_production
+18,1286,F37,Jasmin,MasterProduction,crop_production
+18,1287,F38,Jujubier,MasterProduction,crop_production
+18,1288,F39,Jusquiame noire,MasterProduction,crop_production
+18,1289,F40,Kaki (Plaqueminier),MasterProduction,persimmon
+18,1290,F41,Kenaf,MasterProduction,crop_production
+18,1291,F42,Kiwi (Actinidia),MasterProduction,kiwi
+18,1292,F43,Kiwi jaune,MasterProduction,kiwi
+18,1294,F44,Lamier Blanc (Ortie Blanche),MasterProduction,nettle
+18,1295,F45,Laser gallicum,MasterProduction,crop_production
+18,1296,F46,Laurier,MasterProduction,cherry_laurel
+18,1297,F47,Lavande,MasterProduction,lavender
+18,1298,F48,Lavatère,MasterProduction,crop_production
+18,1300,F49,Lespedeza capitata,MasterProduction,crop_production
+18,1302,F50,Lin vivace,MasterProduction,winter_flax
+18,1303,F51,Litchi,MasterProduction,crop_production
+18,1304,F52,Liveche,MasterProduction,crop_production
+18,1307,F53,Lotier des marais,MasterProduction,birds_foot_trefoil
+18,1314,F54,Mandarinier,MasterProduction,mandarin
+18,1315,F55,Manguier,MasterProduction,crop_production
+18,1316,F56,Marjolaine,MasterProduction,marjoram
+18,1317,F57,Marrube blanc,MasterProduction,crop_production
+18,1318,F58,Matricaire,MasterProduction,crop_production
+18,1319,F59,Matricaire camomille,MasterProduction,crop_production
+18,1320,F60,Mauve,MasterProduction,mallow
+18,1322,F61,Mélange Floristique,MasterProduction,rough_bluegrass
+18,1325,F62,Mélange Pollinique,MasterProduction,rough_bluegrass
+18,1327,F63,Mélilot blanc,MasterProduction,melilot
+18,1328,F64,Mélilot officinal,MasterProduction,melilot
+18,1329,F65,Mélisse,MasterProduction,lemon_balm
+18,1331,F66,Menthe,MasterProduction,mint
+18,1332,F67,Menyanthe,MasterProduction,crop_production
+18,1335,F68,Millet perlé,MasterProduction,millet
+18,1337,F69,Miscanthus,MasterProduction,miscanthus
+18,1339,F70,Monarde,MasterProduction,crop_production
+18,1342,F71,Moutarde épinard,MasterProduction,mustard
+18,1344,F72,Mûrier (Arbuste),MasterProduction,mulberry
+18,1345,F73,Mûrier (Ronce),MasterProduction,blackberry
+18,1346,F74,Muscari,MasterProduction,crop_production
+18,1347,F75,Myosotis,MasterProduction,crop_production
+18,1348,F76,Myosotis hybride,MasterProduction,crop_production
+18,1349,F77,Myosotis sylvatica,MasterProduction,crop_production
+18,1350,F78,Myrthe ou myrte,MasterProduction,crop_production
+18,1351,F79,Myrtille et airelles,MasterProduction,bilberry
+18,1352,F80,Nashi,MasterProduction,crop_production
+18,1355,F81,Néflier du Japon,MasterProduction,crop_production
+18,1356,F82,Néflier d'Europe,MasterProduction,crop_production
+18,1357,F83,Noisetier,MasterProduction,hazelnut
+18,1358,F84,Noyer,MasterProduction,walnut
+18,1359,F85,Œillet d'Inde,MasterProduction,crop_production
+18,1362,F86,Olivier,MasterProduction,olive
+18,1363,F87,Onagre,MasterProduction,crop_production
+18,1364,F88,Oranger,MasterProduction,orange
+18,1366,F89,Origan,MasterProduction,oregano
+18,1367,F90,Ortie,MasterProduction,nettle
+18,1368,F91,Oseille,MasterProduction,sorrel
+18,1369,F92,Oxalis petite-oseille,MasterProduction,crop_production
+18,1370,F93,Pamplemoussier (pomelo),MasterProduction,grapefruit
+18,1371,F94,Panais,MasterProduction,parsnip
+18,1372,F95,Panic érigé (switch grass),MasterProduction,crop_production
+18,1373,F96,Passiflore,MasterProduction,crop_production
+18,1374,F97,Pastel,MasterProduction,crop_production
+18,1376,F98,Patate douce,MasterProduction,sweet_patato
+18,1377,F99,Pâtisson,MasterProduction,crop_production
+18,1378,G01,Pâturin ampla,MasterProduction,rough_bluegrass
+18,1379,G02,Pâturin annuel,MasterProduction,rough_bluegrass
+18,1381,G03,Pâturin comprimé,MasterProduction,rough_bluegrass
+18,1382,G04,Pâturin des bois,MasterProduction,rough_bluegrass
+18,1383,G05,Pâturin des marais,MasterProduction,rough_bluegrass
+18,1385,G06,Pavot de Californie,MasterProduction,crop_production
+18,1386,G07,Pêcher,MasterProduction,peach
+18,1387,G08,Pensée,MasterProduction,pansy
+18,1390,G09,Phalaris,MasterProduction,crop_production
+18,1391,G10,Piloselle,MasterProduction,crop_production
+18,1392,G11,Piment,MasterProduction,chili
+18,1394,G12,Pimprenelle,MasterProduction,crop_production
+18,1395,G13,Pissenlit,MasterProduction,crop_production
+18,1396,G14,Pistachier,MasterProduction,pistachio
+18,1397,G15,Plantain lancéolé,MasterProduction,black_psyllium
+18,1398,G16,Plantain majeur,MasterProduction,black_psyllium
+18,1399,G17,Plantain psyllium,MasterProduction,black_psyllium
+18,1400,G18,Plaqueminier (Kaki),MasterProduction,crop_production
+18,1401,G19,Plumcot,MasterProduction,crop_production
+18,1403,G20,Poirier,MasterProduction,pear
+18,1407,G21,Pommier,MasterProduction,apple
+18,1408,G22,Potentille,MasterProduction,crop_production
+18,1409,G23,Potiron,MasterProduction,sugar_pumpkin
+18,1410,G24,Pourpier,MasterProduction,purslane
+18,1411,G25,Prêle,MasterProduction,crop_production
+18,1412,G26,Primevère,MasterProduction,primrose
+18,1413,G27,Prunellier,MasterProduction,crop_production
+18,1414,G28,Prunier,MasterProduction,plum
+18,1415,G29,Pyrethre,MasterProduction,crop_production
+18,1417,G30,Raifort,MasterProduction,crop_production
+18,1421,G31,Ray-grass annuel,MasterProduction,annual_ryegrass
+18,1422,G32,Reine des prés,MasterProduction,crop_production
+18,1423,G33,Reine marguerite,MasterProduction,crop_production
+18,1424,G34,Renoncule,MasterProduction,crop_production
+18,1425,G35,Renouée,MasterProduction,crop_production
+18,1426,G36,Renouée à feuilles de Patience,MasterProduction,crop_production
+18,1427,G37,Renouée des oiseaux,MasterProduction,crop_production
+18,1428,G38,Renouée liseron,MasterProduction,crop_production
+18,1429,G39,Renouée persicaire,MasterProduction,crop_production
+18,1433,G40,Romarin,MasterProduction,rosemary
+18,1434,G41,Roquette,MasterProduction,rocket
+18,1435,G42,Rose d'Inde,MasterProduction,crop_production
+18,1436,G43,Rosier,MasterProduction,crop_production
+18,1439,G44,Sainfoin d'Espagne,MasterProduction,sainfoin
+18,1440,G45,Salicaire,MasterProduction,crop_production
+18,1443,G46,Sarrasin de Tartarie,MasterProduction,buckwheat
+18,1444,G47,Sarriette des jardins,MasterProduction,savory
+18,1445,G48,Sarriette vivace,MasterProduction,savory
+18,1446,G49,Sauge officinale,MasterProduction,sage
+18,1447,G50,Sauge sclarée,MasterProduction,sage
+18,1448,G51,Scabieuse,MasterProduction,crop_production
+18,1449,G52,Scorsonère,MasterProduction,crop_production
+18,1450,G53,Scrofulaire,MasterProduction,crop_production
+18,1451,G54,Scutellaire,MasterProduction,crop_production
+18,1453,G55,Seigle forestier,MasterProduction,winter_rye
+18,1456,G56,Solidage,MasterProduction,crop_production
+18,1458,G57,Souci,MasterProduction,crop_production
+18,1460,G58,Sureau,MasterProduction,black_elderberry
+18,1461,G59,Sisymbre,MasterProduction,crop_production
+18,1463,G60,Tagete,MasterProduction,crop_production
+18,1464,G61,Tanaisie = chrysanthème,MasterProduction,crop_production
+18,1465,G62,Thym,MasterProduction,thyme
+18,1466,G63,Tilleul,MasterProduction,crop_production
+18,1468,G64,Topinambour,MasterProduction,jerusalem_artichoke
+18,1470,G65,Trèfle aggloméré,MasterProduction,clover
+18,1471,G66,Trèfle bardane,MasterProduction,clover
+18,1475,G67,Trèfle fraise,MasterProduction,clover
+18,1476,G68,Trèfle hérissé,MasterProduction,clover
+18,1479,G69,Trèfle renversé,MasterProduction,clover
+18,1480,G70,Trèfle souterrain,MasterProduction,clover
+18,1481,G71,Trèfle strié,MasterProduction,clover
+18,1484,G72,Tritonia,MasterProduction,crop_production
+18,1486,G73,Vanille,MasterProduction,vanilla
+18,1487,G74,Véronique,MasterProduction,speedwell
+18,1488,G75,Véronique à fleurs de gentiane,MasterProduction,speedwell
+18,1489,G76,Véronique en épi,MasterProduction,speedwell
+18,1490,G77,Verveine officinale,MasterProduction,crop_production
+18,1491,G78,Vesce à quatre graines,MasterProduction,common_vetch
+18,1494,G79,Vesce de Narbonne,MasterProduction,common_vetch
+18,1496,G80,Vesce hérissée,MasterProduction,common_vetch
+18,1497,G81,Vesce jaune,MasterProduction,common_vetch
+18,1500,G82,Violette,MasterProduction,crop_production
+18,1501,G83,Vipérine faux plantain,MasterProduction,crop_production
+18,1502,G84,Vulnéraire,MasterProduction,crop_production
+18,1503,G85,Vulpin des champs,MasterProduction,crop_production
+18,1504,G86,Vulpin des prés,MasterProduction,crop_production
+18,1505,G87,Vulpin genouille,MasterProduction,crop_production
+18,1506,G88,Zinnia,MasterProduction,crop_production
+18,1183,H67,Centaurée,MasterProduction,crop_production
+18,1305,H68,Lotier,MasterProduction,birds_foot_trefoil
+18,27510,H69,Mélange,MasterProduction,fodder_species_mix
+18,21241,I01,Arbousier commun,MasterProduction,crop_production
+18,21242,I02,Arbre à pain,MasterProduction,crop_production
+18,21243,I03,Aulne,MasterProduction,crop_production
+18,21244,I04,Bouleau,MasterProduction,crop_production
+18,21245,I05,Canne à sucre,MasterProduction,sugar_cane
+18,21246,I06,Canne de provence ou roseaux à quenouilles,MasterProduction,crop_production
+18,21247,I07,Capucine tubéreuse,MasterProduction,crop_production
+18,21248,I08,Carambolier,MasterProduction,crop_production
+18,27512,I10,Cèdre,MasterProduction,crop_production
+18,21249,I11,Cerfeuil tubéreux,MasterProduction,crop_production
+18,21250,I12,Charme,MasterProduction,crop_production
+18,21251,I14,Chêne,MasterProduction,crop_production
+18,21252,I15,Chervis,MasterProduction,crop_production
+18,21253,I16,Cormier,MasterProduction,crop_production
+18,21254,I17,Douglas,MasterProduction,crop_production
+18,21256,I19,Erable,MasterProduction,crop_production
+18,21257,I20,Eucalyptus,MasterProduction,crop_production
+18,21258,I21,Flouve médicinale,MasterProduction,crop_production
+18,21259,I22,Frêne,MasterProduction,crop_production
+18,21260,I23,Gerbera,MasterProduction,crop_production
+18,21261,I24,Gesse Commune ou pois carré,MasterProduction,crop_production
+18,21262,I25,Gingembre,MasterProduction,crop_production
+18,21263,I26,Gombo,MasterProduction,crop_production
+18,21264,I27,Grenadier,MasterProduction,crop_production
+18,21265,I28,Guède ou pastel des teinturiers,MasterProduction,crop_production
+18,21266,I29,Hêtre,MasterProduction,crop_production
+18,21267,I30,King-grass,MasterProduction,crop_production
+18,21268,I31,Longanie,MasterProduction,crop_production
+18,21269,I32,Malanga ou chou caraïbe,MasterProduction,crop_production
+18,21270,I33,Manioc,MasterProduction,crop_production
+18,21271,I34,Mélèze,MasterProduction,crop_production
+18,21272,I35,Merisier,MasterProduction,crop_production
+18,21273,I36,Nyger,MasterProduction,crop_production
+18,21274,I37,Papayer,MasterProduction,crop_production
+18,27513,I38,Peuplier,MasterProduction,crop_production
+18,21275,I39,Pin,MasterProduction,crop_production
+18,21276,I40,Pitaya,MasterProduction,crop_production
+18,21277,I41,Pomme Liane ou Grenadille,MasterProduction,crop_production
+18,21278,I42,Ramboutan,MasterProduction,crop_production
+18,21279,I43,Robinier,MasterProduction,crop_production
+18,21280,I44,Sapin,MasterProduction,crop_production
+18,21281,I45,Sapotillier,MasterProduction,crop_production
+18,21282,I46,Saule,MasterProduction,crop_production
+18,21283,I47,Sequoia,MasterProduction,crop_production
+18,21286,I48,Yacón ou Poire de terre,MasterProduction,crop_production
+18,22182,I49,Buis,MasterProduction,crop_production
+18,22183,I50,Marronnier,MasterProduction,crop_production
+18,22184,I51,Laurier cerise,MasterProduction,crop_production
+18,22185,I52,Platane commun,MasterProduction,crop_production
+18,22186,I53,Palmier éventail de Californie,MasterProduction,crop_production
+18,22187,I54,Palmier bleu,MasterProduction,crop_production
+18,22188,I55,Palmier nain,MasterProduction,crop_production
+18,22189,I56,Palmier dattier,MasterProduction,crop_production
+18,22190,I57,Palmier de Chine,MasterProduction,crop_production
+18,22191,I58,Thuya,MasterProduction,crop_production
+18,22192,I59,Faux-Cyprès,MasterProduction,crop_production
+18,22193,I60,Cyprès commun,MasterProduction,crop_production
+18,22194,I61,Genévrier,MasterProduction,crop_production
+18,22195,I62,Epicéa,MasterProduction,crop_production
+18,22196,I63,Arbre de Judée,MasterProduction,crop_production
+18,22197,I64,Camélia,MasterProduction,crop_production
+18,22198,I65,Catalpa,MasterProduction,crop_production
+18,22199,I66,Chalef argenté,MasterProduction,crop_production
+18,22200,I67,Fuchsia,MasterProduction,crop_production
+18,22201,I68,Fusain,MasterProduction,crop_production
+18,22202,I69,Hibuscus althéa,MasterProduction,crop_production
+18,22203,I70,Laurier-rose,MasterProduction,crop_production
+18,22204,I71,Mahonia,MasterProduction,crop_production
+18,22205,I72,Mimosa,MasterProduction,crop_production
+18,22206,I73,Pyracantha (buisson ardent),MasterProduction,crop_production
+18,22207,I74,Rhododendron,MasterProduction,crop_production
+18,22208,I75,Viorne,MasterProduction,crop_production
+18,22209,I76,Amandier de Chine,MasterProduction,crop_production
+18,22210,I77,Amandier nain de Chine,MasterProduction,crop_production
+18,22211,I78,Cerisier du Japon,MasterProduction,cherry
+18,22212,I79,Cerisier à fleurs à port colonnaire,MasterProduction,cherry
+18,22213,I80,Cerisier de Mandchourie,MasterProduction,cherry
+18,22214,I81,Cerisier hybride à fleurs,MasterProduction,cherry
+18,22215,I82,Cerisier à fleurs doubles,MasterProduction,cherry
+18,22216,I83,Cerisier du Tibet,MasterProduction,cherry
+18,22217,I84,Merisier à grappes blanches,MasterProduction,crop_production
+18,22218,I85,Merisier à grappes roses,MasterProduction,crop_production
+18,22219,I86,Prunier à fleurs,MasterProduction,plum
+18,22220,I87,Prunier d'ornement à feuillage pourpre,MasterProduction,plum
+18,22227,I88,Anthurium,MasterProduction,crop_production
+18,22602,I89,Amaryllis belladona,MasterProduction,crop_production
+18,22659,I90,Campanule,MasterProduction,crop_production
+18,22603,I90,Campanule,MasterProduction,crop_production
+18,22660,I91,Célosie,MasterProduction,crop_production
+18,22604,I91,Célosie,MasterProduction,crop_production
+18,22661,I92,Delphinium,MasterProduction,crop_production
+18,22605,I92,Delphinium,MasterProduction,crop_production
+18,22662,I93,Giroflée ravenelle,MasterProduction,crop_production
+18,22606,I93,Giroflée ravenelle,MasterProduction,crop_production
+18,22663,I94,Hortensia,MasterProduction,crop_production
+18,22608,I95,Hibiscus sabdariffa,MasterProduction,crop_production
+18,22609,I96,Lisianthus,MasterProduction,crop_production
+18,22665,I96,Lisianthus,MasterProduction,crop_production
+18,22666,I97,Muflier,MasterProduction,crop_production
+18,22610,I97,Muflier,MasterProduction,crop_production
+18,22667,I98,Pivoine,MasterProduction,crop_production
+18,22611,I98,Pivoine,MasterProduction,crop_production
+18,22612,I99,Rosier multiflore,MasterProduction,crop_production
+18,22668,I99,Rosier multiflore,MasterProduction,crop_production
+18,22613,J01,Cultures fruitières,MasterProduction,annual_fruit
+18,22669,J01,Statice,MasterProduction,crop_production
+18,22614,J02,Cultures légumières,MasterProduction,annual_vegetable
+18,22670,J02,Strelitzia,MasterProduction,crop_production
+18,22615,J03,Cultures ornementales,MasterProduction,annual_ornamental_plant_and_mapp
+18,22671,J03,Tulipe,MasterProduction,crop_production
+18,22616,J04,Cultures tropicales,MasterProduction,crop_production
+18,22617,J05,Divers,MasterProduction,crop_production
+18,22674,J06,CIPAN potentiel,MasterProduction,crop_production
+18,22675,J07,Cultures fourragères/Prairie/ Pelouse/ Gazon,MasterProduction,crop_production
+18,22676,J08,Sylviculture,MasterProduction,crop_production
+18,22678,J10,Ceanothus,MasterProduction,crop_production
+18,22622,J10,Grandes cultures,MasterProduction,crop_production
+18,22623,J11,PPAM,MasterProduction,annual_ornamental_plant_and_mapp
+18,22680,J12,Cultures dédiées à la production de biomasse,MasterProduction,crop_production
+18,22681,J13,Cornus,MasterProduction,crop_production
+18,22626,J14,Cotoneaster,MasterProduction,crop_production
+18,22683,J15,Euonymus,MasterProduction,crop_production
+18,22684,J17,Ilex,MasterProduction,crop_production
+18,22628,J17,Ilex,MasterProduction,crop_production
+18,22629,J18,Lagerstroemia,MasterProduction,crop_production
+18,22685,J18,Lagerstroemia,MasterProduction,crop_production
+18,22630,J19,Ligustrum,MasterProduction,crop_production
+18,22686,J19,Ligustrum,MasterProduction,crop_production
+18,22687,J20,Magnolia,MasterProduction,crop_production
+18,22631,J20,Magnolia,MasterProduction,crop_production
+18,22632,J21,Osmanthus,MasterProduction,crop_production
+18,22688,J21,Osmanthus,MasterProduction,crop_production
+18,22633,J22,Photinia,MasterProduction,crop_production
+18,22689,J22,Photinia,MasterProduction,crop_production
+18,22690,J23,Pittosporum,MasterProduction,crop_production
+18,22634,J23,Pittosporum,MasterProduction,crop_production
+18,22635,J24,Santoline,MasterProduction,crop_production
+18,22691,J24,Santoline,MasterProduction,crop_production
+18,22636,J25,Spiraea,MasterProduction,crop_production
+18,22692,J25,Spiraea,MasterProduction,crop_production
+18,22693,J26,Cupressocyparis,MasterProduction,crop_production
+18,22694,J27,Begonia,MasterProduction,crop_production
+18,22695,J28,Bidens,MasterProduction,crop_production
+18,22640,J29,Calibrachoa,MasterProduction,crop_production
+18,22641,J30,Coleus,MasterProduction,crop_production
+18,22698,J31,Coreopsis,MasterProduction,crop_production
+18,22642,J31,Coreopsis,MasterProduction,crop_production
+18,22699,J32,Cyclamen,MasterProduction,crop_production
+18,22644,J33,Diascia,MasterProduction,crop_production
+18,22645,J34,Dipladénia,MasterProduction,crop_production
+18,22646,J35,Gazania,MasterProduction,crop_production
+18,22702,J35,Gazania,MasterProduction,crop_production
+18,22703,J37,Impatiens,MasterProduction,crop_production
+18,22647,J37,Impatiens,MasterProduction,crop_production
+18,22648,J38,Lantana,MasterProduction,crop_production
+18,22704,J38,Lantana,MasterProduction,crop_production
+18,22649,J40,Osteospermum,MasterProduction,crop_production
+18,22706,J41,Pelargonium,MasterProduction,crop_production
+18,22651,J42,Pelargonium grandiflorum,MasterProduction,crop_production
+18,22707,J42,Pelargonium grandiflorum,MasterProduction,crop_production
+18,22652,J43,Pelargonium hortorum,MasterProduction,crop_production
+18,22708,J43,Pelargonium hortorum,MasterProduction,crop_production
+18,22653,J44,Pelargonium peltatum,MasterProduction,crop_production
+18,22709,J44,Pelargonium peltatum,MasterProduction,crop_production
+18,22654,J45,Petunia,MasterProduction,crop_production
+18,22710,J45,Petunia,MasterProduction,crop_production
+18,22655,J46,Poinsettia,MasterProduction,crop_production
+18,22711,J46,Poinsettia,MasterProduction,crop_production
+18,22656,J47,Rudbeckia,MasterProduction,crop_production
+18,22712,J47,Rudbeckia,MasterProduction,crop_production
+18,22713,J48,Viola,MasterProduction,crop_production
+18,22738,J49,Pâquerette,MasterProduction,crop_production
+18,22737,J49,Pâquerette,MasterProduction,crop_production
+18,22739,J50,Impatiens walleriana,MasterProduction,crop_production
+18,22740,J51,Impatiens Nouvelle Guinée,MasterProduction,crop_production
+18,22741,J52,Mélange Gazon,MasterProduction,crop_production
+18,27281,J53,Heuchère,MasterProduction,crop_production
+18,27336,J54,Tulipier de Virginie,MasterProduction,crop_production
+18,27337,J55,Magnolia grandiflora,MasterProduction,crop_production
+18,27338,J56,Magnolia soulangeana,MasterProduction,crop_production
+18,27569,J57,Quinoa,MasterProduction,crop_production
+18,1707,T37,Repousses colza,MasterProduction,winter_rape
+18,1708,T88,Repousses pois,MasterProduction,winter_fodder_pea
+18,1709,T90,Autre graminée,MasterProduction,cereal_mix
+18,1710,T91,Autre crucifère,MasterProduction,oleaginous_mix
+18,1711,T92,Autre légumineuse,MasterProduction,leguminous_mix
+18,1712,T93,Autre melange,MasterProduction,fodder_species_mix
+18,1114,ZAF,Agrostide ténue,MasterProduction,crop_production
+18,1116,ZAG,Ail,MasterProduction,garlic
+18,1135,ZAJ,Artichaut,MasterProduction,artichoke
+18,1136,ZAK,Asperge,MasterProduction,asparagus
+18,1137,ZAL,Aubergine,MasterProduction,eggplant
+18,1140,ZAM,Avoine,MasterProduction,winter_oat
+18,1152,ZAP,Betterave,MasterProduction,beetroot
+18,1153,ZAQ,Blé dur,MasterProduction,winter_hard_wheat
+18,1154,ZAR,Blé tendre,MasterProduction,winter_common_wheat
+18,1160,ZAT,Brome de champs,MasterProduction,bromus
+18,1174,ZAU,Cardon,MasterProduction,crop_production
+18,1175,ZAV,Carotte,MasterProduction,carrot
+18,1180,ZAW,Cassissier,MasterProduction,blackcurrant
+18,1182,ZAX,Céleri,MasterProduction,celery
+18,1189,ZAY,Cerfeuil,MasterProduction,chervil
+18,1191,ZAZ,Chanvre,MasterProduction,hemp
+18,1198,ZBA,Chicorée,MasterProduction,root_chicory
+18,1205,ZBB,Chou,MasterProduction,cabbage
+18,1216,ZBE,Colza,MasterProduction,winter_rape
+18,1217,ZBF,Concombre,MasterProduction,cucumber
+18,1219,ZBG,Coquelicot,MasterProduction,crop_production
+18,1223,ZBI,Courgette,MasterProduction,zucchini
+18,1230,ZBJ,Dactyle,MasterProduction,cocksfoot
+18,1237,ZBK,Echalote,MasterProduction,shallot
+18,1240,ZBM,Epeautre,MasterProduction,spelt
+18,1242,ZBN,Epinard,MasterProduction,winter_spinach
+18,1248,ZBO,Fenouil,MasterProduction,fennel
+18,1250,ZBP,Festulolium,MasterProduction,festulolium
+18,1252,ZBQ,Fétuque élevée,MasterProduction,fescue
+18,1251,ZBR,Fétuque des prés,MasterProduction,fescue
+18,1256,ZBS,Fève,MasterProduction,broad_bean
+18,1257,ZBT,Fèverole,MasterProduction,winter_field_bean
+18,1261,ZBU,Fléole des prés,MasterProduction,crop_production
+18,1262,ZBV,Fraisier,MasterProduction,strawberry
+18,1263,ZBW,Framboisier,MasterProduction,raspberry
+18,1264,ZBY,Fromental,MasterProduction,crop_production
+18,1277,ZBZ,Groseiller,MasterProduction,redcurrant
+18,1279,ZCA,Haricot,MasterProduction,dried_bean
+18,1280,ZCC,Houblon,MasterProduction,hop
+18,1281,ZCD,Jachère autre semée,MasterProduction,fallow
+18,1282,ZCE,Jachère en crucifères,MasterProduction,fallow
+18,1283,ZCF,Jachère en graminées,MasterProduction,fallow
+18,1284,ZCG,Jachère en légumineuses et en graminées,MasterProduction,fallow
+18,1285,ZCH,Jachère en légumineuses,MasterProduction,fallow
+18,1293,ZCJ,Laitue,MasterProduction,lettuce
+18,1299,ZCK,Lentille,MasterProduction,fresh_lentil
+18,1301,ZCL,Lin,MasterProduction,winter_flax
+18,1306,ZCM,Lotier corniculé,MasterProduction,birds_foot_trefoil
+18,1308,ZCN,Lupin blanc,MasterProduction,spring_sweet_lupin
+18,1310,ZCO,Lupin jaune,MasterProduction,spring_sweet_lupin
+18,1309,ZCP,Lupin bleu,MasterProduction,spring_sweet_lupin
+18,1311,ZCQ,Luzerne,MasterProduction,alfalfa
+18,1312,ZCR,Mâche,MasterProduction,cornsalad
+18,1313,ZCS,Maïs,MasterProduction,grain_corn
+18,1324,ZCT,Mélange Graminées,MasterProduction,proteaginous_mix
+18,1323,ZCU,Mélange Fourrager,MasterProduction,proteaginous_mix
+18,1326,ZCV,Mélilot à petites fleurs,MasterProduction,melilot
+18,1330,ZCW,Melon,MasterProduction,melon
+18,1333,ZCX,Millepertuis,MasterProduction,st_johns_wort
+18,1336,ZCY,Minette,MasterProduction,black_medick
+18,1338,ZCZ,Moha,MasterProduction,foxtail_millet
+18,1340,ZDA,Moutarde blanche,MasterProduction,mustard
+18,1341,ZDB,Moutarde brune,MasterProduction,mustard
+18,1343,ZDC,Moutarde noire,MasterProduction,mustard
+18,1353,ZDD,Navet,MasterProduction,early_turnip
+18,1354,ZDE,Navette,MasterProduction,summer_field_mustard
+18,1360,ZDF,Oeillette (pavot),MasterProduction,opium_poppy
+18,1361,ZDG,Oignon,MasterProduction,onion
+18,1365,ZDH,Orge,MasterProduction,spring_barley
+18,1384,ZDI,Pâturin des prés,MasterProduction,rough_bluegrass
+18,1380,ZDJ,Pâturin commun,MasterProduction,rough_bluegrass
+18,1388,ZDK,Persil,MasterProduction,parsley
+18,1389,ZDL,Phacélie,MasterProduction,phacelia
+18,1402,ZDN,Poireau,MasterProduction,leek
+18,1404,ZDO,Pois,MasterProduction,pea
+18,1393,ZDR,Piment poivron,MasterProduction,pepper
+18,1406,ZDS,Pomme de terre,MasterProduction,potato
+18,1507,ZDU,Prairie,MasterProduction,meadow
+18,1416,ZDV,Radis,MasterProduction,radish
+18,1418,ZDX,Ray-grass anglais,MasterProduction,ryegrass
+18,1419,ZDY,Ray-grass hybride,MasterProduction,ryegrass
+18,1420,ZDZ,Ray-grass d'Italie,MasterProduction,ryegrass
+18,1432,ZEA,Riz,MasterProduction,rice
+18,1207,ZEB,Chou navet rutabaga,MasterProduction,rutabaga
+18,1437,ZEB,Rutabaga,MasterProduction,rutabaga
+18,1438,ZEC,Sainfoin,MasterProduction,sainfoin
+18,1441,ZED,Salsifis,MasterProduction,salsify
+18,1442,ZEH,Sarrasin,MasterProduction,buckwheat
+18,1452,ZEJ,Seigle,MasterProduction,winter_rye
+18,1454,ZEK,Serradelle,MasterProduction,birds_foot
+18,1455,ZEL,Soja,MasterProduction,soy
+18,1459,ZEM,Spergule,MasterProduction,crop_production
+18,1462,ZEN,Tabac,MasterProduction,tobacco
+18,1467,ZMA,Tomate,MasterProduction,tomato
+18,1469,ZMB,Tournesol,MasterProduction,sunflower
+18,1482,ZMC,Trèfle violet,MasterProduction,clover
+18,1472,ZMD,Trèfle blanc,MasterProduction,clover
+18,1478,ZME,Trèfle incarnat,MasterProduction,clover
+18,1477,ZMF,Trèfle hybride,MasterProduction,clover
+18,1473,ZMG,Trèfle d'Alexandrie,MasterProduction,clover
+18,1474,ZMH,Trèfle de Perse,MasterProduction,clover
+18,1483,ZMI,Triticale,MasterProduction,winter_triticale
+18,1485,ZMJ,Valériane,MasterProduction,valerian
+18,1492,ZMK,Vesce commune,MasterProduction,common_vetch
+18,1493,ZML,Vesce de Cerdagne,MasterProduction,common_vetch
+18,1495,ZMM,Vesce de Pannonie,MasterProduction,common_vetch
+18,1498,ZMN,Vesce velue,MasterProduction,common_vetch
+18,1499,ZMO,Vigne,MasterProduction,vine
+18,1375,ZND,Pastèque,MasterProduction,watermelon
+18,1457,ZNE,Sorgho,MasterProduction,sorghum
+18,1121,ZNF,Alpiste,MasterProduction,crop_production
+18,1334,ZNG,Millet commun,MasterProduction,millet
+18,1206,ZNP,Chou chinois,MasterProduction,napa_cabbage
+18,1321,ZOC,Mélange chasse,MasterProduction,annual_ryegrass
+18,1405,ZOD,Pois chiche,MasterProduction,chickpea
+18,1430,ZOE,Rhubarbe,MasterProduction,rhubarb
+18,1431,ZOF,Ricin,MasterProduction,castor_bean
+18,1508,ZOG,Autres aromatiques et médicinales,MasterProduction,annual_ornamental_plant_and_mapp
+18,1509,ZOH,Autres ornementales,MasterProduction,annual_ornamental_plant_and_mapp
+18,1510,ZOI,Autre potagères,MasterProduction,annual_vegetable
+18,1511,ZOJ,Espèces diverses,MasterProduction,crop_production
+20,321,BT,% de Bore (B) Total,,
+20,322,CA,% d'Oxyde de Calcium soluble dans l'eau,,
+20,323,FT,% de Fer (Fe) Total,,
+20,324,GT,% de Manganèse (Mn) Total,,
+20,325,KT,% d'Oxyde de Potassium (K2O) total,,
+20,326,LT,% deMolybdène (Mo) total,,
+20,327,MT,% d'oxyde de magnésium total,,
+20,328,NJ,% d'azote (N) nitrique,,
+20,329,NL,% d'azote (N) ammoniacal,,
+20,330,NM,% d'azote (N) uréique,,
+20,331,NT,% d'azote (N) total,,
+20,332,OT,% de Cobalt (Co) total,,
+20,333,PT,% d'anhydride phosphorique (P2O5) total,,
+20,334,SO,% d'oxyde de sodium (Na2O) soluble dans l'eau,,
+20,335,ST,% d'anhydride sulfurique (SO3) total,,
+20,336,UT,% de cuivre (Cu) total,,
+20,337,ZT,% de zinc (Zn) total,,
+25,20011,ZMS,Plan de fumure,,
+25,20012,ZMT,Plan phyto,,
+25,20013,ZMU,Avertissement,,
+25,20014,ZMV,Préconisation,,
+25,20015,ZMW,Autre conseil,,
+25,20016,ZMX,Analyse de sol,,
+25,20017,ZMY,Analyse de plantes cultivées,,
+25,20018,ZMZ,Adventices,,
+25,20019,ZNA,Parasites,,
+25,20020,ZNB,Conditions météorologiques,,
+25,20021,ZNC,Autres mesures OAD,,
+25,20022,ZND,Tour de plaine,,
+25,20023,ZNE,Autre observation,,
+25,20024,ZRA,Tours d'eau,,
+25,20025,ZRB,Bilan hydrique,,
+25,20026,ZRC,Bilan fertilisation,,
+25,20027,ZRD,Réglementation,,
+26,340,ZF7,Récolte,,
+26,341,ZF8,Travail du sol,,
+26,342,ZF9,Autres travaux agricoles,,
+26,343,ZG1,Indicateur de décision,,
+26,344,ZG7,Intrant,,
+28,1625,H57,Fleur,,
+28,1626,H58,Aromatique,,
+28,1627,H59,Bois,,
+28,1662,H60,bourgeons,,
+28,1629,H61,Cuve,,
+28,1630,H62,feuilles et fruits,,
+28,1631,H63,Fruit,,
+28,1632,H64,racines fraîches,,
+28,1633,H65,racines séchées,,
+28,1634,H66,Table,,
+28,1528,H72,Autre,,
+28,1636,ZEO,pâturée,,
+28,1637,ZEP,fauchée,,
+28,1638,ZEQ,pâturée et fauchée,,
+28,1640,ZER,fibre,,
+28,1639,ZER,Fibre,,
+28,22226,ZES,Oléagineux,,
+28,1641,ZET,papeterie,,
+28,1642,ZEX,textile,,
+28,1643,ZLD,Grain(es),,
+28,1644,ZLE,Semence / Porte graine,,
+28,1645,ZLF,Fourrager/Fourrage,,
+28,1646,ZLG,Biscuit,,
+28,1647,ZLH,Meunier,,
+28,1648,ZLI,Ethanol,,
+28,1649,ZLJ,Amidon,,
+28,1650,ZLO,Plant (générique),,
+28,1651,ZLQ,Frais,,
+28,1652,ZLR,Consommation,,
+28,1653,ZLS,Transformation,,
+28,22224,ZLW,Diester,,
+28,1654,ZMP,Potager,,
+28,1655,ZMW,Primeur,,
+28,1656,ZNA,Destruction (générique),,
+28,1657,ZNS,Industrie,,
+28,1658,ZPA,Déshydraté,,
+28,22225,ZPB,Biomasse,,
+28,22222,ZPC,Bio énergie,,
+28,22223,ZPD,Chimie verte,,
+29,345,ZHI,Résidus enfouis broyés,,
+29,346,ZLJ,Résidus exportés,,
+29,347,ZLK,Résidus brûlés,,
+29,348,ZSD,Résidus enfouis non broyés,,
+30,349,ZFA,Printemps,,
+30,350,ZFB,Hiver,,
+33,20091,ZE8,Amendement organique analysé,,
+33,20092,ZE9,Amendement organique non analysé,,
+33,20093,ZF1,Amendement calcaire,,
+34,19876,AAA12,Caractéristiques techniques du lot de produit récolté,,
+34,19877,AAA13,Caractéristiques techniques du produit récolté,,
+34,19878,AAA14,Origine de la composition ( Effluent),,
+34,19879,AAA21,Parcelle ou zone traitée,,
+34,19880,AAA22,Parcelle non traitée,,
+34,19881,AAA23,Parcelle labourée,,
+34,19882,AAA24,Parcelle non labourée,,
+34,19883,AAA25,Bordure de champ,,
+34,19884,AAA26,Proximité de haies,,
+34,19885,AAA27,Proximité de bandes enherbées,,
+34,19886,AAA28,Proximité de jachère,,
+34,19887,AAA29,Proximité de cours d'eau,,
+34,19888,AAA30,Parcelle témoin,,
+34,20113,AAA36,Reliquat sortie Hiver,,
+34,20120,AAA37,Caractéristiques techniques de l'intrant,,
+34,27570,AAA38,Débit de chantier (temps pour réaliser l'intervention sur 1 ha),,
+34,19861,ABG02,Classe Calcaire,,
+34,19862,ABG03,Classe de textures,,
+34,19863,ABG04,Classe Pierrosité,,
+34,19864,ABG12,Irrigable/irriguée,,
+34,22291,T35,nombre de mètres linéaires (unité),,
+34,22292,T36,nombre de mètres linéaires/ha,,
+34,22290,T37,Volume de bouillie (intrant),,
+34,19865,TPA,Type d'agriculture pratiquée,,
+34,19866,ZD1,Type de sol,,
+34,19867,ZD2,Classe Profondeur (profondeur d'apparition du sous-sol?),,
+34,19868,ZD3,Classe hydromorphie,,
+34,19869,ZD4,Type de sous-sol,,
+34,19870,ZD5,Acidité du sol,,
+34,19871,ZD6,Drainage,,
+34,19872,ZD7,Engagements,,
+34,19873,ZEY,Parcelle culturale redécoupée,,
+34,19874,ZFA,au moins une analyse physico-chimique réalisée depuis 10 ans,,
+34,19875,ZG8,Traitements spéciaux,,
+34,20118,ZK9,Objectif de rendement,,
+36,420,CMT,Centimètres,Unit,centimeter
+36,421,DOS,Dose (intrants),Unit,unity
+36,27599,GRA,Grain,Unit,unity
+36,422,HAR,Hectares (code AEE),Unit,hectare
+36,423,KGM,Kilogramme (intrants),Unit,kilogram
+36,27601,KGT,KG/T,Unit,kilogram_per_ton
+36,424,LTR,Litre (intrant),Unit,liter
+36,27602,LTT,L/T,Unit,liter_per_ton
+36,361363,MTQ,Metre cube,Unit,cubic_meter
+36,425,MMT,Millimètres (intrants),Unit,millimeter
+36,426,NAR,"Unité (grain, plants, capsule, diffuseur) (intrants)",Unit,unity
+36,427,PCD,Pourcentage,Unit,percent
+36,27600,PLT,Plant,Unit,unity
+36,428,TNE,Tonnes,Unit,ton
+36,1826,W95,g/l,Unit,gram_per_liter
+36,1827,W96,Pourcentage de volume,Unit,percent
+36,1828,W97,sans unité,Unit,unity
+36,429,ZHL,m3 / ha (que pour l'amendement organique),Unit,cubic_meter_per_hectare
+36,430,ZIT,Degrés Celsius,Unit,celsius
+36,431,ZKK,Litre / ha,Unit,liter_per_hectare
+36,432,ZKL,Kilogramme / ha ,Unit,kilogram_per_hectare
+36,433,ZKM ,Dose / ha,Unit,unity_per_hectare
+36,434,ZKN ,"Unité / ha (grain, plants, capsules) ",Unit,unity_per_hectare
+37,1515,G90,à couper,,
+37,1517,G91,à grappes,,
+37,1519,G92,à maquereaux,,
+37,1520,G93,à mirabelles,,
+37,1522,G94,à nectarines ou brugnons,,
+37,1523,G95,à pêches,,
+37,1525,G96,"à reines-claudes, quetsches",,
+37,1526,G97,allongée,,
+37,1527,G98,Amsterdam,,
+37,1529,G99,batavia,,
+37,1530,H01,beef = charnue,,
+37,1531,H02,beurre pommée,,
+37,1532,H03,bigarreaux,,
+37,1534,H04,botte,,
+37,1544,H05,cerise / cocktail,,
+37,1545,H06,cerises anglaises,,
+37,1548,H07,commun,,
+37,1551,H08,Daïkon = blanc,,
+37,1552,H09,de Cayenne,,
+37,1554,H10,demi longue et longues de type jersey,,
+37,1555,H11,demi-long à bout blanc,,
+37,1556,H12,des teinturiers,,
+37,1557,H13,d'Espagne,,
+37,1561,H15,fdp x rgi,,
+37,1562,H16,fe x rgi,,
+37,1571,H17,gazon,,
+37,1572,H18,Globuleux vert,,
+37,1573,H19,grande,,
+37,1574,H20,grasse,,
+37,1575,H21,Grenadille,,
+37,1576,H22,griottes,,
+37,1577,H23,Grise,,
+37,1578,H24,grosse,,
+37,1579,H25,Guignes,,
+37,1580,H26,hybride,,
+37,1581,H27,inuline,,
+37,1582,H28,japonais,,
+37,1583,H29,jaune de Hollande,,
+37,1585,H30,le rond rouge,,
+37,1587,H31,nantaise,,
+37,1592,H32,pavies,,
+37,1594,H33,Petit violet,,
+37,1595,H34,Poirée = bettes,,
+37,1596,H35,Pomme à cidre,,
+37,1597,H36,pommes de table,,
+37,1599,H37,Porte-Greffe,,
+37,1603,H38,pruneaux (prune d'ente),,
+37,1607,H39,romaine,,
+37,1608,H40,ronde à l'unité,,
+37,1609,H41,ronde en grappe,,
+37,1616,H43,sommites graines sèches,,
+37,1619,H44,types anciens,,
+37,1518,H46,à grosses racines,,
+37,1547,H47,citrouille pâtisson,,
+37,1586,H48,musquée - de Provence - Butternut,,
+37,1611,H49,saison,,
+37,1606,H50,remontant,,
+37,1568,H51,fraisier des bois,,
+37,1570,H52,Galia,,
+37,1542,H53,cantaloup ou charentais jaunissant à maturité,,
+37,1543,H54,cantaloup ou charentais non jaunissant à maturité,,
+37,1537,H55,brodé américain,,
+37,1558,H56,d'hiver ou sans odeur (type Canari),,
+37,1560,H70,enherbement non fourrager,,
+37,1591,H71,Oléifère,,
+37,1528,H72,Autre,,
+37,1617,ZAN,Sucrière,,
+37,1610,ZAO,Rouge,,
+37,1536,ZAS,Brocoli,,
+37,1566,ZBD,Fleur,,
+37,1550,ZBH,Cornichon,,
+37,1624,ZBL,Witloof =endive,,
+37,1601,ZDT,Potiron,,
+37,1588,ZEB,Navet rutabaga,,
+37,1564,ZER,Fibre,,
+37,1590,ZES,Oléagineux,,
+37,1538,ZEU,brun,,
+37,1623,ZEV,virginie,,
+37,1540,ZEW,burley,,
+37,1567,ZLF,Fourrager / Fourrage,,
+37,1559,ZLL,doux,,
+37,1589,ZLM,Noir(e),,
+37,1533,ZLN,Blanche,,
+37,1563,ZLP,Fécule,,
+37,1549,ZLR,Consommation,,
+37,1593,ZLT,permanente,,
+37,1618,ZLU,temporaire,,
+37,1600,ZMP,Potager,,
+37,1535,ZMQ,Branches,,
+37,1604,ZMR,Rave,,
+37,1514,ZMU,6 rangs,,
+37,1513,ZMV,2 rangs,,
+37,1539,ZNF,Bruxelles,,
+37,1620,ZNG,Vert,,
+37,1569,ZNH,Frisé,,
+37,1613,ZNI,Sec,,
+37,1602,ZNJ,Protéagineux,,
+37,1541,ZNK,Cabu,,
+37,1553,ZNO,de milan,,
+37,1546,ZNP,Chinois,,
+37,1612,ZNQ,Scarole,,
+37,1516,ZNR,à feuilles = sauvage améliorée,,
+37,1615,ZNT,sec frais,,
+37,1614,ZNU,sec conserve,,
+37,1622,ZNV,vert frais,,
+37,1621,ZNW,vert conserve,,
+37,1598,ZNX,pop-corn,,
+37,1584,ZOB,Lavandin,,
+41,19821,A17,Surface de la parcelle culturale,,
+41,19822,A18,Surface potentiellement épandable Fientes,,
+41,19823,A19,Surface irrigable,,
+41,19824,A22,Surface cadastrale,,
+41,19825,A28,Surface potentiellement épandable Fumier,,
+41,19826,A38,Surface potentiellement épandable Lisier,,
+41,19827,A39,Surface de la parcelle cadastrale,,
+41,19828,A40,Surface administrative de l'îlot,,
+41,19834,AAB50,Surface observée,,
+41,19835,AAB51,Point d'observation,,
+41,19829,ABE00,Surface non épandable,,
+41,19830,ABE01,Zone infestée,,
+41,19831,ABE02,Surface travaillée,,
+41,19832,ABE03,Zone de traitement autorisée,,
+41,19833,ABE04,Autre surface,,
+41,21154,ABE05,Surface de la parcelle pérenne,,
+41,21155,ABE06,Surface potentiellement épandable minérale,,
+43,1728,ZFD,Non renseigné,,
+43,1729,ZFE,Limon,SoilNature,silt_soil
+43,1730,ZFF,Limon argileux,SoilNature,silty_clay_loam_soil
+43,1731,ZFG,Argileux,SoilNature,clay_soil
+43,1732,ZFH,Argile lourde (sol a plus de 50 % d'argile),SoilNature,clay_soil
+43,1733,ZFI,Argilo-limoneux,SoilNature,silty_clay_soil
+43,1734,ZFJ,Argilo-calcaire,SoilNature,clay_limestone_soil
+43,1735,ZFK,Argile limono-sableuse,SoilNature,sandy_clay_loam_soil
+43,1748,ZFL,Argilo-sableux,SoilNature,sandy_clay_soil
+43,1736,ZFM,Sable,SoilNature,sand_soil
+43,1737,ZFN,Limon sableux,SoilNature,silt_soil
+43,1738,ZFO,Limon sablo-argileux,SoilNature,sandy_clay_soil
+43,1741,ZFS,Sablo-argileux,SoilNature,sandy_clay_soil
+43,1742,ZFT,Sablo-limoneux,SoilNature,sandy_clay_soil
+43,1743,ZFU,sables limono-argileux,SoilNature,silty_clay_loam_soil
+43,1744,ZFX,Terre de craie,SoilNature,champagne_soil
+43,1745,ZFY,Sol organique (y compris tourbe),SoilNature,black_valley_soil
+43,1740,ZGF,Limon non battant,SoilNature,silt_soil
+43,1746,ZHK,Limon argilo-sableux,SoilNature,sandy_clay_soil
+43,1739,ZQE,Limon battant,SoilNature,flap_silt_soil
+43,1747,ZRE,Argile sablo-limoneuse,SoilNature,sandy_clay_soil
+44,1712,ZFG,Argileux,,
+44,1727,ZFL,Argilo-sableux,,
+44,1713,ZFM,Sable,,
+44,1714,ZFP,Limoneux,,
+44,1715,ZFQ,Limono-argileux,,
+44,1716,ZFR,Limono-sableux,,
+44,1717,ZFS,Sablo-argileux,,
+44,1718,ZFV,Argile à silex,,
+44,1719,ZFW,Craie,,
+44,1720,ZFZ,Calcaire fissuré,,
+44,1721,ZGA,Dalle calcaire,,
+44,1722,ZGJ,Cailloux,,
+44,1723,ZGK,Granit,,
+44,1724,ZGL,Argile verte,,
+44,1725,ZGM,Marne,,
+44,1726,ZHJ,Schistes,,
+46,1833,V07,nord,,
+46,1834,V08,sud,,
+46,1835,V09,est,,
+46,1836,V10,ouest,,
+46,1837,V11,nord est,,
+46,1838,V12,sud est,,
+46,1839,V13,nord ouest,,
+46,1840,V14,sud ouest,,
+46,1841,V15,nord-nord est,,
+46,1842,V16,nord-nord ouest,,
+46,1843,V17,sud-sud est,,
+46,1844,V18,sud-sud ouest,,
+46,1845,V19,est -sud est,,
+46,1846,V20,est-nord est,,
+46,1847,V21,ouest-sud ouest,,
+46,1848,V22,ouest-nord ouest,,
+46,1849,V23,plane,,
+47,1850,V24,nord - sud,,
+47,1851,V25,est - ouest,,
+47,1852,V26,nord est - sud ouest,,
+47,1853,V27,nord ouest - sud est,,
+47,1854,V28,sud-sud est/ nord -nord ouest,,
+47,1855,V29,sud-sud ouest/ nord- nord est,,
+47,1856,V30,est-nord est / ouest-sud ouest,,
+47,1857,V31,ouest-nord ouest/est-sud est,,
+48,1858,V32,parallèle,,
+48,1859,V33,perpendiculaire,,
+48,1860,V34,oblique,,
+49,1861,V70,"Travail (Labour, désherbage mécanique, ...)",,
+49,1862,V71,Désherbage chimique,,
+49,1863,V72,Enherbement semé,,
+49,1864,V73,Enherbement Naturel Maîtrisé,,
+49,1865,V74,"Apport de Mulch (Ecorces, Broyat, …)",,
+50,1866,V75,1 rg sur 2,,
+50,1867,V76,1 rg sur 3,,
+50,1868,V77,2 rgs sur 3,,
+50,1869,V78,total,,

@@ -1,0 +1,30 @@
+---
+name: pv
+without:
+  - pesticide_frequency_indicator
+  - enterprises
+datasources:
+  cadastre:
+    registered_cadastral_parcels:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.76 44.70)',4326) , 0.30)
+  cadastral_prices:
+    registered_cadastral_prices:
+      filter: WHERE postal_code LIKE '33%' ORDER BY id
+  graphic_parcels:
+    registered_graphic_parcels:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.76 44.70)',4326) , 0.30) ORDER BY id
+  hydrography:
+    registered_hydrographic_items:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.76 44.70)',4326) , 0.30)
+    registered_area_items:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.76 44.70)',4326) , 0.30)
+    registered_cadastral_buildings:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.76 44.70)',4326) , 0.30)
+  postal_codes:
+    registered_postal_codes:
+      filter: WHERE postal_code LIKE '33%'
+  weather:
+    registered_weather_stations:
+      filter: WHERE country = 'FR' AND country_zone = '33'
+    registered_hourly_weathers:
+      filter: WHERE station_id LIKE 'FR33%'

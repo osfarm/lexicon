@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://lexicon.ekylibre.dev/lexicon.schema.json",
+  "title": "Lexicon Flavor JSON Schema",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z-]+$"
+    },
+    "only": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "additionalItems": false
+        }
+      ]
+    },
+    "without": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "additionalItems": false
+    },
+    "datasources": {
+      "$ref": "#/definitions/datasources"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "name"
+  ],
+  "definitions": {
+    "tables": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z]+(_[a-z]+)*$": {
+          "$ref": "#/definitions/table"
+        }
+      },
+      "additionalProperties": false
+    },
+    "table": {
+      "type": "object",
+      "properties": {
+        "filter": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "datasources": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z]+(_[a-z]+)*$": {
+          "$ref": "#/definitions/tables"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

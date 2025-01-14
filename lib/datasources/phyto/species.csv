@@ -1,0 +1,112 @@
+name,species,id
+Ail blanc et violet,allium_sativum,36
+Ail rose,allium_sativum,36
+Aneth,anethum_graveolens,833
+Anis,pimpinella_anisum,951
+Artichaut,cynara_scolymus,458
+Aubergine,solanum_melongena,39
+Avoine d’hiver,avena_sativa,126
+Avoine de printemps,avena_sativa,186
+Basilic,ocimum_basilicum,762
+Batavia,lactuca_sativa,139
+Betterave,beta_vulgaris,4
+Betterave fourragère,beta_vulgaris,131
+Blé dur d’hiver,triticum_durum,127
+Blé dur de printemps,triticum_durum,181
+Blé tendre d’hiver,triticum_aestivum,122
+Blé tendre de printemps,triticum_aestivum,182
+Blette,beta_vulgaris_cicla,1588
+Camomille,chamaemelum,828
+Carotte,daucus_carota,483
+Carotte fourragère,daucus_carota,483
+Céleri,apium_graveolens,1000
+Chanvre,cannabis_sativa,960
+Chicorée,cichorium,492
+Chou brocoli,brassica_oleracea_italica,480
+Chou fleur,brassica_oleracea_botrytis,501
+Chou fourrager,brassica_oleracea,863
+Chou pommé,brassica_oleracea_capitata,500
+Ciboulette,allium_schoenoprasum,148
+Citrouille,cucurbita_pepo,1005
+Colza d’hiver,brassica_napus_napus,128
+Colza de printemps,brassica_napus_annua,202
+Concombre,cucumis_sativus,505
+Coriandre,coriandrum_sativum,834
+Cornichon,cucumis_sativus_gherkin,506
+Courge Butternut,cucurbita_moschata_butternut,507
+Courge musquée,cucurbita_moschata,507
+Courgette,cucurbita_pepo_pepo,508
+Échalote,allium_ascalonicum,516
+Endive,cichorium_endivia,517
+Épeautre,triticum_spelta,518
+Épinard d'hiver,spinacia_oleracea,520
+Épinard de printemps,spinacia_oleracea,520
+Estragon,artemisia_dracunculus,829
+Fenouil,foeniculum,523
+Feuille de chêne,lactuca_sativa,139
+Fève,vicia_faba,1481
+Féverole d’hiver,vicia_faba,236
+Féverole de printemps,vicia_faba,160
+Féverole fourragère d’hiver,vicia_faba,13
+Féverole fourragère de printemps,vicia_faba,13
+Fraise,fragaria,49
+Haricot,phaseolus_vulgaris,545
+Houblon,humulus_lupulus,14
+Laitue,lactuca_sativa,51
+Lentille cultivée,lens_culinaris,561
+Lentille fourragère,lens_culinaris,561
+Lin fibres,linum_usitatissimum,133
+Lupin doux d’hiver,lupinus,1470
+Lupin doux de printemps,lupinus,646
+Lupin fourrager d’hiver,lupinus,646
+Lupin fourrager de printemps,lupinus,646
+Luzerne,medicago,130
+Luzerne déshydratée,medicago_sativa,130
+Mâche,valerianella_locusta,55
+Maïs doux,zeea_mays_saccharata,565
+Maïs ensilage,zea_mays,845
+Maïs grain,zea_mays,846
+Mélilot,medicago_sativa,923
+Mélilot déshydraté,melilotus,923
+Melon,cucumis_melo,568
+Navet d'hiver,brassica_rapa_rapa,749
+Navet fourrager,brassica_rapa_rapa,749
+Navet primeur,brassica_rapa_rapa,749
+Oignon,allium_cepa,581
+Orge d'hiver,hordeum_hexastichum,123
+Orge de printemps,hordeum_distichum,185
+Panais,pastinaca_sativa,587
+Pastèque,citrullus_lanatus,629
+Petits pois,pisum_sativum,598
+Piment,capsicum,1062
+Poireau,allium_porrum,597
+Pois chiche,cicer_arietinum,929
+Pois d’hiver,pisum_sativum,991
+Pois de printemps,pisum_sativum,991
+Pois fourrager d’hiver,pisum_sativum,1392
+Pois fourrager de printemps,pisum_sativum,1391
+Poivron,capsicum_annuum,601
+Pomme de terre de consommation,solanum_tuberosum,5
+Pomme de terre féculière,solanum_tuberosum,5
+Potimarron,cucurbita_maxima_potimarron,1009
+Potiron,cucurbita_maxima,1006
+Radis,raphanus_sativus,64
+Radis fourrager,raphanus_sativus,64
+Riz,oryza_sativa,67
+Roquette,eruca_vesicaria,963
+Rutabaga,brassica_napus_rapifera,611
+Sainfoin déshydraté,onobrychis_viciifolia,1184
+Salsifis,tragopogon,612
+Sarrasin,fagopyrum_esculentum,613
+Seigle d’hiver,secale_cereale,129
+Seigle de printemps,secale_cereale,192
+Soja,glycine_max,16
+Sorgho,sorghum,17
+Tabac,nicotiana_tabacum,18
+Tomate,solanum_lycopersicum,619
+Topinambour,helianthus_tuberosus,620
+Tournesol,helianthus_annuus,12
+Trèfle,trifolium,1196
+Trèfle déshydraté,trifolium,1196
+Triticale d’hiver,triticosecale,205
+Triticale de printemps,triticosecale,1434
