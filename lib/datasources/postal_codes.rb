@@ -1,17 +1,17 @@
 module Datasources
   class PostalCodes < Base
     description 'French Enterprises postal and insee codes with gps coordinates'
-    credits name: 'Codes postaux et communes', url: "https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/", provider: "Groupe La Poste", licence: "ODbl", licence_url: "https://opendatacommons.org/licenses/odbl/summary/", updated_at: "2024-08-08"
+    credits name: 'Codes postaux et communes', url: "https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/", provider: "Groupe La Poste", licence: "ODbl", licence_url: "https://opendatacommons.org/licenses/odbl/summary/", updated_at: "2025-01-08"
 
     def collect
       downloader.curl 'https://www.data.gouv.fr/fr/datasets/r/0f8ae8bd-9c0a-4a62-9be5-4798cbac07ff', out: 'postal_codes.csv'
-      downloader.curl 'http://files.opendatarchives.fr/professionnels.ign.fr/adminexpress/ADMIN-EXPRESS_3-2__SHP_LAMB93_FXX_2024-03-25.7z', out: 'communes.zip'
+      downloader.curl 'http://files.opendatarchives.fr/professionnels.ign.fr/adminexpress/ADMIN-EXPRESS_3-2__SHP_LAMB93_FXX_2024-11-18.7z', out: 'communes.7z'
     end
 
     def load
-      load_csv(dir.join('postal_codes.csv'), 'postal_codes', col_sep: ';')
-      execute("7z x #{dir.join('communes.zip')} -o#{dir}/archive -aoa")
-      archive_glob = dir.join("archive/ADMIN-EXPRESS_3-2__SHP_LAMB93_FXX_2024-03-25/ADMIN-EXPRESS/1_DONNEES_LIVRAISON_2024-03-00237/ADE_3-2_SHP_LAMB93_FXX-ED2024-03-25/COMMUNE.shp")
+      load_csv(dir.join('postal_codes.csv'), 'postal_codes', col_sep: ',')
+      execute("7z x #{dir.join('communes.7z')} -o#{dir}/archive -aoa")
+      archive_glob = dir.join("archive/ADMIN-EXPRESS_3-2__SHP_LAMB93_FXX_2024-11-18/ADMIN-EXPRESS/1_DONNEES_LIVRAISON_2024-11-00163/ADE_3-2_SHP_LAMB93_FXX-ED2024-11-18/COMMUNE.shp")
       archive_path = Dir.glob(archive_glob).first
       load_shp(dir.join(archive_path), table_name: "communes", srid: 2154)
     end

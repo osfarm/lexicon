@@ -1,10 +1,10 @@
 module Datasources
   class SeedVarieties < Base
     description 'Seed varieties from GNIS (Groupement National Interprofessionnel des Semences et plants)'
-    credits name: 'Liste des variétés de semences', url: "https://www.semae.fr/catalogue-varietes/base-varietes-gnis/", provider: "SEMAE", licence: "", licence_url: "", updated_at: "2023-11-15"
+    credits name: 'Liste des variétés de semences', url: "https://www.semae.fr/catalogue-varietes/base-varietes-gnis/", provider: "SEMAE", licence: "", licence_url: "", updated_at: "2025-01-26"
 
     def collect
-      downloader.curl "https://www.gnis.fr/wp-admin/admin-ajax.php?action=exportCsv", out: 'gnis.csv'
+      downloader.curl "https://www.semae.fr/catalogue-varietes/base-varietes-gnis/#", out: 'gnis.csv'
       FileUtils.cp Dir.glob('data/seed_varieties/seed_varieties - seed_species.csv'), dir
     end
 

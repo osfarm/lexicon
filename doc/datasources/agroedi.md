@@ -1,0 +1,6 @@
+This code defines a module `Datasources` and a class `Agroedi` within it that is used to collect, load, and normalize data from the AgroEDI Europe database. Here's a breakdown of what each method does:
+
+- The `collect` method copies CSV files from the "data/agroedi" directory to the destination directory specified by the `dir` variable.
+- The `load` method loads two CSV files, "agroedi - crops.csv" and "agroedi - dictionnary.csv", into two database tables using the `load_csv` method.
+- The `table_definitions` class method defines two database tables, `registered_agroedi_codes` and `registered_agroedi_crops`, with their respective columns and indices. It also creates a foreign key constraint on the `production` column of the `registered_agroedi_crops` table that references the `reference_name` column of the `master_productions` table in another database schema (not shown).
+- The `normalize` method inserts data from the `dictionnary` and `crops` tables into the corresponding registered tables. It also updates the `production` column of the `registered_agroedi_crops` table with values from the `master_productions` table, assuming that a foreign key constraint has been defined on this column as mentioned earlier.

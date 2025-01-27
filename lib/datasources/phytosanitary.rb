@@ -1,7 +1,7 @@
 module Datasources
   class Phytosanitary < Base
     description 'Phytosanitary products database from Ephy'
-    credits name: 'Catalogues des produits de protection des végétaux', url: "https://www.data.gouv.fr/fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges/", provider: "ANSES", licence: "Open Licence", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf", updated_at: "2024-04-03"
+    credits name: 'Catalogues des produits de protection des végétaux', url: "https://www.data.gouv.fr/fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges/", provider: "ANSES", licence: "Open Licence", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf", updated_at: "2025-01-21"
 
     BASE_URL = "https://www.data.gouv.fr/fr/datasets/r"
 

@@ -1,6 +1,6 @@
 module Datasources
   class ProtectedWaterZones < Base
-    LAST_UPDATED = "2024-09-06"
+    LAST_UPDATED = "2025-01-27"
     description 'protected water zone from SANDRE'
     credits name: 'Zones de captages protégées', url: "https://geoservices.ign.fr/documentation/diffusion/telechargement-donnees-libres.html#bd-topo", provider: "IGN", licence: "Open Licence", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf", updated_at: LAST_UPDATED
 

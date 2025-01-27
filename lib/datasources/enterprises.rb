@@ -1,6 +1,6 @@
 module Datasources
   class Enterprises < Base
-    LAST_UPDATED = "2024-09-01"
+    LAST_UPDATED = "2025-01-01"
     description 'French Enterprises datasource'
     credits name: 'Base SIRENE', url: "https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/", provider: "INSEE", licence: "Open Licence 2.0", licence_url: "https://www.etalab.gouv.fr/licence-ouverte-open-licence", updated_at: LAST_UPDATED
 

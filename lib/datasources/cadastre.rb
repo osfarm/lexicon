@@ -1,7 +1,7 @@
 module Datasources
   class Cadastre < Base
     description 'Official cadastre'
-    credits name: 'Parcelles du cadastre', url: "https://cadastre.data.gouv.fr/", provider: "Etalab", licence: "Open Licence 2.0", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf", updated_at: "2024-07-20"
+    credits name: 'Parcelles du cadastre', url: "https://cadastre.data.gouv.fr/", provider: "Etalab", licence: "Open Licence 2.0", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf", updated_at: "2025-01-23"
 
     python :collect, :normalize
 

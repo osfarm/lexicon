@@ -1,6 +1,6 @@
 module Datasources
   class ProtectedNaturalZones < Base
-    LAST_UPDATED = "2023-11-15"
+    LAST_UPDATED = "2025-01-16"
     description 'protected natural zone'
     credits name: 'Zones Natura 2000', url: "https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-natura-2000/", provider: "MNHN", licence: "Aucune", licence_url: "", updated_at: LAST_UPDATED
 

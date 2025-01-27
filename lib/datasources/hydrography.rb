@@ -1,6 +1,6 @@
 module Datasources
   class Hydrography < Base
-    LAST_UPDATED = "2024-03-15"
+    LAST_UPDATED = "2024-09-15"
     description 'hydro data from IGN'
     credits name: 'BD TOPO Hydrographie', url: "https://geoservices.ign.fr/documentation/diffusion/telechargement-donnees-libres.html#bd-topo", provider: "IGN", licence: "Open Licence", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf", updated_at: LAST_UPDATED
 
@@ -70,7 +70,7 @@ module Datasources
             logger.debug "File #{zip_name} exist"
             files << [zip_name, zone, department]
           else
-            url = "#{BASE_URL}_#{LAST_UPDATED}/BDTOPO_3-3_TOUSTHEMES_SHP_#{zone}_#{department}_#{LAST_UPDATED}.7z"
+            url = "#{BASE_URL}_#{LAST_UPDATED}/BDTOPO_3-4_TOUSTHEMES_SHP_#{zone}_#{department}_#{LAST_UPDATED}.7z"
             logger.debug "Download #{url}..."
             downloader.curl url, out: zip_name
             files << [zip_name, zone, department]
@@ -95,7 +95,7 @@ module Datasources
             WATER_DATASETS.each do |dataset|
               logger.debug "Extract #{dataset}..."
               EXTS.each do |ext|
-                archive_glob = dir.join("archive/BDTOPO_3-3_TOUSTHEMES_SHP_#{zone}_#{department}_#{LAST_UPDATED}/BDTOPO/1_DONNEES_LIVRAISON_*/BDT_3-3_SHP_#{zone}_#{department}-ED#{LAST_UPDATED}/HYDROGRAPHIE/#{dataset.upcase}.#{ext}")
+                archive_glob = dir.join("archive/BDTOPO_3-4_TOUSTHEMES_SHP_#{zone}_#{department}_#{LAST_UPDATED}/BDTOPO/1_DONNEES_LIVRAISON_*/BDT_3-4_SHP_#{zone}_#{department}-ED#{LAST_UPDATED}/HYDROGRAPHIE/#{dataset.upcase}.#{ext}")
                 archive_path = Dir.glob(archive_glob).first if archive_glob.present?
                 if archive_path.present? && File.exist?(archive_path)
                   target_path = Dir.glob(dir.join("#{zone}/#{department}/")).first
@@ -110,7 +110,7 @@ module Datasources
             BUILDING_DATASETS.each do |dataset|
               logger.debug "Extract #{dataset}..."
               EXTS.each do |ext|
-                archive_glob = dir.join("archive/BDTOPO_3-3_TOUSTHEMES_SHP_#{zone}_#{department}_#{LAST_UPDATED}/BDTOPO/1_DONNEES_LIVRAISON_*/BDT_3-3_SHP_#{zone}_#{department}-ED#{LAST_UPDATED}/BATI/#{dataset.upcase}.#{ext}")
+                archive_glob = dir.join("archive/BDTOPO_3-4_TOUSTHEMES_SHP_#{zone}_#{department}_#{LAST_UPDATED}/BDTOPO/1_DONNEES_LIVRAISON_*/BDT_3-4_SHP_#{zone}_#{department}-ED#{LAST_UPDATED}/BATI/#{dataset.upcase}.#{ext}")
                 archive_path = Dir.glob(archive_glob).first if archive_glob.present?
                 if archive_path.present? && File.exist?(archive_path)
                   target_path = Dir.glob(dir.join("#{zone}/#{department}/")).first
@@ -125,7 +125,7 @@ module Datasources
             AREA_DATASETS.each do |dataset|
               logger.debug "Extract #{dataset}..."
               EXTS.each do |ext|
-                archive_glob = dir.join("archive/BDTOPO_3-3_TOUSTHEMES_SHP_#{zone}_#{department}_#{LAST_UPDATED}/BDTOPO/1_DONNEES_LIVRAISON_*/BDT_3-3_SHP_#{zone}_#{department}-ED#{LAST_UPDATED}/OCCUPATION_DU_SOL/#{dataset.upcase}.#{ext}")
+                archive_glob = dir.join("archive/BDTOPO_3-4_TOUSTHEMES_SHP_#{zone}_#{department}_#{LAST_UPDATED}/BDTOPO/1_DONNEES_LIVRAISON_*/BDT_3-4_SHP_#{zone}_#{department}-ED#{LAST_UPDATED}/OCCUPATION_DU_SOL/#{dataset.upcase}.#{ext}")
                 archive_path = Dir.glob(archive_glob).first if archive_glob.present?
                 if archive_path.present? && File.exist?(archive_path)
                   target_path = Dir.glob(dir.join("#{zone}/#{department}/")).first
@@ -138,7 +138,7 @@ module Datasources
             end
             # remove tmp folder
             logger.debug "Remove #{department} extract folder..."
-            FileUtils.remove_dir(dir.join("archive/BDTOPO_3-3_TOUSTHEMES_SHP_#{zone}_#{department}_#{LAST_UPDATED}"))
+            FileUtils.remove_dir(dir.join("archive/BDTOPO_3-4_TOUSTHEMES_SHP_#{zone}_#{department}_#{LAST_UPDATED}"))
           end
         else
           logger.debug  "Skipping #{file}"
