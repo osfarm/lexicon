@@ -65,6 +65,8 @@ services:
       - "traefik.http.routers.lexicon_api.entrypoints=websecure"
       - "traefik.http.routers.lexicon_api.tls.certresolver=tlsresolver"
       - "traefik.http.routers.lexicon_api.middlewares=gzip"
+      - "traefik.http.routers.lexicon_api.service=lexicon_api@docker"
+      - "traefik.http.services.lexicon_api.loadbalancer.server.port=8888"
     networks:
       - proxy
 
