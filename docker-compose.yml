@@ -15,6 +15,8 @@ services:
           -c max_wal_size=8GB
     env_file:
       - .env
+    networks:
+      - lexicon
     ports:
       - 5555:5432
     volumes:
@@ -37,11 +39,37 @@ services:
       - ./VERSION:/lexicon/VERSION
     env_file:
       - .env
+    networks:
+      - lexicon
     develop:
       watch:
         - action: sync
           path: .
           target: /lexicon
 
+  lexicon_api:
+    restart: always
+    image: ghcr.io/osfarm/lexicon-rest-api:latest
+    depends_on:
+      - db
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lexicon_api.rule=Host(`lexicon.osfarm.org`)"
+      - "traefik.http.routers.lexicon_api.tls=true"
+      - "traefik.http.routers.lexicon_api.entrypoints=websecure"
+      - "traefik.http.routers.lexicon_api.tls.certresolver=tlsresolver"
+    networks:
+      - lexicon
+      - proxy
+
+networks:
+  lexicon:
+    name: lexicon
+  proxy:
+    external: true
+
 volumes:
   lexicon_db_data: ~
+
