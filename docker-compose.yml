@@ -17,6 +17,8 @@ services:
       - .env
     ports:
       - 5555:5432
+    networks:
+      - lexicon
     volumes:
       - lexicon_db_data:/var/lib/postgresql/data
 
@@ -37,6 +39,8 @@ services:
       - ./VERSION:/lexicon/VERSION
     env_file:
       - .env
+    networks:
+      - lexicon
     develop:
       watch:
         - action: sync
@@ -69,6 +73,7 @@ services:
       - "traefik.http.services.lexicon_api.loadbalancer.server.port=8888"
     networks:
       - proxy
+      - lexicon
 
 networks:
   lexicon:
