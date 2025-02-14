@@ -50,6 +50,7 @@ services:
   lexicon_api:
     restart: always
     image: ghcr.io/osfarm/lexicon-rest-api:latest
+    pull_policy: always
     container_name: "lexicon_api"
     depends_on:
       - db
