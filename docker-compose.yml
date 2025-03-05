@@ -110,6 +110,9 @@ services:
       - N8N_SMTP_PASS=${N8N_SMTP_PASS}
       - N8N_SMTP_SENDER=${N8N_SMTP_SENDER}
       - N8N_SMTP_SSL=${N8N_SMTP_SSL}
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=${N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS}
+      - N8N_RUNNERS_ENABLED=true
+      - N8N_PROXY_HOPS=1
     volumes:
       - n8n_data:/home/node/.n8n
       - /home/ubuntu/n8n-local-files:/files
