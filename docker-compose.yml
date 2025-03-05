@@ -103,6 +103,13 @@ services:
       - NODE_ENV=production
       - WEBHOOK_URL=https://${N8N_SUBDOMAIN}.${N8N_DOMAIN_NAME}/
       - GENERIC_TIMEZONE=${N8N_GENERIC_TIMEZONE}
+      - N8N_EMAIL_MODE=${N8N_EMAIL_MODE}
+      - N8N_SMTP_HOST=${N8N_SMTP_HOST}
+      - N8N_SMTP_PORT=${N8N_SMTP_PORT}
+      - N8N_SMTP_USER=${N8N_SMTP_USER}
+      - N8N_SMTP_PASS=${N8N_SMTP_PASS}
+      - N8N_SMTP_SENDER=${N8N_SMTP_SENDER}
+      - N8N_SMTP_SSL=${N8N_SMTP_SSL}
     volumes:
       - n8n_data:/home/node/.n8n
       - /home/ubuntu/n8n-local-files:/files
