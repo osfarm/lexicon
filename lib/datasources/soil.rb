@@ -22,10 +22,12 @@ module Datasources
           id character varying PRIMARY KEY NOT NULL,
           soil_depth_value numeric(19,4),
           soil_depth_unit character varying,
-          shape postgis.geometry(MultiPolygon, 4326) NOT NULL
+          shape postgis.geometry(MultiPolygon, 4326) NOT NULL,
+          centroid postgis.geometry(Point, 4326)
         );
         CREATE INDEX registered_soil_depths_id ON registered_soil_depths (id);
         CREATE INDEX registered_soil_depths_shape ON registered_soil_depths USING GIST (shape);
+        CREATE INDEX registered_soil_depths_centroid ON registered_soil_depths USING GIST (centroid);
       SQL
 
       builder.table :registered_soil_available_water_capacities, sql: <<-SQL
@@ -36,10 +38,12 @@ module Datasources
           available_water_max_value numeric(19,4),
           available_water_unit character varying,
           available_water_label character varying,
-          shape postgis.geometry(MultiPolygon, 4326) NOT NULL
+          shape postgis.geometry(MultiPolygon, 4326) NOT NULL,
+          centroid postgis.geometry(Point, 4326)
         );
         CREATE INDEX registered_soil_available_water_capacities_id ON registered_soil_available_water_capacities (id);
         CREATE INDEX registered_soil_available_water_capacities_shape ON registered_soil_available_water_capacities USING GIST (shape);
+        CREATE INDEX registered_soil_available_water_capacities_centroid ON registered_soil_available_water_capacities USING GIST (centroid);
       SQL
     end
 
@@ -63,6 +67,10 @@ module Datasources
           geom
         FROM soil.soil_available_water_capacities
       SQL
+
+      logger.debug "Compute centroid..."
+      query("UPDATE lexicon.registered_soil_depths SET centroid = postgis.ST_Centroid(shape) WHERE shape IS NOT NULL AND postgis.ST_IsValid(shape) = true")
+      query("UPDATE lexicon.registered_soil_available_water_capacities SET centroid = postgis.ST_Centroid(shape) WHERE shape IS NOT NULL AND postgis.ST_IsValid(shape) = true")
 
       transcode_water_reference = { 1 => [ 0.0, 50.0, '< 50 mm'],
                                     2 => [ 50.0, 100.0, '50 - 100 mm'],

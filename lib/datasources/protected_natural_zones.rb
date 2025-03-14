@@ -25,12 +25,14 @@ module Datasources
           id character varying NOT NULL,
           name character varying,
           nature character varying NOT NULL,            
-          shape postgis.geometry(MultiPolygon, 4326) NOT NULL
+          shape postgis.geometry(MultiPolygon, 4326) NOT NULL,
+          centroid postgis.geometry(Point, 4326)
         );
 
         CREATE INDEX registered_natural_zones_id ON registered_natural_zones (id);
         CREATE INDEX registered_natural_zones_nature ON registered_natural_zones (nature);
         CREATE INDEX registered_natural_zones_shape ON registered_natural_zones USING GIST (shape);
+        CREATE INDEX registered_natural_zones_centroid ON registered_natural_zones USING GIST (centroid);
       SQL
     end
 
@@ -53,6 +55,8 @@ module Datasources
             postgis.ST_Transform(geom, 4326)
           FROM protected_natural_zones.zps_zones;
       SQL
+      logger.debug "Compute centroid on Natural zones..."
+      query("UPDATE lexicon.registered_natural_zones SET centroid = postgis.ST_Centroid(shape) WHERE shape IS NOT NULL AND postgis.ST_IsValid(shape) = true")
     end
   end
 end

@@ -26,11 +26,13 @@ module Datasources
           creator_name character varying,
           name character varying,
           updated_on date,
-          shape postgis.geometry(MultiPolygon, 4326) NOT NULL
+          shape postgis.geometry(MultiPolygon, 4326) NOT NULL,
+          centroid postgis.geometry(Point, 4326)
         );
 
         CREATE INDEX registered_protected_water_zones_id ON registered_protected_water_zones (id);
         CREATE INDEX registered_protected_water_zones_shape ON registered_protected_water_zones USING GIST (shape);
+        CREATE INDEX registered_protected_water_zones_centroid ON registered_protected_water_zones USING GIST (centroid);
       SQL
     end
 
@@ -46,6 +48,8 @@ module Datasources
             geom
           FROM protected_water_zones.aac_zones;
       SQL
+      logger.debug "Compute centroid on Protected water zones..."
+      query("UPDATE lexicon.registered_protected_water_zones SET centroid = postgis.ST_Centroid(shape) WHERE shape IS NOT NULL AND postgis.ST_IsValid(shape) = true")
     end
   end
 end

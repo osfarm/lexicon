@@ -37,7 +37,7 @@ RUN bundle install --jobs $(nproc) --path vendor/bundle
 ADD . /lexicon/
 RUN chown -R lexicon:lexicon /lexicon
 
-RUN sha1sum Dockerfile docker-compose.yml Gemfile requirements.txt lexicon > build_hash.sha1
+RUN sha1sum Dockerfile docker-compose-dev.yml Gemfile requirements.txt lexicon > build_hash.sha1
 
 USER lexicon
 

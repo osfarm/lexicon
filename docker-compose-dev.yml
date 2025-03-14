@@ -1,0 +1,47 @@
+services:
+  db:
+    restart: always
+    image: lexicon/db:latest
+    build:
+      context: docker/db
+    command: |
+        postgres
+          -c max_connections=200
+          -c shared_buffers=512MB
+          -c effective_cache_size=16GB
+          -c work_mem=128MB
+          -c maintenance_work_mem=256MB
+          -c min_wal_size=256MB
+          -c max_wal_size=8GB
+    env_file:
+      - .env
+    ports:
+      - 0.0.0.0:5555:5432
+    volumes:
+      - lexicon_db_data:/var/lib/postgresql/data
+
+  lexicon_runner:
+    restart: always
+    image: lexicon:latest
+    build:
+      context: .
+    volumes:
+      - ./config:/lexicon/config:ro
+      - ./data:/lexicon/data:ro
+      - ./out:/lexicon/out
+      - ./raw:/lexicon/raw
+      - ./resources:/lexicon/resources:ro
+      # Comment these lines if not working locally
+      - ./lib:/lexicon/lib:ro
+      - ./lexicon-cli:/lexicon/lexicon-cli:ro
+      - ./VERSION:/lexicon/VERSION
+    env_file:
+      - .env
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /lexicon
+
+volumes:
+  lexicon_db_data: ~

@@ -1,7 +1,7 @@
 module Datasources
   class EuMarketPrices < Base
     description 'Europe market prices'
-    credits name: 'Index des prix agricoles UE', url: "https://agridata.ec.europa.eu/extensions/DataPortal/agricultural_markets.html#", provider: "European Union", licence: "", licence_url: "", updated_at: "2024-02-22"
+    credits name: 'Index des prix agricoles UE', url: "https://agridata.ec.europa.eu/extensions/DataPortal/agricultural_markets.html#", provider: "European Union", licence: "", licence_url: "", updated_at: "2025-03-14"
     # EUROPA API
     # DOC on https://agridata.ec.europa.eu/extensions/DataPortal/API_Documentation.html
     EUROPA_BASE_URL = "https://ec.europa.eu/agrifood/api/cereal/prices"
@@ -9,11 +9,12 @@ module Datasources
     # EUROPA_PARAMETERS = "?memberStateCodes=FR"
 
     EUROPA_PRODUCT_CODE = { 'AVO' => :avena_sativa,
+                            'AVOMILL' => :avena_sativa,
                             'BLTFOUR' => :triticum_aestivum,
                             'BLTPAN' => :triticum_aestivum,
                             'DUR' => :triticum_durum,
                             'MAI' => :zea_mays,
-                            'ORGBRASS' => :hordeum_vulgare,
+                            'ORGBRAS' => :hordeum_vulgare,
                             'ORGFOUR' => :hordeum_vulgare,
                             'SEGPAN' => :secale_cereale,
                             'SEGFOUR' => :secale_cereale,

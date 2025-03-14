@@ -1,13 +1,13 @@
 module Datasources
   class QualityAndOriginSigns < Base
     description 'AOC - AOP - IGP'
-    credits name: 'Liste des AOC - AOP - IGP', url: "https://www.data.gouv.fr/fr/datasets/aires-et-produits-aoc-aop-et-igp/", provider: "INAO", licence: "Open Licence", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf", updated_at: "2024-11-15"
+    credits name: 'Liste des AOC - AOP - IGP', url: "https://www.data.gouv.fr/fr/datasets/aires-et-produits-aoc-aop-et-igp/", provider: "INAO", licence: "Open Licence", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf", updated_at: "2025-03-10"
 
     def collect
       # get 2019-11-05-comagri-aires-produits.csv
       # resource is available here: https://www.data.gouv.fr/fr/datasets/aires-et-produits-aoc-aop-et-igp/
       FileUtils.rm dir.join('qos.csv'), force: true
-      downloader.curl 'https://www.data.gouv.fr/fr/datasets/r/030b2601-2fb8-4648-b2b9-39f196cfc004', out: 'qos.csv'
+      downloader.curl 'https://www.data.gouv.fr/fr/datasets/r/8f121ab9-0ff8-4c88-9bf5-4a23c2934029', out: 'qos.csv'
     end
 
     def load

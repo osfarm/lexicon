@@ -9,7 +9,7 @@ from psycopg2.extras import execute_values
 
 from lib.python import db_connect
 
-BASE_NAME = Path('StockEtablissement_utf8.zip')
+BASE_NAME = Path('eta_utf8.zip')
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 LOCAL_PATH = BASE_DIR.joinpath('raw', 'enterprises')
 ZIP_PATH = LOCAL_PATH.joinpath(BASE_NAME)
