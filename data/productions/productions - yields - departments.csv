@@ -1,0 +1,998 @@
+department,production_label,specie,production,2021,2022,2023,2024,yield_unit
+77,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"83,0","85,0","84,0","62,0",quintal_per_hectare
+78,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"80,0","83,0","77,0","62,0",quintal_per_hectare
+91,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"81,0","84,0","79,0","62,0",quintal_per_hectare
+93,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"83,0","86,0","84,1","65,7",quintal_per_hectare
+94,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"81,0","84,0","79,1","61,9",quintal_per_hectare
+95,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"83,0","86,0","84,0","65,6",quintal_per_hectare
+18,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"62,0","56,5","65,0","56,0",quintal_per_hectare
+28,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"83,0","83,0","81,0","68,0",quintal_per_hectare
+36,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"67,0","58,0","68,0","55,0",quintal_per_hectare
+37,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"68,0","63,0","71,0","57,0",quintal_per_hectare
+41,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"72,0","68,5","72,0","61,0",quintal_per_hectare
+45,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"73,0","70,5","69,0","59,0",quintal_per_hectare
+21,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"63,0","58,0","57,0","53,0",quintal_per_hectare
+25,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"56,0","56,0","62,0","44,0",quintal_per_hectare
+39,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"68,0","70,0","70,0","52,0",quintal_per_hectare
+58,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"60,0","58,0","60,0","46,0",quintal_per_hectare
+70,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"61,0","67,0","65,0","53,0",quintal_per_hectare
+71,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"67,0","66,0","68,0","52,0",quintal_per_hectare
+89,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"66,0","58,0","63,0","53,0",quintal_per_hectare
+90,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"61,0","67,0","65,0","53,0",quintal_per_hectare
+14,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"77,0","86,0","80,0","77,0",quintal_per_hectare
+27,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"82,0","88,0","88,0","74,0",quintal_per_hectare
+50,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"70,0","80,0","74,0","68,0",quintal_per_hectare
+61,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"71,0","78,0","79,0","61,0",quintal_per_hectare
+76,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"78,0","98,0","89,0","75,0",quintal_per_hectare
+02,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"82,0","86,0","86,0","62,0",quintal_per_hectare
+59,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"82,0","96,0","92,0","72,0",quintal_per_hectare
+60,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"83,0","85,0","86,0","69,0",quintal_per_hectare
+62,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"80,0","96,0","92,0","77,0",quintal_per_hectare
+80,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"83,0","92,0","89,0","75,0",quintal_per_hectare
+08,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"79,0","84,0","80,4","60,2",quintal_per_hectare
+10,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"79,0","81,0","79,0","59,0",quintal_per_hectare
+51,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"82,0","87,0","85,0","56,5",quintal_per_hectare
+52,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"65,0","61,0","62,0","57,6",quintal_per_hectare
+54,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"64,0","60,0","60,0","54,0",quintal_per_hectare
+55,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"69,0","65,0","65,0","55,0",quintal_per_hectare
+57,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"66,0","65,0","65,0","55,0",quintal_per_hectare
+67,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"72,0","72,0","77,0","65,0",quintal_per_hectare
+68,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"73,0","74,5","80,0","70,0",quintal_per_hectare
+88,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"62,0","63,0","63,0","52,0",quintal_per_hectare
+44,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"72,0","72,2","71,0","49,0",quintal_per_hectare
+49,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"70,0","66,2","75,0","56,0",quintal_per_hectare
+53,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"73,0","75,0","78,0","60,0",quintal_per_hectare
+72,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"72,0","70,6","78,0","56,0",quintal_per_hectare
+85,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"67,0","66,8","68,0","48,0",quintal_per_hectare
+22,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"70,2","77,0","71,9","69,7",quintal_per_hectare
+29,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"69,9","69,6","69,7","64,5",quintal_per_hectare
+35,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"74,9","77,9","79,3","61,7",quintal_per_hectare
+56,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"74,3","74,6","71,8","65,2",quintal_per_hectare
+16,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"59,0","51,0","63,0","52,0",quintal_per_hectare
+17,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"61,0","53,0","67,0","59,0",quintal_per_hectare
+19,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"48,0","49,0","53,0","39,0",quintal_per_hectare
+23,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"53,0","50,0","56,0","40,0",quintal_per_hectare
+24,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"51,0","44,0","56,0","44,0",quintal_per_hectare
+33,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"52,0","48,0","64,0","48,0",quintal_per_hectare
+40,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"56,0","46,0","64,0","44,0",quintal_per_hectare
+47,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"55,0","56,0","68,0","50,0",quintal_per_hectare
+64,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"54,0","50,0","50,0","45,0",quintal_per_hectare
+79,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"63,0","53,0","66,0","55,0",quintal_per_hectare
+86,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"65,0","56,0","67,0","56,0",quintal_per_hectare
+87,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"50,0","45,0","51,0","32,0",quintal_per_hectare
+09,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"50,0","46,0","45,4","53,0",quintal_per_hectare
+11,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"47,0","38,0","47,0","48,0",quintal_per_hectare
+12,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"48,0","36,0","46,0","41,0",quintal_per_hectare
+30,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"41,0","42,0","36,0","49,0",quintal_per_hectare
+31,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"50,0","45,0","56,0","55,0",quintal_per_hectare
+32,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"47,0","45,0","54,0","47,0",quintal_per_hectare
+34,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"32,0","35,0","25,0","43,0",quintal_per_hectare
+46,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"47,2","46,0","50,0","46,0",quintal_per_hectare
+48,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"44,0","22,0","47,0","38,0",quintal_per_hectare
+65,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"58,0","45,0","57,0","47,0",quintal_per_hectare
+66,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"34,0","45,0","20,0","18,0",quintal_per_hectare
+81,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"50,0","43,0","55,0","52,0",quintal_per_hectare
+82,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"48,0","46,0","54,0","45,0",quintal_per_hectare
+01,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"68,0","66,0","70,0","53,0",quintal_per_hectare
+03,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"58,0","46,0","60,0","49,0",quintal_per_hectare
+07,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"42,0","45,0","45,0","42,0",quintal_per_hectare
+15,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"51,0","50,0","54,0","44,0",quintal_per_hectare
+26,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"58,0","48,0","53,0","52,0",quintal_per_hectare
+38,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"66,0","54,0","62,0","55,0",quintal_per_hectare
+42,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"57,0","44,0","55,0","52,0",quintal_per_hectare
+43,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"52,0","33,0","54,0","50,0",quintal_per_hectare
+63,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"57,5","54,0","66,0","62,0",quintal_per_hectare
+69,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"66,0","55,0","66,0","60,0",quintal_per_hectare
+73,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"65,0","59,0","62,0","56,0",quintal_per_hectare
+74,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"65,0","62,0","60,0","57,0",quintal_per_hectare
+04,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"44,6","27,9","30,1","41,1",quintal_per_hectare
+05,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"43,8","26,7","29,7","42,1",quintal_per_hectare
+06,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"20,0","21,0","25,1","29,5",quintal_per_hectare
+13,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"40,2","30,8","26,2","45,7",quintal_per_hectare
+83,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"42,8","24,6","26,1","39,7",quintal_per_hectare
+84,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"35,5","20,5","22,4","30,9",quintal_per_hectare
+2A,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"65,0","65,0","40,0","45,0",quintal_per_hectare
+2B,Blé tendre d'hiver,triticum_aestivum,winter_common_wheat,"65,0","65,0","40,0","45,0",quintal_per_hectare
+77,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"64,0","68,0","64,0","55,0",quintal_per_hectare
+78,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"68,0","71,0","64,0","55,0",quintal_per_hectare
+91,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"70,0","74,0","70,0","60,0",quintal_per_hectare
+95,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"65,0","70,0","0,0","0,0",quintal_per_hectare
+18,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"54,0","52,0","56,0","45,0",quintal_per_hectare
+28,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"64,0","73,0","72,0","56,0",quintal_per_hectare
+36,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"50,0","50,0","56,0","44,0",quintal_per_hectare
+37,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"55,0","51,0","60,0","45,0",quintal_per_hectare
+41,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"60,0","64,0","63,0","49,0",quintal_per_hectare
+45,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"68,0","70,0","68,0","53,0",quintal_per_hectare
+21,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"48,0","38,0","56,0","38,0",quintal_per_hectare
+25,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"42,0","31,0","49,0","29,0",quintal_per_hectare
+39,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"60,0","31,0","35,0","29,0",quintal_per_hectare
+58,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"49,0","38,0","56,0","38,0",quintal_per_hectare
+70,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"42,0","31,0","35,0","29,0",quintal_per_hectare
+71,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"51,0","38,0","56,0","38,0",quintal_per_hectare
+89,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"48,0","38,0","56,0","38,0",quintal_per_hectare
+90,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"34,0","31,0","0,0","0,0",quintal_per_hectare
+14,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"52,0","58,0","54,0","51,0",quintal_per_hectare
+27,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"54,0","58,0","55,0","49,0",quintal_per_hectare
+61,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"51,0","56,0","59,0","44,0",quintal_per_hectare
+76,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"45,0","56,0","52,0","44,0",quintal_per_hectare
+02,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"57,0","60,5","58,5","59,9",quintal_per_hectare
+59,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"62,0","62,1","62,0","62,2",quintal_per_hectare
+60,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"62,0","62,2","61,0","61,5",quintal_per_hectare
+62,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"62,0","61,9","62,0","61,9",quintal_per_hectare
+80,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"63,0","62,8","62,0","62,6",quintal_per_hectare
+08,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"30,0","40,0","52,0","35,0",quintal_per_hectare
+10,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"30,0","40,0","56,0","86,7",quintal_per_hectare
+51,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"40,0","40,0","54,0","33,5",quintal_per_hectare
+52,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"20,0","40,0","44,0","39,6",quintal_per_hectare
+54,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"0,0","0,0","55,0","44,0",quintal_per_hectare
+55,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"0,0","0,0","55,0","40,0",quintal_per_hectare
+67,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"60,0","60,0","70,0","65,0",quintal_per_hectare
+68,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"55,0","60,0","65,0","65,0",quintal_per_hectare
+44,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"60,7","61,0","69,0","53,0",quintal_per_hectare
+49,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"58,0","52,0","69,0","53,0",quintal_per_hectare
+53,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"58,7","57,0","66,0","52,0",quintal_per_hectare
+72,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"55,0","55,0","67,0","52,0",quintal_per_hectare
+85,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"64,0","67,6","73,0","57,0",quintal_per_hectare
+22,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"37,5","44,7","44,7","44,7",quintal_per_hectare
+29,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"29,0","43,6","42,7","45,0",quintal_per_hectare
+35,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"44,5","47,2","37,8","45,3",quintal_per_hectare
+56,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"48,0","48,3","48,4","48,0",quintal_per_hectare
+16,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"50,0","47,0","57,0","49,0",quintal_per_hectare
+17,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"55,0","56,0","65,0","54,0",quintal_per_hectare
+19,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"40,0","40,0","42,0","46,0",quintal_per_hectare
+23,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"54,0","51,0","41,0","30,0",quintal_per_hectare
+24,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"45,0","43,0","47,0","45,0",quintal_per_hectare
+33,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"51,0","48,0","53,0","45,0",quintal_per_hectare
+40,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"48,0","45,0","50,0","45,0",quintal_per_hectare
+47,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"45,0","49,0","52,0","50,0",quintal_per_hectare
+64,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"52,0","43,0","45,0","35,0",quintal_per_hectare
+79,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"50,0","46,0","60,0","51,0",quintal_per_hectare
+86,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"53,0","53,0","62,0","52,0",quintal_per_hectare
+87,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"40,0","40,0","54,0","28,0",quintal_per_hectare
+09,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"49,0","47,0","42,0","50,0",quintal_per_hectare
+11,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"40,0","37,0","40,0","43,0",quintal_per_hectare
+12,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"45,0","30,0","49,0","42,0",quintal_per_hectare
+30,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"43,0","40,0","34,0","46,0",quintal_per_hectare
+31,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"50,0","45,0","51,0","50,0",quintal_per_hectare
+32,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"51,0","47,0","51,0","51,0",quintal_per_hectare
+34,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"30,0","34,0","21,0","42,0",quintal_per_hectare
+46,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"44,2","42,0","49,0","40,0",quintal_per_hectare
+48,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"34,0","18,0","40,0","31,0",quintal_per_hectare
+65,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"48,0","50,0","46,0","49,0",quintal_per_hectare
+66,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"29,0","43,0","10,0","7,0",quintal_per_hectare
+81,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"48,0","45,0","50,0","48,0",quintal_per_hectare
+82,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"47,0","44,0","53,0","46,0",quintal_per_hectare
+01,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"42,0","41,0","40,0","40,0",quintal_per_hectare
+03,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"55,0","53,0","55,0","50,0",quintal_per_hectare
+07,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"48,0","43,0","45,0","43,0",quintal_per_hectare
+15,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"43,0","40,0","45,0","43,0",quintal_per_hectare
+26,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"65,0","58,5","58,0","53,0",quintal_per_hectare
+38,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"54,0","48,0","56,0","53,0",quintal_per_hectare
+42,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"55,0","28,0","38,0","34,0",quintal_per_hectare
+43,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"43,0","30,0","47,0","42,0",quintal_per_hectare
+63,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"44,0","40,0","50,0","46,0",quintal_per_hectare
+69,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"46,0","45,0","57,0","53,0",quintal_per_hectare
+73,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"45,0","50,0","45,0","40,0",quintal_per_hectare
+74,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"50,0","45,0","45,0","42,0",quintal_per_hectare
+04,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"45,2","35,4","32,6","42,0",quintal_per_hectare
+05,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"41,2","33,7","34,4","48,0",quintal_per_hectare
+13,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"45,0","34,7","36,8","45,1",quintal_per_hectare
+83,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"41,8","28,9","28,6","43,1",quintal_per_hectare
+84,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"48,0","33,0","30,3","43,2",quintal_per_hectare
+2B,Blé dur d'hiver,triticum_durum,winter_hard_wheat,"65,0","65,0","40,0","45,0",quintal_per_hectare
+77,Colza d'hiver,brassica_napus_napus,winter_rape,"36,0","42,0","35,0","30,8",quintal_per_hectare
+78,Colza d'hiver,brassica_napus_napus,winter_rape,"37,0","42,0","33,0","31,9",quintal_per_hectare
+91,Colza d'hiver,brassica_napus_napus,winter_rape,"37,0","41,0","34,0","31,0",quintal_per_hectare
+93,Colza d'hiver,brassica_napus_napus,winter_rape,"37,0","44,0","33,9","32,1",quintal_per_hectare
+94,Colza d'hiver,brassica_napus_napus,winter_rape,"37,0","41,0","34,2","31,1",quintal_per_hectare
+95,Colza d'hiver,brassica_napus_napus,winter_rape,"37,0","44,0","34,0","32,0",quintal_per_hectare
+18,Colza d'hiver,brassica_napus_napus,winter_rape,"32,0","31,0","27,0","22,0",quintal_per_hectare
+28,Colza d'hiver,brassica_napus_napus,winter_rape,"37,0","40,0","34,0","31,0",quintal_per_hectare
+36,Colza d'hiver,brassica_napus_napus,winter_rape,"33,0","33,0","28,0","22,0",quintal_per_hectare
+37,Colza d'hiver,brassica_napus_napus,winter_rape,"34,0","31,0","30,0","25,0",quintal_per_hectare
+41,Colza d'hiver,brassica_napus_napus,winter_rape,"35,0","36,5","33,0","28,0",quintal_per_hectare
+45,Colza d'hiver,brassica_napus_napus,winter_rape,"32,0","34,0","32,0","29,0",quintal_per_hectare
+21,Colza d'hiver,brassica_napus_napus,winter_rape,"30,0","35,0","31,0","32,0",quintal_per_hectare
+25,Colza d'hiver,brassica_napus_napus,winter_rape,"32,0","34,0","34,0","31,0",quintal_per_hectare
+39,Colza d'hiver,brassica_napus_napus,winter_rape,"32,0","34,0","33,0","32,0",quintal_per_hectare
+58,Colza d'hiver,brassica_napus_napus,winter_rape,"31,0","31,0","28,0","24,0",quintal_per_hectare
+70,Colza d'hiver,brassica_napus_napus,winter_rape,"31,0","35,0","33,0","33,0",quintal_per_hectare
+71,Colza d'hiver,brassica_napus_napus,winter_rape,"32,0","38,0","35,0","33,0",quintal_per_hectare
+89,Colza d'hiver,brassica_napus_napus,winter_rape,"32,0","33,0","30,0","29,0",quintal_per_hectare
+90,Colza d'hiver,brassica_napus_napus,winter_rape,"31,0","35,0","33,0","33,0",quintal_per_hectare
+14,Colza d'hiver,brassica_napus_napus,winter_rape,"39,0","42,0","35,0","35,0",quintal_per_hectare
+27,Colza d'hiver,brassica_napus_napus,winter_rape,"37,0","42,0","35,0","32,0",quintal_per_hectare
+50,Colza d'hiver,brassica_napus_napus,winter_rape,"36,0","42,0","34,0","32,0",quintal_per_hectare
+61,Colza d'hiver,brassica_napus_napus,winter_rape,"34,0","38,0","33,0","27,0",quintal_per_hectare
+76,Colza d'hiver,brassica_napus_napus,winter_rape,"33,0","45,0","36,0","32,0",quintal_per_hectare
+02,Colza d'hiver,brassica_napus_napus,winter_rape,"32,0","44,0","36,0","32,0",quintal_per_hectare
+59,Colza d'hiver,brassica_napus_napus,winter_rape,"35,0","48,0","39,0","34,0",quintal_per_hectare
+60,Colza d'hiver,brassica_napus_napus,winter_rape,"35,0","43,0","34,0","32,0",quintal_per_hectare
+62,Colza d'hiver,brassica_napus_napus,winter_rape,"33,0","47,0","39,0","33,0",quintal_per_hectare
+80,Colza d'hiver,brassica_napus_napus,winter_rape,"34,0","43,0","37,0","33,0",quintal_per_hectare
+08,Colza d'hiver,brassica_napus_napus,winter_rape,"27,0","42,0","31,0","30,0",quintal_per_hectare
+10,Colza d'hiver,brassica_napus_napus,winter_rape,"30,0","41,5","33,0","31,0",quintal_per_hectare
+51,Colza d'hiver,brassica_napus_napus,winter_rape,"29,5","42,0","34,0","32,0",quintal_per_hectare
+52,Colza d'hiver,brassica_napus_napus,winter_rape,"26,0","36,0","29,0","34,8",quintal_per_hectare
+54,Colza d'hiver,brassica_napus_napus,winter_rape,"26,5","34,0","28,0","30,0",quintal_per_hectare
+55,Colza d'hiver,brassica_napus_napus,winter_rape,"24,0","35,0","27,0","31,0",quintal_per_hectare
+57,Colza d'hiver,brassica_napus_napus,winter_rape,"26,0","35,5","28,0","29,0",quintal_per_hectare
+67,Colza d'hiver,brassica_napus_napus,winter_rape,"34,0","38,0","37,0","30,0",quintal_per_hectare
+68,Colza d'hiver,brassica_napus_napus,winter_rape,"38,0","40,0","39,0","34,0",quintal_per_hectare
+88,Colza d'hiver,brassica_napus_napus,winter_rape,"30,0","35,0","31,0","33,0",quintal_per_hectare
+44,Colza d'hiver,brassica_napus_napus,winter_rape,"35,0","36,1","28,0","23,0",quintal_per_hectare
+49,Colza d'hiver,brassica_napus_napus,winter_rape,"36,0","31,1","29,0","22,0",quintal_per_hectare
+53,Colza d'hiver,brassica_napus_napus,winter_rape,"36,0","37,1","31,0","25,0",quintal_per_hectare
+72,Colza d'hiver,brassica_napus_napus,winter_rape,"35,0","35,1","32,0","25,0",quintal_per_hectare
+85,Colza d'hiver,brassica_napus_napus,winter_rape,"36,0","30,0","24,0","21,0",quintal_per_hectare
+22,Colza d'hiver,brassica_napus_napus,winter_rape,"34,0","41,1","31,7","29,3",quintal_per_hectare
+29,Colza d'hiver,brassica_napus_napus,winter_rape,"34,0","38,4","29,2","30,4",quintal_per_hectare
+35,Colza d'hiver,brassica_napus_napus,winter_rape,"36,4","39,6","32,5","27,3",quintal_per_hectare
+56,Colza d'hiver,brassica_napus_napus,winter_rape,"35,8","39,0","31,3","29,5",quintal_per_hectare
+16,Colza d'hiver,brassica_napus_napus,winter_rape,"39,0","29,0","28,0","30,0",quintal_per_hectare
+17,Colza d'hiver,brassica_napus_napus,winter_rape,"39,0","29,0","30,0","29,0",quintal_per_hectare
+19,Colza d'hiver,brassica_napus_napus,winter_rape,"30,0","28,0","35,0","23,0",quintal_per_hectare
+23,Colza d'hiver,brassica_napus_napus,winter_rape,"34,0","36,0","35,0","31,0",quintal_per_hectare
+24,Colza d'hiver,brassica_napus_napus,winter_rape,"34,0","27,0","31,0","27,0",quintal_per_hectare
+33,Colza d'hiver,brassica_napus_napus,winter_rape,"25,0","26,0","25,0","22,0",quintal_per_hectare
+40,Colza d'hiver,brassica_napus_napus,winter_rape,"25,0","27,0","25,0","22,0",quintal_per_hectare
+47,Colza d'hiver,brassica_napus_napus,winter_rape,"24,0","27,0","24,0","23,0",quintal_per_hectare
+64,Colza d'hiver,brassica_napus_napus,winter_rape,"24,0","26,0","26,0","24,0",quintal_per_hectare
+79,Colza d'hiver,brassica_napus_napus,winter_rape,"38,0","29,0","30,0","26,0",quintal_per_hectare
+86,Colza d'hiver,brassica_napus_napus,winter_rape,"37,0","31,0","30,0","25,0",quintal_per_hectare
+87,Colza d'hiver,brassica_napus_napus,winter_rape,"27,0","33,0","30,0","28,0",quintal_per_hectare
+09,Colza d'hiver,brassica_napus_napus,winter_rape,"27,0","25,0","23,0","30,0",quintal_per_hectare
+11,Colza d'hiver,brassica_napus_napus,winter_rape,"33,0","29,0","28,0","25,0",quintal_per_hectare
+12,Colza d'hiver,brassica_napus_napus,winter_rape,"23,0","29,0","32,0","32,0",quintal_per_hectare
+30,Colza d'hiver,brassica_napus_napus,winter_rape,"28,0","25,0","25,0","27,0",quintal_per_hectare
+31,Colza d'hiver,brassica_napus_napus,winter_rape,"25,2","29,0","28,0","27,0",quintal_per_hectare
+32,Colza d'hiver,brassica_napus_napus,winter_rape,"23,0","25,0","32,0","29,0",quintal_per_hectare
+34,Colza d'hiver,brassica_napus_napus,winter_rape,"20,0","20,0","19,0","24,0",quintal_per_hectare
+46,Colza d'hiver,brassica_napus_napus,winter_rape,"22,0","22,0","23,0","23,0",quintal_per_hectare
+48,Colza d'hiver,brassica_napus_napus,winter_rape,"20,0","12,0","24,0","18,0",quintal_per_hectare
+65,Colza d'hiver,brassica_napus_napus,winter_rape,"35,0","23,0","30,0","32,0",quintal_per_hectare
+66,Colza d'hiver,brassica_napus_napus,winter_rape,"20,0","0,0","15,0","17,0",quintal_per_hectare
+81,Colza d'hiver,brassica_napus_napus,winter_rape,"25,0","25,0","27,0","29,0",quintal_per_hectare
+82,Colza d'hiver,brassica_napus_napus,winter_rape,"30,0","26,0","22,0","27,0",quintal_per_hectare
+01,Colza d'hiver,brassica_napus_napus,winter_rape,"32,0","34,0","32,5","28,5",quintal_per_hectare
+03,Colza d'hiver,brassica_napus_napus,winter_rape,"29,0","26,0","29,0","27,0",quintal_per_hectare
+07,Colza d'hiver,brassica_napus_napus,winter_rape,"22,0","20,0","25,0","23,0",quintal_per_hectare
+15,Colza d'hiver,brassica_napus_napus,winter_rape,"25,0","24,0","24,0","25,0",quintal_per_hectare
+26,Colza d'hiver,brassica_napus_napus,winter_rape,"29,0","24,0","27,0","23,0",quintal_per_hectare
+38,Colza d'hiver,brassica_napus_napus,winter_rape,"35,5","34,5","34,5","33,0",quintal_per_hectare
+42,Colza d'hiver,brassica_napus_napus,winter_rape,"30,0","22,0","28,5","33,0",quintal_per_hectare
+43,Colza d'hiver,brassica_napus_napus,winter_rape,"18,0","16,0","26,0","28,0",quintal_per_hectare
+63,Colza d'hiver,brassica_napus_napus,winter_rape,"29,0","30,0","28,0","33,0",quintal_per_hectare
+69,Colza d'hiver,brassica_napus_napus,winter_rape,"34,0","30,0","34,5","31,0",quintal_per_hectare
+73,Colza d'hiver,brassica_napus_napus,winter_rape,"35,0","36,0","30,0","33,0",quintal_per_hectare
+74,Colza d'hiver,brassica_napus_napus,winter_rape,"35,0","35,0","33,0","34,0",quintal_per_hectare
+04,Colza d'hiver,brassica_napus_napus,winter_rape,"25,1","18,5","19,9","26,3",quintal_per_hectare
+05,Colza d'hiver,brassica_napus_napus,winter_rape,"18,0","14,5","25,0","24,2",quintal_per_hectare
+13,Colza d'hiver,brassica_napus_napus,winter_rape,"25,3","22,1","20,1","23,8",quintal_per_hectare
+83,Colza d'hiver,brassica_napus_napus,winter_rape,"21,4","16,4","16,4","20,9",quintal_per_hectare
+84,Colza d'hiver,brassica_napus_napus,winter_rape,"20,0","21,7","20,5","25,0",quintal_per_hectare
+77,Avoine d'hiver,avena_sativa,winter_oat,"57,0","59,0","57,0","43,4",quintal_per_hectare
+78,Avoine d'hiver,avena_sativa,winter_oat,"58,0","59,0","57,0","59,9",quintal_per_hectare
+91,Avoine d'hiver,avena_sativa,winter_oat,"55,0","58,0","57,8","46,9",quintal_per_hectare
+95,Avoine d'hiver,avena_sativa,winter_oat,"62,0","63,0","60,1","60,4",quintal_per_hectare
+18,Avoine d'hiver,avena_sativa,winter_oat,"47,0","39,0","46,0","40,0",quintal_per_hectare
+28,Avoine d'hiver,avena_sativa,winter_oat,"58,0","51,0","54,0","50,0",quintal_per_hectare
+36,Avoine d'hiver,avena_sativa,winter_oat,"46,0","38,0","47,0","42,0",quintal_per_hectare
+37,Avoine d'hiver,avena_sativa,winter_oat,"46,0","45,0","49,0","42,0",quintal_per_hectare
+41,Avoine d'hiver,avena_sativa,winter_oat,"46,0","44,0","49,0","45,0",quintal_per_hectare
+45,Avoine d'hiver,avena_sativa,winter_oat,"44,0","42,0","48,0","44,0",quintal_per_hectare
+21,Avoine d'hiver,avena_sativa,winter_oat,"39,0","32,0","30,0","38,0",quintal_per_hectare
+25,Avoine d'hiver,avena_sativa,winter_oat,"41,0","35,0","43,0","33,0",quintal_per_hectare
+39,Avoine d'hiver,avena_sativa,winter_oat,"39,0","34,0","33,0","0,0",quintal_per_hectare
+58,Avoine d'hiver,avena_sativa,winter_oat,"45,0","40,0","38,0","34,0",quintal_per_hectare
+70,Avoine d'hiver,avena_sativa,winter_oat,"31,0","34,0","44,0","27,0",quintal_per_hectare
+71,Avoine d'hiver,avena_sativa,winter_oat,"36,0","39,0","45,0","34,0",quintal_per_hectare
+89,Avoine d'hiver,avena_sativa,winter_oat,"37,0","29,0","34,0","34,0",quintal_per_hectare
+14,Avoine d'hiver,avena_sativa,winter_oat,"58,0","54,0","60,0","55,0",quintal_per_hectare
+27,Avoine d'hiver,avena_sativa,winter_oat,"55,0","51,0","55,0","47,0",quintal_per_hectare
+50,Avoine d'hiver,avena_sativa,winter_oat,"48,0","41,0","42,0","38,0",quintal_per_hectare
+61,Avoine d'hiver,avena_sativa,winter_oat,"55,0","51,0","56,0","47,0",quintal_per_hectare
+76,Avoine d'hiver,avena_sativa,winter_oat,"66,0","61,0","62,0","56,0",quintal_per_hectare
+02,Avoine d'hiver,avena_sativa,winter_oat,"60,0","60,1","61,0","60,4",quintal_per_hectare
+59,Avoine d'hiver,avena_sativa,winter_oat,"59,0","59,0","58,5","58,8",quintal_per_hectare
+60,Avoine d'hiver,avena_sativa,winter_oat,"60,0","59,9","59,9","59,8",quintal_per_hectare
+62,Avoine d'hiver,avena_sativa,winter_oat,"63,0","64,0","63,0","63,3",quintal_per_hectare
+80,Avoine d'hiver,avena_sativa,winter_oat,"60,0","60,9","62,1","61,4",quintal_per_hectare
+08,Avoine d'hiver,avena_sativa,winter_oat,"50,0","48,0","52,0","48,0",quintal_per_hectare
+10,Avoine d'hiver,avena_sativa,winter_oat,"44,0","38,0","50,0","40,0",quintal_per_hectare
+51,Avoine d'hiver,avena_sativa,winter_oat,"50,0","44,0","52,0","47,0",quintal_per_hectare
+52,Avoine d'hiver,avena_sativa,winter_oat,"39,0","34,0","42,0","37,0",quintal_per_hectare
+54,Avoine d'hiver,avena_sativa,winter_oat,"41,0","30,0","40,0","37,0",quintal_per_hectare
+55,Avoine d'hiver,avena_sativa,winter_oat,"39,0","34,0","41,0","36,0",quintal_per_hectare
+57,Avoine d'hiver,avena_sativa,winter_oat,"40,0","30,0","37,0","34,0",quintal_per_hectare
+67,Avoine d'hiver,avena_sativa,winter_oat,"43,0","42,0","46,0","43,0",quintal_per_hectare
+68,Avoine d'hiver,avena_sativa,winter_oat,"42,0","41,0","46,0","43,0",quintal_per_hectare
+88,Avoine d'hiver,avena_sativa,winter_oat,"36,0","32,0","37,0","35,0",quintal_per_hectare
+44,Avoine d'hiver,avena_sativa,winter_oat,"60,0","57,7","56,0","35,0",quintal_per_hectare
+49,Avoine d'hiver,avena_sativa,winter_oat,"61,0","46,6","61,0","37,0",quintal_per_hectare
+53,Avoine d'hiver,avena_sativa,winter_oat,"62,0","56,6","67,0","36,0",quintal_per_hectare
+72,Avoine d'hiver,avena_sativa,winter_oat,"66,0","55,0","67,0","48,0",quintal_per_hectare
+85,Avoine d'hiver,avena_sativa,winter_oat,"60,0","52,0","57,0","40,0",quintal_per_hectare
+22,Avoine d'hiver,avena_sativa,winter_oat,"59,7","57,0","52,3","50,6",quintal_per_hectare
+29,Avoine d'hiver,avena_sativa,winter_oat,"53,0","42,3","42,9","43,2",quintal_per_hectare
+35,Avoine d'hiver,avena_sativa,winter_oat,"44,0","39,9","47,0","43,1",quintal_per_hectare
+56,Avoine d'hiver,avena_sativa,winter_oat,"45,9","50,0","51,7","43,9",quintal_per_hectare
+16,Avoine d'hiver,avena_sativa,winter_oat,"39,0","35,0","39,0","34,0",quintal_per_hectare
+17,Avoine d'hiver,avena_sativa,winter_oat,"44,0","37,0","41,0","33,0",quintal_per_hectare
+19,Avoine d'hiver,avena_sativa,winter_oat,"25,0","31,0","36,0","30,0",quintal_per_hectare
+23,Avoine d'hiver,avena_sativa,winter_oat,"48,0","33,0","36,0","25,0",quintal_per_hectare
+24,Avoine d'hiver,avena_sativa,winter_oat,"41,0","37,0","41,0","33,0",quintal_per_hectare
+33,Avoine d'hiver,avena_sativa,winter_oat,"40,0","38,0","43,0","25,0",quintal_per_hectare
+40,Avoine d'hiver,avena_sativa,winter_oat,"40,0","37,0","43,0","31,0",quintal_per_hectare
+47,Avoine d'hiver,avena_sativa,winter_oat,"31,0","28,0","35,0","25,0",quintal_per_hectare
+64,Avoine d'hiver,avena_sativa,winter_oat,"32,0","26,0","35,0","25,0",quintal_per_hectare
+79,Avoine d'hiver,avena_sativa,winter_oat,"38,0","37,0","38,0","30,0",quintal_per_hectare
+86,Avoine d'hiver,avena_sativa,winter_oat,"37,0","31,0","36,0","30,0",quintal_per_hectare
+87,Avoine d'hiver,avena_sativa,winter_oat,"40,0","32,0","40,0","30,0",quintal_per_hectare
+09,Avoine d'hiver,avena_sativa,winter_oat,"32,0","28,0","29,0","29,0",quintal_per_hectare
+11,Avoine d'hiver,avena_sativa,winter_oat,"41,0","35,0","37,0","37,0",quintal_per_hectare
+12,Avoine d'hiver,avena_sativa,winter_oat,"28,0","22,0","24,0","34,0",quintal_per_hectare
+30,Avoine d'hiver,avena_sativa,winter_oat,"24,0","20,0","23,0","25,0",quintal_per_hectare
+31,Avoine d'hiver,avena_sativa,winter_oat,"29,0","28,0","28,0","25,0",quintal_per_hectare
+32,Avoine d'hiver,avena_sativa,winter_oat,"34,0","30,0","37,0","32,0",quintal_per_hectare
+34,Avoine d'hiver,avena_sativa,winter_oat,"25,0","20,0","20,0","30,0",quintal_per_hectare
+46,Avoine d'hiver,avena_sativa,winter_oat,"28,4","25,0","27,0","26,0",quintal_per_hectare
+48,Avoine d'hiver,avena_sativa,winter_oat,"24,0","18,0","25,0","24,0",quintal_per_hectare
+65,Avoine d'hiver,avena_sativa,winter_oat,"33,0","28,0","32,0","32,0",quintal_per_hectare
+66,Avoine d'hiver,avena_sativa,winter_oat,"28,0","23,0","16,0","15,0",quintal_per_hectare
+81,Avoine d'hiver,avena_sativa,winter_oat,"36,0","32,0","33,0","29,0",quintal_per_hectare
+82,Avoine d'hiver,avena_sativa,winter_oat,"36,0","31,0","33,0","34,0",quintal_per_hectare
+01,Avoine d'hiver,avena_sativa,winter_oat,"39,0","43,0","42,0","30,0",quintal_per_hectare
+03,Avoine d'hiver,avena_sativa,winter_oat,"44,0","32,0","35,0","36,0",quintal_per_hectare
+07,Avoine d'hiver,avena_sativa,winter_oat,"25,0","28,0","20,0","22,0",quintal_per_hectare
+15,Avoine d'hiver,avena_sativa,winter_oat,"35,0","30,0","34,0","30,0",quintal_per_hectare
+26,Avoine d'hiver,avena_sativa,winter_oat,"41,0","29,0","30,0","33,0",quintal_per_hectare
+38,Avoine d'hiver,avena_sativa,winter_oat,"32,0","28,0","31,0","31,0",quintal_per_hectare
+42,Avoine d'hiver,avena_sativa,winter_oat,"30,0","25,0","36,0","40,0",quintal_per_hectare
+43,Avoine d'hiver,avena_sativa,winter_oat,"28,0","20,0","29,0","22,0",quintal_per_hectare
+63,Avoine d'hiver,avena_sativa,winter_oat,"41,0","30,0","38,0","30,0",quintal_per_hectare
+69,Avoine d'hiver,avena_sativa,winter_oat,"38,0","28,0","41,0","38,0",quintal_per_hectare
+73,Avoine d'hiver,avena_sativa,winter_oat,"40,0","37,0","41,0","38,0",quintal_per_hectare
+74,Avoine d'hiver,avena_sativa,winter_oat,"30,0","30,0","30,0","27,0",quintal_per_hectare
+04,Avoine d'hiver,avena_sativa,winter_oat,"25,0","20,0","25,0","40,0",quintal_per_hectare
+05,Avoine d'hiver,avena_sativa,winter_oat,"25,0","25,0","25,0","35,0",quintal_per_hectare
+06,Avoine d'hiver,avena_sativa,winter_oat,"25,0","0,0","0,0","0,0",quintal_per_hectare
+13,Avoine d'hiver,avena_sativa,winter_oat,"25,0","20,0","20,0","25,0",quintal_per_hectare
+83,Avoine d'hiver,avena_sativa,winter_oat,"25,0","20,0","20,0","27,0",quintal_per_hectare
+84,Avoine d'hiver,avena_sativa,winter_oat,"25,0","20,0","25,0","24,0",quintal_per_hectare
+2A,Avoine d'hiver,avena_sativa,winter_oat,"30,0","30,0","20,0","25,0",quintal_per_hectare
+2B,Avoine d'hiver,avena_sativa,winter_oat,"30,0","30,0","20,0","25,0",quintal_per_hectare
+77,Maïs grain,zea_mays,grain_corn,"109,6","86,5","109,0","103,0",quintal_per_hectare
+78,Maïs grain,zea_mays,grain_corn,"100,4","71,7","102,4","100,0",quintal_per_hectare
+91,Maïs grain,zea_mays,grain_corn,"105,0","87,9","97,5","100,0",quintal_per_hectare
+93,Maïs grain,zea_mays,grain_corn,"105,0","71,0","109,0","99,6",quintal_per_hectare
+94,Maïs grain,zea_mays,grain_corn,"104,0","85,0","97,3","96,2",quintal_per_hectare
+95,Maïs grain,zea_mays,grain_corn,"105,0","71,0","108,6","99,8",quintal_per_hectare
+18,Maïs grain,zea_mays,grain_corn,"98,6","78,3","96,1","88,1",quintal_per_hectare
+28,Maïs grain,zea_mays,grain_corn,"112,9","115,5","119,4","118,6",quintal_per_hectare
+36,Maïs grain,zea_mays,grain_corn,"95,0","74,9","84,4","67,1",quintal_per_hectare
+37,Maïs grain,zea_mays,grain_corn,"96,5","61,1","84,5","80,4",quintal_per_hectare
+41,Maïs grain,zea_mays,grain_corn,"110,8","89,4","105,7","104,6",quintal_per_hectare
+45,Maïs grain,zea_mays,grain_corn,"107,5","95,7","112,3","109,7",quintal_per_hectare
+21,Maïs grain,zea_mays,grain_corn,"100,4","71,3","93,5","100,9",quintal_per_hectare
+25,Maïs grain,zea_mays,grain_corn,"90,1","69,2","97,2","87,3",quintal_per_hectare
+39,Maïs grain,zea_mays,grain_corn,"103,5","74,7","109,7","91,0",quintal_per_hectare
+58,Maïs grain,zea_mays,grain_corn,"102,1","82,9","102,7","78,4",quintal_per_hectare
+70,Maïs grain,zea_mays,grain_corn,"93,1","62,2","87,3","79,3",quintal_per_hectare
+71,Maïs grain,zea_mays,grain_corn,"98,4","74,8","102,5","99,3",quintal_per_hectare
+89,Maïs grain,zea_mays,grain_corn,"90,2","77,3","96,2","75,4",quintal_per_hectare
+90,Maïs grain,zea_mays,grain_corn,"93,0","62,0","87,0","105,0",quintal_per_hectare
+14,Maïs grain,zea_mays,grain_corn,"94,5","65,1","100,0","86,1",quintal_per_hectare
+27,Maïs grain,zea_mays,grain_corn,"90,9","67,2","95,3","88,1",quintal_per_hectare
+50,Maïs grain,zea_mays,grain_corn,"99,0","77,0","100,0","86,0",quintal_per_hectare
+61,Maïs grain,zea_mays,grain_corn,"93,0","65,4","90,1","80,2",quintal_per_hectare
+76,Maïs grain,zea_mays,grain_corn,"78,0","75,0","100,0","79,0",quintal_per_hectare
+02,Maïs grain,zea_mays,grain_corn,"94,4","71,4","100,0","84,0",quintal_per_hectare
+59,Maïs grain,zea_mays,grain_corn,"107,3","85,0","105,0","102,8",quintal_per_hectare
+60,Maïs grain,zea_mays,grain_corn,"100,1","70,6","104,9","88,8",quintal_per_hectare
+62,Maïs grain,zea_mays,grain_corn,"104,6","85,0","105,0","93,8",quintal_per_hectare
+80,Maïs grain,zea_mays,grain_corn,"105,0","76,6","100,0","88,9",quintal_per_hectare
+08,Maïs grain,zea_mays,grain_corn,"100,0","80,0","80,0","95,0",quintal_per_hectare
+10,Maïs grain,zea_mays,grain_corn,"99,2","67,2","87,7","97,4",quintal_per_hectare
+51,Maïs grain,zea_mays,grain_corn,"99,7","75,6","89,8","99,8",quintal_per_hectare
+52,Maïs grain,zea_mays,grain_corn,"93,4","56,8","76,8","78,8",quintal_per_hectare
+54,Maïs grain,zea_mays,grain_corn,"90,0","44,9","60,0","80,0",quintal_per_hectare
+55,Maïs grain,zea_mays,grain_corn,"92,0","60,6","84,0","85,2",quintal_per_hectare
+57,Maïs grain,zea_mays,grain_corn,"90,0","44,4","80,0","85,0",quintal_per_hectare
+67,Maïs grain,zea_mays,grain_corn,"113,5","98,4","105,7","121,5",quintal_per_hectare
+68,Maïs grain,zea_mays,grain_corn,"120,9","118,3","123,7","130,9",quintal_per_hectare
+88,Maïs grain,zea_mays,grain_corn,"80,0","24,5","60,0","80,0",quintal_per_hectare
+44,Maïs grain,zea_mays,grain_corn,"93,8","55,9","90,9","88,1",quintal_per_hectare
+49,Maïs grain,zea_mays,grain_corn,"97,8","66,2","94,3","94,3",quintal_per_hectare
+53,Maïs grain,zea_mays,grain_corn,"96,0","67,0","97,9","90,4",quintal_per_hectare
+72,Maïs grain,zea_mays,grain_corn,"98,7","71,9","108,0","90,0",quintal_per_hectare
+85,Maïs grain,zea_mays,grain_corn,"105,8","64,7","98,7","100,4",quintal_per_hectare
+22,Maïs grain,zea_mays,grain_corn,"87,6","79,0","94,0","94,4",quintal_per_hectare
+29,Maïs grain,zea_mays,grain_corn,"91,8","84,0","94,1","93,1",quintal_per_hectare
+35,Maïs grain,zea_mays,grain_corn,"100,6","74,4","97,7","91,4",quintal_per_hectare
+56,Maïs grain,zea_mays,grain_corn,"96,5","70,7","102,1","92,1",quintal_per_hectare
+16,Maïs grain,zea_mays,grain_corn,"93,5","68,4","94,4","70,7",quintal_per_hectare
+17,Maïs grain,zea_mays,grain_corn,"100,3","74,5","106,0","84,6",quintal_per_hectare
+19,Maïs grain,zea_mays,grain_corn,"94,6","64,6","95,5","71,4",quintal_per_hectare
+23,Maïs grain,zea_mays,grain_corn,"84,3","59,9","82,2","59,2",quintal_per_hectare
+24,Maïs grain,zea_mays,grain_corn,"97,8","72,1","102,8","72,5",quintal_per_hectare
+33,Maïs grain,zea_mays,grain_corn,"115,8","90,8","116,3","102,0",quintal_per_hectare
+40,Maïs grain,zea_mays,grain_corn,"120,7","78,9","112,4","98,1",quintal_per_hectare
+47,Maïs grain,zea_mays,grain_corn,"112,2","84,3","114,0","95,2",quintal_per_hectare
+64,Maïs grain,zea_mays,grain_corn,"110,0","73,2","111,6","96,9",quintal_per_hectare
+79,Maïs grain,zea_mays,grain_corn,"92,2","49,1","83,3","69,6",quintal_per_hectare
+86,Maïs grain,zea_mays,grain_corn,"89,8","63,3","92,3","75,8",quintal_per_hectare
+87,Maïs grain,zea_mays,grain_corn,"85,9","52,4","82,7","56,2",quintal_per_hectare
+09,Maïs grain,zea_mays,grain_corn,"93,6","55,3","91,9","90,1",quintal_per_hectare
+11,Maïs grain,zea_mays,grain_corn,"83,2","46,4","83,1","59,8",quintal_per_hectare
+12,Maïs grain,zea_mays,grain_corn,"97,9","69,1","87,8","84,2",quintal_per_hectare
+30,Maïs grain,zea_mays,grain_corn,"86,6","51,8","81,9","76,9",quintal_per_hectare
+31,Maïs grain,zea_mays,grain_corn,"95,1","60,0","100,0","104,2",quintal_per_hectare
+32,Maïs grain,zea_mays,grain_corn,"107,5","75,1","103,8","96,4",quintal_per_hectare
+34,Maïs grain,zea_mays,grain_corn,"74,4","55,3","68,6","68,3",quintal_per_hectare
+46,Maïs grain,zea_mays,grain_corn,"82,7","61,8","92,5","79,3",quintal_per_hectare
+65,Maïs grain,zea_mays,grain_corn,"115,3","81,4","119,3","108,5",quintal_per_hectare
+66,Maïs grain,zea_mays,grain_corn,"74,0","47,6","67,9","65,0",quintal_per_hectare
+81,Maïs grain,zea_mays,grain_corn,"160,7","93,5","157,8","99,0",quintal_per_hectare
+82,Maïs grain,zea_mays,grain_corn,"114,1","79,7","104,2","97,7",quintal_per_hectare
+01,Maïs grain,zea_mays,grain_corn,"112,0","79,7","94,2","101,6",quintal_per_hectare
+03,Maïs grain,zea_mays,grain_corn,"108,0","96,6","115,2","102,7",quintal_per_hectare
+07,Maïs grain,zea_mays,grain_corn,"105,3","87,4","89,9","92,3",quintal_per_hectare
+15,Maïs grain,zea_mays,grain_corn,"90,4","52,5","80,0","80,0",quintal_per_hectare
+26,Maïs grain,zea_mays,grain_corn,"118,4","99,0","109,4","110,9",quintal_per_hectare
+38,Maïs grain,zea_mays,grain_corn,"110,8","84,7","93,6","99,1",quintal_per_hectare
+42,Maïs grain,zea_mays,grain_corn,"104,1","80,2","98,7","98,9",quintal_per_hectare
+43,Maïs grain,zea_mays,grain_corn,"96,0","64,5","85,2","87,7",quintal_per_hectare
+63,Maïs grain,zea_mays,grain_corn,"101,4","83,1","97,0","98,3",quintal_per_hectare
+69,Maïs grain,zea_mays,grain_corn,"114,2","81,2","101,2","106,0",quintal_per_hectare
+73,Maïs grain,zea_mays,grain_corn,"116,0","73,7","89,9","100,3",quintal_per_hectare
+74,Maïs grain,zea_mays,grain_corn,"100,2","73,6","81,2","95,3",quintal_per_hectare
+04,Maïs grain,zea_mays,grain_corn,"92,9","79,5","93,6","117,7",quintal_per_hectare
+05,Maïs grain,zea_mays,grain_corn,"94,0","104,6","104,8","118,0",quintal_per_hectare
+13,Maïs grain,zea_mays,grain_corn,"99,1","84,2","107,2","109,0",quintal_per_hectare
+83,Maïs grain,zea_mays,grain_corn,"96,6","82,1","92,8","119,5",quintal_per_hectare
+84,Maïs grain,zea_mays,grain_corn,"80,0","68,0","80,6","89,0",quintal_per_hectare
+2A,Maïs grain,zea_mays,grain_corn,"120,0","100,0","115,0","120,0",quintal_per_hectare
+2B,Maïs grain,zea_mays,grain_corn,"120,0","100,0","115,0","120,0",quintal_per_hectare
+77,Orge d'hiver,hordeum_vulgare,winter_barley,"81,0","76,0","83,0","61,0",quintal_per_hectare
+78,Orge d'hiver,hordeum_vulgare,winter_barley,"77,0","76,0","77,0","59,6",quintal_per_hectare
+91,Orge d'hiver,hordeum_vulgare,winter_barley,"81,0","79,0","81,0","60,0",quintal_per_hectare
+93,Orge d'hiver,hordeum_vulgare,winter_barley,"0,0","0,0","83,0","63,0",quintal_per_hectare
+94,Orge d'hiver,hordeum_vulgare,winter_barley,"81,0","79,0","80,7","59,8",quintal_per_hectare
+95,Orge d'hiver,hordeum_vulgare,winter_barley,"78,0","84,0","83,0","63,0",quintal_per_hectare
+18,Orge d'hiver,hordeum_vulgare,winter_barley,"66,0","56,0","68,0","51,0",quintal_per_hectare
+28,Orge d'hiver,hordeum_vulgare,winter_barley,"84,0","82,0","84,0","65,0",quintal_per_hectare
+36,Orge d'hiver,hordeum_vulgare,winter_barley,"71,0","57,0","69,0","49,5",quintal_per_hectare
+37,Orge d'hiver,hordeum_vulgare,winter_barley,"67,0","61,0","74,0","52,0",quintal_per_hectare
+41,Orge d'hiver,hordeum_vulgare,winter_barley,"74,0","68,0","79,0","59,0",quintal_per_hectare
+45,Orge d'hiver,hordeum_vulgare,winter_barley,"70,0","64,0","74,0","55,0",quintal_per_hectare
+21,Orge d'hiver,hordeum_vulgare,winter_barley,"63,0","57,0","57,0","50,0",quintal_per_hectare
+25,Orge d'hiver,hordeum_vulgare,winter_barley,"56,0","57,0","59,0","45,0",quintal_per_hectare
+39,Orge d'hiver,hordeum_vulgare,winter_barley,"62,0","65,0","64,0","47,0",quintal_per_hectare
+58,Orge d'hiver,hordeum_vulgare,winter_barley,"64,0","59,0","64,0","44,0",quintal_per_hectare
+70,Orge d'hiver,hordeum_vulgare,winter_barley,"62,0","66,0","67,0","48,0",quintal_per_hectare
+71,Orge d'hiver,hordeum_vulgare,winter_barley,"70,0","62,0","66,0","49,0",quintal_per_hectare
+89,Orge d'hiver,hordeum_vulgare,winter_barley,"69,0","59,0","68,0","48,0",quintal_per_hectare
+90,Orge d'hiver,hordeum_vulgare,winter_barley,"62,0","66,0","67,0","48,0",quintal_per_hectare
+14,Orge d'hiver,hordeum_vulgare,winter_barley,"74,0","78,0","83,0","68,0",quintal_per_hectare
+27,Orge d'hiver,hordeum_vulgare,winter_barley,"83,0","85,0","88,6","73,0",quintal_per_hectare
+50,Orge d'hiver,hordeum_vulgare,winter_barley,"65,0","65,0","74,0","60,0",quintal_per_hectare
+61,Orge d'hiver,hordeum_vulgare,winter_barley,"74,0","75,0","80,0","58,0",quintal_per_hectare
+76,Orge d'hiver,hordeum_vulgare,winter_barley,"77,0","87,0","89,0","71,0",quintal_per_hectare
+02,Orge d'hiver,hordeum_vulgare,winter_barley,"81,0","83,0","88,0","58,0",quintal_per_hectare
+59,Orge d'hiver,hordeum_vulgare,winter_barley,"82,0","94,0","91,0","71,0",quintal_per_hectare
+60,Orge d'hiver,hordeum_vulgare,winter_barley,"80,0","86,0","89,0","62,0",quintal_per_hectare
+62,Orge d'hiver,hordeum_vulgare,winter_barley,"81,0","93,0","91,0","73,0",quintal_per_hectare
+80,Orge d'hiver,hordeum_vulgare,winter_barley,"80,0","90,0","90,0","70,0",quintal_per_hectare
+08,Orge d'hiver,hordeum_vulgare,winter_barley,"77,0","81,0","80,0","58,0",quintal_per_hectare
+10,Orge d'hiver,hordeum_vulgare,winter_barley,"76,0","76,0","65,0","52,3",quintal_per_hectare
+51,Orge d'hiver,hordeum_vulgare,winter_barley,"80,0","84,0","84,0","57,9",quintal_per_hectare
+52,Orge d'hiver,hordeum_vulgare,winter_barley,"63,0","59,0","62,0","52,0",quintal_per_hectare
+54,Orge d'hiver,hordeum_vulgare,winter_barley,"64,0","62,0","62,0","58,0",quintal_per_hectare
+55,Orge d'hiver,hordeum_vulgare,winter_barley,"65,0","65,0","65,0","52,0",quintal_per_hectare
+57,Orge d'hiver,hordeum_vulgare,winter_barley,"67,0","67,0","65,0","50,0",quintal_per_hectare
+67,Orge d'hiver,hordeum_vulgare,winter_barley,"67,0","67,0","75,0","65,0",quintal_per_hectare
+68,Orge d'hiver,hordeum_vulgare,winter_barley,"71,0","70,0","78,0","67,0",quintal_per_hectare
+88,Orge d'hiver,hordeum_vulgare,winter_barley,"64,0","65,0","62,0","52,0",quintal_per_hectare
+44,Orge d'hiver,hordeum_vulgare,winter_barley,"70,0","66,2","66,0","53,0",quintal_per_hectare
+49,Orge d'hiver,hordeum_vulgare,winter_barley,"68,0","63,2","71,0","53,0",quintal_per_hectare
+53,Orge d'hiver,hordeum_vulgare,winter_barley,"72,0","67,2","74,0","54,0",quintal_per_hectare
+72,Orge d'hiver,hordeum_vulgare,winter_barley,"72,0","64,2","74,0","52,0",quintal_per_hectare
+85,Orge d'hiver,hordeum_vulgare,winter_barley,"64,0","58,2","68,0","51,0",quintal_per_hectare
+22,Orge d'hiver,hordeum_vulgare,winter_barley,"66,7","71,5","71,1","67,0",quintal_per_hectare
+29,Orge d'hiver,hordeum_vulgare,winter_barley,"71,7","70,6","74,1","68,5",quintal_per_hectare
+35,Orge d'hiver,hordeum_vulgare,winter_barley,"71,3","67,6","70,9","59,0",quintal_per_hectare
+56,Orge d'hiver,hordeum_vulgare,winter_barley,"65,5","67,4","70,3","61,7",quintal_per_hectare
+16,Orge d'hiver,hordeum_vulgare,winter_barley,"55,0","49,0","64,0","50,0",quintal_per_hectare
+17,Orge d'hiver,hordeum_vulgare,winter_barley,"61,0","52,0","70,0","54,0",quintal_per_hectare
+19,Orge d'hiver,hordeum_vulgare,winter_barley,"49,0","49,0","52,0","40,0",quintal_per_hectare
+23,Orge d'hiver,hordeum_vulgare,winter_barley,"58,0","51,0","60,0","41,0",quintal_per_hectare
+24,Orge d'hiver,hordeum_vulgare,winter_barley,"51,0","46,0","54,0","36,0",quintal_per_hectare
+33,Orge d'hiver,hordeum_vulgare,winter_barley,"50,0","48,0","54,0","38,0",quintal_per_hectare
+40,Orge d'hiver,hordeum_vulgare,winter_barley,"51,0","51,0","57,0","38,0",quintal_per_hectare
+47,Orge d'hiver,hordeum_vulgare,winter_barley,"51,0","48,0","59,0","38,0",quintal_per_hectare
+64,Orge d'hiver,hordeum_vulgare,winter_barley,"51,0","48,0","54,0","48,0",quintal_per_hectare
+79,Orge d'hiver,hordeum_vulgare,winter_barley,"59,0","54,0","70,0","51,0",quintal_per_hectare
+86,Orge d'hiver,hordeum_vulgare,winter_barley,"65,0","52,0","69,0","52,0",quintal_per_hectare
+87,Orge d'hiver,hordeum_vulgare,winter_barley,"54,0","50,0","60,0","40,0",quintal_per_hectare
+09,Orge d'hiver,hordeum_vulgare,winter_barley,"50,0","46,0","50,0","55,0",quintal_per_hectare
+11,Orge d'hiver,hordeum_vulgare,winter_barley,"48,0","40,0","44,0","40,0",quintal_per_hectare
+12,Orge d'hiver,hordeum_vulgare,winter_barley,"50,0","35,0","50,0","48,0",quintal_per_hectare
+30,Orge d'hiver,hordeum_vulgare,winter_barley,"43,0","40,0","35,0","46,0",quintal_per_hectare
+31,Orge d'hiver,hordeum_vulgare,winter_barley,"45,0","42,0","52,0","47,0",quintal_per_hectare
+32,Orge d'hiver,hordeum_vulgare,winter_barley,"45,0","41,0","50,0","40,0",quintal_per_hectare
+34,Orge d'hiver,hordeum_vulgare,winter_barley,"35,0","34,0","27,0","48,0",quintal_per_hectare
+46,Orge d'hiver,hordeum_vulgare,winter_barley,"41,0","43,0","48,0","44,0",quintal_per_hectare
+48,Orge d'hiver,hordeum_vulgare,winter_barley,"45,0","21,0","45,0","39,0",quintal_per_hectare
+65,Orge d'hiver,hordeum_vulgare,winter_barley,"60,0","49,0","49,0","44,0",quintal_per_hectare
+66,Orge d'hiver,hordeum_vulgare,winter_barley,"30,0","30,0","17,0","14,0",quintal_per_hectare
+81,Orge d'hiver,hordeum_vulgare,winter_barley,"52,0","43,0","49,0","44,0",quintal_per_hectare
+82,Orge d'hiver,hordeum_vulgare,winter_barley,"44,0","43,0","52,0","37,0",quintal_per_hectare
+01,Orge d'hiver,hordeum_vulgare,winter_barley,"66,0","61,0","64,0","46,0",quintal_per_hectare
+03,Orge d'hiver,hordeum_vulgare,winter_barley,"57,0","44,0","57,0","42,0",quintal_per_hectare
+07,Orge d'hiver,hordeum_vulgare,winter_barley,"40,0","43,0","47,0","42,0",quintal_per_hectare
+15,Orge d'hiver,hordeum_vulgare,winter_barley,"57,0","48,0","57,0","45,0",quintal_per_hectare
+26,Orge d'hiver,hordeum_vulgare,winter_barley,"54,0","43,0","45,0","47,0",quintal_per_hectare
+38,Orge d'hiver,hordeum_vulgare,winter_barley,"63,0","52,0","53,0","51,0",quintal_per_hectare
+42,Orge d'hiver,hordeum_vulgare,winter_barley,"56,0","40,0","57,0","51,0",quintal_per_hectare
+43,Orge d'hiver,hordeum_vulgare,winter_barley,"55,0","38,0","57,0","51,0",quintal_per_hectare
+63,Orge d'hiver,hordeum_vulgare,winter_barley,"55,0","49,0","63,0","57,0",quintal_per_hectare
+69,Orge d'hiver,hordeum_vulgare,winter_barley,"65,0","52,0","63,0","51,0",quintal_per_hectare
+73,Orge d'hiver,hordeum_vulgare,winter_barley,"62,0","58,0","58,0","51,0",quintal_per_hectare
+74,Orge d'hiver,hordeum_vulgare,winter_barley,"66,0","60,0","61,0","51,0",quintal_per_hectare
+04,Orge d'hiver,hordeum_vulgare,winter_barley,"47,7","30,2","34,9","49,0",quintal_per_hectare
+05,Orge d'hiver,hordeum_vulgare,winter_barley,"48,1","38,0","40,1","52,7",quintal_per_hectare
+06,Orge d'hiver,hordeum_vulgare,winter_barley,"30,0","0,0","33,3","38,0",quintal_per_hectare
+13,Orge d'hiver,hordeum_vulgare,winter_barley,"43,9","30,0","32,0","40,7",quintal_per_hectare
+83,Orge d'hiver,hordeum_vulgare,winter_barley,"43,5","29,9","31,4","45,8",quintal_per_hectare
+84,Orge d'hiver,hordeum_vulgare,winter_barley,"47,2","30,3","31,9","38,2",quintal_per_hectare
+2A,Orge d'hiver,hordeum_vulgare,winter_barley,"55,0","55,0","40,0","40,0",quintal_per_hectare
+2B,Orge d'hiver,hordeum_vulgare,winter_barley,"55,0","55,0","40,0","40,0",quintal_per_hectare
+77,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"30,0","40,0","37,0","17,0",quintal_per_hectare
+78,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"34,0","41,0","37,0","22,0",quintal_per_hectare
+91,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"35,0","43,0","33,0","20,4",quintal_per_hectare
+95,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"32,0","43,0","42,0","25,0",quintal_per_hectare
+18,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"25,0","22,0","24,0","20,0",quintal_per_hectare
+28,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"34,0","40,0","38,0","30,0",quintal_per_hectare
+36,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,0","21,0","25,0","20,0",quintal_per_hectare
+37,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"26,0","26,0","30,0","20,0",quintal_per_hectare
+41,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,0","34,0","35,0","25,0",quintal_per_hectare
+45,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,0","35,0","32,0","24,0",quintal_per_hectare
+21,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"22,0","22,0","20,0","23,6",quintal_per_hectare
+25,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"10,0","26,1","21,0","16,0",quintal_per_hectare
+39,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"15,0","26,0","31,0","23,2",quintal_per_hectare
+58,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"21,0","24,3","22,0","15,5",quintal_per_hectare
+70,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"10,0","26,0","24,0","25,2",quintal_per_hectare
+71,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"17,0","19,8","22,0","21,7",quintal_per_hectare
+89,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"26,0","19,2","24,0","24,2",quintal_per_hectare
+90,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"10,0","26,0","26,0","0,0",quintal_per_hectare
+14,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"29,0","36,0","41,0","39,0",quintal_per_hectare
+27,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"30,0","34,0","35,0","37,0",quintal_per_hectare
+50,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"36,0","38,0","38,0","37,0",quintal_per_hectare
+61,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"30,0","36,0","40,0","36,0",quintal_per_hectare
+76,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"27,0","38,0","46,0","39,0",quintal_per_hectare
+02,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"31,2","40,2","36,0","31,5",quintal_per_hectare
+59,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"32,2","45,0","40,0","35,7",quintal_per_hectare
+60,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"30,5","41,2","40,0","31,0",quintal_per_hectare
+62,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"32,4","44,0","40,0","35,7",quintal_per_hectare
+80,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"33,3","40,4","39,0","32,4",quintal_per_hectare
+08,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,0","40,0","36,0","31,5",quintal_per_hectare
+10,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"32,0","26,9","30,0","30,0",quintal_per_hectare
+51,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"33,0","39,0","35,0","31,6",quintal_per_hectare
+52,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"25,0","21,8","25,0","22,8",quintal_per_hectare
+54,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"25,0","22,0","25,0","26,0",quintal_per_hectare
+55,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"27,0","25,0","22,0","30,0",quintal_per_hectare
+57,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"30,0","25,7","25,0","33,0",quintal_per_hectare
+67,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"35,0","30,0","29,9","30,0",quintal_per_hectare
+68,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"25,0","30,0","30,1","30,0",quintal_per_hectare
+88,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"21,0","27,9","26,0","28,0",quintal_per_hectare
+44,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"44,6","37,1","42,7","33,4",quintal_per_hectare
+49,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"39,9","37,4","36,8","24,8",quintal_per_hectare
+53,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"32,0","37,6","34,6","23,1",quintal_per_hectare
+72,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"35,3","38,1","33,3","31,7",quintal_per_hectare
+85,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"42,6","35,3","37,9","29,5",quintal_per_hectare
+22,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"38,9","36,4","39,3","56,5",quintal_per_hectare
+29,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"38,0","36,4","32,2","58,3",quintal_per_hectare
+35,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"36,3","36,4","44,6","50,4",quintal_per_hectare
+56,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"40,3","36,4","40,7","41,4",quintal_per_hectare
+16,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"27,2","24,3","31,4","24,3",quintal_per_hectare
+17,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"27,2","23,4","31,1","30,1",quintal_per_hectare
+19,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,1","29,1","31,4","23,6",quintal_per_hectare
+23,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"29,4","30,5","25,7","26,0",quintal_per_hectare
+24,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"29,0","26,4","28,5","26,5",quintal_per_hectare
+33,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"29,7","26,8","28,8","24,6",quintal_per_hectare
+40,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"23,7","22,3","25,9","20,7",quintal_per_hectare
+47,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"31,5","28,8","31,2","27,9",quintal_per_hectare
+64,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"34,1","29,3","32,1","29,2",quintal_per_hectare
+79,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,5","25,0","30,6","29,0",quintal_per_hectare
+86,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"31,1","27,9","32,5","24,7",quintal_per_hectare
+87,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"25,1","26,4","28,2","22,5",quintal_per_hectare
+09,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"32,9","31,8","30,8","41,0",quintal_per_hectare
+11,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"34,7","26,6","37,8","37,8",quintal_per_hectare
+12,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"32,6","29,4","32,2","28,2",quintal_per_hectare
+30,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"23,3","24,3","31,6","29,3",quintal_per_hectare
+31,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"35,0","31,7","34,0","31,8",quintal_per_hectare
+32,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"37,6","36,0","38,2","35,1",quintal_per_hectare
+34,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"25,9","24,7","25,3","28,0",quintal_per_hectare
+46,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"35,3","36,1","35,8","33,8",quintal_per_hectare
+48,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"40,0","28,2","33,3","35,4",quintal_per_hectare
+65,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"40,0","38,0","37,6","35,0",quintal_per_hectare
+66,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"40,0","30,0","30,0","21,0",quintal_per_hectare
+81,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"35,5","34,8","34,9","40,4",quintal_per_hectare
+82,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"34,4","32,4","35,8","28,0",quintal_per_hectare
+01,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"27,4","19,0","30,8","22,0",quintal_per_hectare
+03,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"21,5","21,5","28,8","20,0",quintal_per_hectare
+07,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"17,5","15,0","16,6","20,0",quintal_per_hectare
+15,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"22,0","22,7","20,0","21,8",quintal_per_hectare
+26,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,8","26,2","27,0","20,0",quintal_per_hectare
+38,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"28,6","30,8","26,8","30,0",quintal_per_hectare
+42,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"22,0","23,6","21,0","24,0",quintal_per_hectare
+43,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"15,0","19,4","16,7","15,0",quintal_per_hectare
+63,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"20,0","26,8","32,9","28,0",quintal_per_hectare
+69,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"29,2","29,1","33,0","30,0",quintal_per_hectare
+73,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"26,0","24,0","27,3","25,6",quintal_per_hectare
+74,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"35,0","32,3","34,0","26,3",quintal_per_hectare
+04,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"19,7","15,0","20,0","28,1",quintal_per_hectare
+05,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"24,3","22,2","20,0","23,3",quintal_per_hectare
+13,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"22,0","24,1","25,6","24,7",quintal_per_hectare
+83,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"18,0","10,0","22,9","21,3",quintal_per_hectare
+84,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"22,7","12,5","20,3","18,3",quintal_per_hectare
+2B,Pois protéagineux,pisum_sativum,winter_proteaginous_pea,"18,0","18,0","19,0","19,0",quintal_per_hectare
+77,Soja,glycine_max,soy,"28,0","28,0","28,0","21,6",quintal_per_hectare
+78,Soja,glycine_max,soy,"28,0","28,0","28,0","21,5",quintal_per_hectare
+91,Soja,glycine_max,soy,"28,0","28,0","28,0","21,6",quintal_per_hectare
+95,Soja,glycine_max,soy,"0,0","28,0","0,0","0,0",quintal_per_hectare
+18,Soja,glycine_max,soy,"21,0","20,0","22,0","18,0",quintal_per_hectare
+28,Soja,glycine_max,soy,"25,0","29,0","34,0","20,0",quintal_per_hectare
+36,Soja,glycine_max,soy,"22,0","20,0","20,0","15,0",quintal_per_hectare
+37,Soja,glycine_max,soy,"23,0","25,0","24,0","18,0",quintal_per_hectare
+41,Soja,glycine_max,soy,"28,0","29,0","30,0","20,0",quintal_per_hectare
+45,Soja,glycine_max,soy,"25,0","26,0","31,0","22,0",quintal_per_hectare
+21,Soja,glycine_max,soy,"29,0","18,0","26,0","28,0",quintal_per_hectare
+25,Soja,glycine_max,soy,"27,0","14,0","32,0","26,0",quintal_per_hectare
+39,Soja,glycine_max,soy,"30,0","20,0","32,0","28,0",quintal_per_hectare
+58,Soja,glycine_max,soy,"24,0","20,0","23,0","21,0",quintal_per_hectare
+70,Soja,glycine_max,soy,"26,0","16,0","26,0","24,0",quintal_per_hectare
+71,Soja,glycine_max,soy,"27,0","18,0","29,0","31,0",quintal_per_hectare
+89,Soja,glycine_max,soy,"19,0","12,0","24,0","20,0",quintal_per_hectare
+90,Soja,glycine_max,soy,"26,0","16,0","26,0","32,0",quintal_per_hectare
+14,Soja,glycine_max,soy,"27,0","30,0","25,0","23,0",quintal_per_hectare
+27,Soja,glycine_max,soy,"27,0","30,0","25,0","23,0",quintal_per_hectare
+50,Soja,glycine_max,soy,"27,0","30,0","25,0","0,0",quintal_per_hectare
+61,Soja,glycine_max,soy,"27,0","30,0","25,0","23,0",quintal_per_hectare
+76,Soja,glycine_max,soy,"27,0","30,0","25,0","23,0",quintal_per_hectare
+02,Soja,glycine_max,soy,"30,0","26,0","33,9","30,0",quintal_per_hectare
+59,Soja,glycine_max,soy,"30,0","28,0","33,9","27,4",quintal_per_hectare
+60,Soja,glycine_max,soy,"30,0","26,0","32,9","30,1",quintal_per_hectare
+62,Soja,glycine_max,soy,"30,0","28,0","32,7","30,7",quintal_per_hectare
+80,Soja,glycine_max,soy,"30,0","26,0","31,2","30,0",quintal_per_hectare
+08,Soja,glycine_max,soy,"25,0","16,0","25,0","32,0",quintal_per_hectare
+10,Soja,glycine_max,soy,"30,0","16,0","25,0","33,3",quintal_per_hectare
+51,Soja,glycine_max,soy,"30,0","21,0","30,0","30,5",quintal_per_hectare
+52,Soja,glycine_max,soy,"20,0","16,9","23,0","28,0",quintal_per_hectare
+54,Soja,glycine_max,soy,"17,0","12,0","16,0","16,0",quintal_per_hectare
+55,Soja,glycine_max,soy,"18,0","13,0","19,0","19,0",quintal_per_hectare
+57,Soja,glycine_max,soy,"17,0","11,8","16,0","16,0",quintal_per_hectare
+67,Soja,glycine_max,soy,"34,0","27,0","29,0","33,0",quintal_per_hectare
+68,Soja,glycine_max,soy,"34,0","32,0","35,0","38,0",quintal_per_hectare
+88,Soja,glycine_max,soy,"20,0","11,9","17,0","17,0",quintal_per_hectare
+44,Soja,glycine_max,soy,"18,0","14,0","19,0","18,0",quintal_per_hectare
+49,Soja,glycine_max,soy,"27,0","21,0","25,0","24,0",quintal_per_hectare
+53,Soja,glycine_max,soy,"24,0","18,0","22,0","21,0",quintal_per_hectare
+72,Soja,glycine_max,soy,"27,0","21,0","10,0","20,0",quintal_per_hectare
+85,Soja,glycine_max,soy,"28,0","22,0","27,0","28,0",quintal_per_hectare
+22,Soja,glycine_max,soy,"34,0","27,4","28,0","27,8",quintal_per_hectare
+29,Soja,glycine_max,soy,"29,2","28,0","27,8","27,4",quintal_per_hectare
+35,Soja,glycine_max,soy,"27,0","27,4","26,9","26,3",quintal_per_hectare
+56,Soja,glycine_max,soy,"34,2","27,8","28,2","28,3",quintal_per_hectare
+16,Soja,glycine_max,soy,"31,0","23,0","26,0","21,0",quintal_per_hectare
+17,Soja,glycine_max,soy,"31,0","18,0","27,0","24,0",quintal_per_hectare
+19,Soja,glycine_max,soy,"15,0","12,0","15,0","15,0",quintal_per_hectare
+23,Soja,glycine_max,soy,"24,0","18,0","18,0","8,0",quintal_per_hectare
+24,Soja,glycine_max,soy,"36,0","20,0","22,0","23,0",quintal_per_hectare
+33,Soja,glycine_max,soy,"27,0","25,0","25,0","24,0",quintal_per_hectare
+40,Soja,glycine_max,soy,"28,0","23,0","25,0","24,0",quintal_per_hectare
+47,Soja,glycine_max,soy,"30,0","20,0","21,0","23,0",quintal_per_hectare
+64,Soja,glycine_max,soy,"32,0","26,0","31,0","27,0",quintal_per_hectare
+79,Soja,glycine_max,soy,"23,0","18,0","24,0","22,0",quintal_per_hectare
+86,Soja,glycine_max,soy,"26,0","20,0","25,0","22,0",quintal_per_hectare
+87,Soja,glycine_max,soy,"14,0","15,0","19,0","10,0",quintal_per_hectare
+09,Soja,glycine_max,soy,"25,0","20,0","20,0","19,0",quintal_per_hectare
+11,Soja,glycine_max,soy,"30,0","15,0","19,0","21,0",quintal_per_hectare
+12,Soja,glycine_max,soy,"24,0","18,0","18,0","20,0",quintal_per_hectare
+30,Soja,glycine_max,soy,"22,0","16,0","19,0","22,0",quintal_per_hectare
+31,Soja,glycine_max,soy,"27,0","18,0","19,0","27,0",quintal_per_hectare
+32,Soja,glycine_max,soy,"27,0","18,0","17,0","22,0",quintal_per_hectare
+34,Soja,glycine_max,soy,"16,0","11,0","16,0","14,0",quintal_per_hectare
+46,Soja,glycine_max,soy,"28,6","19,0","21,0","21,0",quintal_per_hectare
+65,Soja,glycine_max,soy,"32,0","15,0","29,0","31,0",quintal_per_hectare
+81,Soja,glycine_max,soy,"26,0","19,0","22,0","23,0",quintal_per_hectare
+82,Soja,glycine_max,soy,"29,0","20,0","20,0","22,0",quintal_per_hectare
+01,Soja,glycine_max,soy,"29,0","22,0","26,0","29,0",quintal_per_hectare
+03,Soja,glycine_max,soy,"22,0","22,0","26,0","28,0",quintal_per_hectare
+07,Soja,glycine_max,soy,"24,0","33,0","25,0","28,0",quintal_per_hectare
+26,Soja,glycine_max,soy,"33,5","34,0","32,0","32,0",quintal_per_hectare
+38,Soja,glycine_max,soy,"32,0","27,0","27,0","29,0",quintal_per_hectare
+42,Soja,glycine_max,soy,"25,0","22,0","20,0","26,0",quintal_per_hectare
+43,Soja,glycine_max,soy,"22,0","15,0","20,0","0,0",quintal_per_hectare
+63,Soja,glycine_max,soy,"25,0","21,0","24,0","30,0",quintal_per_hectare
+69,Soja,glycine_max,soy,"32,0","28,0","30,0","31,0",quintal_per_hectare
+73,Soja,glycine_max,soy,"34,0","26,0","28,0","29,0",quintal_per_hectare
+74,Soja,glycine_max,soy,"32,0","23,0","22,0","26,0",quintal_per_hectare
+04,Soja,glycine_max,soy,"27,5","27,5","23,0","23,0",quintal_per_hectare
+05,Soja,glycine_max,soy,"25,0","25,0","25,0","23,0",quintal_per_hectare
+13,Soja,glycine_max,soy,"25,4","25,4","25,4","20,1",quintal_per_hectare
+83,Soja,glycine_max,soy,"26,0","26,0","26,0","23,2",quintal_per_hectare
+84,Soja,glycine_max,soy,"22,0","22,0","21,8","23,0",quintal_per_hectare
+77,Sorgho,sorghum,sorghum,"72,0","73,0","80,0","78,0",quintal_per_hectare
+78,Sorgho,sorghum,sorghum,"72,0","73,0","79,9","78,1",quintal_per_hectare
+91,Sorgho,sorghum,sorghum,"72,0","73,0","80,0","77,4",quintal_per_hectare
+95,Sorgho,sorghum,sorghum,"72,0","73,0","79,7","77,6",quintal_per_hectare
+18,Sorgho,sorghum,sorghum,"50,0","45,0","48,0","42,0",quintal_per_hectare
+28,Sorgho,sorghum,sorghum,"57,0","58,0","80,0","58,0",quintal_per_hectare
+36,Sorgho,sorghum,sorghum,"49,0","42,0","50,0","41,0",quintal_per_hectare
+37,Sorgho,sorghum,sorghum,"54,0","44,0","58,0","42,0",quintal_per_hectare
+41,Sorgho,sorghum,sorghum,"57,0","49,0","70,0","52,0",quintal_per_hectare
+45,Sorgho,sorghum,sorghum,"54,0","50,0","70,0","56,0",quintal_per_hectare
+21,Sorgho,sorghum,sorghum,"55,0","34,0","59,0","59,0",quintal_per_hectare
+25,Sorgho,sorghum,sorghum,"62,0","46,0","50,0","0,0",quintal_per_hectare
+39,Sorgho,sorghum,sorghum,"58,0","46,0","57,0","54,0",quintal_per_hectare
+58,Sorgho,sorghum,sorghum,"35,0","34,0","59,0","59,0",quintal_per_hectare
+70,Sorgho,sorghum,sorghum,"30,0","30,0","57,0","43,0",quintal_per_hectare
+71,Sorgho,sorghum,sorghum,"32,0","34,0","59,0","59,0",quintal_per_hectare
+89,Sorgho,sorghum,sorghum,"36,0","34,0","59,0","59,0",quintal_per_hectare
+90,Sorgho,sorghum,sorghum,"30,0","30,0","0,0","0,0",quintal_per_hectare
+14,Sorgho,sorghum,sorghum,"52,0","40,0","0,0","0,0",quintal_per_hectare
+27,Sorgho,sorghum,sorghum,"53,0","40,0","49,0","46,0",quintal_per_hectare
+50,Sorgho,sorghum,sorghum,"52,0","40,0","50,0","46,0",quintal_per_hectare
+61,Sorgho,sorghum,sorghum,"52,0","40,0","50,0","45,0",quintal_per_hectare
+76,Sorgho,sorghum,sorghum,"53,0","40,0","0,0","37,0",quintal_per_hectare
+02,Sorgho,sorghum,sorghum,"55,0","53,0","54,0","52,3",quintal_per_hectare
+59,Sorgho,sorghum,sorghum,"55,0","54,8","55,1","55,3",quintal_per_hectare
+60,Sorgho,sorghum,sorghum,"55,0","55,0","54,0","55,0",quintal_per_hectare
+62,Sorgho,sorghum,sorghum,"55,0","55,2","55,0","55,2",quintal_per_hectare
+80,Sorgho,sorghum,sorghum,"55,0","55,2","54,1","55,0",quintal_per_hectare
+08,Sorgho,sorghum,sorghum,"40,0","44,0","69,0","47,0",quintal_per_hectare
+10,Sorgho,sorghum,sorghum,"40,0","42,0","69,0","47,0",quintal_per_hectare
+51,Sorgho,sorghum,sorghum,"40,0","47,0","70,0","49,0",quintal_per_hectare
+52,Sorgho,sorghum,sorghum,"40,0","50,0","71,0","50,0",quintal_per_hectare
+54,Sorgho,sorghum,sorghum,"40,0","57,0","68,0","53,0",quintal_per_hectare
+55,Sorgho,sorghum,sorghum,"40,0","59,0","68,0","53,0",quintal_per_hectare
+57,Sorgho,sorghum,sorghum,"40,0","54,0","67,0","50,0",quintal_per_hectare
+67,Sorgho,sorghum,sorghum,"74,0","70,0","70,0","67,0",quintal_per_hectare
+68,Sorgho,sorghum,sorghum,"74,0","73,0","73,0","70,0",quintal_per_hectare
+88,Sorgho,sorghum,sorghum,"40,0","57,0","67,0","51,0",quintal_per_hectare
+44,Sorgho,sorghum,sorghum,"64,9","43,0","68,0","57,0",quintal_per_hectare
+49,Sorgho,sorghum,sorghum,"65,0","45,0","72,0","60,0",quintal_per_hectare
+53,Sorgho,sorghum,sorghum,"66,0","43,0","68,0","57,0",quintal_per_hectare
+72,Sorgho,sorghum,sorghum,"67,9","44,0","80,0","61,0",quintal_per_hectare
+85,Sorgho,sorghum,sorghum,"61,0","40,0","65,0","52,0",quintal_per_hectare
+22,Sorgho,sorghum,sorghum,"62,2","54,5","54,0","55,0",quintal_per_hectare
+29,Sorgho,sorghum,sorghum,"50,0","53,3","56,0","52,0",quintal_per_hectare
+35,Sorgho,sorghum,sorghum,"68,6","59,5","58,3","56,9",quintal_per_hectare
+56,Sorgho,sorghum,sorghum,"55,0","55,4","52,6","52,6",quintal_per_hectare
+16,Sorgho,sorghum,sorghum,"55,0","35,0","50,0","40,0",quintal_per_hectare
+17,Sorgho,sorghum,sorghum,"55,0","30,0","50,0","40,0",quintal_per_hectare
+19,Sorgho,sorghum,sorghum,"41,0","41,0","40,0","41,0",quintal_per_hectare
+23,Sorgho,sorghum,sorghum,"43,0","43,0","40,0","42,0",quintal_per_hectare
+24,Sorgho,sorghum,sorghum,"60,0","40,0","58,0","40,0",quintal_per_hectare
+33,Sorgho,sorghum,sorghum,"55,0","46,0","58,0","42,0",quintal_per_hectare
+40,Sorgho,sorghum,sorghum,"55,0","46,0","58,0","48,0",quintal_per_hectare
+47,Sorgho,sorghum,sorghum,"64,0","45,0","60,0","42,0",quintal_per_hectare
+64,Sorgho,sorghum,sorghum,"55,0","40,0","55,0","46,0",quintal_per_hectare
+79,Sorgho,sorghum,sorghum,"55,0","23,0","50,0","40,0",quintal_per_hectare
+86,Sorgho,sorghum,sorghum,"60,0","60,0","55,0","40,0",quintal_per_hectare
+87,Sorgho,sorghum,sorghum,"45,0","40,0","38,0","35,0",quintal_per_hectare
+09,Sorgho,sorghum,sorghum,"52,0","36,0","55,0","55,0",quintal_per_hectare
+11,Sorgho,sorghum,sorghum,"65,0","40,0","57,0","55,0",quintal_per_hectare
+12,Sorgho,sorghum,sorghum,"55,0","30,0","35,4","37,0",quintal_per_hectare
+30,Sorgho,sorghum,sorghum,"45,0","37,0","45,0","41,0",quintal_per_hectare
+31,Sorgho,sorghum,sorghum,"62,0","38,0","58,0","43,0",quintal_per_hectare
+32,Sorgho,sorghum,sorghum,"62,0","40,0","58,0","40,0",quintal_per_hectare
+34,Sorgho,sorghum,sorghum,"40,0","31,0","40,0","37,0",quintal_per_hectare
+46,Sorgho,sorghum,sorghum,"52,0","40,0","47,2","42,0",quintal_per_hectare
+48,Sorgho,sorghum,sorghum,"30,0","15,0","38,0","0,0",quintal_per_hectare
+65,Sorgho,sorghum,sorghum,"59,0","40,0","52,0","36,0",quintal_per_hectare
+66,Sorgho,sorghum,sorghum,"32,0","0,0","0,0","0,0",quintal_per_hectare
+81,Sorgho,sorghum,sorghum,"51,2","36,0","52,0","47,0",quintal_per_hectare
+82,Sorgho,sorghum,sorghum,"60,0","40,0","52,0","39,0",quintal_per_hectare
+01,Sorgho,sorghum,sorghum,"62,0","45,0","50,0","53,0",quintal_per_hectare
+03,Sorgho,sorghum,sorghum,"43,0","38,0","56,0","52,0",quintal_per_hectare
+07,Sorgho,sorghum,sorghum,"55,0","40,0","40,0","45,0",quintal_per_hectare
+15,Sorgho,sorghum,sorghum,"45,0","20,0","40,0","36,0",quintal_per_hectare
+26,Sorgho,sorghum,sorghum,"70,0","43,0","46,0","47,0",quintal_per_hectare
+38,Sorgho,sorghum,sorghum,"60,0","46,0","48,0","53,0",quintal_per_hectare
+42,Sorgho,sorghum,sorghum,"60,0","30,0","35,0","45,0",quintal_per_hectare
+43,Sorgho,sorghum,sorghum,"45,0","32,0","35,0","30,0",quintal_per_hectare
+63,Sorgho,sorghum,sorghum,"45,0","40,0","50,0","40,0",quintal_per_hectare
+69,Sorgho,sorghum,sorghum,"60,0","42,0","48,0","53,0",quintal_per_hectare
+73,Sorgho,sorghum,sorghum,"55,0","40,0","44,0","50,0",quintal_per_hectare
+74,Sorgho,sorghum,sorghum,"55,0","38,0","40,0","46,0",quintal_per_hectare
+04,Sorgho,sorghum,sorghum,"68,5","58,3","56,8","61,1",quintal_per_hectare
+05,Sorgho,sorghum,sorghum,"63,0","53,6","51,3","39,4",quintal_per_hectare
+06,Sorgho,sorghum,sorghum,"65,0","0,0","0,0","0,0",quintal_per_hectare
+13,Sorgho,sorghum,sorghum,"48,3","41,0","39,0","51,0",quintal_per_hectare
+83,Sorgho,sorghum,sorghum,"61,1","52,0","41,7","43,2",quintal_per_hectare
+84,Sorgho,sorghum,sorghum,"32,5","28,0","30,1","74,3",quintal_per_hectare
+77,Tournesol,helianthus_annuus,sunflower,"35,0","29,0","32,3","22,8",quintal_per_hectare
+78,Tournesol,helianthus_annuus,sunflower,"34,0","26,0","30,0","16,1",quintal_per_hectare
+91,Tournesol,helianthus_annuus,sunflower,"32,0","28,0","32,0","18,3",quintal_per_hectare
+95,Tournesol,helianthus_annuus,sunflower,"35,0","25,0","35,3","22,8",quintal_per_hectare
+18,Tournesol,helianthus_annuus,sunflower,"27,0","23,0","25,0","17,0",quintal_per_hectare
+28,Tournesol,helianthus_annuus,sunflower,"31,0","26,0","34,0","19,0",quintal_per_hectare
+36,Tournesol,helianthus_annuus,sunflower,"28,0","23,0","24,0","15,0",quintal_per_hectare
+37,Tournesol,helianthus_annuus,sunflower,"30,0","22,0","27,0","17,0",quintal_per_hectare
+41,Tournesol,helianthus_annuus,sunflower,"30,0","23,0","28,0","18,0",quintal_per_hectare
+45,Tournesol,helianthus_annuus,sunflower,"29,0","26,0","27,0","20,5",quintal_per_hectare
+21,Tournesol,helianthus_annuus,sunflower,"30,0","22,0","25,0","22,0",quintal_per_hectare
+25,Tournesol,helianthus_annuus,sunflower,"18,0","25,0","28,0","17,0",quintal_per_hectare
+39,Tournesol,helianthus_annuus,sunflower,"30,0","30,0","34,0","22,0",quintal_per_hectare
+58,Tournesol,helianthus_annuus,sunflower,"27,0","21,0","23,0","18,0",quintal_per_hectare
+70,Tournesol,helianthus_annuus,sunflower,"29,0","23,0","26,0","18,0",quintal_per_hectare
+71,Tournesol,helianthus_annuus,sunflower,"29,0","30,0","30,0","26,0",quintal_per_hectare
+89,Tournesol,helianthus_annuus,sunflower,"28,0","22,0","24,0","17,0",quintal_per_hectare
+90,Tournesol,helianthus_annuus,sunflower,"0,0","0,0","26,0","0,0",quintal_per_hectare
+14,Tournesol,helianthus_annuus,sunflower,"27,0","30,0","30,0","28,0",quintal_per_hectare
+27,Tournesol,helianthus_annuus,sunflower,"27,0","30,0","30,0","28,0",quintal_per_hectare
+50,Tournesol,helianthus_annuus,sunflower,"0,0","30,0","30,0","28,0",quintal_per_hectare
+61,Tournesol,helianthus_annuus,sunflower,"27,0","30,0","30,0","28,0",quintal_per_hectare
+76,Tournesol,helianthus_annuus,sunflower,"27,0","30,0","30,0","28,0",quintal_per_hectare
+02,Tournesol,helianthus_annuus,sunflower,"30,0","29,0","28,0","31,0",quintal_per_hectare
+59,Tournesol,helianthus_annuus,sunflower,"27,0","27,0","27,0","26,3",quintal_per_hectare
+60,Tournesol,helianthus_annuus,sunflower,"30,0","33,0","33,0","31,0",quintal_per_hectare
+62,Tournesol,helianthus_annuus,sunflower,"30,0","30,0","29,0","30,0",quintal_per_hectare
+80,Tournesol,helianthus_annuus,sunflower,"30,0","29,0","29,0","31,0",quintal_per_hectare
+08,Tournesol,helianthus_annuus,sunflower,"30,0","25,0","26,0","27,0",quintal_per_hectare
+10,Tournesol,helianthus_annuus,sunflower,"30,0","24,9","28,0","28,8",quintal_per_hectare
+51,Tournesol,helianthus_annuus,sunflower,"30,0","26,0","29,0","21,0",quintal_per_hectare
+52,Tournesol,helianthus_annuus,sunflower,"30,0","19,8","24,0","21,0",quintal_per_hectare
+54,Tournesol,helianthus_annuus,sunflower,"30,0","21,9","21,0","20,0",quintal_per_hectare
+55,Tournesol,helianthus_annuus,sunflower,"30,0","23,9","22,0","21,0",quintal_per_hectare
+57,Tournesol,helianthus_annuus,sunflower,"29,0","21,7","21,0","20,0",quintal_per_hectare
+67,Tournesol,helianthus_annuus,sunflower,"33,0","28,0","28,0","32,0",quintal_per_hectare
+68,Tournesol,helianthus_annuus,sunflower,"12,0","30,0","34,0","34,0",quintal_per_hectare
+88,Tournesol,helianthus_annuus,sunflower,"29,0","20,0","20,0","20,0",quintal_per_hectare
+44,Tournesol,helianthus_annuus,sunflower,"29,0","19,0","27,0","15,0",quintal_per_hectare
+49,Tournesol,helianthus_annuus,sunflower,"29,0","20,0","28,0","19,0",quintal_per_hectare
+53,Tournesol,helianthus_annuus,sunflower,"30,0","20,0","31,0","20,0",quintal_per_hectare
+72,Tournesol,helianthus_annuus,sunflower,"31,0","20,0","30,0","17,0",quintal_per_hectare
+85,Tournesol,helianthus_annuus,sunflower,"31,0","21,0","29,0","18,0",quintal_per_hectare
+22,Tournesol,helianthus_annuus,sunflower,"42,0","26,0","25,8","27,5",quintal_per_hectare
+29,Tournesol,helianthus_annuus,sunflower,"17,5","20,5","25,8","19,7",quintal_per_hectare
+35,Tournesol,helianthus_annuus,sunflower,"21,0","18,1","25,8","18,6",quintal_per_hectare
+56,Tournesol,helianthus_annuus,sunflower,"19,0","25,1","25,8","21,1",quintal_per_hectare
+16,Tournesol,helianthus_annuus,sunflower,"28,0","22,0","25,0","19,0",quintal_per_hectare
+17,Tournesol,helianthus_annuus,sunflower,"26,0","20,0","28,0","22,0",quintal_per_hectare
+19,Tournesol,helianthus_annuus,sunflower,"18,0","23,0","25,0","14,0",quintal_per_hectare
+23,Tournesol,helianthus_annuus,sunflower,"24,0","22,0","27,0","14,0",quintal_per_hectare
+24,Tournesol,helianthus_annuus,sunflower,"26,0","20,0","25,0","17,0",quintal_per_hectare
+33,Tournesol,helianthus_annuus,sunflower,"25,0","21,0","23,0","18,0",quintal_per_hectare
+40,Tournesol,helianthus_annuus,sunflower,"25,0","24,0","24,0","18,0",quintal_per_hectare
+47,Tournesol,helianthus_annuus,sunflower,"27,0","22,0","25,0","20,0",quintal_per_hectare
+64,Tournesol,helianthus_annuus,sunflower,"27,0","22,0","26,0","20,0",quintal_per_hectare
+79,Tournesol,helianthus_annuus,sunflower,"27,0","17,0","25,0","18,0",quintal_per_hectare
+86,Tournesol,helianthus_annuus,sunflower,"28,0","21,0","27,0","16,0",quintal_per_hectare
+87,Tournesol,helianthus_annuus,sunflower,"17,0","19,0","22,0","10,0",quintal_per_hectare
+09,Tournesol,helianthus_annuus,sunflower,"25,0","17,0","24,0","18,0",quintal_per_hectare
+11,Tournesol,helianthus_annuus,sunflower,"24,0","13,0","24,0","18,0",quintal_per_hectare
+12,Tournesol,helianthus_annuus,sunflower,"22,0","15,0","22,0","25,0",quintal_per_hectare
+30,Tournesol,helianthus_annuus,sunflower,"19,0","10,0","20,0","16,0",quintal_per_hectare
+31,Tournesol,helianthus_annuus,sunflower,"25,0","18,0","24,0","22,0",quintal_per_hectare
+32,Tournesol,helianthus_annuus,sunflower,"26,0","16,0","20,0","19,0",quintal_per_hectare
+34,Tournesol,helianthus_annuus,sunflower,"15,0","10,0","17,0","14,0",quintal_per_hectare
+46,Tournesol,helianthus_annuus,sunflower,"21,0","18,0","22,0","19,0",quintal_per_hectare
+48,Tournesol,helianthus_annuus,sunflower,"0,0","10,0","19,0","14,0",quintal_per_hectare
+65,Tournesol,helianthus_annuus,sunflower,"33,0","15,0","24,0","19,0",quintal_per_hectare
+66,Tournesol,helianthus_annuus,sunflower,"14,0","11,0","10,0","12,0",quintal_per_hectare
+81,Tournesol,helianthus_annuus,sunflower,"25,0","17,0","23,0","22,0",quintal_per_hectare
+82,Tournesol,helianthus_annuus,sunflower,"26,0","18,0","23,0","20,0",quintal_per_hectare
+01,Tournesol,helianthus_annuus,sunflower,"27,0","25,5","26,0","21,0",quintal_per_hectare
+03,Tournesol,helianthus_annuus,sunflower,"30,0","24,0","26,0","20,0",quintal_per_hectare
+07,Tournesol,helianthus_annuus,sunflower,"20,0","18,0","17,0","18,0",quintal_per_hectare
+15,Tournesol,helianthus_annuus,sunflower,"25,0","18,0","20,0","20,0",quintal_per_hectare
+26,Tournesol,helianthus_annuus,sunflower,"22,0","15,0","19,0","16,0",quintal_per_hectare
+38,Tournesol,helianthus_annuus,sunflower,"28,0","24,0","26,0","24,0",quintal_per_hectare
+42,Tournesol,helianthus_annuus,sunflower,"19,0","19,0","20,0","22,0",quintal_per_hectare
+43,Tournesol,helianthus_annuus,sunflower,"28,0","20,0","22,0","20,0",quintal_per_hectare
+63,Tournesol,helianthus_annuus,sunflower,"28,0","28,0","27,0","25,0",quintal_per_hectare
+69,Tournesol,helianthus_annuus,sunflower,"27,0","23,0","25,0","22,0",quintal_per_hectare
+73,Tournesol,helianthus_annuus,sunflower,"25,0","19,0","21,0","21,0",quintal_per_hectare
+74,Tournesol,helianthus_annuus,sunflower,"25,0","23,0","23,0","22,0",quintal_per_hectare
+04,Tournesol,helianthus_annuus,sunflower,"16,7","11,4","17,1","20,5",quintal_per_hectare
+05,Tournesol,helianthus_annuus,sunflower,"15,5","13,0","17,0","19,7",quintal_per_hectare
+13,Tournesol,helianthus_annuus,sunflower,"16,6","12,5","20,0","17,2",quintal_per_hectare
+83,Tournesol,helianthus_annuus,sunflower,"16,1","12,1","12,5","16,6",quintal_per_hectare
+84,Tournesol,helianthus_annuus,sunflower,"18,8","11,8","13,2","18,2",quintal_per_hectare
+2B,Tournesol,helianthus_annuus,sunflower,"0,0","20,0","15,0","15,0",quintal_per_hectare
+77,Triticale,x_triticosecale,winter_triticale,"64,0","67,0","65,0","40,5",quintal_per_hectare
+78,Triticale,x_triticosecale,winter_triticale,"65,0","61,0","64,0","40,5",quintal_per_hectare
+91,Triticale,x_triticosecale,winter_triticale,"65,0","61,0","65,0","40,0",quintal_per_hectare
+95,Triticale,x_triticosecale,winter_triticale,"60,0","60,0","60,4","40,9",quintal_per_hectare
+18,Triticale,x_triticosecale,winter_triticale,"47,0","43,0","48,0","38,0",quintal_per_hectare
+28,Triticale,x_triticosecale,winter_triticale,"60,0","55,0","64,0","52,0",quintal_per_hectare
+36,Triticale,x_triticosecale,winter_triticale,"49,0","43,0","47,0","38,0",quintal_per_hectare
+37,Triticale,x_triticosecale,winter_triticale,"54,0","49,0","54,0","40,0",quintal_per_hectare
+41,Triticale,x_triticosecale,winter_triticale,"56,0","46,0","49,0","38,0",quintal_per_hectare
+45,Triticale,x_triticosecale,winter_triticale,"46,0","48,0","51,0","39,0",quintal_per_hectare
+21,Triticale,x_triticosecale,winter_triticale,"45,0","38,0","37,0","36,0",quintal_per_hectare
+25,Triticale,x_triticosecale,winter_triticale,"49,0","47,0","49,0","40,0",quintal_per_hectare
+39,Triticale,x_triticosecale,winter_triticale,"47,0","52,0","50,0","40,0",quintal_per_hectare
+58,Triticale,x_triticosecale,winter_triticale,"52,0","46,0","47,0","38,0",quintal_per_hectare
+70,Triticale,x_triticosecale,winter_triticale,"48,0","55,0","53,0","40,0",quintal_per_hectare
+71,Triticale,x_triticosecale,winter_triticale,"51,0","51,0","47,0","38,0",quintal_per_hectare
+89,Triticale,x_triticosecale,winter_triticale,"40,0","45,0","42,0","34,0",quintal_per_hectare
+90,Triticale,x_triticosecale,winter_triticale,"48,0","55,0","53,0","40,0",quintal_per_hectare
+14,Triticale,x_triticosecale,winter_triticale,"50,0","60,0","56,0","51,0",quintal_per_hectare
+27,Triticale,x_triticosecale,winter_triticale,"45,0","59,0","59,0","47,0",quintal_per_hectare
+50,Triticale,x_triticosecale,winter_triticale,"55,0","60,0","58,0","48,0",quintal_per_hectare
+61,Triticale,x_triticosecale,winter_triticale,"55,0","61,0","59,0","47,0",quintal_per_hectare
+76,Triticale,x_triticosecale,winter_triticale,"50,0","65,0","64,0","50,0",quintal_per_hectare
+02,Triticale,x_triticosecale,winter_triticale,"62,0","63,0","61,0","62,4",quintal_per_hectare
+59,Triticale,x_triticosecale,winter_triticale,"71,0","72,0","69,0","71,3",quintal_per_hectare
+60,Triticale,x_triticosecale,winter_triticale,"62,0","64,0","62,0","62,7",quintal_per_hectare
+62,Triticale,x_triticosecale,winter_triticale,"71,0","72,0","70,0","71,3",quintal_per_hectare
+80,Triticale,x_triticosecale,winter_triticale,"65,0","68,0","65,0","66,0",quintal_per_hectare
+08,Triticale,x_triticosecale,winter_triticale,"59,0","59,0","55,0","55,0",quintal_per_hectare
+10,Triticale,x_triticosecale,winter_triticale,"45,0","40,0","50,0","47,0",quintal_per_hectare
+51,Triticale,x_triticosecale,winter_triticale,"48,0","49,0","54,0","50,0",quintal_per_hectare
+52,Triticale,x_triticosecale,winter_triticale,"50,0","50,0","52,0","48,0",quintal_per_hectare
+54,Triticale,x_triticosecale,winter_triticale,"55,0","55,0","58,0","57,0",quintal_per_hectare
+55,Triticale,x_triticosecale,winter_triticale,"60,0","59,0","57,0","57,0",quintal_per_hectare
+57,Triticale,x_triticosecale,winter_triticale,"56,0","58,0","55,0","55,0",quintal_per_hectare
+67,Triticale,x_triticosecale,winter_triticale,"65,0","65,0","75,0","65,0",quintal_per_hectare
+68,Triticale,x_triticosecale,winter_triticale,"68,0","65,0","80,0","68,0",quintal_per_hectare
+88,Triticale,x_triticosecale,winter_triticale,"62,0","52,0","53,0","53,0",quintal_per_hectare
+44,Triticale,x_triticosecale,winter_triticale,"60,0","58,0","54,0","40,0",quintal_per_hectare
+49,Triticale,x_triticosecale,winter_triticale,"60,0","54,0","55,0","43,0",quintal_per_hectare
+53,Triticale,x_triticosecale,winter_triticale,"63,0","61,0","66,0","46,0",quintal_per_hectare
+72,Triticale,x_triticosecale,winter_triticale,"63,0","56,0","62,0","42,0",quintal_per_hectare
+85,Triticale,x_triticosecale,winter_triticale,"56,0","57,0","58,0","39,0",quintal_per_hectare
+22,Triticale,x_triticosecale,winter_triticale,"56,4","67,0","56,5","57,3",quintal_per_hectare
+29,Triticale,x_triticosecale,winter_triticale,"61,0","61,9","59,8","54,5",quintal_per_hectare
+35,Triticale,x_triticosecale,winter_triticale,"59,5","65,1","60,0","52,3",quintal_per_hectare
+56,Triticale,x_triticosecale,winter_triticale,"62,1","60,1","58,4","57,5",quintal_per_hectare
+16,Triticale,x_triticosecale,winter_triticale,"46,0","43,0","50,0","37,0",quintal_per_hectare
+17,Triticale,x_triticosecale,winter_triticale,"49,0","43,0","50,0","40,0",quintal_per_hectare
+19,Triticale,x_triticosecale,winter_triticale,"47,0","47,0","48,0","34,0",quintal_per_hectare
+23,Triticale,x_triticosecale,winter_triticale,"50,0","47,0","49,0","37,0",quintal_per_hectare
+24,Triticale,x_triticosecale,winter_triticale,"42,0","43,0","48,0","34,0",quintal_per_hectare
+33,Triticale,x_triticosecale,winter_triticale,"42,0","41,0","50,0","34,0",quintal_per_hectare
+40,Triticale,x_triticosecale,winter_triticale,"42,0","41,0","50,0","36,0",quintal_per_hectare
+47,Triticale,x_triticosecale,winter_triticale,"38,0","40,0","50,0","35,0",quintal_per_hectare
+64,Triticale,x_triticosecale,winter_triticale,"45,0","39,0","43,0","34,0",quintal_per_hectare
+79,Triticale,x_triticosecale,winter_triticale,"50,0","50,0","52,0","42,0",quintal_per_hectare
+86,Triticale,x_triticosecale,winter_triticale,"46,0","43,0","43,0","40,0",quintal_per_hectare
+87,Triticale,x_triticosecale,winter_triticale,"48,0","44,0","47,0","32,0",quintal_per_hectare
+09,Triticale,x_triticosecale,winter_triticale,"42,6","32,0","38,0","50,0",quintal_per_hectare
+11,Triticale,x_triticosecale,winter_triticale,"39,0","27,0","34,0","35,0",quintal_per_hectare
+12,Triticale,x_triticosecale,winter_triticale,"42,0","36,0","51,0","43,0",quintal_per_hectare
+30,Triticale,x_triticosecale,winter_triticale,"35,0","25,0","30,0","30,0",quintal_per_hectare
+31,Triticale,x_triticosecale,winter_triticale,"39,0","27,0","42,0","40,0",quintal_per_hectare
+32,Triticale,x_triticosecale,winter_triticale,"39,0","30,0","37,0","30,0",quintal_per_hectare
+34,Triticale,x_triticosecale,winter_triticale,"24,0","22,0","26,0","35,0",quintal_per_hectare
+46,Triticale,x_triticosecale,winter_triticale,"42,8","32,0","39,0","39,0",quintal_per_hectare
+48,Triticale,x_triticosecale,winter_triticale,"37,0","17,0","48,0","44,0",quintal_per_hectare
+65,Triticale,x_triticosecale,winter_triticale,"42,0","41,0","47,0","40,0",quintal_per_hectare
+66,Triticale,x_triticosecale,winter_triticale,"38,0","27,0","20,0","25,0",quintal_per_hectare
+81,Triticale,x_triticosecale,winter_triticale,"45,0","36,0","44,0","42,0",quintal_per_hectare
+82,Triticale,x_triticosecale,winter_triticale,"43,0","33,0","41,0","35,0",quintal_per_hectare
+01,Triticale,x_triticosecale,winter_triticale,"55,0","59,0","57,0","41,0",quintal_per_hectare
+03,Triticale,x_triticosecale,winter_triticale,"52,0","41,0","48,0","39,0",quintal_per_hectare
+07,Triticale,x_triticosecale,winter_triticale,"45,0","43,0","41,0","41,0",quintal_per_hectare
+15,Triticale,x_triticosecale,winter_triticale,"55,0","48,0","51,0","43,0",quintal_per_hectare
+26,Triticale,x_triticosecale,winter_triticale,"48,0","41,0","47,0","45,0",quintal_per_hectare
+38,Triticale,x_triticosecale,winter_triticale,"60,0","50,0","52,0","48,0",quintal_per_hectare
+42,Triticale,x_triticosecale,winter_triticale,"52,0","33,0","48,0","47,0",quintal_per_hectare
+43,Triticale,x_triticosecale,winter_triticale,"55,0","35,0","53,0","47,0",quintal_per_hectare
+63,Triticale,x_triticosecale,winter_triticale,"49,0","45,0","53,0","42,0",quintal_per_hectare
+69,Triticale,x_triticosecale,winter_triticale,"58,0","40,0","57,0","48,0",quintal_per_hectare
+73,Triticale,x_triticosecale,winter_triticale,"55,0","55,0","57,0","48,0",quintal_per_hectare
+74,Triticale,x_triticosecale,winter_triticale,"60,0","58,0","59,0","48,0",quintal_per_hectare
+04,Triticale,x_triticosecale,winter_triticale,"50,0","36,0","36,0","50,0",quintal_per_hectare
+05,Triticale,x_triticosecale,winter_triticale,"40,1","40,0","37,0","55,0",quintal_per_hectare
+06,Triticale,x_triticosecale,winter_triticale,"45,0","36,0","36,0","40,0",quintal_per_hectare
+13,Triticale,x_triticosecale,winter_triticale,"40,0","30,0","30,0","45,0",quintal_per_hectare
+83,Triticale,x_triticosecale,winter_triticale,"45,0","30,0","30,0","45,0",quintal_per_hectare
+84,Triticale,x_triticosecale,winter_triticale,"35,0","30,0","30,0","38,0",quintal_per_hectare
+2A,Triticale,x_triticosecale,winter_triticale,"55,0","55,0","40,0","45,0",quintal_per_hectare
+2B,Triticale,x_triticosecale,winter_triticale,"55,0","55,0","40,0","45,0",quintal_per_hectare
