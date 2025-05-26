@@ -7,7 +7,7 @@ module Datasources
       FileUtils.cp Dir.glob('data/productions/*.csv'), dir
     end
 
-    YEARS = %w[2017 2018 2019 2020 2021 2022 2023 2024].freeze
+    YEARS = %w[2017 2018 2019 2020 2021 2022 2023 2024 2025].freeze
 
     def load
       load_csv(dir.join('productions - crop_productions.csv'), 'crop_productions')

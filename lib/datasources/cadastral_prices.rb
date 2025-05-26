@@ -1,7 +1,7 @@
 module Datasources
   class CadastralPrices < Base
     description 'Prices of cadastre'
-    credits name: 'Demandes de valeurs foncières', url: "https://www.data.gouv.fr/fr/datasets/5cc1b94a634f4165e96436c1/", provider: "Etalab", licence: "Open Licence 2.0", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf", updated_at: "2024-10-10"
+    credits name: 'Demandes de valeurs foncières', url: "https://www.data.gouv.fr/fr/datasets/5cc1b94a634f4165e96436c1/", provider: "Etalab", licence: "Open Licence 2.0", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf", updated_at: "2025-04-14"
 
     YEAR = [2018, 2019, 2020, 2021, 2022, 2023, 2024]
 

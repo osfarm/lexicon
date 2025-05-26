@@ -1,7 +1,7 @@
 module Datasources
   class Weather < Base
     description 'Historical weather'
-    credits name: 'Données climatologiques de base - horaires', url: "https://meteo.data.gouv.fr/", provider: "Météo France", licence: "LO2.0", licence_url: "https://www.etalab.gouv.fr/licence-ouverte-open-licence", updated_at: "2025-01-26"
+    credits name: 'Données climatologiques de base - horaires', url: "https://meteo.data.gouv.fr/", provider: "Météo France", licence: "LO2.0", licence_url: "https://www.etalab.gouv.fr/licence-ouverte-open-licence", updated_at: "2025-05-23"
     
     BASE_URL = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR"
     
