@@ -119,6 +119,47 @@ services:
     networks:
       - proxy
       - lexicon
+  
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+       - "11434:11434"
+    volumes:
+       - ollama_data:/root/.ollama
+    environment:
+       - OLLAMA_HOST=0.0.0.0:11434
+    networks:
+      - proxy
+      - lexicon
+    restart: unless-stopped
+
+  openwebui:
+    image: ghcr.io/open-WebUI/open-WebUI:main
+    container_name: openwebui
+    ports:
+       - "8080"
+    volumes:
+      - openwebui_data:/app/backend/data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.openwebui.rule=Host(`ia.osfarm.org`)"
+      - "traefik.http.routers.openwebui.tls=true"
+      - "traefik.http.routers.openwebui.entrypoints=websecure"
+      - "traefik.http.routers.openwebui.tls.certresolver=tlsresolver"
+      - "traefik.http.services.openwebui.loadbalancer.server.port=8080"
+      - "traefik.http.routers.openwebui.service=openwebui"
+    networks:
+      - proxy
+      - lexicon
+    environment:
+       - WEBUI_NAME=AI_OSFarm
+       - OLLAMA_BASE_URL=http://ollama:11434
+       - WEBUI_URL=https://ia.osfarm.org
+       - WEBUI_AUTH=true
+    extra_hosts:
+       - "host.docker.internal:host-gateway"
+    restart: always
 
 networks:
   lexicon:
@@ -130,4 +171,7 @@ volumes:
   lexicon_db_data: ~
   n8n_data:
     external: true
+  volumes:
+  ollama_data:
+  openwebui_data:
 
