@@ -5,7 +5,7 @@ module Datasources
     
     BASE_URL = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR"
     
-    PERIODS = ["latest-2024-2025", "previous-2020-2023"].freeze
+    PERIODS = ["latest-2025-2026", "previous-2020-2024", "2010-2019"].freeze
     
     DEPARTMENTS = [
       '01', '02', '03', '04', '05', '06', '07', '08', '09',

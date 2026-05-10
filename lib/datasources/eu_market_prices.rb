@@ -1,7 +1,7 @@
 module Datasources
   class EuMarketPrices < Base
     description 'Europe market prices'
-    credits name: 'Index des prix agricoles UE', url: "https://agridata.ec.europa.eu/extensions/DataPortal/agricultural_markets.html#", provider: "European Union", licence: "", licence_url: "", updated_at: "2025-03-14"
+    credits name: 'Index des prix agricoles UE', url: "https://agridata.ec.europa.eu/extensions/DataPortal/agricultural_markets.html#", provider: "European Union", licence: "", licence_url: "", updated_at: "2026-05-10"
     # EUROPA API
     # DOC on https://agridata.ec.europa.eu/extensions/DataPortal/API_Documentation.html
     EUROPA_BASE_URL = "https://ec.europa.eu/agrifood/api/cereal/prices"

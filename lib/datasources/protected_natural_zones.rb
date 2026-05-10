@@ -6,8 +6,8 @@ module Datasources
 
     def collect
       puts "Download Zones..."
-      downloader.curl 'https://www.data.gouv.fr/fr/datasets/r/939f828d-b070-44b4-843c-a465b6b2e440', out: 'sic.zip'
-      downloader.curl 'https://www.data.gouv.fr/fr/datasets/r/879e29aa-75a4-42ff-88e7-d2e9b3f9e715', out: 'zps.zip'
+      downloader.curl 'https://www.data.gouv.fr/api/1/datasets/r/939f828d-b070-44b4-843c-a465b6b2e440', out: 'sic.zip'
+      downloader.curl 'https://www.data.gouv.fr/api/1/datasets/r/879e29aa-75a4-42ff-88e7-d2e9b3f9e715', out: 'zps.zip'
       puts "Extracting Zones..."
       execute("7z x #{dir}/sic.zip -oraw/protected_natural_zones -aoa")
       execute("7z x #{dir}/zps.zip -oraw/protected_natural_zones -aoa")

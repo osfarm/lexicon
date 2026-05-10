@@ -9,7 +9,7 @@ module Datasources
              '01.44Z', '01.45Z', '01.46Z', '01.47Z', '01.49Z', '01.50Z', '01.61Z', '01.62Z', '01.63Z', '01.64Z',
              '01.70Z', '02.10Z', '02.20Z', '02.30Z', '02.40Z', '03.11Z', '03.12Z', '03.21Z', '03.22Z'"
     def collect
-      downloader.curl "http://files.data.gouv.fr/insee-sirene/StockEtablissement_utf8.zip", out: 'eta_utf8.zip'
+      downloader.curl "https://object.files.data.gouv.fr/data-pipeline-open/siren/stock/StockEtablissement_utf8.zip", out: 'eta_utf8.zip'
     end
 
     def load
