@@ -152,6 +152,14 @@ module Lexicon
               db_url: container.resolve('parameter.database.url')
             )
           end
+          register(:readme_updater, memoize: true) do
+            Database::ReadmeUpdater.new(
+              readme_path: container.resolve('parameter.root').join('README.md'),
+              database_factory: container.resolve('database.factory'),
+              db_url: container.resolve('parameter.database.url'),
+              table_definitions: container.resolve('database.schema.definitions')
+            )
+          end
           register(:validator, memoize: true) do
             Database::Validation::Validator.new(
               database_factory: container.resolve('database.factory'),

@@ -11,7 +11,7 @@ module Datasources
     def load
       load_csv(dir.join('postal_codes.csv'), 'postal_codes', col_sep: ';', encoding: 'ISO-8859-15')
       execute("7z x #{dir.join('communes.7z')} -o#{dir}/archive -aoa")
-      archive_glob = dir.join("archive/ADMIN-EXPRESS_3-2__SHP_LAMB93_FXX_2024-11-18/ADMIN-EXPRESS/1_DONNEES_LIVRAISON_2024-11-00163/ADE_3-2_SHP_LAMB93_FXX-ED2024-11-18/COMMUNE.shp")
+      archive_glob = dir.join("archive/ADMIN-EXPRESS_3-2__SHP_LAMB93_FXX_2025-02-17/ADMIN-EXPRESS/1_DONNEES_LIVRAISON_2025-02-00187/ADE_3-2_SHP_LAMB93_FXX-ED2025-02-17/COMMUNE.shp")
       archive_path = Dir.glob(archive_glob).first
       load_shp(dir.join(archive_path), table_name: "communes", srid: 2154)
     end

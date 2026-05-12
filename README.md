@@ -137,6 +137,9 @@ Soil informations           |   ✔     |     1700     |     2023     |     INRA
 Units & Articles            |   ⨯     |     1350     |     2023     |     Ekylibre   |
 
 
+<!-- AUTOGEN_DATASOURCES_START -->
+<!-- AUTOGEN_DATASOURCES_END -->
+
 See [doc/DATASOURCES.md](doc/DATASOURCES.md) for more informations
 
 ## How to contribute

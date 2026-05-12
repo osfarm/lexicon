@@ -27,6 +27,12 @@ module Lexicon
 
       private
 
+        def update_readme_counts
+          get('database.readme_updater').update
+        rescue StandardError => e
+          puts "[ NOK ] README update failed: #{e.message}".red
+        end
+
         # @param [String, nil] name
         # @return [Flavor::LexiconFlavor, nil]
         def load_flavor(name)
@@ -73,6 +79,7 @@ module Lexicon
               puts '[ NOK ] Package creation error'.red
             else
               puts '[  OK ] Package created successfully'.green
+              update_readme_counts
             end
           else
             puts "Unable to dump lexicon, some datasources are invalid: #{invalid.map(&:name).join(', ')}".red

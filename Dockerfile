@@ -2,9 +2,11 @@ FROM k8s.gcr.io/pause:3.1 AS pause
 
 FROM ruby:3.2-bullseye
 
+ARG UID=1000
+ARG GID=1000
 ENV USER=lexicon
-ENV UID=1000
-ENV GID=1000
+ENV UID=$UID
+ENV GID=$GID
 
 COPY --from=pause /pause /pause
 
@@ -19,7 +21,7 @@ RUN mkdir /lexicon && \
         --uid "$UID" \
         "$USER" && \
     apt-get update && \
-    apt-get -y install postgis postgresql-client postgresql-contrib libpq-dev p7zip-full pigz libyajl-dev --no-install-recommends && \
+    apt-get -y install postgis postgresql-client postgresql-contrib libpq-dev p7zip-full pigz libyajl-dev gdal-bin --no-install-recommends && \
     apt-get -y install python3-setuptools python3-dev python3-pip --no-install-recommends
 
 WORKDIR /lexicon

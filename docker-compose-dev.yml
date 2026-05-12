@@ -25,16 +25,20 @@ services:
     image: lexicon:latest
     build:
       context: .
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
     volumes:
       - ./config:/lexicon/config:ro
       - ./data:/lexicon/data:ro
-      - ./out:/lexicon/out
-      - ./raw:/lexicon/raw
+      - ./out:/lexicon/out:rw
+      - ./raw:/lexicon/raw:rw
       - ./resources:/lexicon/resources:ro
       # Comment these lines if not working locally
       - ./lib:/lexicon/lib:ro
       - ./lexicon-cli:/lexicon/lexicon-cli:ro
       - ./VERSION:/lexicon/VERSION
+      - ./README.md:/lexicon/README.md:rw
     env_file:
       - .env
     develop:
