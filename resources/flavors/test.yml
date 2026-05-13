@@ -11,7 +11,7 @@ datasources:
       filter: WHERE postal_code = '17250' ORDER BY id
   enterprises:
     registered_enterprises:
-      filter: WHERE postal_code = '17250' ORDER BY id
+      filter: WHERE postal_code = '17250' ORDER BY establishment_number
   graphic_parcels:
     registered_graphic_parcels:
       filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10) ORDER BY id
@@ -38,7 +38,7 @@ datasources:
       filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
   weather:
     registered_weather_stations:
-      filter: WHERE country = 'FR' AND country_zone = '17'
+      filter: WHERE country = 'FR' AND (station_id = 'FR17308001' OR station_id = 'FR17415003')
     registered_hourly_weathers:
-      filter: WHERE station_id LIKE 'FR17%'
+      filter: WHERE station_id = 'FR17308001' OR station_id = 'FR17415003'
   

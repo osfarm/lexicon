@@ -1,3 +1,5 @@
+require 'csv'
+
 module Datasources
   class Weather < Base
     description 'Historical weather'
@@ -54,14 +56,44 @@ module Datasources
       end
     end
     
+    SCHEMA = 'weather'.freeze
+
     def load
       logger.debug "Parse files to load in DB temp tables..."
       PERIODS.each do |period|
         DEPARTMENTS.each do |department|
           logger.debug "Load #{period} #{department}..."
-          load_csv(dir.join("#{period}/H_#{department}_#{period}.csv"), "hourly_weather_#{period.gsub('-', '_')}_#{department}", col_sep: ';')
+          load_weather_csv(
+            dir.join("#{period}/H_#{department}_#{period}.csv"),
+            "hourly_weather_#{period.gsub('-', '_')}_#{department}"
+          )
         end
       end
+    end
+
+    # csv_loader's CharlockHolmes-based encoding detection reads the entire file
+    # via File.read, which mis-detects encoding on multi-GB files (observed on
+    # 2010-2019 depts 06, 26, 74, 83). The mis-detected encoding then causes
+    # Converter.convert to truncate the header line, producing a CREATE TABLE
+    # with only 2 columns and the error `syntax error at or near ";"` at
+    # `LINE 5: );`. We bypass it: read the header in plain Ruby and run the
+    # CREATE + \copy ourselves.
+    def load_weather_csv(path, table_name)
+      first_line = File.open(path, 'rb') { |f| f.readline }.force_encoding('UTF-8')
+      fields = CSV.parse_line(first_line, col_sep: ';')
+      raise "Empty header in #{path}" if fields.nil? || fields.empty?
+
+      cols = fields.map.with_index do |header, index|
+        name = header.to_s.empty? ? "padding#{index}" : header.to_s
+        name.downcase.gsub(/[^a-z0-9]+/, '_').gsub(/(^_|_$)/, '').gsub(/^([0-9])/, '_\1')
+      end
+
+      query "DROP TABLE IF EXISTS #{table_name}"
+      query "CREATE TABLE #{table_name} (#{cols.map { |c| "#{c} VARCHAR" }.join(', ')})"
+
+      @psql_wrapper.execute_raw(<<~SQL)
+        \\copy "#{SCHEMA}"."#{table_name}" FROM '#{path.expand_path}' WITH CSV HEADER DELIMITER ';'
+      SQL
     end
     
     # code for ww, weather_description

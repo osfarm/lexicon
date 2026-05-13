@@ -1,2 +1,4 @@
 ---
 name: full
+without:
+  - pesticide_frequency_indicator

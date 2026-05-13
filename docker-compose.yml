@@ -2,6 +2,7 @@ services:
   db:
     restart: always
     image: lexicon/db:latest
+    shm_size: 2gb
     build:
       context: docker/db
     command: |

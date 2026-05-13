@@ -8,11 +8,12 @@ module Lexicon
       SCHEMA = 'lexicon'
       CREDITS_TABLE = 'datasource_credits'
 
-      def initialize(readme_path:, database_factory:, db_url:, table_definitions:)
+      def initialize(readme_path:, database_factory:, db_url:, table_definitions:, datasource_classes:)
         @readme_path = readme_path
         @database_factory = database_factory
         @db_url = db_url
         @table_definitions = table_definitions
+        @datasource_classes = datasource_classes
       end
 
       def update
@@ -21,23 +22,35 @@ module Lexicon
           return
         end
 
-        counts = compute_counts
-        block = build_block(counts)
+        rows = compute_rows
+        block = build_block(rows)
         write_block(block)
-        puts "[  OK ] README datasource counts updated (#{counts.size} datasources)".green
+        puts "[  OK ] README datasource counts updated (#{rows.size} datasources)".green
       end
 
       private
 
-        attr_reader :readme_path, :database_factory, :db_url, :table_definitions
+        attr_reader :readme_path, :database_factory, :db_url, :table_definitions, :datasource_classes
 
-        def compute_counts
+        def compute_rows
           database = database_factory.new_instance(url: db_url)
           sets = table_definitions.reject { |set| set.name == CREDITS_TABLE }
 
           sets.map do |set|
             total = set.definitions.sum { |table| count_rows(database, table.name) }
-            [set.name, total]
+            bytes = set.definitions.sum { |table| total_relation_size(database, table.name) }
+            klass = datasource_classes[set.name]
+            credits = klass&.get_credits&.first
+
+            {
+              name: set.name,
+              count: total,
+              size_mb: bytes.to_f / (1024 * 1024),
+              spatial: spatial?(set),
+              updated_at: credits&.updated_at,
+              provider: credits&.provider,
+              description: klass&.description
+            }
           end
         end
 
@@ -48,9 +61,29 @@ module Lexicon
           Integer(result.first['count'])
         end
 
-        def build_block(counts)
-          rows = counts.sort_by { |name, _| name }.map do |name, count|
-            "| `#{name}` | #{format_number(count)} |"
+        def total_relation_size(database, table_name)
+          return 0 unless database.table_exists?(table_name, schema: SCHEMA)
+
+          result = database.query(%(SELECT pg_total_relation_size('"#{SCHEMA}"."#{table_name}"') AS bytes))
+          Integer(result.first['bytes'])
+        end
+
+        def spatial?(set)
+          set.definitions.any? { |table| table.sql.to_s.include?('postgis.geometry') }
+        end
+
+        def build_block(rows)
+          body = rows.sort_by { |row| row[:name] }.map do |row|
+            [
+              "| `#{row[:name]}`",
+              format_number(row[:count]),
+              format_size_mb(row[:size_mb]),
+              row[:spatial] ? '✔' : '⨯',
+              cell(row[:updated_at]),
+              cell(row[:provider]),
+              cell(row[:description]),
+              ''
+            ].join(' | ')
           end.join("\n")
 
           [
@@ -59,13 +92,31 @@ module Lexicon
             '',
             '### Computed record counts',
             '',
-            '| Datasource | Record count |',
-            '| --- | ---: |',
-            rows,
+            '| Datasource | Record count | Size (MB) | Spatial | Last updated | Provider | Description |',
+            '| --- | ---: | ---: | :---: | :---: | --- | --- |',
+            body,
             '',
             "_Last refreshed: #{Time.now.utc.strftime('%Y-%m-%d %H:%M UTC')}_",
             END_MARKER
           ].join("\n")
+        end
+
+        def format_size_mb(value)
+          return '0' if value.nil? || value <= 0
+
+          if value >= 100
+            format_number(value.round)
+          elsif value >= 10
+            value.round(1).to_s
+          else
+            value.round(2).to_s
+          end
+        end
+
+        def cell(value)
+          return '' if value.nil?
+
+          value.to_s.gsub('|', '\\|').gsub(/\s+/, ' ').strip
         end
 
         def format_number(number)

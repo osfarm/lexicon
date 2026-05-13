@@ -157,7 +157,8 @@ module Lexicon
               readme_path: container.resolve('parameter.root').join('README.md'),
               database_factory: container.resolve('database.factory'),
               db_url: container.resolve('parameter.database.url'),
-              table_definitions: container.resolve('database.schema.definitions')
+              table_definitions: container.resolve('database.schema.definitions'),
+              datasource_classes: container.resolve('datasource.all')
             )
           end
           register(:validator, memoize: true) do
