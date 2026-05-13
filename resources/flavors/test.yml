@@ -38,7 +38,7 @@ datasources:
       filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
   weather:
     registered_weather_stations:
-      filter: WHERE country = 'FR' AND (station_id = 'FR17308001' OR station_id = 'FR17415003')
+      filter: WHERE country = 'FR' AND (reference_name = 'FR17308001' OR reference_name = 'FR17415003')
     registered_hourly_weathers:
       filter: WHERE station_id = 'FR17308001' OR station_id = 'FR17415003'
   

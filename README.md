@@ -151,7 +151,7 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `vine_varieties` | 416 | 0.2 | ⨯ | 2020-10-19 | FranceAgriMer | Vine varieties | 
 | `weather` | 214,843,019 | 44,144 | ✔ | 2025-05-23 | Météo France | Historical weather | 
 
-_Last refreshed: 2026-05-13 15:34 UTC_
+_Last refreshed: 2026-05-13 15:42 UTC_
 <!-- AUTOGEN_DATASOURCES_END -->
 
 See [doc/DATASOURCES.md](doc/DATASOURCES.md) for more informations
