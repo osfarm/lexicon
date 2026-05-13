@@ -9,35 +9,33 @@ module Datasources
             licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             updated_at: LAST_UPDATED
 
-    # The national BD TOPO GeoPackage is provided manually:
-    # drop the .gpkg file into `raw/hydrography/`. Either keep the
-    # default filename below or any other `*.gpkg` (auto-detected).
-    GPKG_FILE = "bdtopo.gpkg".freeze
-
+    # BD TOPO Hydrographie is provided manually as one GeoPackage per layer:
+    # drop each `<layer>.gpkg` file into `raw/hydrography/` (e.g.
+    # `surface_hydrographique.gpkg`, `batiment.gpkg`, ...).
     SCHEMA = 'hydrography'.freeze
 
-    WATER_LAYERS = %w(surface_hydrographique detail_hydrographique troncon_hydrographique).freeze
+    WATER_LAYERS = %w(surface_hydrographique detail_hydrographique troncon_hydrographique cours_d_eau plan_d_eau).freeze
     BUILDING_LAYERS = %w(batiment pylone).freeze
     AREA_LAYERS = %w(haie zone_de_vegetation).freeze
     LAYERS = (WATER_LAYERS + BUILDING_LAYERS + AREA_LAYERS).freeze
 
     def collect
-      path = gpkg_path
-      if path.nil?
-        raise "No GeoPackage found in #{dir}. Place the IGN BD TOPO national GeoPackage (e.g. #{GPKG_FILE}) there before running."
+      missing = LAYERS.reject { |layer| File.exist?(gpkg_path_for(layer)) }
+      unless missing.empty?
+        raise "Missing GeoPackage file(s) in #{dir}: #{missing.map { |l| "#{l}.gpkg" }.join(', ')}"
       end
 
-      logger.debug "Found GeoPackage: #{path}"
+      LAYERS.each { |layer| logger.debug "Found GeoPackage: #{gpkg_path_for(layer)}" }
     end
 
     def load
-      path = gpkg_path
-      raise "No GeoPackage found in #{dir}" if path.nil?
-
       database.ensure_schema(SCHEMA)
       conn = pg_connection_string
 
       LAYERS.each do |layer|
+        path = gpkg_path_for(layer)
+        raise "Missing GeoPackage file: #{path}" unless File.exist?(path)
+
         logger.debug "Loading layer #{layer} into #{SCHEMA}.#{layer}..."
         execute <<~BASH
           ogr2ogr \
@@ -108,39 +106,60 @@ module Datasources
     def normalize
       logger.debug "Load Water layers into registered_hydrographic_items..."
       query("INSERT INTO registered_hydrographic_items (id, name, nature, point)
-      SELECT CONCAT(id, '_fra'), ('{\"fra\": \"' || toponyme || '\"}')::jsonb,
+      SELECT CONCAT(cleabs, '_fra'),
+      CASE WHEN toponyme IS NOT NULL THEN jsonb_build_object('fra', toponyme) END,
       nature, (postgis.ST_Dump(postgis.ST_Force2D(geom))).geom
       FROM #{SCHEMA}.detail_hydrographique ON CONFLICT DO NOTHING")
 
       query("INSERT INTO registered_hydrographic_items (id, name, nature, shape)
-      SELECT CONCAT(id, '_fra'), ('{\"fra\": \"' || nom_p_eau || '\"}')::jsonb,
+      SELECT CONCAT(cleabs, '_fra'),
+      CASE WHEN COALESCE(cpx_toponyme_de_plan_d_eau, cpx_toponyme_de_cours_d_eau, cpx_toponyme_d_entite_de_transition) IS NOT NULL
+        THEN jsonb_build_object('fra', COALESCE(cpx_toponyme_de_plan_d_eau, cpx_toponyme_de_cours_d_eau, cpx_toponyme_d_entite_de_transition))
+      END,
       nature, postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
       FROM #{SCHEMA}.surface_hydrographique ON CONFLICT DO NOTHING")
 
       query("INSERT INTO registered_hydrographic_items (id, name, nature, lines)
-      SELECT CONCAT(id, '_fra'), ('{\"fra\": \"' || nom_c_eau || '\"}')::jsonb,
+      SELECT CONCAT(cleabs, '_fra'),
+      CASE WHEN COALESCE(cpx_toponyme_de_cours_d_eau, cpx_toponyme_d_entite_de_transition) IS NOT NULL
+        THEN jsonb_build_object('fra', COALESCE(cpx_toponyme_de_cours_d_eau, cpx_toponyme_d_entite_de_transition))
+      END,
       nature, postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
       FROM #{SCHEMA}.troncon_hydrographique ON CONFLICT DO NOTHING")
 
+      query("INSERT INTO registered_hydrographic_items (id, name, nature, lines)
+      SELECT CONCAT(cleabs, '_fra'),
+      CASE WHEN toponyme IS NOT NULL THEN jsonb_build_object('fra', toponyme) END,
+      'watercourse', postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
+      FROM #{SCHEMA}.cours_d_eau ON CONFLICT DO NOTHING")
+
+      query("INSERT INTO registered_hydrographic_items (id, name, nature, shape)
+      SELECT CONCAT(cleabs, '_fra'),
+      CASE WHEN toponyme IS NOT NULL THEN jsonb_build_object('fra', toponyme) END,
+      nature, postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
+      FROM #{SCHEMA}.plan_d_eau ON CONFLICT DO NOTHING")
+
       logger.debug "Load Building layer into registered_cadastral_buildings..."
       query("INSERT INTO registered_cadastral_buildings (reference_name, nature, shape)
-      SELECT id, usage1,
+      SELECT cleabs, usage_1,
       postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
       FROM #{SCHEMA}.batiment ON CONFLICT DO NOTHING")
 
       logger.debug "Load Area layers into registered_area_items..."
       query("INSERT INTO registered_area_items (id, name, nature, lines)
-      SELECT CONCAT(id, '_fra'), ('{\"fra\": \"' || 'haie' || '\"}')::jsonb, 'edge',
+      SELECT CONCAT(cleabs, '_fra'), jsonb_build_object('fra', 'haie'), 'edge',
       postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
       FROM #{SCHEMA}.haie ON CONFLICT DO NOTHING")
 
       query("INSERT INTO registered_area_items (id, name, nature, shape)
-      SELECT CONCAT(id, '_fra'), ('{\"fra\": \"' || nature || '\"}')::jsonb, 'green_zone',
+      SELECT CONCAT(cleabs, '_fra'),
+      CASE WHEN nature IS NOT NULL THEN jsonb_build_object('fra', nature) END,
+      'green_zone',
       postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
       FROM #{SCHEMA}.zone_de_vegetation ON CONFLICT DO NOTHING")
 
       query("INSERT INTO registered_area_items (id, name, nature, point)
-      SELECT CONCAT(id, '_fra'), ('{\"fra\": \"' || 'pylone' || '\"}')::jsonb, 'electric_pole',
+      SELECT CONCAT(cleabs, '_fra'), jsonb_build_object('fra', 'pylone'), 'electric_pole',
       (postgis.ST_Dump(postgis.ST_Force2D(geom))).geom
       FROM #{SCHEMA}.pylone ON CONFLICT DO NOTHING")
 
@@ -165,13 +184,9 @@ module Datasources
 
     private
 
-      # @return [Pathname, nil]
-      def gpkg_path
-        default = dir.join(GPKG_FILE)
-        return default if File.exist?(default)
-
-        first = Dir.glob(dir.join('*.gpkg')).first
-        first.nil? ? nil : Pathname.new(first)
+      # @return [Pathname]
+      def gpkg_path_for(layer)
+        dir.join("#{layer}.gpkg")
       end
 
       def pg_connection_string
@@ -183,7 +198,7 @@ module Datasources
 
         parts = ["host=#{host}", "port=#{port}", "user=#{user}", "dbname=#{name}"]
         parts << "password=#{password}" unless password.empty?
-        parts.join(' ')
+        "PG:#{parts.join(' ')}"
       end
   end
 end

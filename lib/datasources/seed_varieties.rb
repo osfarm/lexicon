@@ -3,8 +3,21 @@ module Datasources
     description 'Seed varieties from GNIS (Groupement National Interprofessionnel des Semences et plants)'
     credits name: 'Liste des variétés de semences', url: "https://www.semae.fr/catalogue-varietes/base-varietes-gnis/", provider: "SEMAE", licence: "", licence_url: "", updated_at: "2025-01-26"
 
+    # SEMAE (ex-GNIS) no longer exposes a public CSV export of the variety
+    # catalogue (the website was refactored in 2022). The catalogue file
+    # `gnis.csv` must be provided manually in `raw/seed_varieties/` with
+    # columns: code_gnis, id_espece, variete, date_d_inscription (YYYYMMDD).
+    GNIS_FILE = 'gnis.csv'.freeze
+
     def collect
-      downloader.curl "https://www.semae.fr/catalogue-varietes/base-varietes-gnis/#", out: 'gnis.csv'
+      path = dir.join(GNIS_FILE)
+      raise "Missing #{GNIS_FILE} in #{dir}. SEMAE no longer publishes a public CSV export; drop the catalogue file there before running." unless File.exist?(path)
+
+      first_line = File.open(path, &:readline).to_s
+      if first_line.lstrip.start_with?('<')
+        raise "#{path} looks like an HTML page (starts with '<'), not a CSV. The previous auto-download produced HTML — replace it with the real SEMAE catalogue export."
+      end
+
       FileUtils.cp Dir.glob('data/seed_varieties/seed_varieties - seed_species.csv'), dir
     end
 

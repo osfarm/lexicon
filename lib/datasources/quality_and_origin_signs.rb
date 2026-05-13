@@ -7,7 +7,7 @@ module Datasources
       # get 2019-11-05-comagri-aires-produits.csv
       # resource is available here: https://www.data.gouv.fr/fr/datasets/aires-et-produits-aoc-aop-et-igp/
       FileUtils.rm dir.join('qos.csv'), force: true
-      downloader.curl 'https://www.data.gouv.fr/fr/datasets/r/8f121ab9-0ff8-4c88-9bf5-4a23c2934029', out: 'qos.csv'
+      downloader.curl 'https://www.data.gouv.fr/api/1/datasets/r/0f6a69d8-6452-4e3a-99e0-9278e72b5709', out: 'qos.csv'
     end
 
     def load
