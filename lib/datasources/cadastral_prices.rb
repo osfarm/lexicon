@@ -48,8 +48,11 @@ module Datasources
         );
 
         CREATE INDEX registered_cadastral_prices_id ON registered_cadastral_prices(id);
+        CREATE INDEX registered_cadastral_prices_mutation_id ON registered_cadastral_prices(mutation_id);
         CREATE INDEX registered_cadastral_prices_cadastral_parcel_id ON registered_cadastral_prices(cadastral_parcel_id);
         CREATE INDEX registered_cadastral_prices_department ON registered_cadastral_prices(department);
+        CREATE INDEX registered_cadastral_prices_postal_code ON registered_cadastral_prices(postal_code);
+        CREATE INDEX registered_cadastral_prices_city ON registered_cadastral_prices(city);
         CREATE INDEX registered_cadastral_prices_centroid ON registered_cadastral_prices USING GIST (centroid);
       SQL
     end

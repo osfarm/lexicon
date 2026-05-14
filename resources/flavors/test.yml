@@ -3,9 +3,19 @@ name: test
 without:
   - pesticide_frequency_indicator
 datasources:
+  administrative_areas:
+    registered_administrative_areas:
+      filter: WHERE code IN ('17', '75')
   cadastre:
     registered_cadastral_parcels:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07)
+  cadastre_owners:
+    registered_cadastral_owners:
+      filter: WHERE siren = '840968499'
+    registered_cadastral_premises:
+      filter: WHERE siren = '840968499' ORDER BY id
+    registered_cadastral_parcel_owners:
+      filter: WHERE siren = '840968499' ORDER BY id
   cadastral_prices:
     registered_cadastral_prices:
       filter: WHERE postal_code = '17250' ORDER BY id
@@ -14,28 +24,34 @@ datasources:
       filter: WHERE postal_code = '17250' ORDER BY establishment_number
   graphic_parcels:
     registered_graphic_parcels:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10) ORDER BY id
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07) ORDER BY id
   hydrography:
     registered_hydrographic_items:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07)
     registered_area_items:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07)
     registered_cadastral_buildings:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07)
   postal_codes:
     registered_postal_codes:
       filter: WHERE postal_code = '17250'
+  productions:
+    master_production_yields:
+      filter: WHERE department_zone = '17' ORDER BY campaign, specie, production
   protected_natural_zones:
     registered_natural_zones:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07)
   protected_water_zones:
     registered_protected_water_zones:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07)
+  rica:
+    registered_rica_holdings:
+      filter: WHERE new_region_code = '75' ORDER BY id
   soil:
     registered_soil_depths:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07)
     registered_soil_available_water_capacities:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07)
   weather:
     registered_weather_stations:
       filter: WHERE country = 'FR' AND (reference_name = 'FR17308001' OR reference_name = 'FR17415003')

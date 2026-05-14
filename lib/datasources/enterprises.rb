@@ -27,17 +27,19 @@ module Datasources
           postal_code character varying,
           city character varying,
           country character varying,
-          centroid postgis.geometry(Point,4326)
+          centroid postgis.geometry(Point,4326),
+          siren character varying
         );
 
         CREATE INDEX registered_enterprises_french_main_activity_code ON registered_enterprises(french_main_activity_code);
         CREATE INDEX registered_enterprises_name ON registered_enterprises(name);
+        CREATE INDEX registered_enterprises_siren ON registered_enterprises(siren);
       SQL
     end
 
     def normalize
       query <<-SQL
-        INSERT INTO registered_enterprises (establishment_number, french_main_activity_code, name, address, postal_code, city, country, centroid)
+        INSERT INTO registered_enterprises (establishment_number, french_main_activity_code, name, address, postal_code, city, country, centroid, siren)
           SELECT
             siret,
             activite_principale_etablissement,
@@ -53,7 +55,8 @@ module Datasources
                        2154),
                       4326)
               ELSE NULL
-            END
+            END,
+            LEFT(siret, 9)
           FROM enterprises.postal_codes WHERE activite_principale_etablissement IN (#{CODES_APE})
       SQL
     end

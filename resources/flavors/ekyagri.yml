@@ -7,6 +7,13 @@ datasources:
   cadastre:
     registered_cadastral_parcels:
       filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_GeomFromText('POINT(-0.534765 44.820503)',4326) , 2 )
+  cadastre_owners:
+    registered_cadastral_owners:
+      filter: WHERE (majic_number, department_code) IN (SELECT majic_number, department_code FROM registered_cadastral_parcel_owners WHERE cadastral_parcel_id IN (SELECT id FROM registered_cadastral_parcels WHERE postgis.ST_DWithin(centroid , postgis.ST_GeomFromText('POINT(-0.534765 44.820503)',4326) , 2 )) UNION SELECT majic_number, department_code FROM registered_cadastral_premises WHERE cadastral_parcel_id IN (SELECT id FROM registered_cadastral_parcels WHERE postgis.ST_DWithin(centroid , postgis.ST_GeomFromText('POINT(-0.534765 44.820503)',4326) , 2 )))
+    registered_cadastral_premises:
+      filter: WHERE cadastral_parcel_id IN (SELECT id FROM registered_cadastral_parcels WHERE postgis.ST_DWithin(centroid , postgis.ST_GeomFromText('POINT(-0.534765 44.820503)',4326) , 2 ))
+    registered_cadastral_parcel_owners:
+      filter: WHERE cadastral_parcel_id IN (SELECT id FROM registered_cadastral_parcels WHERE postgis.ST_DWithin(centroid , postgis.ST_GeomFromText('POINT(-0.534765 44.820503)',4326) , 2 ))
   cadastral_prices:
     registered_cadastral_prices:
       filter: WHERE department IN ('17', '33')

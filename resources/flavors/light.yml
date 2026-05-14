@@ -4,6 +4,7 @@ without:
   - enterprises
   - graphic_parcels
   - cadastre
+  - cadastre_owners
   - cadastral_prices
   - hydrography
   - pesticide_frequency_indicator

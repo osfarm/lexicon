@@ -119,12 +119,14 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 
 | Datasource | Record count | Size (MB) | Spatial | Last updated | Provider | Description |
 | --- | ---: | ---: | :---: | :---: | --- | --- |
+| `administrative_areas` | 119 | 2.34 | ✔ | 2021-01-01 | INSEE | Référentiel administratif France (régions & départements, COG INSEE 2021) | 
 | `agroedi` | 1,814 | 0.26 | ⨯ | 2023-01-01 | AgroEDI | AgroEDI Europe | 
 | `budgets` | 34 | 0.03 | ⨯ | 2021-07-12 | Ekylibre SAS | Budgets | 
 | `cadastral_prices` | 20,382,915 | 5,824 | ✔ | 2026-04-14 | Etalab | Prices of cadastre | 
-| `cadastre` | 93,487,746 | 98,720 | ✔ | 2026-03-29 | Etalab | Official cadastre | 
+| `cadastre` | 93,487,746 | 102,200 | ✔ | 2026-03-29 | Etalab | Official cadastre | 
+| `cadastre_owners` | 46,582,299 | 10,407 | ⨯ | 2025-08-19 | DGFiP | Cadastre owners (legal entities / personnes morales) — DGFiP MAJIC 2025 | 
 | `chart_of_accounts` | 1,595 | 0.41 | ⨯ | 2020-02-12 | Ekylibre SAS | Chart of accounts | 
-| `enterprises` | 1,341,069 | 206 | ✔ | 2025-01-01 | INSEE | French Enterprises datasource | 
+| `enterprises` | 1,341,069 | 278 | ✔ | 2025-01-01 | INSEE | French Enterprises datasource | 
 | `eu_market_prices` | 184,729 | 62.4 | ⨯ | 2026-05-10 | European Union | Europe market prices | 
 | `graphic_parcels` | 9,686,744 | 12,414 | ✔ | 2024-01-01 | IGN / ASP / MASA | RPG v3.0 — Parcelles agricoles constatées (France métropolitaine) | 
 | `hydrography` | 88,841,350 | 105,679 | ✔ | 2024-09-15 | IGN | hydro data from IGN (national BD TOPO GeoPackage) | 
@@ -134,7 +136,7 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `phytosanitary` | 122,292 | 140 | ⨯ | 2025-05-20 | ANSES | Phytosanitary products database from Ephy | 
 | `postal_codes` | 39,192 | 711 | ✔ | 2026-05-08 | Groupe La Poste | French Enterprises postal and insee codes with gps coordinates | 
 | `prices` | 2,337 | 0.77 | ⨯ | 2022-02-22 | Ekylibre SAS | Price catalog of variants | 
-| `productions` | 18,747 | 3.12 | ⨯ | 2021-09-10 | Ekylibre SAS | Production database | 
+| `productions` | 19,553 | 3.21 | ⨯ | 2021-09-10 | Ekylibre SAS | Production database | 
 | `protected_natural_zones` | 1,762 | 90.1 | ✔ | 2024-12-01 | MNHN / INPN | Natura 2000 — Sites SIC et ZPS (MNHN/INPN, NATURA_BDD 12/2024) | 
 | `protected_water_zones` | 1,585 | 8.09 | ✔ | 2025-01-27 | IGN | protected water zone from SANDRE | 
 | `quality_and_origin_signs` | 5,255 | 1.05 | ⨯ | 2025-03-10 | INAO | AOC - AOP - IGP | 
@@ -144,14 +146,14 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `taxonomy` | 855 | 0.2 | ⨯ | 2021-01-27 | Ekylibre SAS | Taxonomy | 
 | `technical_workflow_sequences` | 25 | 0.13 | ⨯ | 2020-02-12 | Ekylibre SAS | Technical workflows chaining for multiannual production | 
 | `technical_workflows` | 1,321 | 1.02 | ⨯ | 2021-09-10 | Ekylibre SAS | Technical workflows references | 
-| `translations` | 3,081 | 0.65 | ⨯ | 2021-01-27 | Ekylibre SAS | Translations of variants, productions, taxonomy and user_roles | 
+| `translations` | 3,081 | 0.63 | ⨯ | 2021-01-27 | Ekylibre SAS | Translations of variants, productions, taxonomy and user_roles | 
 | `units` | 189 | 0.17 | ⨯ | 2022-02-23 | Ekylibre SAS | Dimensions, units and packaging | 
 | `user_roles` | 4 | 0.03 | ⨯ | 2022-02-23 | Ekylibre SAS | User roles | 
 | `variants` | 1,607 | 0.69 | ⨯ | 2021-09-10 | Ekylibre SAS | Articles, Equipments, Services, Crops, Animals, Workers and Zones | 
 | `vine_varieties` | 416 | 0.2 | ⨯ | 2020-10-19 | FranceAgriMer | Vine varieties | 
 | `weather` | 214,843,019 | 44,144 | ✔ | 2025-05-23 | Météo France | Historical weather | 
 
-_Last refreshed: 2026-05-13 15:42 UTC_
+_Last refreshed: 2026-05-14 16:09 UTC_
 <!-- AUTOGEN_DATASOURCES_END -->
 
 See [doc/DATASOURCES.md](doc/DATASOURCES.md) for more informations
