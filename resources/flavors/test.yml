@@ -19,6 +19,9 @@ datasources:
   cadastral_prices:
     registered_cadastral_prices:
       filter: WHERE postal_code = '17250' ORDER BY id
+  cap_beneficiaries:
+    registered_cap_beneficiaries:
+      filter: WHERE commune = 'SAINT PORCHAIRE'
   enterprises:
     registered_enterprises:
       filter: WHERE postal_code = '17250' ORDER BY establishment_number
@@ -32,6 +35,9 @@ datasources:
       filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07)
     registered_cadastral_buildings:
       filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.07)
+  msa_populations:
+    registered_msa_populations:
+      filter: WHERE insee_code = '17387'
   postal_codes:
     registered_postal_codes:
       filter: WHERE postal_code = '17250'

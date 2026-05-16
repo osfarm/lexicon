@@ -122,9 +122,10 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `administrative_areas` | 119 | 2.34 | ✔ | 2021-01-01 | INSEE | Référentiel administratif France (régions & départements, COG INSEE 2021) | 
 | `agroedi` | 1,814 | 0.26 | ⨯ | 2023-01-01 | AgroEDI | AgroEDI Europe | 
 | `budgets` | 34 | 0.03 | ⨯ | 2021-07-12 | Ekylibre SAS | Budgets | 
-| `cadastral_prices` | 20,382,915 | 5,824 | ✔ | 2026-04-14 | Etalab | Prices of cadastre | 
+| `cadastral_prices` | 20,382,915 | 6,728 | ✔ | 2026-04-14 | Etalab | Prices of cadastre | 
 | `cadastre` | 93,487,746 | 102,200 | ✔ | 2026-03-29 | Etalab | Official cadastre | 
 | `cadastre_owners` | 46,582,299 | 10,407 | ⨯ | 2025-08-19 | DGFiP | Cadastre owners (legal entities / personnes morales) — DGFiP MAJIC 2025 | 
+| `cap_beneficiaries` | 1,606,007 | 757 | ⨯ | 2024-12-31 | Agence de Services et de Paiement (ASP) | Bénéficiaires des subventions de la Politique Agricole Commune (PAC) — FEAGA & FEADER | 
 | `chart_of_accounts` | 1,595 | 0.41 | ⨯ | 2020-02-12 | Ekylibre SAS | Chart of accounts | 
 | `enterprises` | 1,341,069 | 278 | ✔ | 2025-01-01 | INSEE | French Enterprises datasource | 
 | `eu_market_prices` | 184,729 | 62.4 | ⨯ | 2026-05-10 | European Union | Europe market prices | 
@@ -132,6 +133,7 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `hydrography` | 88,841,350 | 105,679 | ✔ | 2024-09-15 | IGN | hydro data from IGN (national BD TOPO GeoPackage) | 
 | `intervention_models` | 532 | 0.33 | ⨯ | 2021-09-10 | Ekylibre SAS | Intervention models references used for ITKs | 
 | `legal_positions` | 21 | 0.03 | ⨯ | 2020-02-12 | Ekylibre SAS | Legal positions | 
+| `msa_populations` | 49,756 | 7.92 | ⨯ | 2026-05-16 | Caisse Centrale de la Mutualité Sociale Agricole (CCMSA) | MSA populations: retraités, chefs d'exploitation et nouveaux installés par commune | 
 | `phenological_stages` | 54 | 0.03 | ⨯ | 2020-02-12 | Ekylibre SAS | Phenological stages | 
 | `phytosanitary` | 122,292 | 140 | ⨯ | 2025-05-20 | ANSES | Phytosanitary products database from Ephy | 
 | `postal_codes` | 39,192 | 711 | ✔ | 2026-05-08 | Groupe La Poste | French Enterprises postal and insee codes with gps coordinates | 
@@ -153,7 +155,7 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `vine_varieties` | 416 | 0.2 | ⨯ | 2020-10-19 | FranceAgriMer | Vine varieties | 
 | `weather` | 214,843,019 | 44,144 | ✔ | 2025-05-23 | Météo France | Historical weather | 
 
-_Last refreshed: 2026-05-14 16:09 UTC_
+_Last refreshed: 2026-05-16 16:59 UTC_
 <!-- AUTOGEN_DATASOURCES_END -->
 
 See [doc/DATASOURCES.md](doc/DATASOURCES.md) for more informations

@@ -1,6 +1,7 @@
 ---
 name: light
 without:
+  - cap_beneficiaries
   - enterprises
   - graphic_parcels
   - cadastre
