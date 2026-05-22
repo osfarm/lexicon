@@ -1,0 +1,62 @@
+code,label
+01.11Z,"Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses"
+01.12Z,Culture du riz
+01.13Z,"Culture de légumes, de melons, de racines et de tubercules"
+01.14Z,Culture de la canne à sucre
+01.15Z,Culture du tabac
+01.16Z,Culture de plantes à fibres
+01.19Z,Autres cultures non permanentes
+01.21Z,Culture de la vigne
+01.22Z,Culture de fruits tropicaux et subtropicaux
+01.23Z,Culture d'agrumes
+01.24Z,Culture de fruits à pépins et à noyau
+01.25Z,Culture d'autres fruits d'arbres ou d'arbustes et de fruits à coque
+01.26Z,Culture de fruits oléagineux
+01.27Z,Culture de plantes à boissons
+01.28Z,"Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques"
+01.29Z,Autres cultures permanentes
+01.30Z,Reproduction de plantes
+01.41Z,Élevage de vaches laitières
+01.42Z,Élevage d'autres bovins et de buffles
+01.43Z,Élevage de chevaux et d'autres équidés
+01.44Z,Élevage de chameaux et d'autres camélidés
+01.45Z,Élevage d'ovins et de caprins
+01.46Z,Élevage de porcins
+01.47Z,Élevage de volailles
+01.49Z,Élevage d'autres animaux
+01.50Z,Culture et élevage associés
+02.10Z,Sylviculture et autres activités forestières
+02.20Z,Exploitation forestière
+02.30Z,Récolte de produits forestiers non ligneux poussant à l'état sauvage
+03.11Z,Pêche en mer
+03.12Z,Pêche en eau douce
+03.21Z,Aquaculture en mer
+03.22Z,Aquaculture en eau douce
+08.93Z,Production de sel
+10.11Z,Transformation et conservation de la viande de boucherie
+10.12Z,Transformation et conservation de la viande de volaille
+10.13A,Préparation industrielle de produits à base de viande
+10.13B,Charcuterie
+10.20Z,"Transformation et conservation de poisson, de crustacés et de mollusques"
+10.31Z,Transformation et conservation de pommes de terre
+10.32Z,Préparation de jus de fruits et légumes
+10.39A,Autre transformation et conservation de légumes
+10.39B,Transformation et conservation de fruits
+10.41A,Fabrication d'huiles et graisses brutes
+10.41B,Fabrication d'huiles et graisses raffinées
+10.42Z,Fabrication de margarine et graisses comestibles similaires
+10.51A,Fabrication de lait liquide et de produits frais
+10.51B,Fabrication de beurre
+10.51C,Fabrication de fromage
+10.51D,Fabrication d'autres produits laitiers
+10.52Z,Fabrication de glaces et sorbets
+10.61A,Meunerie
+10.61B,Autres activités du travail des grains
+11.01Z,Production de boissons alcooliques distillées
+11.02A,Fabrication de vins effervescents
+11.02B,Vinification
+11.03Z,Fabrication de cidre et de vins de fruits
+11.04Z,Production d'autres boissons fermentées non distillées
+11.05Z,Fabrication de bière
+11.06Z,Fabrication de malt
+35.11Z,Production d'électricité

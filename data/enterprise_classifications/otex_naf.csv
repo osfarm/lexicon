@@ -1,0 +1,64 @@
+otex_code,otex_label,naf_codes,naf_labels
+1510,Exploitations spécialisées en céréaliculture (autre que le riz) et en culture de plantes oléagineuses et protéagineuses,01.11Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses"
+1520,Exploitations spécialisées rizicoles,01.12Z,Culture du riz
+1530,"Exploitations combinant céréales, riz, plantes oléagineuses et protéagineuses",01.11Z;01.12Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Culture du riz"
+1610,Exploitations spécialisées en culture de plantes sarclées,01.13Z,"Culture de légumes, de melons, de racines et de tubercules"
+1620,"Exploitations combinant céréales, plantes oléagineuses et protéagineuses et culture de plantes sarclées",01.11Z;01.13Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Culture de légumes, de melons, de racines et de tubercules"
+1630,Exploitations spécialisées en culture de légumes frais de plein champ,01.13Z,"Culture de légumes, de melons, de racines et de tubercules"
+1640,Exploitations spécialisées en culture de tabac,01.15Z,Culture du tabac
+1660,Exploitations avec combinaison de diverses grandes cultures,01.11Z;01.13Z;01.14Z;01.15Z;01.16Z;01.19Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Culture de légumes, de melons, de racines et de tubercules;Culture de la canne à sucre;Culture du tabac;Culture de plantes à fibres;Autres cultures non permanentes"
+2811,Exploitations spécialisées en culture de légumes d'intérieur,01.13Z,"Culture de légumes, de melons, de racines et de tubercules"
+2821,Exploitations spécialisées en culture de légumes de plein air,01.13Z,"Culture de légumes, de melons, de racines et de tubercules"
+2831,Exploitations spécialisées dans la culture de champignons,01.13Z,"Culture de légumes, de melons, de racines et de tubercules"
+2912,Exploitations spécialisées en floriculture et culture de plantes ornementales d'intérieur,01.19Z,Autres cultures non permanentes
+2913,Exploitations spécialisées en horticulture mixte d'intérieur,01.19Z;01.30Z,Autres cultures non permanentes;Reproduction de plantes
+2922,Exploitations spécialisées en floriculture et culture de plantes ornementales de plein air,01.19Z,Autres cultures non permanentes
+2923,Exploitations spécialisées en horticulture mixte de plein air,01.19Z;01.30Z,Autres cultures non permanentes;Reproduction de plantes
+2932,Pépinières spécialisées,01.30Z,Reproduction de plantes
+2933,Différents types d'horticulture,01.19Z;01.30Z,Autres cultures non permanentes;Reproduction de plantes
+3511,Exploitations vinicoles spécialisées dans la production de vins de qualité bénéficiant d'une AOP,01.21Z,Culture de la vigne
+3512,Exploitations vinicoles spécialisées dans la production des vins de qualité bénéficiant d'une IGP,01.21Z,Culture de la vigne
+3513,Exploitations vinicoles spécialisées dans la production des vins de qualité AOP et IGP,01.21Z,Culture de la vigne
+3520,Exploitations spécialisées vinicoles produisant des vins autres que des vins de qualité,01.21Z,Culture de la vigne
+3530,Exploitations spécialisées dans la production de raisins de table,01.21Z,Culture de la vigne
+3540,Autres vignobles,01.21Z,Culture de la vigne
+3610,"Exploitations fruitières spécialisées (à l'exception des agrumes, des fruits tropicaux et des fruits à coque)",01.24Z,Culture de fruits à pépins et à noyau
+3620,Exploitations agrumicoles spécialisées,01.23Z,Culture d'agrumes
+3630,Exploitations spécialisées dans la production de fruits à coque,01.25Z,Culture d'aut. fruits d'arbres ou d'arbustes et de fruits a coque
+3640,Exploitations spécialisées dans la production de fruits tropicaux,01.22Z,Culture de fruits tropicaux et subtropicaux
+3650,"Exploitations spécialisées dans la production de fruits, agrumes, fruits tropicaux et fruits à coque : production mixte",01.22Z;01.23Z;01.24Z;01.25Z,Culture de fruits tropicaux et subtropicaux;Culture d'agrumes;Culture de fruits à pépins et à noyau;Culture d'aut. fruits d'arbres ou d'arbustes et de fruits a coque
+3700,Exploitations oléicoles spécialisées,01.26Z,Culture de fruits oléagineux
+3800,Exploitations avec diverses combinaisons de cultures permanentes,01.22Z;01.23Z;01.24Z;01.25Z;01.26Z;01.27Z;01.28Z;01.29Z,Culture de fruits tropicaux et subtropicaux;Culture d'agrumes;Culture de fruits à pépins et à noyau;Culture d'aut. fruits d'arbres ou d'arbustes et de fruits a coque;Culture de fruits oléagineux;Culture de plantes à boissons;Culture plantes à épices aromatiques médicinales pharmaceutiques;Autres cultures permanentes
+4500,Exploitations bovines spécialisées — orientation lait,01.41Z,Élevage de vaches laitières
+4600,Exploitations bovines spécialisées — orientation élevage et viande,01.42Z,Élevage d'autres bovins et de buffles
+4700,"Exploitations bovines — lait, élevage et viande combinés",01.41Z;01.42Z,Élevage de vaches laitières;Élevage d'autres bovins et de buffles
+4810,Exploitations ovines spécialisées,01.45Z,Élevage d'ovins et de caprins
+4820,Exploitations avec ovins et bovins combinés,01.42Z;01.45Z,Élevage d'autres bovins et de buffles;Élevage d'ovins et de caprins
+4830,Exploitations caprines spécialisées,01.45Z,Élevage d'ovins et de caprins
+4840,Exploitations d'équidés et/ou autres herbivores,01.43Z;01.44Z;01.49Z,Élevage de chevaux et d'autres équidés;Élevage de chameaux et d'autres camélidés;Élevage d'autres animaux
+5110,Exploitations spécialisées porcins d'élevage,01.46Z,Élevage de porcins
+5120,Exploitations spécialisées porcins d'engraissement,01.46Z,Élevage de porcins
+5130,Exploitations combinant l'élevage et l'engraissement de porcins,01.46Z,Élevage de porcins
+5210,Exploitations spécialisées poules pondeuses,01.47Z,Élevage de volailles
+5220,Exploitations spécialisées volailles de chair,01.47Z,Élevage de volailles
+5230,Exploitations combinant poules pondeuses et volailles de chair,01.47Z,Élevage de volailles
+5300,Exploitations avec diverses combinaisons de granivores,01.46Z;01.47Z,Élevage de porcins;Élevage de volailles
+6110,Horticulture et cultures permanentes combinées,01.19Z;01.29Z;01.30Z,Autres cultures non permanentes;Autres cultures permanentes;Reproduction de plantes
+6120,Exploitations combinant grandes cultures et horticulture,01.11Z;01.13Z;01.19Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Culture de légumes, de melons, de racines et de tubercules;Autres cultures non permanentes"
+6130,Exploitations combinant grandes cultures et vignes,01.11Z;01.21Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Culture de la vigne"
+6140,Exploitations combinant grandes cultures et cultures permanentes,01.11Z;01.21Z;01.24Z;01.25Z;01.26Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Culture de la vigne;Culture de fruits à pépins et à noyau;Culture d'aut. fruits d'arbres ou d'arbustes et de fruits a coque;Culture de fruits oléagineux"
+6150,Exploitations de polyculture à orientation grandes cultures,01.11Z;01.13Z;01.50Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Culture de légumes, de melons, de racines et de tubercules;Culture et élevage associés"
+6160,Autres exploitations de polyculture,01.50Z,Culture et élevage associés
+7310,Exploitations de polyélevage à orientation laitière,01.41Z;01.50Z,Élevage de vaches laitières;Culture et élevage associés
+7320,Exploitations de polyélevage à orientation herbivores autres que laitiers,01.42Z;01.43Z;01.45Z;01.50Z,Élevage d'autres bovins et de buffles;Élevage de chevaux et d'autres équidés;Élevage d'ovins et de caprins;Culture et élevage associés
+7410,"Exploitations de polyélevage, granivores et bovins laitiers combinés",01.41Z;01.46Z;01.47Z;01.50Z,Élevage de vaches laitières;Élevage de porcins;Élevage de volailles;Culture et élevage associés
+7420,Exploitations de polyélevage: granivores et herbivores autres que laitiers,01.42Z;01.45Z;01.46Z;01.47Z;01.50Z,Élevage d'autres bovins et de buffles;Élevage d'ovins et de caprins;Élevage de porcins;Élevage de volailles;Culture et élevage associés
+8310,Exploitations mixtes combinant grandes cultures avec bovins laitiers,01.11Z;01.41Z;01.50Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Élevage de vaches laitières;Culture et élevage associés"
+8320,Exploitations mixtes combinant bovins laitiers avec grandes cultures,01.11Z;01.41Z;01.50Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Élevage de vaches laitières;Culture et élevage associés"
+8330,Exploitations mixtes combinant grandes cultures avec herbivores non laitiers,01.11Z;01.42Z;01.45Z;01.50Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Élevage d'autres bovins et de buffles;Élevage d'ovins et de caprins;Culture et élevage associés"
+8340,Exploitations mixtes combinant herbivores non laitiers avec grandes cultures,01.11Z;01.42Z;01.45Z;01.50Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Élevage d'autres bovins et de buffles;Élevage d'ovins et de caprins;Culture et élevage associés"
+8410,Exploitations mixtes combinant grandes cultures et granivores,01.11Z;01.46Z;01.47Z;01.50Z,"Culture de céréales (sf riz) légumineuses, graines oléagineuses;Élevage de porcins;Élevage de volailles;Culture et élevage associés"
+8420,Exploitations mixtes avec cultures permanentes et herbivores,01.21Z;01.24Z;01.42Z;01.45Z;01.50Z,Culture de la vigne;Culture de fruits à pépins et à noyau;Élevage d'autres bovins et de buffles;Élevage d'ovins et de caprins;Culture et élevage associés
+8430,Exploitations apicoles,01.49Z,Élevage d'autres animaux
+8440,Exploitations avec diverses cultures et élevages mixtes,01.50Z,Culture et élevage associés
+9000,Exploitations non classées,,

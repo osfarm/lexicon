@@ -35,7 +35,7 @@ module Datasources
       refresh_yields_from_fam
     end
 
-    YEARS = %w[2017 2018 2019 2020 2021 2022 2023 2024 2025].freeze
+    YEARS = %w[2017 2018 2019 2020 2021 2022 2023 2024 2025 2026].freeze
 
     def load
       load_csv(dir.join('productions - crop_productions.csv'), 'crop_productions')

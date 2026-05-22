@@ -127,7 +127,7 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `cadastre_owners` | 46,582,299 | 10,407 | ⨯ | 2025-08-19 | DGFiP | Cadastre owners (legal entities / personnes morales) — DGFiP MAJIC 2025 | 
 | `cap_beneficiaries` | 1,606,007 | 757 | ⨯ | 2024-12-31 | Agence de Services et de Paiement (ASP) | Bénéficiaires des subventions de la Politique Agricole Commune (PAC) — FEAGA & FEADER | 
 | `chart_of_accounts` | 1,595 | 0.41 | ⨯ | 2020-02-12 | Ekylibre SAS | Chart of accounts | 
-| `enterprises` | 1,341,069 | 278 | ✔ | 2025-01-01 | INSEE | French Enterprises datasource | 
+| `enterprises` | 1,341,069 | 444 | ✔ | 2025-01-01 | INSEE | French Enterprises datasource | 
 | `eu_market_prices` | 184,729 | 62.4 | ⨯ | 2026-05-10 | European Union | Europe market prices | 
 | `graphic_parcels` | 9,686,744 | 12,414 | ✔ | 2024-01-01 | IGN / ASP / MASA | RPG v3.0 — Parcelles agricoles constatées (France métropolitaine) | 
 | `hydrography` | 88,841,350 | 105,679 | ✔ | 2024-09-15 | IGN | hydro data from IGN (national BD TOPO GeoPackage) | 
@@ -155,7 +155,7 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `vine_varieties` | 416 | 0.2 | ⨯ | 2020-10-19 | FranceAgriMer | Vine varieties | 
 | `weather` | 214,843,019 | 44,144 | ✔ | 2025-05-23 | Météo France | Historical weather | 
 
-_Last refreshed: 2026-05-16 16:59 UTC_
+_Last refreshed: 2026-05-18 17:48 UTC_
 <!-- AUTOGEN_DATASOURCES_END -->
 
 See [doc/DATASOURCES.md](doc/DATASOURCES.md) for more informations

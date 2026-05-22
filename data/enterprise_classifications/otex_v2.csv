@@ -1,0 +1,65 @@
+code,label,parent_code,parent_label
+1510,Exploitations spécialisées en céréaliculture (autre que le riz) et en culture de plantes oléagineuses et protéagineuses,1500,Céréales et oléoprotéagineux
+1520,Exploitations spécialisées rizicoles,1500,Céréales et oléoprotéagineux
+1530,"Exploitations combinant céréales, riz, plantes oléagineuses et protéagineuses",1500,Céréales et oléoprotéagineux
+1610,Exploitations spécialisées en culture de plantes sarclées,1600,Autres grandes cultures
+1620,"Exploitations combinant céréales, plantes oléagineuses et protéagineuses et culture de plantes sarclées",1600,Autres grandes cultures
+1630,Exploitations spécialisées en culture de légumes frais de plein champ,1600,Autres grandes cultures
+1640,Exploitations spécialisées en culture de tabac,1600,Autres grandes cultures
+1650,Exploitations spécialisées en culture de coton,1600,Autres grandes cultures
+1660,Exploitations avec combinaison de diverses grandes cultures,1600,Autres grandes cultures
+2811,Exploitations spécialisées en culture de légumes d'intérieur,2800,Maraîchage
+2821,Exploitations spécialisées en culture de légumes de plein air,2800,Maraîchage
+2831,Exploitations spécialisées dans la culture de champignons,2800,Maraîchage
+2912,Exploitations spécialisées en floriculture et culture de plantes ornementales d'intérieur,2900,"Fleurs, horticulture diverse"
+2913,Exploitations spécialisées en horticulture mixte d'intérieur,2900,"Fleurs, horticulture diverse"
+2922,Exploitations spécialisées en floriculture et culture de plantes ornementales de plein air,2900,"Fleurs, horticulture diverse"
+2923,Exploitations spécialisées en horticulture mixte de plein air,2900,"Fleurs, horticulture diverse"
+2932,Pépinières spécialisées,2900,"Fleurs, horticulture diverse"
+2933,Différents types d'horticulture,2900,"Fleurs, horticulture diverse"
+3511,Exploitations vinicoles spécialisées dans la production de vins de qualité bénéficiant d'une AOP,3500,Viticulture
+3512,Exploitations vinicoles spécialisées dans la production des vins de qualité bénéficiant d'une IGP,3500,Viticulture
+3513,Exploitations vinicoles spécialisées dans la production des vins de qualité AOP et IGP,3500,Viticulture
+3520,Exploitations spécialisées vinicoles produisant des vins autres que des vins de qualité,3500,Viticulture
+3530,Exploitations spécialisées dans la production de raisins de table,3500,Viticulture
+3540,Autres vignobles,3500,Viticulture
+3610,"Exploitations fruitières spécialisées (à l'exception des agrumes, des fruits tropicaux et des fruits à coque)",3900,Fruits et autres cultures permanentes
+3620,Exploitations agrumicoles spécialisées,3900,Fruits et autres cultures permanentes
+3630,Exploitations spécialisées dans la production de fruits à coque,3900,Fruits et autres cultures permanentes
+3640,Exploitations spécialisées dans la production de fruits tropicaux,3900,Fruits et autres cultures permanentes
+3650,"Exploitations spécialisées dans la production de fruits, agrumes, fruits tropicaux et fruits à coque : production mixte",3900,Fruits et autres cultures permanentes
+3700,Exploitations oléicoles spécialisées,3900,Fruits et autres cultures permanentes
+3800,Exploitations avec diverses combinaisons de cultures permanentes,3900,Fruits et autres cultures permanentes
+4500,Exploitations bovines spécialisées — orientation lait,4500,Bovins lait
+4600,Exploitations bovines spécialisées — orientation élevage et viande,4600,Bovins viande
+4700,"Exploitations bovines — lait, élevage et viande combinés",4700,Bovins mixte
+4810,Exploitations ovines spécialisées,4813,Ovins et caprins
+4820,Exploitations avec ovins et bovins combinés,4813,Ovins et caprins
+4830,Exploitations caprines spécialisées,4813,Ovins et caprins
+4840,Exploitations d'herbivores,4840,Autres herbivores
+5110,Exploitations spécialisées porcins d'élevage,5100,Porcins
+5120,Exploitations spécialisées porcins d'engraissement,5100,Porcins
+5130,Exploitations combinant l'élevage et l'engraissement de porcins,5100,Porcins
+5210,Exploitations spécialisées poules pondeuses,5200,Volailles
+5220,Exploitations spécialisées volailles de chair,5200,Volailles
+5230,Exploitations combinant poules pondeuses et volailles de chair,5200,Volailles
+5300,Exploitations avec diverses combinaisons de granivores,5374,Autres élevages hors sol
+7410,"Exploitations de polyélevage, granivores et bovins laitiers combinés",5374,Autres élevages hors sol
+7420,Exploitations de polyélevage : granivores et herbivores autres que laitiers,5374,Autres élevages hors sol
+6110,Horticulture et cultures permanentes combinées,6184,"Polyculture, polyélevage"
+6120,Exploitations combinant grandes cultures et horticulture,6184,"Polyculture, polyélevage"
+6130,Exploitations combinant grandes cultures et vignes,6184,"Polyculture, polyélevage"
+6140,Exploitations combinant grandes cultures et cultures permanentes,6184,"Polyculture, polyélevage"
+6150,Exploitations de polyculture à orientation grandes cultures,6184,"Polyculture, polyélevage"
+6160,Autres exploitations de polyculture,6184,"Polyculture, polyélevage"
+7310,Exploitations de polyélevage à orientation laitière,6184,"Polyculture, polyélevage"
+7320,Exploitations de polyélevage à orientation herbivores autres que laitiers,6184,"Polyculture, polyélevage"
+8310,Exploitations mixtes combinant grandes cultures avec bovins laitiers,6184,"Polyculture, polyélevage"
+8320,Exploitations mixtes combinant bovins laitiers avec grandes cultures,6184,"Polyculture, polyélevage"
+8330,Exploitations mixtes combinant grandes cultures avec herbivores non laitiers,6184,"Polyculture, polyélevage"
+8340,Exploitations mixtes combinant herbivores non laitiers avec grandes cultures,6184,"Polyculture, polyélevage"
+8410,Exploitations mixtes combinant grandes cultures et granivores,6184,"Polyculture, polyélevage"
+8420,Exploitations mixtes avec cultures permanentes et herbivores,6184,"Polyculture, polyélevage"
+8430,Exploitations apicoles,6184,"Polyculture, polyélevage"
+8440,Exploitations avec diverses cultures et élevages mixtes,6184,"Polyculture, polyélevage"
+9000,Exploitations non classées,9000,Exploitations non classées
