@@ -35,6 +35,9 @@ services:
       - ./out:/lexicon/out:rw
       - ./raw:/lexicon/raw:rw
       - ./resources:/lexicon/resources:ro
+      # SSH keys (host) montées en lecture seule — utilisées par `./lexicon load
+      # remote` pour streamer les dumps vers une base PG distante via SSH.
+      - ${HOME}/.ssh:/lexicon/.ssh:ro
       # Comment these lines if not working locally
       - ./lib:/lexicon/lib:ro
       - ./lexicon-cli:/lexicon/lexicon-cli:ro

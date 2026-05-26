@@ -1,0 +1,10 @@
+reference_name,activity_family,fra,eng,specie,usage,started_on,stopped_on,agroedi_crop_code,season,life_duration,idea_botanic_family,idea_specie_family,idea_output_family
+agrivoltaics,energy_production,Agrivoltaïsme,Agrivoltaics,electricity,electricity_crop,01/01/00,31/12/00,,,20,,,
+biofuel,energy_production,Agrocarburants,Biofuel,biogas,fuel,01/01/00,31/12/00,,,20,,,
+biomass_boiler,energy_production,Chaudière biomasse,Biomass boiler,heat,heat,01/01/00,31/12/00,,,20,,,
+digestate,energy_production,Digestat,Digestate,biogas,fertilizer,01/01/00,31/12/00,,,20,,,
+methanization,energy_production,Méthanisation,Methanization,biogas,biogas,01/01/00,31/12/00,,,20,,,
+micro_hydro,energy_production,Micro-hydroélectricité,Micro hydro,electricity,electricity,01/01/00,31/12/00,,,20,,,
+photovoltaic,energy_production,Photovoltaïque agricole,Photovoltaic,electricity,electricity,01/01/00,31/12/00,,,20,,,
+solar_thermal,energy_production,Solaire thermique,Solar thermal,heat,heat,01/01/00,31/12/00,,,20,,,
+wind_turbine,energy_production,Éolienne,Wind turbine,electricity,electricity,01/01/00,31/12/00,,,20,,,

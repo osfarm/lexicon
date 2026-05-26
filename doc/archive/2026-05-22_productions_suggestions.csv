@@ -1,0 +1,152 @@
+categorie_cible,sous_categorie,reference_name,fra,eng,usage,justification
+animal_productions,Ovins,milk_ewe,Brebis laitières,Milk ewe,milk,"Filière lait de brebis (Roquefort, Ossau-Iraty, etc.) totalement absente"
+animal_productions,Ovins,meat_ewe,Brebis allaitantes,Meat ewe,meat,"Filière viande ovine (agneau de lait, agneau de boucherie)"
+animal_productions,Ovins,lamb,Agneaux,Lamb,meat,Production d'agneaux pour engraissement/abattage
+animal_productions,Ovins,ram,Béliers,Ram,reproduction,"Reproducteurs mâles, indispensable pour suivi du troupeau"
+animal_productions,Caprins,milk_goat,Chèvres laitières,Milk goat,milk,"Filière caprine (chèvre du Poitou, fromages AOP)"
+animal_productions,Caprins,meat_goat,Chèvres allaitantes,Meat goat,meat,Élevage caprin viande
+animal_productions,Caprins,kid,Chevreaux,Kid,meat,Production de chevreaux
+animal_productions,Caprins,buck,Boucs,Buck,reproduction,Reproducteurs caprins
+animal_productions,Porcins,sow,Truies,Sow,reproduction,Élevage porcin naisseur
+animal_productions,Porcins,piglet,Porcelets,Piglet,meat,Production de porcelets (naisseur)
+animal_productions,Porcins,fattening_pig,Porcs charcutiers,Fattening pig,meat,Engraissement porcs (filière charcutière)
+animal_productions,Porcins,boar,Verrats,Boar,reproduction,Reproducteurs mâles porcins
+animal_productions,Volailles,laying_hen,Poules pondeuses,Laying hen,egg,Production d'œufs (catégorie majeure manquante)
+animal_productions,Volailles,broiler_chicken,Poulets de chair,Broiler chicken,meat,"Volailles de chair (label rouge, bio, standard)"
+animal_productions,Volailles,turkey,Dindes,Turkey,meat,Élevage de dindes
+animal_productions,Volailles,duck_meat,Canards de chair,Meat duck,meat,Canard à rôtir
+animal_productions,Volailles,fattened_duck,Canards gras,Fattened duck,foie_gras,Filière foie gras / palmipèdes gras
+animal_productions,Volailles,goose,Oies,Goose,meat,Oie de chair / foie gras
+animal_productions,Volailles,guinea_fowl,Pintades,Guinea fowl,meat,Pintade de chair
+animal_productions,Volailles,quail,Cailles,Quail,meat_egg,Cailles (chair et œufs)
+animal_productions,Volailles,pigeon,Pigeons,Pigeon,meat,Pigeonneau (filière de niche)
+animal_productions,Cuniculture,rabbit,Lapins,Rabbit,meat,Cuniculture - filière lapin de chair
+animal_productions,Cuniculture,doe_rabbit,Lapines reproductrices,Doe rabbit,reproduction,Lapines mères en élevage
+animal_productions,Équins,draft_horse,Chevaux de trait,Draft horse,work,"Chevaux de travail (trait, débardage)"
+animal_productions,Équins,saddle_horse,Chevaux de selle,Saddle horse,leisure,Élevage chevaux de selle/loisir
+animal_productions,Équins,race_horse,Chevaux de course,Race horse,race,Élevage hippique de course
+animal_productions,Équins,pony,Poneys,Pony,leisure,"Élevage de poneys (clubs, loisir)"
+animal_productions,Équins,donkey,Ânes,Donkey,work_milk,"Ânes (travail, lait d'ânesse cosmétique)"
+animal_productions,Apiculture,beehive,Ruches,Beehive,honey_pollination,"Apiculture - production de miel, gelée royale, pollinisation"
+animal_productions,Apiculture,queen_bee,Reines d'abeilles,Queen bee,reproduction,Élevage de reines (sélection génétique)
+animal_productions,Aquaculture,trout,Truites,Trout,fish,Pisciculture - truite arc-en-ciel/fario
+animal_productions,Aquaculture,carp,Carpes,Carp,fish,Carpiculture (étangs)
+animal_productions,Aquaculture,sturgeon,Esturgeons,Sturgeon,caviar_meat,Élevage d'esturgeon (caviar)
+animal_productions,Aquaculture,salmon,Saumons,Salmon,fish,Salmoniculture
+animal_productions,Conchyliculture,oyster,Huîtres,Oyster,shellfish,Ostréiculture (filière littorale)
+animal_productions,Conchyliculture,mussel,Moules,Mussel,shellfish,Mytiliculture
+animal_productions,Conchyliculture,scallop,Coquilles Saint-Jacques,Scallop,shellfish,Production de coquillages
+animal_productions,Cervidés,deer,Cerfs,Deer,meat,Élevage de cervidés (gibier)
+animal_productions,Cervidés,fallow_deer,Daims,Fallow deer,meat,Élevage de daims
+animal_productions,Élevages spécialisés,snail,Escargots,Snail,meat,"Héliciculture (escargots petit-gris, gros-gris)"
+animal_productions,Élevages spécialisés,insect,Insectes,Insect,protein_feed,"Élevage d'insectes (alimentation animale/humaine, secteur émergent)"
+animal_productions,Élevages spécialisés,earthworm,Vers de terre,Earthworm,compost,Lombriculture (vermicompost)
+animal_productions,Camélidés,alpaca,Alpagas,Alpaca,wool,Élevage alpaga (laine)
+animal_productions,Camélidés,llama,Lamas,Llama,wool_packing,Élevage de lamas
+animal_productions,Ratites,ostrich,Autruches,Ostrich,meat_egg,Élevage d'autruches
+animal_productions,Autres,buffalo,Buffles,Buffalo,milk_meat,Élevage de buffles (mozzarella di bufala)
+animal_productions,Bovins (compléments),bull,Taureaux reproducteurs,Bull,reproduction,Reproducteurs bovins (manquant dans la liste actuelle)
+animal_productions,Bovins (compléments),dairy_heifer,Génisses laitières,Dairy heifer,milk,Distinction génisses laitières vs allaitantes utile
+processing_productions,Transformation lait,cheese_making,Fromagerie,Cheese making,cheese,"Fabrication de fromages (AOP, fermier, affinage)"
+processing_productions,Transformation lait,yogurt_making,Yaourterie,Yogurt making,yogurt,"Production yaourts, desserts lactés"
+processing_productions,Transformation lait,butter_making,Beurrerie,Butter making,butter,Production de beurre fermier
+processing_productions,Transformation lait,ice_cream_making,Glacerie,Ice cream making,ice_cream,Glaces artisanales à base de lait
+processing_productions,Transformation viande,charcuterie,Charcuterie,Charcuterie,cured_meat,"Salaison, saucissons, jambons fermiers"
+processing_productions,Transformation viande,cutting_workshop,Atelier de découpe,Cutting workshop,meat_cut,Découpe et conditionnement carcasses
+processing_productions,Transformation viande,canning_meat,Conserverie viande,Meat cannery,canned_meat,"Pâtés, rillettes, conserves"
+processing_productions,Transformation végétale,canning_vegetable,Conserverie légumes/fruits,Vegetable cannery,canned_vegetable,"Conserves légumes, soupes, plats préparés"
+processing_productions,Transformation végétale,jam_making,Confiturerie,Jam making,jam,"Confitures, gelées, pâtes de fruits"
+processing_productions,Transformation végétale,juice_making,Jus de fruits,Juice making,juice,Pressage et embouteillage jus de fruits/légumes
+processing_productions,Transformation végétale,drying_workshop,Atelier de séchage,Drying workshop,dried_product,"Séchage fruits, légumes, plantes aromatiques"
+processing_productions,Transformation végétale,oil_press,Huilerie,Oil press,oil,"Pressage à froid huile (olive, tournesol, colza, chanvre)"
+processing_productions,Transformation végétale,flour_mill,Moulin / farine,Flour mill,flour,"Mouture céréales, farines fermières"
+processing_productions,Transformation végétale,bakery,Boulangerie fermière,Farm bakery,bread,Boulangerie à la ferme (paysan-boulanger)
+processing_productions,Transformation végétale,pastry,Pâtisserie fermière,Farm pastry,pastry,Pâtisserie / biscuiterie fermière
+processing_productions,Boissons,brewery,Brasserie,Brewery,beer,"Brasserie artisanale (houblon, orge)"
+processing_productions,Boissons,cidery,Cidrerie,Cidery,cider,"Production de cidre, poiré"
+processing_productions,Boissons,distillery,Distillerie,Distillery,spirit,"Eaux-de-vie, alcools (Armagnac, Cognac, gnôle)"
+processing_productions,Boissons,vinegar_making,Vinaigrerie,Vinegar making,vinegar,"Production de vinaigres (vin, cidre, fruits)"
+processing_productions,Boissons,kombucha_kefir,Kombucha / Kéfir,Kombucha kefir,fermented_drink,Boissons fermentées (tendance)
+processing_productions,Apiculture,honey_house,Miellerie,Honey house,honey,"Extraction, conditionnement miel, propolis, pollen"
+processing_productions,Cosmétique / artisanat,soap_making,Savonnerie,Soap making,soap,"Savons au lait d'ânesse, chèvre, plantes"
+processing_productions,Cosmétique / artisanat,essential_oil,Distillerie d'huiles essentielles,Essential oil distillery,essential_oil,"Lavande, lavandin, plantes aromatiques"
+processing_productions,Cosmétique / artisanat,cosmetic_workshop,Atelier cosmétique,Cosmetic workshop,cosmetic,Cosmétiques naturels à la ferme
+processing_productions,Légumineuses/céréales,legume_processing,Transformation légumineuses,Legume processing,legume_product,"Tofu, tempeh, falafels, etc."
+processing_productions,Légumineuses/céréales,pasta_making,Atelier pâtes,Pasta making,pasta,Pâtes fermières (blé dur)
+service_productions,Agritourisme,farm_inn,Ferme auberge,Farm inn,catering,Restauration à la ferme
+service_productions,Agritourisme,farm_lodging,Gîte rural,Farm lodging,lodging,Hébergement à la ferme (gîte)
+service_productions,Agritourisme,bed_and_breakfast,Chambres d'hôtes,Bed and breakfast,lodging,Chambres d'hôtes
+service_productions,Agritourisme,camping,Camping à la ferme,Farm camping,camping,Camping rural
+service_productions,Agritourisme,educational_farm,Ferme pédagogique,Educational farm,education,"Accueil scolaires, ateliers découverte"
+service_productions,Agritourisme,farm_visit,Visites de ferme,Farm visit,tourism,Visites guidées de l'exploitation
+service_productions,Vente directe (compléments),farm_shop,Boutique à la ferme,Farm shop,retail,Magasin de vente à la ferme
+service_productions,Vente directe (compléments),market_sale,Vente sur marché,Market sale,retail,Marchés de plein air
+service_productions,Vente directe (compléments),amap_csa,AMAP / Panier,CSA basket,retail,Vente en panier hebdomadaire
+service_productions,Vente directe (compléments),online_sale,Vente en ligne,Online sale,retail,E-commerce / Drive fermier
+service_productions,Vente directe (compléments),pick_your_own,Cueillette à la ferme,Pick your own,retail,Self-cueillette par les clients
+service_productions,Prestations agricoles,contract_work,Entreprise de travaux agricoles,Agricultural contract work,service,"ETA : moisson, ensilage, semis pour tiers"
+service_productions,Prestations agricoles,cuma_sharing,Mise en commun CUMA,CUMA sharing,service,Coopérative d'utilisation matériel agricole
+service_productions,Prestations agricoles,transport,Transport agricole,Agricultural transport,service,"Transport céréales, animaux, fourrages"
+service_productions,Prestations agricoles,land_renting,Location de foncier,Land renting,service,"Bail à ferme, fermage"
+service_productions,Prestations agricoles,equipment_renting,Location matériel,Equipment renting,service,Location de matériel agricole
+service_productions,Prestations animales,animal_boarding,Pension d'animaux,Animal boarding,service,"Pension équine, garde d'animaux"
+service_productions,Prestations animales,horse_riding,Centre équestre,Riding center,service,"Cours, balades à cheval"
+service_productions,Prestations animales,grazing_service,Éco-pâturage,Eco-grazing,service,Prestation entretien espaces par animaux
+service_productions,Prestations animales,pollination_service,Service de pollinisation,Pollination service,service,Location de ruches pour pollinisation
+service_productions,Prestations environnementales,composting_service,Compostage à façon,Composting service,service,Compostage de déchets verts pour tiers
+service_productions,Prestations environnementales,hedge_maintenance,Entretien haies/bocage,Hedge maintenance,service,"Entretien paysager, fauche, débroussaillage"
+service_productions,Conseil / Formation,agronomic_advice,Conseil agronomique,Agronomic advice,service,Conseil indépendant en agronomie
+service_productions,Conseil / Formation,training,Formation / Apprentissage,Training apprenticeship,service,"Accueil stagiaires, formation pratique"
+auxiliary_productions,Gestion,accounting,Comptabilité,Accounting,service,Tenue comptable et gestion
+auxiliary_productions,Gestion,commercial_management,Gestion commerciale,Commercial management,service,"Suivi commandes, clients, facturation"
+auxiliary_productions,Gestion,human_resources,Gestion du personnel,Human resources,service,"Paie, planning, contrats salariés"
+auxiliary_productions,Gestion,regulatory_compliance,Gestion réglementaire/PAC,Regulatory compliance,service,"Déclaration PAC, traçabilité, certification"
+auxiliary_productions,Travaux culturaux,soil_preparation,Préparation des sols,Soil preparation,service,"Labour, décompactage, hersage"
+auxiliary_productions,Travaux culturaux,irrigation,Irrigation,Irrigation,service,"Mise en eau, gestion réseaux d'irrigation"
+auxiliary_productions,Travaux culturaux,fertilization,Fertilisation,Fertilization,service,"Apport engrais, amendements"
+auxiliary_productions,Travaux culturaux,plant_protection,Protection des cultures,Plant protection,service,"Traitements phyto, biocontrôle"
+auxiliary_productions,Travaux culturaux,harvest_logistics,Logistique de récolte,Harvest logistics,service,"Organisation récoltes, transport champ-stockage"
+auxiliary_productions,Stockage,grain_storage,Stockage céréales/grains,Grain storage,service,"Silos, séchage, conservation des grains"
+auxiliary_productions,Stockage,cold_storage,Stockage froid,Cold storage,service,"Chambres froides (fruits, légumes, viande, lait)"
+auxiliary_productions,Stockage,fodder_storage,Stockage fourrages,Fodder storage,service,"Granges, fenil, stockage foin/paille"
+auxiliary_productions,Infrastructure,buildings_management,Gestion des bâtiments,Buildings management,service,Suivi bâtiments d'exploitation
+auxiliary_productions,Infrastructure,fencing_management,Gestion des clôtures,Fencing management,service,"Pose et entretien clôtures, parcs"
+auxiliary_productions,Infrastructure,water_management,Gestion de l'eau,Water management,service,"Captage, forage, retenues collinaires"
+auxiliary_productions,R&D,experimentation,Expérimentation / R&D,Experimentation,service,"Essais variétaux, parcelles d'expérimentation"
+crop_productions,Cultures spécialisées,mushroom,Champignons de Paris,Button mushroom,vegetable,Champignonnière (production toute l'année)
+crop_productions,Cultures spécialisées,shiitake,Shiitake,Shiitake,vegetable,Champignon de bois (sur bûches)
+crop_productions,Cultures spécialisées,oyster_mushroom,Pleurote,Oyster mushroom,vegetable,Champignon en substrat
+crop_productions,Cultures spécialisées,truffle,Truffe,Truffle,fruit,Trufficulture (chênes/noisetiers truffiers) - existe en 'wood' mais à scinder
+crop_productions,Cultures spécialisées,spirulina,Spiruline,Spirulina,alga,Microalgue (production en bassins)
+crop_productions,Cultures spécialisées,seaweed,Algues marines,Seaweed,alga,"Algoculture (kombu, wakamé, nori)"
+crop_productions,Cultures spécialisées,edible_flower,Fleurs comestibles,Edible flowers,flower,Production de fleurs pour gastronomie
+crop_productions,Cultures spécialisées,cut_flower,Fleurs coupées,Cut flowers,flower,Horticulture florale (différent ornemental)
+crop_productions,Systèmes innovants,aquaponics,Aquaponie,Aquaponics,vegetable_fish,Système couplé poissons + plantes
+crop_productions,Systèmes innovants,hydroponics,Hydroponie,Hydroponics,vegetable,Culture hors-sol nutritive
+crop_productions,Systèmes innovants,vertical_farming,Agriculture verticale,Vertical farming,vegetable,"Cultures en étages (urbain, fermes indoor)"
+crop_productions,Systèmes innovants,agroforestry,Agroforesterie,Agroforestry,mixed,Système associant arbres et cultures/pâturage
+crop_productions,Sylviculture,forestry,Sylviculture,Forestry,wood,Gestion forestière (plus large que 'wood')
+crop_productions,Sylviculture,christmas_tree,Sapin de Noël,Christmas tree,ornamental,Production sapins de Noël
+crop_productions,Sylviculture,poplar,Peuplier,Poplar,wood,Populiculture (bois d'œuvre)
+crop_productions,Sylviculture,energy_wood,Bois énergie,Energy wood,wood_energy,"Plaquettes forestières, bois bûches"
+energy_productions,Méthanisation,methanization,Méthanisation,Methanization,biogas,"Production biogaz (lisier, ensilage, déchets)"
+energy_productions,Méthanisation,digestate,Digestat,Digestate,fertilizer,Co-produit fertilisant de la méthanisation
+energy_productions,Solaire,photovoltaic,Photovoltaïque agricole,Photovoltaic,electricity,Panneaux sur bâtiments agricoles
+energy_productions,Solaire,agrivoltaics,Agrivoltaïsme,Agrivoltaics,electricity_crop,Panneaux + cultures/élevage en simultané
+energy_productions,Solaire,solar_thermal,Solaire thermique,Solar thermal,heat,"Eau chaude solaire (élevage, serres)"
+energy_productions,Éolien,wind_turbine,Éolienne,Wind turbine,electricity,Éoliennes sur foncier agricole
+energy_productions,Biomasse,biomass_boiler,Chaudière biomasse,Biomass boiler,heat,Chauffage à partir de biomasse
+energy_productions,Biomasse,biofuel,Agrocarburants,Biofuel,fuel,"Huile végétale brute, biodiesel, bioéthanol"
+energy_productions,Hydraulique,micro_hydro,Micro-hydroélectricité,Micro hydro,electricity,Petites turbines sur cours d'eau
+environmental_productions,Crédits / paiements,carbon_credit,Crédits carbone,Carbon credit,carbon,"Label Bas-Carbone, séquestration C"
+environmental_productions,Crédits / paiements,biodiversity_credit,Crédits biodiversité,Biodiversity credit,biodiversity,Paiements pour services environnementaux
+environmental_productions,Crédits / paiements,water_payment,Paiement qualité de l'eau,Water quality payment,water,Rémunération captage prioritaire
+environmental_productions,Conservation,natura_2000,Mesure Natura 2000,Natura 2000,biodiversity,"Contrats MAEC, Natura 2000"
+environmental_productions,Conservation,wildlife_area,Réserve faunistique,Wildlife area,biodiversity,"Zones refuges, jachères fleuries"
+environmental_productions,Conservation,seed_conservation,Conservation semences paysannes,Seed conservation,seed,"Maison de la semence, conservation variétés anciennes"
+crop_productions,Semences,seed_cereal,Production de semences céréalières,Cereal seed production,seed,Multiplication semences (au-delà maïs/tournesol déjà listés)
+crop_productions,Semences,seed_vegetable,Production de semences potagères,Vegetable seed production,seed,Multiplication semences légumières
+crop_productions,Semences,seed_forage,Production de semences fourragères,Forage seed production,seed,Multiplication semences fourragères/prairies
+crop_productions,Plants/pépinières,vine_nursery,Pépinière viticole,Vine nursery,plant,"Plants de vigne, greffage"
+crop_productions,Plants/pépinières,fruit_nursery,Pépinière fruitière,Fruit nursery,plant,Plants arbres fruitiers
+crop_productions,Plants/pépinières,vegetable_seedling,Plants maraîchers,Vegetable seedlings,plant,Production de plants pour maraîchers

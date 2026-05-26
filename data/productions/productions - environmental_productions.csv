@@ -1,0 +1,7 @@
+reference_name,activity_family,fra,eng,specie,usage,started_on,stopped_on,agroedi_crop_code,season,life_duration,idea_botanic_family,idea_specie_family,idea_output_family
+biodiversity_credit,environmental_service,Crédits biodiversité,Biodiversity credit,biodiversity,biodiversity,01/01/00,31/12/00,,,20,,,
+carbon_credit,environmental_service,Crédits carbone,Carbon credit,carbon,carbon,01/01/00,31/12/00,,,20,,,
+natura_2000,environmental_service,Mesure Natura 2000,Natura 2000,biodiversity,biodiversity,01/01/00,31/12/00,,,20,,,
+seed_conservation,environmental_service,Conservation semences paysannes,Seed conservation,seed,seed,01/01/00,31/12/00,,,20,,,
+water_payment,environmental_service,Paiement qualité de l'eau,Water quality payment,water,water,01/01/00,31/12/00,,,20,,,
+wildlife_area,environmental_service,Réserve faunistique,Wildlife area,biodiversity,biodiversity,01/01/00,31/12/00,,,20,,,

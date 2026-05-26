@@ -54,6 +54,9 @@ module Lexicon
     desc 'production', 'Production related commands'
     subcommand 'production', Commands::ProductionCommand
 
+    desc 'load', 'Load a local package into a remote database (via SSH)'
+    subcommand 'load', Commands::LoadCommand
+
     desc 'validate', 'Validate lexicon schema'
     def validate
       # @type [Array<Database::Validation::DatasourceValidationResult>]

@@ -43,6 +43,8 @@ module Datasources
       load_csv(dir.join('productions - auxiliary_productions.csv'), 'auxiliary_productions')
       load_csv(dir.join('productions - processing_productions.csv'), 'processing_productions')
       load_csv(dir.join('productions - service_productions.csv'), 'service_productions')
+      load_csv(dir.join('productions - energy_productions.csv'), 'energy_productions')
+      load_csv(dir.join('productions - environmental_productions.csv'), 'environmental_productions')
 
       load_csv(dir.join('productions - sna_codes.csv'), 'sna_codes')
       load_csv(dir.join('productions - start_states.csv'), 'start_states')
@@ -176,12 +178,16 @@ module Datasources
       query "DELETE FROM master_translations WHERE id LIKE 'auxiliary_productions%'"
       query "DELETE FROM master_translations WHERE id LIKE 'processing_productions%'"
       query "DELETE FROM master_translations WHERE id LIKE 'service_productions%'"
+      query "DELETE FROM master_translations WHERE id LIKE 'energy_productions%'"
+      query "DELETE FROM master_translations WHERE id LIKE 'environmental_productions%'"
 
       # crop_productions => plant_farming, vine_farming
       # animal_productions => animal_farming
       # auxiliary_productions => tool_maintaining, administering
       # processing_productions => processing, wine_making
       # service_productions => service_delivering
+      # energy_productions => energy_production
+      # environmental_productions => environmental_service
 
       query <<-SQL
         INSERT INTO master_productions (reference_name, activity_family, specie, usage, started_on, stopped_on, agroedi_crop_code, season, life_duration, idea_botanic_family, idea_specie_family, idea_output_family, color, translation_id)
@@ -214,6 +220,18 @@ module Datasources
           CONCAT('service_productions_', reference_name)
           FROM productions.service_productions;
 
+        INSERT INTO master_productions (reference_name, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
+          SELECT reference_name, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
+          CASE WHEN life_duration IS NOT NULL THEN CONCAT(life_duration, ' years')::INTERVAL ELSE NULL END,
+          CONCAT('energy_productions_', reference_name)
+          FROM productions.energy_productions;
+
+        INSERT INTO master_productions (reference_name, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
+          SELECT reference_name, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
+          CASE WHEN life_duration IS NOT NULL THEN CONCAT(life_duration, ' years')::INTERVAL ELSE NULL END,
+          CONCAT('environmental_productions_', reference_name)
+          FROM productions.environmental_productions;
+
         INSERT INTO master_production_start_states (production, year, key)
           SELECT production, year::INTEGER, key
           FROM productions.start_states
@@ -224,6 +242,8 @@ module Datasources
       insert_translations('productions', 'auxiliary_productions', 'auxiliary_productions')
       insert_translations('productions', 'processing_productions', 'processing_productions')
       insert_translations('productions', 'service_productions', 'service_productions')
+      insert_translations('productions', 'energy_productions', 'energy_productions')
+      insert_translations('productions', 'environmental_productions', 'environmental_productions')
 
       query "INSERT INTO master_crop_production_tfi_codes (tfi_code, tfi_label, production, tfi_crop_group, campaign)
         SELECT tfi_code, tfi_label, production, tfi_crop_group, 2020

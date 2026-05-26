@@ -16,6 +16,7 @@ __pycache__/
 /lexicon.rb
 .env
 config/production.yml
+config/remote_targets.yml
 /.yardoc/
 
 

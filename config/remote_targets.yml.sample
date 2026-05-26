@@ -1,0 +1,59 @@
+# Targets pour `./lexicon load <version> --target <profile>`.
+#
+# Chaque profil décrit :
+#   - comment se connecter en SSH au serveur qui héberge psql,
+#   - les paramètres psql à passer côté distant pour atteindre PostgreSQL.
+#
+# Le chargement est exécuté en streaming : la machine locale lit les fichiers
+# .csv.gz du dossier `out/<version>/data/`, les dézippe à la volée et pipe le
+# CSV via SSH vers `psql --copy` qui tourne sur le serveur cible. Aucun
+# fichier n'est copié sur le serveur — seul le flux passe.
+#
+# Copier ce fichier en `config/remote_targets.yml` (ignoré par git) et adapter.
+#
+# Auth psql : laisser `password` vide pour s'appuyer sur le fichier `~/.pgpass`
+# présent sur le serveur SSH cible. C'est la pratique recommandée.
+
+# ────────────────────────────────────────────────────────────────────────────
+# Exemple : prod Ekylibre derrière un bastion
+# ────────────────────────────────────────────────────────────────────────────
+prod_eky:
+  ssh:
+    host: bastion.example.com
+    user: deploy
+    port: 22                    # optionnel
+    identity_file: ~/.ssh/id_ed25519  # optionnel — sinon agent SSH
+    options:                    # optionnel — flags `-o` SSH
+      - StrictHostKeyChecking=accept-new
+  postgres:
+    host: localhost             # vu depuis le serveur SSH (souvent localhost)
+    port: 5432                  # optionnel
+    user: lexicon
+    database: lexicon
+    # password: ...             # optionnel, préférer .pgpass côté serveur
+    # schema: ...               # optionnel — override du nom de schéma cible
+                                # (par défaut dérivé de la version, ex.
+                                # `lexicon__6_0_2-full`).
+    # exec_wrapper: ...         # optionnel — préfixe shell devant `psql`, ex.
+                                # `docker exec -i lexicon-db-1` quand psql vit
+                                # dans un container sur le serveur SSH cible.
+                                # Le `-i` est obligatoire si on stream du CSV.
+
+# ────────────────────────────────────────────────────────────────────────────
+# Exemple : staging accessible directement (le serveur SSH héberge aussi PG)
+# ────────────────────────────────────────────────────────────────────────────
+prod_osfarm:
+  ssh:
+    host: 141.95.202.96
+    user: ubuntu
+    port: 22
+    options:
+        - StrictHostKeyChecking=accept-new
+  postgres:
+    host: localhost
+    user: xxxxx
+    database: xxxxxx
+    password: xxxxxxxxxxxx
+    port: 5555
+    schema: lexicon__6_0_2-full
+    exec_wrapper: docker exec -i lexicon-db-1

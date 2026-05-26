@@ -22,6 +22,8 @@ datasources:
   cap_beneficiaries:
     registered_cap_beneficiaries:
       filter: WHERE commune = 'SAINT PORCHAIRE'
+    registered_cap_subsidies:
+      filter: WHERE sirent IN (SELECT siren FROM lexicon.registered_cap_beneficiaries WHERE commune = 'SAINT PORCHAIRE')
   enterprises:
     registered_enterprises:
       filter: WHERE postal_code = '17250' ORDER BY establishment_number
