@@ -64,6 +64,7 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: ${DB_NAME}
       DB_SCHEMA: ${DB_SCHEMA}
+      EXPOSE_OWNERS: ${EXPOSE_OWNERS}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.lexicon_api.rule=Host(`lexicon.osfarm.org`)"
