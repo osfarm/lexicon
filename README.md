@@ -1,6 +1,6 @@
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="lexicon-icon.svg" alt="logo" width="140"  height="auto" />
+  <img src="lexicon-icon.svg" alt="logo" width="700"  height="auto" />
   <br/>
 
   <h3><b>Lexicon</b></h3>
