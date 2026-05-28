@@ -1,0 +1,8 @@
+{
+  "name": "lexicon-n8n",
+  "description": "n8n workflow automation platform integrated with the Lexicon data pipeline",
+  "requiredEnv": [
+    "N8N_SUBDOMAIN",
+    "N8N_DATA_LOCATION"
+  ]
+}

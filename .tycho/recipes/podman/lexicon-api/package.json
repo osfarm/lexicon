@@ -1,0 +1,12 @@
+{
+  "name": "lexicon-api",
+  "description": "Lexicon REST API service providing reference data aggregation and normalization queries",
+  "requiredEnv": [
+    "LEXICON_SUBDOMAIN",
+    "LEXICON_DB_DATA_LOCATION",
+    "DB_NAME",
+    "DB_USER",
+    "DB_PASSWORD",
+    "DB_SCHEMA"
+  ]
+}

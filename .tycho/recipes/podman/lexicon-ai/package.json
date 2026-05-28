@@ -1,0 +1,9 @@
+{
+  "name": "lexicon-ai",
+  "description": "Self-hosted AI chat interface (Open WebUI) and model runtime (Ollama) for Lexicon",
+  "requiredEnv": [
+    "AI_SUBDOMAIN",
+    "OLLAMA_DATA_LOCATION",
+    "OPENWEBUI_DATA_LOCATION"
+  ]
+}

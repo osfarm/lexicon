@@ -1,0 +1,28 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - ${OLLAMA_DATA_LOCATION:-/data/lexicon/ollama}:/root/.ollama:z
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main
+    restart: always
+    depends_on:
+      - ollama
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.openwebui.rule=Host(`${AI_SUBDOMAIN:-ia}.${DOMAIN_NAME}`)
+      - traefik.http.routers.openwebui.tls=true
+      - traefik.http.routers.openwebui.entrypoints=websecure
+      - traefik.http.routers.openwebui.tls.certresolver=${TRAEFIK_RESOLVER:-myresolver}
+      - traefik.http.services.openwebui.loadbalancer.server.port=8080
+    environment:
+      - WEBUI_NAME=AI_OSFarm
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - WEBUI_URL=https://${AI_SUBDOMAIN:-ia}.${DOMAIN_NAME}
+      - WEBUI_AUTH=true
+    volumes:
+      - ${OPENWEBUI_DATA_LOCATION:-/data/lexicon/openwebui}:/app/backend/data:z

@@ -1,0 +1,32 @@
+services:
+  db:
+    image: ghcr.io/osfarm/lexicon-db:latest
+    restart: always
+    shm_size: 2gb
+    environment:
+      - POSTGRES_DB=${DB_NAME:-lexicon}
+      - POSTGRES_USER=${DB_USER:-lexicon}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-osfarm}
+    volumes:
+      - ${LEXICON_DB_DATA_LOCATION:-/data/lexicon/db}:/var/lib/postgresql/data:z
+
+  api:
+    image: ghcr.io/osfarm/lexicon-rest-api:latest
+    restart: always
+    depends_on:
+      - db
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.lexicon_api.rule=Host(`${LEXICON_SUBDOMAIN:-lexicon}.${DOMAIN_NAME}`)
+      - traefik.http.routers.lexicon_api.tls=true
+      - traefik.http.routers.lexicon_api.entrypoints=websecure
+      - traefik.http.routers.lexicon_api.tls.certresolver=${TRAEFIK_RESOLVER:-myresolver}
+      - traefik.http.services.lexicon_api.loadbalancer.server.port=8888
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=${DB_USER:-lexicon}
+      - DB_PASSWORD=${DB_PASSWORD:-osfarm}
+      - DB_NAME=${DB_NAME:-lexicon}
+      - DB_SCHEMA=${DB_SCHEMA:-lexicon__6_0_0-ekyviti}
+      - EXPOSE_OWNERS=true

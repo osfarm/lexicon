@@ -1,0 +1,6 @@
+{
+  "name": "lexicon",
+  "description": "OSFarm Lexicon recipe repository for reference data pipelines, APIs, and AI workflows",
+  "author": "OSFarm Team",
+  "version": "1.0.0"
+}
