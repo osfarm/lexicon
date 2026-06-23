@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'json'
+
 module Lexicon
   module Commands
     class RemoteCommand < ContainerAwareCommand
@@ -20,10 +22,10 @@ module Lexicon
           result = uploader.upload(package)
 
           if result.success?
+            make_bucket_public(semver.to_s)
             puts "[  OK ] Version #{semver} uploaded.".green
           else
             puts "[ NOK ] Error while uploading: #{result.error}".red
-            log_error(result.error)
           end
         end
       end
@@ -80,6 +82,42 @@ module Lexicon
       end
 
       private
+
+        # Applies a MinIO "download" policy on the bucket so its objects can be
+        # downloaded anonymously (without credentials), e.g. for the open source
+        # distribution. Equivalent of `mc anonymous set download <alias>/<bucket>`.
+        #
+        # Files then become reachable at:
+        #   #{MINIO_HOST}/<version>/<key>   (force_path_style is enabled)
+        #
+        # @param [String] bucket
+        def make_bucket_public(bucket)
+          # @type [Aws::S3::Client] s3
+          s3 = get('minio.client')
+
+          policy = {
+            'Version' => '2012-10-17',
+            'Statement' => [
+              {
+                'Effect' => 'Allow',
+                'Principal' => { 'AWS' => ['*'] },
+                'Action' => ['s3:GetBucketLocation', 's3:ListBucket'],
+                'Resource' => ["arn:aws:s3:::#{bucket}"],
+              },
+              {
+                'Effect' => 'Allow',
+                'Principal' => { 'AWS' => ['*'] },
+                'Action' => ['s3:GetObject'],
+                'Resource' => ["arn:aws:s3:::#{bucket}/*"],
+              },
+            ],
+          }
+
+          s3.put_bucket_policy(bucket: bucket, policy: JSON.dump(policy))
+          puts "[  OK ] Anonymous download enabled for version #{bucket}".green
+        rescue StandardError => e
+          puts "[ WARN ] Could not enable anonymous download on #{bucket}: #{e.message}".yellow
+        end
 
         # @param [Aws::S3::Client] s3
         # @param [String] name

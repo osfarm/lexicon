@@ -19,6 +19,8 @@ module Datasources
           previous_reference_name character varying,
           fr_pcga character varying,
           fr_pcg82 character varying,
+          fr_pcg2019 character varying,
+          fr_pcg2023 character varying,
           name jsonb
         );
 
@@ -28,8 +30,8 @@ module Datasources
 
     def normalize
       query <<-SQL
-        INSERT INTO master_chart_of_accounts (id, reference_name, previous_reference_name, fr_pcga, fr_pcg82, name)
-          SELECT n::INTEGER, name, previous_name, fr_pcga, fr_pcg82, CONCAT('{"fra":"', label_fr, '"}')::JSONB
+        INSERT INTO master_chart_of_accounts (id, reference_name, previous_reference_name, fr_pcga, fr_pcg82, fr_pcg2019, fr_pcg2023, name)
+          SELECT n::INTEGER, name, previous_name, fr_pcga, fr_pcg82, fr_pcg2019, fr_pcg2023, CONCAT('{"fra":"', label_fr, '"}')::JSONB
           FROM chart_of_accounts.chart_of_accounts
       SQL
     end

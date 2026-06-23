@@ -83,7 +83,9 @@ To use these commands, credentials for a S3 compatible server needs to be added 
     - Files are downloaded in the `out` directory. Downloading a package is like `run` + `dump all`
 - `./lexicon remote delete <VERSION>` Deletes the given version from the remote storage. There is no going back!
 
-For open source version, you have to add a specific open source policy on minio serveur throught mc s3 client (see doc on Ekylibre Drive for that in Tech/Applicatifs plateforme/Minio)
+Anonymous download (without credentials) is enabled automatically: on each successful `upload`, a public MinIO "download" policy is applied to the version bucket, so the package files become reachable at `<MINIO_HOST>/<VERSION>/<key>` (e.g. `https://io.ekylibre.tech/6.0.2/lexicon.json`) without authentication.
+
+To open access to versions that were uploaded **before** this behavior existed, apply the policy manually on the MinIO server with the `mc` client, e.g. `mc anonymous set download <alias>/<VERSION>` (see doc on Ekylibre Drive in Tech/Applicatifs plateforme/Minio).
 
 ## Production related commands
 
