@@ -1,10 +1,10 @@
 electricity:
   - "Electricité Heures Normales"
   - "Electricité Heures Pointe Mobile"
-  - "Contribution au Service Public de l''Electricité"
+  - "Contribution au Service Public de l'Electricité"
   - "Taxe Départementale sur la Conso Finale Electricité"
   - "Taxe Communale sur la Conso Finale Electricité"
-  - "Contribution Tarifaire d''Acheminement"
+  - "Contribution Tarifaire d'Acheminement"
 equipment_part:
   - "FILTRE DE CABINE"
   - "ELEMENT RELEV . HYDR . FILTR"
@@ -13,7 +13,7 @@ equipment_part:
 oenological_product:
   - "NUTRI PERFECT 1KG"
   - "NUTRIVIT PH 1KG"
-  - "PHOSPHATE D''AMMONIUM 1KG"
+  - "PHOSPHATE D'AMMONIUM 1KG"
   - "RAPIDASE CLEAR EXTREM / CB 100G"
   - "SOLUTION SO2 EURALIS 10 % 5KG"
 oil_and_lubricate:

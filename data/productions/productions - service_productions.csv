@@ -1,28 +1,28 @@
-reference_name,activity_family,fra,eng,specie,usage,started_on,stopped_on,agroedi_crop_code,season,life_duration,idea_botanic_family,idea_specie_family,idea_output_family
-direct_sale,service_delivering,Vente directe,Direct sale,service,,01/01/00,31/12/00,,,20,,,
-indirect_sale,service_delivering,Vente indirecte,Indirect sale,service,,01/01/00,31/12/00,,,20,,,
-external_service,service_delivering,Prestation de service,External service,service,,01/01/00,31/12/00,,,20,,,
-agronomic_advice,service_delivering,Conseil agronomique,Agronomic advice,service,service,01/01/00,31/12/00,,,20,,,
-amap_csa,service_delivering,AMAP / Panier,CSA basket,service,retail,01/01/00,31/12/00,,,20,,,
-animal_boarding,service_delivering,Pension d'animaux,Animal boarding,service,service,01/01/00,31/12/00,,,20,,,
-bed_and_breakfast,service_delivering,Chambres d'hôtes,Bed and breakfast,service,lodging,01/01/00,31/12/00,,,20,,,
-camping,service_delivering,Camping à la ferme,Farm camping,service,camping,01/01/00,31/12/00,,,20,,,
-composting_service,service_delivering,Compostage à façon,Composting service,service,service,01/01/00,31/12/00,,,20,,,
-contract_work,service_delivering,Entreprise de travaux agricoles,Agricultural contract work,service,service,01/01/00,31/12/00,,,20,,,
-cuma_sharing,service_delivering,Mise en commun CUMA,CUMA sharing,service,service,01/01/00,31/12/00,,,20,,,
-educational_farm,service_delivering,Ferme pédagogique,Educational farm,service,education,01/01/00,31/12/00,,,20,,,
-equipment_renting,service_delivering,Location matériel,Equipment renting,service,service,01/01/00,31/12/00,,,20,,,
-farm_inn,service_delivering,Ferme auberge,Farm inn,service,catering,01/01/00,31/12/00,,,20,,,
-farm_lodging,service_delivering,Gîte rural,Farm lodging,service,lodging,01/01/00,31/12/00,,,20,,,
-farm_shop,service_delivering,Boutique à la ferme,Farm shop,service,retail,01/01/00,31/12/00,,,20,,,
-farm_visit,service_delivering,Visites de ferme,Farm visit,service,tourism,01/01/00,31/12/00,,,20,,,
-grazing_service,service_delivering,Éco-pâturage,Eco-grazing,service,service,01/01/00,31/12/00,,,20,,,
-hedge_maintenance,service_delivering,Entretien haies/bocage,Hedge maintenance,service,service,01/01/00,31/12/00,,,20,,,
-horse_riding,service_delivering,Centre équestre,Riding center,service,service,01/01/00,31/12/00,,,20,,,
-land_renting,service_delivering,Location de foncier,Land renting,service,service,01/01/00,31/12/00,,,20,,,
-market_sale,service_delivering,Vente sur marché,Market sale,service,retail,01/01/00,31/12/00,,,20,,,
-online_sale,service_delivering,Vente en ligne,Online sale,service,retail,01/01/00,31/12/00,,,20,,,
-pick_your_own,service_delivering,Cueillette à la ferme,Pick your own,service,retail,01/01/00,31/12/00,,,20,,,
-pollination_service,service_delivering,Service de pollinisation,Pollination service,service,service,01/01/00,31/12/00,,,20,,,
-training,service_delivering,Formation / Apprentissage,Training apprenticeship,service,service,01/01/00,31/12/00,,,20,,,
-transport,service_delivering,Transport agricole,Agricultural transport,service,service,01/01/00,31/12/00,,,20,,,
+reference_name,activity_family,fra,eng,specie,usage,started_on,stopped_on,agroedi_crop_code,season,life_duration,idea_botanic_family,idea_specie_family,idea_output_family,support_unit
+direct_sale,service_delivering,Vente directe,Direct sale,service,,01/01/00,31/12/00,,,20,,,,unity
+indirect_sale,service_delivering,Vente indirecte,Indirect sale,service,,01/01/00,31/12/00,,,20,,,,unity
+external_service,service_delivering,Prestation de service,External service,service,,01/01/00,31/12/00,,,20,,,,unity
+agronomic_advice,service_delivering,Conseil agronomique,Agronomic advice,service,service,01/01/00,31/12/00,,,20,,,,unity
+amap_csa,service_delivering,AMAP / Panier,CSA basket,service,retail,01/01/00,31/12/00,,,20,,,,unity
+animal_boarding,service_delivering,Pension d'animaux,Animal boarding,service,service,01/01/00,31/12/00,,,20,,,,unity
+bed_and_breakfast,service_delivering,Chambres d'hôtes,Bed and breakfast,service,lodging,01/01/00,31/12/00,,,20,,,,unity
+camping,service_delivering,Camping à la ferme,Farm camping,service,camping,01/01/00,31/12/00,,,20,,,,unity
+composting_service,service_delivering,Compostage à façon,Composting service,service,service,01/01/00,31/12/00,,,20,,,,unity
+contract_work,service_delivering,Entreprise de travaux agricoles,Agricultural contract work,service,service,01/01/00,31/12/00,,,20,,,,unity
+cuma_sharing,service_delivering,Mise en commun CUMA,CUMA sharing,service,service,01/01/00,31/12/00,,,20,,,,unity
+educational_farm,service_delivering,Ferme pédagogique,Educational farm,service,education,01/01/00,31/12/00,,,20,,,,unity
+equipment_renting,service_delivering,Location matériel,Equipment renting,service,service,01/01/00,31/12/00,,,20,,,,unity
+farm_inn,service_delivering,Ferme auberge,Farm inn,service,catering,01/01/00,31/12/00,,,20,,,,unity
+farm_lodging,service_delivering,Gîte rural,Farm lodging,service,lodging,01/01/00,31/12/00,,,20,,,,unity
+farm_shop,service_delivering,Boutique à la ferme,Farm shop,service,retail,01/01/00,31/12/00,,,20,,,,unity
+farm_visit,service_delivering,Visites de ferme,Farm visit,service,tourism,01/01/00,31/12/00,,,20,,,,unity
+grazing_service,service_delivering,Éco-pâturage,Eco-grazing,service,service,01/01/00,31/12/00,,,20,,,,unity
+hedge_maintenance,service_delivering,Entretien haies/bocage,Hedge maintenance,service,service,01/01/00,31/12/00,,,20,,,,unity
+horse_riding,service_delivering,Centre équestre,Riding center,service,service,01/01/00,31/12/00,,,20,,,,unity
+land_renting,service_delivering,Location de foncier,Land renting,service,service,01/01/00,31/12/00,,,20,,,,unity
+market_sale,service_delivering,Vente sur marché,Market sale,service,retail,01/01/00,31/12/00,,,20,,,,unity
+online_sale,service_delivering,Vente en ligne,Online sale,service,retail,01/01/00,31/12/00,,,20,,,,unity
+pick_your_own,service_delivering,Cueillette à la ferme,Pick your own,service,retail,01/01/00,31/12/00,,,20,,,,unity
+pollination_service,service_delivering,Service de pollinisation,Pollination service,service,service,01/01/00,31/12/00,,,20,,,,unity
+training,service_delivering,Formation / Apprentissage,Training apprenticeship,service,service,01/01/00,31/12/00,,,20,,,,unity
+transport,service_delivering,Transport agricole,Agricultural transport,service,service,01/01/00,31/12/00,,,20,,,,unity

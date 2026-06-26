@@ -24,7 +24,7 @@ surface_area_density,Densité surfacique,Surface area density,./m²
 surface_area_flow,Débit surfacique,Surface area flow,m²/s
 temperature,Température,Temperature,K
 time,Temps,Time,s
-unity_unity_density,Quantité de matière par unité,Unity unity density,'÷’
+unity_unity_density,Quantité de matière par unité,Unity unity density,÷
 volume,Volume,Volume,m³
 volume_area_density,Volume par surface,Volume area density,m³/m²
 volume_concentration,Concentration volumique,Volume concentration,m³/m³

@@ -142,7 +142,7 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `postal_codes` | 39,192 | 711 | ✔ | 2026-05-08 | Groupe La Poste | French Enterprises postal and insee codes with gps coordinates | 
 | `prices` | 2,337 | 0.77 | ⨯ | 2022-02-22 | Ekylibre SAS | Price catalog of variants | 
 | `production_documentations` | 149 | 0.08 | ⨯ | 2026-05-22 | Triple Performance (collectif) | Liens entre les productions Ekylibre et la documentation Triple Performance | 
-| `productions` | 19,912 | 3.3 | ⨯ | 2021-09-10 | Ekylibre SAS | Production database | 
+| `productions` | 19,912 | 3.32 | ⨯ | 2021-09-10 | Ekylibre SAS | Production database | 
 | `protected_natural_zones` | 1,762 | 90.1 | ✔ | 2024-12-01 | MNHN / INPN | Natura 2000 — Sites SIC et ZPS (MNHN/INPN, NATURA_BDD 12/2024) | 
 | `protected_water_zones` | 1,585 | 8.09 | ✔ | 2025-01-27 | IGN | protected water zone from SANDRE | 
 | `quality_and_origin_signs` | 5,255 | 1.05 | ⨯ | 2025-03-10 | INAO | AOC - AOP - IGP | 
@@ -159,7 +159,7 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `vine_varieties` | 416 | 0.2 | ⨯ | 2020-10-19 | FranceAgriMer | Vine varieties | 
 | `weather` | 214,843,019 | 44,144 | ✔ | 2025-05-23 | Météo France | Historical weather | 
 
-_Last refreshed: 2026-06-23 15:51 UTC_
+_Last refreshed: 2026-06-26 13:18 UTC_
 <!-- AUTOGEN_DATASOURCES_END -->
 
 See [doc/DATASOURCES.md](doc/DATASOURCES.md) for more informations

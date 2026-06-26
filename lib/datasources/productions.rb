@@ -70,7 +70,7 @@ module Datasources
     end
 
     def self.table_definitions(builder)
-      builder.table(:master_productions, sql: <<-SQL)
+      builder.table(:master_productions, sql: <<-SQL).references(support_unit: [:master_units, :reference_name])
         CREATE TABLE master_productions (
           reference_name character varying PRIMARY KEY NOT NULL,
           activity_family character varying NOT NULL,
@@ -81,6 +81,7 @@ module Datasources
           agroedi_crop_code character varying,
           season character varying,
           life_duration interval,
+          support_unit character varying NOT NULL,
           idea_botanic_family character varying,
           idea_specie_family character varying,
           idea_output_family character varying,
@@ -92,6 +93,7 @@ module Datasources
         CREATE INDEX master_productions_specie ON master_productions(specie);
         CREATE INDEX master_productions_activity_family ON master_productions(activity_family);
         CREATE INDEX master_productions_agroedi_crop_code ON master_productions(agroedi_crop_code);
+        CREATE INDEX master_productions_support_unit ON master_productions(support_unit);
       SQL
 
       builder.table(:master_production_start_states, sql: <<-SQL).references(production: [:master_productions, :reference_name])
@@ -190,44 +192,44 @@ module Datasources
       # environmental_productions => environmental_service
 
       query <<-SQL
-        INSERT INTO master_productions (reference_name, activity_family, specie, usage, started_on, stopped_on, agroedi_crop_code, season, life_duration, idea_botanic_family, idea_specie_family, idea_output_family, color, translation_id)
-          SELECT reference_name, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'), agroedi_crop_code, season,
+        INSERT INTO master_productions (reference_name, support_unit,activity_family, specie, usage, started_on, stopped_on, agroedi_crop_code, season, life_duration, idea_botanic_family, idea_specie_family, idea_output_family, color, translation_id)
+          SELECT reference_name, support_unit, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'), agroedi_crop_code, season,
           CASE WHEN life_duration IS NOT NULL THEN CONCAT(life_duration, ' years')::INTERVAL ELSE NULL END,
           idea_botanic_family, idea_specie_family, idea_output_family, color, CONCAT('crop_productions_', reference_name)
           FROM productions.crop_productions;
 
-        INSERT INTO master_productions (reference_name, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
-          SELECT reference_name, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
+        INSERT INTO master_productions (reference_name, support_unit, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
+          SELECT reference_name, support_unit, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
           CASE WHEN life_duration IS NOT NULL THEN CONCAT(life_duration, ' years')::INTERVAL ELSE NULL END,
           CONCAT('animal_productions_', reference_name)
           FROM productions.animal_productions;
 
-        INSERT INTO master_productions (reference_name, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
-          SELECT reference_name, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
+        INSERT INTO master_productions (reference_name, support_unit, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
+          SELECT reference_name, support_unit, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
           CASE WHEN life_duration IS NOT NULL THEN CONCAT(life_duration, ' years')::INTERVAL ELSE NULL END,
           CONCAT('auxiliary_productions_', reference_name)
           FROM productions.auxiliary_productions;
 
-        INSERT INTO master_productions (reference_name, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
-          SELECT reference_name, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
+        INSERT INTO master_productions (reference_name, support_unit, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
+          SELECT reference_name, support_unit, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
           CASE WHEN life_duration IS NOT NULL THEN CONCAT(life_duration, ' years')::INTERVAL ELSE NULL END,
           CONCAT('processing_productions_', reference_name)
           FROM productions.processing_productions;
 
-        INSERT INTO master_productions (reference_name, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
-          SELECT reference_name, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
+        INSERT INTO master_productions (reference_name, support_unit, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
+          SELECT reference_name, support_unit, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
           CASE WHEN life_duration IS NOT NULL THEN CONCAT(life_duration, ' years')::INTERVAL ELSE NULL END,
           CONCAT('service_productions_', reference_name)
           FROM productions.service_productions;
 
-        INSERT INTO master_productions (reference_name, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
-          SELECT reference_name, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
+        INSERT INTO master_productions (reference_name, support_unit, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
+          SELECT reference_name, support_unit, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
           CASE WHEN life_duration IS NOT NULL THEN CONCAT(life_duration, ' years')::INTERVAL ELSE NULL END,
           CONCAT('energy_productions_', reference_name)
           FROM productions.energy_productions;
 
-        INSERT INTO master_productions (reference_name, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
-          SELECT reference_name, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
+        INSERT INTO master_productions (reference_name, support_unit, activity_family, specie, usage, started_on, stopped_on, life_duration, translation_id)
+          SELECT reference_name, support_unit, activity_family, specie, usage, TO_DATE(started_on, 'DD/MM/YY'), TO_DATE(stopped_on, 'DD/MM/YY'),
           CASE WHEN life_duration IS NOT NULL THEN CONCAT(life_duration, ' years')::INTERVAL ELSE NULL END,
           CONCAT('environmental_productions_', reference_name)
           FROM productions.environmental_productions;

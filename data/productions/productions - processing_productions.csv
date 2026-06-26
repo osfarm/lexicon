@@ -1,32 +1,32 @@
-reference_name,activity_family,fra,eng,specie,usage,started_on,stopped_on,agroedi_crop_code,season,life_duration,idea_botanic_family,idea_specie_family,idea_output_family
-winery,wine_making,Chai,winery,vine_grape_must,,01/01/00,31/12/00,,,20,,,
-wine_storehouse,wine_making,Élevage barrique,Wine barrel storehouse,wine,,01/01/00,31/12/00,,,20,,,
-meat_laboratory,processing,Transformation viande,Meat laboratory,meat,,01/01/00,31/12/00,,,20,,,
-milk_laboratory,processing,Transformation lait,Milk laboratory,milk,,01/01/00,31/12/00,,,20,,,
-vegetable_laboratory,processing,Transformation production végétale,Vegetal laboratory,,,01/01/00,31/12/00,,,20,,,
-bakery,processing,Boulangerie fermière,Farm bakery,grain,bread,01/01/00,31/12/00,,,20,,,
-brewery,wine_making,Brasserie,Brewery,grain,beer,01/01/00,31/12/00,,,20,,,
-butter_making,processing,Beurrerie,Butter making,milk,butter,01/01/00,31/12/00,,,20,,,
-canning_meat,processing,Conserverie viande,Meat cannery,meat,canned_meat,01/01/00,31/12/00,,,20,,,
-canning_vegetable,processing,Conserverie légumes/fruits,Vegetable cannery,vegetable,canned_vegetable,01/01/00,31/12/00,,,20,,,
-charcuterie,processing,Charcuterie,Charcuterie,meat,cured_meat,01/01/00,31/12/00,,,20,,,
-cheese_making,processing,Fromagerie,Cheese making,milk,cheese,01/01/00,31/12/00,,,20,,,
-cidery,wine_making,Cidrerie,Cidery,fruit,cider,01/01/00,31/12/00,,,20,,,
-cosmetic_workshop,processing,Atelier cosmétique,Cosmetic workshop,plant,cosmetic,01/01/00,31/12/00,,,20,,,
-cutting_workshop,processing,Atelier de découpe,Cutting workshop,meat,meat_cut,01/01/00,31/12/00,,,20,,,
-distillery,wine_making,Distillerie,Distillery,wine,spirit,01/01/00,31/12/00,,,20,,,
-drying_workshop,processing,Atelier de séchage,Drying workshop,plant,dried_product,01/01/00,31/12/00,,,20,,,
-essential_oil,processing,Distillerie d'huiles essentielles,Essential oil distillery,plant,essential_oil,01/01/00,31/12/00,,,20,,,
-flour_mill,processing,Moulin / farine,Flour mill,grain,flour,01/01/00,31/12/00,,,20,,,
-honey_house,processing,Miellerie,Honey house,honey,honey,01/01/00,31/12/00,,,20,,,
-ice_cream_making,processing,Glacerie,Ice cream making,milk,ice_cream,01/01/00,31/12/00,,,20,,,
-jam_making,processing,Confiturerie,Jam making,fruit,jam,01/01/00,31/12/00,,,20,,,
-juice_making,processing,Jus de fruits,Juice making,fruit,juice,01/01/00,31/12/00,,,20,,,
-kombucha_kefir,processing,Kombucha / Kéfir,Kombucha kefir,plant,fermented_drink,01/01/00,31/12/00,,,20,,,
-legume_processing,processing,Transformation légumineuses,Legume processing,grain,legume_product,01/01/00,31/12/00,,,20,,,
-oil_press,processing,Huilerie,Oil press,seed,oil,01/01/00,31/12/00,,,20,,,
-pasta_making,processing,Atelier pâtes,Pasta making,grain,pasta,01/01/00,31/12/00,,,20,,,
-pastry,processing,Pâtisserie fermière,Farm pastry,grain,pastry,01/01/00,31/12/00,,,20,,,
-soap_making,processing,Savonnerie,Soap making,milk,soap,01/01/00,31/12/00,,,20,,,
-vinegar_making,processing,Vinaigrerie,Vinegar making,wine,vinegar,01/01/00,31/12/00,,,20,,,
-yogurt_making,processing,Yaourterie,Yogurt making,milk,yogurt,01/01/00,31/12/00,,,20,,,
+reference_name,activity_family,fra,eng,specie,usage,started_on,stopped_on,agroedi_crop_code,season,life_duration,idea_botanic_family,idea_specie_family,idea_output_family,support_unit
+winery,wine_making,Chai,winery,vine_grape_must,,01/01/00,31/12/00,,,20,,,,unity
+wine_storehouse,wine_making,Élevage barrique,Wine barrel storehouse,wine,,01/01/00,31/12/00,,,20,,,,unity
+meat_laboratory,processing,Transformation viande,Meat laboratory,meat,,01/01/00,31/12/00,,,20,,,,unity
+milk_laboratory,processing,Transformation lait,Milk laboratory,milk,,01/01/00,31/12/00,,,20,,,,unity
+vegetable_laboratory,processing,Transformation production végétale,Vegetal laboratory,,,01/01/00,31/12/00,,,20,,,,unity
+bakery,processing,Boulangerie fermière,Farm bakery,grain,bread,01/01/00,31/12/00,,,20,,,,unity
+brewery,wine_making,Brasserie,Brewery,grain,beer,01/01/00,31/12/00,,,20,,,,unity
+butter_making,processing,Beurrerie,Butter making,milk,butter,01/01/00,31/12/00,,,20,,,,unity
+canning_meat,processing,Conserverie viande,Meat cannery,meat,canned_meat,01/01/00,31/12/00,,,20,,,,unity
+canning_vegetable,processing,Conserverie légumes/fruits,Vegetable cannery,vegetable,canned_vegetable,01/01/00,31/12/00,,,20,,,,unity
+charcuterie,processing,Charcuterie,Charcuterie,meat,cured_meat,01/01/00,31/12/00,,,20,,,,unity
+cheese_making,processing,Fromagerie,Cheese making,milk,cheese,01/01/00,31/12/00,,,20,,,,unity
+cidery,wine_making,Cidrerie,Cidery,fruit,cider,01/01/00,31/12/00,,,20,,,,unity
+cosmetic_workshop,processing,Atelier cosmétique,Cosmetic workshop,plant,cosmetic,01/01/00,31/12/00,,,20,,,,unity
+cutting_workshop,processing,Atelier de découpe,Cutting workshop,meat,meat_cut,01/01/00,31/12/00,,,20,,,,unity
+distillery,wine_making,Distillerie,Distillery,wine,spirit,01/01/00,31/12/00,,,20,,,,unity
+drying_workshop,processing,Atelier de séchage,Drying workshop,plant,dried_product,01/01/00,31/12/00,,,20,,,,unity
+essential_oil,processing,Distillerie d'huiles essentielles,Essential oil distillery,plant,essential_oil,01/01/00,31/12/00,,,20,,,,unity
+flour_mill,processing,Moulin / farine,Flour mill,grain,flour,01/01/00,31/12/00,,,20,,,,unity
+honey_house,processing,Miellerie,Honey house,honey,honey,01/01/00,31/12/00,,,20,,,,unity
+ice_cream_making,processing,Glacerie,Ice cream making,milk,ice_cream,01/01/00,31/12/00,,,20,,,,unity
+jam_making,processing,Confiturerie,Jam making,fruit,jam,01/01/00,31/12/00,,,20,,,,unity
+juice_making,processing,Jus de fruits,Juice making,fruit,juice,01/01/00,31/12/00,,,20,,,,unity
+kombucha_kefir,processing,Kombucha / Kéfir,Kombucha kefir,plant,fermented_drink,01/01/00,31/12/00,,,20,,,,unity
+legume_processing,processing,Transformation légumineuses,Legume processing,grain,legume_product,01/01/00,31/12/00,,,20,,,,unity
+oil_press,processing,Huilerie,Oil press,seed,oil,01/01/00,31/12/00,,,20,,,,unity
+pasta_making,processing,Atelier pâtes,Pasta making,grain,pasta,01/01/00,31/12/00,,,20,,,,unity
+pastry,processing,Pâtisserie fermière,Farm pastry,grain,pastry,01/01/00,31/12/00,,,20,,,,unity
+soap_making,processing,Savonnerie,Soap making,milk,soap,01/01/00,31/12/00,,,20,,,,unity
+vinegar_making,processing,Vinaigrerie,Vinegar making,wine,vinegar,01/01/00,31/12/00,,,20,,,,unity
+yogurt_making,processing,Yaourterie,Yogurt making,milk,yogurt,01/01/00,31/12/00,,,20,,,,unity
