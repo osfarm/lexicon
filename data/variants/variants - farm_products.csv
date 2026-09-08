@@ -150,6 +150,7 @@ marjoram,Marjolaine,Marjoram,plant_derivative,plant_derivative,kilogram,origanum
 melilot_hay,Foin de Mélilot,Melilot hay,plant_derivative,hay,ton,melilotus,,,,,,,,,,uf95a-hay.svg
 melon,Melon,Melon,fruit_and_vegetable,fruit,ton,cucumis_melo,,,,,,,,,,uf987-fruits.svg
 millet_grain,Grain de Millet,Millet grain,plant_derivative,grain,quintal,panicum_miliaceum,,,,,,,,,,uf989-seed.svg
+milk,Lait,Milk,animal_derivative,milk,liter,bos_taurus,,,,,,,,,,uf95f-milk.svg
 mint,Menthe,Mint,plant_derivative,plant_derivative,kilogram,mentha,,,,,,,,,,uf940-seedling-solid.svg
 miscanthus,Miscanthus,Miscanthus,plant_derivative,plant_derivative,kilogram,miscanthus,,,,,,,,,,uf940-seedling-solid.svg
 mulberry,Mûre (arbre),Mulberry,fruit_and_vegetable,fruit,ton,morus,,,,,,,,,,uf987-fruits.svg
@@ -208,6 +209,8 @@ rutabaga,Rutabaga,Rutabaga,fruit_and_vegetable,vegetable,ton,brassica_napus_rapi
 rye_grain,Grain de Seigle,Rye grain,plant_derivative,grain,quintal,secale_cereale,,,,,,,,,,uf989-seed.svg
 rye_silage,Ensilage de Seigle,Rye silage,plant_derivative,silage,ton,secale_cereale,,,,,,,,,,uf98d-silo.svg
 rye_straw,Paille de Seigle,Rye straw,plant_derivative,straw,ton,secale_cereale,mass_volume_density,100,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
+rye_grass_hay,Foin de Ray-grass,Ryegrass hay,plant_derivative,hay,ton,lolium,mass_volume_density,130,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
+rye_grass_silage,Ensilage de Ray-grass,Ryegrass silage,plant_derivative,silage,ton,lolium,,,,,,,,,,uf98d-silo.svg
 ryegrass_hay,Foin de Ray-grass,Ryegrass hay,plant_derivative,hay,ton,lolium,mass_volume_density,130,kilogram_per_cubic_meter,,,,,,,uf95a-hay.svg
 ryegrass_silage,Ensilage de Ray-grass,Ryegrass silage,plant_derivative,silage,ton,lolium,,,,,,,,,,uf98d-silo.svg
 sage,Sauge,Sage,plant_derivative,plant_derivative,kilogram,salvia,,,,,,,,,,uf940-seedling-solid.svg

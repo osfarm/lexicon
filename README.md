@@ -138,28 +138,28 @@ See [doc/USAGE.md](doc/USAGE.md) for more informations
 | `msa_populations` | 49,756 | 7.92 | ⨯ | 2026-05-16 | Caisse Centrale de la Mutualité Sociale Agricole (CCMSA) | MSA populations: retraités, chefs d'exploitation et nouveaux installés par commune | 
 | `open_nomenclature` | 11,382 | 5.27 | ⨯ | 2020-02-12 | Ekylibre SAS | Open Nomenclature | 
 | `phenological_stages` | 54 | 0.03 | ⨯ | 2020-02-12 | Ekylibre SAS | Phenological stages | 
-| `phytosanitary` | 122,297 | 140 | ⨯ | 2025-05-20 | ANSES | Phytosanitary products database from Ephy | 
+| `phytosanitary` | 123,138 | 142 | ⨯ | 2026-09-01 | ANSES | Phytosanitary products database from Ephy | 
 | `postal_codes` | 39,192 | 711 | ✔ | 2026-05-08 | Groupe La Poste | French Enterprises postal and insee codes with gps coordinates | 
-| `prices` | 2,337 | 0.77 | ⨯ | 2022-02-22 | Ekylibre SAS | Price catalog of variants | 
+| `prices` | 2,494 | 0.79 | ⨯ | 2022-02-22 | Ekylibre SAS | Price catalog of variants | 
 | `production_documentations` | 149 | 0.08 | ⨯ | 2026-05-22 | Triple Performance (collectif) | Liens entre les productions Ekylibre et la documentation Triple Performance | 
 | `productions` | 19,912 | 3.32 | ⨯ | 2021-09-10 | Ekylibre SAS | Production database | 
 | `protected_natural_zones` | 1,762 | 90.1 | ✔ | 2024-12-01 | MNHN / INPN | Natura 2000 — Sites SIC et ZPS (MNHN/INPN, NATURA_BDD 12/2024) | 
 | `protected_water_zones` | 1,585 | 8.09 | ✔ | 2025-01-27 | IGN | protected water zone from SANDRE | 
 | `quality_and_origin_signs` | 5,255 | 1.05 | ⨯ | 2025-03-10 | INAO | AOC - AOP - IGP | 
-| `rica` | 96,809 | 648 | ⨯ | 2025-04-07 | SSP / Agreste | RICA (Réseau d Information Comptable Agricole) — microdonnées comptables agricoles annuelles | 
+| `rica` | 112,878 | 658 | ⨯ | 2025-04-07 | SSP / Agreste | RICA (Réseau d Information Comptable Agricole) — microdonnées comptables agricoles annuelles | 
 | `seed_varieties` | 20,479 | 3.47 | ⨯ | 2025-01-26 | SEMAE | Seed varieties from GNIS (Groupement National Interprofessionnel des Semences et plants) | 
 | `soil` | 3,651 | 10.5 | ✔ | 2022-01-12 | INRAE | Agronomical soil data from INRAE | 
 | `taxonomy` | 855 | 0.2 | ⨯ | 2021-01-27 | Ekylibre SAS | Taxonomy | 
 | `technical_workflow_sequences` | 25 | 0.13 | ⨯ | 2020-02-12 | Ekylibre SAS | Technical workflows chaining for multiannual production | 
-| `technical_workflows` | 1,321 | 1.02 | ⨯ | 2021-09-10 | Ekylibre SAS | Technical workflows references | 
-| `translations` | 3,232 | 0.63 | ⨯ | 2021-01-27 | Ekylibre SAS | Translations of variants, productions, taxonomy and user_roles | 
+| `technical_workflows` | 1,321 | 1.03 | ⨯ | 2021-09-10 | Ekylibre SAS | Technical workflows references | 
+| `translations` | 3,268 | 0.68 | ⨯ | 2021-01-27 | Ekylibre SAS | Translations of variants, productions, taxonomy and user_roles | 
 | `units` | 189 | 0.17 | ⨯ | 2022-02-23 | Ekylibre SAS | Dimensions, units and packaging | 
 | `user_roles` | 4 | 0.03 | ⨯ | 2022-02-23 | Ekylibre SAS | User roles | 
-| `variants` | 1,607 | 0.69 | ⨯ | 2021-09-10 | Ekylibre SAS | Articles, Equipments, Services, Crops, Animals, Workers and Zones | 
+| `variants` | 1,643 | 0.69 | ⨯ | 2021-09-10 | Ekylibre SAS | Articles, Equipments, Services, Crops, Animals, Workers and Zones | 
 | `vine_varieties` | 416 | 0.2 | ⨯ | 2020-10-19 | FranceAgriMer | Vine varieties | 
 | `weather` | 214,843,019 | 44,144 | ✔ | 2025-05-23 | Météo France | Historical weather | 
 
-_Last refreshed: 2026-06-26 13:18 UTC_
+_Last refreshed: 2026-09-08 09:27 UTC_
 <!-- AUTOGEN_DATASOURCES_END -->
 
 See [doc/DATASOURCES.md](doc/DATASOURCES.md) for more informations

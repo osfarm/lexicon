@@ -32,3 +32,10 @@ n,name,article,price,currency,packaging,date
 31,barley_grain_bulk,barley_grain,228,euro,ton_bulk,01/07/2021
 32,corn_grain_bulk,corn_grain,302,euro,ton_bulk,01/07/2021
 33,grape_bulk_bulk,grape_bulk,97.5,euro,hectoliter_bulk,01/01/2019
+34,common_wheat_grain_bulk,common_wheat_grain,196.75,euro,ton_bulk,01/07/2026
+35,field_bean_bulk,field_bean,160.3,euro,ton_bulk,01/01/2019
+36,rye_silage_bulk,rye_silage,150,euro,ton_bulk,01/01/2026
+37,calf_bulk,calf,250,euro,unity_bulk,01/01/2026
+38,rye_grass_hay_bulk,rye_grass_hay,80,euro,ton_bulk,01/01/2019
+39,rye_grass_silage_bulk,rye_grass_silage,55,euro,ton_bulk,01/01/2019
+40,milk_bulk,milk,385,euro,ton_bulk,01/07/2021

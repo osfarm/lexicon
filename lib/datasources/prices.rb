@@ -14,6 +14,7 @@ module Datasources
       load_csv(dir.join('prices - farm_product_costs.csv'), 'farm_product_costs')
       load_csv(dir.join('prices - fertilizer_costs.csv'), 'fertilizer_costs')
       load_csv(dir.join('prices - phytosanitary_costs.csv'), 'phytosanitary_costs')
+      load_csv(dir.join('prices - phytosanitary_amm_costs.csv'), 'phytosanitary_amm_costs')
       load_csv(dir.join('prices - equipment_costs.csv'), 'equipment_costs')
       load_csv(dir.join('prices - worker_contracts.csv'), 'worker_contracts')
     end
@@ -89,11 +90,17 @@ module Datasources
          currency, packaging, TO_DATE(date, 'DD/MM/YYYY'), 'cost'
          FROM prices.seed_costs;
 
+        INSERT INTO master_prices (id, reference_name, reference_article_name, unit_pretax_amount,
+        currency, reference_packaging_name, started_on, usage)
+         SELECT CONCAT('PE', n), name, article, price::NUMERIC,
+         currency, packaging, TO_DATE(date, 'DD/MM/YYYY'), 'cost'
+         FROM prices.phytosanitary_costs;
+
         INSERT INTO master_phytosanitary_prices (id, reference_name, reference_article_name, unit_pretax_amount,
          currency, reference_packaging_name, started_on, usage)
           SELECT CONCAT('PH', n), name, article_id::INTEGER, price::NUMERIC,
           currency, packaging, TO_DATE(date, 'DD/MM/YYYY'), 'cost'
-          FROM prices.phytosanitary_costs;
+          FROM prices.phytosanitary_amm_costs;
 
         INSERT INTO master_prices (id, reference_name, reference_article_name, unit_pretax_amount,
           currency, reference_packaging_name, started_on, usage)

@@ -75,3 +75,7 @@ n,name,article,price,currency,packaging,date
 74,10_15_20_bulk,10_15_20,425,euro,ton_bulk,29/09/2021
 75,ammonitrate_33_bulk,ammonitrate_33,397,euro,ton_bulk,01/10/2021
 76,18_46_0_bulk,18_46_0,290,euro,ton_bulk,01/01/2021
+77,ammonitrate_33_bulk,ammonitrate_33,500,euro,ton_bulk,01/07/2026
+78,potassium_chloride_bulk,potassium_chloride,358,euro,ton_bulk,01/07/2026
+79,tsp_45_bulk,tsp_45,650,euro,ton_bulk,01/07/2026
+80,compost_cattle_manure_bulk,compost_cattle_manure,10,euro,ton_bulk,01/01/2019

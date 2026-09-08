@@ -15,6 +15,7 @@ module Datasources
       load_csv(dir.join('variants - farm_products.csv'), 'farm_products')
       load_csv(dir.join('variants - seeds_and_plants.csv'), 'seeds_and_plants')
       load_csv(dir.join('variants - fertilizers.csv'), 'fertilizers')
+      load_csv(dir.join('variants - phytosanitary.csv'), 'phytosanitary')
       load_csv(dir.join('variants - other_articles.csv'), 'other_articles')
       load_csv(dir.join('variants - equipments.csv'), 'equipments')
       load_csv(dir.join('variants - services.csv'), 'services')
@@ -143,7 +144,11 @@ module Datasources
             'uf3d7-filter-tilt-shift.svg', CONCAT('variants_', reference_name)
           FROM variants.fertilizers;
 
-        INSERT INTO master_variants (reference_name, family, category, nature, default_unit, target_specie, indicators, pictogram, translation_id) -- Other articles
+        INSERT INTO master_variants (reference_name, family, category, nature, sub_family, default_unit, indicators, pictogram, translation_id) -- Phytosanitary
+          SELECT reference_name, 'article', 'plant_medicine', nature, 'plant_medicine', default_unit, '{}'::JSONB, 'uf94b-chemical-product.svg', CONCAT('variants_', reference_name)
+          FROM variants.phytosanitary;
+        
+          INSERT INTO master_variants (reference_name, family, category, nature, default_unit, target_specie, indicators, pictogram, translation_id) -- Other articles
           SELECT reference_name, 'article', category, nature, default_unit, target_specie, '{}'::JSONB, pictogram, CONCAT('variants_', reference_name)
           FROM variants.other_articles;
 
@@ -183,6 +188,7 @@ module Datasources
       insert_translations('variants', 'farm_products', 'variants')
       insert_translations('variants', 'seeds_and_plants', 'variants')
       insert_translations('variants', 'fertilizers', 'variants')
+      insert_translations('variants', 'phytosanitary', 'variants')
       insert_translations('variants', 'other_articles', 'variants')
       insert_translations('variants', 'equipments', 'variants')
       insert_translations('variants', 'services', 'variants')
@@ -195,9 +201,11 @@ module Datasources
       file = File.new(dir.join('variant_aliases.yml'))
       data = YAML.safe_load(file.read).deep_symbolize_keys
       data.each do |k, v|
+        tags = v.map { |s| s.downcase.strip.gsub("'", "''") }.join(',')
+        ref  = k.to_s.gsub("'", "''")
         query "UPDATE lexicon.master_variants
-               SET name_tags = '{#{v.map{ |s| s.downcase.strip}.join(',')}}'
-               WHERE reference_name = '#{k.to_s}'"
+               SET name_tags = '{#{tags}}'
+               WHERE reference_name = '#{ref}'"
       end
 
     end

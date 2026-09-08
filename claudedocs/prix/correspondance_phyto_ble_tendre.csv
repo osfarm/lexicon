@@ -1,0 +1,7 @@
+article_id,france_maaid,nom_commercial,firm_name,product_type,state,itk_role,itk_dose,itk_unit,packaging_cible,prix_ht,source_prix,date
+2100112,2100112,BAÏA E,ADAMA FRANCE SAS,PPP,authorized,regulateur_croissance,0.6,l,liter_bulk,9.78,CEGARA barème blé tendre (Régulateur croissance €/l),01/12/2016
+2110178,2110178,AVIATOR XPRO,BAYER SAS,PPP,authorized,fongicide_fusariose,1,l,liter_bulk,40.23,CEGARA barème blé tendre (Fongicide €/kg~l),01/12/2016
+2130075,2130075,METAREX INO,DE SANGOSSE S.A.S,PPP,authorized,anti_limace,3,kg,kilo_bulk,4.75,CEGARA barème blé tendre (Anti-limace €/kg),01/12/2016
+2140186,2050046,AFIKILL,TOP SAS,PCP,inherited,insecticide,0.14,kg,kilo_bulk,72.89,CEGARA barème blé tendre (Insecticide €/l~kg),01/12/2016
+2200102,2161101,AKELA,GRITCHE,PCP,inherited,fongicide,1.5,l,liter_bulk,40.23,CEGARA barème blé tendre (Fongicide €/kg~l),01/12/2016
+9800277,9800277,PRIMUS,Corteva Agriscience France S.A.S.,PPP,authorized,herbicide,0.15,l,liter_bulk,20.35,CEGARA barème blé tendre (Herbicide postlevée €/l),01/12/2016

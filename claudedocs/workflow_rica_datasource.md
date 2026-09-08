@@ -69,7 +69,11 @@ Les données RICA décrivent chaque année quelques milliers d'exploitations éc
 - `CDEXE` — classe de dimension économique
 - `DCLOTC` — date de clôture d'exercice
 - `FJURI` — forme juridique
-- `SAUTI` / `SUTOT` — surfaces (SAU, totale)
+- `SAUTI` / `SUTOT` — **codes de tranche** de SAU et de superficie totale, pas des surfaces.
+  Le FMD est une publication anonymisée : le dictionnaire les déclare `char` et leur libellé
+  porte la mention `(tranche)`. Les bornes se lisent dans `registered_rica_modalities`
+  (`lower_bound` / `upper_bound` / `bound_unit`). Voir
+  [`design_rica_band_columns.md`](design_rica_band_columns.md).
 - `PBRTO` / `EBEXP` / `RESEX` — soldes de gestion (PBR, EBE, résultat)
 - … + ~900 autres variables (productions, charges détaillées, capital, financement, animaux par espèce…)
 
@@ -181,8 +185,8 @@ builder.table :registered_rica_holdings, sql: <<-SQL
     less_favoured_zone character varying,   -- zdefa
     environmental_zone character varying,   -- zenvi
     closing_date date,                      -- dclotc
-    sau_ha numeric(10,2),                   -- sauti
-    total_area_ha numeric(10,2),            -- sutot
+    sau_band integer,                       -- sauti — code de tranche, PAS des hectares
+    total_area_band integer,                -- sutot — code de tranche, PAS des hectares
     gross_product numeric(14,2),            -- pbrto
     gross_operating_surplus numeric(14,2),  -- ebexp
     operating_result numeric(14,2),         -- resex
@@ -201,7 +205,7 @@ builder.table :registered_rica_variables, sql: <<-SQL
     year INTEGER NOT NULL,
     code character varying NOT NULL,
     label character varying,
-    data_type character varying,            -- num / char
+    data_type character varying,            -- num / char (2016-2022), numérique / caractères (2023+)
     length integer,
     PRIMARY KEY (year, code)
   );
@@ -213,6 +217,9 @@ builder.table :registered_rica_modalities, sql: <<-SQL
     variable_code character varying NOT NULL,
     modality_code character varying NOT NULL,
     label character varying,
+    lower_bound numeric,                    -- borne basse incluse, NULL si non quantitatif
+    upper_bound numeric,                    -- borne haute exclue, NULL si tranche ouverte
+    bound_unit character varying,           -- hectare, head, euro, year, … NULL si non quantitatif
     PRIMARY KEY (year, variable_code, modality_code)
   );
 SQL
@@ -265,6 +272,9 @@ SQL
 8. **`Rica_France_micro_Donnees_ex2022_corrige.csv`** : le suffixe `_corrige` signale une correction post-publication ; c'est la version à utiliser (pas de fichier original à côté).
 9. **Caractères accentués dans les noms de dossier** (`RicaMicrodonnées`) : les paths Ruby les acceptent en UTF-8, mais à tester dans le conteneur (locale).
 10. **Données sensibles** : RICA est sous accord de diffusion contrôlé (CASD/SSP). Confirmer que la datasource peut être incluse dans un package public / quel flavor.
+11. **Le FMD est une publication anonymisée : la plupart de ses grandeurs sont des tranches, pas des mesures.** Toute variable dont le libellé du dictionnaire contient `(tranche)` ou dont le `data_type` vaut `char` / `caractères` est un **code ordinal**. Croiser systématiquement avec `registered_rica_modalities` avant de promouvoir une variable en colonne native — c'est la vérification qu'a omise la première version et qui a produit `sau_ha` (cf. [`design_rica_band_columns.md`](design_rica_band_columns.md)). En 2024, 123 des ~985 variables sont dans ce cas, dont les 47 `SUT3*` (surfaces par culture) et les 35 `EFM6*` (effectifs par catégorie animale). Pièges symétriques : `SUI3*` (surface irriguée) et `SUD4*` (surface développée horticole) sont, elles, en **hectares réels**.
+12. **Le vocabulaire du dictionnaire change au millésime 2023** : `num` / `char` jusqu'à 2022, `numérique` / `caractères` à partir de 2023. Tout contrôle sur `data_type` doit accepter les deux orthographes.
+13. **Les `.txt` 2016-2018 ne sont pas du CSV propre** : lignes encadrées de guillemets, séparateur surnuméraire en fin de ligne, ligne vide finale. Sans nettoyage préalable le `COPY` échoue et le millésime se charge **vide et sans erreur visible** — c'est ce qui privait `registered_rica_variables` et `registered_rica_modalities` de 2016-2018. Voir `clean_legacy_file` dans la datasource.
 
 ---
 
@@ -292,6 +302,10 @@ SQL
 - Le total de lignes correspond à la somme attendue (à valider sur les méthodologies SSP).
 - `./lexicon validate` passe.
 - La datasource apparaît dans `./lexicon list`.
+- Aucune colonne du schéma `lexicon` ne porte un suffixe d'unité (`_ha`) sur une valeur qui n'est pas dans cette unité.
+- `registered_rica_variables` et `registered_rica_modalities` contiennent une ligne pour **chacun** des 9 millésimes (2016 inclus).
+- `registered_rica_modalities` porte des bornes pour les 105 variables de tranche quantitatives de 2024, et `NULL` pour les 18 nomenclatures.
+- Une tentative de promotion d'une variable `char` en colonne numérique non suffixée `_band` échoue au chargement, en nommant la variable.
 
 ---
 

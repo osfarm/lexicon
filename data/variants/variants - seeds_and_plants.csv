@@ -146,6 +146,7 @@ pineapple_seedling,Plant d'Ananas,Pineapple seedling,seedling,unity,ananas_comos
 pistachio_seedling,Plant de Pistachier,Pistachio seedling,seedling,unity,pistacia_vera,
 plum_seedling,Plant de Prunier,Plum seedling,seedling,unity,prunus_domestica,
 potato_seed,Semence de Pomme de terre,Potato seed,seed,kilogram,solanum_tuberosum,
+potato_plant,Plant de Pomme de terre,Potato plant,seedling,unity,solanum_tuberosum,
 primrose_seed,Semence de Primevère,Primrose seed,seed,kilogram,primula,
 pumpkin_seed,Semence de Citrouille,Pumpkin seed,seed,kilogram,cucurbita_pepo_pepo,
 purslane_seed,Semence de Pourpier,Purslane seed,seed,kilogram,portulaca_oleracea,

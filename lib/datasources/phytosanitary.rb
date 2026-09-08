@@ -1,7 +1,7 @@
 module Datasources
   class Phytosanitary < Base
     description 'Phytosanitary products database from Ephy'
-    credits name: 'Catalogues des produits de protection des végétaux', url: "https://www.data.gouv.fr/fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges/", provider: "ANSES", licence: "Open Licence", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf", updated_at: "2025-05-20"
+    credits name: 'Catalogues des produits de protection des végétaux', url: "https://www.data.gouv.fr/fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges/", provider: "ANSES", licence: "Open Licence", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf", updated_at: "2026-09-01"
 
     BASE_URL = "https://www.data.gouv.fr/api/1/datasets/r"
 
@@ -222,11 +222,15 @@ module Datasources
         UPDATE registered_phytosanitary_usages SET species = CONCAT('{', name, '}')::TEXT[] FROM registered_phytosanitary_cropsets -- Update usage species with cropsets
           WHERE registered_phytosanitary_usages.crop_label_fra = registered_phytosanitary_cropsets.label ->> 'fra';
 
-        UPDATE registered_phytosanitary_usages SET species[1] = crop_varieties.name -- Update usage species with open nomenclature
+        -- Update usage species with open nomenclature. OpenNomenclature used to load one raw
+        -- table per nomenclature (open_nomenclature.varieties); since 19eb03f it loads a single
+        -- `nomenclatures` table discriminated by its first column.
+        UPDATE registered_phytosanitary_usages SET species[1] = crop_varieties.name
           FROM (SELECT usages.id, varieties.name
             FROM registered_phytosanitary_usages usages
-            JOIN open_nomenclature.varieties varieties
-            ON usages.crop_label_fra = varieties.label ->> 'fra') crop_varieties
+            JOIN open_nomenclature.nomenclatures varieties
+            ON varieties.nomenclature = 'varieties'
+            AND usages.crop_label_fra = varieties.label ->> 'fra') crop_varieties
           WHERE registered_phytosanitary_usages.id = crop_varieties.id AND species = '{plant}';
 
         UPDATE registered_phytosanitary_usages SET species = CONCAT('{', eky_species, '}')::TEXT[] FROM phytosanitary.exceptions -- Update usage species with exceptions
