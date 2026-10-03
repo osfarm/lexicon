@@ -2,6 +2,7 @@ module Datasources
   class Variants < Base
     description 'Articles, Equipments, Services, Crops, Animals, Workers and Zones'
     credits name: 'Catalogues d articles de référence', url: "https://ekylibre.com", provider: "Ekylibre SAS", licence: "CC-BY-SA 4.0", licence_url: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr", updated_at: "2021-09-10"
+    translations :categories, :natures, :variants
 
     def collect
       #Collect each csv file in variants directory

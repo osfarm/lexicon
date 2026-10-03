@@ -4,95 +4,108 @@ require 'digest'
 
 module Lexicon
   module Server
-    # Replaces the tables in service by the staged ones, in a single transaction.
+    # Replaces tables in service by the staged ones, in a single transaction.
     class Swapper
       ATTEMPTS = 5
       LOCK_TIMEOUT = '5s'
 
       # @param [PG::Connection] connection
+      # @param [Catalog] catalog
+      # @param [DerivedViews] derived_views
       # @param [Float] retry_delay seconds between two attempts to take the locks
       # @param [String] lock_timeout how long an attempt waits for the readers of the tables
-      def initialize(connection, retry_delay: 2.0, lock_timeout: LOCK_TIMEOUT)
+      def initialize(connection, catalog:, derived_views:, retry_delay: 2.0, lock_timeout: LOCK_TIMEOUT)
         @connection = connection
+        @catalog = catalog
+        @derived_views = derived_views
         @retry_delay = retry_delay
         @lock_timeout = lock_timeout
       end
 
-      # @param [Packaging::Manifest] manifest
-      # @param [Array<String>] previous_tables tables of the version in service
-      # @yield in the transaction, once the tables are swapped
-      def swap(manifest, previous_tables: [], &block)
-        attempt = 1
+      # @param [Array<Packaging::Manifest>] manifests packages staged, put in service together
+      # @param [Array<String>] previous_tables tables of the versions in service
+      # @yield in the transaction, once the tables are swapped: the place to record the packages
+      def swap(manifests, previous_tables: [], &block)
+        tables = manifests.flat_map { |manifest| manifest.tables.map { |table| table[:name] } }
+        foreign_keys = manifests.flat_map(&:foreign_keys)
 
-        begin
-          connection.transaction { swap_tables(manifest, previous_tables, &block) }
-        rescue PG::LockNotAvailable
-          raise LoadFailure.new("tables are in use: locks not obtained after #{ATTEMPTS} attempts") if attempt >= ATTEMPTS
+        exclusively do
+          replaced = catalog.existing_tables((previous_tables + tables).uniq)
+          inbound = catalog.inbound_foreign_keys(replaced)
 
-          attempt += 1
-          sleep(@retry_delay)
-          retry
-        rescue PG::ForeignKeyViolation => e
-          raise LoadFailure.new("a foreign key does not hold with the new data: #{e.message.lines.first(2).map(&:strip).join(' ')}")
+          derived_views.drop
+          drop_foreign_keys(inbound)
+          connection.exec("DROP TABLE #{replaced.map { |table| served(table) }.join(', ')}") if replaced.any?
+          tables.each do |table|
+            connection.exec(%(ALTER TABLE "#{Meta::STAGING_SCHEMA}"."#{table}" SET SCHEMA "#{Meta::SERVED_SCHEMA}"))
+          end
+          foreign_keys.each { |key| add_foreign_key(key) }
+          restore_foreign_keys(inbound)
+
+          block&.call
+          derived_views.create
         end
+      end
+
+      # Takes tables out of service.
+      #
+      # @param [Array<String>] tables
+      # @yield in the transaction, once the tables are dropped
+      def remove(tables, &block)
+        exclusively do
+          derived_views.drop
+          existing = catalog.existing_tables(tables)
+          connection.exec("DROP TABLE #{existing.map { |table| served(table) }.join(', ')}") if existing.any?
+
+          block&.call
+          derived_views.create
+        end
+      rescue PG::DependentObjectsStillExist => e
+        raise LoadFailure.new("other tables depend on them: #{e.message.lines.first.strip}")
       end
 
       private
 
         # @return [PG::Connection]
         attr_reader :connection
+        # @return [Catalog]
+        attr_reader :catalog
+        # @return [DerivedViews]
+        attr_reader :derived_views
 
-        def swap_tables(manifest, previous_tables)
-          # An empty search path makes Postgres print every name qualified
-          connection.exec("SET LOCAL lock_timeout TO '#{@lock_timeout}'; SET LOCAL search_path TO pg_catalog")
+        # Runs the block in a transaction that gives up quickly when readers hold the tables
+        def exclusively
+          attempt = 1
 
-          tables = manifest.tables.map { |table| table[:name] }
-          replaced = existing_tables((previous_tables + tables).uniq)
-          inbound = inbound_foreign_keys(replaced)
+          begin
+            connection.transaction do
+              # With an empty search path, Postgres prints the definitions of the foreign keys fully qualified
+              connection.exec("SET LOCAL lock_timeout TO '#{@lock_timeout}'; SET LOCAL search_path TO pg_catalog")
+              yield
+            end
+          rescue PG::LockNotAvailable
+            raise LoadFailure.new("tables are in use: locks not obtained after #{ATTEMPTS} attempts") if attempt >= ATTEMPTS
 
-          inbound.each { |key| connection.exec(%(ALTER TABLE #{key['referencing']} DROP CONSTRAINT "#{key['name']}")) }
-          connection.exec("DROP TABLE #{replaced.map { |table| served(table) }.join(', ')}") if replaced.any?
-          tables.each do |table|
-            connection.exec(%(ALTER TABLE "#{Meta::STAGING_SCHEMA}"."#{table}" SET SCHEMA "#{Meta::SERVED_SCHEMA}"))
+            attempt += 1
+            sleep(@retry_delay)
+            retry
+          rescue PG::ForeignKeyViolation => e
+            raise LoadFailure.new("a foreign key does not hold with the new data: #{e.message.lines.first(2).map(&:strip).join(' ')}")
           end
-
-          manifest.foreign_keys.each { |key| add_foreign_key(key) }
-          inbound.each do |key|
-            connection.exec(%(ALTER TABLE #{key['referencing']} ADD CONSTRAINT "#{key['name']}" #{key['definition']}))
-          end
-
-          yield if block_given?
         end
 
         def served(table)
           %("#{Meta::SERVED_SCHEMA}"."#{table}")
         end
 
-        def existing_tables(tables)
-          connection.exec_params(<<~SQL, [Meta::SERVED_SCHEMA, PG::TextEncoder::Array.new.encode(tables)]).map { |row| row['tablename'] }
-            SELECT tablename::varchar FROM pg_tables WHERE schemaname = $1 AND tablename = ANY($2::varchar[]) ORDER BY 1
-          SQL
+        def drop_foreign_keys(keys)
+          keys.each { |key| connection.exec(%(ALTER TABLE #{key['referencing']} DROP CONSTRAINT "#{key['name']}")) }
         end
 
-        # Foreign keys of tables that stay in service, pointing to tables about to be replaced
-        def inbound_foreign_keys(replaced)
-          return [] if replaced.empty?
-
-          connection.exec_params(<<~SQL, [Meta::SERVED_SCHEMA, PG::TextEncoder::Array.new.encode(replaced)]).to_a
-            SELECT pg_constraint.conrelid::regclass::text AS referencing,
-                   pg_constraint.conname::text AS name,
-                   pg_get_constraintdef(pg_constraint.oid) AS definition
-              FROM pg_constraint
-              JOIN pg_class target ON target.oid = pg_constraint.confrelid
-              JOIN pg_namespace target_namespace ON target_namespace.oid = target.relnamespace
-              JOIN pg_class referencing ON referencing.oid = pg_constraint.conrelid
-              JOIN pg_namespace referencing_namespace ON referencing_namespace.oid = referencing.relnamespace
-             WHERE pg_constraint.contype = 'f'
-               AND target_namespace.nspname = $1
-               AND target.relname = ANY($2::varchar[])
-               AND NOT (referencing_namespace.nspname = $1 AND referencing.relname = ANY($2::varchar[]))
-             ORDER BY 1, 2
-          SQL
+        def restore_foreign_keys(keys)
+          keys.each do |key|
+            connection.exec(%(ALTER TABLE #{key['referencing']} ADD CONSTRAINT "#{key['name']}" #{key['definition']}))
+          end
         end
 
         def add_foreign_key(key)

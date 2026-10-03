@@ -65,19 +65,75 @@ module Lexicon
     method_option :validate, type: :boolean, default: true, desc: 'Refuse datasources with empty tables or missing foreign keys'
 
     def package(*names)
-      definitions = get('database.schema.definitions').map { |set| [set.name, set] }.to_h
-      datasources = get('datasource.all').transform_keys(&:to_s).slice(*definitions.keys)
+      datasources = packaged_datasources
 
       unknown = names - datasources.keys
       if unknown.any?
-        puts '[ NOK ] '.red + "Unknown datasources: #{unknown.join(', ')}"
+        puts '[ NOK ] '.red + "Unknown or not packaged datasources: #{unknown.join(', ')}"
         exit 1
       end
 
+      builder = get('packaging.builder')
       failed = (names.empty? ? datasources.keys.sort : names).reject do |name|
-        package_datasource(datasources.fetch(name), definitions.fetch(name))
+        package_datasource(builder, datasources.fetch(name), packaged_definitions.fetch(name))
       end
 
+      exit 1 if failed.any?
+    end
+
+    desc 'publish [NAMES]', 'Send the latest packages to the serving side and designate them (name or name@version)'
+
+    def publish(*targets)
+      repository = get('packaging.repository')
+      publisher = get('packaging.publisher')
+
+      (targets.empty? ? repository.names : targets).each do |target|
+        name, version = target.split('@', 2)
+        puts '[  OK ] '.green + name.yellow + " #{publisher.publish(name, version: version)} published"
+      end
+    rescue Packaging::Rsync::TransferError, ArgumentError => e
+      puts '[ NOK ] '.red + e.message
+      exit 1
+    end
+
+    desc 'status', 'Latest local version of each package, and the one published'
+
+    def status
+      repository = get('packaging.repository')
+      published = get('packaging.publisher').published
+
+      (repository.names | published.keys).sort.each do |name|
+        local = repository.versions(name).last
+        current = published.dig(name, :current)
+        state = local == current ? '' : ' to publish'.red
+
+        puts "#{name.ljust(32).yellow} local #{(local || '-').ljust(14)} published #{current || '-'}#{local.nil? ? '' : state}"
+      end
+    rescue Packaging::Rsync::TransferError => e
+      puts '[ NOK ] '.red + e.message
+      exit 1
+    end
+
+    desc 'bundle FLAVOR [NAMES]', 'Build in out/bundles/FLAVOR a repository of packages filtered by a flavor'
+    method_option :jobs, type: :numeric, default: 4, desc: 'Tables exported at once'
+    method_option :validate, type: :boolean, default: true, desc: 'Refuse datasources with empty tables or missing foreign keys'
+
+    def bundle(flavor_name, *only)
+      flavor = get('flavor.loader').load(flavor_name).unwrap!
+      repository = Packaging::Repository.new(get('parameter.bundles.root').join(flavor.name))
+      builder = get('packaging.builder_factory').call(repository)
+
+      names = packaged_datasources.keys.sort - flavor.without
+      names &= flavor.only unless flavor.only.nil?
+      names &= only if only.any?
+      failed = names.reject do |name|
+        built = package_datasource(builder, packaged_datasources.fetch(name), packaged_definitions.fetch(name), flavor: flavor)
+        repository.set_current(name, repository.versions(name).last) if built
+
+        built
+      end
+
+      puts "Bundle #{flavor.name.yellow}: #{names.size - failed.size} packages in #{repository.root}"
       exit 1 if failed.any?
     end
 
@@ -109,8 +165,20 @@ module Lexicon
 
     private
 
+      # @return [Hash{String => Database::Schema::TableDefinitionSet}]
+      def packaged_definitions
+        @packaged_definitions ||= get('database.schema.definitions').map { |set| [set.name, set] }.to_h
+      end
+
+      # @return [Hash{String => Class<Datasources::Base>}] datasources defining tables and shipped as packages
+      def packaged_datasources
+        @packaged_datasources ||= get('datasource.all').transform_keys(&:to_s)
+                                                       .slice(*packaged_definitions.keys)
+                                                       .select { |_name, datasource| datasource.packaged? }
+      end
+
       # @return [Boolean] whether the package has been built
-      def package_datasource(datasource, definition_set)
+      def package_datasource(builder, datasource, definition_set, flavor: nil)
         name = definition_set.name
 
         if options['validate']
@@ -127,7 +195,7 @@ module Lexicon
           end
         end
 
-        manifest = get('packaging.builder').build(datasource, definition_set, jobs: options['jobs']) do |table|
+        manifest = builder.build(datasource, definition_set, jobs: options['jobs'], flavor: flavor) do |table|
           puts "        #{name}: #{table} exported" if options['verbose']
         end
         rows = manifest.tables.sum { |table| table[:rows] }

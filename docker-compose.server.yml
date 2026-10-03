@@ -1,0 +1,93 @@
+# Lexicon v2, serving side. Deployed by Dokploy as a compose stack on the osfarm_lexicon server.
+# Design: claudedocs/design_lexicon_v2_j1.md
+#
+# Variables, set in Dokploy:
+#   POSTGRES_PASSWORD      password of the lexicon role
+#   LEXICON_PACKAGES_DIR   directory of the host receiving the packages of `./lexicon publish`
+#
+# Domains are attached in Dokploy to `api` (port 8888) and `packages` (port 80).
+
+services:
+  db:
+    build:
+      context: docker/db
+    restart: unless-stopped
+    shm_size: 2gb
+    # The data is rebuilt from the packages: no replication, so loads skip the WAL (wal_level=minimal).
+    # Memory is sized for a server shared with other stacks.
+    command: >
+      postgres
+      -c max_connections=50
+      -c shared_buffers=6GB
+      -c effective_cache_size=14GB
+      -c work_mem=64MB
+      -c maintenance_work_mem=2GB
+      -c wal_level=minimal
+      -c max_wal_senders=0
+      -c max_wal_size=16GB
+      -c checkpoint_timeout=30min
+    environment:
+      POSTGRES_DB: lexicon
+      POSTGRES_USER: lexicon
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?}
+    volumes:
+      - lexicon_server_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lexicon -d lexicon"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    networks:
+      - lexicon
+
+  loader:
+    build:
+      context: .
+    restart: unless-stopped
+    command: ["./lexicon-cli", "server", "watch", "--interval", "300"]
+    environment:
+      LEXICON_SERVER_DATABASE_URL: postgres://lexicon:${POSTGRES_PASSWORD:?}@db:5432/lexicon
+      LEXICON_PACKAGES_ROOT: /packages
+    volumes:
+      - ${LEXICON_PACKAGES_DIR:?}:/packages
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - lexicon
+
+  packages:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    command: ["caddy", "file-server", "--root", "/packages", "--browse", "--listen", ":80"]
+    volumes:
+      - ${LEXICON_PACKAGES_DIR:?}:/packages:ro
+    networks:
+      - dokploy-network
+
+  api:
+    image: ghcr.io/osfarm/lexicon-rest-api:latest
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8888
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: lexicon
+      DB_PASSWORD: ${POSTGRES_PASSWORD:?}
+      DB_NAME: lexicon
+      DB_SCHEMA: lexicon
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - lexicon
+      - dokploy-network
+
+networks:
+  lexicon:
+  dokploy-network:
+    external: true
+
+volumes:
+  lexicon_server_db:

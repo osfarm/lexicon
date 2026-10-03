@@ -16,6 +16,7 @@ module Datasources
             licence_url: 'https://creativecommons.org/licenses/by-sa/4.0/deed.fr',
             updated_at: '2026-09-15'
     depends_on :taxonomy, :open_nomenclature
+    translations :industry_sectors
 
     RULE_CRITERIA = %w[activity_family usage taxon crop_set production].freeze
 

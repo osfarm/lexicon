@@ -27,6 +27,31 @@ module Lexicon
         def get_dependencies
           @dependencies || []
         end
+
+        # Prefixes of the identifiers this datasource writes in master_translations: its package ships
+        # them in a table of its own.
+        #
+        # @param [Array<#to_s>] prefixes
+        def translations(*prefixes)
+          @translation_prefixes = (get_translation_prefixes + prefixes.map(&:to_s)).uniq
+        end
+
+        # @return [Array<String>]
+        def get_translation_prefixes
+          @translation_prefixes || []
+        end
+
+        # A datasource that is not packaged only exists on the build side.
+        #
+        # @param [Boolean] value
+        def packaged(value)
+          @packaged = value
+        end
+
+        # @return [Boolean]
+        def packaged?
+          @packaged != false
+        end
       end
     end
   end

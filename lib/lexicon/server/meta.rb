@@ -10,7 +10,7 @@ module Lexicon
       SERVED_SCHEMA = 'lexicon'
       STAGING_SCHEMA = 'lexicon_staging'
 
-      Installed = Struct.new(:name, :version, :schema_revision, :structure_hash, :loaded_at, :manifest, keyword_init: true)
+      Installed = Struct.new(:name, :version, :schema_revision, :structure_hash, :loaded_at, :stale, :manifest, keyword_init: true)
 
       # @param [PG::Connection] connection
       def initialize(connection)
@@ -51,6 +51,16 @@ module Lexicon
                         CHECK (state IN ('loading', 'checking', 'swapped', 'failed', 'rolled_back')),
             detail      jsonb
           );
+
+          CREATE OR REPLACE VIEW "#{SERVED_SCHEMA}".datasource_credits AS
+            SELECT packages.name AS datasource,
+                   credit->>'name' AS name,
+                   credit->>'url' AS url,
+                   credit->>'provider' AS provider,
+                   credit->>'licence' AS licence,
+                   credit->>'licence_url' AS licence_url,
+                   (credit->>'updated_at')::timestamptz AS updated_at
+              FROM #{SCHEMA}.packages, jsonb_array_elements(packages.manifest->'credits') AS credit;
         SQL
       end
 
@@ -69,6 +79,7 @@ module Lexicon
             schema_revision: row['schema_revision'].to_i,
             structure_hash: row['structure_hash'],
             loaded_at: Time.parse(row['loaded_at']),
+            stale: row['stale'] == 't',
             manifest: JSON.parse(row['manifest'], symbolize_names: true)
           )
         end
@@ -87,6 +98,51 @@ module Lexicon
       def tables_of(name)
         connection.exec_params("SELECT table_name FROM #{SCHEMA}.package_tables WHERE package = $1 ORDER BY 1", [name])
                   .map { |row| row['table_name'] }
+      end
+
+      # @param [String] role
+      # @return [Array<String>] tables having that role in the packages in service
+      def tables_with_role(role)
+        connection.exec_params(<<~SQL, [role]).map { |row| row['name'] }
+          SELECT entry->>'name' AS name
+            FROM #{SCHEMA}.packages, jsonb_array_elements(packages.manifest->'tables') AS entry
+           WHERE entry->>'role' = $1
+           ORDER BY 1
+        SQL
+      end
+
+      # A package is stale when one it depends on is no longer at the version it was built against.
+      # To call in the transaction that swaps tables.
+      def refresh_stale
+        connection.exec(<<~SQL)
+          UPDATE #{SCHEMA}.packages
+             SET stale = EXISTS (
+                   SELECT 1
+                     FROM jsonb_array_elements(packages.manifest->'depends_on') AS dependency
+                     JOIN #{SCHEMA}.packages AS depended ON depended.name = dependency->>'name'
+                    WHERE dependency->>'built_against' IS NOT NULL
+                      AND dependency->>'built_against' <> depended.version
+                 )
+        SQL
+      end
+
+      # @param [String] name
+      def remove_package(name)
+        connection.exec_params("DELETE FROM #{SCHEMA}.package_tables WHERE package = $1", [name])
+        connection.exec_params("DELETE FROM #{SCHEMA}.packages WHERE name = $1", [name])
+      end
+
+      # @param [String] name
+      # @return [Hash, nil] the load that put the version in service: 'id', 'version', 'previous'
+      def load_in_service(name)
+        connection.exec_params(<<~SQL, [name]).first
+          SELECT loads.id, loads.version, loads.previous
+            FROM #{SCHEMA}.loads
+            JOIN #{SCHEMA}.packages ON packages.name = loads.name AND packages.version = loads.version
+           WHERE loads.name = $1 AND loads.state = 'swapped'
+           ORDER BY loads.id DESC
+           LIMIT 1
+        SQL
       end
 
       # Puts a package in the registry. To call in the transaction that swaps its tables.

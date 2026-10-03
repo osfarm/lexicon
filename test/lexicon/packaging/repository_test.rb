@@ -38,6 +38,31 @@ module Lexicon
         assert_equal '2026.10.03.10', @repository.latest('units').version
       end
 
+      def test_index_designates_the_current_version
+        publish('units', '2026.10.02.1')
+        publish('units', '2026.10.03.1')
+        assert_equal '2026.10.03.1', @repository.current('units')
+
+        @repository.set_current('units', '2026.10.02.1')
+
+        assert_equal '2026.10.02.1', @repository.current('units')
+        index = JSON.parse(@root.join('index.json').read)
+        assert_equal %w[2026.10.02.1 2026.10.03.1], index.dig('datasources', 'units', 'versions')
+        assert_raises(ArgumentError) { @repository.set_current('units', '2026.01.01.1') }
+        assert_equal ['units'], @repository.names
+      end
+
+      def test_deleted_version_leaves_the_index_consistent
+        publish('units', '2026.10.02.1')
+        publish('units', '2026.10.03.1')
+        @repository.set_current('units', '2026.10.03.1')
+
+        @repository.delete('units', '2026.10.02.1')
+
+        assert_equal ['2026.10.03.1'], @repository.versions('units')
+        assert_equal ['2026.10.03.1'], JSON.parse(@root.join('index.json').read).dig('datasources', 'units', 'versions')
+      end
+
       def test_unknown_datasource_has_no_version
         assert_empty @repository.versions('nothing')
         assert_nil @repository.latest('nothing')

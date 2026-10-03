@@ -2,7 +2,7 @@
 
 module Lexicon
   module Server
-    # Puts packages of the repository in service, one datasource at a time.
+    # Puts packages of the repository in service.
     class Loader
       # Any constant works, as long as every loader of a database uses the same
       ADVISORY_LOCK = 5_394_201
@@ -26,19 +26,40 @@ module Lexicon
 
       # @param [Array<String>] targets names, or name@version. All the repository if empty
       # @param [Boolean] force reload a version already in service, accept drops of volume
+      # @param [Boolean] together swap all the packages at once: all are put in service, or none
       # @yieldparam [Outcome] outcome of each package, as soon as known
       # @return [Array<Outcome>]
-      def sync(targets = [], force: false)
+      def sync(targets = [], force: false, together: false, &block)
         meta.setup
 
         with_lock do
-          ordered(manifests(targets)).map do |manifest|
-            outcome = load_package(manifest, force: force)
-            yield outcome if block_given?
+          manifests = ordered(manifests(targets))
+          groups = together ? [manifests] : manifests.map { |manifest| [manifest] }
 
-            outcome
-          end
+          groups.flat_map { |group| load_group(group, force: force).each { |outcome| block&.call(outcome) } }
         end
+      end
+
+      # Puts back in service the version a package replaced.
+      #
+      # @param [String] name
+      # @return [Outcome]
+      def rollback(name)
+        meta.setup
+        undone = meta.load_in_service(name)
+        raise LoadFailure.new("#{name} is not in service") if undone.nil?
+        raise LoadFailure.new("#{name} #{undone['version']} did not replace any version") if undone['previous'].nil?
+        if repository.manifest(name, undone['previous']).nil?
+          raise LoadFailure.new("the package #{name}@#{undone['previous']} is no longer in #{repository.root}")
+        end
+
+        outcome = sync(["#{name}@#{undone['previous']}"], force: true).first
+        if outcome.state == :swapped
+          meta.update_load(undone['id'].to_i, 'rolled_back')
+          repository.set_current(name, undone['previous'])
+        end
+
+        outcome
       end
 
       private
@@ -87,51 +108,64 @@ module Lexicon
           result
         end
 
-        # @return [Outcome]
-        def load_package(manifest, force:)
-          installed = meta.installed(manifest.name)
-          outcome = Outcome.new(name: manifest.name, version: manifest.version, previous: installed&.version, reasons: [])
+        # @param [Array<Packaging::Manifest>] group packages to swap in one transaction
+        # @return [Array<Outcome>]
+        def load_group(group, force:)
+          installed = group.map { |manifest| [manifest.name, meta.installed(manifest.name)] }.to_h
+          outcomes = group.map do |manifest|
+            previous = installed[manifest.name]&.version
+            state = !force && previous == manifest.version ? :up_to_date : nil
 
-          if !force && installed&.version == manifest.version
-            outcome.state = :up_to_date
-            return outcome
+            Outcome.new(name: manifest.name, version: manifest.version, previous: previous, state: state, reasons: [])
           end
+          pending = group.zip(outcomes).reject { |_manifest, outcome| outcome.state == :up_to_date }.map(&:first)
+          replace(pending, installed, outcomes, force: force) if pending.any?
 
-          load_id = meta.start_load(manifest.name, manifest.version, installed&.version)
-          replace(manifest, installed, load_id, force: force)
-          outcome.state = :swapped
-
-          outcome
-        rescue LoadFailure, PG::Error => e
-          stager.discard(manifest)
-          outcome.state = :failed
-          outcome.reasons = e.is_a?(LoadFailure) ? e.reasons : [e.message.strip]
-          meta.update_load(load_id, 'failed', detail: { reasons: outcome.reasons }) unless load_id.nil?
-
-          outcome
+          outcomes
         end
 
-        def replace(manifest, installed, load_id, force:)
+        def replace(manifests, installed, outcomes, force:)
+          pending = outcomes.select { |outcome| outcome.state.nil? }
+          load_ids = manifests.map { |manifest| meta.start_load(manifest.name, manifest.version, installed[manifest.name]&.version) }
+
+          put_in_service(manifests, installed, load_ids, force: force)
+          pending.each { |outcome| outcome.state = :swapped }
+        rescue LoadFailure, PG::Error => e
+          manifests.each { |manifest| stager.discard(manifest) }
+          reasons = e.is_a?(LoadFailure) ? e.reasons : [e.message.strip]
+          load_ids&.each { |load_id| meta.update_load(load_id, 'failed', detail: { reasons: reasons }) }
+          pending.each do |outcome|
+            outcome.state = :failed
+            outcome.reasons = reasons
+          end
+        end
+
+        def put_in_service(manifests, installed, load_ids, force:)
           started_at = Time.now
-          refuse(checker.before_staging(manifest, installed: installed, force: force))
+          names = manifests.map(&:name)
+          refuse(manifests.flat_map do |manifest|
+            checker.before_staging(manifest, installed: installed[manifest.name], force: force, together: names)
+          end)
 
-          loaded = stager.stage(repository.package_dir(manifest.name, manifest.version), manifest)
+          loaded = manifests.map { |manifest| stager.stage(repository.package_dir(manifest.name, manifest.version), manifest) }
+                            .reduce({}, :merge)
           staged_at = Time.now
-          meta.update_load(load_id, 'checking')
-          refuse(checker.after_staging(manifest, loaded: loaded))
+          load_ids.each { |load_id| meta.update_load(load_id, 'checking') }
+          refuse(checker.after_staging(manifests, loaded: loaded))
 
-          swapper.swap(manifest, previous_tables: meta.tables_of(manifest.name)) do
-            meta.record_package(manifest)
-            meta.update_load(load_id, 'swapped', detail: {
-                               rows: loaded,
-                               staging_seconds: (staged_at - started_at).round(1),
-                               total_seconds: (Time.now - started_at).round(1)
-                             })
+          swapper.swap(manifests, previous_tables: names.flat_map { |name| meta.tables_of(name) }) do
+            manifests.each { |manifest| meta.record_package(manifest) }
+            meta.refresh_stale
+            detail = { staging_seconds: (staged_at - started_at).round(1), total_seconds: (Time.now - started_at).round(1) }
+            manifests.zip(load_ids).each do |manifest, load_id|
+              rows = manifest.tables.map { |table| [table[:name], loaded[table[:name]]] }.to_h
+              meta.update_load(load_id, 'swapped', detail: detail.merge(rows: rows, together: names - [manifest.name]))
+            end
           end
         end
 
         def refuse(reasons)
-          raise LoadFailure.new(reasons) if reasons.any?
+          raise LoadFailure.new(reasons.uniq) if reasons.any?
         end
 
         def with_lock

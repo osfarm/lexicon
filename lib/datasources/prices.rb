@@ -2,6 +2,7 @@ module Datasources
   class Prices < Base
     description 'Price catalog of variants'
     credits name: 'Prix de références des intrants, matériels et main d oeuvre', url: "https://ekylibre.com", provider: "Ekylibre SAS", licence: "CC-BY-SA 4.0", licence_url: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr", updated_at: "2022-02-22"
+    translations :worker_contracts
 
     def collect
       #Collect each csv file in prices directory

@@ -2,6 +2,7 @@ module Datasources
   class TechnicalWorkflows < Base
     description 'Technical workflows references'
     credits name: 'Séquence d interventions', url: "https://ekylibre.com", provider: "Ekylibre SAS", licence: "CC-BY-SA 4.0", licence_url: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr", updated_at: "2021-09-10"
+    translations :technical_workflows
 
     def collect
       # for each ods files in data/itk folder

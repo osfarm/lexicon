@@ -1,6 +1,6 @@
 FROM k8s.gcr.io/pause:3.1 AS pause
 
-FROM ruby:3.2-bullseye
+FROM ruby:3.2-bookworm
 
 ARG UID=1000
 ARG GID=1000
@@ -21,14 +21,14 @@ RUN mkdir /lexicon && \
         --uid "$UID" \
         "$USER" && \
     apt-get update && \
-    apt-get -y install postgis postgresql-client postgresql-contrib libpq-dev p7zip-full pigz libyajl-dev gdal-bin --no-install-recommends && \
+    apt-get -y install postgis postgresql-client postgresql-contrib libpq-dev p7zip-full pigz libyajl-dev gdal-bin rsync openssh-client --no-install-recommends && \
     apt-get -y install python3-setuptools python3-dev python3-pip --no-install-recommends
 
 WORKDIR /lexicon
 
 ADD requirements.txt /lexicon/
-RUN pip3 install wheel
-RUN pip3 install -r requirements.txt
+RUN pip3 install --break-system-packages wheel
+RUN pip3 install --break-system-packages -r requirements.txt
 
 ENV BUNDLE_PATH=/lexicon/vendor/bundle \
     BUNDLER_VERSION='2.2.33'

@@ -2,6 +2,8 @@ module Datasources
   class Productions < Base
     description 'Production database'
     credits name: 'Productions de références', url: "https://ekylibre.com", provider: "Ekylibre SAS", licence: "CC-BY-SA 4.0", licence_url: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr", updated_at: "2021-09-10"
+    translations :crop_productions, :animal_productions, :auxiliary_productions, :processing_productions,
+                 :service_productions, :energy_productions, :environmental_productions, :sna_codes
 
     YIELDS_DEPARTMENTS_CSV      = 'raw/productions/productions - yields - departments.csv'.freeze
     YIELDS_DEPARTMENTS_LONG_CSV = 'raw/productions/productions - yields - departments-long.csv'.freeze

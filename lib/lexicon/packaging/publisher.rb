@@ -1,0 +1,86 @@
+# frozen_string_literal: true
+
+require 'json'
+require 'time'
+require 'tmpdir'
+
+module Lexicon
+  module Packaging
+    # Sends packages to the repository of the serving side, then designates them in its index.
+    class Publisher
+      # @param [Repository] repository local repository
+      # @param [String] target remote repository, as rsync names it: a directory or host:path
+      # @param [Rsync] transfer
+      def initialize(repository:, target:, transfer: Rsync.new)
+        @repository = repository
+        @target = target.chomp('/')
+        @transfer = transfer
+      end
+
+      # @param [String] name
+      # @param [String, nil] version the latest local one by default
+      # @return [String] the version published
+      def publish(name, version: nil)
+        version ||= repository.versions(name).last
+        if version.nil? || repository.manifest(name, version).nil?
+          raise ArgumentError.new("No package #{name}@#{version} in #{repository.root}")
+        end
+
+        send_package(name, version)
+        designate(name, version)
+
+        version
+      end
+
+      # @return [Hash{String => Hash}] for each datasource of the remote index, :current and :versions
+      def published
+        remote_index.fetch(:datasources, {}).transform_keys(&:to_s)
+      end
+
+      private
+
+        # @return [Repository]
+        attr_reader :repository
+        # @return [String]
+        attr_reader :target
+        # @return [Rsync]
+        attr_reader :transfer
+
+        # The manifest goes last: a version without manifest does not exist for the serving side
+        def send_package(name, version)
+          source = repository.package_dir(name, version)
+          destination = "#{target}/#{name}/#{version}"
+
+          transfer.copy_directory(source, destination, exclude: [Manifest::FILE_NAME])
+          transfer.copy_file(source.join(Manifest::FILE_NAME), "#{destination}/#{Manifest::FILE_NAME}")
+
+          differences = transfer.differences(source, destination)
+          raise Rsync::TransferError.new("#{name}@#{version} differs once sent: #{differences.join(', ')}") if differences.any?
+        end
+
+        # The index is the only file changed in place; rsync replaces it atomically
+        def designate(name, version)
+          data = remote_index
+          entry = data.fetch(:datasources, {}).fetch(name.to_sym, {})
+          versions = (entry.fetch(:versions, []) | [version]).sort_by { |other| other.split('.').map(&:to_i) }
+          data[:datasources] = data.fetch(:datasources, {}).merge(name.to_sym => { current: version, versions: versions })
+          data[:updated_at] = Time.now.utc.iso8601
+
+          Dir.mktmpdir do |dir|
+            file = Pathname.new(dir).join(Repository::INDEX_FILE)
+            file.write("#{JSON.pretty_generate(data)}\n")
+            transfer.copy_file(file, "#{target}/#{Repository::INDEX_FILE}")
+          end
+        end
+
+        # @return [Hash]
+        def remote_index
+          Dir.mktmpdir do |dir|
+            file = Pathname.new(dir).join(Repository::INDEX_FILE)
+
+            transfer.fetch_file("#{target}/#{Repository::INDEX_FILE}", file) ? JSON.parse(file.read, symbolize_names: true) : {}
+          end
+        end
+    end
+  end
+end

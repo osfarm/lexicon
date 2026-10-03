@@ -305,8 +305,11 @@ consultatif Postgres garantit un seul chargement à la fois.
   possible si les gros chargements sont trop lents.
 - **Chute de volume calculée sur les manifests** (lignes de la version en
   service contre lignes de la nouvelle), sans compter les tables servies.
-- Les contrôles d'orphelins détaillés, les lots, `stale`, `rollback` et
-  `prune` restent au lot 4 ; les vues dérivées au lot 5.
+- Lot 4 : les orphelins sont contrôlés avant la bascule, avec les valeurs en
+  cause dans le message ; `--together` bascule plusieurs packages en une
+  transaction ; `rollback` recharge la version remplacée et la désigne dans
+  `index.json` ; `prune` est une simulation tant que `--apply` n'est pas
+  donné, et lit la rétention dans `resources/retention.yml` (annexe A).
 - **À prévoir au lot 7** : la base servie doit porter
   `intervalstyle = 'iso_8601'`, comme la base de build
   (`docker/db/z_initdb_postgis.sql`), sinon les durées s'affichent autrement
@@ -338,6 +341,23 @@ Alimentée par 13 datasources, chacune effaçant puis réinsérant ses lignes.
 Les nouvelles tables utilisent `label jsonb` (C5). La migration des 14 tables
 existantes se fera table par table, hors J1, la vue restant en place tant
 qu'un consommateur s'en sert.
+
+### 5.4 Écart de l'implémentation (lot 5)
+
+Côté build, `master_translations` **reste une table unique**, écrite comme
+avant par les datasources. Des datasources la lisent pendant leur
+`normalize` (`rd_agri`, `production_documentations`) ; en faire une vue côté
+build aurait heurté le mécanisme de sauvegarde des tables du runner.
+
+La séparation se fait au moment du package : chaque datasource déclare les
+préfixes d'identifiants qu'elle écrit (`translations :units, :dimensions`),
+et son package embarque ces lignes dans une table `<ds>__translations`.
+Vérifié sur la base de dev : les 3 344 traductions se répartissent entre
+9 datasources, chacune dans un seul package, sans reste. Côté serveur, le
+résultat est celui prévu : une table par package, et la vue
+`master_translations` reconstruite dans la transaction de chaque bascule.
+
+La datasource `translations` n'est plus packagée (`packaged false`).
 
 ### 5.3 `lexicon.version`
 
@@ -472,12 +492,12 @@ C'est acceptable puisque la base se reconstruit depuis le dépôt (C4).
 | Lot | Contenu | Effort |
 |---|---|---:|
 | 1 | Format v3, commande `package`, séparation structure / index, correction de `validate` — **fait** | 4–5 j |
-| 2 | `publish`, `index.json`, accès SSH restreint, `status` | 2–3 j |
+| 2 | `publish`, `index.json`, accès SSH restreint, `status` — **code fait**, à essayer contre le serveur | 2–3 j |
 | 3 | Loader : staging, contrôles, bascule, `lexicon_meta`, verrou, journal — **fait** (écarts : §4.7) | 6–8 j |
-| 4 | Dépendances : contrôles d'orphelins, lots, `stale`, `rollback` | 3–4 j |
-| 5 | Tables partagées : traductions, crédits, version | 2–3 j |
-| 6 | Bundles et flavors | 2–3 j |
-| 7 | Serveur : Postgres réglé, loader, dépôt statique, sauvegarde S3 par Dokploy, mesures de chargement | 2–3 j |
+| 4 | Dépendances : contrôles d'orphelins, lots, `stale`, `rollback`, `prune` — **fait** | 3–4 j |
+| 5 | Tables partagées : traductions, crédits, version — **fait** (écart : §5.4) | 2–3 j |
+| 6 | Bundles et flavors — **fait** | 2–3 j |
+| 7 | Serveur : Postgres réglé, loader, dépôt statique, sauvegarde S3 par Dokploy, mesures de chargement — **préparé** (`docker-compose.server.yml`, §13) | 2–3 j |
 | 8 | Bascule : chargement initial complet, API sur `DB_SCHEMA=lexicon`, bundle `cultia`, retrait de la gem, documentation, réécriture de `ROADMAP.md` | 4–5 j |
 | | **Total** | **25–34 j** |
 
@@ -503,6 +523,35 @@ peut démarrer en parallèle dès que le serveur est accessible.
 
 L'interface de gestion des accès (clés d'API, quotas) fait l'objet d'un
 document séparé : `claudedocs/design_lexicon_v2_admin.md`.
+
+## 13. Déploiement (relevé du 2026-10-03)
+
+- **Serveur** `osfarm_lexicon` (195.154.153.8) : serveur distant piloté par
+  Dokploy, 12 cœurs, 30 Go de RAM, 936 Go de disque dont 830 libres. Il est
+  partagé avec d'autres piles ; les deux piles de test du projet Dokploy
+  « Lexicon » (`supabase`, `n8n-runner-postgres-ollama`) sont à supprimer.
+- **Pile** : `docker-compose.server.yml`, construite par Dokploy depuis
+  GitHub (`osfarm/lexicon`, branche `v2`), dans le projet « Lexicon »,
+  environnement `production`. Quatre services : `db`, `loader`
+  (`server watch`), `packages` (serveur de fichiers) et `api`.
+- **Domaines** : `lexicon.osfarm.org` pour l'API, `lexicon-packages.osfarm.org`
+  pour le dépôt. Aucun des deux ne résout aujourd'hui ; les enregistrements
+  DNS sont à créer vers 195.154.153.8.
+- **Dépôt de packages** : `/home/ubuntu/lexicon/packages` sur le serveur,
+  alimenté par `./lexicon publish` (`rsync` sur SSH avec l'utilisateur
+  `ubuntu`), monté dans `loader` et `packages`. L'utilisateur `ubuntu` n'a ni
+  `sudo` sans mot de passe ni accès à Docker : SSH ne sert qu'à déposer les
+  fichiers, tout le reste passe par Dokploy.
+- **Mémoire** : Postgres est réglé à 6 Go de `shared_buffers` au lieu des
+  8 Go du §8.2, parce que le serveur est partagé.
+- **Image** : le `Dockerfile` passe de Debian 11 à Debian 12. Les dépôts de
+  sécurité de Debian 11 ne servaient plus les paquets annoncés, et l'image ne
+  se construisait plus nulle part.
+- **Reste à faire au lot 7** : sauvegarde du dépôt vers S3 par Dokploy,
+  mesure des gros chargements. Le script d'initialisation de la base
+  (`docker/db/z_initdb_postgis.sql`) crée un rôle `api_user` au mot de passe
+  fixe : sans effet tant que la base n'est pas exposée, à remplacer par le
+  rôle `lexicon_api` de J6.
 
 ## Annexe A — Rétention et historique (Q8), à compléter
 

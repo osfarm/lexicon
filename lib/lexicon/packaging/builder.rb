@@ -9,6 +9,10 @@ module Lexicon
       STRUCTURE_FILE = 'structure.sql'
       INDEXES_FILE = 'indexes.sql'
       DATA_DIR = 'data'
+      TRANSLATIONS_ROLE = 'translations'
+      TRANSLATIONS_TABLE = 'master_translations'
+
+      Export = Struct.new(:table, :source, :role, keyword_init: true)
 
       # @param [Repository] repository
       # @param [TableExporter] exporter
@@ -27,9 +31,10 @@ module Lexicon
       # @param [Database::Schema::TableDefinitionSet] definition_set
       # @param [Integer] jobs maximum number of tables exported at once
       # @param [Time] now
+      # @param [Flavor::LexiconFlavor, nil] flavor filters applied to the tables
       # @yieldparam [String] table name of a table once exported
       # @return [Manifest]
-      def build(datasource, definition_set, jobs: 4, now: Time.now, &on_table)
+      def build(datasource, definition_set, jobs: 4, now: Time.now, flavor: nil, &on_table)
         name = definition_set.name
         version = repository.next_version(name, now.to_date)
         work_dir = repository.datasource_dir(name).join(".building-#{version}")
@@ -41,12 +46,13 @@ module Lexicon
           name: name,
           version: version,
           schema_revision: datasource.schema_revision,
-          structure_hash: write_structure(definition_set, work_dir),
+          structure_hash: write_structure(datasource, definition_set, work_dir),
           built_at: now,
           tool_version: tool_version,
+          flavor: flavor&.name,
           credits: credits(datasource),
           depends_on: dependencies(datasource, definition_set),
-          tables: export_tables(definition_set, work_dir, jobs: jobs, &on_table),
+          tables: export_tables(exports(datasource, definition_set, flavor), work_dir, jobs: jobs, &on_table),
           foreign_keys: foreign_keys(definition_set)
         )
         manifest.write(work_dir)
@@ -71,9 +77,9 @@ module Lexicon
         attr_reader :tool_version
 
         # @return [String] hash of the structure, the same as long as the tables keep their shape
-        def write_structure(definition_set, dir)
+        def write_structure(datasource, definition_set, dir)
           parts = splitter.split(definition_set.create_sql)
-          structure = to_script(parts.structure)
+          structure = to_script([*parts.structure, *translations_structure(datasource, definition_set)])
           indexes = to_script(parts.indexes)
 
           dir.join(STRUCTURE_FILE).write(structure)
@@ -86,23 +92,59 @@ module Lexicon
           statements.map { |statement| "#{statement};\n" }.join("\n")
         end
 
-        # @return [Array<Hash>] in the order of the definitions
-        def export_tables(definition_set, dir, jobs:, &on_table)
-          tables = definition_set.definitions.map(&:name)
+        # @return [Array<Export>] the tables of the datasource, then the one of its translations
+        def exports(datasource, definition_set, flavor)
+          tables = definition_set.definitions.map do |definition|
+            filter = flavor&.datasource(definition_set.name)&.table(definition.name)&.filter
+            whole = TableExporter.whole(definition.name)
+
+            Export.new(table: definition.name, source: filter.nil? ? whole : "(SELECT * FROM #{whole} #{filter})")
+          end
+
+          [*tables, *translations_export(datasource, definition_set)]
+        end
+
+        def translations_table(definition_set)
+          "#{definition_set.name}__translations"
+        end
+
+        def translations_structure(datasource, definition_set)
+          return [] if datasource.get_translation_prefixes.empty?
+
+          [<<~SQL.strip]
+            CREATE TABLE #{translations_table(definition_set)} (
+              id character varying PRIMARY KEY NOT NULL,
+              fra character varying NOT NULL,
+              eng character varying NOT NULL
+            )
+          SQL
+        end
+
+        def translations_export(datasource, definition_set)
+          prefixes = datasource.get_translation_prefixes
+          return [] if prefixes.empty?
+
+          # An underscore is a wildcard for LIKE
+          conditions = prefixes.map { |prefix| "id LIKE '#{prefix.gsub('_', '\\_')}\\_%'" }.join(' OR ')
+          source = "(SELECT id, fra, eng FROM #{TableExporter.whole(TRANSLATIONS_TABLE)} WHERE #{conditions} ORDER BY id)"
+
+          [Export.new(table: translations_table(definition_set), source: source, role: TRANSLATIONS_ROLE)]
+        end
+
+        # @param [Array<Export>] exports
+        # @return [Array<Hash>] in the order of the exports
+        def export_tables(exports, dir, jobs:, &on_table)
           queue = Queue.new
-          tables.each { |table| queue << table }
+          exports.each { |export| queue << export }
           results = Concurrent::Hash.new
 
-          workers = Array.new([jobs, tables.size].min) do
+          workers = Array.new([jobs, exports.size].min) do
             Thread.new do
               Thread.current.report_on_exception = false
               loop do
-                table = queue.pop(true)
-                path = "#{DATA_DIR}/#{table}_0.csv.gz"
-                exported = exporter.export(table, dir.join(path))
-                file = { path: path, sha256: exported[:sha256], bytes: exported[:bytes] }
-                results[table] = { name: table, rows: exported[:rows], files: [file] }
-                on_table&.call(table)
+                export = queue.pop(true)
+                results[export.table] = export_table(export, dir)
+                on_table&.call(export.table)
               rescue ThreadError
                 break
               end
@@ -110,7 +152,16 @@ module Lexicon
           end
           workers.each(&:join)
 
-          tables.map { |table| results.fetch(table) }
+          exports.map { |export| results.fetch(export.table) }
+        end
+
+        # @return [Hash]
+        def export_table(export, dir)
+          path = "#{DATA_DIR}/#{export.table}_0.csv.gz"
+          exported = exporter.export(export.source, dir.join(path))
+          file = { path: path, sha256: exported[:sha256], bytes: exported[:bytes] }
+
+          { name: export.table, rows: exported[:rows], files: [file], role: export.role }.compact
         end
 
         def credits(datasource)

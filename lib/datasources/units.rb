@@ -2,6 +2,7 @@ module Datasources
   class Units < Base
     description 'Dimensions, units and packaging'
     credits name: 'Liste des unités et conditionnements de références', url: "https://ekylibre.com", provider: "Ekylibre SAS", licence: "CC-BY-SA 4.0", licence_url: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr", updated_at: "2022-02-23"
+    translations :dimensions, :units, :packagings
 
     def collect
       #Collect each csv file in units directory

@@ -2,6 +2,7 @@ module Datasources
   class Taxonomy < Base
     description 'Taxonomy'
     credits name: 'Taxonomie', url: "https://ekylibre.com", provider: "Ekylibre SAS", licence: "CC-BY-SA 4.0", licence_url: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr", updated_at: "2021-01-27"
+    translations :taxonomy
 
     def collect
       FileUtils.cp Dir.glob('data/taxonomy/taxonomy - taxonomy.csv'), dir

@@ -6,7 +6,6 @@ doc/
 log/
 out/
 raw/
-resources/
 tmp/
 
 reference.sql

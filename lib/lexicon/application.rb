@@ -100,6 +100,15 @@ module Lexicon
               end
             end
           end
+          namespace :publish do
+            # Repository of the serving side, as rsync names it: host:path, or a directory
+            register(:target) do
+              ENV.fetch('LEXICON_PUBLISH_TARGET') { raise Packaging::Rsync::TransferError.new('LEXICON_PUBLISH_TARGET is not set') }
+            end
+          end
+          namespace :bundles do
+            register(:root, memoize: true) { container.resolve('parameter.out.root').join 'bundles' }
+          end
           namespace :server do
             namespace :database do
               # The serving database is never the one datasources are built in
@@ -299,19 +308,41 @@ module Lexicon
         container.namespace :packaging do
           register(:repository, memoize: true) { Packaging::Repository.new(container.resolve('parameter.packages.root')) }
           register(:builder, memoize: true) do
-            Packaging::Builder.new(
+            container.resolve('packaging.builder_factory').call(container.resolve('packaging.repository'))
+          end
+          register(:publisher, memoize: true) do
+            Packaging::Publisher.new(
               repository: container.resolve('packaging.repository'),
-              exporter: Packaging::TableExporter.new(db_url: container.resolve('parameter.database.url')),
-              dependency_resolver: Packaging::DependencyResolver.new(container.resolve('database.schema.definitions')),
-              splitter: Packaging::StructureSplitter.new,
-              tool_version: container.resolve(:version)
+              target: container.resolve('parameter.publish.target')
             )
+          end
+          # @return [Proc] builds packages in the repository it is given
+          register(:builder_factory, memoize: true) do
+            lambda do |repository|
+              Packaging::Builder.new(
+                repository: repository,
+                exporter: Packaging::TableExporter.new(db_url: container.resolve('parameter.database.url')),
+                dependency_resolver: Packaging::DependencyResolver.new(container.resolve('database.schema.definitions')),
+                splitter: Packaging::StructureSplitter.new,
+                tool_version: container.resolve(:version)
+              )
+            end
           end
         end
 
         container.namespace :server do
           register(:connection, memoize: true) { PG.connect(container.resolve('parameter.server.database.url')) }
           register(:meta, memoize: true) { Server::Meta.new(container.resolve('server.connection')) }
+          register(:catalog, memoize: true) { Server::Catalog.new(container.resolve('server.connection')) }
+          register(:swapper, memoize: true) do
+            connection = container.resolve('server.connection')
+
+            Server::Swapper.new(
+              connection,
+              catalog: container.resolve('server.catalog'),
+              derived_views: Server::DerivedViews.new(connection, meta: container.resolve('server.meta'))
+            )
+          end
           register(:loader, memoize: true) do
             connection = container.resolve('server.connection')
             meta = container.resolve('server.meta')
@@ -321,8 +352,16 @@ module Lexicon
               repository: container.resolve('packaging.repository'),
               meta: meta,
               stager: Server::Stager.new(connection),
-              checker: Server::Checker.new(connection, meta: meta),
-              swapper: Server::Swapper.new(connection)
+              checker: Server::Checker.new(connection, meta: meta, catalog: container.resolve('server.catalog')),
+              swapper: container.resolve('server.swapper')
+            )
+          end
+          register(:pruner, memoize: true) do
+            Server::Pruner.new(
+              repository: container.resolve('packaging.repository'),
+              retention: Packaging::Retention.load(container.resolve('parameter.resources.root').join('retention.yml')),
+              meta: container.resolve('server.meta'),
+              swapper: container.resolve('server.swapper')
             )
           end
         end

@@ -2,6 +2,7 @@ module Datasources
   class TechnicalWorkflowSequences < Base
     description 'Technical workflows chaining for multiannual production'
     credits name: 'Sequence de références des modèles d interventions', url: "https://ekylibre.com", provider: "Ekylibre SAS", licence: "CC-BY-SA 4.0", licence_url: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr", updated_at: "2020-02-12"
+    translations :technical_sequences
 
     def collect
       FileUtils.cp Dir.glob('data/technical_workflow_sequences/Multiannuals.ods'), dir

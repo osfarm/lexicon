@@ -1,0 +1,28 @@
+# Versions of each package kept in the repository by `./lexicon server prune`.
+# The version in service and the one the index designates are always kept.
+# Source: annexe A of claudedocs/design_lexicon_v2_j1.md
+default: all
+datasources:
+  hydrography: 1
+  cadastre: 1
+  weather: 2
+  graphic_parcels: 3
+  cadastre_owners: 2
+  cadastral_prices: 2
+  postal_codes: 2
+  cap_beneficiaries: 5
+  rica: 3
+  enterprises: 3
+  phytosanitary: 12
+  rd_agri: 3
+  protected_natural_zones: 2
+  eu_market_prices: 4
+  seed_varieties: 5
+  vine_varieties: 5
+  agroedi: 5
+  soil: 5
+  protected_water_zones: 5
+  msa_populations: 5
+  quality_and_origin_signs: 5
+  administrative_areas: 5
+  agricultural_pictures: 5

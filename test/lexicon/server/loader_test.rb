@@ -18,10 +18,8 @@ module Lexicon
         @root = Pathname.new(Dir.mktmpdir)
         @repository = Packaging::Repository.new(@root)
         @meta = Meta.new(@connection)
-        @loader = Loader.new(
-          connection: @connection, repository: @repository, meta: @meta, stager: Stager.new(@connection),
-          checker: Checker.new(@connection, meta: @meta), swapper: Swapper.new(@connection, retry_delay: 0.1)
-        )
+        @swapper = swapper
+        @loader = loader(@swapper)
       end
 
       def teardown
@@ -162,7 +160,7 @@ module Lexicon
         outcome = @loader.sync(['units']).first
 
         assert_equal :failed, outcome.state
-        assert_match(/foreign key/, outcome.reasons.first)
+        assert_equal ['productions.unit has values missing from units.reference_name: kilogram'], outcome.reasons
         assert_equal '2026.10.01.1', @meta.installed('units').version
         assert_equal [%w[kilogram], %w[liter]], rows('SELECT reference_name FROM lexicon.units ORDER BY 1')
         assert_equal 1, foreign_keys.size
@@ -209,11 +207,7 @@ module Lexicon
         package('units', '2026.10.02.1', units: [%w[kilogram kg], %w[ton t]])
         reader = PG.connect(url(DATABASE))
         reader.exec('BEGIN; LOCK TABLE lexicon.units IN ACCESS SHARE MODE')
-        swapper = Swapper.new(@connection, retry_delay: 0.05, lock_timeout: '100ms')
-        loader = Loader.new(
-          connection: @connection, repository: @repository, meta: @meta, stager: Stager.new(@connection),
-          checker: Checker.new(@connection, meta: @meta), swapper: swapper
-        )
+        loader = loader(swapper(retry_delay: 0.05, lock_timeout: '100ms'))
 
         outcome = loader.sync.first
 
@@ -238,7 +232,168 @@ module Lexicon
         other&.close
       end
 
+      def test_reference_to_a_missing_value_is_refused_with_the_values
+        package('units', '2026.10.01.1', units: [%w[kilogram kg]])
+        package('productions', '2026.10.01.1', { productions: [%w[wheat kilogram], %w[milk liter], %w[wood stere]] }, references: 'units')
+
+        outcomes = @loader.sync
+
+        assert_equal [:swapped, :failed], outcomes.map(&:state)
+        assert_equal ['productions.unit has values missing from units.reference_name: liter, stere'], outcomes.last.reasons
+        assert_empty staged_tables
+      end
+
+      def test_swap_itself_refuses_a_broken_foreign_key
+        package('units', '2026.10.01.1', units: [%w[kilogram kg]])
+        package('productions', '2026.10.01.1', { productions: [%w[wheat kilogram]] }, references: 'units')
+        @loader.sync
+        package('units', '2026.10.02.1', units: [%w[ton t]])
+        manifest = @repository.manifest('units', '2026.10.02.1')
+        Stager.new(@connection).stage(@repository.package_dir('units', '2026.10.02.1'), manifest)
+
+        error = assert_raises(LoadFailure) { @swapper.swap([manifest], previous_tables: ['units']) }
+
+        assert_match(/foreign key does not hold/, error.message)
+        assert_equal [%w[kilogram]], rows('SELECT reference_name FROM lexicon.units')
+      end
+
+      def test_packages_depending_on_each_other_are_replaced_together
+        package('units', '2026.10.01.1', units: [%w[kilogram kg]])
+        package('productions', '2026.10.01.1', { productions: [%w[wheat kilogram]] }, references: 'units')
+        @loader.sync
+        package('units', '2026.10.02.1', units: [%w[ton t]])
+        package('productions', '2026.10.02.1', { productions: [%w[wheat ton]] }, references: 'units')
+
+        assert_equal :failed, @loader.sync(['units']).first.state
+        outcomes = @loader.sync(%w[units productions], together: true)
+
+        assert_equal [:swapped, :swapped], outcomes.map(&:state)
+        assert_equal [%w[wheat ton]], rows('SELECT * FROM lexicon.productions')
+        assert_equal 1, foreign_keys.size
+      end
+
+      def test_packages_loaded_together_are_all_refused_when_one_fails
+        package('units', '2026.10.01.1', units: [%w[kilogram kg]])
+        package('productions', '2026.10.01.1', { productions: [%w[wheat kilogram]] }, references: 'units')
+        @loader.sync
+        package('units', '2026.10.02.1', units: [%w[kilogram kg], %w[ton t]])
+        package('productions', '2026.10.02.1', { productions: [%w[wheat stere]] }, references: 'units')
+
+        outcomes = @loader.sync([], together: true)
+
+        assert_equal [:failed, :failed], outcomes.map(&:state)
+        assert_equal '2026.10.01.1', @meta.installed('units').version
+        assert_equal 1, count('lexicon.units')
+        assert_empty staged_tables
+      end
+
+      def test_package_built_against_another_version_of_its_dependency_is_stale
+        package('units', '2026.10.01.1', units: [%w[kilogram kg]])
+        package('productions', '2026.10.01.1', { productions: [%w[wheat kilogram]] }, references: 'units', built_against: '2026.10.01.1')
+        @loader.sync
+        refute @meta.installed('productions').stale
+
+        package('units', '2026.10.02.1', units: [%w[kilogram kg], %w[ton t]])
+        @loader.sync
+        assert @meta.installed('productions').stale
+
+        package('productions', '2026.10.02.1', { productions: [%w[wheat ton]] }, references: 'units', built_against: '2026.10.02.1')
+        @loader.sync
+        refute @meta.installed('productions').stale
+      end
+
+      def test_translations_of_each_package_are_served_as_one_view
+        package('units', '2026.10.01.1', { units: [%w[kilogram kg]], units__translations: [%w[units_kilogram Kilogramme Kilogram]] }, roles: { units__translations: 'translations' })
+        package('taxa', '2026.10.01.1', { taxa: [%w[bos b]], taxa__translations: [%w[taxonomy_bos Bovin Cattle]] }, roles: { taxa__translations: 'translations' })
+        @loader.sync
+        assert_equal [%w[taxonomy_bos Bovin Cattle], %w[units_kilogram Kilogramme Kilogram]], rows('SELECT * FROM lexicon.master_translations ORDER BY 1')
+
+        package('units', '2026.10.02.1', { units: [%w[kilogram kg]], units__translations: [%w[units_kilogram Kilo Kilo], %w[units_ton Tonne Ton]] }, roles: { units__translations: 'translations' })
+        assert_equal :swapped, @loader.sync(['units']).first.state
+
+        assert_equal [%w[taxonomy_bos Bovin Cattle], %w[units_kilogram Kilo Kilo], %w[units_ton Tonne Ton]], rows('SELECT * FROM lexicon.master_translations ORDER BY 1')
+      end
+
+      def test_translations_view_exists_without_any_translation
+        package('units', '2026.10.01.1', units: [%w[kilogram kg]])
+        @loader.sync
+
+        assert_equal 0, count('lexicon.master_translations')
+      end
+
+      def test_credits_come_from_the_packages_in_service
+        package('units', '2026.10.01.1', { units: [%w[kilogram kg]] }, credits: [{ name: 'Units', url: 'https://example.org', provider: 'Ekylibre', licence: 'CC-BY-SA 4.0', licence_url: nil, updated_at: '2022-02-23' }])
+        @loader.sync
+
+        assert_equal [['units', 'Units', 'Ekylibre', '2022-02-23']], rows("SELECT datasource, name, provider, updated_at::date::text FROM lexicon.datasource_credits")
+      end
+
+      def test_rollback_puts_the_previous_version_back
+        package('units', '2026.10.01.1', units: Array.new(10) { |i| ["unit#{i}", "u#{i}"] })
+        @loader.sync
+        package('units', '2026.10.02.1', units: [%w[unit0 u0]])
+        @loader.sync(['units'], force: true)
+
+        outcome = @loader.rollback('units')
+
+        assert_equal :swapped, outcome.state
+        assert_equal '2026.10.01.1', @meta.installed('units').version
+        assert_equal 10, count('lexicon.units')
+        assert_equal '2026.10.01.1', @repository.current('units')
+        assert_equal %w[swapped rolled_back swapped], @meta.recent_loads.map { |load| load['state'] }
+        assert_equal :up_to_date, @loader.sync.first.state
+      end
+
+      def test_rollback_needs_a_previous_version_still_in_the_repository
+        package('units', '2026.10.01.1', units: [%w[kilogram kg]])
+        @loader.sync
+        assert_match(/did not replace any version/, assert_raises(LoadFailure) { @loader.rollback('units') }.message)
+
+        package('units', '2026.10.02.1', units: [%w[kilogram kg]])
+        @loader.sync
+        FileUtils.rm_rf(@repository.package_dir('units', '2026.10.01.1'))
+        assert_match(/no longer in/, assert_raises(LoadFailure) { @loader.rollback('units') }.message)
+        assert_match(/not in service/, assert_raises(LoadFailure) { @loader.rollback('nothing') }.message)
+      end
+
+      def test_prune_removes_old_versions_and_packages_gone_from_the_repository
+        %w[2026.10.01.1 2026.10.02.1 2026.10.03.1 2026.10.04.1].each { |version| package('units', version, units: [%w[kilogram kg]]) }
+        package('gone', '2026.10.01.1', gone: [%w[a b]], gone__translations: [%w[gone_a A A]], roles: { gone__translations: 'translations' })
+        @loader.sync(['units@2026.10.02.1', 'gone'])
+        FileUtils.rm_rf(@root.join('gone'))
+        pruner = Pruner.new(
+          repository: @repository, retention: Packaging::Retention.new(default: 1), meta: @meta, swapper: @swapper
+        )
+
+        plan = pruner.plan
+
+        assert_equal [%w[units 2026.10.01.1], %w[units 2026.10.03.1]], plan.versions
+        assert_equal ['gone'], plan.packages
+        assert_equal 4, @repository.versions('units').size
+
+        pruner.apply(plan)
+
+        assert_equal %w[2026.10.02.1 2026.10.04.1], @repository.versions('units')
+        assert_nil @meta.installed('gone')
+        assert_equal ['units'], rows("SELECT tablename FROM pg_tables WHERE schemaname = 'lexicon'").flatten
+        assert_equal 0, count('lexicon.master_translations')
+        assert pruner.plan.empty?
+      end
+
       private
+
+        def swapper(**options)
+          catalog = Catalog.new(@connection)
+
+          Swapper.new(@connection, catalog: catalog, derived_views: DerivedViews.new(@connection, meta: @meta), retry_delay: 0.1, **options)
+        end
+
+        def loader(swapper)
+          Loader.new(
+            connection: @connection, repository: @repository, meta: @meta, stager: Stager.new(@connection),
+            checker: Checker.new(@connection, meta: @meta, catalog: Catalog.new(@connection)), swapper: swapper
+          )
+        end
 
         def admin
           @admin ||= PG.connect(url(ENV.fetch('POSTGRES_DB', 'lexicon'))).tap do |connection|
@@ -274,22 +429,22 @@ module Lexicon
         # @param [Hash{Symbol => Array<Array<String>>}] tables rows of each table
         # @param [String, nil] references package whose first table the second column references
         # @return [Pathname]
-        def package(name, version, explicit_tables = nil, declared_rows: {}, references: nil, **tables)
+        def package(name, version, explicit_tables = nil, declared_rows: {}, references: nil, built_against: nil, roles: {}, credits: [], **tables)
           tables = explicit_tables unless explicit_tables.nil?
           dir = @repository.package_dir(name, version)
           dir.join('data').mkpath
           columns = references ? %w[reference_name unit] : %w[reference_name symbol]
 
           dir.join('structure.sql').write(tables.keys.map { |table| <<~SQL }.join("\n"))
-            CREATE TABLE #{table} (#{columns[0]} character varying PRIMARY KEY NOT NULL, #{columns[1]} character varying);
+            CREATE TABLE #{table} (#{(roles[table] ? %w[id fra eng] : columns).join(' character varying, ')} character varying, PRIMARY KEY (#{roles[table] ? 'id' : columns[0]}));
           SQL
-          dir.join('indexes.sql').write(tables.keys.map { |table| "CREATE INDEX #{table}_#{columns[1]} ON #{table}(#{columns[1]});\n" }.join)
+          dir.join('indexes.sql').write(tables.keys.reject { |table| roles[table] }.map { |table| "CREATE INDEX #{table}_#{columns[1]} ON #{table}(#{columns[1]});\n" }.join)
 
           Packaging::Manifest.new(
             name: name, version: version, schema_revision: 1, structure_hash: 'sha256:0', built_at: Time.now, tool_version: 'test',
-            credits: [],
-            depends_on: references ? [{ name: references, kind: 'foreign_key', built_against: nil }] : [],
-            tables: tables.map { |table, lines| table_entry(dir, table, lines, declared_rows[table]) },
+            credits: credits,
+            depends_on: references ? [{ name: references, kind: 'foreign_key', built_against: built_against }] : [],
+            tables: tables.map { |table, lines| table_entry(dir, table, lines, declared_rows[table]).merge({ role: roles[table] }.compact) },
             foreign_keys: references ? [{ table: tables.keys.first.to_s, column: 'unit', references_table: references, references_column: 'reference_name' }] : []
           ).write(dir)
 

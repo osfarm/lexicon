@@ -2,6 +2,7 @@ module Datasources
   class UserRoles < Base
     description 'User roles'
     credits name: 'Liste des roles de références', url: "https://ekylibre.com", provider: "Ekylibre SAS", licence: "CC-BY-SA 4.0", licence_url: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr", updated_at: "2022-02-23"
+    translations :user_roles
 
     def collect
       FileUtils.cp Dir.glob('data/user_roles/user_roles - user_roles.csv'), dir

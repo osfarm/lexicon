@@ -5,12 +5,64 @@ module Lexicon
     class ServerCommand < ContainerAwareCommand
       desc 'sync [NAMES]', 'Put the current packages of the repository in service (name or name@version)'
       method_option :force, type: :boolean, default: false, desc: 'Reload versions already in service, accept drops of volume'
+      method_option :together, type: :boolean, default: false, desc: 'Swap all the packages at once: all or none'
 
       def sync(*names)
         refusing_failures do
-          outcomes = get('server.loader').sync(names, force: options['force']) { |outcome| print_outcome(outcome) }
+          outcomes = get('server.loader').sync(names, force: options['force'], together: options['together']) do |outcome|
+            print_outcome(outcome)
+          end
 
           exit 1 if outcomes.any? { |outcome| outcome.state == :failed }
+        end
+      end
+
+      desc 'watch', 'Keep the packages the index designates in service'
+      method_option :interval, type: :numeric, default: 300, desc: 'Seconds between two looks at the repository'
+
+      def watch
+        $stdout.sync = true
+        loader = get('server.loader')
+
+        loop do
+          begin
+            loader.sync { |outcome| print_outcome(outcome) unless outcome.state == :up_to_date }
+          rescue Server::LoadFailure => e
+            puts '[ NOK ] '.red + e.message
+          end
+          sleep options['interval']
+        end
+      end
+
+      desc 'rollback NAME', 'Put back in service the version a package replaced'
+
+      def rollback(name)
+        refusing_failures do
+          outcome = get('server.loader').rollback(name)
+          print_outcome(outcome)
+
+          exit 1 if outcome.state == :failed
+        end
+      end
+
+      desc 'prune', 'List old versions and packages no longer in the repository; remove them with --apply'
+      method_option :apply, type: :boolean, default: false
+
+      def prune
+        refusing_failures do
+          pruner = get('server.pruner')
+          plan = pruner.plan
+          plan.versions.each { |name, version| puts "#{name.yellow} #{version}: version beyond retention" }
+          plan.packages.each { |name| puts "#{name.yellow}: in service but no longer in the repository" }
+
+          if plan.empty?
+            puts 'Nothing to prune'
+          elsif options['apply']
+            pruner.apply(plan)
+            puts '[  OK ] '.green + "#{plan.versions.size} versions deleted, #{plan.packages.size} packages taken out of service"
+          else
+            puts 'Nothing done: run again with --apply to remove them'
+          end
         end
       end
 
@@ -38,7 +90,8 @@ module Lexicon
           installed.each do |package|
             current = repository.current(package.name)
             behind = current && current != package.version ? " (repository: #{current})".red : ''
-            puts "#{package.name.ljust(32).yellow} #{package.version}  #{package.loaded_at.strftime('%Y-%m-%d %H:%M')}#{behind}"
+            stale = package.stale ? ' stale'.red : ''
+            puts "#{package.name.ljust(32).yellow} #{package.version}  #{package.loaded_at.strftime('%Y-%m-%d %H:%M')}#{stale}#{behind}"
           end
           (repository.names - installed.map(&:name)).each do |name|
             puts "#{name.ljust(32).yellow} #{'not in service'.red} (repository: #{repository.current(name)})"

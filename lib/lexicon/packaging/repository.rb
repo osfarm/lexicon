@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+require 'fileutils'
+require 'json'
+require 'time'
+
 module Lexicon
   module Packaging
     # Local directory of packages, laid out as <root>/<datasource>/<version>/
@@ -48,6 +52,35 @@ module Lexicon
       # @return [String, nil] the version to serve: the one the index designates, or else the latest
       def current(name)
         index.dig(:datasources, name.to_sym, :current) || versions(name).last
+      end
+
+      # Designates the version to serve, and refreshes the versions the index lists for the datasource.
+      #
+      # @param [String] name
+      # @param [String] version
+      def set_current(name, version)
+        raise ArgumentError.new("No package #{name}@#{version} in #{root}") if manifest(name, version).nil?
+
+        data = index
+        data[:datasources] = (data[:datasources] || {}).merge(name.to_sym => { current: version, versions: versions(name) })
+        data[:updated_at] = Time.now.utc.iso8601
+
+        # Written aside then renamed: a reader never sees a partial index
+        temporary = root.join("#{INDEX_FILE}.tmp")
+        temporary.write("#{JSON.pretty_generate(data)}\n")
+        File.rename(temporary, root.join(INDEX_FILE))
+      end
+
+      # @param [String] name
+      # @param [String] version
+      def delete(name, version)
+        FileUtils.rm_rf(package_dir(name, version))
+
+        data = index
+        return unless data.dig(:datasources, name.to_sym)
+
+        data[:datasources][name.to_sym][:versions] = versions(name)
+        root.join(INDEX_FILE).write("#{JSON.pretty_generate(data)}\n")
       end
 
       # @param [String] name
