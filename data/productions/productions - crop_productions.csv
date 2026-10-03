@@ -308,23 +308,23 @@ inter_crop,plant_farming,Culture Intermédiare,Intermediate Crop,plant,fodder,01
 spring_fallow,plant_farming,Jachère,Fallow,plant,fodder,01/01/00,31/12/00,ZCF,,5,,,,,hectare
 agroforestry,plant_farming,Agroforesterie,Agroforestry,,mixed,01/01/00,31/12/00,,,20,,,,,hectare
 aquaponics,plant_farming,Aquaponie,Aquaponics,,vegetable,01/01/00,31/12/00,,,20,,,,,hectare
-christmas_tree,plant_farming,Sapin de Noël,Christmas tree,,ornamental,01/01/00,31/12/00,,,20,,,,,hectare
+christmas_tree,plant_farming,Sapin de Noël,Christmas tree,abies,ornamental,01/01/00,31/12/00,,,20,,,,,hectare
 cut_flower,plant_farming,Fleurs coupées,Cut flowers,,flower,01/01/00,31/12/00,,,20,,,,,hectare
 edible_flower,plant_farming,Fleurs comestibles,Edible flowers,,flower,01/01/00,31/12/00,,,20,,,,,hectare
 energy_wood,plant_farming,Bois énergie,Energy wood,,wood_energy,01/01/00,31/12/00,,,20,,,,,hectare
 forestry,plant_farming,Sylviculture,Forestry,,wood,01/01/00,31/12/00,,,20,,,,,hectare
 fruit_nursery,plant_farming,Pépinière fruitière,Fruit nursery,,plant,01/01/00,31/12/00,,,20,,,,,hectare
 hydroponics,plant_farming,Hydroponie,Hydroponics,,vegetable,01/01/00,31/12/00,,,20,,,,,hectare
-mushroom,plant_farming,Champignons de Paris,Button mushroom,,vegetable,01/01/00,31/12/00,,,20,,,,,hectare
-oyster_mushroom,plant_farming,Pleurote,Oyster mushroom,,vegetable,01/01/00,31/12/00,,,20,,,,,hectare
-poplar,plant_farming,Peuplier,Poplar,,wood,01/01/00,31/12/00,,,20,,,,,hectare
-seaweed,plant_farming,Algues marines,Seaweed,,alga,01/01/00,31/12/00,,,20,,,,,hectare
+mushroom,plant_farming,Champignons de Paris,Button mushroom,agaricus_bisporus,vegetable,01/01/00,31/12/00,,,20,,,,,hectare
+oyster_mushroom,plant_farming,Pleurote,Oyster mushroom,pleurotus_ostreatus,vegetable,01/01/00,31/12/00,,,20,,,,,hectare
+poplar,plant_farming,Peuplier,Poplar,populus,wood,01/01/00,31/12/00,,,20,,,,,hectare
+seaweed,plant_farming,Algues marines,Seaweed,laminaria,alga,01/01/00,31/12/00,,,20,,,,,hectare
 seed_cereal,plant_farming,Production de semences céréalières,Cereal seed production,,seed,01/01/00,31/12/00,,,20,,,,,hectare
 seed_forage,plant_farming,Production de semences fourragères,Forage seed production,,seed,01/01/00,31/12/00,,,20,,,,,hectare
 seed_vegetable,plant_farming,Production de semences potagères,Vegetable seed production,,seed,01/01/00,31/12/00,,,20,,,,,hectare
-shiitake,plant_farming,Shiitake,Shiitake,,vegetable,01/01/00,31/12/00,,,20,,,,,hectare
-spirulina,plant_farming,Spiruline,Spirulina,,alga,01/01/00,31/12/00,,,20,,,,,hectare
-truffle,plant_farming,Truffe,Truffle,,fruit,01/01/00,31/12/00,,,20,,,,,hectare
+shiitake,plant_farming,Shiitake,Shiitake,lentinula_edodes,vegetable,01/01/00,31/12/00,,,20,,,,,hectare
+spirulina,plant_farming,Spiruline,Spirulina,arthrospira_platensis,alga,01/01/00,31/12/00,,,20,,,,,hectare
+truffle,plant_farming,Truffe,Truffle,tuber,fruit,01/01/00,31/12/00,,,20,,,,,hectare
 vegetable_seedling,plant_farming,Plants maraîchers,Vegetable seedlings,,plant,01/01/00,31/12/00,,,20,,,,,hectare
 vertical_farming,plant_farming,Agriculture verticale,Vertical farming,,vegetable,01/01/00,31/12/00,,,20,,,,,hectare
 vine_nursery,vine_farming,Pépinière viticole,Vine nursery,vitis,plant,01/01/00,31/12/00,,,20,,,,,hectare

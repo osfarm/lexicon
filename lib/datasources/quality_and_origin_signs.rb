@@ -11,7 +11,7 @@ module Datasources
     end
 
     def load
-      load_csv(dir.join('qos.csv'), 'qos', col_sep: ';', encoding: 'ISO-8859-15')
+      load_csv(dir.join('qos.csv'), 'qos', col_sep: ';')
     end
 
     def self.table_definitions(builder)

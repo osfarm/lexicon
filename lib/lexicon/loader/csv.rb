@@ -7,8 +7,9 @@ module Lexicon
         @psql = psql
       end
 
-      def load(file, table_name:, search_path:, **options)
-        encoding = detect_encoding(file)
+      # @param [String, nil] encoding skips the detection, which reads the whole file in memory
+      def load(file, table_name:, search_path:, encoding: nil, **options)
+        encoding ||= detect_encoding(file)
         col_sep = options.fetch(:col_sep, ',')
 
         headers = File.open(file) do |f|

@@ -1,0 +1,38 @@
+keyword,target_kind,target
+Bovin viande,industry_sector,beef_cattle
+Bovin lait,industry_sector,dairy_cattle
+Bovins,industry_sector,cattle
+Jeunes bovins,production,young_bull
+Veau de boucherie,production,calf
+Production laitière,industry_sector,dairy_cattle
+Caprin,industry_sector,goats
+Caprins,industry_sector,goats
+Ovin viande,industry_sector,meat_sheep
+Ovin lait,industry_sector,dairy_sheep
+Ovin,industry_sector,sheep
+Ovins,industry_sector,sheep
+Porcin,industry_sector,pigs
+Volaille,industry_sector,poultry
+Volailles de chair,industry_sector,poultry
+Equin,industry_sector,equines
+Grande culture,industry_sector,field_crops
+Céréale,industry_sector,cereals
+Légume,industry_sector,vegetables
+Végétal-Maraichage,industry_sector,vegetables
+Fruit,industry_sector,fruits
+Vigne,industry_sector,viticulture
+Prairie,industry_sector,grassland
+Prairie permanente,industry_sector,grassland
+Prairie temporaire,industry_sector,grassland
+Fourrages,industry_sector,forage_grassland
+Cultures fourragères,industry_sector,forage_grassland
+Plante fourragère,industry_sector,forage_grassland
+Systèmes fourragers,industry_sector,forage_grassland
+Herbe,industry_sector,grassland
+horticulture,industry_sector,horticulture
+horticulteurs,industry_sector,horticulture
+horticole,industry_sector,horticulture
+Agroforesterie,production,agroforestry
+Légumineuses,industry_sector,protein_crops
+Productions animales,ignore,
+Productions végétales,ignore,

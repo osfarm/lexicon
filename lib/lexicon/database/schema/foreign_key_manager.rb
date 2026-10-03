@@ -59,10 +59,12 @@ module Lexicon
         # @param [ForeignKey] foreign_key
         # @return [Boolean]
         def fk_exists?(database, foreign_key)
-          database.query(<<~SQL, fk_name(foreign_key), database.search_path.first).count > 0
+          # Checks the constraining table itself: during normalize, the previous table is moved to a
+          # backup schema with a constraint of the same name, which must not count as existing.
+          database.query(<<~SQL, fk_name(foreign_key), database.search_path.first, foreign_key.table).count > 0
             SELECT constraint_name
-            FROM "information_schema"."constraint_column_usage"
-            WHERE constraint_name = $1 AND table_schema = $2
+            FROM "information_schema"."table_constraints"
+            WHERE constraint_name = $1 AND table_schema = $2 AND table_name = $3
           SQL
         end
 

@@ -1,4 +1,5 @@
 reference_name,fra,eng,parent,taxonomic_rank
+abies,Sapin,Fir,pinaceae,genus
 acer,Érable,Acer,sapindaceae,genus
 acer_buergerianum,Érable trident,Acer buergerianum,acer,specie
 acer_ginnala,Érable Ginnala,Acer ginnala,acer,specie
@@ -19,11 +20,15 @@ actinidiaceae,Actinidiaceae,Actinidiaceae,plant,family
 actinopterygii,Actinoptérygien,Actinopterygii,animal,class
 adoxa,Adoxe,Adoxa,adoxaceae,genus
 adoxaceae,Adoxacée,Adoxaceae,plant,family
+agaricaceae,Agaricacée,Agaricaceae,fungus,family
+agaricus,Agaric,Agaricus,agaricaceae,genus
+agaricus_bisporus,Champignon de Paris,Button mushroom,agaricus,specie
 aix,Aix,Aix,anatidae,genus
 aix_galericulata,Canard mandarin,Aix galericulata,aix,specie
 aix_sponsa,Canard branchu,Aix sponsa,aix,specie
 ajuga,Bugle,Ajuga,lamiaceae,genus
 ajuga_reptans,Bugle rampante,Ajuga reptans,ajuga,specie
+algae,Algue,Algae,bioproduct,
 allium,Allium,Garlic,amaryllidaceae,genus
 allium_ampeloprasum,Poireau d’été,Broadleaf wild leek,allium,specie
 allium_cepa,Oignon,Onion,allium,specie
@@ -106,6 +111,8 @@ argania,Argania,Argania,sapotaceae,genus
 argania_spinosa,Arganier,Argan,argania,specie
 artemisia,Armoise,Artemisia,asteraceae,genus
 artemisia_dracunculus,Estragon,Artemisia dracunculus,artemisia,specie
+arthrospira,Arthrospira,Arthrospira,cyanobacteria,genus
+arthrospira_platensis,Spiruline,Spirulina,arthrospira,specie
 artocarpus,Artocarpus,Breadfruit family,moraceae,genus
 artocarpus_altilis,Arbre à pain,Breadfruit,artocarpus,specie
 artocarpus_elasticus,Artocarpus elasticus,Elasticus artocarpus,artocarpus,specie
@@ -179,8 +186,11 @@ brassica_rapa_rapa,Navet,Turnip,brassica_rapa,subspecie
 brassicaceae,Crucifère,Brassicaceae,plant,family
 bromeliaceae,Bromeliacée,Bromeliaceae,plant,family
 bromus,Bromus,Bromes,poaceae,genus
+bubalus,Buffle,Buffalo,bovidae,genus
+bubalus_bubalis,Buffle d'Asie,Water buffalo,bubalus,specie
 cairina,Cairina,Cairina,anatidae,genus
 cairina_moschata,Canard musqué,Muscovy duck,cairina,specie
+camelidae,Camélidé,Camelidae,mammalia,family
 camelina,Camelina,Camelina,brassicaceae,genus
 camelina_sativa,Cameline,Camelina sativa,camelina,specie
 cananga,Cananga,Cananga,annonaceae,genus
@@ -228,6 +238,8 @@ ceratonia_siliqua,Caroubier,Carob tree,ceratonia,specie
 cercis,Cercis,Cercis,fabaceae,genus
 cercis_siliquastrum,Arbre de Judée,Cercis siliquastrum,cercis,specie
 cervidae,Cervidé,Cervidae,mammalia,family
+cervus,Cerf,Deer,cervidae,genus
+cervus_elaphus,Cerf élaphe,Red deer,cervus,specie
 chamaemelum,Chamaemelum,Chamaemelum,asteraceae,genus
 chenopodium,Chénopode,Chenopodium,amaranthaceae,genus
 chenopodium_album,Chénopode blanc,Chenopodium album,chenopodium,specie
@@ -277,11 +289,16 @@ coffea_canephora,Caféier robusta,Coffea canephora,coffea,specie
 coffea_congensis,Caféier - Coffea congensis,Coffea congensis,coffea,specie
 coffea_liberica,Caféier du Liberia,Coffea liberica,coffea,specie
 coffea_stenophylla,Caféier - Coffea stenophylla,Coffea stenophylla,coffea,specie
+columba,Pigeon,Pigeon,columbidae,genus
+columba_livia,Pigeon biset,Rock dove,columba,specie
+columbidae,Columbidé,Columbidae,aves,family
 convolvulaceae,Convolvulacée,Convolvulaceae,plant,family
 coriandrum,Coriandrum,Coriandrum,apiaceae,genus
 coriandrum_sativum,Coriandre,Coriander,coriandrum,specie
 corylus,Noisetier,Hazel,betulaceae,genus
 corylus_avellana,Noisetier commun,Common hazel,corylus,specie
+coturnix,Caille,Quail,phasianidae,genus
+coturnix_japonica,Caille japonaise,Japanese quail,coturnix,specie
 crambe,Crambé,Crambe,brassicaceae,genus
 crambe_maritima,Chou marin,Sea kale,crambe,specie
 crassostrea,Crassostrea,Crassostrea,ostreidae,genus
@@ -312,13 +329,19 @@ cuminum,Cuminum,Cuminum,apiaceae,genus
 curculio_nucum,Curculio nucum,Curculio nucum,insecta,specie
 curcuma,Curcuma,Curcuma,zingiberaceae,genus
 curcuma_longa,Curcuma aromatique,Turmeric,curcuma,specie
+cyanobacteria,Cyanobactérie,Cyanobacteria,bacteria,phylum
 cydia_pomonella,Cydia pomonella,Cydia pomonella,insecta,specie
 cydonia,Cydonia,Cydonia,rosaceae,genus
 cydonia_oblonga,Cognassier,Quince,cydonia,specie
 cynara,Cynara,Artichoke,asteraceae,genus
 cynara_scolymus,Artichaut,Globe artichoke,cynara,specie
+cyprinidae,Cyprinidé,Cyprinidae,actinopterygii,family
+cyprinus,Carpe,Carp,cyprinidae,genus
+cyprinus_carpio,Carpe commune,Common carp,cyprinus,specie
 dactylis,Dactyle,Dactylis,poaceae,genus
 dactylis_lazuly,Dactyle Lazuly,Dactylis Lazuly,dactylis,specie
+dama,Daim,Fallow deer,cervidae,genus
+dama_dama,Daim européen,European fallow deer,dama,specie
 damaliscus,Damalisque,Damaliscus,bovidae,genus
 damaliscus_korrigum,Damalisque korrigum,Damaliscus korrigum,damaliscus,specie
 damaliscus_lunatus,Damalisque lunatus,Damaliscus lunatus,damaliscus,specie
@@ -358,6 +381,7 @@ dioscoreaceae,Dioscoreaceae,Yam family,plant,family
 diospyros,Diospyros,Persimmons,ebenaceae,genus
 diospyros_kaki,Plaqueminier,Chinese persimmon,diospyros,specie
 ebenaceae,Ébénacée,Ebony,plant,family
+eisenia,Eisenia,Eisenia,lumbricidae,genus
 elaeagnaceae,Éléagnacée,Elaeagnaceae,plant,family
 elaeagnus,Elaeagnus,Elaeagnus,elaeagnaceae,genus
 empoasca_vitis,Empoasca vitis (cicadelle des grillures),Empoasca vitis,insecta,specie
@@ -460,7 +484,10 @@ lactuca,Laitue,Lactuca,asteraceae,genus
 lactuca_sativa,Laitue cultivée,Lettuce,lactuca,specie
 lactuca_sativa_capitata,Batavia,Batavia,lactuca_sativa,variety
 lactuca_sativa_crispa,Feuille de chêne,Oakleaf,lactuca_sativa,variety
+lama,Lama,Lama,camelidae,genus
+lama_glama,Lama domestique,Llama,lama,specie
 lamiaceae,Lamiacée,Lamiaceae,plant,family
+laminaria,Laminaire,Laminaria,phaeophyceae,genus
 lathyrus,Lathyrus,Lathyrus,fabaceae,genus
 lathyrus_sativus,Gesse commune,Lathyrus sativus,lathyrus,specie
 lauraceae,Lauracée,Lauraceae,plant,family
@@ -468,6 +495,8 @@ lavandula,Lavande,Lavandula,lamiaceae,genus
 lavandula_x_intermedia,Lavandin,Lavandin,lavandula,specie
 lens,Lentille,Lens,fabaceae,genus
 lens_culinaris,Lentille - Lens culinaris,Lens culinaris,lens,specie
+lentinula,Lentinula,Lentinula,omphalotaceae,genus
+lentinula_edodes,Shiitake,Shiitake,lentinula,specie
 lepidium,Lepidium,Lepidium,brassicaceae,genus
 lepidium_sativum,Cresson alénois,Garden cress,lepidium,specie
 leporidae,Leporidé,Leporidae,mammalia,family
@@ -489,6 +518,7 @@ lolium_perenne,Ray grass Anglais,Ryegrass perenne,lolium,specie
 lolium_x_hybridum,Ray grass hybride,Hybrid ryegrass,lolium,specie
 lotus,Lotus,Lotus,fabaceae,genus
 lotus_corniculatus,Lotier corniculé,Lotus corniculatus,lotus,specie
+lumbricidae,Lombricidé,Lumbricidae,oligochaeta,family
 lupinus,Lupin,Lupine,fabaceae,genus
 malus,Pommier,Malus,rosaceae,genus
 malus_domestica,Pommier commun,Apple-tree,malus,specie
@@ -548,6 +578,10 @@ ocimum_basilicum,Basilic,Ocimum basilicum,ocimum,specie
 olea,Oléa,Olea,oleaceae,genus
 olea_europaea,Olivier,Olive tree,olea,specie
 oleaceae,Oleacée,Oleaceae,plant,family
+oligochaeta,Oligochète,Oligochaeta,animal,class
+omphalotaceae,Omphalotacée,Omphalotaceae,fungus,family
+oncorhynchus,Oncorhynque,Oncorhynchus,salmonidae,genus
+oncorhynchus_mykiss,Truite arc-en-ciel,Rainbow trout,oncorhynchus,specie
 onobrychis,Sainfoin,Onobrychis,fabaceae,genus
 onobrychis_viciifolia,Sainfoin commun,Common sainfoin,onobrychis,specie
 operophtera_brumata,Operophtera brumata,Operophtera brumata,insecta,specie
@@ -633,6 +667,7 @@ petroselinum_crispum_neapolitanum,Persil Plat,Italian Parsley,petroselinum_crisp
 petroselinum_crispum_tuberosum,Persil Tubéreux,Hamburg Parsley,petroselinum_crispum,variety
 petroselinum_segetum,Persil des moissons,Corn Parsley,petroselinum,specie
 phacelia,Phacélie,Phacelia,boraginaceae,genus
+phaeophyceae,Algue brune,Brown algae,algae,class
 phalaris,Phalaris,Phalaris,poaceae,genus
 phalaris_canariensis,Alpiste,Canary grass,phalaris,specie
 phaseolus,Haricots,Phaseolus,fabaceae,genus
@@ -645,6 +680,7 @@ phleum,Fléole,Phleum,poaceae,genus
 phytoptus_avellanae,Phytoptus avellanae,Phytoptus avellanae,insecta,specie
 pimpinella,Pimpinella,Pimpinella,apiaceae,genus
 pimpinella_anisum,Pimpinella anisum,Pimpinella anisum,pimpinella,specie
+pinaceae,Pinacée,Pinaceae,plant,family
 piriqueta,Piriqueta,Stripeseed,passifloraceae,genus
 piriqueta_cistoides,Bouton d'or,Pitted stripeseed,piriqueta,specie
 piriqueta_racemosa,Piriqueta racemosa,Rigid stripeseed,piriqueta,specie
@@ -661,12 +697,16 @@ plantago_ovata,Ispaghul,Blond psyllium,plantago,specie
 plantago_psyllium,Plantain des sables,Plantago psyllium,plantago,specie
 plasmopara,Plasmopara,Plasmopara,peronosporaceae,genus
 plasmopara_viticola,Plasmopara viticola,Plasmopara viticola,plasmopara,specie
+pleurotaceae,Pleurotacée,Pleurotaceae,fungus,family
+pleurotus,Pleurote,Pleurotus,pleurotaceae,genus
+pleurotus_ostreatus,Pleurote en huître,Oyster mushroom,pleurotus,specie
 plumbaginaceae,Plumbaginacée,Plumbaginaceae,plant,family
 poa,Pâturin,Poa,poaceae,genus
 poa_trivialis,Pâturin commun,Rough bluegrass,poa,specie
 poaceae,Graminée,Poaceae,plant,family
 polygonaceae,Polygonacée,Polygonaceae,plant,family
 poncirus,Citronnier épineux,Prickly lemon tree,rutaceae,genus
+populus,Peuplier,Poplar,salicaceae,genus
 portulaca,Portulaca,Portulaca,portulacaceae,genus
 portulaca_oleracea,Pourpier,Purslane,portulaca,specie
 portulacaceae,Portulacée,Portulacaceae,plant,family
@@ -777,6 +817,8 @@ struthionidae,Struthionidé,Struthionidae,aves,family
 suidae,Suidé,Suidae,mammalia,family
 sus,Porcin,Sus,suidae,genus
 sus_scrofa,Porc domestique,Domestic pig,sus,specie
+tenebrio,Ténébrion,Tenebrio,tenebrionidae,genus
+tenebrionidae,Ténébrionidé,Tenebrionidae,insecta,family
 theobroma,Theobroma,Theobroma,malvaceae,genus
 theobroma_cacao,Cacaoyer,Cocoa tree,theobroma,specie
 theobroma_grandiflorum,Capuaçu,Theobroma grandiflorum,theobroma,specie
@@ -799,6 +841,8 @@ triticum,Blé,Wheat,poaceae,genus
 triticum_aestivum,Blé tendre,Common wheat,triticum,specie
 triticum_durum,Blé dur,Durum wheat,triticum,specie
 triticum_spelta,Épeautre,Spelt,triticum,specie
+tuber,Truffe,Truffle,tuberaceae,genus
+tuberaceae,Tubéracée,Tuberaceae,fungus,family
 turnera,Turnera,Turnera,passifloraceae,genus
 turnera_coerula,Turnera coerula,Turnera coerula,turnera,specie
 turnera_diffusa,Damiana,Damiana,turnera,specie
@@ -828,6 +872,8 @@ vicia_cracca,Vesce craque,Vicia cracca,vicia,specie
 vicia_faba,Fève ou féverole,Horsebean,vicia,specie
 vicia_sativa,Vesce cultivée,Vicia sativa,vicia,specie
 vicia_villosa,Vesce villosa,Vicia villosa,vicia,specie
+vicugna,Vigogne,Vicugna,camelidae,genus
+vicugna_pacos,Alpaga,Alpaca,vicugna,specie
 vigna,Vigna,Vigna,fabaceae,genus
 vigna_unguiculata,Vigna unguiculata ‒ Voème,Cowpea,vigna,specie
 vigna_unguiculata_cylindrica,Dolique,Catjang,vigna_unguiculata,subspecie

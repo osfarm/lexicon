@@ -4,31 +4,31 @@ meat_cow,animal_farming,Vaches allaitantes,Meat cows,bos_taurus,meat,01/09/00,31
 heifer,animal_farming,Genisses,Heifer,bos_taurus,meat,01/09/00,31/08/01,,,20,,,,head
 young_bull,animal_farming,Taurillons,Young bull,bos_taurus,meat,01/09/00,31/08/01,,,20,,,,head
 calf,animal_farming,Veaux,Calf,bos_taurus,meat,01/09/00,31/08/01,,,20,,,,head
-alpaca,animal_farming,Alpagas,Alpaca,,wool,01/09/00,31/08/01,,,15,,,,head
+alpaca,animal_farming,Alpagas,Alpaca,vicugna_pacos,wool,01/09/00,31/08/01,,,15,,,,head
 beehive,animal_farming,Ruches,Beehive,apis_mellifera,honey,01/09/00,31/08/01,,,5,,,,head
 boar,animal_farming,Verrats,Boar,sus_scrofa,reproduction,01/09/00,31/08/01,,,5,,,,head
 broiler_chicken,animal_farming,Poulets de chair,Broiler chicken,gallus_gallus,meat,01/09/00,31/08/01,,,1,,,,head
 buck,animal_farming,Boucs,Buck,capra_hircus,reproduction,01/09/00,31/08/01,,,8,,,,head
-buffalo,animal_farming,Buffles,Buffalo,,milk,01/09/00,31/08/01,,,15,,,,head
+buffalo,animal_farming,Buffles,Buffalo,bubalus_bubalis,milk,01/09/00,31/08/01,,,15,,,,head
 bull,animal_farming,Taureaux reproducteurs,Bull,bos_taurus,reproduction,01/09/00,31/08/01,,,8,,,,head
-carp,animal_farming,Carpes,Carp,,fish,01/09/00,31/08/01,,,4,,,,head
+carp,animal_farming,Carpes,Carp,cyprinus_carpio,fish,01/09/00,31/08/01,,,4,,,,head
 dairy_heifer,animal_farming,Génisses laitières,Dairy heifer,bos_taurus,milk,01/09/00,31/08/01,,,3,,,,head
-deer,animal_farming,Cerfs,Deer,,meat,01/09/00,31/08/01,,,5,,,,head
+deer,animal_farming,Cerfs,Deer,cervus_elaphus,meat,01/09/00,31/08/01,,,5,,,,head
 doe_rabbit,animal_farming,Lapines reproductrices,Doe rabbit,oryctolagus_cuniculus,reproduction,01/09/00,31/08/01,,,3,,,,head
 donkey,animal_farming,Ânes,Donkey,equus_asinus,work,01/09/00,31/08/01,,,20,,,,head
 draft_horse,animal_farming,Chevaux de trait,Draft horse,equus_caballus,work,01/09/00,31/08/01,,,20,,,,head
 duck_meat,animal_farming,Canards de chair,Meat duck,anas_platyrhynchos,meat,01/09/00,31/08/01,,,1,,,,head
-earthworm,animal_farming,Vers de terre,Earthworm,,compost,01/09/00,31/08/01,,,1,,,,head
-fallow_deer,animal_farming,Daims,Fallow deer,,meat,01/09/00,31/08/01,,,5,,,,head
+earthworm,animal_farming,Vers de terre,Earthworm,eisenia,compost,01/09/00,31/08/01,,,1,,,,head
+fallow_deer,animal_farming,Daims,Fallow deer,dama_dama,meat,01/09/00,31/08/01,,,5,,,,head
 fattened_duck,animal_farming,Canards gras,Fattened duck,anas_platyrhynchos,foie_gras,01/09/00,31/08/01,,,1,,,,head
 fattening_pig,animal_farming,Porcs charcutiers,Fattening pig,sus_scrofa,meat,01/09/00,31/08/01,,,1,,,,head
 goose,animal_farming,Oies,Goose,anser_anser,meat,01/09/00,31/08/01,,,1,,,,head
 guinea_fowl,animal_farming,Pintades,Guinea fowl,numida_meleagris,meat,01/09/00,31/08/01,,,1,,,,head
-insect,animal_farming,Insectes,Insect,,protein,01/09/00,31/08/01,,,1,,,,head
+insect,animal_farming,Insectes,Insect,tenebrio,protein,01/09/00,31/08/01,,,1,,,,head
 kid,animal_farming,Chevreaux,Kid,capra_hircus,meat,01/09/00,31/08/01,,,1,,,,head
 lamb,animal_farming,Agneaux,Lamb,ovis_aries,meat,01/09/00,31/08/01,,,1,,,,head
 laying_hen,animal_farming,Poules pondeuses,Laying hen,gallus_gallus,egg,01/09/00,31/08/01,,,2,,,,head
-llama,animal_farming,Lamas,Llama,,wool,01/09/00,31/08/01,,,15,,,,head
+llama,animal_farming,Lamas,Llama,lama_glama,wool,01/09/00,31/08/01,,,15,,,,head
 meat_ewe,animal_farming,Brebis allaitantes,Meat ewe,ovis_aries,meat,01/09/00,31/08/01,,,7,,,,head
 meat_goat,animal_farming,Chèvres allaitantes,Meat goat,capra_hircus,meat,01/09/00,31/08/01,,,8,,,,head
 milk_ewe,animal_farming,Brebis laitières,Milk ewe,ovis_aries,milk,01/09/00,31/08/01,,,7,,,,head
@@ -36,10 +36,10 @@ milk_goat,animal_farming,Chèvres laitières,Milk goat,capra_hircus,milk,01/09/0
 mussel,animal_farming,Moules,Mussel,mytilus_edulis,shellfish,01/09/00,31/08/01,,,2,,,,head
 ostrich,animal_farming,Autruches,Ostrich,struthio_camelus,meat,01/09/00,31/08/01,,,15,,,,head
 oyster,animal_farming,Huîtres,Oyster,crassostrea_gigas,shellfish,01/09/00,31/08/01,,,3,,,,head
-pigeon,animal_farming,Pigeons,Pigeon,,meat,01/09/00,31/08/01,,,1,,,,head
+pigeon,animal_farming,Pigeons,Pigeon,columba_livia,meat,01/09/00,31/08/01,,,1,,,,head
 piglet,animal_farming,Porcelets,Piglet,sus_scrofa,meat,01/09/00,31/08/01,,,1,,,,head
 pony,animal_farming,Poneys,Pony,equus_caballus,leisure,01/09/00,31/08/01,,,20,,,,head
-quail,animal_farming,Cailles,Quail,,meat,01/09/00,31/08/01,,,1,,,,head
+quail,animal_farming,Cailles,Quail,coturnix_japonica,meat,01/09/00,31/08/01,,,1,,,,head
 queen_bee,animal_farming,Reines d'abeilles,Queen bee,apis_mellifera,reproduction,01/09/00,31/08/01,,,3,,,,head
 rabbit,animal_farming,Lapins,Rabbit,oryctolagus_cuniculus,meat,01/09/00,31/08/01,,,1,,,,head
 race_horse,animal_farming,Chevaux de course,Race horse,equus_caballus,race,01/09/00,31/08/01,,,20,,,,head
@@ -50,5 +50,5 @@ scallop,animal_farming,Coquilles Saint-Jacques,Scallop,pecten_maximus,shellfish,
 snail,animal_farming,Escargots,Snail,helix_aspersa,meat,01/09/00,31/08/01,,,1,,,,head
 sow,animal_farming,Truies,Sow,sus_scrofa,reproduction,01/09/00,31/08/01,,,5,,,,head
 sturgeon,animal_farming,Esturgeons,Sturgeon,acipenser,caviar,01/09/00,31/08/01,,,10,,,,head
-trout,animal_farming,Truites,Trout,,fish,01/09/00,31/08/01,,,3,,,,head
+trout,animal_farming,Truites,Trout,oncorhynchus_mykiss,fish,01/09/00,31/08/01,,,3,,,,head
 turkey,animal_farming,Dindes,Turkey,meleagris_gallopavo,meat,01/09/00,31/08/01,,,1,,,,head

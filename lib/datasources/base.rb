@@ -56,8 +56,8 @@ module Datasources
       self.class.datasource_name
     end
 
-    def load_csv(file, table, col_sep: ',', **options)
-      @csv_loader.load(file, table_name: table, search_path: @database.search_path, col_sep: col_sep)
+    def load_csv(file, table, col_sep: ',', encoding: nil, **options)
+      @csv_loader.load(file, table_name: table, search_path: @database.search_path, col_sep: col_sep, encoding: encoding)
     end
 
     def load_xls(file)

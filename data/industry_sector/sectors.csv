@@ -1,0 +1,31 @@
+reference_name,parent,fra,eng
+livestock,,Élevage,Livestock farming
+cattle,livestock,Bovins,Cattle
+beef_cattle,cattle,Bovins viande,Beef cattle
+dairy_cattle,cattle,Bovins lait,Dairy cattle
+sheep,livestock,Ovins,Sheep
+meat_sheep,sheep,Ovins viande,Meat sheep
+dairy_sheep,sheep,Ovins lait,Dairy sheep
+goats,livestock,Caprins,Goats
+pigs,livestock,Porcins,Pigs
+poultry,livestock,Volailles,Poultry
+equines,livestock,Équins,Equines
+rabbits,livestock,Cuniculture,Rabbit farming
+beekeeping,livestock,Apiculture,Beekeeping
+aquaculture,livestock,Aquaculture,Aquaculture
+other_livestock,livestock,Autres élevages,Other livestock
+crops,,Productions végétales,Crop farming
+field_crops,crops,Grandes cultures,Field crops
+cereals,field_crops,Céréales,Cereals
+oilseeds,field_crops,Oléagineux,Oilseeds
+protein_crops,field_crops,Protéagineux,Protein crops
+industrial_crops,field_crops,Cultures industrielles,Industrial crops
+forage_grassland,crops,Fourrages et prairies,Forage and grassland
+grassland,forage_grassland,Prairies,Grassland
+vegetables,crops,Légumes,Vegetables
+fruits,crops,Fruits,Fruits
+viticulture,crops,Viticulture,Viticulture
+ppam,crops,"Plantes à parfum, aromatiques et médicinales",Aromatic and medicinal plants
+horticulture,crops,Horticulture et pépinières,Horticulture and nurseries
+seeds,crops,Semences,Seed production
+forestry,crops,Sylviculture et agroforesterie,Forestry and agroforestry
