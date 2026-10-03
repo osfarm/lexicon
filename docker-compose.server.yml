@@ -5,6 +5,13 @@
 #   POSTGRES_PASSWORD      password of the lexicon role
 #   LEXICON_PACKAGES_DIR   directory of the host receiving the packages of `./lexicon publish`
 #
+# Optional, for the nightly copy of the packages to an S3 bucket (the `backup` service idles without them):
+#   LEXICON_BACKUP_ENDPOINT     https://host:port of the S3 service
+#   LEXICON_BACKUP_BUCKET       bucket receiving the copy
+#   LEXICON_BACKUP_ACCESS_KEY   access key
+#   LEXICON_BACKUP_SECRET_KEY   secret key
+#   LEXICON_BACKUP_INTERVAL     seconds between two copies (default: 86400)
+#
 # Domains are attached in Dokploy to `api` (port 8888) and `packages` (port 80).
 
 services:
@@ -64,6 +71,45 @@ services:
       - ${LEXICON_PACKAGES_DIR:?}:/packages:ro
     networks:
       - dokploy-network
+
+  # Mirrors the packages repository to an S3 bucket. The database is not saved: it is rebuilt from the packages.
+  backup:
+    image: rclone/rclone:1
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        if [ -z "$$LEXICON_BACKUP_BUCKET" ]; then
+          echo "backup: LEXICON_BACKUP_BUCKET is not set, nothing to do"
+          exec sleep infinity
+        fi
+        while true; do
+          # Never mirror an empty or unmounted repository: it would empty the copy
+          if [ -f /packages/index.json ]; then
+            if rclone sync /packages "nas:$$LEXICON_BACKUP_BUCKET" --exclude ".*" --transfers 4 --stats 0; then
+              echo "backup: $$(date -u +%FT%TZ) copied to $$LEXICON_BACKUP_BUCKET"
+            else
+              echo "backup: $$(date -u +%FT%TZ) FAILED"
+            fi
+          else
+            echo "backup: $$(date -u +%FT%TZ) no index.json in the repository, skipped"
+          fi
+          sleep "$$LEXICON_BACKUP_INTERVAL"
+        done
+    environment:
+      RCLONE_CONFIG_NAS_TYPE: s3
+      # "Other" addresses the bucket by path; "AWS" would look for a bucket sub-domain
+      RCLONE_CONFIG_NAS_PROVIDER: Other
+      RCLONE_CONFIG_NAS_FORCE_PATH_STYLE: "true"
+      RCLONE_CONFIG_NAS_ENDPOINT: ${LEXICON_BACKUP_ENDPOINT:-}
+      RCLONE_CONFIG_NAS_ACCESS_KEY_ID: ${LEXICON_BACKUP_ACCESS_KEY:-}
+      RCLONE_CONFIG_NAS_SECRET_ACCESS_KEY: ${LEXICON_BACKUP_SECRET_KEY:-}
+      LEXICON_BACKUP_BUCKET: ${LEXICON_BACKUP_BUCKET:-}
+      LEXICON_BACKUP_INTERVAL: ${LEXICON_BACKUP_INTERVAL:-86400}
+    volumes:
+      - ${LEXICON_PACKAGES_DIR:?}:/packages:ro
+    networks:
+      - lexicon
 
   api:
     image: ghcr.io/osfarm/lexicon-rest-api:latest

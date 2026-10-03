@@ -492,12 +492,12 @@ C'est acceptable puisque la base se reconstruit depuis le dépôt (C4).
 | Lot | Contenu | Effort |
 |---|---|---:|
 | 1 | Format v3, commande `package`, séparation structure / index, correction de `validate` — **fait** | 4–5 j |
-| 2 | `publish`, `index.json`, accès SSH restreint, `status` — **code fait**, à essayer contre le serveur | 2–3 j |
+| 2 | `publish`, `index.json`, `status` — **fait** (la clé SSH restreinte au dépôt reste à poser) | 2–3 j |
 | 3 | Loader : staging, contrôles, bascule, `lexicon_meta`, verrou, journal — **fait** (écarts : §4.7) | 6–8 j |
 | 4 | Dépendances : contrôles d'orphelins, lots, `stale`, `rollback`, `prune` — **fait** | 3–4 j |
 | 5 | Tables partagées : traductions, crédits, version — **fait** (écart : §5.4) | 2–3 j |
 | 6 | Bundles et flavors — **fait** | 2–3 j |
-| 7 | Serveur : Postgres réglé, loader, dépôt statique, sauvegarde S3 par Dokploy, mesures de chargement — **préparé** (`docker-compose.server.yml`, §13) | 2–3 j |
+| 7 | Serveur : Postgres réglé, loader, dépôt statique, sauvegarde S3 par Dokploy, mesures de chargement — **pile déployée** (§13) ; sauvegarde S3 et gros chargements restent à faire | 2–3 j |
 | 8 | Bascule : chargement initial complet, API sur `DB_SCHEMA=lexicon`, bundle `cultia`, retrait de la gem, documentation, réécriture de `ROADMAP.md` | 4–5 j |
 | | **Total** | **25–34 j** |
 
@@ -547,6 +547,25 @@ document séparé : `claudedocs/design_lexicon_v2_admin.md`.
 - **Image** : le `Dockerfile` passe de Debian 11 à Debian 12. Les dépôts de
   sécurité de Debian 11 ne servaient plus les paquets annoncés, et l'image ne
   se construisait plus nulle part.
+- **Premier déploiement le 2026-10-03** : la pile tourne, les deux domaines
+  répondent en HTTPS, et 13 petites datasources publiées sont en service
+  (vérifié par l'API : 16 095 produits phytosanitaires, 473 productions avec
+  leurs libellés). `rd_agri` n'est pas publiée : le dépôt est public et elle
+  doit rester réservée aux adhérents (J6).
+- **Cache des décomptes de l'API** : `lexicon-rest-api` estime le nombre de
+  lignes par `pg_class.reltuples` et garde le résultat 24 heures. Une table
+  interrogée avant son premier chargement affiche donc 0 ligne jusqu'au
+  redémarrage de l'API, et un décompte peut rester périmé un jour après une
+  mise à jour. Pour une vue (`datasource_credits`), `reltuples` vaut -1. À
+  corriger dans le dépôt de l'API.
+- **Sauvegarde** : le service `backup` de la pile recopie chaque jour le dépôt
+  de packages vers un bucket S3 du NAS LAVZ (`rclone sync`, adressage par
+  chemin). Il ne fait rien tant que `LEXICON_BACKUP_BUCKET` n'est pas défini
+  dans Dokploy, et saute la copie si le dépôt n'a pas d'`index.json`, pour ne
+  jamais vider la sauvegarde à partir d'un dépôt vide ou non monté. C'est un
+  miroir : une version supprimée par `server prune` disparaît aussi de la
+  copie. Restauration : `rclone copy nas:<bucket> /home/ubuntu/lexicon/packages`,
+  puis le loader recharge tout.
 - **Reste à faire au lot 7** : sauvegarde du dépôt vers S3 par Dokploy,
   mesure des gros chargements. Le script d'initialisation de la base
   (`docker/db/z_initdb_postgis.sql`) crée un rôle `api_user` au mot de passe
