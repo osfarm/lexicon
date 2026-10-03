@@ -92,7 +92,26 @@ module Lexicon
             register(:root, memoize: true) { container.resolve('parameter.root').join 'out' }
           end
           namespace :packages do
-            register(:root, memoize: true) { container.resolve('parameter.out.root').join 'packages' }
+            register(:root, memoize: true) do
+              if ENV.key?('LEXICON_PACKAGES_ROOT')
+                Pathname.new(ENV['LEXICON_PACKAGES_ROOT'])
+              else
+                container.resolve('parameter.out.root').join('packages')
+              end
+            end
+          end
+          namespace :server do
+            namespace :database do
+              # The serving database is never the one datasources are built in
+              register(:url) do
+                url = ENV.fetch('LEXICON_SERVER_DATABASE_URL') { raise Server::LoadFailure.new('LEXICON_SERVER_DATABASE_URL is not set') }
+                if url == container.resolve('parameter.database.url')
+                  raise Server::LoadFailure.new('LEXICON_SERVER_DATABASE_URL is the build database')
+                end
+
+                url
+              end
+            end
           end
           namespace :flavors do
             register(:root, memoize: true) { container.resolve('parameter.resources.root').join('flavors') }
@@ -286,6 +305,24 @@ module Lexicon
               dependency_resolver: Packaging::DependencyResolver.new(container.resolve('database.schema.definitions')),
               splitter: Packaging::StructureSplitter.new,
               tool_version: container.resolve(:version)
+            )
+          end
+        end
+
+        container.namespace :server do
+          register(:connection, memoize: true) { PG.connect(container.resolve('parameter.server.database.url')) }
+          register(:meta, memoize: true) { Server::Meta.new(container.resolve('server.connection')) }
+          register(:loader, memoize: true) do
+            connection = container.resolve('server.connection')
+            meta = container.resolve('server.meta')
+
+            Server::Loader.new(
+              connection: connection,
+              repository: container.resolve('packaging.repository'),
+              meta: meta,
+              stager: Server::Stager.new(connection),
+              checker: Server::Checker.new(connection, meta: meta),
+              swapper: Server::Swapper.new(connection)
             )
           end
         end

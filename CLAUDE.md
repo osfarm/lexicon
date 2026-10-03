@@ -28,6 +28,8 @@ docker compose -f docker-compose-dev.yml down     # Stop dev containers
 ./lexicon validate                # Validate schema against definitions
 ./lexicon clean                   # Clear all database content
 ./lexicon package [names]         # v2: one versioned package per datasource in out/packages/<name>/<version>/
+./lexicon server sync [names]     # v2: put packages in service in the serving database (name or name@version)
+./lexicon server status           # v2: versions in service, last loads
 ./lexicon dump all                # Create versioned package in out/
 ./lexicon version bump [major|minor|patch]  # Bump version
 ./lexicon remote upload <version> # Upload package to MinIO/S3
@@ -43,6 +45,13 @@ Unit tests live in `test/` (Minitest). The directory is not mounted in the runne
 ```bash
 docker compose -f docker-compose-dev.yml run --rm -T -v "$PWD/test:/lexicon/test:ro" lexicon_runner \
   sh -c 'for f in test/lexicon/*/*_test.rb; do bundle exec ruby -Itest $f || exit 1; done'
+```
+
+To try the serving side by hand, the wrapper does not forward environment variables:
+
+```bash
+docker compose -f docker-compose-dev.yml exec lexicon_runner sh -c \
+  'LEXICON_SERVER_DATABASE_URL="postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:5432/lexicon_server_dev" ./lexicon-cli server status'
 ```
 
 ### Linting
@@ -115,7 +124,13 @@ Services are wired via `Dry::Container` in `Lexicon::Application#register_servic
 Design: `claudedocs/design_lexicon_v2_j1.md`. `Lexicon::Packaging` builds one package per datasource
 (`manifest.json`, `structure.sql`, `indexes.sql`, `data/*.csv.gz`), versioned `YYYY.MM.DD.N`. A datasource
 declares `schema_revision N` when its tables change shape, and `depends_on :other` for datasources it reads
-during normalize without a foreign key. The legacy `dump` / `remote` / `production` commands still exist but
+during normalize without a foreign key.
+
+`Lexicon::Server` puts a package in service in another database (`LEXICON_SERVER_DATABASE_URL`, refused if it
+is the build database): `Stager` loads it in `lexicon_staging`, `Checker` refuses it before or after staging,
+`Swapper` replaces the tables of `lexicon` in one transaction and recreates the foreign keys pointing to them,
+`Meta` keeps versions and the load journal in `lexicon_meta`. A failed load leaves the previous version in
+service. `test/lexicon/server/loader_test.rb` runs against a scratch database it creates and drops. The legacy `dump` / `remote` / `production` commands still exist but
 their MinIO remote is gone.
 
 ### Python Integration

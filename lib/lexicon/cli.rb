@@ -54,6 +54,9 @@ module Lexicon
     desc 'production', 'Production related commands'
     subcommand 'production', Commands::ProductionCommand
 
+    desc 'server', 'Serving side: put packages in service'
+    subcommand 'server', Commands::ServerCommand
+
     desc 'load', 'Load a local package into a remote database (via SSH)'
     subcommand 'load', Commands::LoadCommand
 

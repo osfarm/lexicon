@@ -287,6 +287,31 @@ Le loader est un conteneur permanent qui surveille `index.json` (toutes les
 cinq minutes, ou à la demande par `lexicon server sync`). Un verrou
 consultatif Postgres garantit un seul chargement à la fois.
 
+### 4.7 Écarts de l'implémentation (lot 3)
+
+- **Bascule par `DROP TABLE` dans la transaction**, au lieu de déplacer
+  l'ancienne table vers le staging. Les index de l'ancienne et de la nouvelle
+  table portent le même nom et ne peuvent pas cohabiter dans un schéma ; un
+  `DROP` annulable par la transaction donne la même atomicité sans schéma
+  intermédiaire.
+- **Clés étrangères validées dans la transaction de bascule**, et non créées
+  `NOT VALID` puis validées après. Une référence orpheline annule ainsi toute
+  la bascule. Seules de petites tables portent des clés étrangères.
+- **Clés entrantes relevées dans le catalogue Postgres**, pas dans les
+  manifests : elles sont recréées à l'identique, quel que soit le package
+  qui les porte.
+- **Un seul flux `COPY`**, dans une seule connexion et une seule transaction
+  de staging par datasource. Deux flux en parallèle restent une optimisation
+  possible si les gros chargements sont trop lents.
+- **Chute de volume calculée sur les manifests** (lignes de la version en
+  service contre lignes de la nouvelle), sans compter les tables servies.
+- Les contrôles d'orphelins détaillés, les lots, `stale`, `rollback` et
+  `prune` restent au lot 4 ; les vues dérivées au lot 5.
+- **À prévoir au lot 7** : la base servie doit porter
+  `intervalstyle = 'iso_8601'`, comme la base de build
+  (`docker/db/z_initdb_postgis.sql`), sinon les durées s'affichent autrement
+  pour les consommateurs.
+
 ## 5. Les trois tables partagées
 
 Elles empêchent aujourd'hui toute bascule indépendante.
@@ -448,7 +473,7 @@ C'est acceptable puisque la base se reconstruit depuis le dépôt (C4).
 |---|---|---:|
 | 1 | Format v3, commande `package`, séparation structure / index, correction de `validate` — **fait** | 4–5 j |
 | 2 | `publish`, `index.json`, accès SSH restreint, `status` | 2–3 j |
-| 3 | Loader : staging, contrôles, bascule, `lexicon_meta`, verrou, journal | 6–8 j |
+| 3 | Loader : staging, contrôles, bascule, `lexicon_meta`, verrou, journal — **fait** (écarts : §4.7) | 6–8 j |
 | 4 | Dépendances : contrôles d'orphelins, lots, `stale`, `rollback` | 3–4 j |
 | 5 | Tables partagées : traductions, crédits, version | 2–3 j |
 | 6 | Bundles et flavors | 2–3 j |

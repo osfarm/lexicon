@@ -5,6 +5,7 @@ module Lexicon
     # Local directory of packages, laid out as <root>/<datasource>/<version>/
     class Repository
       VERSION_FORMAT = /\A\d{4}\.\d{2}\.\d{2}\.\d+\z/.freeze
+      INDEX_FILE = 'index.json'
 
       # @return [Pathname]
       attr_reader :root
@@ -27,6 +28,28 @@ module Lexicon
         datasource_dir(name).join(version)
       end
 
+      # @return [Array<String>] datasources having at least one complete version
+      def names
+        return [] unless root.directory?
+
+        root.children.select(&:directory?).map { |child| child.basename.to_s }.select { |name| versions(name).any? }.sort
+      end
+
+      # @param [String] name
+      # @param [String] version
+      # @return [Manifest, nil]
+      def manifest(name, version)
+        file = package_dir(name, version).join(Manifest::FILE_NAME)
+
+        file.file? ? Manifest.load(file) : nil
+      end
+
+      # @param [String] name
+      # @return [String, nil] the version to serve: the one the index designates, or else the latest
+      def current(name)
+        index.dig(:datasources, name.to_sym, :current) || versions(name).last
+      end
+
       # @param [String] name
       # @return [Array<String>] complete versions, oldest first
       def versions(name)
@@ -44,9 +67,8 @@ module Lexicon
       # @return [Manifest, nil]
       def latest(name)
         version = versions(name).last
-        return nil if version.nil?
 
-        Manifest.load(package_dir(name, version).join(Manifest::FILE_NAME))
+        version && manifest(name, version)
       end
 
       # @param [String] name
@@ -61,6 +83,13 @@ module Lexicon
       end
 
       private
+
+        # @return [Hash]
+        def index
+          file = root.join(INDEX_FILE)
+
+          file.file? ? JSON.parse(file.read, symbolize_names: true) : {}
+        end
 
         def sort_key(version)
           version.split('.').map(&:to_i)
