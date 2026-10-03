@@ -27,12 +27,22 @@ docker compose -f docker-compose-dev.yml down     # Stop dev containers
 ./lexicon run --jobs 8            # Custom parallel job count
 ./lexicon validate                # Validate schema against definitions
 ./lexicon clean                   # Clear all database content
+./lexicon package [names]         # v2: one versioned package per datasource in out/packages/<name>/<version>/
 ./lexicon dump all                # Create versioned package in out/
 ./lexicon version bump [major|minor|patch]  # Bump version
 ./lexicon remote upload <version> # Upload package to MinIO/S3
 ./lexicon remote download <version>
 ./lexicon production load <version> # Deploy to Ekylibre instance
 ./lexicon console                 # Interactive Ruby REPL
+```
+
+### Tests
+
+Unit tests live in `test/` (Minitest). The directory is not mounted in the runner container:
+
+```bash
+docker compose -f docker-compose-dev.yml run --rm -T -v "$PWD/test:/lexicon/test:ro" lexicon_runner \
+  sh -c 'for f in test/lexicon/*/*_test.rb; do bundle exec ruby -Itest $f || exit 1; done'
 ```
 
 ### Linting
@@ -99,6 +109,14 @@ Services are wired via `Dry::Container` in `Lexicon::Application#register_servic
 - **Flavors** (`--flavor light`, etc.) apply conditional filters defined in `resources/flavors/`
 - Packages are distributed via MinIO/S3 and deployed to production Ekylibre instances
 - Version is stored in `VERSION` file
+
+### Packages v2 (in progress, branch `v2`)
+
+Design: `claudedocs/design_lexicon_v2_j1.md`. `Lexicon::Packaging` builds one package per datasource
+(`manifest.json`, `structure.sql`, `indexes.sql`, `data/*.csv.gz`), versioned `YYYY.MM.DD.N`. A datasource
+declares `schema_revision N` when its tables change shape, and `depends_on :other` for datasources it reads
+during normalize without a foreign key. The legacy `dump` / `remote` / `production` commands still exist but
+their MinIO remote is gone.
 
 ### Python Integration
 

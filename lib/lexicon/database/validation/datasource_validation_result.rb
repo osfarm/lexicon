@@ -6,7 +6,7 @@ module Lexicon
       class DatasourceValidationResult
         attr_reader :validations, :name
 
-        # @param [Hash{Lexicon::Database::Schema::TableDefinition => Symbol}] validations
+        # @param [Hash{Lexicon::Database::Schema::TableDefinition => TableValidationResult}] validations
         def initialize(name, validations)
           @name = name
           @validations = validations
@@ -14,7 +14,12 @@ module Lexicon
 
         # @return [Boolean]
         def valid?
-          validations.values.all? { |e| e == :ok }
+          invalid_tables.empty?
+        end
+
+        # @return [Array<TableValidationResult>]
+        def invalid_tables
+          validations.values.reject(&:valid?)
         end
       end
     end

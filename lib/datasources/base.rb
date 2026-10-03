@@ -3,6 +3,7 @@ module Datasources
     extend Forwardable
     include Lexicon::Dsl::CreditsRecorder
     include Lexicon::Dsl::Description
+    include Lexicon::Dsl::Packaging
     include Lexicon::Dsl::Python
     include Lexicon::Dsl::Resources
 

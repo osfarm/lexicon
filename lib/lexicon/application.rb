@@ -91,6 +91,9 @@ module Lexicon
           namespace :out do
             register(:root, memoize: true) { container.resolve('parameter.root').join 'out' }
           end
+          namespace :packages do
+            register(:root, memoize: true) { container.resolve('parameter.out.root').join 'packages' }
+          end
           namespace :flavors do
             register(:root, memoize: true) { container.resolve('parameter.resources.root').join('flavors') }
           end
@@ -272,6 +275,19 @@ module Lexicon
 
         container.register(:s3_client, memoize: true) do
           Common::Remote::S3Client.new(raw: container.resolve('minio.client'))
+        end
+
+        container.namespace :packaging do
+          register(:repository, memoize: true) { Packaging::Repository.new(container.resolve('parameter.packages.root')) }
+          register(:builder, memoize: true) do
+            Packaging::Builder.new(
+              repository: container.resolve('packaging.repository'),
+              exporter: Packaging::TableExporter.new(db_url: container.resolve('parameter.database.url')),
+              dependency_resolver: Packaging::DependencyResolver.new(container.resolve('database.schema.definitions')),
+              splitter: Packaging::StructureSplitter.new,
+              tool_version: container.resolve(:version)
+            )
+          end
         end
 
         container.namespace :production do
