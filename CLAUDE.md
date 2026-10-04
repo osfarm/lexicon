@@ -29,7 +29,7 @@ docker compose -f docker-compose-dev.yml down     # Stop dev containers
 ./lexicon clean                   # Clear all database content
 ./lexicon package [names]         # v2: one versioned package per datasource in out/packages/<name>/<version>/
 ./lexicon publish [names]         # v2: send packages to the serving side (LEXICON_PUBLISH_TARGET) and designate them
-./lexicon status                  # v2: latest local version of each package, and the one published
+./lexicon status                  # v2: version of each package: local, published, in service (status.json of the loader)
 ./lexicon bundle <flavor> [names] # v2: repository of packages filtered by a flavor, in out/bundles/<flavor>/
 ./lexicon server sync [names]     # v2: put packages in service in the serving database (name or name@version)
 ./lexicon server sync a b --together  # v2: swap several packages in one transaction (all or none)

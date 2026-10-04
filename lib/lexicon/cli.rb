@@ -96,18 +96,25 @@ module Lexicon
       exit 1
     end
 
-    desc 'status', 'Latest local version of each package, and the one published'
+    desc 'status', 'Latest local version of each package, the one published and the one in service'
 
     def status
       repository = get('packaging.repository')
       published = get('packaging.publisher').published
+      in_service = get('packaging.publisher').in_service
 
-      (repository.names | published.keys).sort.each do |name|
+      (repository.names | published.keys | in_service.keys).sort.each do |name|
         local = repository.versions(name).last
         current = published.dig(name, :current)
-        state = local == current ? '' : ' to publish'.red
+        served = in_service.dig(name, :version)
+        notes = [
+          (' to publish'.red if !local.nil? && local != current),
+          (' not in service yet'.red if in_service.any? && !current.nil? && served != current),
+          (' stale'.red if in_service.dig(name, :stale))
+        ].compact.join
 
-        puts "#{name.ljust(32).yellow} local #{(local || '-').ljust(14)} published #{current || '-'}#{local.nil? ? '' : state}"
+        puts "#{name.ljust(30).yellow} local #{(local || '-').ljust(13)} published #{(current || '-').ljust(13)} " \
+             "in service #{served || (in_service.any? ? '-' : '?')}#{notes}"
       end
     rescue Packaging::Rsync::TransferError => e
       puts '[ NOK ] '.red + e.message

@@ -37,6 +37,12 @@ module Lexicon
         remote_index.fetch(:datasources, {}).transform_keys(&:to_s)
       end
 
+      # @return [Hash{String => Hash}] for each package the serving side reports in service, :version,
+      #   :loaded_at and :stale. Empty when it reports nothing
+      def in_service
+        remote_json(Server::StatusFile::FILE_NAME).fetch(:packages, {}).transform_keys(&:to_s)
+      end
+
       private
 
         # @return [Repository]
@@ -75,10 +81,15 @@ module Lexicon
 
         # @return [Hash]
         def remote_index
-          Dir.mktmpdir do |dir|
-            file = Pathname.new(dir).join(Repository::INDEX_FILE)
+          remote_json(Repository::INDEX_FILE)
+        end
 
-            transfer.fetch_file("#{target}/#{Repository::INDEX_FILE}", file) ? JSON.parse(file.read, symbolize_names: true) : {}
+        # @return [Hash] empty when the file does not exist
+        def remote_json(name)
+          Dir.mktmpdir do |dir|
+            file = Pathname.new(dir).join(name)
+
+            transfer.fetch_file("#{target}/#{name}", file) ? JSON.parse(file.read, symbolize_names: true) : {}
           end
         end
     end

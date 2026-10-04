@@ -27,6 +27,7 @@ module Lexicon
         loop do
           begin
             loader.sync { |outcome| print_outcome(outcome) unless outcome.state == :up_to_date }
+            get('server.status_file').write
           rescue Server::LoadFailure => e
             puts '[ NOK ] '.red + e.message
           end

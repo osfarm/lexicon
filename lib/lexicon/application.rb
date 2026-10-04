@@ -356,6 +356,9 @@ module Lexicon
               swapper: container.resolve('server.swapper')
             )
           end
+          register(:status_file, memoize: true) do
+            Server::StatusFile.new(repository: container.resolve('packaging.repository'), meta: container.resolve('server.meta'))
+          end
           register(:pruner, memoize: true) do
             Server::Pruner.new(
               repository: container.resolve('packaging.repository'),

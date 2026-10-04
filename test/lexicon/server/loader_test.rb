@@ -328,6 +328,23 @@ module Lexicon
         assert_equal [['units', 'Units', 'Ekylibre', '2022-02-23']], rows("SELECT datasource, name, provider, updated_at::date::text FROM lexicon.datasource_credits")
       end
 
+      def test_status_file_reports_what_is_in_service_and_the_last_failures
+        package('units', '2026.10.01.1', units: [%w[kilogram kg]])
+        @loader.sync
+        package('units', '2026.10.02.1', { units: [%w[kilogram kg]] }, declared_rows: { units: 9 })
+        @loader.sync
+
+        StatusFile.new(repository: @repository, meta: @meta).write
+        status = JSON.parse(@root.join('status.json').read)
+
+        assert_equal '2026.10.01.1', status.dig('packages', 'units', 'version')
+        assert_equal false, status.dig('packages', 'units', 'stale')
+        assert_equal ['units'], status['last_failures'].map { |failure| failure['name'] }
+        assert_match(/1 rows loaded, 9 expected/, status['last_failures'].first['reasons'].first)
+        refute @root.join('.status.json.tmp').exist?
+        assert_equal ['units'], @repository.names
+      end
+
       def test_rollback_puts_the_previous_version_back
         package('units', '2026.10.01.1', units: Array.new(10) { |i| ["unit#{i}", "u#{i}"] })
         @loader.sync

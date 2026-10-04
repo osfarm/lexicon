@@ -57,6 +57,15 @@ module Lexicon
         assert_equal %w[2026.10.01.1 2026.10.02.1], Repository.new(@remote).versions('units')
       end
 
+      def test_in_service_comes_from_the_status_file_of_the_serving_side
+        assert_empty @publisher.in_service
+
+        @remote.mkpath
+        @remote.join('status.json').write({ packages: { units: { version: '2026.10.01.1', stale: false } } }.to_json)
+
+        assert_equal({ 'units' => { version: '2026.10.01.1', stale: false } }, @publisher.in_service)
+      end
+
       def test_unknown_package_is_refused_and_nothing_is_published
         assert_raises(ArgumentError) { @publisher.publish('units') }
         build('units', '2026.10.01.1')
