@@ -86,7 +86,9 @@ services:
         while true; do
           # Never mirror an empty or unmounted repository: it would empty the copy
           if [ -f /packages/index.json ]; then
-            if rclone sync /packages "nas:$$LEXICON_BACKUP_BUCKET" --exclude ".*" --transfers 4 --stats 0; then
+            # The dumps of the access schema are copied apart: the mirror of the packages must not delete them
+            if rclone sync /packages "nas:$$LEXICON_BACKUP_BUCKET" --exclude ".*" --exclude "/_access/**" --transfers 4 --stats 0 \
+              && rclone copy /dumps "nas:$$LEXICON_BACKUP_BUCKET/_access" --stats 0; then
               echo "backup: $$(date -u +%FT%TZ) copied to $$LEXICON_BACKUP_BUCKET"
             else
               echo "backup: $$(date -u +%FT%TZ) FAILED"
@@ -108,6 +110,38 @@ services:
       LEXICON_BACKUP_INTERVAL: ${LEXICON_BACKUP_INTERVAL:-86400}
     volumes:
       - ${LEXICON_PACKAGES_DIR:?}:/packages:ro
+      - lexicon_access_dumps:/dumps:ro
+    networks:
+      - lexicon
+
+  # API keys, plans and usage are the only state that cannot be rebuilt from the packages: they are dumped
+  # every day, and the backup service copies the dumps to the bucket.
+  access-dump:
+    build:
+      context: docker/db
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        while true; do
+          file="/dumps/lexicon_access-$$(date -u +%F).sql.gz"
+          if pg_dump -h db -U lexicon -d lexicon --schema=lexicon_access 2>/tmp/error | gzip > "$$file.tmp" && [ ! -s /tmp/error ]; then
+            mv "$$file.tmp" "$$file"
+            echo "access-dump: $$(date -u +%FT%TZ) wrote $$file"
+          else
+            rm -f "$$file.tmp"
+            echo "access-dump: $$(date -u +%FT%TZ) nothing dumped: $$(head -1 /tmp/error)"
+          fi
+          find /dumps -name 'lexicon_access-*.sql.gz' -mtime +30 -delete
+          sleep 86400
+        done
+    environment:
+      PGPASSWORD: ${POSTGRES_PASSWORD:?}
+    volumes:
+      - lexicon_access_dumps:/dumps
+    depends_on:
+      db:
+        condition: service_healthy
     networks:
       - lexicon
 
@@ -139,3 +173,4 @@ networks:
 
 volumes:
   lexicon_server_db:
+  lexicon_access_dumps:

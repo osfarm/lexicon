@@ -282,6 +282,51 @@ Les lots A à E ne dépendent pas de J1. Ils peuvent passer avant si
 l'ouverture de l'API à des tiers est plus urgente que les mises à jour
 indépendantes.
 
+## 8 bis. Avancement
+
+Travail dans `/home/djoulin/projects/lexicon-rest-api-access`, branche
+`feature/access-control`.
+
+| Lot | État |
+|---|---|
+| A | Schéma `lexicon_access` créé au démarrage de l'API, plans initiaux semés. Sauvegarde quotidienne du schéma : service `access-dump` de la pile, recopié dans le bucket par `backup`. **Reste** : le rôle Postgres `lexicon_api` |
+| B | **Fait et en production** (API 1.3.5) : identité, cache des clés, seaux à jetons, quota journalier, en-têtes, refus 401 / 403 / 429 / 503, comptage d'usage |
+| C | **Fait** (PR 21) : comptes administrateurs, sessions, jeton CSRF, limite de connexion, `bin/admin.ts` |
+| D | **Fait** (PR 21) : pages des clés et des plans, journal des actions |
+| E | **Fait** (PR 21) : page de consommation, export CSV |
+| F | Page des datasources **faite** (PR 21). **Reste** : le téléchargement des bundles privés |
+
+Vérifié en production pour le lot B : en-têtes de quota, refus d'une clé
+invalide, et 40 requêtes d'une même adresse avec un `X-Forwarded-For` forgé
+différent à chaque fois donnent 29 réponses servies et 11 refus `429`.
+
+Écarts avec la conception :
+
+- **Délai maximal de requête** : une seule valeur, 30 secondes pour tous, au
+  lieu d'une valeur par plan. Le pool de connexions est partagé ; un délai par
+  plan demanderait une connexion dédiée par requête.
+- **Taille de page par plan** : non appliquée. L'API n'a pas de paramètre de
+  taille de page (150 lignes fixes).
+- **Coût d'une requête** : toujours 1, y compris pour les exports CSV.
+- **Ressource réservée demandée sans clé** : réponse 401 avec invitation à
+  s'authentifier, et non 403. Le 403 est réservé à une clé valide dont le plan
+  n'ouvre pas la ressource.
+- **Clés en ligne de commande** : `bun run bin/key.ts create|list|revoke`,
+  disponible avant l'interface web du lot D.
+- **Adresse de l'appelant** : lue dans l'entrée de `X-Forwarded-For` ajoutée
+  par le proxy de confiance (`TRUSTED_PROXIES`, 1 par défaut), jamais dans ce
+  que l'appelant envoie, sans quoi la limite par adresse se contournerait.
+- **Propriétaires de parcelles** : ils n'ont pas d'URL propre dans l'API ; ils
+  apparaissent dans l'outil d'identification de parcelle, qui ne les affiche
+  plus qu'aux porteurs d'une clé.
+- **Langue de l'interface** : français uniquement, libellés dans les pages et
+  non dans `translations.csv`.
+- **Gabarit des pages d'administration** : distinct du gabarit public, qui
+  charge des scripts depuis des CDN ; aucun script tiers là où les clés sont
+  gérées.
+- **Limite quotidienne côté visiteurs** : une adresse limitée reçoit aussi un
+  `429` sur les pages HTML du site, pas seulement sur l'API.
+
 ## 9. Points confirmés
 
 Tous les points ouverts sont tranchés (A2, A3, A6, A7, A8). Il reste une
