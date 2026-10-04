@@ -8,6 +8,8 @@ module Lexicon
   module Packaging
     # Sends packages to the repository of the serving side, then designates them in its index.
     class Publisher
+      BUNDLES_DIR = '_bundles'
+
       # @param [Repository] repository local repository
       # @param [String] target remote repository, as rsync names it: a directory or host:path
       # @param [Rsync] transfer
@@ -30,6 +32,20 @@ module Lexicon
         designate(name, version)
 
         version
+      end
+
+      # Sends a bundle, a whole repository of packages, to the private area of the serving side. Its files
+      # are only handed out by the API, to the keys carrying the scope of the bundle.
+      #
+      # @param [Pathname] dir local repository of the bundle
+      # @param [String] flavor
+      def publish_bundle(dir, flavor)
+        raise ArgumentError.new("No bundle in #{dir}") unless dir.join(Repository::INDEX_FILE).file?
+
+        destination = "#{target}/#{BUNDLES_DIR}/#{flavor}"
+        transfer.copy_directory(dir, destination, exclude: [Repository::INDEX_FILE], permissions: Rsync::PRIVATE)
+        transfer.copy_file(dir.join(Repository::INDEX_FILE), "#{destination}/#{Repository::INDEX_FILE}",
+                           permissions: Rsync::PRIVATE)
       end
 
       # @return [Hash{String => Hash}] for each datasource of the remote index, :current and :versions
@@ -56,9 +72,12 @@ module Lexicon
         def send_package(name, version)
           source = repository.package_dir(name, version)
           destination = "#{target}/#{name}/#{version}"
+          # A package reserved to key holders is loaded by the serving side, but not downloadable
+          permissions = repository.manifest(name, version).open? ? Rsync::PUBLIC : Rsync::PRIVATE
 
-          transfer.copy_directory(source, destination, exclude: [Manifest::FILE_NAME])
-          transfer.copy_file(source.join(Manifest::FILE_NAME), "#{destination}/#{Manifest::FILE_NAME}")
+          transfer.copy_directory(source, destination, exclude: [Manifest::FILE_NAME], permissions: permissions)
+          transfer.copy_file(source.join(Manifest::FILE_NAME), "#{destination}/#{Manifest::FILE_NAME}",
+                             permissions: permissions)
 
           differences = transfer.differences(source, destination)
           raise Rsync::TransferError.new("#{name}@#{version} differs once sent: #{differences.join(', ')}") if differences.any?

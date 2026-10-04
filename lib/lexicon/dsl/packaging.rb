@@ -41,6 +41,17 @@ module Lexicon
           @translation_prefixes || []
         end
 
+        # Who may read the datasource: 'open' for everyone, 'members' for the holders of an API key.
+        # A package that is not open is published unreadable by the public file server.
+        #
+        # @param [#to_s, nil] value
+        # @return [String]
+        def scope(value = nil)
+          @scope = value.to_s unless value.nil?
+
+          @scope || Lexicon::Packaging::Manifest::OPEN_SCOPE
+        end
+
         # A datasource that is not packaged only exists on the build side.
         #
         # @param [Boolean] value

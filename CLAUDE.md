@@ -30,6 +30,8 @@ docker compose -f docker-compose-dev.yml down     # Stop dev containers
 ./lexicon package [names]         # v2: one versioned package per datasource in out/packages/<name>/<version>/
 ./lexicon publish [names]         # v2: send packages to the serving side (LEXICON_PUBLISH_TARGET) and designate them
 ./lexicon status                  # v2: version of each package: local, published, in service (status.json of the loader)
+./lexicon publish --bundle <flavor>  # v2: send a bundle to the private area of the serving side
+./lexicon fetch <url>             # v2: download a bundle served by the API (key in LEXICON_API_KEY)
 ./lexicon bundle <flavor> [names] # v2: repository of packages filtered by a flavor, in out/bundles/<flavor>/
 ./lexicon server sync [names]     # v2: put packages in service in the serving database (name or name@version)
 ./lexicon server sync a b --together  # v2: swap several packages in one transaction (all or none)
@@ -139,6 +141,12 @@ rows in a table `<name>__translations`; on the serving side `master_translations
 rebuilt at each swap, and `datasource_credits` is a view over the manifests. The `translations` datasource is
 `packaged false`. A bundle is a repository like `out/packages`, loadable with
 `LEXICON_PACKAGES_ROOT=out/bundles/<flavor> ./lexicon server sync`.
+
+Access: a datasource declares `scope :members` when it is reserved to API key holders (`rd_agri`,
+`cadastre_owners`). Its package is published readable by its owner only (`D700,F600`): the loader, which runs
+as that owner, puts it in service, while the public file server, which runs as an unprivileged user, cannot
+serve it. Bundles go to `_bundles/<flavor>/` with the same permissions and are handed out by the API under
+`/bundles/<flavor>/` to the keys carrying `bundle:<flavor>`.
 
 Deployment: `docker-compose.server.yml` is the serving stack (db, loader, packages file server, API), deployed
 by Dokploy on the `osfarm_lexicon` server. `./lexicon publish` needs `rsync` in the runner image.

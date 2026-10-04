@@ -17,6 +17,8 @@ module Datasources
             licence_url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr',
             updated_at: '2026-09-15'
     depends_on :industry_sector, :open_nomenclature, :administrative_areas, :phytosanitary
+    # CC BY-NC-SA: reserved to OSFarm members
+    scope :members
 
     # Colonnes de l'export rd-agri → colonnes de documents.csv.
     # « Auteurs » n'y figure pas : la donnée nominative n'entre pas en base.

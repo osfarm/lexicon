@@ -36,7 +36,10 @@ module Lexicon
       def names
         return [] unless root.directory?
 
-        root.children.select(&:directory?).map { |child| child.basename.to_s }.select { |name| versions(name).any? }.sort
+        # Directories starting with an underscore are not datasources: bundles, dumps
+        root.children.select(&:directory?).map { |child| child.basename.to_s }
+            .reject { |name| name.start_with?('_', '.') }
+            .select { |name| versions(name).any? }.sort
       end
 
       # @param [String] name

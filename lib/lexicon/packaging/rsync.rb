@@ -17,20 +17,27 @@ module Lexicon
       }.freeze
       # Seconds without any data before a transfer gives up, instead of hanging on a dead connection
       IO_TIMEOUT = 120
+      # Permissions given to what is sent. The public file server does not run as the owner of the files:
+      # it serves what everyone may read, and nothing of what only the owner may.
+      PUBLIC = 'D755,F644'
+      PRIVATE = 'D700,F600'
 
       # @param [Pathname, String] source directory whose content is copied
       # @param [String] destination
       # @param [Array<String>] exclude
-      def copy_directory(source, destination, exclude: [])
+      # @param [String] permissions
+      def copy_directory(source, destination, exclude: [], permissions: PUBLIC)
         excludes = exclude.map { |name| "--exclude=#{name}" }
 
-        run('-a', '--partial', "--timeout=#{IO_TIMEOUT}", '--mkpath', *excludes, "#{source}/", "#{destination}/")
+        run('-a', "--chmod=#{permissions}", '--partial', "--timeout=#{IO_TIMEOUT}", '--mkpath', *excludes,
+            "#{source}/", "#{destination}/")
       end
 
       # @param [Pathname, String] source
       # @param [String] destination
-      def copy_file(source, destination)
-        run('-a', '--mkpath', source.to_s, destination)
+      # @param [String] permissions
+      def copy_file(source, destination, permissions: PUBLIC)
+        run('-a', "--chmod=#{permissions}", '--mkpath', source.to_s, destination)
       end
 
       # @param [String] source

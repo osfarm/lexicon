@@ -63,9 +63,18 @@ services:
     networks:
       - lexicon
 
+  # Public file server of the repository. It does not run as the owner of the files: packages reserved to
+  # key holders and bundles are published readable by their owner only, so it cannot serve them.
   packages:
     image: caddy:2-alpine
     restart: unless-stopped
+    user: "65534:65534"
+    sysctls:
+      # Lets an unprivileged user listen on port 80
+      net.ipv4.ip_unprivileged_port_start: "0"
+    environment:
+      XDG_DATA_HOME: /tmp
+      XDG_CONFIG_HOME: /tmp
     command: ["caddy", "file-server", "--root", "/packages", "--browse", "--listen", ":80"]
     volumes:
       - ${LEXICON_PACKAGES_DIR:?}:/packages:ro
@@ -159,6 +168,10 @@ services:
       DB_PASSWORD: ${POSTGRES_PASSWORD:?}
       DB_NAME: lexicon
       DB_SCHEMA: lexicon
+      # Private bundles, handed out to the keys carrying their scope
+      BUNDLES_ROOT: /bundles
+    volumes:
+      - ${LEXICON_PACKAGES_DIR:?}/_bundles:/bundles:ro
     depends_on:
       db:
         condition: service_healthy

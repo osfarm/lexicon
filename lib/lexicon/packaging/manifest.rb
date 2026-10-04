@@ -10,6 +10,7 @@ module Lexicon
     class Manifest
       FORMAT = 3
       FILE_NAME = 'manifest.json'
+      OPEN_SCOPE = 'open'
 
       # @return [String]
       attr_reader :name, :version, :structure_hash, :tool_version
@@ -19,6 +20,8 @@ module Lexicon
       attr_reader :built_at
       # @return [String, nil]
       attr_reader :flavor
+      # @return [String] who may read the package: 'open', or the scope an API key must carry
+      attr_reader :scope
       # @return [Array<Hash>]
       attr_reader :credits, :depends_on, :tables, :foreign_keys
 
@@ -36,7 +39,7 @@ module Lexicon
       end
 
       def initialize(name:, version:, schema_revision:, structure_hash:, built_at:, tool_version:,
-                     credits:, depends_on:, tables:, foreign_keys:, flavor: nil)
+                     credits:, depends_on:, tables:, foreign_keys:, flavor: nil, scope: OPEN_SCOPE)
         @name = name
         @version = version
         @schema_revision = schema_revision
@@ -44,6 +47,7 @@ module Lexicon
         @built_at = built_at
         @tool_version = tool_version
         @flavor = flavor
+        @scope = scope
         @credits = credits
         @depends_on = depends_on
         @tables = tables
@@ -61,11 +65,17 @@ module Lexicon
           built_at: built_at.utc.iso8601,
           tool_version: tool_version,
           flavor: flavor,
+          scope: scope,
           credits: credits,
           depends_on: depends_on,
           tables: tables,
           foreign_keys: foreign_keys
         }
+      end
+
+      # @return [Boolean]
+      def open?
+        scope == OPEN_SCOPE
       end
 
       # @return [String]

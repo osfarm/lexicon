@@ -66,6 +66,35 @@ module Lexicon
         assert_equal({ 'units' => { version: '2026.10.01.1', stale: false } }, @publisher.in_service)
       end
 
+      def test_open_package_is_readable_by_all_and_reserved_package_by_its_owner_only
+        build('units', '2026.10.01.1')
+        build('owners', '2026.10.01.1', scope: 'members')
+
+        @publisher.publish('units')
+        @publisher.publish('owners')
+
+        assert_equal '755', mode(@remote.join('units/2026.10.01.1'))
+        assert_equal '644', mode(@remote.join('units/2026.10.01.1/manifest.json'))
+        assert_equal '700', mode(@remote.join('owners/2026.10.01.1'))
+        assert_equal '600', mode(@remote.join('owners/2026.10.01.1/data/owners_0.csv.gz'))
+        assert_equal '600', mode(@remote.join('owners/2026.10.01.1/manifest.json'))
+        assert_equal %w[owners units], Repository.new(@remote).names
+      end
+
+      def test_bundle_goes_to_the_private_area_and_is_not_a_datasource
+        build('units', '2026.10.01.1')
+        @repository.set_current('units', '2026.10.01.1')
+
+        @publisher.publish_bundle(@local, 'demo')
+
+        bundle = @remote.join('_bundles/demo')
+        assert_equal '700', mode(bundle)
+        assert_equal '600', mode(bundle.join('index.json'))
+        assert_equal '2026.10.01.1', Repository.new(bundle).current('units')
+        assert_empty Repository.new(@remote).names
+        assert_raises(ArgumentError) { @publisher.publish_bundle(Pathname.new(Dir.mktmpdir), 'empty') }
+      end
+
       def test_unknown_package_is_refused_and_nothing_is_published
         assert_raises(ArgumentError) { @publisher.publish('units') }
         build('units', '2026.10.01.1')
@@ -83,7 +112,11 @@ module Lexicon
 
       private
 
-        def build(name, version)
+        def mode(path)
+          format('%o', path.stat.mode & 0o777)
+        end
+
+        def build(name, version, scope: 'open')
           dir = @repository.package_dir(name, version)
           dir.join('data').mkpath
           dir.join('data', "#{name}_0.csv.gz").write('rows')
@@ -91,7 +124,7 @@ module Lexicon
           dir.join('indexes.sql').write('')
           Manifest.new(
             name: name, version: version, schema_revision: 1, structure_hash: 'sha256:0', built_at: Time.now,
-            tool_version: 'test', credits: [], depends_on: [], tables: [], foreign_keys: []
+            tool_version: 'test', credits: [], depends_on: [], tables: [], foreign_keys: [], scope: scope
           ).write(dir)
         end
     end

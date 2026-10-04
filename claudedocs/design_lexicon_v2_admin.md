@@ -294,11 +294,25 @@ Travail dans `/home/djoulin/projects/lexicon-rest-api-access`, branche
 | C | **Fait** (PR 21) : comptes administrateurs, sessions, jeton CSRF, limite de connexion, `bin/admin.ts` |
 | D | **Fait** (PR 21) : pages des clés et des plans, journal des actions |
 | E | **Fait** (PR 21) : page de consommation, export CSV |
-| F | Page des datasources **faite** (PR 21). **Reste** : le téléchargement des bundles privés |
+| F | Page des datasources **faite** (PR 21). Bundles privés **faits** (PR 22 de l'API, et `publish --bundle` / `fetch` côté `lexicon`) |
 
 Vérifié en production pour le lot B : en-têtes de quota, refus d'une clé
 invalide, et 40 requêtes d'une même adresse avec un `X-Forwarded-For` forgé
 différent à chaque fois donnent 29 réponses servies et 11 refus `429`.
+
+Packages réservés et bundles (lot F) :
+
+- Un package dont la datasource déclare `scope :members` est publié avec des
+  droits `700` / `600`. Le loader tourne sous le propriétaire des fichiers et
+  le charge ; le serveur de fichiers public tourne sous un utilisateur sans
+  droits et répond `403`. Aucun changement d'arborescence.
+- Les bundles sont publiés dans `_bundles/<flavor>/` avec les mêmes droits,
+  et servis par l'API sous `/bundles/<flavor>/` aux clés portant
+  `bundle:<flavor>`.
+- `./lexicon fetch <url>` télécharge un bundle avec une clé, vérifie les
+  checksums et respecte le délai demandé par un `429`.
+- Les noms des packages réservés restent visibles dans `index.json` et
+  `status.json`, qui sont publics ; leur contenu ne l'est pas.
 
 Écarts avec la conception :
 

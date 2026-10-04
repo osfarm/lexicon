@@ -82,10 +82,18 @@ module Lexicon
     end
 
     desc 'publish [NAMES]', 'Send the latest packages to the serving side and designate them (name or name@version)'
+    method_option :bundle, type: :string, desc: 'Send the bundle of this flavor instead, to the private area'
 
     def publish(*targets)
       repository = get('packaging.repository')
       publisher = get('packaging.publisher')
+
+      if options['bundle']
+        publisher.publish_bundle(get('parameter.bundles.root').join(options['bundle']), options['bundle'])
+        puts '[  OK ] '.green + "bundle #{options['bundle'].yellow} published"
+
+        return
+      end
 
       (targets.empty? ? repository.names : targets).each do |target|
         name, version = target.split('@', 2)
@@ -117,6 +125,20 @@ module Lexicon
              "in service #{served || (in_service.any? ? '-' : '?')}#{notes}"
       end
     rescue Packaging::Rsync::TransferError => e
+      puts '[ NOK ] '.red + e.message
+      exit 1
+    end
+
+    desc 'fetch URL', 'Download a repository of packages served over HTTP, such as a private bundle'
+    method_option :to, type: :string, desc: 'Directory to fill (default: out/bundles/<last part of the URL>)'
+
+    def fetch(url)
+      to = Pathname.new(options['to'] || get('parameter.bundles.root').join(url.chomp('/').split('/').last).to_s)
+      fetcher = Packaging::Fetcher.new(base_url: url, api_key: ENV['LEXICON_API_KEY'])
+
+      names = fetcher.fetch(to) { |name, version| puts '[  OK ] '.green + name.yellow + " #{version}" }
+      puts "#{names.size} packages in #{to}. Load them with LEXICON_PACKAGES_ROOT=#{to} ./lexicon server sync"
+    rescue Packaging::Fetcher::FetchError => e
       puts '[ NOK ] '.red + e.message
       exit 1
     end

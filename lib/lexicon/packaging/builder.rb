@@ -50,6 +50,7 @@ module Lexicon
           built_at: now,
           tool_version: tool_version,
           flavor: flavor&.name,
+          scope: datasource.scope,
           credits: credits(datasource),
           depends_on: dependencies(datasource, definition_set),
           tables: export_tables(exports(datasource, definition_set, flavor), work_dir, jobs: jobs, &on_table),
