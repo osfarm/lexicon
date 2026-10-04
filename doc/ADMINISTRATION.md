@@ -46,9 +46,13 @@ jeux dont la licence n'est pas ouverte : `agroedi` (propriétaire) et
   source, taux de liaison et versions téléchargeables. Ouvert.
 - `/links/communes/<INSEE>` (ouvert) et `/links/enterprises/<SIREN>`
   (adhérents) : les fiches pré-jointes.
+- `/geographical-references/cap-parcels/history?longitude=…&latitude=…` : les
+  cultures déclarées à la PAC en un point, campagne par campagne (2022 à
+  2025). Ouvert. L'identificateur de parcelle les affiche aussi.
 - `/mcp` : serveur MCP pour les agents IA, en HTTP sans session (un message
-  JSON-RPC par `POST`). Six outils : `list_datasets`, `describe_dataset`,
-  `list_resources`, `read_resource`, `get_commune`, `get_enterprise`.
+  JSON-RPC par `POST`). Neuf outils : `list_datasets`, `describe_dataset`,
+  `list_resources`, `read_resource`, `get_commune`, `get_enterprise`,
+  `search_rd_documents`, `get_rd_document`, `get_crop_history`.
 
 Un agent passe par le même contrôle d'accès que tout appelant : sans clé, il
 est limité comme un anonyme et ne voit que les données ouvertes ; avec la clé

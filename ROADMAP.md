@@ -77,10 +77,12 @@ Reste :
       date de la source
 - [x] Versions passées listées dans le catalogue et téléchargeables depuis le
       dépôt, dans la limite de la rétention
-- [ ] Interrogation dans le passé pour le RPG et les bénéficiaires de la PAC,
-      par millésime : non fait. La table du RPG n'a pas de colonne de
-      campagne et les bénéficiaires ne couvrent que 2024 ; il faut d'abord
-      faire collecter plusieurs millésimes aux datasources
+- [x] Interrogation dans le passé pour le RPG : campagnes 2022 à 2025.
+      `registered_graphic_parcels` porte la dernière,
+      `registered_graphic_parcels_history` les précédentes ; l'API donne la
+      culture déclarée en un point, campagne par campagne
+- [ ] Interrogation dans le passé pour les bénéficiaires de la PAC : la
+      datasource ne couvre que 2024
 - [x] Flavors paramétrés (un point et un rayon) pour l'usage embarqué sur une
       exploitation : `./lexicon bundle around --set …`
 

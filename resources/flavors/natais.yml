@@ -25,6 +25,8 @@ datasources:
   graphic_parcels:
     registered_graphic_parcels:
       filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_GeomFromText('POINT(-0.87374 43.55297)',4326) , 4 )
+    registered_graphic_parcels_history:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_GeomFromText('POINT(-0.87374 43.55297)',4326) , 4 )
   productions:
     master_crop_productions:
       filter: WHERE reference_name IN ('popcorn', 'summery_cover', 'wintry_cover', 'relay_cover')

@@ -127,6 +127,23 @@ module Lexicon
             clear_backup(database, definition_set)
             clear_error(database, definition_set)
           end
+
+          vacuum_tables(database, definition_set)
+        end
+
+        # Tables that were just rewritten have neither statistics nor visibility map: what reads them next,
+        # such as the measure of the pivots at packaging, would crawl. A failure here does not undo the normalize.
+        #
+        # @param [Database::Database] database
+        # @param [Database::Schema::TableDefinitionSet] definition_set
+        def vacuum_tables(database, definition_set)
+          start = Time.now
+          tables = definition_set.definitions.select { |definition| database.table_exists?(definition.name, schema: :lexicon) }
+
+          tables.each { |definition| database.query(%(VACUUM (ANALYZE) "lexicon"."#{definition.name}")) }
+          log("Vacuum OK #{tables.map(&:name).join(', ')} in #{(Time.now - start).round(2)}s")
+        rescue PG::Error => e
+          log("Vacuum skipped for #{definition_set.name}: #{e.message.lines.first.to_s.strip}")
         end
 
         # @param [Database::Schema::TableDefinitionSet] definition_set

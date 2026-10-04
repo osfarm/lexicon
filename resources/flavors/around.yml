@@ -18,6 +18,8 @@ datasources:
   graphic_parcels:
     registered_graphic_parcels:
       filter: WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), %{radius}) ORDER BY id
+    registered_graphic_parcels_history:
+      filter: WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), %{radius}) ORDER BY id
   hydrography:
     registered_hydrographic_items:
       filter: WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), %{radius})

@@ -20,6 +20,8 @@ datasources:
   graphic_parcels:
     registered_graphic_parcels:
       filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.35 43.85)',4326) , 0.15) ORDER BY id
+    registered_graphic_parcels_history:
+      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.35 43.85)',4326) , 0.15) ORDER BY id
   hydrography:
     registered_hydrographic_items:
       filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.35 43.85)',4326) , 0.15)
