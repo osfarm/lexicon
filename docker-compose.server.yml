@@ -5,6 +5,10 @@
 #   POSTGRES_PASSWORD      password of the lexicon role
 #   LEXICON_PACKAGES_DIR   directory of the host receiving the packages of `./lexicon publish`
 #
+# Optional, to make the API connect with a role that only reads the data (set both, or neither):
+#   LEXICON_API_USER       lexicon_api
+#   LEXICON_API_PASSWORD   password of that role; the loader creates the role and keeps its rights
+#
 # Optional, for the nightly copy of the packages to an S3 bucket (the `backup` service idles without them):
 #   LEXICON_BACKUP_ENDPOINT     https://host:port of the S3 service
 #   LEXICON_BACKUP_BUCKET       bucket receiving the copy
@@ -55,6 +59,8 @@ services:
     environment:
       LEXICON_SERVER_DATABASE_URL: postgres://lexicon:${POSTGRES_PASSWORD:?}@db:5432/lexicon
       LEXICON_PACKAGES_ROOT: /packages
+      # When set, the loader maintains the read-only role the API connects with
+      LEXICON_API_PASSWORD: ${LEXICON_API_PASSWORD:-}
     volumes:
       - ${LEXICON_PACKAGES_DIR:?}:/packages
     depends_on:
@@ -164,8 +170,9 @@ services:
       PORT: 8888
       DB_HOST: db
       DB_PORT: 5432
-      DB_USER: lexicon
-      DB_PASSWORD: ${POSTGRES_PASSWORD:?}
+      # With LEXICON_API_PASSWORD set, the API uses its own role, which cannot change the data
+      DB_USER: ${LEXICON_API_USER:-lexicon}
+      DB_PASSWORD: ${LEXICON_API_PASSWORD:-${POSTGRES_PASSWORD:?}}
       DB_NAME: lexicon
       DB_SCHEMA: lexicon
       # Private bundles, handed out to the keys carrying their scope

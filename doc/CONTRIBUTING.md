@@ -4,6 +4,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
+- [Declaring what a datasource publishes](#declaring-what-a-datasource-publishes)
+- [Tests](#tests)
 - [Helpers](#helpers)
 - [Do we store data on repository?](#do-we-store-data-on-repository)
 
@@ -53,6 +55,30 @@ can be run separately:
 ./lexicon collect agropowa
 ./lexicon load agropowa
 ./lexicon normalize agropowa
+```
+
+### Declaring what a datasource publishes
+A datasource declares its output tables in `self.table_definitions(builder)`, and a few facts used when it is packaged (see [PUBLICATION.md](PUBLICATION.md)):
+
+```ruby
+class Agropowa < Base
+  description 'Equipment catalog of Agropowa'
+  credits name: '...', url: '...', provider: '...', licence: '...', licence_url: '...', updated_at: '2026-10-04'
+
+  schema_revision 2              # bump it when a published table changes shape
+  depends_on :open_nomenclature  # datasources read during normalize, without a foreign key
+  translations :equipments       # prefixes of the ids written in master_translations
+  scope :members                 # only for data reserved to API key holders
+end
+```
+
+Foreign keys declared with `.references(...)` already give the dependencies between datasources; `depends_on` is only for the others. A table belongs to one datasource only.
+
+### Tests
+Unit tests live in `test/` and run in the container:
+```sh
+docker compose -f docker-compose-dev.yml run --rm -T -v "$PWD/test:/lexicon/test:ro" lexicon_runner \
+  sh -c 'for f in test/lexicon/*/*_test.rb; do bundle exec ruby -Itest $f || exit 1; done'
 ```
 
 ### Helpers

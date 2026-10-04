@@ -148,6 +148,10 @@ as that owner, puts it in service, while the public file server, which runs as a
 serve it. Bundles go to `_bundles/<flavor>/` with the same permissions and are handed out by the API under
 `/bundles/<flavor>/` to the keys carrying `bundle:<flavor>`.
 
+`Server::ApiRole` creates, when `LEXICON_API_PASSWORD` is set, the role the API connects with: it reads
+`lexicon` and `lexicon_meta` (default privileges cover the tables each swap brings in), owns `lexicon_access`,
+and can change nothing else.
+
 Deployment: `docker-compose.server.yml` is the serving stack (db, loader, packages file server, API), deployed
 by Dokploy on the `osfarm_lexicon` server. `./lexicon publish` needs `rsync` in the runner image.
 

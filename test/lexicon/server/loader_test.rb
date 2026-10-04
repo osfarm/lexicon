@@ -328,6 +328,36 @@ module Lexicon
         assert_equal [['units', 'Units', 'Ekylibre', '2022-02-23']], rows("SELECT datasource, name, provider, updated_at::date::text FROM lexicon.datasource_credits")
       end
 
+      def test_api_role_reads_the_data_owns_the_access_schema_and_cannot_change_the_data
+        role = "lexicon_api_test_#{Process.pid}"
+        package('units', '2026.10.01.1', units: [%w[kilogram kg]])
+        @loader.sync
+        @connection.exec('CREATE SCHEMA lexicon_access; CREATE TABLE lexicon_access.plans (id serial PRIMARY KEY, name varchar)')
+
+        2.times { ApiRole.new(@connection, name: role, password: "it's a secret") .ensure }
+        package('units', '2026.10.02.1', units: [%w[kilogram kg], %w[ton t]])
+        @loader.sync
+        api = PG.connect(url(DATABASE).sub(%r{//[^@]+@}, "//#{role}:it%27s%20a%20secret@"))
+
+        assert_equal '2', api.exec('SELECT count(*) FROM lexicon.units').getvalue(0, 0)
+        assert_equal '1', api.exec('SELECT count(*) FROM lexicon_meta.packages').getvalue(0, 0)
+        assert_equal '0', api.exec('SELECT count(*) FROM lexicon.master_translations').getvalue(0, 0)
+        assert_raises(PG::InsufficientPrivilege) { api.exec("DELETE FROM lexicon.units") }
+        assert_raises(PG::InsufficientPrivilege) { api.exec('DROP TABLE lexicon.units') }
+        assert_raises(PG::InsufficientPrivilege) { api.exec("UPDATE lexicon_meta.packages SET version = 'x'") }
+        assert_raises(PG::InsufficientPrivilege) { api.exec('CREATE TABLE lexicon.intruder (id integer)') }
+        api.exec("INSERT INTO lexicon_access.plans (name) VALUES ('standard')")
+        api.exec('CREATE TABLE lexicon_access.sessions (token varchar)')
+        assert_equal '1', api.exec('SELECT count(*) FROM lexicon_access.plans').getvalue(0, 0)
+      ensure
+        api&.close
+        @connection.exec("DROP SCHEMA IF EXISTS lexicon_access CASCADE; DROP OWNED BY #{role}; DROP ROLE IF EXISTS #{role}") if role
+      end
+
+      def test_api_role_name_must_be_a_plain_identifier
+        assert_raises(ArgumentError) { ApiRole.new(@connection, name: 'x; DROP ROLE lexicon', password: 'p') }
+      end
+
       def test_status_file_reports_what_is_in_service_and_the_last_failures
         package('units', '2026.10.01.1', units: [%w[kilogram kg]])
         @loader.sync

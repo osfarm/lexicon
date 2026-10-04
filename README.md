@@ -8,7 +8,7 @@
 </div>
 
 **Lexicon** is the repo where we gather and normalize all reference data to
-feed `lexicon` schema of Ekylibre and Lexicon API project.
+feed the `lexicon` schema served by the Lexicon API (https://lexicon.osfarm.org) and used by Ekylibre.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -45,20 +45,39 @@ To build a dataset (collect, load, normalize) in one time, you can use 'run' com
 
 `./lexicon run phytosanitary`
 
-### 2.Dump lexicon
+### 2.Package and publish a dataset
 
-You can dump all datasets or use flavors to filter dataset. A package `<VERSION>` is produce in out folder with `<VERSION_NUMBER>-<FLAVOR>` name
+Each dataset is packaged on its own, with its own version (`YYYY.MM.DD.N`), then sent to the server, which
+puts it in service without touching the others.
 
-**example for all datasets**
+**example for phyto dataset**
 
-`./lexicon dump all --no-validate`
+```sh
+./lexicon validate                 # tables filled, foreign keys present
+./lexicon package phytosanitary    # out/packages/phytosanitary/<version>/
+./lexicon publish phytosanitary    # sends it and designates it on the server
+./lexicon status                   # local / published / in service
+```
+
+`publish` needs the address of the packages repository in your `.env`:
+
+```
+LEXICON_PUBLISH_TARGET=osfarm_lexicon:lexicon/packages
+```
+
+See [doc/PUBLICATION.md](doc/PUBLICATION.md) (in French) for the package format, the dependencies between
+datasets, and what to do when a publication is refused.
+
+### 3.Bundle a subset with a flavor
+
+A flavor filters datasets, by excluding some and by restricting tables with SQL. It produces a bundle: a
+repository of packages that can be loaded elsewhere, for instance on a farm that only needs its surroundings.
 
 **example for dataset only in SAINT-PORCHAIRE(17250) zone**
 
+`./lexicon bundle saint-porchaire`
 
-`./lexicon dump all --flavor saint-porchaire --no-validate`
-
-with flavor file `saint-porchaire.yml`
+with flavor file `resources/flavors/saint-porchaire.yml`
 
 ```yml
 ---
@@ -73,40 +92,22 @@ datasources:
   cadastral_prices:
     registered_cadastral_prices:
       filter: WHERE postal_code = '17250' ORDER BY id
-  graphic_parcels:
-    registered_graphic_parcels:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10) ORDER BY id
-  hydrography:
-    registered_hydrographic_items:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
-    registered_area_items:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
-    registered_cadastral_buildings:
-      filter: WHERE postgis.ST_DWithin(centroid , postgis.ST_PointFromText('POINT(-0.78 45.81)',4326) , 0.10)
   postal_codes:
     registered_postal_codes:
       filter: WHERE postal_code = '17250'
-  weather:
-    registered_weather_stations:
-      filter: WHERE country = 'FR' AND country_zone = '17'
-    registered_hourly_weathers:
-      filter: WHERE station_id LIKE 'FR17%'
-
 ```
 
-### 3.Upload lexicon in MiniO/S3 like system
+`./lexicon publish --bundle saint-porchaire` sends it to the private area of the server, where the API hands
+it out to the API keys carrying the scope `bundle:saint-porchaire`. The recipient downloads it with
+`LEXICON_API_KEY=… ./lexicon fetch https://lexicon.osfarm.org/bundles/saint-porchaire`.
 
-set credentials in your `.env`
+### 4.Operate the server
 
-```ỳml
-MINIO_HOST=<YOUR-HOST> # https://api.opensourcefarm.org/
-MINIO_ACCESS_KEY=<YOUR-ACCESS-KEY>
-MINIO_SECRET_KEY=<YOUR-SECRET-KEY>
-```
+The serving stack (database, loader, public packages repository, API, backups) is described by
+`docker-compose.server.yml` and deployed by Dokploy. API keys, quotas and the state of the datasets are managed
+from `https://lexicon.osfarm.org/admin`.
 
-then you could launch remote upload command
-
-`./lexicon remote upload <VERSION>`
+See [doc/ADMINISTRATION.md](doc/ADMINISTRATION.md) (in French).
 
 See [doc/USAGE.md](doc/USAGE.md) for more informations
 

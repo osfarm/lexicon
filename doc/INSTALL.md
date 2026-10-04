@@ -72,9 +72,17 @@ docker compose up
 ```
 
 ## Bonus
+### Publishing packages
+To use the `publish` and `status` commands, add the address of the packages repository of the server to `.env`, as rsync names it:
+
+```
+LEXICON_PUBLISH_TARGET=osfarm_lexicon:lexicon/packages
+```
+
+The host must be reachable with your SSH keys (`~/.ssh` is mounted read-only in the container). See [PUBLICATION.md](PUBLICATION.md).
+
 ### S3 Storage
-To use the `remote` commands, credentials also need to be added to `.env`.   
-See `.env.dev` for keys.
+The `remote` commands used a MinIO storage that has been shut down. They are kept for reference only.
 
 ### Ekylibre database (_production_ commands)
 In order to be able to load Packages in a production server configuration needs to be added in `.env`. See comments in `.env.dist` for keys and default values. 

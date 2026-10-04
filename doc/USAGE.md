@@ -5,6 +5,8 @@
 
 - [Short commands](#short-commands)
 - [Datasources commands](#datasources-commands)
+- [Packaging and publication commands](#packaging-and-publication-commands)
+- [Serving side commands](#serving-side-commands)
 - [Version management commands](#version-management-commands)
 - [Release commands](#release-commands)
 - [Remote repository commands](#remote-repository-commands)
@@ -34,12 +36,35 @@ To build a version, you have to take care at the order.
 
 - `./lexicon normalize`
 
+## Packaging and publication commands
+Each datasource has its own package and its own version (`YYYY.MM.DD.N`). See [PUBLICATION.md](PUBLICATION.md).
+
+- `./lexicon package [datasource, ...] [--jobs N] [--no-validate]` Builds one package per datasource in `out/packages/<datasource>/<version>/`. All packaged datasources by default. A datasource with an empty table or a missing foreign key is refused, unless `--no-validate`.
+- `./lexicon publish [datasource[@version], ...]` Sends the latest package of each datasource to the repository of the server (`LEXICON_PUBLISH_TARGET`) and designates it. An interrupted upload resumes where it stopped.
+- `./lexicon publish --bundle <flavor>` Sends the bundle of a flavor to the private area of the server.
+- `./lexicon status` For each package: latest local version, version published, version in service, and whether it is stale.
+- `./lexicon bundle <flavor> [datasource, ...]` Builds in `out/bundles/<flavor>/` a repository of packages filtered by `resources/flavors/<flavor>.yml`.
+- `./lexicon fetch <url> [--to dir]` Downloads a bundle served by the API, with the key in `LEXICON_API_KEY`.
+
+## Serving side commands
+They target the serving database (`LEXICON_SERVER_DATABASE_URL`, refused when it is the build database) and read the repository `LEXICON_PACKAGES_ROOT` (default: `out/packages`). On the server they run in the `loader` container.
+
+- `./lexicon server sync [datasource[@version], ...] [--force] [--together]` Puts in service the packages the repository designates. `--force` reloads a version already in service and accepts a drop of volume; `--together` swaps all the packages in one transaction.
+- `./lexicon server status` Versions in service, stale packages, last loads.
+- `./lexicon server watch [--interval 300]` The loop run by the loader.
+- `./lexicon server rollback <datasource>` Puts back the version a package replaced.
+- `./lexicon server prune [--apply]` Lists, or removes, the versions beyond `resources/retention.yml` and the packages gone from the repository.
+
 ## Version management commands
+The `VERSION` file is the version of the tooling. Packages carry their own versions.
+
 - `./lexicon version` Gives the version of the lexicon
 - `./lexicon version bump [major|minor|patch]` increments the given part of the version number and updates the `VERSION` file
     - The default part is patch.
 
 ## Release commands
+**Legacy.** These commands build the former single package holding all datasources. They are kept for existing uses; new releases go through `package` and `publish`.
+
 To release a version, you have to specify a flavor if needed. Otherwise, all dataset will be release.
 
 - `./lexicon dump all [datasource, ...] [--flavor <flavor>] [--no-validate] [--force]`
@@ -75,6 +100,8 @@ Release a version with light (without graphic_parcels, cadastre and hydrography)
 - `./lexicon dump all --flavor light --no-validate`
 
 ## Remote repository commands
+**Legacy, no longer usable:** the MinIO storage these commands talk to has been shut down.
+
 To use these commands, credentials for a S3 compatible server needs to be added in the `.env` file at the root of the project.
 
 - `./lexicon remote upload <VERSION>` Uploads the package of the given version to the S3 storage if it does not already exists.
@@ -88,6 +115,8 @@ Anonymous download (without credentials) is enabled automatically: on each succe
 To open access to versions that were uploaded **before** this behavior existed, apply the policy manually on the MinIO server with the `mc` client, e.g. `mc anonymous set download <alias>/<VERSION>` (see doc on Ekylibre Drive in Tech/Applicatifs plateforme/Minio).
 
 ## Production related commands
+**Legacy.** They load a former single package into a database. The server is now fed by `publish` and its loader.
+
 
 ### setup
 

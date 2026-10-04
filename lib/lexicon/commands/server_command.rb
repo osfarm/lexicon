@@ -9,6 +9,7 @@ module Lexicon
 
       def sync(*names)
         refusing_failures do
+          prepare
           outcomes = get('server.loader').sync(names, force: options['force'], together: options['together']) do |outcome|
             print_outcome(outcome)
           end
@@ -23,6 +24,7 @@ module Lexicon
       def watch
         $stdout.sync = true
         loader = get('server.loader')
+        prepare
 
         loop do
           begin
@@ -74,6 +76,12 @@ module Lexicon
       end
 
       private
+
+        # What the serving database needs besides the packages
+        def prepare
+          get('server.meta').setup
+          get('server.api_role')&.ensure
+        end
 
         def refusing_failures
           yield

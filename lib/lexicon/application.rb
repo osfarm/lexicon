@@ -356,6 +356,17 @@ module Lexicon
               swapper: container.resolve('server.swapper')
             )
           end
+          # Present only when a password is configured for the role of the API
+          register(:api_role, memoize: true) do
+            password = ENV['LEXICON_API_PASSWORD'].to_s
+            next nil if password.empty?
+
+            Server::ApiRole.new(
+              container.resolve('server.connection'),
+              name: ENV.fetch('LEXICON_API_USER', 'lexicon_api'),
+              password: password
+            )
+          end
           register(:status_file, memoize: true) do
             Server::StatusFile.new(repository: container.resolve('packaging.repository'), meta: container.resolve('server.meta'))
           end

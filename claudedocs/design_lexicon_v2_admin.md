@@ -289,7 +289,7 @@ Travail dans `/home/djoulin/projects/lexicon-rest-api-access`, branche
 
 | Lot | État |
 |---|---|
-| A | Schéma `lexicon_access` créé au démarrage de l'API, plans initiaux semés. Sauvegarde quotidienne du schéma : service `access-dump` de la pile, recopié dans le bucket par `backup`. **Reste** : le rôle Postgres `lexicon_api` |
+| A | Schéma `lexicon_access` créé au démarrage de l'API, plans initiaux semés. Sauvegarde quotidienne du schéma : service `access-dump` de la pile, recopié dans le bucket par `backup`. Rôle Postgres `lexicon_api` : créé et entretenu par le loader (`Server::ApiRole`) quand `LEXICON_API_PASSWORD` est défini ; l'API s'y connecte (PR 23 de l'API pour l'initialisation du schéma) |
 | B | **Fait et en production** (API 1.3.5) : identité, cache des clés, seaux à jetons, quota journalier, en-têtes, refus 401 / 403 / 429 / 503, comptage d'usage |
 | C | **Fait** (PR 21) : comptes administrateurs, sessions, jeton CSRF, limite de connexion, `bin/admin.ts` |
 | D | **Fait** (PR 21) : pages des clés et des plans, journal des actions |
