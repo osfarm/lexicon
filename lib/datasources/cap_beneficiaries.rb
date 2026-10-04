@@ -2,9 +2,17 @@ require 'csv'
 
 module Datasources
   class CapBeneficiaries < Base
-    LAST_UPDATED = "2024-12-31"
+    # Date of the latest file of the source
+    LAST_UPDATED = "2026-06-01"
     SCHEMA = 'cap_beneficiaries'.freeze
-    YEARS = [2024].freeze
+    # One file per year, `cap_beneficiaries_<year>.csv` in raw/cap_beneficiaries/. The source changed its
+    # layout with the 2025 file:
+    # - :hierarchical — a row for the beneficiary (identity and totals), then one row per operation with
+    #   no identity at all; comma separated
+    # - :flat — every row carries the identity of its beneficiary; semicolon separated; no first name
+    #   nor company column, but a postal code and an INSEE code
+    FORMATS = { 2024 => :hierarchical, 2025 => :flat }.freeze
+    YEARS = FORMATS.keys.freeze
 
     description 'Bénéficiaires des subventions de la Politique Agricole Commune (PAC) — FEAGA & FEADER'
     credits name: 'Bénéficiaires des aides de la PAC',
@@ -13,7 +21,9 @@ module Datasources
             licence: 'Licence Ouverte 2.0',
             licence_url: 'https://www.etalab.gouv.fr/licence-ouverte-open-licence',
             updated_at: LAST_UPDATED
+    schema_revision 2
     pivot :siren, table: :registered_cap_beneficiaries, column: :siren
+    pivot :commune, table: :registered_cap_beneficiaries, column: :commune_code
 
     SOURCE_HEADERS = {
       beneficiary_name:        'Nom du bénéficiaire / entité légale / association',
@@ -37,8 +47,16 @@ module Datasources
       total_eu_cofinanced:     "Montant total financé par l'UE et cofinancé pour le bénéfic",
     }.freeze
 
+    # What the :flat layout adds or names differently
+    FLAT_HEADERS = {
+      commune:      'Commune',
+      postal_code:  'Code postal',
+      commune_code: 'Code INSEE commune',
+      fund:         'Fonds'
+    }.freeze
+
     OUTPUT_HEADERS = %w[
-      row_kind siren beneficiary_name beneficiary_firstname company_name commune
+      row_kind siren beneficiary_name beneficiary_firstname company_name commune postal_code commune_code
       intervention_code intervention_label intervention_objective
       intervention_start_date intervention_end_date
       feaga_amount feaga_total feader_amount feader_total
@@ -51,8 +69,8 @@ module Datasources
         raise "Missing CAP beneficiaries file: #{src}" unless File.exist?(src)
 
         dst = dir.join("cap_beneficiaries_#{year}_filled.csv")
-        logger.debug "Preprocessing #{src.basename} → #{dst.basename} (forward-fill SIREN)…"
-        preprocess(src, dst)
+        logger.debug "Preprocessing #{src.basename} → #{dst.basename} (#{FORMATS.fetch(year)} layout)…"
+        FORMATS.fetch(year) == :flat ? preprocess_flat(src, dst) : preprocess_hierarchical(src, dst)
       end
     end
 
@@ -75,6 +93,8 @@ module Datasources
           beneficiary_firstname character varying,
           company_name character varying,
           commune character varying,
+          postal_code character varying,
+          commune_code character varying,
           feaga_total numeric(14,2),
           feader_total numeric(14,2),
           cofinanced_total numeric(14,2),
@@ -121,86 +141,146 @@ module Datasources
 
     private
 
-      # The source CSV is hierarchical: a "beneficiary" row (with SIREN and totals)
-      # is followed by N "operation" rows that have an empty SIREN. PostgreSQL's
-      # COPY does not preserve row order, so we cannot forward-fill the SIREN with
-      # a SQL window function after loading. We do it here in a streaming pass.
-      def preprocess(src, dst)
-        current_siren     = nil
-        current_name      = nil
-        current_firstname = nil
-        current_company   = nil
-        current_commune   = nil
+      # The :hierarchical layout: a "beneficiary" row (identity and totals) is followed by N "operation"
+      # rows that carry no identity. PostgreSQL's COPY does not preserve row order, so the SIREN cannot be
+      # carried forward in SQL after loading: it is done here in a streaming pass.
+      #
+      # A beneficiary without SIREN is left out with its operations. They must not go to the beneficiary
+      # that came before: a row is a beneficiary row when it has no intervention code, whatever its SIREN.
+      def preprocess_hierarchical(src, dst)
+        current = nil
 
         CSV.open(dst, 'wb', encoding: 'UTF-8') do |out|
           out << OUTPUT_HEADERS
           CSV.foreach(src, headers: true, encoding: 'UTF-8') do |row|
-            siren_cell = row[SOURCE_HEADERS[:siren]].to_s.strip
-
-            if siren_cell != ''
-              current_siren     = siren_cell
-              current_name      = row[SOURCE_HEADERS[:beneficiary_name]]
-              current_firstname = row[SOURCE_HEADERS[:beneficiary_firstname]]
-              current_company   = row[SOURCE_HEADERS[:company_name]]
-              current_commune   = row[SOURCE_HEADERS[:commune]]
-
-              out << [
-                'beneficiary', current_siren, current_name, current_firstname,
-                current_company, current_commune,
-                nil, nil, nil, nil, nil,
-                nil,
-                row[SOURCE_HEADERS[:feaga_total]],
-                nil,
-                row[SOURCE_HEADERS[:feader_total]],
-                nil,
-                row[SOURCE_HEADERS[:cofinanced_total]],
-                row[SOURCE_HEADERS[:total_feader_cofinanced]],
-                row[SOURCE_HEADERS[:total_eu_cofinanced]],
+            if row[SOURCE_HEADERS[:intervention_code]].to_s.strip == ''
+              siren = row[SOURCE_HEADERS[:siren]].to_s.strip
+              current = siren == '' ? nil : [
+                siren,
+                row[SOURCE_HEADERS[:beneficiary_name]],
+                row[SOURCE_HEADERS[:beneficiary_firstname]],
+                row[SOURCE_HEADERS[:company_name]],
+                row[SOURCE_HEADERS[:commune]],
+                nil, nil
               ]
-            elsif current_siren
-              out << [
-                'operation', current_siren, current_name, current_firstname,
-                current_company, current_commune,
-                row[SOURCE_HEADERS[:intervention_code]],
-                row[SOURCE_HEADERS[:intervention_label]],
-                row[SOURCE_HEADERS[:intervention_objective]],
-                row[SOURCE_HEADERS[:intervention_start_date]],
-                row[SOURCE_HEADERS[:intervention_end_date]],
-                row[SOURCE_HEADERS[:feaga_amount]],
-                nil,
-                row[SOURCE_HEADERS[:feader_amount]],
-                nil,
-                row[SOURCE_HEADERS[:cofinanced_amount]],
-                nil, nil, nil,
-              ]
+              out << beneficiary_row(current, row) if current
+            elsif current
+              out << operation_row(current, row)
             end
           end
         end
       end
 
+      # The :flat layout: every row carries its beneficiary. A row without fund nor intervention code holds
+      # the totals; a beneficiary settled in several communes has one such row per commune.
+      def preprocess_flat(src, dst)
+        CSV.open(dst, 'wb', encoding: 'UTF-8') do |out|
+          out << OUTPUT_HEADERS
+          CSV.foreach(src, headers: true, encoding: 'UTF-8', col_sep: ';', liberal_parsing: true) do |row|
+            siren = row[SOURCE_HEADERS[:siren]].to_s.strip
+            next if siren == ''
+
+            identity = [
+              siren,
+              row[SOURCE_HEADERS[:beneficiary_name]],
+              nil, nil,
+              row[FLAT_HEADERS[:commune]],
+              code_or_nil(row[FLAT_HEADERS[:postal_code]]),
+              code_or_nil(row[FLAT_HEADERS[:commune_code]])
+            ]
+            is_total = row[FLAT_HEADERS[:fund]].to_s.strip == '' && row[SOURCE_HEADERS[:intervention_code]].to_s.strip == ''
+
+            out << (is_total ? beneficiary_row(identity, row) : operation_row(identity, row))
+          end
+        end
+      end
+
+      # The source writes "COMMUNE ANONYMISEE - …" in place of the codes of the smallest beneficiaries
+      def code_or_nil(value)
+        value.to_s.strip.match?(/\A[0-9][0-9AB][0-9]{3}\z/) ? value.strip : nil
+      end
+
+      def beneficiary_row(identity, row)
+        [
+          'beneficiary', *identity,
+          nil, nil, nil, nil, nil,
+          nil,
+          row[SOURCE_HEADERS[:feaga_total]],
+          nil,
+          row[SOURCE_HEADERS[:feader_total]],
+          nil,
+          row[SOURCE_HEADERS[:cofinanced_total]],
+          row[SOURCE_HEADERS[:total_feader_cofinanced]],
+          row[SOURCE_HEADERS[:total_eu_cofinanced]]
+        ]
+      end
+
+      def operation_row(identity, row)
+        [
+          'operation', *identity,
+          row[SOURCE_HEADERS[:intervention_code]],
+          row[SOURCE_HEADERS[:intervention_label]],
+          row[SOURCE_HEADERS[:intervention_objective]],
+          row[SOURCE_HEADERS[:intervention_start_date]],
+          row[SOURCE_HEADERS[:intervention_end_date]],
+          row[SOURCE_HEADERS[:feaga_amount]],
+          nil,
+          row[SOURCE_HEADERS[:feader_amount]],
+          nil,
+          row[SOURCE_HEADERS[:cofinanced_amount]],
+          nil, nil, nil
+        ]
+      end
+
+      # The totals of a beneficiary are not read from the source: they are the sum of its operations. A SIREN
+      # may have several rows of totals in a year, one per commune or per name, and the source is not
+      # consistent about them: some hold their own share, others repeat the total of the whole beneficiary.
+      # The operations, them, are each given once.
       def insert_beneficiaries(year)
+        amount = ->(column) { "COALESCE(SUM(NULLIF(#{column}, '')::numeric(14,2)), 0)" }
+
         query <<~SQL
           INSERT INTO registered_cap_beneficiaries
-            (siren, year, beneficiary_name, beneficiary_firstname, company_name, commune,
+            (siren, year, beneficiary_name, beneficiary_firstname, company_name, commune, postal_code, commune_code,
              feaga_total, feader_total, cofinanced_total,
              total_feader_cofinanced, total_eu_cofinanced)
           SELECT
-            siren,
+            identity.siren,
             #{year},
-            MAX(NULLIF(beneficiary_name, '')),
-            MAX(NULLIF(beneficiary_firstname, '')),
-            MAX(NULLIF(company_name, '')),
-            MAX(NULLIF(commune, '')),
-            MAX(NULLIF(feaga_total, '')::numeric(14,2)),
-            MAX(NULLIF(feader_total, '')::numeric(14,2)),
-            MAX(NULLIF(cofinanced_total, '')::numeric(14,2)),
-            MAX(NULLIF(total_feader_cofinanced, '')::numeric(14,2)),
-            MAX(NULLIF(total_eu_cofinanced, '')::numeric(14,2))
-          FROM #{SCHEMA}.cap_beneficiaries_#{year}
-          WHERE row_kind = 'beneficiary'
-            AND siren IS NOT NULL AND siren <> ''
-          GROUP BY siren
-          ON CONFLICT (siren, year) DO NOTHING
+            identity.beneficiary_name,
+            identity.beneficiary_firstname,
+            identity.company_name,
+            identity.commune,
+            identity.postal_code,
+            identity.commune_code,
+            COALESCE(operations.feaga, 0),
+            COALESCE(operations.feader, 0),
+            COALESCE(operations.cofinanced, 0),
+            COALESCE(operations.feader, 0) + COALESCE(operations.cofinanced, 0),
+            COALESCE(operations.feaga, 0) + COALESCE(operations.feader, 0) + COALESCE(operations.cofinanced, 0)
+          FROM (
+            SELECT siren,
+                   MAX(NULLIF(beneficiary_name, '')) AS beneficiary_name,
+                   MAX(NULLIF(beneficiary_firstname, '')) AS beneficiary_firstname,
+                   MAX(NULLIF(company_name, '')) AS company_name,
+                   MAX(NULLIF(commune, '')) AS commune,
+                   MAX(NULLIF(postal_code, '')) AS postal_code,
+                   MAX(NULLIF(commune_code, '')) AS commune_code
+              FROM #{SCHEMA}.cap_beneficiaries_#{year}
+             WHERE row_kind = 'beneficiary'
+               AND siren IS NOT NULL AND siren <> ''
+             GROUP BY siren
+          ) AS identity
+          LEFT JOIN (
+            SELECT siren,
+                   #{amount.call('feaga_amount')} AS feaga,
+                   #{amount.call('feader_amount')} AS feader,
+                   #{amount.call('cofinanced_amount')} AS cofinanced
+              FROM #{SCHEMA}.cap_beneficiaries_#{year}
+             WHERE row_kind = 'operation'
+               AND intervention_code IS NOT NULL AND intervention_code <> ''
+             GROUP BY siren
+          ) AS operations USING (siren)
         SQL
       end
 

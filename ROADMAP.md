@@ -81,8 +81,9 @@ Reste :
       `registered_graphic_parcels` porte la dernière,
       `registered_graphic_parcels_history` les précédentes ; l'API donne la
       culture déclarée en un point, campagne par campagne
-- [ ] Interrogation dans le passé pour les bénéficiaires de la PAC : la
-      datasource ne couvre que 2024
+- [x] Interrogation dans le passé pour les bénéficiaires de la PAC : années
+      2024 et 2025, une ligne par SIREN et par année ; l'API donne les aides
+      année par année, sans les additionner
 - [x] Flavors paramétrés (un point et un rayon) pour l'usage embarqué sur une
       exploitation : `./lexicon bundle around --set …`
 
