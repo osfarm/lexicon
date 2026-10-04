@@ -150,6 +150,9 @@ is the build database): `Stager` loads it in `lexicon_staging`, `Checker` refuse
 service. `test/lexicon/server/loader_test.rb` runs against a scratch database it creates and drops. The legacy `dump` / `remote` / `production` commands still exist but
 their MinIO remote is gone.
 
+`lib/lexicon/common/` is the former `lexicon-common` gem, brought into the repository (database wrapper, psql,
+shell executor, mixins, legacy package classes). It is no longer a Gemfile dependency.
+
 ### Python Integration
 
 Some datasources delegate heavy data processing to Python scripts (NumPy/Pandas). The `Python` DSL module in datasources wraps Python script execution.

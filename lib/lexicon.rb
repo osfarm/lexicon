@@ -6,6 +6,8 @@ lex_loader = Zeitwerk::Loader.for_gem
 lex_loader.setup
 
 require 'forwardable'
+require 'logger'
+require 'shellwords'
 require 'active_support/core_ext/module/attribute_accessors'
 require 'active_support/concern'
 require 'bigdecimal'

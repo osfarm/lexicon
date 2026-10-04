@@ -498,7 +498,7 @@ C'est acceptable puisque la base se reconstruit depuis le dépôt (C4).
 | 5 | Tables partagées : traductions, crédits, version — **fait** (écart : §5.4) | 2–3 j |
 | 6 | Bundles et flavors — **fait** | 2–3 j |
 | 7 | Serveur : Postgres réglé, loader, dépôt statique, sauvegarde S3 par Dokploy, mesures de chargement — **pile déployée** (§13) ; sauvegarde S3 et gros chargements restent à faire | 2–3 j |
-| 8 | Bascule : chargement initial complet, API sur `DB_SCHEMA=lexicon`, bundle `cultia`, retrait de la gem, documentation, réécriture de `ROADMAP.md` | 4–5 j |
+| 8 | Bascule : chargement initial complet, API sur `DB_SCHEMA=lexicon`, documentation, réécriture de `ROADMAP.md` — **fait**. Restent le bundle `cultia` à republier et le retrait de la gem (§14) | 4–5 j |
 | | **Total** | **25–34 j** |
 
 Ordre conseillé : 1, 2, 3 et 5 d'abord, validés de bout en bout sur `units` puis
@@ -566,11 +566,55 @@ document séparé : `claudedocs/design_lexicon_v2_admin.md`.
   miroir : une version supprimée par `server prune` disparaît aussi de la
   copie. Restauration : `rclone copy nas:<bucket> /home/ubuntu/lexicon/packages`,
   puis le loader recharge tout.
+- **Mesures à grande échelle (nuit du 3 au 4 octobre 2026)** :
+
+  | Datasource | Lignes | Package | Construction | Chargement sur le serveur |
+  |---|---:|---:|---|---|
+  | `graphic_parcels` (RPG) | 9,7 M | 3,6 Go | 54 s | moins de 3 min |
+  | `weather` + `cadastral_prices` | 235 M | 2,9 Go | 3 min 35 (les deux) | moins de 15 min |
+  | `cadastre` | 93,5 M | 21 Go | 6 min | 12 min |
+  | `hydrography` (3 tables) | — | 24 Go | 9 min | environ 13 min |
+
+  Les temps de chargement sont déduits de l'occupation du disque et de la
+  réponse de l'API, à une minute près ; le journal `lexicon_meta.loads` du
+  serveur donne les valeurs exactes. L'envoi atteint 105 Mo/s en filaire
+  (47 Go en 9 minutes) contre 1,4 à 4,2 Mo/s en Wi-Fi. Après ces
+  chargements, 38 datasources sont en service et le serveur occupe 256 Go
+  sur 890, packages compris. Le risque « gros chargements » du §10 est levé.
+- **Non publiées** : `cadastre_owners` et `rd_agri`, réservées aux adhérents
+  alors que le dépôt de packages est public (J6).
 - **Reste à faire au lot 7** : sauvegarde du dépôt vers S3 par Dokploy,
   mesure des gros chargements. Le script d'initialisation de la base
   (`docker/db/z_initdb_postgis.sql`) crée un rôle `api_user` au mot de passe
   fixe : sans effet tant que la base n'est pas exposée, à remplacer par le
   rôle `lexicon_api` de J6.
+
+## 14. Retrait de la gem `lexicon-common` : point de licence
+
+La décision C2 prévoyait de reprendre le code utile de la gem dans le
+monorepo. Ce n'est pas possible tel quel : la gem est publiée sous
+**AGPL-3.0-only** (Ekylibre), ce dépôt sous **MIT** (OSFarm). Recopier ses
+fichiers placerait du code AGPL dans un projet MIT.
+
+Le code v2 (`Lexicon::Packaging`, `Lexicon::Server`) n'utilise pas la gem. Ce
+qui en dépend encore est le côté build historique : `Common::Database`,
+`Common::Psql`, `Common::ShellExecutor`, trois mixins, et les commandes de
+l'ancien format (`dump`, `remote`, `production`).
+
+**Décision du 2026-10-04 : Ekylibre autorise la reprise sous MIT (issue 1).**
+Les classes de la gem sont recopiées dans `lib/lexicon/common/`, sous le même
+espace de noms, et la dépendance est retirée du `Gemfile` : la construction
+de l'image ne dépend plus de GitLab. Le fichier de version de la gem est
+abandonné. Les commandes de l'ancien format restent en place.
+
+Les trois issues qui étaient possibles :
+
+1. Ekylibre autorise la reprise de ces fichiers sous MIT, et ils sont
+   recopiés ;
+2. les quelques classes encore utilisées sont réécrites, et les commandes de
+   l'ancien format supprimées ;
+3. la dépendance est gardée. Son coût : chaque construction d'image, sur le
+   poste comme sur le serveur, télécharge la gem depuis GitLab.
 
 ## Annexe A — Rétention et historique (Q8), à compléter
 

@@ -1,19 +1,4 @@
 GIT
-  remote: https://gitlab.com/ekylibre/lexicon/lexicon-common.git
-  revision: ab4b75be73cfcdea5bbe82704b7a7fbe1f24c47e
-  branch: dev
-  specs:
-    lexicon-common (0.2.1)
-      aws-sdk-s3
-      colored
-      concurrent-ruby
-      corindon (~> 0.8.0)
-      json_schemer
-      pg
-      semantic
-      zeitwerk
-
-GIT
   remote: https://gitlab.com/ekylibre/onoma.git
   revision: f5a964140d747b2fe98afa7bcbd6d5c5837dc42c
   branch: lexicon
@@ -163,12 +148,12 @@ DEPENDENCIES
   charlock_holmes
   colored
   concurrent-ruby
+  corindon (~> 0.8.0)
   dotenv
   dry-container
   i18n
   json
   json_schemer
-  lexicon-common!
   nokogiri
   onoma!
   pg

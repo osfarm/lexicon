@@ -9,11 +9,10 @@ end
 
 ruby '>= 2.7'
 
-gem 'lexicon-common', gitlab: 'ekylibre/lexicon/lexicon-common', branch: 'dev'
-
 # CLI and app core system
 gem 'colored'
 gem 'concurrent-ruby'
+gem 'corindon', '~> 0.8.0'
 gem 'dotenv'
 gem 'dry-container'
 gem 'progress_bar'

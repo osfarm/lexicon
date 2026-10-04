@@ -113,6 +113,8 @@ services:
 
   api:
     image: ghcr.io/osfarm/lexicon-rest-api:latest
+    # The tag moves with each release of the API: without this, a redeployment keeps the image already pulled
+    pull_policy: always
     restart: unless-stopped
     environment:
       HOST: 0.0.0.0
