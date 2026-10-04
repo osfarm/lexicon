@@ -241,8 +241,12 @@ curl -s https://lexicon-packages.osfarm.org/status.json
 | `the view … depends on …` | Une vue créée à la main sur le serveur | La supprimer, publier, la recréer |
 | `tables are in use: locks not obtained` | Requête longue en cours | Le loader réessaie au passage suivant |
 
-`publish` lui-même reprend un envoi interrompu là où il s'était arrêté, et
-abandonne au bout de deux minutes sans données plutôt que de rester figé.
+`publish` abandonne au bout de deux minutes sans données plutôt que de rester
+figé. Un envoi interrompu laisse ce qu'il a reçu dans un dossier
+`.rsync-partial/` à côté des fichiers, et le suivant reprend à partir de là :
+un fichier ne prend son nom définitif qu'une fois complet. Après un arrêt
+brutal du serveur lui-même, il peut rester un fichier temporaire caché
+(`.nom.XXXXXX`) à supprimer à la main.
 
 ## 9. Datasources réservées
 

@@ -57,8 +57,9 @@ module Lexicon
     desc 'server', 'Serving side: put packages in service'
     subcommand 'server', Commands::ServerCommand
 
-    desc 'load', 'Load a local package into a remote database (via SSH)'
-    subcommand 'load', Commands::LoadCommand
+    # Not `load`: that name is the load phase of a datasource (Commands::Compute)
+    desc 'load_package', 'Load a local package into a remote database (via SSH)'
+    subcommand 'load_package', Commands::LoadCommand
 
     desc 'package [NAMES]', 'Build one versioned package per datasource in out/packages'
     method_option :jobs, type: :numeric, default: 4, desc: 'Tables exported at once'

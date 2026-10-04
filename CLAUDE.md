@@ -169,8 +169,9 @@ their MinIO remote is gone.
 History: `graphic_parcels` keeps the RPG campaign by campaign. `registered_graphic_parcels` holds the latest
 campaign (with a `campaign` column), `registered_graphic_parcels_history` the earlier ones; parcel ids are not
 stable across campaigns, the place is the link. One GeoPackage per campaign is dropped by hand in
-`raw/graphic_parcels/` (see `doc/datasources/graphic_parcels.md`). Note that `./lexicon load <name>` does not
-run the load phase: the `load` subcommand of the legacy package loader shadows it; use `./lexicon run <name>`.
+`raw/graphic_parcels/` (see `doc/datasources/graphic_parcels.md`). The legacy loader of
+packages over SSH is `./lexicon load_package remote <version>`, so that `./lexicon load <name>` stays the load
+phase of a datasource.
 
 `lib/lexicon/common/` is the former `lexicon-common` gem, brought into the repository (database wrapper, psql,
 shell executor, mixins, legacy package classes). It is no longer a Gemfile dependency.

@@ -40,7 +40,7 @@ To build a version, you have to take care at the order.
 Each datasource has its own package and its own version (`YYYY.MM.DD.N`). See [PUBLICATION.md](PUBLICATION.md).
 
 - `./lexicon package [datasource, ...] [--jobs N] [--no-validate]` Builds one package per datasource in `out/packages/<datasource>/<version>/`. All packaged datasources by default. A datasource with an empty table or a missing foreign key is refused, unless `--no-validate`.
-- `./lexicon publish [datasource[@version], ...]` Sends the latest package of each datasource to the repository of the server (`LEXICON_PUBLISH_TARGET`) and designates it. An interrupted upload resumes where it stopped.
+- `./lexicon publish [datasource[@version], ...]` Sends the latest package of each datasource to the repository of the server (`LEXICON_PUBLISH_TARGET`) and designates it. An interrupted upload leaves what it sent in `.rsync-partial/` beside the files, and the next one resumes from there.
 - `./lexicon publish --bundle <flavor>` Sends the bundle of a flavor to the private area of the server.
 - `./lexicon status` For each package: latest local version, version published, version in service, and whether it is stale.
 - `./lexicon bundle <flavor> [datasource, ...]` Builds in `out/bundles/<flavor>/` a repository of packages filtered by `resources/flavors/<flavor>.yml`.

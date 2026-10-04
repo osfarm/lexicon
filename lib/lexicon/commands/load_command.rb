@@ -12,7 +12,7 @@ module Lexicon
     # accessible via SSH. Optimisé : streaming des .csv.gz (zéro temp file côté
     # serveur) + ControlMaster SSH (une seule TCP réutilisée pour tout le run).
     #
-    # Utilisation : `./lexicon load <version> --target <profile>`
+    # Utilisation : `./lexicon load_package remote <version> --target <profile>`
     # où <profile> est une entrée de `config/remote_targets.yml`.
     class LoadCommand < ContainerAwareCommand
       include Lexicon::Common::Mixin::SchemaNamer

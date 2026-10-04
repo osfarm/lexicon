@@ -21,6 +21,10 @@ module Lexicon
       # it serves what everyone may read, and nothing of what only the owner may.
       PUBLIC = 'D755,F644'
       PRIVATE = 'D700,F600'
+      # Where an interrupted transfer leaves what it received, beside the files. The next transfer resumes
+      # from it. Without it, the receiving side of a killed transfer gives its partial file the final name
+      # when it ends, minutes later: over the complete file a second transfer may have sent meanwhile.
+      PARTIAL_DIR = '.rsync-partial'
 
       # @param [Pathname, String] source directory whose content is copied
       # @param [String] destination
@@ -29,8 +33,8 @@ module Lexicon
       def copy_directory(source, destination, exclude: [], permissions: PUBLIC)
         excludes = exclude.map { |name| "--exclude=#{name}" }
 
-        run('-a', "--chmod=#{permissions}", '--partial', "--timeout=#{IO_TIMEOUT}", '--mkpath', *excludes,
-            "#{source}/", "#{destination}/")
+        run('-a', "--chmod=#{permissions}", "--partial-dir=#{PARTIAL_DIR}", "--timeout=#{IO_TIMEOUT}", '--mkpath',
+            *excludes, "#{source}/", "#{destination}/")
       end
 
       # @param [Pathname, String] source
