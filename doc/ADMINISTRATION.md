@@ -35,8 +35,36 @@ serveur. La base se reconstruit entièrement depuis lui ; seul le schéma
 Une clé n'est délivrée qu'à un adhérent OSFarm, et expire avec son adhésion.
 
 Données réservées aujourd'hui : les propriétaires de parcelles
-(`cadastre_owners`), affichés dans l'outil d'identification de parcelle, et
-`rd_agri`.
+(`cadastre_owners`), affichés dans l'outil d'identification de parcelle,
+`rd_agri`, les fiches par entreprise (`/links/enterprises/<SIREN>`), et deux
+jeux dont la licence n'est pas ouverte : `agroedi` (propriétaire) et
+`vine_varieties` (CC BY-NC-SA, servi sous `/viticulture/vine-varieties`).
+
+### 2.1 bis Catalogue, fiches et agents IA
+
+- `/catalog` : les jeux de données en service, avec licence, date de la
+  source, taux de liaison et versions téléchargeables. Ouvert.
+- `/links/communes/<INSEE>` (ouvert) et `/links/enterprises/<SIREN>`
+  (adhérents) : les fiches pré-jointes.
+- `/mcp` : serveur MCP pour les agents IA, en HTTP sans session (un message
+  JSON-RPC par `POST`). Six outils : `list_datasets`, `describe_dataset`,
+  `list_resources`, `read_resource`, `get_commune`, `get_enterprise`.
+
+Un agent passe par le même contrôle d'accès que tout appelant : sans clé, il
+est limité comme un anonyme et ne voit que les données ouvertes ; avec la clé
+d'un adhérent (en-tête `Authorization: Bearer lex_…`), il a ses quotas et ses
+données réservées. `read_resource` ne lit ni `/admin`, ni `/bundles`. Chaque
+appel d'outil compte pour une requête, deux pour `read_resource`.
+
+Configuration côté client, par exemple :
+
+```json
+{ "mcpServers": { "lexicon": { "type": "http", "url": "https://lexicon.osfarm.org/mcp",
+    "headers": { "Authorization": "Bearer lex_…" } } } }
+```
+
+Le catalogue donne l'adresse des packages à partir de la variable
+`PACKAGES_URL` de l'API (par défaut `https://lexicon.osfarm.org/packages`).
 
 ### 2.2 L'interface
 
@@ -274,3 +302,6 @@ les mots de passe coupés, PAM ne sert plus à authentifier.
 - Les noms des packages réservés sont visibles dans `index.json` et
   `status.json` ; leur contenu ne l'est pas.
 - L'interface d'administration est en français uniquement.
+- Une clé créée ou révoquée est prise en compte par l'API sous 30 secondes.
+- Le serveur MCP n'expose que des outils (ni `resources`, ni `prompts`), et
+  une réponse d'outil est coupée à 60 000 caractères.

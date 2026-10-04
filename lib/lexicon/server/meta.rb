@@ -52,6 +52,13 @@ module Lexicon
             detail      jsonb
           );
 
+          CREATE TABLE IF NOT EXISTS #{SCHEMA}.repository_versions (
+            name       varchar NOT NULL,
+            version    varchar NOT NULL,
+            is_current boolean NOT NULL DEFAULT false,
+            PRIMARY KEY (name, version)
+          );
+
           CREATE OR REPLACE VIEW "#{SERVED_SCHEMA}".datasource_credits AS
             SELECT packages.name AS datasource,
                    credit->>'name' AS name,
@@ -98,6 +105,24 @@ module Lexicon
       def tables_of(name)
         connection.exec_params("SELECT table_name FROM #{SCHEMA}.package_tables WHERE package = $1 ORDER BY 1", [name])
                   .map { |row| row['table_name'] }
+      end
+
+      # Records which versions the repository holds, for those who can only reach the database.
+      #
+      # @param [Packaging::Repository] repository
+      def record_repository(repository)
+        rows = repository.names.flat_map do |name|
+          current = repository.current(name)
+
+          repository.versions(name).map { |version| [name, version, version == current] }
+        end
+
+        connection.transaction do
+          connection.exec("DELETE FROM #{SCHEMA}.repository_versions")
+          rows.each do |row|
+            connection.exec_params("INSERT INTO #{SCHEMA}.repository_versions (name, version, is_current) VALUES ($1, $2, $3)", row)
+          end
+        end
       end
 
       # @param [String] role

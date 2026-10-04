@@ -7,6 +7,7 @@ module Datasources
             licence: 'Licence Ouverte 2.0',
             licence_url: 'https://www.etalab.gouv.fr/licence-ouverte-open-licence',
             updated_at: '2026-05-16'
+    pivot :commune, table: :registered_msa_populations, column: :insee_code, minimum: 0.9
 
     FILES = {
       'COTAS_EMPLOI.csv' => 'cotas_emploi',

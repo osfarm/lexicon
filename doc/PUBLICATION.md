@@ -117,6 +117,8 @@ class RdAgri < Base
   translations :industry_sectors          # préfixes d'identifiants écrits dans master_translations
   scope :members                          # réservée aux porteurs d'une clé
   packaged false                          # datasource de build uniquement
+  pivot :commune, table: :registered_enterprises, column: :postal_code, minimum: 0.95
+  personal_data 'Personnes morales uniquement'   # pourquoi des colonnes d'apparence personnelle sont publiables
 end
 ```
 
@@ -128,6 +130,26 @@ end
   des préfixes, dans une table `<datasource>__translations`. Côté serveur,
   `master_translations` est une vue sur ces tables.
 - **`scope`** : voir §9.
+- **`pivot`** : une colonne qui porte une clé commune à plusieurs jeux de
+  données (voir ci-dessous).
+- **`personal_data`** : sans cette justification, `check` refuse une colonne
+  dont le nom évoque une personne physique (prénom, naissance, téléphone…).
+
+### Clés pivots
+
+Les clés reconnues sont dans `lib/lexicon/packaging/pivots.rb` : `commune`,
+`department`, `siren`, `cadastral_parcel`, `cap_crop_code`, `taxon`,
+`production`, `weather_station`. Chacune désigne la table et la colonne de
+référence.
+
+À chaque `package`, la part des valeurs distinctes de la colonne retrouvées
+dans la référence est mesurée et écrite dans le manifeste (`pivots` : `values`,
+`matched`, `rate`), puis publiée dans le catalogue de l'API. `minimum` fait
+échouer `check` quand le taux passe en dessous. Un taux bas n'est pas
+forcément un défaut : `cadastre_owners` ne retrouve que 4 % de ses SIREN, la
+référence ne contenant que les entreprises agricoles.
+
+Le taux n'est pas mesuré dans un bundle, dont les tables sont filtrées.
 
 ## 6. Dépendances entre datasources
 
@@ -256,6 +278,20 @@ LEXICON_PACKAGES_ROOT=out/bundles/cultia ./lexicon server sync
 
 `fetch` vérifie les `sha256` et attend quand le quota de la clé est atteint.
 
+### Flavor paramétré
+
+Un flavor peut contenir des paramètres `%{nom}`, à renseigner à la
+construction. `resources/flavors/around.yml` ne garde que ce qui entoure un
+point, pour l'usage embarqué sur une exploitation :
+
+```sh
+./lexicon bundle around --as ma-ferme --set longitude:-0.78 latitude:45.81 radius:0.10
+```
+
+Le rayon est en degrés (0.10 ≈ 10 km). Les valeurs sont limitées aux nombres
+et aux mots simples : elles sont insérées dans du SQL. Un paramètre manquant
+arrête la commande. `--as` nomme le bundle (`out/bundles/ma-ferme/`).
+
 Un bundle n'est pas mis à jour automatiquement : après la republication d'une
 datasource, reconstruire et republier le bundle.
 
@@ -275,7 +311,71 @@ Ces commandes s'exécutent sur le serveur, dans le conteneur `loader` :
 - La rétention par datasource est dans `resources/retention.yml`. La version
   en service et la version désignée ne sont jamais supprimées.
 
-## 12. Tests
+## 12. Contrôles d'une datasource
+
+```sh
+./lexicon check --static          # toutes les datasources, sur leurs déclarations
+./lexicon check enterprises       # une datasource, déclarations puis données construites
+./lexicon new soil_moisture > lib/datasources/soil_moisture.rb   # squelette d'une nouvelle datasource
+```
+
+Une erreur bloque (code de sortie 1) ; un avertissement demande un regard
+humain.
+
+| Contrôle | Sur quoi | Niveau |
+|---|---|---|
+| Description, crédits, fournisseur, licence, date de la source | déclarations | erreur |
+| Licence non ouverte (NC, ND, propriétaire) sans `scope :members` | déclarations | erreur |
+| Licence à partage à l'identique (SA, ODbL) | déclarations | avertissement |
+| Colonne d'apparence personnelle sans `personal_data` | déclarations | erreur |
+| Dépendance, préfixe de traduction ou table de pivot inconnus | déclarations | erreur |
+| Table vide | données | erreur |
+| Taux de liaison sous le `minimum` déclaré | données | erreur |
+| Moins de 70 % des lignes de la version précédente | données | erreur |
+
+`resources/check_baseline.yml` liste les datasources dont les erreurs sont
+connues et en cours de traitement : elles y sont rapportées en avertissements
+« known issue », pour ne pas masquer celles d'une nouvelle contribution. Une
+ligne de ce fichier est une dette, pas une dérogation.
+
+L'intégration continue (`.github/workflows/ci.yml`) construit l'image, passe
+RuboCop, les tests unitaires et `check --static` à chaque pull request. Les
+contrôles sur données construites restent à la main des mainteneurs.
+
+## 13. Fiches pré-jointes
+
+Deux datasources ne collectent rien : elles assemblent, pendant `normalize`,
+ce que les autres savent d'un même objet.
+
+| Datasource | Table | Clé | Accès | Contenu |
+|---|---|---|---|---|
+| `commune_links` | `link_communes` | code INSEE | ouvert | parcelles et surface cadastrales, établissements agricoles, chefs d'exploitation MSA, station météo la plus proche |
+| `enterprise_links` | `link_enterprises` | SIREN | adhérents | parcelles possédées, établissements, aides PAC |
+
+`enterprise_links` ne contient que des personnes morales. Les deux sont à
+reconstruire et republier après les datasources dont elles dépendent :
+
+```sh
+./lexicon normalize commune_links enterprise_links
+./lexicon package commune_links enterprise_links
+./lexicon publish commune_links enterprise_links
+```
+
+L'API les sert sous `/links/communes/<INSEE>` et `/links/enterprises/<SIREN>`.
+
+## 14. Catalogue et versions passées
+
+L'API publie sous `/catalog` (HTML, `.json`, `.csv`) ce que disent les
+manifestes des packages en service : description, fournisseur, licence, date
+de la source, tables, dépendances, pivots et leurs taux. Les versions encore
+présentes dans le dépôt y sont listées avec leur adresse de téléchargement ;
+le loader les relève à chaque passage (`lexicon_meta.repository_versions`).
+Les packages réservés n'ont pas d'adresse de téléchargement.
+
+Une version passée se remet en service avec
+`./lexicon-cli server sync <datasource>@<version>`.
+
+## 15. Tests
 
 ```sh
 docker compose -f docker-compose-dev.yml run --rm -T -v "$PWD/test:/lexicon/test:ro" lexicon_runner \

@@ -45,6 +45,39 @@ module Lexicon
       def datasource(name)
         datasources.fetch(name, nil)
       end
+
+      PLACEHOLDER = /%\{([a-z_]+)\}/.freeze
+      # Values end up in SQL filters: numbers, words and coordinates only
+      SAFE_VALUE = /\A[\w .,-]+\z/.freeze
+
+      # @return [Array<String>] names of the parameters the filters expect, such as a point and a radius
+      def parameters
+        datasources.to_h.values.flat_map { |datasource| datasource.tables.values }
+                   .flat_map { |table| table.filter.scan(PLACEHOLDER).flatten }.uniq.sort
+      end
+
+      # Gives the flavor whose filters have their %{parameters} replaced by the values.
+      #
+      # @param [Hash{String => String}] values
+      # @param [String, nil] name name of the resulting flavor
+      # @return [LexiconFlavor]
+      def with_parameters(values, name: nil)
+        missing = parameters - values.keys
+        raise ArgumentError.new("Missing parameters: #{missing.join(', ')}") if missing.any?
+
+        unsafe = values.reject { |_key, value| value.to_s.match?(SAFE_VALUE) }.keys
+        raise ArgumentError.new("Invalid value for: #{unsafe.join(', ')}") if unsafe.any?
+
+        filled = datasources.to_h.transform_values do |datasource|
+          tables = datasource.tables.transform_values do |table|
+            FlavorTable.new(table.name, filter: table.filter.gsub(PLACEHOLDER) { values.fetch(Regexp.last_match(1)).to_s })
+          end
+
+          DatasourceFlavor.new(datasource.name, tables: tables)
+        end
+
+        LexiconFlavor.new(name || self.name, only: only, without: without, datasources: filled)
+      end
     end
   end
 end

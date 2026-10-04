@@ -52,6 +52,34 @@ module Lexicon
           @scope || Lexicon::Packaging::Manifest::OPEN_SCOPE
         end
 
+        # Declares that a column carries a pivot key (see Lexicon::Packaging::Pivots). The share of its
+        # values found in the reference is measured at each build and published with the package.
+        #
+        # @param [#to_s] key
+        # @param [#to_s] table
+        # @param [#to_s] column
+        # @param [Float, nil] minimum share of values that must match for the datasource to pass `check`
+        def pivot(key, table:, column:, minimum: nil)
+          Lexicon::Packaging::Pivots.fetch(key)
+          @pivots = get_pivots + [{ key: key.to_s, table: table.to_s, column: column.to_s, minimum: minimum }.compact]
+        end
+
+        # @return [Array<Hash>]
+        def get_pivots
+          @pivots || []
+        end
+
+        # States why columns that look like personal data can be published: for instance because they only
+        # hold legal entities, or because the source publishes them by law.
+        #
+        # @param [String, nil] reason
+        # @return [String, nil]
+        def personal_data(reason = nil)
+          @personal_data = reason unless reason.nil?
+
+          @personal_data
+        end
+
         # A datasource that is not packaged only exists on the build side.
         #
         # @param [Boolean] value

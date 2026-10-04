@@ -1,0 +1,48 @@
+# Checks run on every pull request: a contribution is built and judged here, not on the word of its author.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, v2]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: lexicon
+          POSTGRES_USER: lexicon
+          POSTGRES_PASSWORD: lexicon
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U lexicon"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    env:
+      RUN: >-
+        docker run --rm --network host
+        -e POSTGRES_HOST=127.0.0.1 -e POSTGRES_PORT=5432 -e POSTGRES_DB=lexicon
+        -e POSTGRES_USER=lexicon -e POSTGRES_PASSWORD=lexicon
+        lexicon:ci
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the image
+        run: docker build -t lexicon:ci .
+
+      - name: Lint
+        run: $RUN ./bin/rubocop lib/lexicon lexicon-cli
+
+      - name: Unit tests
+        run: |
+          $RUN sh -c 'for f in test/lexicon/*/*_test.rb; do bundle exec ruby -Itest $f || exit 1; done'
+
+      # What the declarations of every datasource say: licence, credits, personal data, dependencies.
+      # The checks that need built data are run by the maintainers with `./lexicon check <datasource>`.
+      - name: Static check of the datasources
+        run: $RUN ./lexicon-cli check --static

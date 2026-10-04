@@ -2,6 +2,8 @@ module Datasources
   class VineVarieties < Base
     description 'Vine varieties'
     credits name: 'Liste des cépages et porte-greffes', url: "https://www.franceagrimer.fr/filieres-Vin-et-cidre/Vin/Accompagner/Dispositifs-par-filiere/Normalisation-Qualite/Bois-et-plants-de-vigne/Catalogue-officiel-des-varietes-de-vigne", provider: "FranceAgriMer", licence: "NC-BY-SA 4.0", licence_url: "https://creativecommons.org/licenses/by-nc-sa/4.0/", updated_at: "2020-10-19"
+    # Non commercial licence
+    scope :members
 
     def collect
       #Collect each csv file in vine_varieties directory

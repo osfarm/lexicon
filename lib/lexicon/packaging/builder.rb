@@ -19,12 +19,14 @@ module Lexicon
       # @param [DependencyResolver] dependency_resolver
       # @param [StructureSplitter] splitter
       # @param [String] tool_version
-      def initialize(repository:, exporter:, dependency_resolver:, splitter:, tool_version:)
+      # @param [PivotMeter, nil] pivot_meter
+      def initialize(repository:, exporter:, dependency_resolver:, splitter:, tool_version:, pivot_meter: nil)
         @repository = repository
         @exporter = exporter
         @dependency_resolver = dependency_resolver
         @splitter = splitter
         @tool_version = tool_version
+        @pivot_meter = pivot_meter
       end
 
       # @param [Class<Datasources::Base>] datasource
@@ -51,10 +53,13 @@ module Lexicon
           tool_version: tool_version,
           flavor: flavor&.name,
           scope: datasource.scope,
+          description: datasource.description,
           credits: credits(datasource),
           depends_on: dependencies(datasource, definition_set),
           tables: export_tables(exports(datasource, definition_set, flavor), work_dir, jobs: jobs, &on_table),
-          foreign_keys: foreign_keys(definition_set)
+          foreign_keys: foreign_keys(definition_set),
+          # Match rates describe the whole datasource: they are not measured for a filtered bundle
+          pivots: flavor.nil? && @pivot_meter ? @pivot_meter.measure(datasource.get_pivots) : []
         )
         manifest.write(work_dir)
         File.rename(work_dir, repository.package_dir(name, version))

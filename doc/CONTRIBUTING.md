@@ -69,10 +69,23 @@ class Agropowa < Base
   depends_on :open_nomenclature  # datasources read during normalize, without a foreign key
   translations :equipments       # prefixes of the ids written in master_translations
   scope :members                 # only for data reserved to API key holders
+  pivot :commune, table: :agropowa_dealers, column: :postal_code   # a key shared with other datasets
+  personal_data 'Legal entities only'   # why columns that look personal can be published
 end
 ```
 
+`./lexicon new agropowa > lib/datasources/agropowa.rb` prints a skeleton with these declarations.
+
 Foreign keys declared with `.references(...)` already give the dependencies between datasources; `depends_on` is only for the others. A table belongs to one datasource only.
+
+### Checking a contribution
+```sh
+./lexicon check --static     # every datasource, from its declarations
+./lexicon check agropowa     # one datasource: declarations, then the data it built
+```
+An error blocks the contribution: missing description, credits, licence or source date; a licence that is not open on a datasource that is not reserved with `scope :members`; a column that looks like personal data without a `personal_data` reason; an empty table; a link rate under the declared `minimum`; less than 70 % of the rows of the previous version. Data about natural persons is not accepted.
+
+The static check, RuboCop and the unit tests run on every pull request (`.github/workflows/ci.yml`). The checks on built data are run by the maintainers. See [PUBLICATION.md](PUBLICATION.md) §12.
 
 ### Tests
 Unit tests live in `test/` and run in the container:

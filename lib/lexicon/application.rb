@@ -324,7 +324,8 @@ module Lexicon
                 exporter: Packaging::TableExporter.new(db_url: container.resolve('parameter.database.url')),
                 dependency_resolver: Packaging::DependencyResolver.new(container.resolve('database.schema.definitions')),
                 splitter: Packaging::StructureSplitter.new,
-                tool_version: container.resolve(:version)
+                tool_version: container.resolve(:version),
+                pivot_meter: Packaging::PivotMeter.new(container.resolve('database'))
               )
             end
           end

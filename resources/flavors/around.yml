@@ -1,0 +1,35 @@
+---
+# Reference data around a point, for a farm that does not need the whole country.
+# ./lexicon bundle around --as my-farm --set longitude:-0.78 latitude:45.81 radius:0.10
+# The radius is in degrees: 0.10 is about 10 km.
+name: around
+without:
+  - cadastre_owners
+  - cap_beneficiaries
+  - enterprises
+  - rd_agri
+datasources:
+  cadastre:
+    registered_cadastral_parcels:
+      filter: WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), %{radius})
+  cadastral_prices:
+    registered_cadastral_prices:
+      filter: WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), %{radius})
+  graphic_parcels:
+    registered_graphic_parcels:
+      filter: WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), %{radius}) ORDER BY id
+  hydrography:
+    registered_hydrographic_items:
+      filter: WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), %{radius})
+    registered_area_items:
+      filter: WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), %{radius})
+    registered_cadastral_buildings:
+      filter: WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), %{radius})
+  postal_codes:
+    registered_postal_codes:
+      filter: WHERE postgis.ST_DWithin(city_centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), %{radius})
+  weather:
+    registered_weather_stations:
+      filter: WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), 1)
+    registered_hourly_weathers:
+      filter: WHERE station_id IN (SELECT reference_name FROM lexicon.registered_weather_stations WHERE postgis.ST_DWithin(centroid, postgis.ST_PointFromText('POINT(%{longitude} %{latitude})', 4326), 1))

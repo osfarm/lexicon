@@ -7,6 +7,8 @@ module Datasources
             licence: "Licence Ouverte 2.0",
             licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
             updated_at: "2025-08-19"
+    pivot :cadastral_parcel, table: :registered_cadastral_parcel_owners, column: :cadastral_parcel_id
+    pivot :siren, table: :registered_cadastral_owners, column: :siren
     # Owners of parcels: reserved to OSFarm members
     scope :members
 

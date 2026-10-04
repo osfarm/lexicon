@@ -22,8 +22,12 @@ module Lexicon
       attr_reader :flavor
       # @return [String] who may read the package: 'open', or the scope an API key must carry
       attr_reader :scope
+      # @return [String, nil] what the datasource holds, in one sentence
+      attr_reader :description
       # @return [Array<Hash>]
       attr_reader :credits, :depends_on, :tables, :foreign_keys
+      # @return [Array<Hash>] pivot keys the package carries, with their measured match rate
+      attr_reader :pivots
 
       class << self
         # @param [Pathname] file
@@ -39,7 +43,8 @@ module Lexicon
       end
 
       def initialize(name:, version:, schema_revision:, structure_hash:, built_at:, tool_version:,
-                     credits:, depends_on:, tables:, foreign_keys:, flavor: nil, scope: OPEN_SCOPE)
+                     credits:, depends_on:, tables:, foreign_keys:, flavor: nil, scope: OPEN_SCOPE,
+                     description: nil, pivots: [])
         @name = name
         @version = version
         @schema_revision = schema_revision
@@ -48,6 +53,8 @@ module Lexicon
         @tool_version = tool_version
         @flavor = flavor
         @scope = scope
+        @description = description
+        @pivots = pivots
         @credits = credits
         @depends_on = depends_on
         @tables = tables
@@ -60,6 +67,7 @@ module Lexicon
           format: FORMAT,
           name: name,
           version: version,
+          description: description,
           schema_revision: schema_revision,
           structure_hash: structure_hash,
           built_at: built_at.utc.iso8601,
@@ -69,7 +77,8 @@ module Lexicon
           credits: credits,
           depends_on: depends_on,
           tables: tables,
-          foreign_keys: foreign_keys
+          foreign_keys: foreign_keys,
+          pivots: pivots
         }
       end
 

@@ -2,6 +2,8 @@ module Datasources
   class Agroedi < Base
     description 'AgroEDI Europe'
     credits name: 'Dictionnaire AgroEDI', url: "https://agroedieurope.fr/", provider: "AgroEDI", licence: "proprietary", licence_url: "", updated_at: "2023-01-01"
+    # The dictionary is not under an open licence
+    scope :members
 
     def collect
       #Collect each csv file in agroedi directory

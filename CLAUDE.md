@@ -33,6 +33,9 @@ docker compose -f docker-compose-dev.yml down     # Stop dev containers
 ./lexicon publish --bundle <flavor>  # v2: send a bundle to the private area of the serving side
 ./lexicon fetch <url>             # v2: download a bundle served by the API (key in LEXICON_API_KEY)
 ./lexicon bundle <flavor> [names] # v2: repository of packages filtered by a flavor, in out/bundles/<flavor>/
+./lexicon bundle around --as my-farm --set longitude:-0.78 latitude:45.81 radius:0.10  # v2: parameterized flavor
+./lexicon check [names] [--static] # v2: can the datasources be accepted? declarations, then built data (resources/check_baseline.yml = known issues)
+./lexicon new <name>              # v2: print the skeleton of a new datasource
 ./lexicon server sync [names]     # v2: put packages in service in the serving database (name or name@version)
 ./lexicon server sync a b --together  # v2: swap several packages in one transaction (all or none)
 ./lexicon server status           # v2: versions in service, stale packages, last loads

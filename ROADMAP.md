@@ -73,33 +73,49 @@ Reste :
 
 ## J2 — Catalogue et historique
 
-- [ ] Catalogue dans l'API : datasources, versions, licences, date de la source
-- [ ] Versions passées téléchargeables depuis le dépôt
+- [x] Catalogue dans l'API (`/catalog`) : datasources, versions, licences,
+      date de la source
+- [x] Versions passées listées dans le catalogue et téléchargeables depuis le
+      dépôt, dans la limite de la rétention
 - [ ] Interrogation dans le passé pour le RPG et les bénéficiaires de la PAC,
-      par millésime
-- [ ] Flavors paramétrés (un point et un rayon) pour l'usage embarqué sur une
-      exploitation
+      par millésime : non fait. La table du RPG n'a pas de colonne de
+      campagne et les bénéficiaires ne couvrent que 2024 ; il faut d'abord
+      faire collecter plusieurs millésimes aux datasources
+- [x] Flavors paramétrés (un point et un rayon) pour l'usage embarqué sur une
+      exploitation : `./lexicon bundle around --set …`
 
 ## J3 — Liaison entre jeux de données
 
-- [ ] Clés pivots déclarées par datasource : commune, SIREN et SIRET, parcelle
-      cadastrale, parcelle PAC, numéro AMM, code culture, taxon, production,
-      station météo
-- [ ] Taux de correspondance mesuré à chaque build
-- [ ] Fiches pré-jointes par commune, parcelle et entreprise (personnes
-      morales uniquement)
+- [x] Clés pivots déclarées par datasource : commune, département, SIREN,
+      parcelle cadastrale, code culture, taxon, production, station météo.
+      Déclarées sur sept datasources ; restent SIRET, parcelle PAC et numéro
+      AMM, et les datasources du référentiel technique
+- [x] Taux de correspondance mesuré à chaque build, publié dans le manifeste
+      et le catalogue
+- [x] Fiches pré-jointes par commune et par entreprise (personnes morales
+      uniquement) : `commune_links`, `enterprise_links`, servies sous `/links`
+- [ ] Fiche par parcelle
 
 ## J4 — Recettes et contributeurs
 
-- [ ] Format de recette par datasource : source, licence, schéma,
-      transformation, tests
-- [ ] Outil local pour créer, construire et tester une recette
-- [ ] Contrôles automatiques sur les contributions : licence, données
-      personnelles, schéma, taux de liaison, chute de volume
+- [x] Format de recette : la datasource Ruby reste la recette, complétée de
+      ses déclarations (crédits, licence, pivots, données personnelles)
+- [x] Outil local : `./lexicon new` pour le squelette, `./lexicon check` pour
+      juger la contribution
+- [x] Contrôles automatiques : licence, données personnelles, schéma, taux de
+      liaison, chute de volume ; la partie statique tourne en intégration
+      continue
+- [x] `agroedi` et `vine_varieties`, dont la licence n'est pas ouverte,
+      réservées aux adhérents
+- [x] `cadastral_prices` : longitude et latitude inversées dans le centroïde
+- [ ] Solder `resources/check_baseline.yml` : licences manquantes de
+      `eu_market_prices` et `seed_varieties`, licence logicielle de
+      `agricultural_pictures`, prénoms publiés par `cap_beneficiaries`
 
 ## J5 — Serveur MCP
 
-- [ ] Accès des agents IA au catalogue, aux ressources et aux fiches
+- [x] Accès des agents IA au catalogue, aux ressources et aux fiches : `/mcp`
+      dans l'API, soumis au même contrôle d'accès
 
 ## J6 — Accès et administration
 

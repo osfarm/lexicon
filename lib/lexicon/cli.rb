@@ -129,6 +129,45 @@ module Lexicon
       exit 1
     end
 
+    desc 'check [NAMES]', 'Tell whether datasources can be accepted: declarations, then built data'
+    method_option :static, type: :boolean, default: false, desc: 'Only what the declarations say, without any data'
+
+    def check(*names)
+      datasources = get('datasource.all').transform_keys(&:to_s)
+      unknown = names - datasources.keys
+      if unknown.any?
+        puts '[ NOK ] '.red + "Unknown datasources: #{unknown.join(', ')}"
+        exit 1
+      end
+
+      baseline = get('parameter.resources.root').join('check_baseline.yml')
+      tolerated = baseline.file? ? YAML.safe_load(baseline.read).fetch('tolerated', []) : []
+      checker = Contribution::Checker.new(datasources: datasources, definitions: packaged_definitions, tolerated: tolerated)
+      failed = (names.empty? ? datasources.keys.sort : names).reject do |name|
+        findings = checker.static(name)
+        findings += built_data_findings(checker, name, datasources.fetch(name)) unless options['static']
+        print_findings(name, findings)
+
+        findings.none? { |finding| finding.level == :error }
+      end
+
+      exit 1 if failed.any?
+    end
+
+    desc 'new NAME', 'Print the skeleton of a new datasource: ./lexicon new soil_moisture > lib/datasources/soil_moisture.rb'
+
+    def new(name)
+      if get('datasource.all').transform_keys(&:to_s).key?(name)
+        warn "The datasource #{name} already exists"
+        exit 1
+      end
+
+      puts Contribution::Scaffold.new.datasource(name)
+    rescue ArgumentError => e
+      warn e.message
+      exit 1
+    end
+
     desc 'fetch URL', 'Download a repository of packages served over HTTP, such as a private bundle'
     method_option :to, type: :string, desc: 'Directory to fill (default: out/bundles/<last part of the URL>)'
 
@@ -146,9 +185,12 @@ module Lexicon
     desc 'bundle FLAVOR [NAMES]', 'Build in out/bundles/FLAVOR a repository of packages filtered by a flavor'
     method_option :jobs, type: :numeric, default: 4, desc: 'Tables exported at once'
     method_option :validate, type: :boolean, default: true, desc: 'Refuse datasources with empty tables or missing foreign keys'
+    method_option :set, type: :hash, default: {}, desc: 'Values of the parameters of the flavor: --set longitude:-0.78 latitude:45.81'
+    method_option :as, type: :string, desc: 'Name of the bundle, when it differs from the flavor'
 
     def bundle(flavor_name, *only)
       flavor = get('flavor.loader').load(flavor_name).unwrap!
+                                   .with_parameters(options['set'], name: options['as'])
       repository = Packaging::Repository.new(get('parameter.bundles.root').join(flavor.name))
       builder = get('packaging.builder_factory').call(repository)
 
@@ -164,6 +206,9 @@ module Lexicon
 
       puts "Bundle #{flavor.name.yellow}: #{names.size - failed.size} packages in #{repository.root}"
       exit 1 if failed.any?
+    rescue ArgumentError => e
+      puts '[ NOK ] '.red + e.message
+      exit 1
     end
 
     desc 'validate', 'Validate lexicon schema'
@@ -204,6 +249,35 @@ module Lexicon
         @packaged_datasources ||= get('datasource.all').transform_keys(&:to_s)
                                                        .slice(*packaged_definitions.keys)
                                                        .select { |_name, datasource| datasource.packaged? }
+      end
+
+      # @return [Array<Contribution::Checker::Finding>]
+      def built_data_findings(checker, name, datasource)
+        definition = packaged_definitions[name]
+        return [] if definition.nil? || !datasource.packaged?
+
+        database = get('database')
+        rows = definition.definitions.map do |table|
+          [table.name, database.query(%(SELECT count(*) FROM "lexicon"."#{table.name}")).getvalue(0, 0).to_i]
+        end.to_h
+
+        checker.data(
+          name,
+          pivots: Packaging::PivotMeter.new(database).measure(datasource.get_pivots),
+          rows: rows,
+          previous: get('packaging.repository').latest(name)
+        )
+      rescue PG::UndefinedTable => e
+        [Contribution::Checker::Finding.new(level: :error, message: "not built: #{e.message.lines.first.strip}")]
+      end
+
+      def print_findings(name, findings)
+        errors, warnings = findings.partition { |finding| finding.level == :error }
+        label = errors.any? ? '[ NOK ] '.red : '[  OK ] '.green
+
+        puts label + name.yellow
+        errors.each { |finding| puts "        #{'error'.red}: #{finding.message}" }
+        warnings.each { |finding| puts "        warning: #{finding.message}" }
       end
 
       # @return [Boolean] whether the package has been built

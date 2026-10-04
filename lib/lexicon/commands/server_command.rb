@@ -14,6 +14,8 @@ module Lexicon
             print_outcome(outcome)
           end
 
+          get('server.meta').record_repository(get('packaging.repository'))
+
           exit 1 if outcomes.any? { |outcome| outcome.state == :failed }
         end
       end
@@ -30,6 +32,7 @@ module Lexicon
           begin
             loader.sync { |outcome| print_outcome(outcome) unless outcome.state == :up_to_date }
             get('server.status_file').write
+            get('server.meta').record_repository(get('packaging.repository'))
           rescue Server::LoadFailure => e
             puts '[ NOK ] '.red + e.message
           end

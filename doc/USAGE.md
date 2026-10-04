@@ -44,6 +44,9 @@ Each datasource has its own package and its own version (`YYYY.MM.DD.N`). See [P
 - `./lexicon publish --bundle <flavor>` Sends the bundle of a flavor to the private area of the server.
 - `./lexicon status` For each package: latest local version, version published, version in service, and whether it is stale.
 - `./lexicon bundle <flavor> [datasource, ...]` Builds in `out/bundles/<flavor>/` a repository of packages filtered by `resources/flavors/<flavor>.yml`.
+- `./lexicon bundle around --as <name> --set longitude:<x> latitude:<y> radius:<degrees>` Same, with a flavor that takes parameters: here what lies around a point.
+- `./lexicon check [datasource, ...] [--static]` Tells whether datasources can be accepted: declarations (licence, credits, personal data, dependencies), then the data they built (empty tables, link rates, drop in volume). Exits with 1 on an error.
+- `./lexicon new <datasource>` Prints the skeleton of a new datasource.
 - `./lexicon fetch <url> [--to dir]` Downloads a bundle served by the API, with the key in `LEXICON_API_KEY`.
 
 ## Serving side commands

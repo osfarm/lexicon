@@ -3,6 +3,9 @@ inherit_from: https://gitlab.com/ekylibre/tools/rubocop/-/raw/0.2.0/.rubocop.yml
 AllCops:
   Exclude:
     - 'lib/datasources/**/*'
+    # Commands of the former packaging, kept as they are
+    - 'lib/lexicon/commands/load_command.rb'
+    - 'lib/lexicon/commands/production_command.rb'
 
 Naming/AccessorMethodName:
   Enabled: false

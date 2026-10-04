@@ -13,6 +13,7 @@ module Datasources
             licence: 'Licence Ouverte 2.0',
             licence_url: 'https://www.etalab.gouv.fr/licence-ouverte-open-licence',
             updated_at: LAST_UPDATED
+    pivot :siren, table: :registered_cap_beneficiaries, column: :siren
 
     SOURCE_HEADERS = {
       beneficiary_name:        'Nom du bénéficiaire / entité légale / association',

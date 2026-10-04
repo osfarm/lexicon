@@ -2,6 +2,7 @@ module Datasources
   class CadastralPrices < Base
     description 'Prices of cadastre'
     credits name: 'Demandes de valeurs foncières', url: "https://www.data.gouv.fr/fr/datasets/5cc1b94a634f4165e96436c1/", provider: "Etalab", licence: "Open Licence 2.0", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf", updated_at: "2026-04-14"
+    pivot :cadastral_parcel, table: :registered_cadastral_prices, column: :cadastral_parcel_id
 
     YEAR = [2021, 2022, 2023, 2024, 2025]
 
@@ -70,7 +71,7 @@ module Datasources
               id_mutation, date_mutation::DATE, numero_disposition, nature_mutation,
               valeur_fonciere::NUMERIC(14,2), type_local,
               CONCAT(adresse_numero, adresse_nom_voie), code_postal, nom_commune, code_departement,
-              id_parcelle, surface_reelle_bati::int, surface_terrain::int, postgis.ST_SetSRID(postgis.ST_Point(latitude::FLOAT, longitude::FLOAT), 4326)::geometry
+              id_parcelle, surface_reelle_bati::int, surface_terrain::int, postgis.ST_SetSRID(postgis.ST_Point(longitude::FLOAT, latitude::FLOAT), 4326)::geometry
             FROM cadastral_prices.cadastral_prices_#{year}
         SQL
       end

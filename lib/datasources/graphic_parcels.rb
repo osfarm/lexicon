@@ -8,6 +8,7 @@ module Datasources
             licence: "Licence Ouverte 2.0",
             licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
             updated_at: LAST_UPDATED
+    pivot :cap_crop_code, table: :registered_graphic_parcels, column: :cap_crop_code
 
     # The RPG GeoPackage is provided manually: drop `RPG_Parcelles.gpkg`
     # (France métropolitaine, Lambert-93 / EPSG:2154) into `raw/graphic_parcels/`.

@@ -1,0 +1,8 @@
+# Datasources whose errors `./lexicon check` already knows about. They are reported as warnings instead of
+# blocking, so that the check stays useful for new contributions. Each line is a debt to settle: fix the
+# datasource, then remove it from this list.
+tolerated:
+  - agricultural_pictures  # licence 'AGPL-3.0', a software licence, on images
+  - cap_beneficiaries      # publishes names and first names of beneficiaries
+  - eu_market_prices       # credits without licence
+  - seed_varieties         # credits without licence
