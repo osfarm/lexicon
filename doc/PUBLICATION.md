@@ -132,6 +132,9 @@ end
 - **`scope`** : voir §9.
 - **`pivot`** : une colonne qui porte une clé commune à plusieurs jeux de
   données (voir ci-dessous).
+- **`licence_exception`** : pourquoi une datasource dont la licence n'est pas
+  ouverte est publiée sans `scope :members` (`rd_agri`, public à sa source).
+  `check` en fait un avertissement au lieu d'une erreur.
 - **`personal_data`** : sans cette justification, `check` refuse une colonne
   dont le nom évoque une personne physique (prénom, naissance, téléphone…).
 
@@ -243,7 +246,7 @@ abandonne au bout de deux minutes sans données plutôt que de rester figé.
 
 ## 9. Datasources réservées
 
-Une datasource qui déclare `scope :members` (`rd_agri`, `cadastre_owners`)
+Une datasource qui déclare `scope :members` (`cadastre_owners`, `enterprise_links`, `agroedi`, `vine_varieties`)
 est publiée lisible par son seul propriétaire (droits `700` / `600`) :
 
 - le loader, qui tourne sous ce propriétaire, la met en service ;
@@ -325,7 +328,7 @@ humain.
 | Contrôle | Sur quoi | Niveau |
 |---|---|---|
 | Description, crédits, fournisseur, licence, date de la source | déclarations | erreur |
-| Licence non ouverte (NC, ND, propriétaire) sans `scope :members` | déclarations | erreur |
+| Licence non ouverte (NC, ND, propriétaire) sans `scope :members` ni `licence_exception` | déclarations | erreur |
 | Licence à partage à l'identique (SA, ODbL) | déclarations | avertissement |
 | Colonne d'apparence personnelle sans `personal_data` | déclarations | erreur |
 | Dépendance, préfixe de traduction ou table de pivot inconnus | déclarations | erreur |

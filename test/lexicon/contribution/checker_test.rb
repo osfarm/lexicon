@@ -33,6 +33,13 @@ module Lexicon
         assert_empty reserved
       end
 
+      def test_a_licence_exception_states_why_a_non_open_licence_is_published
+        findings = static(datasource(credits: { licence: 'CC BY-NC-SA 4.0' }, licence_exception: 'public at its source'))
+
+        assert_equal [:warning], findings.map(&:level)
+        assert_match(/published openly: public at its source/, findings.first.message)
+      end
+
       def test_an_unknown_licence_is_refused_and_a_share_alike_one_is_flagged
         assert_equal [:error], static(datasource(credits: { licence: 'Tous droits réservés' })).map(&:level)
         assert_equal [:warning], static(datasource(credits: { licence: 'ODbL 1.0' })).map(&:level)
@@ -142,13 +149,14 @@ module Lexicon
           Checker.new(datasources: { 'demo' => klass }, definitions: { 'demo' => definition }.compact).static('demo')
         end
 
-        def datasource(description: 'A demo', credits: {}, scope: 'open', packaged: true, personal_data: nil,
+        def datasource(description: 'A demo', credits: {}, scope: 'open', packaged: true, personal_data: nil, licence_exception: nil,
                        dependencies: [], translations: [], pivots: [], sql: 'CREATE TABLE t (id varchar PRIMARY KEY, name varchar);')
           credit = credits && Credit.new(**{ provider: 'OSFarm', licence: 'Licence Ouverte 2.0', updated_at: '2026-10-04' }.merge(credits))
 
-          Struct.new(:description, :get_credits, :scope, :packaged?, :personal_data, :get_dependencies,
+          Struct.new(:description, :get_credits, :scope, :packaged?, :personal_data, :licence_exception, :get_dependencies,
                      :get_translation_prefixes, :get_pivots, :sql)
-                .new(description, [credit].compact, scope, packaged, personal_data, dependencies, translations, pivots, sql)
+                .new(description, [credit].compact, scope, packaged, personal_data, licence_exception, dependencies,
+                     translations, pivots, sql)
         end
     end
   end

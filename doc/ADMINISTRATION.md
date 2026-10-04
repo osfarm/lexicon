@@ -36,7 +36,7 @@ Une clé n'est délivrée qu'à un adhérent OSFarm, et expire avec son adhésio
 
 Données réservées aujourd'hui : les propriétaires de parcelles
 (`cadastre_owners`), affichés dans l'outil d'identification de parcelle,
-`rd_agri`, les fiches par entreprise (`/links/enterprises/<SIREN>`), et deux
+les fiches par entreprise (`/links/enterprises/<SIREN>`), et deux
 jeux dont la licence n'est pas ouverte : `agroedi` (propriétaire) et
 `vine_varieties` (CC BY-NC-SA, servi sous `/viticulture/vine-varieties`).
 
@@ -62,6 +62,33 @@ Configuration côté client, par exemple :
 { "mcpServers": { "lexicon": { "type": "http", "url": "https://lexicon.osfarm.org/mcp",
     "headers": { "Authorization": "Bearer lex_…" } } } }
 ```
+
+### 2.1 ter Duke, l'assistant
+
+`/tools/assistant` : un visiteur pose une question en français ou en anglais,
+un modèle de langage (Mistral) interroge le Lexicon par son serveur MCP et
+résume ce qu'il trouve. Chaque appel d'outil est affiché. Conception :
+`claudedocs/design_mcp_assistant.md`.
+
+| Sujet | Règle |
+|---|---|
+| Qui | Tout le monde : 10 questions par jour sans clé, 50 avec une clé, 500 au total |
+| Droits | Duke lit le Lexicon comme un anonyme, même pour un porteur de clé : aucune donnée réservée ne part chez le fournisseur |
+| Ce qui part chez Mistral | La question du visiteur et les résultats des outils. La page le dit avant la saisie |
+| Ce qui est conservé chez nous | Des décomptes par jour (questions, appels d'outils, échecs, jetons). Jamais le texte d'une question |
+| Bornes par question | 500 caractères, 8 appels d'outils, 90 secondes |
+
+Réglages : la variable `ASSISTANT_API_KEY` dans Dokploy (clé du compte
+`lexicon@osfarm.org` chez Mistral) ; sans elle l'outil s'affiche
+« indisponible ». `/admin/assistant` montre la consommation des trente
+derniers jours, coupe l'outil et change de modèle sans redéploiement. Le
+modèle par défaut est `ministral-8b-latest` : sur ce compte, `mistral-small`
+et `mistral-medium` sont limités à zéro requête par minute.
+
+Les documents de R&D que Duke cite viennent de `rd_agri`, consultable aussi
+sous `/rd-agri/documents`. Ce jeu est ouvert bien que sous licence CC BY-NC-SA
+(il est public à sa source) : l'attribution et l'usage non commercial sont
+rappelés sur chaque page.
 
 Le catalogue donne l'adresse des packages à partir de la variable
 `PACKAGES_URL` de l'API (par défaut `https://lexicon.osfarm.org/packages`).
@@ -303,5 +330,10 @@ les mots de passe coupés, PAM ne sert plus à authentifier.
   `status.json` ; leur contenu ne l'est pas.
 - L'interface d'administration est en français uniquement.
 - Une clé créée ou révoquée est prise en compte par l'API sous 30 secondes.
+- Duke répond avec un petit modèle : il lui arrive de prêter à un document un
+  contenu que son titre et son extrait ne disent pas. La liste des documents
+  cités, elle, vient de la base et non du modèle.
+- Le décompte des questions par visiteur est en mémoire et repart de zéro au
+  redémarrage de l'API ; le plafond global du jour est en base.
 - Le serveur MCP n'expose que des outils (ni `resources`, ni `prompts`), et
   une réponse d'outil est coupée à 60 000 caractères.

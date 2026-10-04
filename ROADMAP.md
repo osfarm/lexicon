@@ -117,6 +117,13 @@ Reste :
 - [x] Accès des agents IA au catalogue, aux ressources et aux fiches : `/mcp`
       dans l'API, soumis au même contrôle d'accès
 
+### Duke, l'assistant de démonstration
+
+- [x] `rd_agri` ouvert et cherchable (`/rd-agri/documents`, outils MCP
+      `search_rd_documents` et `get_rd_document`)
+- [x] Duke (`/tools/assistant`) : un modèle de langage gratuit interroge le
+      Lexicon par son serveur MCP ; limites par jour, page d'administration
+
 ## J6 — Accès et administration
 
 - [ ] Clés d'API délivrées aux adhérents OSFarm, plans et quotas

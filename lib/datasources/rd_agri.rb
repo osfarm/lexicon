@@ -17,8 +17,12 @@ module Datasources
             licence_url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr',
             updated_at: '2026-09-15'
     depends_on :industry_sector, :open_nomenclature, :administrative_areas, :phytosanitary
-    # CC BY-NC-SA: reserved to OSFarm members
-    scope :members
+    schema_revision 2
+    licence_exception 'Published openly by the R&D agricole platform; attribution and non commercial use are recalled wherever it is shown'
+
+    # Lettres accentuées et leur équivalent, pour la colonne de recherche
+    ACCENTED = 'àâäáãéèêëîïíôöóõùûüúçñÿœæ'.freeze
+    UNACCENTED = 'aaaaaeeeeiiioooouuuucnyoa'.freeze
 
     # Colonnes de l'export rd-agri → colonnes de documents.csv.
     # « Auteurs » n'y figure pas : la donnée nominative n'entre pas en base.
@@ -78,11 +82,13 @@ module Datasources
           page_url character varying NOT NULL,
           notice_url character varying,
           document_url character varying,
-          exported_on date NOT NULL
+          exported_on date NOT NULL,
+          search tsvector NOT NULL DEFAULT ''::tsvector
         );
 
         CREATE INDEX registered_rd_agri_documents_project_code ON registered_rd_agri_documents(project_code);
         CREATE INDEX registered_rd_agri_documents_publication_year ON registered_rd_agri_documents(publication_year);
+        CREATE INDEX registered_rd_agri_documents_search ON registered_rd_agri_documents USING GIN (search);
       SQL
 
       builder.table(:registered_rd_agri_document_productions, sql: <<~SQL).references(document_id: [:registered_rd_agri_documents, :id], production: [:master_productions, :reference_name])
@@ -313,6 +319,16 @@ module Datasources
                          FROM #{name}.publishers) p ON p.k = #{name}.norm(d.publisher)
             LEFT JOIN (SELECT DISTINCT ON (#{name}.norm(raw)) #{name}.norm(raw) AS k, iso
                          FROM #{name}.languages) l ON l.k = #{name}.norm(d.language)
+        SQL
+
+        # Ce par quoi les documents sont cherchés : le titre pèse plus que les mots-clés, puis la description.
+        # Les accents sont retirés, pour que « ble » trouve « blé » : qui cherche doit en faire autant.
+        plain = ->(text) { "translate(lower(#{text}), '#{ACCENTED}', '#{UNACCENTED}')" }
+        query <<~SQL
+          UPDATE registered_rd_agri_documents
+             SET search = setweight(to_tsvector('french', #{plain.call('title')}), 'A')
+                          || setweight(to_tsvector('french', #{plain.call("array_to_string(keywords, ' ')")}), 'B')
+                          || setweight(to_tsvector('french', #{plain.call("COALESCE(description, '')")}), 'C')
         SQL
       end
 

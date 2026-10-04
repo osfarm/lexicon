@@ -111,7 +111,13 @@ module Lexicon
             reserved = datasource.scope != Packaging::Manifest::OPEN_SCOPE
 
             if licence.match?(RESTRICTIVE_LICENCE) || OPEN_LICENCES.none? { |open| licence.match?(open) }
-              reserved ? [] : [error("licence '#{licence}' is not an open licence: reserve the datasource with `scope :members`")]
+              if reserved
+                []
+              elsif datasource.licence_exception.to_s.strip.empty?
+                [error("licence '#{licence}' is not an open licence: reserve the datasource with `scope :members`")]
+              else
+                [warning("licence '#{licence}' is not an open licence, published openly: #{datasource.licence_exception}")]
+              end
             elsif licence.match?(SHARE_ALIKE_LICENCE)
               [warning("licence '#{licence}' is share-alike: what is derived from it must keep that licence")]
             else

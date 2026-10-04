@@ -80,6 +80,17 @@ module Lexicon
           @personal_data
         end
 
+        # States why a datasource whose licence is not open is published openly all the same: for instance
+        # because its source already publishes it to everyone.
+        #
+        # @param [String, nil] reason
+        # @return [String, nil]
+        def licence_exception(reason = nil)
+          @licence_exception = reason unless reason.nil?
+
+          @licence_exception
+        end
+
         # A datasource that is not packaged only exists on the build side.
         #
         # @param [Boolean] value

@@ -10,7 +10,7 @@ notice. Toute réutilisation doit citer rd-agri comme auteur principal.
 
 | Table | Contenu |
 |---|---|
-| `registered_rd_agri_documents` | Un document : titre, description, année, dates, publicateur canonique, langue, mots-clés, projet, URL |
+| `registered_rd_agri_documents` | Un document : titre, description, année, dates, publicateur canonique, langue, mots-clés, projet, URL, et `search`, le texte indexé pour la recherche (titre, mots-clés, description, sans accents) |
 | `registered_rd_agri_document_productions` | Document → `master_productions` |
 | `registered_rd_agri_document_taxa` | Document → `master_taxonomy` (lien précis, avant élargissement aux productions) |
 | `registered_rd_agri_document_areas` | Document → `registered_administrative_areas` (région, département) |

@@ -145,8 +145,9 @@ rebuilt at each swap, and `datasource_credits` is a view over the manifests. The
 `packaged false`. A bundle is a repository like `out/packages`, loadable with
 `LEXICON_PACKAGES_ROOT=out/bundles/<flavor> ./lexicon server sync`.
 
-Access: a datasource declares `scope :members` when it is reserved to API key holders (`rd_agri`,
-`cadastre_owners`). Its package is published readable by its owner only (`D700,F600`): the loader, which runs
+Access: a datasource declares `scope :members` when it is reserved to API key holders (`cadastre_owners`,
+`enterprise_links`, `agroedi`, `vine_varieties`). `rd_agri` is open although under CC BY-NC-SA: it says why
+with `licence_exception`, and carries a `search` tsvector column (accents removed) the API searches. Its package is published readable by its owner only (`D700,F600`): the loader, which runs
 as that owner, puts it in service, while the public file server, which runs as an unprivileged user, cannot
 serve it. Bundles go to `_bundles/<flavor>/` with the same permissions and are handed out by the API under
 `/bundles/<flavor>/` to the keys carrying `bundle:<flavor>`.

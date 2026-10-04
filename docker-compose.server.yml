@@ -177,6 +177,9 @@ services:
       DB_SCHEMA: lexicon
       # Private bundles, handed out to the keys carrying their scope
       BUNDLES_ROOT: /bundles
+      # Duke, the assistant of /tools/assistant: without a key the tool shows as unavailable
+      ASSISTANT_API_KEY: ${ASSISTANT_API_KEY:-}
+      ASSISTANT_MODEL: ${ASSISTANT_MODEL:-ministral-8b-latest}
     volumes:
       - ${LEXICON_PACKAGES_DIR:?}/_bundles:/bundles:ro
     depends_on:
