@@ -147,7 +147,7 @@ rebuilt at each swap, and `datasource_credits` is a view over the manifests. The
 `LEXICON_PACKAGES_ROOT=out/bundles/<flavor> ./lexicon server sync`.
 
 Access: a datasource declares `scope :members` when it is reserved to API key holders (`cadastre_owners`,
-`enterprise_links`, `agroedi`, `vine_varieties`). `rd_agri` is open although under CC BY-NC-SA: it says why
+`enterprise_links`, `agroedi`, `vine_varieties`, `fertilizers`). `rd_agri` is open although under CC BY-NC-SA: it says why
 with `licence_exception`, and carries a `search` tsvector column (accents removed) the API searches. Its package is published readable by its owner only (`D700,F600`): the loader, which runs
 as that owner, puts it in service, while the public file server, which runs as an unprivileged user, cannot
 serve it. Bundles go to `_bundles/<flavor>/` with the same permissions and are handed out by the API under
@@ -175,6 +175,18 @@ Collected again and again: a datasource declares `source_date 'SELECT ...'` so t
 its data gives instead of the `updated_at` of `credits`, and `package` writes no new version when nothing
 changed. `fuel_prices` (weekly non-road diesel prices of the DGEC, `doc/datasources/fuel_prices.md`) is the
 first: its sheet is checked in `load` by `Datasources::FuelPrices::Readings`, before any published table is touched.
+
+`phytosanitary_substances` stands beside `phytosanitary` without changing its tables: active substances of
+E-Phy with the EIQ of Cornell and the HRAC mode of action, linked to products by the `amm` pivot.
+`Datasources::PhytosanitarySubstances::Matcher` says how each line was matched (`cas`, `name`, `isomer`, `form`,
+`alias`); a toxicity is never carried to another salt or ester unless `data/phytosanitary_substances/aliases.csv`
+says so (`doc/datasources/phytosanitary_substances.md`).
+
+`fertilizers` collects delivered prices every week from two merchants (Cereapro, Germineo) for the five places of
+`data/fertilizers/delivery_places.csv`. Readings add up: each build reads again the pages kept in
+`raw/fertilizers/<date>/` and the readings of the latest local package. `Catalog` tells which product an offer is
+about (by name for simple fertilisers, by formula otherwise), `Pricing` draws the monthly price (public price
+before a negotiated one) and the value of N, P2O5, K2O and SO3 (`doc/datasources/fertilizers.md`).
 
 History: `graphic_parcels` keeps the RPG campaign by campaign. `registered_graphic_parcels` holds the latest
 campaign (with a `campaign` column), `registered_graphic_parcels_history` the earlier ones; parcel ids are not

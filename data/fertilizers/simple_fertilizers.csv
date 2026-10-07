@@ -1,0 +1,14 @@
+id,name,pattern,nitrogen,phosphorus,potassium,sulfur,magnesium,variant_reference_name
+ammonitrate_33_5,Ammonitrate 33.5,"ammonitrate\s*33[.,]5",33.5,0,0,0,0,ammonitrate_33
+ammonitrate_34_4,Ammonitrate 34.4,"ammonitrate\s*34[.,]4",34.4,0,0,0,0,ammonitrate_34
+ammonitrate_27,Ammonitrate 27,(ammonitrate|\bcan)\s*27,27,0,0,0,0,ammonitrate_27
+urea_46_inhibited,Urée 46 avec inhibiteur d'uréase,uree\s*46.*(inhib|nbpt|limus),46,0,0,0,0,
+urea_46,Urée 46,uree\s*46,46,0,0,0,0,urea_46
+nitrogen_solution_30,Solution azotée 30 (N39),solution\s*azotee\s*(n\s*)?(39|30)\b,30,0,0,0,0,nitrogen_solution_39
+ammonium_sulphate,Sulfate d'ammoniaque,sulfate\s*d.ammoniaque,21,0,0,60,0,ammonium_sulphate
+tsp_45,Superphosphate triple 45,(tsp|superphosphate|super\s*triple)\s*(super\s*)?45,0,45,0,0,0,tsp_45
+ssp_18,Superphosphate simple 18,(tsp|superphosphate|super)\s*(super\s*)?18\b,0,18,0,29,0,ssp_18
+potassium_chloride_60,Chlorure de potasse 60,chlorure\s*de\s*potass\w*,0,0,60,0,0,potassium_chloride
+potassium_sulphate_50,Sulfate de potasse 50,sulfate\s*de\s*potass\w*,0,0,50,45,0,potassium_sulphate
+kieserite,Kiesérite,kieserit,0,0,0,50,25,kieserite
+patentkali,Patentkali,patent?kali,0,0,30,42,10,

@@ -12,3 +12,11 @@ charges à l'outil de contribution (`claudedocs/brainstorm_intrants.md`, F23).
 | 2026-10-07 | `fuel_prices` | 7 | Rien ne dit quand le loader passera : jusqu'à 5 minutes d'attente sans retour | `status --wait`, ou un loader local plus fréquent |
 | 2026-10-07 | `fuel_prices` | 8 | Un jeu neuf n'a pas de route dans l'API : on ne le voit que dans le catalogue ou en SQL | Une route générique de lecture par table |
 | 2026-10-07 | `fuel_prices` | 2 à 9 | Six commandes à enchaîner, chacune avec sa sortie à lire | Une commande qui enchaîne et s'arrête à la première erreur |
+| 2026-10-07 | `phytosanitary_substances` | 3 | Une valeur inattendue (« 2060088 - 2100111 » comme numéro d'AMM) n'est apparue qu'à `normalize`, tables de build déjà vidées | Même remède : restaurer sur toute erreur ; et un essai à blanc de `normalize` |
+| 2026-10-07 | `phytosanitary_substances` | 4 | Le taux de liaison vers les AMM n'est pas mesurable : `phytosanitary` n'est pas construit sur le poste, alors qu'il est en service à côté | Mesurer les pivots contre la base de service locale quand la référence manque en build |
+| 2026-10-07 | `phytosanitary_substances` | 1 | Le squelette ne dit rien des listes sans licence nommée ; il a fallu lire le contrôleur pour trouver `licence_exception` | Le citer en commentaire dans le squelette |
+| 2026-10-07 | `phytosanitary_substances` | 3 | Deux des trois sources ne se téléchargent qu'avec un navigateur déclaré, par une adresse lue dans une page | Un utilitaire commun « trouver un lien dans une page, puis télécharger » |
+| 2026-10-07 | `fertilizers` | 3 | Un jeu dont les relevés s'additionnent n'a pas de place prévue pour son historique : les tables de build sont recréées à chaque `normalize` | Un mode « ajout » déclaré par la datasource, ou la relecture du dernier package faite par le socle |
+| 2026-10-07 | `fertilizers` | 3 | Une pagination mal lue a demandé une centaine de pages vides au marchand avant d'être vue | Un plafond de requêtes par collecte, et un compte rendu des pages lues |
+| 2026-10-07 | `fertilizers` | 3 | Un fichier CSV de règles avec une virgule dans une expression a cassé le chargement | Valider les fichiers de `data/` dans `check --static` |
+

@@ -15,7 +15,11 @@ module Lexicon
         Key.new(name: 'cap_crop_code', table: 'master_crop_production_cap_codes', column: 'cap_code'),
         Key.new(name: 'taxon', table: 'master_taxonomy', column: 'reference_name'),
         Key.new(name: 'production', table: 'master_productions', column: 'reference_name'),
-        Key.new(name: 'weather_station', table: 'registered_weather_stations', column: 'reference_name')
+        Key.new(name: 'weather_station', table: 'registered_weather_stations', column: 'reference_name'),
+        # Marketing authorisation number of a plant protection product
+        Key.new(name: 'amm', table: 'registered_phytosanitary_products', column: 'id'),
+        # Article of the reference of variants, as Ekylibre knows it
+        Key.new(name: 'variant', table: 'master_variants', column: 'reference_name')
       ].map { |key| [key.name, key] }.to_h.freeze
 
       # @param [String] name

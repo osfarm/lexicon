@@ -14,10 +14,12 @@ datasources:
   rica: 3
   enterprises: 3
   phytosanitary: 12
+  phytosanitary_substances: 6
   rd_agri: 3
   protected_natural_zones: 2
   eu_market_prices: 4
   fuel_prices: 8
+  fertilizers: 8
   seed_varieties: 5
   vine_varieties: 5
   agroedi: 5

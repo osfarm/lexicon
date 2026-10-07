@@ -197,8 +197,8 @@ place dans ses crédits, et le catalogue l'affiche.
 
 Les clés reconnues sont dans `lib/lexicon/packaging/pivots.rb` : `commune`,
 `department`, `siren`, `cadastral_parcel`, `cap_crop_code`, `taxon`,
-`production`, `weather_station`. Chacune désigne la table et la colonne de
-référence.
+`production`, `weather_station`, `amm` (numéro d'AMM d'un produit
+phytosanitaire), `variant` (article du référentiel des variantes). Chacune désigne la table et la colonne de référence.
 
 À chaque `package`, la part des valeurs distinctes de la colonne retrouvées
 dans la référence est mesurée et écrite dans le manifeste (`pivots` : `values`,

@@ -22,7 +22,7 @@ OSFarm. Adapter ensuite les écrans web, l'API et le serveur MCP à ces jeux.
 | # | Sujet | Décision |
 |---|---|---|
 | D1 | Provenance | Lexicon **recollecte lui-même aux sources amont** (E-Phy, EIQ, HRAC, DGEC, catalogues marchands). Rien n'est repris d'Itinera, qui sert de modèle de couverture |
-| D2 | Accès | Les prix sont **ouverts à tous**, comme les références |
+| D2 | Accès | Les prix devaient être ouverts à tous. **Révisé le 2026-10-07** : les jeux de prix relevés chez des marchands (`fertilizers`) sont réservés aux adhérents ; le GNR, de source publique, reste ouvert |
 | D3 | Historique | **Les deux** : une série mensuelle par article, et `master_prices` tenu à jour avec la dernière valeur pour rester compatible avec Ekylibre |
 | D4 | Contributeurs | **En deux temps** : d'abord le parcours développeur, validé sur ces jeux ; ensuite le dépôt de fichier par un non-développeur |
 | D5 | Conditions des sources | Collecte et republication ouverte admises pour les sept sites marchands (Q1) ; réutilisation de l'EIQ et du HRAC vérifiée (Q2). Verdicts donnés par David |
