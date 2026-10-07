@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'digest'
+require 'json'
 
 module Lexicon
   module Packaging
@@ -20,13 +21,15 @@ module Lexicon
       # @param [StructureSplitter] splitter
       # @param [String] tool_version
       # @param [PivotMeter, nil] pivot_meter
-      def initialize(repository:, exporter:, dependency_resolver:, splitter:, tool_version:, pivot_meter: nil)
+      # @param [#query, nil] database where the date of the source is read, for the datasources declaring one
+      def initialize(repository:, exporter:, dependency_resolver:, splitter:, tool_version:, pivot_meter: nil, database: nil)
         @repository = repository
         @exporter = exporter
         @dependency_resolver = dependency_resolver
         @splitter = splitter
         @tool_version = tool_version
         @pivot_meter = pivot_meter
+        @database = database
       end
 
       # @param [Class<Datasources::Base>] datasource
@@ -35,7 +38,7 @@ module Lexicon
       # @param [Time] now
       # @param [Flavor::LexiconFlavor, nil] flavor filters applied to the tables
       # @yieldparam [String] table name of a table once exported
-      # @return [Manifest]
+      # @return [Manifest] the one of the latest package when nothing changed since: no version is added then
       def build(datasource, definition_set, jobs: 4, now: Time.now, flavor: nil, &on_table)
         name = definition_set.name
         version = repository.next_version(name, now.to_date)
@@ -61,6 +64,9 @@ module Lexicon
           # Match rates describe the whole datasource: they are not measured for a filtered bundle
           pivots: flavor.nil? && @pivot_meter ? @pivot_meter.measure(datasource.get_pivots) : []
         )
+        previous = repository.latest(name)
+        return previous if !previous.nil? && content(previous) == content(manifest)
+
         manifest.write(work_dir)
         File.rename(work_dir, repository.package_dir(name, version))
 
@@ -81,6 +87,11 @@ module Lexicon
         attr_reader :splitter
         # @return [String]
         attr_reader :tool_version
+
+        # @return [Hash] what a package holds, whenever it was built
+        def content(manifest)
+          JSON.parse(JSON.generate(manifest.to_h.except(:version, :built_at)))
+        end
 
         # @return [String] hash of the structure, the same as long as the tables keep their shape
         def write_structure(datasource, definition_set, dir)
@@ -171,6 +182,8 @@ module Lexicon
         end
 
         def credits(datasource)
+          updated_at = source_date(datasource)
+
           datasource.get_credits.map do |credit|
             {
               name: credit.name,
@@ -178,9 +191,18 @@ module Lexicon
               url: credit.url,
               licence: credit.licence,
               licence_url: credit.licence_url,
-              updated_at: credit.updated_at
+              updated_at: updated_at || credit.updated_at
             }
           end
+        end
+
+        # @return [String, nil] the date the built data gives for its source, when the datasource says how to read it
+        def source_date(datasource)
+          return nil if datasource.source_date.nil? || @database.nil?
+
+          value = @database.prepend_search_path(TableExporter::SCHEMA) { @database.query(datasource.source_date).first&.values&.first }
+
+          value && Date.parse(value.to_s).iso8601
         end
 
         def dependencies(datasource, definition_set)

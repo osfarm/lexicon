@@ -57,6 +57,17 @@ module Lexicon
         assert_equal %w[2026.10.01.1 2026.10.02.1], Repository.new(@remote).versions('units')
       end
 
+      def test_package_is_in_service_when_the_serving_side_reports_that_version
+        build('units', '2026.10.01.1')
+        build('units', '2026.10.02.1')
+        @remote.mkpath
+        @remote.join('status.json').write(JSON.generate(packages: { units: { version: '2026.10.01.1' } }))
+
+        assert @publisher.in_service?('units', version: '2026.10.01.1')
+        refute @publisher.in_service?('units'), 'the latest local version is not the one in service'
+        refute @publisher.in_service?('taxonomy')
+      end
+
       def test_in_service_comes_from_the_status_file_of_the_serving_side
         assert_empty @publisher.in_service
 

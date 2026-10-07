@@ -10,6 +10,9 @@ module Lexicon
     class Publisher
       BUNDLES_DIR = '_bundles'
 
+      # @return [String]
+      attr_reader :target
+
       # @param [Repository] repository local repository
       # @param [String] target remote repository, as rsync names it: a directory or host:path
       # @param [Rsync] transfer
@@ -32,6 +35,15 @@ module Lexicon
         designate(name, version)
 
         version
+      end
+
+      # @param [String] name
+      # @param [String, nil] version the latest local one by default
+      # @return [Boolean] whether the serving side reports that very version in service
+      def in_service?(name, version: nil)
+        version ||= repository.versions(name).last
+
+        !version.nil? && in_service.dig(name, :version) == version
       end
 
       # Sends a bundle, a whole repository of packages, to the private area of the serving side. Its files
@@ -63,8 +75,6 @@ module Lexicon
 
         # @return [Repository]
         attr_reader :repository
-        # @return [String]
-        attr_reader :target
         # @return [Rsync]
         attr_reader :transfer
 

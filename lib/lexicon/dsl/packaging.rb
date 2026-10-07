@@ -91,6 +91,17 @@ module Lexicon
           @licence_exception
         end
 
+        # Query giving the date of the source from the built tables, for a datasource collected again and
+        # again: the package then carries that date in its credits instead of the one written in `credits`.
+        #
+        # @param [String, nil] sql a query on the lexicon schema returning one date
+        # @return [String, nil]
+        def source_date(sql = nil)
+          @source_date = sql unless sql.nil?
+
+          @source_date
+        end
+
         # A datasource that is not packaged only exists on the build side.
         #
         # @param [Boolean] value

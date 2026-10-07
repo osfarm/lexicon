@@ -1,0 +1,42 @@
+# Lexicon v2, serving side on a development machine: the stack of docker-compose.server.yml, without Dokploy.
+#
+#   docker compose -f docker-compose.server.yml -f docker-compose.server.local.yml up -d
+#
+# Variables, read from .env: POSTGRES_PASSWORD, LEXICON_PACKAGES_DIR (the local repository, out/published),
+# LEXICON_API_USER and LEXICON_API_PASSWORD as in production, MISTRAL_API_KEY for Duke (optional).
+# The project name keeps this stack apart from the build stack of docker-compose-dev.yml, which also has a `db`.
+name: lexicon-server
+
+services:
+  db:
+    # The production sizing (6 GB of shared buffers) is kept: lower it here on a smaller machine
+    ports:
+      - 127.0.0.1:5556:5432
+
+  loader:
+    # Same user as the runner of the build stack, which writes the repository
+    build:
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+    volumes:
+      # The code of the working copy, as in the build stack
+      - ./lib:/lexicon/lib:ro
+      - ./lexicon-cli:/lexicon/lexicon-cli:ro
+      - ./resources:/lexicon/resources:ro
+      - ./VERSION:/lexicon/VERSION:ro
+
+  packages:
+    ports:
+      - 127.0.0.1:8889:80
+
+  api:
+    ports:
+      - 127.0.0.1:8888:8888
+    environment:
+      PACKAGES_URL: http://localhost:8889
+      ASSISTANT_API_KEY: ${MISTRAL_API_KEY:-}
+
+networks:
+  dokploy-network:
+    external: false

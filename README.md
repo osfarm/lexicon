@@ -55,14 +55,16 @@ puts it in service without touching the others.
 ```sh
 ./lexicon validate                 # tables filled, foreign keys present
 ./lexicon package phytosanitary    # out/packages/phytosanitary/<version>/
-./lexicon publish phytosanitary    # sends it and designates it on the server
+./lexicon publish phytosanitary    # sends it to the local serving stack and designates it
 ./lexicon status                   # local / published / in service
+./lexicon publish phytosanitary --production   # once in service locally: sends it to the server
 ```
 
-`publish` needs the address of the packages repository in your `.env`:
+`publish` needs the addresses of the two packages repositories in your `.env`:
 
 ```
-LEXICON_PUBLISH_TARGET=osfarm_lexicon:lexicon/packages
+LEXICON_PUBLISH_TARGET=/lexicon/out/published
+LEXICON_PRODUCTION_TARGET=osfarm_lexicon:lexicon/packages
 ```
 
 See [doc/PUBLICATION.md](doc/PUBLICATION.md) (in French) for the package format, the dependencies between

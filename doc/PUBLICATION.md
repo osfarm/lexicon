@@ -61,6 +61,49 @@ phytosanitary   local 2026.10.04.1  published 2026.10.04.1  in service 2026.10.0
 | `stale` | Construite contre une version de dépendance qui a changé depuis (§6) |
 | `in service ?` | Le serveur ne publie pas de `status.json` |
 
+### D'abord en local, ensuite en production
+
+`publish` et `status` visent la cible de `LEXICON_PUBLISH_TARGET` et
+l'affichent. Sur un poste de build, c'est le dépôt de la pile de service
+locale (voir §16) : on y constate la mise en service et le rendu dans l'API
+avant de toucher à la production.
+
+```sh
+./lexicon publish fuel_prices                # vers la pile locale
+./lexicon status                             # attendre « in service »
+./lexicon publish fuel_prices --production   # vers LEXICON_PRODUCTION_TARGET
+./lexicon status --production
+```
+
+`publish --production` refuse un package dont la version n'est pas en service
+à la cible locale. `--force` passe outre, pour un poste sans pile locale.
+
+Le parcours complet d'un jeu, nouveau ou modifié :
+
+| # | Étape | Commande | Où regarder |
+|---|---|---|---|
+| 1 | Créer | `./lexicon new <ds> > lib/datasources/<ds>.rb` | |
+| 2 | Déclarations | `./lexicon check <ds> --static` | sortie |
+| 3 | Construire | `./lexicon run <ds>` | sortie, `raw/<ds>/` |
+| 4 | Données | `./lexicon check <ds>` | sortie |
+| 5 | Empaqueter | `./lexicon package <ds>` | `out/packages/<ds>/<version>/manifest.json` |
+| 6 | Publier en local | `./lexicon publish <ds>` | sortie |
+| 7 | Mise en service locale | `./lexicon status` | `http://localhost:8889/status.json` |
+| 8 | Rendu local | navigateur, SQL | `http://localhost:8888/catalog`, base `localhost:5556` |
+| 9 | Publier en production | `./lexicon publish <ds> --production` | sortie |
+| 10 | Mise en service | `./lexicon status --production` | `https://lexicon-packages.osfarm.org/status.json` |
+| 11 | Rendu | navigateur | `https://lexicon.osfarm.org/catalog` |
+
+Quand le jeu est modifié plutôt qu'ajouté : incrémenter `schema_revision` si
+une table change de forme, construire d'abord les jeux qu'il lit pendant
+`normalize`, publier ensemble les jeux liés par une clé étrangère (§6), et
+reconstruire les jeux dérivés (§13).
+
+`package` n'écrit pas de nouvelle version quand les données, la structure et
+les déclarations sont celles du dernier package : il le dit (`unchanged, no
+new version`). Une collecte hebdomadaire qui ne rapporte rien de neuf ne
+remplit donc pas le dépôt.
+
 Options utiles :
 
 - `./lexicon package` sans nom construit toutes les datasources.
@@ -137,6 +180,18 @@ end
   `check` en fait un avertissement au lieu d'une erreur.
 - **`personal_data`** : sans cette justification, `check` refuse une colonne
   dont le nom évoque une personne physique (prénom, naissance, téléphone…).
+
+### Date de la source
+
+`updated_at` des crédits est la date de la source. Une datasource collectée
+régulièrement la tire de ses données plutôt que de l'écrire :
+
+```ruby
+source_date 'SELECT max(observed_on) FROM registered_fuel_prices'
+```
+
+La requête porte sur le schéma `lexicon` et rend une date ; le package la
+place dans ses crédits, et le catalogue l'affiche.
 
 ### Clés pivots
 
@@ -401,3 +456,34 @@ docker compose -f docker-compose-dev.yml exec lexicon_runner sh -c \
 ```
 
 La commande refuse de prendre pour cible la base de build.
+
+## 16. Pile de service locale
+
+`docker-compose.server.local.yml` complète `docker-compose.server.yml` pour
+faire tourner sur un poste la pile de production : base, loader, serveur de
+fichiers, API.
+
+```sh
+docker compose -f docker-compose.server.yml -f docker-compose.server.local.yml up -d
+```
+
+| Service | Adresse |
+|---|---|
+| API et site | `http://localhost:8888` |
+| Dépôt de packages | `http://localhost:8889` |
+| Base de service | `localhost:5556`, base `lexicon`, rôle `lexicon` |
+
+Le dépôt est `out/published` (`LEXICON_PACKAGES_DIR` dans `.env`), que le
+runner voit sous `/lexicon/out/published` (`LEXICON_PUBLISH_TARGET`). Le
+projet Compose s'appelle `lexicon-server` : il ne se mélange pas à la pile de
+build, qui a elle aussi un service `db`.
+
+Les commandes `server` se lancent dans le loader :
+
+```sh
+docker compose -f docker-compose.server.yml -f docker-compose.server.local.yml exec loader ./lexicon-cli server status
+```
+
+Pour partir des données publiées, copier les packages publics de
+`https://lexicon-packages.osfarm.org` dans `out/published` : le loader les met
+en service à son passage suivant.

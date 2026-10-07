@@ -84,10 +84,14 @@ module Lexicon
 
     desc 'publish [NAMES]', 'Send the latest packages to the serving side and designate them (name or name@version)'
     method_option :bundle, type: :string, desc: 'Send the bundle of this flavor instead, to the private area'
+    method_option :production, type: :boolean, default: false,
+                               desc: 'Send to LEXICON_PRODUCTION_TARGET what is already in service at LEXICON_PUBLISH_TARGET'
+    method_option :force, type: :boolean, default: false, desc: 'With --production: do not ask for the package to be in service locally'
 
     def publish(*targets)
       repository = get('packaging.repository')
-      publisher = get('packaging.publisher')
+      publisher = get(options['production'] ? 'packaging.production_publisher' : 'packaging.publisher')
+      puts "Target: #{publisher.target.yellow}#{' (production)' if options['production']}"
 
       if options['bundle']
         publisher.publish_bundle(get('parameter.bundles.root').join(options['bundle']), options['bundle'])
@@ -96,8 +100,10 @@ module Lexicon
         return
       end
 
-      (targets.empty? ? repository.names : targets).each do |target|
-        name, version = target.split('@', 2)
+      packages = (targets.empty? ? repository.names : targets).map { |target| target.split('@', 2) }
+      refuse_packages_not_tried_locally(packages) if options['production'] && !options['force']
+
+      packages.each do |name, version|
         puts '[  OK ] '.green + name.yellow + " #{publisher.publish(name, version: version)} published"
       end
     rescue Packaging::Rsync::TransferError, ArgumentError => e
@@ -106,11 +112,14 @@ module Lexicon
     end
 
     desc 'status', 'Latest local version of each package, the one published and the one in service'
+    method_option :production, type: :boolean, default: false, desc: 'Look at LEXICON_PRODUCTION_TARGET instead of LEXICON_PUBLISH_TARGET'
 
     def status
       repository = get('packaging.repository')
-      published = get('packaging.publisher').published
-      in_service = get('packaging.publisher').in_service
+      publisher = get(options['production'] ? 'packaging.production_publisher' : 'packaging.publisher')
+      puts "Target: #{publisher.target.yellow}#{' (production)' if options['production']}"
+      published = publisher.published
+      in_service = publisher.in_service
 
       (repository.names | published.keys | in_service.keys).sort.each do |name|
         local = repository.versions(name).last
@@ -282,6 +291,22 @@ module Lexicon
       end
 
       # @return [Boolean] whether the package has been built
+      # The production only receives what the local serving side has loaded and put in service
+      #
+      # @param [Array<Array(String, String)>] packages name and version, the latest local version when nil
+      def refuse_packages_not_tried_locally(packages)
+        local = get('packaging.publisher')
+        missing = packages.reject { |name, version| local.in_service?(name, version: version) }
+        return if missing.empty?
+
+        missing.each do |name, version|
+          version ||= get('packaging.repository').versions(name).last
+          puts '[ NOK ] '.red + name.yellow + " #{version || '(no local package)'} is not in service at #{local.target}: " \
+               'publish it there first, wait for the loader, or pass --force'
+        end
+        exit 1
+      end
+
       def package_datasource(builder, datasource, definition_set, flavor: nil)
         name = definition_set.name
 
@@ -299,11 +324,15 @@ module Lexicon
           end
         end
 
-        manifest = builder.build(datasource, definition_set, jobs: options['jobs'], flavor: flavor) do |table|
+        started = Time.now
+        manifest = builder.build(datasource, definition_set, jobs: options['jobs'], now: started, flavor: flavor) do |table|
           puts "        #{name}: #{table} exported" if options['verbose']
         end
         rows = manifest.tables.sum { |table| table[:rows] }
-        puts '[  OK ] '.green + name.yellow + " #{manifest.version} (#{manifest.tables.size} tables, #{rows} rows)"
+        # The builder hands back the latest package when the data has not changed since
+        unchanged = manifest.built_at.to_i != started.to_i
+        puts '[  OK ] '.green + name.yellow + " #{manifest.version} (#{manifest.tables.size} tables, #{rows} rows)" \
+             "#{' unchanged, no new version' if unchanged}"
 
         true
       rescue Packaging::TableExporter::ExportError => e

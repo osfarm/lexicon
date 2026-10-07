@@ -28,8 +28,9 @@ docker compose -f docker-compose-dev.yml down     # Stop dev containers
 ./lexicon validate                # Validate schema against definitions
 ./lexicon clean                   # Clear all database content
 ./lexicon package [names]         # v2: one versioned package per datasource in out/packages/<name>/<version>/
-./lexicon publish [names]         # v2: send packages to the serving side (LEXICON_PUBLISH_TARGET) and designate them
-./lexicon status                  # v2: version of each package: local, published, in service (status.json of the loader)
+./lexicon publish [names]         # v2: send packages to the serving side (LEXICON_PUBLISH_TARGET, the local stack) and designate them
+./lexicon publish [names] --production  # v2: send to LEXICON_PRODUCTION_TARGET what is in service locally (--force to skip that)
+./lexicon status [--production]   # v2: version of each package: local, published, in service (status.json of the loader)
 ./lexicon publish --bundle <flavor>  # v2: send a bundle to the private area of the serving side
 ./lexicon fetch <url>             # v2: download a bundle served by the API (key in LEXICON_API_KEY)
 ./lexicon bundle <flavor> [names] # v2: repository of packages filtered by a flavor, in out/bundles/<flavor>/
@@ -165,6 +166,15 @@ is the build database): `Stager` loads it in `lexicon_staging`, `Checker` refuse
 `Meta` keeps versions and the load journal in `lexicon_meta`. A failed load leaves the previous version in
 service. `test/lexicon/server/loader_test.rb` runs against a scratch database it creates and drops. The legacy `dump` / `remote` / `production` commands still exist but
 their MinIO remote is gone.
+
+Local serving stack: `docker-compose.server.local.yml` on top of `docker-compose.server.yml` (project
+`lexicon-server`: API on 8888, packages on 8889, database on 5556, repository `out/published`). A package goes
+there first; `publish --production` refuses a version that is not in service there (`doc/PUBLICATION.md` §3, §16).
+
+Collected again and again: a datasource declares `source_date 'SELECT ...'` so that its package carries the date
+its data gives instead of the `updated_at` of `credits`, and `package` writes no new version when nothing
+changed. `fuel_prices` (weekly non-road diesel prices of the DGEC, `doc/datasources/fuel_prices.md`) is the
+first: its sheet is checked in `load` by `Datasources::FuelPrices::Readings`, before any published table is touched.
 
 History: `graphic_parcels` keeps the RPG campaign by campaign. `registered_graphic_parcels` holds the latest
 campaign (with a `campaign` column), `registered_graphic_parcels_history` the earlier ones; parcel ids are not

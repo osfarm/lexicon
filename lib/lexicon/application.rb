@@ -105,6 +105,10 @@ module Lexicon
             register(:target) do
               ENV.fetch('LEXICON_PUBLISH_TARGET') { raise Packaging::Rsync::TransferError.new('LEXICON_PUBLISH_TARGET is not set') }
             end
+            # Repository of the production, target of `publish --production`
+            register(:production_target) do
+              ENV.fetch('LEXICON_PRODUCTION_TARGET') { raise Packaging::Rsync::TransferError.new('LEXICON_PRODUCTION_TARGET is not set') }
+            end
           end
           namespace :bundles do
             register(:root, memoize: true) { container.resolve('parameter.out.root').join 'bundles' }
@@ -316,6 +320,13 @@ module Lexicon
               target: container.resolve('parameter.publish.target')
             )
           end
+          # The production is never the default target: it is asked for, once the package is in service locally
+          register(:production_publisher, memoize: true) do
+            Packaging::Publisher.new(
+              repository: container.resolve('packaging.repository'),
+              target: container.resolve('parameter.publish.production_target')
+            )
+          end
           # @return [Proc] builds packages in the repository it is given
           register(:builder_factory, memoize: true) do
             lambda do |repository|
@@ -325,7 +336,8 @@ module Lexicon
                 dependency_resolver: Packaging::DependencyResolver.new(container.resolve('database.schema.definitions')),
                 splitter: Packaging::StructureSplitter.new,
                 tool_version: container.resolve(:version),
-                pivot_meter: Packaging::PivotMeter.new(container.resolve('database'))
+                pivot_meter: Packaging::PivotMeter.new(container.resolve('database')),
+                database: container.resolve('database')
               )
             end
           end

@@ -24,11 +24,13 @@ module Lexicon
         %("#{SCHEMA}"."#{table}")
       end
 
+      # The file carries no timestamp: the same rows give the same file, and the same checksum.
+      #
       # @param [String] source a table, or a query between parentheses
       # @param [Pathname] file
       # @return [Hash] :rows, :sha256, :bytes
       def export(source, file)
-        command = %(\\copy #{source.gsub(/\s+/, ' ')} TO PROGRAM 'pigz > #{file}' WITH csv)
+        command = %(\\copy #{source.gsub(/\s+/, ' ')} TO PROGRAM 'pigz -n > #{file}' WITH csv)
         environment = { 'PGOPTIONS' => "-c search_path=#{SEARCH_PATH}" }
         output, error, status = Open3.capture3(environment, 'psql', db_url, '-v', 'ON_ERROR_STOP=1', '-c', command)
         rows = output[/^COPY (\d+)$/, 1]
