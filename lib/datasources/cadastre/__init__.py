@@ -11,7 +11,7 @@ from psycopg2.extras import execute_values
 from lib.python import db_connect
 
 DATABASE = 'lexicon'
-URL = "https://cadastre.data.gouv.fr/data/etalab-cadastre/latest/geojson/departements/"
+URL = "https://cadastre.data.gouv.fr/data/etalab-cadastre/2026-09-01/geojson/departements/"
 FILE = "cadastre-{dep}-{layer}.json.gz"
 PATH = 'raw/cadastre'
 LIB = 'lib/datasources/cadastre'
@@ -24,7 +24,8 @@ def download(file_url, file_path):
     """
     Download the stream
     """
-    os.system('curl --retry 5 {} > {}'.format(file_url, file_path))
+    # The site answers with a redirection to its storage: without -L, the page of the redirection is what gets saved
+    os.system('curl -L --fail --retry 5 {} -o {}'.format(file_url, file_path))
 
 
 def sysexit(message):

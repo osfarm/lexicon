@@ -78,7 +78,16 @@ avant de toucher à la production.
 `publish --production` refuse un package dont la version n'est pas en service
 à la cible locale. `--force` passe outre, pour un poste sans pile locale.
 
-Le parcours complet d'un jeu, nouveau ou modifié :
+Une commande enchaîne tout le parcours et s'arrête à la première étape qui ne passe pas :
+
+```sh
+./lexicon ship fuel_prices                 # contrôles, construction, package, publication locale, attente du loader
+./lexicon ship fuel_prices --production    # puis la production, une fois le jeu en service en local
+./lexicon ship prices --no-build           # sans reconstruire : ce qui est déjà dans la base de build
+```
+
+Elle attend que le loader ait mis le jeu en service (quinze minutes au plus, `--timeout`) et affiche ses raisons
+s'il le refuse. Les étapes qu'elle enchaîne, pour les faire une à une :
 
 | # | Étape | Commande | Où regarder |
 |---|---|---|---|
@@ -98,6 +107,9 @@ Quand le jeu est modifié plutôt qu'ajouté : incrémenter `schema_revision` si
 une table change de forme, construire d'abord les jeux qu'il lit pendant
 `normalize`, publier ensemble les jeux liés par une clé étrangère (§6), et
 reconstruire les jeux dérivés (§13).
+
+Une construction qui échoue pendant `normalize` remet en place les tables précédentes du jeu : ce qui a été écrit
+à moitié est mis de côté dans le schéma `<jeu>__error`, pour examen.
 
 `package` n'écrit pas de nouvelle version quand les données, la structure et
 les déclarations sont celles du dernier package : il le dit (`unchanged, no
@@ -196,7 +208,7 @@ place dans ses crédits, et le catalogue l'affiche.
 ### Clés pivots
 
 Les clés reconnues sont dans `lib/lexicon/packaging/pivots.rb` : `commune`,
-`department`, `siren`, `cadastral_parcel`, `cap_crop_code`, `taxon`,
+`department`, `siren`, `siret`, `cadastral_parcel`, `cap_crop_code`, `taxon`,
 `production`, `weather_station`, `amm` (numéro d'AMM d'un produit
 phytosanitaire), `variant` (article du référentiel des variantes). Chacune désigne la table et la colonne de référence.
 
@@ -204,8 +216,20 @@ phytosanitaire), `variant` (article du référentiel des variantes). Chacune dé
 dans la référence est mesurée et écrite dans le manifeste (`pivots` : `values`,
 `matched`, `rate`), puis publiée dans le catalogue de l'API. `minimum` fait
 échouer `check` quand le taux passe en dessous. Un taux bas n'est pas
-forcément un défaut : `cadastre_owners` ne retrouve que 4 % de ses SIREN, la
-référence ne contenant que les entreprises agricoles.
+forcément un défaut : il dit seulement ce que la référence contient.
+
+`registered_enterprises`, référence des clés `siren` et `siret`, porte depuis
+octobre 2026 tous les établissements de la base SIRENE, quelle que soit leur
+activité (44 millions de lignes, ouverts et fermés) : `cadastre_owners` y
+retrouve 99,6 % de ses SIREN, contre 4 % quand elle ne gardait que les codes
+APE agricoles. Les colonnes qui en découlent ont changé de nom avec leur sens :
+`has_enterprise_pm_owner` dans `registered_cadastral_parcels` et
+`enterprise_owner_parcels_count` dans `link_communes` (une parcelle dont un
+propriétaire est une société connue de SIRENE, agricole ou non).
+
+La mesure demande à la référence si chaque valeur distincte de la colonne y
+existe ; elle ne liste jamais les valeurs distinctes de la référence, ce qui
+prenait plusieurs minutes par clé sur une table de cette taille.
 
 Le taux n'est pas mesuré dans un bundle, dont les tables sont filtrées.
 
@@ -477,6 +501,18 @@ Le dépôt est `out/published` (`LEXICON_PACKAGES_DIR` dans `.env`), que le
 runner voit sous `/lexicon/out/published` (`LEXICON_PUBLISH_TARGET`). Le
 projet Compose s'appelle `lexicon-server` : il ne se mélange pas à la pile de
 build, qui a elle aussi un service `db`.
+
+Pour essayer une branche de l'API avant de la publier, un troisième fichier
+monte les sources de sa copie de travail (`../lexicon-rest-api`, ou
+`LEXICON_API_DIR`) dans le conteneur de l'API, qui garde l'image publiée et ses
+dépendances :
+
+```sh
+docker compose -f docker-compose.server.yml -f docker-compose.server.local.yml \
+  -f docker-compose.server.api-dev.yml up -d api
+```
+
+Sans ce fichier, `up -d api` remet l'image publiée.
 
 Les commandes `server` se lancent dans le loader :
 

@@ -37,6 +37,10 @@ docker compose -f docker-compose-dev.yml down     # Stop dev containers
 ./lexicon bundle around --as my-farm --set longitude:-0.78 latitude:45.81 radius:0.10  # v2: parameterized flavor
 ./lexicon check [names] [--static] # v2: can the datasources be accepted? declarations, then built data (resources/check_baseline.yml = known issues)
 ./lexicon new <name>              # v2: print the skeleton of a new datasource
+./lexicon new <name> --tabular    # v2: print the sheet of a tabular contribution (data/contributions/<name>/dataset.yml)
+./lexicon contribute <name>       # v2: review a tabular contribution and say, in French, what to correct (no database needed)
+./lexicon contribute --web        # v2: the same review in a local web page (http://localhost:8787), read again as the files change
+./lexicon ship [names] [--production] [--no-build]  # v2: check, run, check, package, publish locally, wait for the loader; then production
 ./lexicon server sync [names]     # v2: put packages in service in the serving database (name or name@version)
 ./lexicon server sync a b --together  # v2: swap several packages in one transaction (all or none)
 ./lexicon server status           # v2: versions in service, stale packages, last loads
@@ -147,7 +151,7 @@ rebuilt at each swap, and `datasource_credits` is a view over the manifests. The
 `LEXICON_PACKAGES_ROOT=out/bundles/<flavor> ./lexicon server sync`.
 
 Access: a datasource declares `scope :members` when it is reserved to API key holders (`cadastre_owners`,
-`enterprise_links`, `agroedi`, `vine_varieties`, `fertilizers`). `rd_agri` is open although under CC BY-NC-SA: it says why
+`enterprise_links`, `agroedi`, `vine_varieties`, `fertilizers`, `seeds`, `phytosanitary_prices`). `rd_agri` is open although under CC BY-NC-SA: it says why
 with `licence_exception`, and carries a `search` tsvector column (accents removed) the API searches. Its package is published readable by its owner only (`D700,F600`): the loader, which runs
 as that owner, puts it in service, while the public file server, which runs as an unprivileged user, cannot
 serve it. Bundles go to `_bundles/<flavor>/` with the same permissions and are handed out by the API under
@@ -170,6 +174,16 @@ their MinIO remote is gone.
 Local serving stack: `docker-compose.server.local.yml` on top of `docker-compose.server.yml` (project
 `lexicon-server`: API on 8888, packages on 8889, database on 5556, repository `out/published`). A package goes
 there first; `publish --production` refuses a version that is not in service there (`doc/PUBLICATION.md` §3, §16).
+`docker-compose.server.api-dev.yml`, added as a third file, runs the local API on the sources of the working copy of
+`../lexicon-rest-api` instead of the released image.
+
+`enterprises` keeps every establishment of the SIRENE stock, whatever its activity (44 million lines; it used to keep
+agricultural APE codes only), so that `siren` and `siret` pivots match any company. What is derived from it was renamed
+with its meaning: `registered_cadastral_parcels.has_enterprise_pm_owner` and `link_communes.enterprise_owner_parcels_count`
+(a parcel one of whose owners is a company SIRENE knows). A query that joins `registered_enterprises` on `siren` must ask
+whether the SIREN exists, never join its establishments: a large owner has thousands of them. `PivotMeter` does the same
+when it measures a pivot. `postal_codes` reads the communes and the municipal arrondissements of ADMIN EXPRESS from its
+GeoPackage (`ogr2ogr`); `cadastre` downloads with `curl -L`, the site answering with a redirection.
 
 Collected again and again: a datasource declares `source_date 'SELECT ...'` so that its package carries the date
 its data gives instead of the `updated_at` of `credits`, and `package` writes no new version when nothing
@@ -187,6 +201,42 @@ says so (`doc/datasources/phytosanitary_substances.md`).
 `raw/fertilizers/<date>/` and the readings of the latest local package. `Catalog` tells which product an offer is
 about (by name for simple fertilisers, by formula otherwise), `Pricing` draws the monthly price (public price
 before a negotiated one) and the value of N, P2O5, K2O and SO3 (`doc/datasources/fertilizers.md`).
+
+`seeds` and `phytosanitary_prices` read the same merchants with the readers of `fertilizers`
+(`Datasources::Fertilizers::Cereapro` and `::Germineo`; `seeds` has three more of its own: Semence Biologique, Agrilisa and La Récolte, whose product pages are read once
+and kept in `raw/seeds/la_recolte_products/`). `seeds` links its offers to `registered_seed_varieties` during normalize
+when that table is built (`./lexicon run translations taxonomy seed_varieties`, with `raw/seed_varieties/gnis.csv`) and take the page of Cereapro `fertilizers` fetched the same
+day: run `fertilizers` first. `seeds` names the species of an offer from `data/seeds/species.csv` (order matters,
+sowing rates are indicative); `phytosanitary_prices` ties an offer to an authorisation number through the product
+names it stands for (`doc/datasources/seeds.md`, `doc/datasources/phytosanitary_prices.md`).
+
+`prices` stays open: during normalize it replaces the latest price of an article with what `fertilizers`, `seeds`,
+`phytosanitary_prices` and `fuel_prices` say (aggregated, never the merchant), prices other mineral fertilisers from
+the value of their nutrients, and records where each price comes from in `master_price_sources`. Rebuild it after
+those four every week (`doc/datasources/prices.md`).
+
+Tabular contributions: a directory `data/contributions/<name>/` holding a `dataset.yml` (description, author,
+source and licence, columns with their types, key, pivots) and CSV files is a datasource, with no Ruby.
+`Contribution::Sheet` reads it, `Contribution::Review` says in French what a contributor must correct,
+`Contribution::TabularDatasource.define_all` makes `Datasources::<Name>` at start (`doc/CONTRIBUER_UN_TABLEAU.md`).
+`./lexicon contribute --web` serves that review locally (`Contribution::Web`: `App` answers a request and knows
+nothing of sockets, `Pages` writes the HTML, `Server` is a small HTTP server on the standard library). The wrapper
+runs it in a container of its own, which publishes port 8787 on 127.0.0.1 and mounts `data/contributions` writable;
+every change asks for the token of the page, and a host name other than localhost is refused.
+A table dropped there goes through `Contribution::Import`: it reads CSV of any separator and encoding, Excel and
+LibreOffice (Roo), names the columns, guesses their types, rewrites the values the way those types are read, picks
+the key and the pivots, and says in French what it did; a column of codes stays text, a mixed column too.
+The page of a dataset never reloads: each action answers the parts of the page to replace as JSON (`Pages#parts`),
+every change of the form is saved and reviewed at once, and `Review` takes a `memo` so that a large table is only
+read again when its file or its description changes.
+A table without INSEE codes designates two columns under `pivots`, `commune_postal_code` and `commune_name`
+(`Sheet::PLACE_PARTS`): `TabularDatasource` then adds an `insee_code` column during normalize, found in
+`registered_postal_codes` by postal code and name (capitals, accents, punctuation and SAINT/ST ignored; no code when
+no commune or several match), declares it as a `commune` pivot and depends on `postal_codes`.
+A normalize that fails puts the previous tables back and leaves the half-written ones in `<name>__error`.
+
+Inputs (fuel, fertilisers, seeds, plant protection products and their prices): overview and weekly routine in
+`doc/datasources/intrants.md`; state of the work and what remains in `claudedocs/etat_intrants.md`.
 
 History: `graphic_parcels` keeps the RPG campaign by campaign. `registered_graphic_parcels` holds the latest
 campaign (with a `campaign` column), `registered_graphic_parcels_history` the earlier ones; parcel ids are not

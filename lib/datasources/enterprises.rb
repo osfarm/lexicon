@@ -1,16 +1,12 @@
 module Datasources
   class Enterprises < Base
     LAST_UPDATED = "2025-01-01"
-    description 'French Enterprises datasource'
+    description 'French establishments of every activity (Base SIRENE)'
     credits name: 'Base SIRENE', url: "https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/", provider: "INSEE", licence: "Open Licence 2.0", licence_url: "https://www.etalab.gouv.fr/licence-ouverte-open-licence", updated_at: LAST_UPDATED
     pivot :commune, table: :registered_enterprises, column: :insee_code, minimum: 0.9
 
-    CODES_APE = "'01.11Z', '01.12Z', '01.13Z', '01.14Z', '01.15Z', '01.16Z', '01.19Z', '01.21Z', '01.22Z', '01.23Z',
-             '01.24Z', '01.5Z', '01.26Z', '01.27Z', '01.28Z', '01.29Z', '01.30Z', '01.41Z', '01.42Z', '01.43Z',
-             '01.44Z', '01.45Z', '01.46Z', '01.47Z', '01.49Z', '01.50Z', '01.61Z', '01.62Z', '01.63Z', '01.64Z',
-             '01.70Z', '02.10Z', '02.20Z', '02.30Z', '02.40Z', '03.11Z', '03.12Z', '03.21Z', '03.22Z'"
     def collect
-      downloader.curl "https://object.files.data.gouv.fr/data-pipeline-open/siren/stock/StockEtablissement_utf8.zip", out: 'eta_utf8.zip'
+      downloader.curl "https://www.data.gouv.fr/api/1/datasets/r/0651fb76-bcf3-4f6a-a38d-bc04fa708576", out: 'eta_utf8.zip'
     end
 
     def load
@@ -65,7 +61,8 @@ module Datasources
             END,
             siren,
             code_commune_etablissement
-          FROM enterprises.postal_codes WHERE activite_principale_etablissement IN (#{CODES_APE})
+          -- Every establishment, whatever its activity; the few without an activity code are left out
+          FROM enterprises.postal_codes WHERE activite_principale_etablissement IS NOT NULL
       SQL
     end
   end

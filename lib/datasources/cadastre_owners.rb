@@ -292,15 +292,17 @@ module Datasources
          WHERE p.id = sub.cadastral_parcel_id
       SQL
 
-      logger.debug "Update registered_cadastral_parcels.has_agricultural_pm_owner..."
+      # A parcel is marked when one of its owners is a company SIRENE knows. Whether the SIREN exists is
+      # all that is asked: joining its establishments would multiply each owner by thousands of lines.
+      logger.debug "Update registered_cadastral_parcels.has_enterprise_pm_owner..."
       query <<~SQL
         UPDATE lexicon.registered_cadastral_parcels p
-           SET has_agricultural_pm_owner = true
+           SET has_enterprise_pm_owner = true
          WHERE EXISTS (
            SELECT 1
              FROM lexicon.registered_cadastral_parcel_owners po
-             JOIN lexicon.registered_enterprises e ON e.siren = po.siren
             WHERE po.cadastral_parcel_id = p.id
+              AND EXISTS (SELECT 1 FROM lexicon.registered_enterprises e WHERE e.siren = po.siren)
          )
       SQL
     end

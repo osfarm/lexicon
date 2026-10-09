@@ -5,15 +5,35 @@ module Datasources
 
     def collect
       downloader.curl 'https://www.data.gouv.fr/api/1/datasets/r/008a2dda-2c60-4b63-b910-998f6f818089', out: 'postal_codes.csv'
-      downloader.curl 'http://files.opendatarchives.fr/professionnels.ign.fr/adminexpress/ADMIN-EXPRESS_3-2__SHP_LAMB93_FXX_2025-02-17.7z', out: 'communes.7z'
+      downloader.curl 'http://files.opendatarchives.fr/professionnels.ign.fr/adminexpress/ADMIN-EXPRESS_4-0__GPKG_LAMB93_FXX_2026-01-19.7z', out: 'communes.7z'
     end
     
+    # Layers of ADMIN EXPRESS that give a shape to an INSEE code: communes, and the arrondissements of Paris,
+    # Lyon and Marseille, which the postal reference lists under their own code
+    LAYERS = %w[commune arrondissement_municipal].freeze
+
     def load
       load_csv(dir.join('postal_codes.csv'), 'postal_codes', col_sep: ';')
       execute("7z x #{dir.join('communes.7z')} -o#{dir}/archive -aoa")
-      archive_glob = dir.join("archive/ADMIN-EXPRESS_3-2__SHP_LAMB93_FXX_2025-02-17/ADMIN-EXPRESS/1_DONNEES_LIVRAISON_2025-02-00187/ADE_3-2_SHP_LAMB93_FXX-ED2025-02-17/COMMUNE.shp")
-      archive_path = Dir.glob(archive_glob).first
-      load_shp(dir.join(archive_path), table_name: "communes", srid: 2154)
+      gpkg = Dir.glob(dir.join('archive/**/*.gpkg').to_s).first
+      raise "No GeoPackage found in #{dir.join('communes.7z')}" if gpkg.nil?
+
+      # Only what normalize reads is loaded, and without spatial index: nothing searches this table
+      LAYERS.each_with_index do |layer, index|
+        execute <<~BASH
+          ogr2ogr \
+            -f PostgreSQL "#{pg_connection_string}" \
+            #{index.zero? ? '-overwrite' : '-append'} \
+            -lco SCHEMA=#{name} \
+            -lco GEOMETRY_NAME=geom \
+            -lco FID=ogc_fid \
+            -lco SPATIAL_INDEX=NONE \
+            -nlt MULTIPOLYGON \
+            -nln #{name}.communes \
+            -sql "SELECT code_insee, geometrie FROM #{layer}" \
+            "#{gpkg}"
+        BASH
+      end
     end
 
     def self.table_definitions(builder)
@@ -55,7 +75,7 @@ module Datasources
       query <<-SQL
         UPDATE registered_postal_codes
           SET city_shape = postgis.ST_Transform(c.geom, 4326)
-          FROM postal_codes.communes c WHERE c.insee_com = code
+          FROM postal_codes.communes c WHERE c.code_insee = code
       SQL
 
       # compute centroid
@@ -64,5 +84,19 @@ module Datasources
           SET city_centroid = postgis.ST_Centroid(city_shape)
       SQL
     end
+
+    private
+
+      def pg_connection_string
+        host = ENV.fetch('POSTGRES_HOST', 'localhost')
+        port = ENV.fetch('POSTGRES_PORT', '5432')
+        user = ENV.fetch('POSTGRES_USER', 'lexicon')
+        password = ENV.fetch('POSTGRES_PASSWORD', '')
+        name = ENV['POSTGRES_NAME'] || ENV.fetch('POSTGRES_DB', 'lexicon')
+
+        parts = ["host=#{host}", "port=#{port}", "user=#{user}", "dbname=#{name}"]
+        parts << "password=#{password}" unless password.empty?
+        "PG:#{parts.join(' ')}"
+      end
   end
 end

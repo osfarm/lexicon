@@ -43,19 +43,23 @@ module Lexicon
         def counting_query(declaration, key, cast:)
           condition = key.where.nil? ? '' : " AND #{key.where}"
 
-          # Two sets of distinct values joined together: Postgres hashes them, whatever the indexes are
+          # The distinct values of the column, and those among them the reference holds. The reference is only
+          # asked whether a value exists: its own distinct values are never listed, which takes minutes when it
+          # holds tens of millions of lines. Postgres picks a hash or an index, whichever it has.
           <<~SQL
-            SELECT count(*) AS values, count(reference.value) AS matched
-              FROM (
-                SELECT DISTINCT "#{declaration[:column]}"#{cast} AS value
-                  FROM "#{SCHEMA}"."#{declaration[:table]}"
-                 WHERE "#{declaration[:column]}" IS NOT NULL
-              ) AS carried
-              LEFT JOIN (
-                SELECT DISTINCT "#{key.column}"#{cast} AS value
-                  FROM "#{SCHEMA}"."#{key.table}"
-                 WHERE "#{key.column}" IS NOT NULL#{condition}
-              ) AS reference ON reference.value = carried.value
+            WITH carried AS MATERIALIZED (
+              SELECT DISTINCT "#{declaration[:column]}"#{cast} AS value
+                FROM "#{SCHEMA}"."#{declaration[:table]}"
+               WHERE "#{declaration[:column]}" IS NOT NULL
+            )
+            SELECT (SELECT count(*) FROM carried) AS values,
+                   (SELECT count(*)
+                      FROM carried
+                     WHERE EXISTS (
+                       SELECT 1
+                         FROM "#{SCHEMA}"."#{key.table}" AS reference
+                        WHERE reference."#{key.column}"#{cast} = carried.value#{condition}
+                     )) AS matched
           SQL
         end
     end

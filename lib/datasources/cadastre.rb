@@ -1,8 +1,11 @@
 module Datasources
   class Cadastre < Base
     description 'Official cadastre'
-    credits name: 'Parcelles du cadastre', url: "https://cadastre.data.gouv.fr/", provider: "Etalab", licence: "Open Licence 2.0", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf", updated_at: "2026-03-29"
+    credits name: 'Parcelles du cadastre', url: "https://cadastre.data.gouv.fr/", provider: "Etalab", licence: "Open Licence 2.0", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf", updated_at: "2026-09-30"
     pivot :commune, table: :registered_cadastral_parcels, column: :town_insee_code, minimum: 0.95
+
+    # has_agricultural_pm_owner became has_enterprise_pm_owner: registered_enterprises holds every activity
+    schema_revision 2
 
     python :collect, :normalize
 
@@ -18,7 +21,7 @@ module Datasources
           shape postgis.geometry(MultiPolygon, 4326) NOT NULL,
           centroid postgis.geometry(Point, 4326),
           pm_owners_count integer DEFAULT 0,
-          has_agricultural_pm_owner boolean DEFAULT false
+          has_enterprise_pm_owner boolean DEFAULT false
         );
         CREATE INDEX registered_cadastral_parcels_id ON registered_cadastral_parcels(id);
         CREATE INDEX registered_cadastral_parcels_town_insee_code ON registered_cadastral_parcels(town_insee_code);

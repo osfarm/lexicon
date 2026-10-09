@@ -1,0 +1,15 @@
+# Lexicon v2, local serving stack: run the API on the code of its working copy instead of the released image,
+# to try a branch of lexicon-rest-api against the local serving database before releasing it.
+#
+#   docker compose -f docker-compose.server.yml -f docker-compose.server.local.yml \
+#     -f docker-compose.server.api-dev.yml up -d api
+#
+# LEXICON_API_DIR is the working copy (default: ../lexicon-rest-api). Only its sources are mounted: the image
+# keeps its own dependencies, so a branch that changes package.json needs the image rebuilt instead.
+# `bun --hot` reloads the code as it changes; translations.csv is read once, restart the service after editing it.
+# Without this file, `up -d api` puts the released image back.
+services:
+  api:
+    volumes:
+      - ${LEXICON_API_DIR:-../lexicon-rest-api}/src:/app/src:ro
+      - ${LEXICON_API_DIR:-../lexicon-rest-api}/public:/app/public:ro

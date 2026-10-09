@@ -2,13 +2,15 @@ module Datasources
   # Fiche par commune : ce que les autres jeux de données savent d'elle, réuni
   # une fois pour toutes au moment du build. L'API n'a plus qu'à lire une ligne.
   class CommuneLinks < Base
-    description 'Fiches par commune : cadastre, entreprises agricoles, population MSA, station météo la plus proche'
+    description 'Fiches par commune : cadastre, établissements, population MSA, station météo la plus proche'
     credits name: 'Fiches communales Lexicon',
             url: 'https://lexicon.osfarm.org',
             provider: 'OSFarm',
             licence: 'Licence Ouverte 2.0',
             licence_url: 'https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf',
             updated_at: '2026-10-04'
+    # agricultural_owner_parcels_count became enterprise_owner_parcels_count: registered_enterprises holds every activity
+    schema_revision 2
     depends_on :postal_codes, :administrative_areas, :cadastre, :enterprises, :msa_populations, :weather
     pivot :commune, table: :link_communes, column: :insee_code, minimum: 1.0
     pivot :department, table: :link_communes, column: :department_code
@@ -24,7 +26,7 @@ module Datasources
           region_code character varying,
           cadastral_parcels_count integer NOT NULL DEFAULT 0,
           cadastral_area_m2 bigint NOT NULL DEFAULT 0,
-          agricultural_owner_parcels_count integer NOT NULL DEFAULT 0,
+          enterprise_owner_parcels_count integer NOT NULL DEFAULT 0,
           enterprises_count integer NOT NULL DEFAULT 0,
           msa_year integer,
           msa_farm_chiefs integer,
@@ -41,10 +43,10 @@ module Datasources
       query <<~SQL
         INSERT INTO link_communes (
           insee_code, name, postal_codes, department_code, region_code, cadastral_parcels_count, cadastral_area_m2,
-          agricultural_owner_parcels_count, enterprises_count, msa_year, msa_farm_chiefs, weather_station
+          enterprise_owner_parcels_count, enterprises_count, msa_year, msa_farm_chiefs, weather_station
         )
         SELECT c.insee_code, c.name, c.postal_codes, d.code, d.parent_code,
-               COALESCE(p.parcels, 0), COALESCE(p.area, 0), COALESCE(p.agricultural_owner_parcels, 0),
+               COALESCE(p.parcels, 0), COALESCE(p.area, 0), COALESCE(p.enterprise_owner_parcels, 0),
                COALESCE(e.enterprises, 0), m.year, m.farm_chiefs, s.reference_name
           FROM (
             SELECT code AS insee_code,
@@ -62,7 +64,7 @@ module Datasources
             SELECT town_insee_code,
                    count(*) AS parcels,
                    sum(net_surface_area::bigint) AS area,
-                   count(*) FILTER (WHERE has_agricultural_pm_owner) AS agricultural_owner_parcels
+                   count(*) FILTER (WHERE has_enterprise_pm_owner) AS enterprise_owner_parcels
               FROM registered_cadastral_parcels
              GROUP BY town_insee_code
           ) p ON p.town_insee_code = c.insee_code

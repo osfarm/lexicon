@@ -29,8 +29,9 @@ module Lexicon
         result = PivotMeter.new(database).measure([{ key: 'commune', table: 'registered_enterprises', column: 'insee_code', minimum: 0.9 }])
 
         assert_equal [{ key: 'commune', table: 'registered_enterprises', column: 'insee_code', minimum: 0.9, values: 200, matched: 190, rate: 0.95 }], result
-        assert_includes database.queries.first, 'SELECT DISTINCT "code" AS value'
-        assert_includes database.queries.first, 'FROM "lexicon"."registered_postal_codes"'
+        assert_includes database.queries.first, 'reference."code" = carried.value'
+        assert_includes database.queries.first, 'FROM "lexicon"."registered_postal_codes" AS reference'
+        refute_includes database.queries.first, 'SELECT DISTINCT "code"'
         assert_includes database.queries.first, 'SELECT DISTINCT "insee_code" AS value'
         assert_includes database.queries.first, 'FROM "lexicon"."registered_enterprises"'
       end
@@ -50,7 +51,7 @@ module Lexicon
 
         assert_equal 0.5, result.first[:rate]
         assert_equal 2, database.queries.size
-        assert_includes database.queries.last, 'SELECT DISTINCT "code"::text AS value'
+        assert_includes database.queries.last, 'reference."code"::text = carried.value'
       end
 
       def test_no_value_or_no_reference_gives_an_unknown_rate
