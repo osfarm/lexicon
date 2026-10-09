@@ -1,0 +1,305 @@
+# frozen_string_literal: true
+
+require 'csv'
+require 'digest'
+require 'json'
+require 'securerandom'
+require 'uri'
+
+module Lexicon
+  module Contribution
+    module Web
+      # The local web interface of `./lexicon contribute --web`: a contributor drops a table, its columns
+      # and their types are detected, the sheet is a form, and the review is read again each time a file
+      # changes. It knows nothing of sockets: a request comes in, a response goes out.
+      class App
+        Request = Struct.new(:verb, :path, :headers, :body, keyword_init: true)
+        Response = Struct.new(:status, :headers, :body, keyword_init: true)
+
+        LOCAL_HOSTS = %w[localhost 127.0.0.1 [::1]].freeze
+        TOKEN_HEADER = 'x-lexicon-token'
+        # Tables whose review is kept
+        MEMORISED = 200
+        SHEET_FIELDS = %w[description author personal_data].freeze
+        SOURCE_FIELDS = %w[name url provider licence licence_url date].freeze
+
+        # @return [String] what a form or a script of the pages must give back to change anything
+        attr_reader :token
+
+        # @param [Pathname] root directory holding one directory per contribution
+        # @param [Array<String>] taken names of the datasources that already exist
+        # @param [String] token
+        def initialize(root:, taken: [], token: SecureRandom.hex(16))
+          @root = root
+          @taken = taken
+          @token = token
+          @pages = Pages.new
+          # What the last import of each dataset did, said on its page until the contributor has read it
+          @imports = {}
+          # What the review found in each table, so that filling the sheet does not read a large table again
+          @memo = {}
+        end
+
+        # @param [Request] request
+        # @return [Response]
+        def call(request)
+          return text(403, 'Cette interface ne répond que sur ce poste.') unless local?(request)
+
+          segments = request.path.split('?').first.split('/').reject(&:empty?).map { |segment| URI.decode_www_form_component(segment) }
+          return refused if request.verb != 'GET' && !allowed?(request)
+
+          route(request, segments) || text(404, 'Cette page n’existe pas.')
+        end
+
+        # @return [Boolean] whether datasets can be created and changed from the pages
+        def writable?
+          @root.directory? && @root.writable?
+        end
+
+        private
+
+          def route(request, segments)
+            verb = request.verb
+            section, name, part, file = segments
+            return verb == 'GET' ? html(@pages.index(summaries, context)) : nil if segments.empty?
+            return nil unless section == 'jeux'
+            return verb == 'POST' ? create(form(request)['name'].to_s.strip) : nil if segments.size == 1
+
+            with(name) { |dir| route_dataset(request, dir, [verb, part, segments.size], file) }
+          end
+
+          def route_dataset(request, dir, shape, file)
+            case shape
+            when ['GET', nil, 2] then html(@pages.dataset(state(dir), context))
+            when ['GET', 'empreinte', 3] then text(200, fingerprint(dir))
+            when ['GET', 'etat', 3] then live(dir)
+            when ['POST', 'fiche', 3] then save_sheet(dir, form(request))
+            when ['POST', 'detecter', 3] then detect(dir, form(request)['file'].to_s)
+            when ['POST', 'lu', 3] then read(dir)
+            when ['PUT', 'fichiers', 4] then answer_import(dir, file, request.body)
+            end
+          end
+
+          def context
+            { token: @token, writable: writable?, root: @root }
+          end
+
+          # The name of a host is checked so that another site cannot reach this one under its own name
+          def local?(request)
+            host = request.headers['host'].to_s.sub(/:\d+\z/, '')
+
+            LOCAL_HOSTS.include?(host)
+          end
+
+          def allowed?(request)
+            given = request.headers[TOKEN_HEADER] || form(request)['token']
+
+            writable? && !given.nil? && given == @token
+          end
+
+          def refused
+            text(403, writable? ? 'Cette page est périmée : la recharger.' : 'Le dossier des contributions est en lecture seule.')
+          end
+
+          def form(request)
+            return {} unless request.headers['content-type'].to_s.start_with?('application/x-www-form-urlencoded')
+
+            URI.decode_www_form(request.body.to_s.dup.force_encoding(Encoding::UTF_8)).to_h
+          rescue ArgumentError
+            {}
+          end
+
+          def datasets
+            Sheet.directories(@root)
+          end
+
+          def summaries
+            datasets.map { |dir| summary(dir) }
+          end
+
+          # A dataset is looked for among those that exist: a name never becomes a path by itself
+          def with(name)
+            dir = datasets.find { |candidate| candidate.basename.to_s == name }
+
+            dir.nil? ? nil : yield(dir)
+          end
+
+          def create(name)
+            problem = if !name.match?(Scaffold::VALID_NAME)
+                        "« #{name} » : le nom d'un jeu est en minuscules, sans accent ni espace, comme releves_sol."
+                      elsif @taken.include?(name) || @root.join(name).exist?
+                        "Un jeu s'appelle déjà « #{name} »."
+                      end
+            return html(@pages.index(summaries, context, problem: problem), status: 422) if problem
+
+            @root.join(name).mkpath
+            Sheet.write(@root.join(name), Scaffold.new.blank)
+            redirect("/jeux/#{name}")
+          end
+
+          # The parts of the page of a dataset, for the page to replace them where it stands
+          def live(dir)
+            json(@pages.parts(state(dir), context))
+          end
+
+          # The contributor has read what the last import did
+          def read(dir)
+            @imports.delete(dir.basename.to_s)
+            live(dir)
+          end
+
+          # The form of the page, or the sheet itself when the contributor writes it by hand
+          def save_sheet(dir, fields)
+            if fields.key?('sheet')
+              dir.join(Sheet::FILE).write(fields['sheet'].gsub("\r\n", "\n"))
+            else
+              Sheet.write(dir, filled(Sheet.load(dir).data, fields))
+            end
+            live(dir)
+          rescue Psych::Exception
+            live(dir)
+          end
+
+          # @return [Hash] the sheet, with what the form says
+          def filled(data, fields)
+            put = ->(hash, key, value) { value.to_s.strip.empty? ? hash.delete(key) : hash[key] = value.strip }
+            source = data['source'].is_a?(Hash) ? data['source'] : {}
+
+            SHEET_FIELDS.each { |field| put.call(data, field, fields[field]) }
+            SOURCE_FIELDS.each { |field| put.call(source, field, fields["source_#{field}"]) }
+            put.call(data, 'scope', fields['members'] == '1' ? 'members' : nil)
+            entries = data['tables'].is_a?(Array) ? data['tables'] : []
+
+            data.merge('source' => source, 'tables' => entries.each_with_index.map { |entry, index| described(entry, index, fields) })
+          end
+
+          # @return [Hash] the entry of a table, with the types, the key and the links the form chose
+          def described(entry, index, fields)
+            return entry unless entry.is_a?(Hash) && entry['columns'].is_a?(Hash)
+
+            columns = entry['columns'].to_h do |column, type|
+              chosen = fields["type|#{index}|#{column}"]
+              [column, Sheet::TYPES.key?(chosen) ? chosen : type]
+            end
+            pivots = columns.keys.map { |column| [column, fields["pivot|#{index}|#{column}"]] }
+                            .select { |_, key| Packaging::Pivots::KEYS.key?(key) || Sheet::PLACE_PARTS.key?(key) }.to_h
+            key = columns.key?(fields["key|#{index}"]) ? fields["key|#{index}"] : entry['key']
+            kept = entry.reject { |field, _| field == 'pivots' }
+
+            kept.merge('key' => key, 'columns' => columns).merge(pivots.empty? ? {} : { 'pivots' => pivots })
+          end
+
+          def answer_import(dir, file, content)
+            import(dir, file, content)
+            live(dir)
+          rescue Import::Unreadable => e
+            text(422, e.message)
+          rescue Psych::Exception
+            text(422, 'La fiche ne se lit pas : la corriger d’abord, sous « Fiche en YAML ».')
+          end
+
+          # A file already in the directory, dropped there by hand
+          def detect(dir, name)
+            file = dir.children.find { |child| child.file? && child.basename.to_s == name }
+            return nil if file.nil?
+
+            import(dir, name, file.binread)
+            live(dir)
+          rescue Import::Unreadable, Psych::Exception => e
+            problem = e.is_a?(Import::Unreadable) ? e.message : 'La fiche ne se lit pas : la corriger d’abord.'
+            @imports[dir.basename.to_s] = { file: name, notes: [], problem: problem }
+            live(dir)
+          end
+
+          # Writes the table as a contribution expects it, and describes it in the sheet. Tables whose file
+          # is gone leave the sheet: a contributor who replaces a file does not have to tidy up.
+          def import(dir, name, content)
+            data = Sheet.load(dir).data
+            result = Import.new(name, content).result
+            entries = (data['tables'].is_a?(Array) ? data['tables'] : []).select { |entry| entry.is_a?(Hash) }
+            former = entries.find { |entry| entry['file'] == result.file } || {}
+            entry = former.slice('table').merge('file' => result.file, 'key' => result.key, 'columns' => result.columns)
+            entry['pivots'] = result.pivots unless result.pivots.empty?
+            kept = entries.select { |other| other['file'] != result.file && dir.join(other['file'].to_s).file? }
+
+            dir.join(result.file).write(result.csv)
+            Sheet.write(dir, data.merge('tables' => [*kept, entry]))
+            @imports[dir.basename.to_s] = { file: result.file, notes: result.notes, problem: nil }
+          end
+
+          # @return [Hash] what the list says of a dataset
+          def summary(dir)
+            review = review_of(dir)
+
+            { name: dir.basename.to_s, errors: review[:errors].size, warnings: review[:warnings].size, unreadable: review[:unreadable] }
+          end
+
+          # @return [Hash] everything the page of a dataset shows
+          def state(dir)
+            review = review_of(dir)
+            tables = review[:sheet] ? review[:sheet].tables : []
+
+            review.merge(name: dir.basename.to_s, raw: dir.join(Sheet::FILE).read(encoding: 'bom|utf-8').scrub,
+                         tables: tables.map { |table| table.to_h.merge(preview: preview(dir.join(table.file))) },
+                         loose: loose(dir, tables.map(&:file)), import: @imports[dir.basename.to_s], fingerprint: fingerprint(dir))
+          end
+
+          # @return [Array<String>] files of the directory that could be tables and that the sheet does not describe
+          def loose(dir, described)
+            files = dir.children.select { |child| child.file? && Import::EXTENSIONS.include?(child.extname.downcase) }
+
+            names = files.map { |file| file.basename.to_s }.sort
+
+            names.reject { |file| described.include?(file) || described.include?(Import.file_name(file)) }
+          end
+
+          def review_of(dir)
+            sheet = Sheet.load(dir)
+            @memo.clear if @memo.size > MEMORISED
+            errors, warnings = Review.new(sheet, memo: @memo).findings.partition { |finding| finding.level == :error }
+
+            { errors: errors.map(&:message), warnings: warnings.map(&:message), unreadable: nil, sheet: sheet,
+              proposal: sheet.tables.map { |table| "#{table.file} → #{table.name}" } }
+          rescue Psych::Exception => e
+            { errors: [], warnings: [], unreadable: e.message.lines.first.to_s.strip, sheet: nil, proposal: [] }
+          end
+
+          # @return [Hash, nil] number of lines and first lines of a table, when it reads. A large table is
+          #   not read whole for that: its lines are counted as the file has them.
+          def preview(file)
+            return nil unless file.file?
+
+            head = CSV.foreach(file, encoding: 'bom|utf-8').first(Pages::PREVIEWED + 1)
+            return nil unless head.flatten.compact.all?(&:valid_encoding?)
+
+            { rows: [file.each_line.count { |line| !line.strip.empty? } - 1, 0].max, head: head }
+          rescue CSV::MalformedCSVError, ArgumentError
+            nil
+          end
+
+          # @return [String] changes whenever a file of the dataset is added, removed or written
+          def fingerprint(dir)
+            files = dir.children.select(&:file?).sort
+
+            Digest::SHA1.hexdigest(files.map { |file| [file.basename, file.mtime.to_f, file.size].join('|') }.join("\n"))
+          end
+
+          def html(body, status: 200)
+            Response.new(status: status, headers: { 'Content-Type' => 'text/html; charset=utf-8' }, body: body)
+          end
+
+          def json(value)
+            Response.new(status: 200, headers: { 'Content-Type' => 'application/json; charset=utf-8' }, body: JSON.generate(value))
+          end
+
+          def text(status, body)
+            Response.new(status: status, headers: { 'Content-Type' => 'text/plain; charset=utf-8' }, body: body)
+          end
+
+          def redirect(location)
+            Response.new(status: 303, headers: { 'Location' => location }, body: '')
+          end
+      end
+    end
+  end
+end

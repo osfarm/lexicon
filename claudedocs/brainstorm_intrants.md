@@ -1,7 +1,8 @@
 # Brainstorm — Références et prix des intrants (phytos, semences, engrais)
 
-Date : 2026-10-07. Statut : besoins validés, décisions en §0. Révision 2 : réponses
-de David aux questions Q1 à Q10. Deux questions restent, non bloquantes (§9).
+Date : 2026-10-07. Statut : besoins validés, décisions en §0. Révision 3 : les sept lots sont faits ; l'état,
+ce qui reste et la reprise sont dans `etat_intrants.md`. D2 a été révisée en cours de route (prix marchands
+réservés aux adhérents, prix agrégés ouverts dans `prices`).
 
 > Document d'exigences issu de `/sc:brainstorm`. Pas de conception : le schéma
 > des tables, les routes de l'API et l'architecture de l'outil de contribution

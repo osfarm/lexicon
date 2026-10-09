@@ -40,13 +40,17 @@ To build a version, you have to take care at the order.
 Each datasource has its own package and its own version (`YYYY.MM.DD.N`). See [PUBLICATION.md](PUBLICATION.md).
 
 - `./lexicon package [datasource, ...] [--jobs N] [--no-validate]` Builds one package per datasource in `out/packages/<datasource>/<version>/`. All packaged datasources by default. A datasource with an empty table or a missing foreign key is refused, unless `--no-validate`.
-- `./lexicon publish [datasource[@version], ...]` Sends the latest package of each datasource to the repository of the server (`LEXICON_PUBLISH_TARGET`) and designates it. An interrupted upload leaves what it sent in `.rsync-partial/` beside the files, and the next one resumes from there.
+- `./lexicon ship [datasource, ...] [--production] [--no-build] [--timeout N]` Takes datasources all the way: checks the declarations, runs collect, load and normalize, checks the built data, packages, publishes to the local serving stack and waits until the loader has put them in service, telling why when it refuses. Stops at the first step that fails. `--production` then publishes to the production and waits there too; `--no-build` ships what is already built.
+- `./lexicon publish [datasource[@version], ...]` Sends the latest package of each datasource to the repository of `LEXICON_PUBLISH_TARGET`, the local serving stack on a build machine, and designates it. An interrupted upload leaves what it sent in `.rsync-partial/` beside the files, and the next one resumes from there.
+- `./lexicon publish [datasource, ...] --production [--force]` Sends to `LEXICON_PRODUCTION_TARGET` instead. Refused for a version that is not in service at `LEXICON_PUBLISH_TARGET`, unless `--force`.
 - `./lexicon publish --bundle <flavor>` Sends the bundle of a flavor to the private area of the server.
-- `./lexicon status` For each package: latest local version, version published, version in service, and whether it is stale.
+- `./lexicon status [--production]` For each package: latest local version, version published, version in service, and whether it is stale. Looks at the local serving stack, or at the production with `--production`.
 - `./lexicon bundle <flavor> [datasource, ...]` Builds in `out/bundles/<flavor>/` a repository of packages filtered by `resources/flavors/<flavor>.yml`.
 - `./lexicon bundle around --as <name> --set longitude:<x> latitude:<y> radius:<degrees>` Same, with a flavor that takes parameters: here what lies around a point.
 - `./lexicon check [datasource, ...] [--static]` Tells whether datasources can be accepted: declarations (licence, credits, personal data, dependencies), then the data they built (empty tables, link rates, drop in volume). Exits with 1 on an error.
 - `./lexicon new <datasource>` Prints the skeleton of a new datasource.
+- `./lexicon new <name> --tabular` Prints the sheet of a tabular contribution, for `data/contributions/<name>/dataset.yml`. See [CONTRIBUER_UN_TABLEAU.md](CONTRIBUER_UN_TABLEAU.md).
+- `./lexicon contribute <name>` Reviews the tabular contribution of `data/contributions/<name>/` and says, in French, what its author has to correct. Needs no database and publishes nothing.
 - `./lexicon fetch <url> [--to dir]` Downloads a bundle served by the API, with the key in `LEXICON_API_KEY`.
 
 ## Serving side commands

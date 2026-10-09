@@ -71,12 +71,35 @@ docker compose build --pull
 docker compose up
 ```
 
-## Bonus
-### Publishing packages
-To use the `publish` and `status` commands, add the address of the packages repository of the server to `.env`, as rsync names it:
+## Local serving stack
+A package is tried on the machine before it goes to the server. `docker-compose.server.local.yml` runs the
+serving stack of the production (database, loader, packages file server, API) beside the build stack:
+
+```bash
+docker compose -f docker-compose.server.yml -f docker-compose.server.local.yml up -d
+```
+
+It needs these lines in `.env` (see `.env.dist`):
 
 ```
-LEXICON_PUBLISH_TARGET=osfarm_lexicon:lexicon/packages
+LEXICON_PACKAGES_DIR=./out/published
+LEXICON_PUBLISH_TARGET=/lexicon/out/published
+LEXICON_API_USER=lexicon_api
+LEXICON_API_PASSWORD=<a password of your own>
+```
+
+The API is then on http://localhost:8888, the packages on http://localhost:8889, the serving database on
+`localhost:5556`. To start from what is published, copy the public packages of
+https://lexicon-packages.osfarm.org into `out/published`: the loader puts them in service. See
+[PUBLICATION.md](PUBLICATION.md), §16.
+
+## Bonus
+### Publishing packages
+`publish` and `status` look at the local serving stack. To reach the server, add the address of its packages
+repository to `.env`, as rsync names it, and ask for it with `--production`:
+
+```
+LEXICON_PRODUCTION_TARGET=osfarm_lexicon:lexicon/packages
 ```
 
 The host must be reachable with your SSH keys (`~/.ssh` is mounted read-only in the container). See [PUBLICATION.md](PUBLICATION.md).

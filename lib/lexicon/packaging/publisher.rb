@@ -71,6 +71,11 @@ module Lexicon
         remote_json(Server::StatusFile::FILE_NAME).fetch(:packages, {}).transform_keys(&:to_s)
       end
 
+      # @return [Array<Hash>] the latest loads the serving side refused, each with :name, :version and :reasons
+      def failures
+        remote_json(Server::StatusFile::FILE_NAME).fetch(:last_failures, [])
+      end
+
       private
 
         # @return [Repository]

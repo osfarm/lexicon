@@ -132,6 +132,9 @@ module Lexicon
           namespace :data do
             register(:root, memoize: true) { container.resolve('parameter.root').join 'data' }
           end
+          namespace :contributions do
+            register(:root, memoize: true) { container.resolve('parameter.data.root').join 'contributions' }
+          end
           namespace :version do
             register(:file, memoize: true) { container.resolve('parameter.root').join 'VERSION' }
           end
@@ -474,6 +477,9 @@ module Lexicon
       end
 
       def register_datasources(container)
+        # Tabular contributions have no Ruby file: their datasource is made from their sheet
+        Contribution::TabularDatasource.define_all(container.resolve('parameter.contributions.root'))
+
         Datasources.constants
                    .map { |c| Datasources.const_get(c) }
                    .reject { |c| c == Datasources::Base }

@@ -34,7 +34,8 @@ serveur. La base se reconstruit entièrement depuis lui ; seul le schéma
 
 Une clé n'est délivrée qu'à un adhérent OSFarm, et expire avec son adhésion.
 
-Données réservées aujourd'hui : les propriétaires de parcelles
+Données réservées aujourd'hui : les prix relevés chez des marchands
+(`fertilizers`, `seeds`, `phytosanitary_prices`, sous `/inputs`), les propriétaires de parcelles
 (`cadastre_owners`), affichés dans l'outil d'identification de parcelle,
 les fiches par entreprise (`/links/enterprises/<SIREN>`), et deux
 jeux dont la licence n'est pas ouverte : `agroedi` (propriétaire) et
@@ -49,10 +50,16 @@ jeux dont la licence n'est pas ouverte : `agroedi` (propriétaire) et
 - `/geographical-references/cap-parcels/history?longitude=…&latitude=…` : les
   cultures déclarées à la PAC en un point, campagne par campagne (2022 à
   2025). Ouvert. L'identificateur de parcelle les affiche aussi.
+- `/inputs` : les intrants. Ouverts : prix de référence des articles et des
+  produits phytosanitaires avec leur provenance, prix du gazole non routier,
+  matières actives avec EIQ et groupe HRAC, composition des produits.
+  Réservés aux adhérents : les relevés et prix mensuels des engrais, des
+  semences et des phytos, qui nomment les marchands.
 - `/mcp` : serveur MCP pour les agents IA, en HTTP sans session (un message
-  JSON-RPC par `POST`). Neuf outils : `list_datasets`, `describe_dataset`,
+  JSON-RPC par `POST`). Dix outils : `list_datasets`, `describe_dataset`,
   `list_resources`, `read_resource`, `get_commune`, `get_enterprise`,
-  `search_rd_documents`, `get_rd_document`, `get_crop_history`.
+  `search_rd_documents`, `get_rd_document`, `get_crop_history`,
+  `get_input_price` (le dernier prix d'un intrant, et le coût d'une dose).
 
 Un agent passe par le même contrôle d'accès que tout appelant : sans clé, il
 est limité comme un anonyme et ne voit que les données ouvertes ; avec la clé

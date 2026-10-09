@@ -23,6 +23,10 @@ adoxaceae,Adoxacée,Adoxaceae,plant,family
 agaricaceae,Agaricacée,Agaricaceae,fungus,family
 agaricus,Agaric,Agaricus,agaricaceae,genus
 agaricus_bisporus,Champignon de Paris,Button mushroom,agaricus,specie
+agrostis,Agrostide,Bentgrass,poaceae,genus
+agrostis_capillaris,Agrostide ténue,Common bent,agrostis,specie
+agrostis_gigantea,Agrostide blanche,Black bent,agrostis,specie
+agrostis_stolonifera,Agrostide stolonifère,Creeping bent,agrostis,specie
 aix,Aix,Aix,anatidae,genus
 aix_galericulata,Canard mandarin,Aix galericulata,aix,specie
 aix_sponsa,Canard branchu,Aix sponsa,aix,specie
@@ -57,6 +61,8 @@ alnus_rubra,Aulne rubra,Alnus rubra,alnus,specie
 alnus_serrulata,Aulne serrulata,Alnus serrulata,alnus,specie
 alnus_trabeculosa,Aulne trabeculosa,Alnus trabeculosa,alnus,specie
 alnus_viridis,Aulne viridis,Alnus viridis,alnus,specie
+alopecurus,Vulpin,Foxtail,poaceae,genus
+alopecurus_pratensis,Vulpin des prés,Meadow foxtail,alopecurus,specie
 althaea,Guimauve,Althaea,malvaceae,genus
 amaranthaceae,Amaranthacée,Amaranthaceae,plant,family
 amaryllidaceae,Amaryllidacée,Amaryllidaceae,plant,family
@@ -109,6 +115,8 @@ arctium_minus,Petite bardane,Arctium minus,arctium,specie
 arecaceae,Palmier,Palm tree,plant,family
 argania,Argania,Argania,sapotaceae,genus
 argania_spinosa,Arganier,Argan,argania,specie
+arrhenatherum,Fromental,Oat-grass,poaceae,genus
+arrhenatherum_elatius,Fromental élevé,Tall oat-grass,arrhenatherum,specie
 artemisia,Armoise,Artemisia,asteraceae,genus
 artemisia_dracunculus,Estragon,Artemisia dracunculus,artemisia,specie
 arthrospira,Arthrospira,Arthrospira,cyanobacteria,genus
@@ -161,6 +169,7 @@ botrytis,Botrytis,Botrytis,sclerotiniaceae,genus
 botrytis_cinerea,Botrytis cinerea,Botrytis cinerea,botrytis,specie
 bovidae,Bovidae,Bovidae,mammalia,family
 brassica,Brassica,Brassica,brassicaceae,genus
+brassica_juncea,Moutarde brune,Brown mustard,brassica,specie
 brassica_napus,Colza,Rapeseed,brassica,specie
 brassica_napus_napus,Colza d’hiver,Brassica napus napus,brassica_napus,subspecie
 brassica_napus_rapifera,Rutabaga,Rutabaga,brassica_napus,subspecie
@@ -217,6 +226,8 @@ caricaceae,Caricacées,Caricaceae,plant,family
 carpinus,Charme,Carpinus,betulaceae,genus
 carpinus_betulus,Carpinus betulus,Carpinus betulus,carpinus,specie
 carpinus_caroliniana,Carpinus caroliniana,Carpinus caroliniana,carpinus,specie
+carthamus,Carthame,Carthamus,asteraceae,genus
+carthamus_tinctorius,Carthame des teinturiers,Safflower,carthamus,specie
 carum,Carum,Carum,apiaceae,genus
 carum_carvi,Carvi,Carum carvi,carum,specie
 castanea,Châtaignier,Chestnut,fagaceae,genus
@@ -246,6 +257,7 @@ chenopodium_album,Chénopode blanc,Chenopodium album,chenopodium,specie
 chenopodium_quinoa,Quinoa,Chenopodium quinoa,chenopodium,specie
 chloris,Chloris,Chloris,poaceae,genus
 chloris_gayana,Herbe de Rhodes,Rhodes grass,chloris,specie
+chrysanthemum,Chrysanthème,Chrysanthemum,asteraceae,genus
 chrysophyllum,Chrysophyllum,Goldenleaf,sapotaceae,genus
 chrysophyllum_africanum,Longhi,Chrysophyllum africanum,chrysophyllum,specie
 chrysophyllum_albidum,Caïmite africaine,White star apple,chrysophyllum,specie
@@ -348,6 +360,8 @@ damaliscus_lunatus,Damalisque lunatus,Damaliscus lunatus,damaliscus,specie
 damaliscus_pygargus,Damalisque pygargus,Damaliscus pygargus,damaliscus,specie
 daucus,Carotte,Daucus,apiaceae,genus
 daucus_carota,Carotte commune,Carrot,daucus,specie
+deschampsia,Canche,Hair-grass,poaceae,genus
+deschampsia_cespitosa,Canche cespiteuse,Tufted hair-grass,deschampsia,specie
 diervillaceae,Diervillacée,Diervillaceae,plant,family
 dimocarpus,Dimocarpus,Dimocarpus,sapindaceae,genus
 dimocarpus_longan,Longanier,Longan,dimocarpus,specie
@@ -444,6 +458,8 @@ gossypium_hirsutum,Cotonnier mexicain,Upland cotton,gossypium,specie
 grossulariaceae,Grossulariacée,Grossulariaceae,plant,family
 guizotia,Guizotia,Guizotia,asteraceae,genus
 guizotia_abyssinica,Guizotia abyssinica ‒ Nyger,Niger,guizotia,specie
+hedysarum,Sainfoin d'Espagne,Hedysarum,fabaceae,genus
+hedysarum_coronarium,Sainfoin d'Espagne,Sulla,hedysarum,specie
 helianthus,Tournesol,Sunflower,asteraceae,genus
 helianthus_annuus,Tournesol annuel,Annual sunflower,helianthus,specie
 helianthus_tuberosus,Topinambour,Jerusalem artichoke,helianthus,specie
@@ -474,6 +490,7 @@ jarilla_heterophylla,Jarilla heterophylla,Jarilla heterophylla,jarilla,specie
 juglandaceae,Juglandacée,Juglandaceae,plant,family
 juglans,Noyer,Juglans,juglandaceae,genus
 juglans_regia,Noyer commun,Common walnut,juglans,specie
+koeleria,Koelérie,June grass,poaceae,genus
 koelreuteria,Koelreuteria,Koelreuteria,sapindaceae,genus
 koelreuteria_bipinnata,Koelreuteria bipinnata,Koelreuteria bipinnata,koelreuteria,specie
 koelreuteria_elegans,Koelreuteria elegans,Koelreuteria elegans,koelreuteria,specie
@@ -798,6 +815,8 @@ setaria_italica,Sétaire d’Italie,Foxtail millet,setaria,specie
 shepherdia,Shépherdie,Shepherdia,elaeagnaceae,genus
 silybum,Silybum,Silybum,asteraceae,genus
 silybum_marianum,Chardon-Marie,Silybum marianum,silybum,specie
+sinapis,Moutarde,Mustard,brassicaceae,genus
+sinapis_alba,Moutarde blanche,White mustard,sinapis,specie
 solanaceae,Solanacée,Solanaceae,plant,family
 solanum,Morelle,Solanum,solanaceae,genus
 solanum_lycopersicum,Tomate,Tomato,solanum,specie
@@ -837,6 +856,8 @@ trifolium_pratense,Trèfle violet,Trifolium pratense,trifolium,specie
 trifolium_repens,Trèfle blanc,Trifolium repens,trifolium,specie
 trigonella,Trigonelle,Trigonella,fabaceae,genus
 trigonella_foenum_graecum,Trigonelle fenugrec,Fenugreek,trigonella,specie
+trisetum,Trisète,Oat-grass,poaceae,genus
+trisetum_flavescens,Avoine jaunâtre,Yellow oat-grass,trisetum,specie
 triticum,Blé,Wheat,poaceae,genus
 triticum_aestivum,Blé tendre,Common wheat,triticum,specie
 triticum_durum,Blé dur,Durum wheat,triticum,specie

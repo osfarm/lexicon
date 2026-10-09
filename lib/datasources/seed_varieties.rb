@@ -3,6 +3,9 @@ module Datasources
     description 'Seed varieties from GNIS (Groupement National Interprofessionnel des Semences et plants)'
     credits name: 'Liste des variétés de semences', url: "https://www.semae.fr/catalogue-varietes/base-varietes-gnis/", provider: "SEMAE", licence: "", licence_url: "", updated_at: "2025-01-26"
 
+    # The catalogue is as recent as the latest variety registered in it; the file holds a few dates to come, typing mistakes
+    source_date 'SELECT max(registration_date) FROM registered_seed_varieties WHERE registration_date <= current_date'
+
     # SEMAE (ex-GNIS) no longer exposes a public CSV export of the variety
     # catalogue (the website was refactored in 2022). The catalogue file
     # `gnis.csv` must be provided manually in `raw/seed_varieties/` with

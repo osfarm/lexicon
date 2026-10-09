@@ -1,0 +1,54 @@
+id,name,latin_name,family,category,season,sowing_rate_min,sowing_rate_max,taxon_reference_name,pattern
+fromental,Fromental (avoine élevée),Arrhenatherum elatius,Poaceae,forage,autumn,,,arrhenatherum_elatius,avoine elevee?|fromental
+festulolium,Festulolium,× Festulolium,Poaceae,forage,autumn,,,,festulolium
+melilot,Mélilot,Melilotus,Fabaceae,cover,spring,,,,melilot
+navette,Navette fourragère,Brassica rapa,Brassicaceae,cover,summer,,,,navette
+plantain,Plantain lancéolé,Plantago lanceolata,Plantaginaceae,forage,spring,,,,plantain
+avoine_rude,Avoine rude,Avena strigosa,Poaceae,cover,summer,30,50,avena,avoine (rude|diploide|bresilienne|strigosa)
+ble_dur,Blé dur,Triticum durum,Poaceae,cereal,autumn,150,200,triticum_durum,ble dur
+ble_tendre,Blé tendre,Triticum aestivum,Poaceae,cereal,autumn,120,180,triticum_aestivum,ble( tendre)?\b
+epeautre,Épeautre,Triticum spelta,Poaceae,cereal,autumn,150,200,triticum_spelta,(grand |petit )?epeautre
+orge,Orge,Hordeum vulgare,Poaceae,cereal,autumn,100,150,hordeum_vulgare,orge|escourgeon
+avoine,Avoine,Avena sativa,Poaceae,cereal,autumn,80,140,avena_sativa,avoine
+seigle,Seigle,Secale cereale,Poaceae,cereal,autumn,80,150,secale_cereale,seigle
+triticale,Triticale,× Triticosecale,Poaceae,cereal,autumn,120,160,x_triticosecale,triticale
+mais,Maïs,Zea mays,Poaceae,maize,spring,,,zea_mays,mais\b
+sorgho,Sorgho,Sorghum bicolor,Poaceae,cereal,spring,8,25,sorghum,sorgho
+millet,Millet,Panicum miliaceum,Poaceae,cereal,spring,20,30,panicum_miliaceum,millet
+moha,Moha,Setaria italica,Poaceae,forage,summer,20,30,setaria_italica,moha
+sarrasin,Sarrasin,Fagopyrum esculentum,Polygonaceae,cereal,spring,40,60,fagopyrum_esculentum,sarrasin
+tournesol,Tournesol,Helianthus annuus,Asteraceae,oilseed,spring,,,helianthus_annuus,tournesol
+colza,Colza,Brassica napus,Brassicaceae,oilseed,autumn,2,4,brassica_napus,colza
+lin,Lin,Linum usitatissimum,Linaceae,oilseed,spring,40,110,linum_usitatissimum,lin\b
+cameline,Cameline,Camelina sativa,Brassicaceae,oilseed,spring,3,6,camelina_sativa,cameline
+chanvre,Chanvre,Cannabis sativa,Cannabaceae,oilseed,spring,40,60,cannabis_sativa,chanvre
+soja,Soja,Glycine max,Fabaceae,protein,spring,100,150,glycine_max,soja
+pois_chiche,Pois chiche,Cicer arietinum,Fabaceae,protein,spring,100,180,cicer_arietinum,pois chiche
+pois,Pois,Pisum sativum,Fabaceae,protein,spring,150,250,pisum_sativum,pois\b
+feverole,Féverole,Vicia faba,Fabaceae,protein,autumn,150,250,vicia_faba,fev(e)?role|feve\b
+lupin,Lupin,Lupinus,Fabaceae,protein,spring,120,200,lupinus,lupin
+lentille,Lentille,Lens culinaris,Fabaceae,protein,spring,80,120,lens_culinaris,lentille
+vesce_velue,Vesce velue,Vicia villosa,Fabaceae,cover,autumn,30,50,vicia_villosa,vesce velue
+vesce,Vesce commune,Vicia sativa,Fabaceae,cover,autumn,40,80,vicia_sativa,vesce
+luzerne_lupuline,Luzerne lupuline (minette),Medicago lupulina,Fabaceae,forage,spring,10,15,medicago_lupulina,(luzerne lupuline|minette)
+luzerne,Luzerne,Medicago sativa,Fabaceae,forage,spring,20,25,medicago_sativa,luzerne
+trefle_violet,Trèfle violet,Trifolium pratense,Fabaceae,forage,spring,15,20,trifolium_pratense,trefle violet
+trefle_blanc,Trèfle blanc,Trifolium repens,Fabaceae,forage,spring,3,5,trifolium_repens,trefle blanc
+trefle_incarnat,Trèfle incarnat,Trifolium incarnatum,Fabaceae,cover,summer,15,25,trifolium_incarnatum,trefle incarnat
+trefle_alexandrie,Trèfle d'Alexandrie,Trifolium alexandrinum,Fabaceae,cover,summer,15,25,trifolium_alexandrinum,trefle (d.)?alexandrie
+trefle,Autres trèfles,Trifolium,Fabaceae,forage,spring,,,trifolium,trefle
+sainfoin,Sainfoin,Onobrychis viciifolia,Fabaceae,forage,spring,120,160,onobrychis_viciifolia,sainfoin
+lotier,Lotier corniculé,Lotus corniculatus,Fabaceae,forage,spring,8,12,lotus_corniculatus,lotier
+fenugrec,Fenugrec,Trigonella foenum-graecum,Fabaceae,cover,summer,20,40,trigonella_foenum_graecum,fenugrec
+ray_grass_italie,Ray-grass d'Italie,Lolium multiflorum,Poaceae,forage,autumn,20,30,lolium_multiflorum,(ray.?grass|rg)\s*(d.)?ital\w*|rgi\b
+ray_grass_hybride,Ray-grass hybride,Lolium × hybridum,Poaceae,forage,autumn,20,30,lolium_x_hybridum,ray.?grass\s*hybride|rgh\b
+ray_grass_anglais,Ray-grass anglais,Lolium perenne,Poaceae,forage,autumn,20,30,lolium_perenne,ray.?grass(\s*anglais)?|rga\b
+fetuque,Fétuque,Festuca,Poaceae,forage,autumn,20,30,festuca,fetuque
+dactyle,Dactyle,Dactylis glomerata,Poaceae,forage,autumn,15,25,dactylis,dactyle
+fleole,Fléole,Phleum pratense,Poaceae,forage,autumn,5,10,phleum,fleole
+brome,Brome,Bromus,Poaceae,forage,autumn,30,50,bromus,brome
+paturin,Pâturin,Poa,Poaceae,forage,autumn,10,20,poa,paturin
+phacelie,Phacélie,Phacelia tanacetifolia,Boraginaceae,cover,summer,8,12,phacelia,phacelie
+moutarde,Moutarde,Sinapis alba,Brassicaceae,cover,summer,8,12,sinapis_alba,moutarde
+radis,Radis fourrager ou chinois,Raphanus sativus,Brassicaceae,cover,summer,8,15,raphanus_sativus,radis
+nyger,Nyger,Guizotia abyssinica,Asteraceae,cover,summer,8,10,guizotia_abyssinica,nyger|niger

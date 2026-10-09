@@ -137,8 +137,32 @@ Reste :
 
 J6 ne dépend pas de J2 à J5 et peut passer avant.
 
+## J7 — Intrants : références et prix
+
+Cadrage : `claudedocs/brainstorm_intrants.md`. Vue d'ensemble : `doc/datasources/intrants.md`.
+
+- [x] Prix du gazole non routier (`fuel_prices`), et parcours de validation
+      en local puis en production (`publish --production`)
+- [x] Matières actives, EIQ et mode d'action HRAC (`phytosanitary_substances`)
+- [x] Engrais : composition, prix relevés chaque semaine, valeur des unités
+      (`fertilizers`, réservé aux adhérents)
+- [x] Semences : espèces, prix chez cinq marchands, variétés rattachées au
+      catalogue officiel (`seeds`, réservé) ; `seed_varieties` complété
+- [x] Prix des produits phytosanitaires (`phytosanitary_prices`, réservé) :
+      une seule source, seize produits
+- [x] `prices` rafraîchi depuis ces jeux, avec la provenance de chaque prix
+- [x] `./lexicon ship` : le parcours en une commande
+- [x] Contribution sans code : une fiche et des CSV (`./lexicon contribute`)
+- [ ] Mettre en service `/inputs` et l'outil MCP `get_input_price` (branche
+      `feature/inputs` de `lexicon-rest-api`)
+- [ ] Une seconde source de prix pour les produits phytosanitaires
+- [ ] Collecte hebdomadaire lancée par un runner sur le serveur
+- [ ] Semences vendues à la dose : prix par hectare
+- [ ] Dépôt d'une contribution sans poste de build
+
 ## Hors périmètre pour l'instant
 
 - Tuiles vectorielles, CDN, moteur analytique séparé
-- Interface de dépôt de CSV pour non-développeurs
+- Interface web de dépôt d'une contribution (le format existe : une fiche et
+  des CSV)
 - Second serveur dédié au build

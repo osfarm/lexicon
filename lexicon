@@ -21,4 +21,17 @@ then
   (docker compose -f docker-compose-dev.yml up -d 2>&1 | grep -v 'up-to-date') || true
 fi
 
+# The web interface of contributions runs in a container of its own: it publishes a port on this machine
+# only, and may write in data/contributions, which the runner reads but does not write.
+if [[ "$1" == "contribute" && " $* " == *" --web "* ]];
+then
+  PORT=${LEXICON_CONTRIBUTE_PORT:-8787}
+  mkdir -p data/contributions
+  exec docker compose -f docker-compose-dev.yml run --rm \
+    -p "127.0.0.1:$PORT:8787" \
+    -v "$PWD/data/contributions:/lexicon/data/contributions:rw" \
+    -e "LEXICON_CONTRIBUTE_URL=http://localhost:$PORT" \
+    lexicon_runner ./lexicon-cli "$@"
+fi
+
 exec docker compose -f docker-compose-dev.yml exec lexicon_runner ./lexicon-cli "$@"

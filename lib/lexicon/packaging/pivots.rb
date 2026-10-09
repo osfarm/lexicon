@@ -11,6 +11,8 @@ module Lexicon
         Key.new(name: 'commune', table: 'registered_postal_codes', column: 'code'),
         Key.new(name: 'department', table: 'registered_administrative_areas', column: 'code', where: "kind = 'department'"),
         Key.new(name: 'siren', table: 'registered_enterprises', column: 'siren'),
+        # An establishment of a company: the SIRET, whose first nine digits are the SIREN
+        Key.new(name: 'siret', table: 'registered_enterprises', column: 'establishment_number'),
         Key.new(name: 'cadastral_parcel', table: 'registered_cadastral_parcels', column: 'id'),
         Key.new(name: 'cap_crop_code', table: 'master_crop_production_cap_codes', column: 'cap_code'),
         Key.new(name: 'taxon', table: 'master_taxonomy', column: 'reference_name'),

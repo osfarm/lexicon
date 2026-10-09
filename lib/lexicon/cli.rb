@@ -165,6 +165,8 @@ module Lexicon
     end
 
     desc 'new NAME', 'Print the skeleton of a new datasource: ./lexicon new soil_moisture > lib/datasources/soil_moisture.rb'
+    method_option :tabular, type: :boolean, default: false,
+                            desc: 'Print the sheet of a tabular contribution instead, for data/contributions/NAME/dataset.yml'
 
     def new(name)
       if get('datasource.all').transform_keys(&:to_s).key?(name)
@@ -172,10 +174,85 @@ module Lexicon
         exit 1
       end
 
-      puts Contribution::Scaffold.new.datasource(name)
+      puts options['tabular'] ? Contribution::Scaffold.new.sheet(name) : Contribution::Scaffold.new.datasource(name)
     rescue ArgumentError => e
       warn e.message
       exit 1
+    end
+
+    desc 'contribute [NAME]', 'Read the tabular contribution of data/contributions/NAME as a maintainer would, and say what to correct'
+    method_option :web, type: :boolean, default: false,
+                        desc: 'Open the local web interface instead: every contribution, read again as its files change'
+    method_option :port, type: :numeric, default: 8787, desc: 'Port the web interface listens on'
+
+    def contribute(name = nil)
+      return contribute_on_the_web if options['web']
+
+      if name.nil?
+        puts '[ NOK ] '.red + 'Quel jeu relire ? ./lexicon contribute <nom>, ou ./lexicon contribute --web pour l’interface web.'
+        exit 1
+      end
+
+      dir = get('parameter.contributions.root').join(name)
+      unless dir.join(Contribution::Sheet::FILE).file?
+        puts '[ NOK ] '.red + "Pas de fiche #{Contribution::Sheet::FILE} dans #{dir}. " \
+                             "Pour en créer une : ./lexicon new #{name} --tabular"
+        exit 1
+      end
+
+      sheet = Contribution::Sheet.load(dir)
+      findings = Contribution::Review.new(sheet).findings
+      errors, warnings = findings.partition { |finding| finding.level == :error }
+      errors.each { |finding| puts '  à corriger : '.red + finding.message }
+      warnings.each { |finding| puts '  à savoir   : ' + finding.message }
+
+      if errors.any?
+        puts '[ NOK ] '.red + "#{name} : #{errors.size} #{errors.one? ? 'point' : 'points'} à corriger avant de proposer le jeu."
+        exit 1
+      end
+      rows = sheet.tables.map { |table| "#{table.file} → #{table.name}" }.join(', ')
+      puts '[  OK ] '.green + "#{name} peut être proposé (#{rows}). Un mainteneur le construit et le publie avec ./lexicon ship #{name}"
+    rescue Psych::Exception => e
+      puts '[ NOK ] '.red + "La fiche ne se lit pas : #{e.message.lines.first.to_s.strip}"
+      exit 1
+    end
+
+    no_commands do
+      # The address is the one of the host when the wrapper says so: the port it publishes may differ
+      def contribute_on_the_web
+        app = Contribution::Web::App.new(root: get('parameter.contributions.root'), taken: get('datasource.all').keys.map(&:to_s))
+        address = ENV.fetch('LEXICON_CONTRIBUTE_URL', "http://localhost:#{options['port']}")
+
+        puts "Interface de contribution : #{address.green}  (Ctrl-C pour l'arrêter)"
+        puts 'Le dossier des contributions est en lecture seule : la relecture seule est proposée.' unless app.writable?
+        Contribution::Web::Server.new(app, host: ENV.fetch('LEXICON_CONTRIBUTE_BIND', '0.0.0.0'), port: options['port']).run
+      end
+    end
+
+    desc 'ship NAMES', 'Take datasources all the way: check, build, check the data, package, publish locally and wait for the loader'
+    method_option :production, type: :boolean, default: false, desc: 'Then publish to LEXICON_PRODUCTION_TARGET and wait there too'
+    method_option :build, type: :boolean, default: true, desc: 'Run collect, load and normalize; --no-build ships what is already built'
+    method_option :jobs, type: :numeric, default: 4, desc: 'Tables exported at once'
+    method_option :validate, type: :boolean, default: true, desc: 'Refuse datasources with empty tables or missing foreign keys'
+    method_option :timeout, type: :numeric, default: 900, desc: 'Seconds to wait for the loader'
+
+    def ship(*names)
+      stop_shipping('give at least one datasource') if names.empty?
+      datasources = packaged_datasources
+      unknown = names - datasources.keys
+      stop_shipping("unknown or not packaged datasources: #{unknown.join(', ')}") if unknown.any?
+
+      shipping_step('Declarations') { names.all? { |name| passes_check?(name, datasources.fetch(name), data: false) } }
+      shipping_step('Build') { get('datasource.name_runner').run(names, action: :run) || true } if options['build']
+      shipping_step('Built data') { names.all? { |name| passes_check?(name, datasources.fetch(name), data: true) } }
+      shipping_step('Packages') do
+        names.all? { |name| package_datasource(get('packaging.builder'), datasources.fetch(name), packaged_definitions.fetch(name)) }
+      end
+      deliver(names, get('packaging.publisher'), 'local')
+      deliver(names, get('packaging.production_publisher'), 'production') if options['production']
+      puts '[  OK ] '.green + "#{names.join(', ')} shipped#{' to production' if options['production']}"
+    rescue Packaging::Rsync::TransferError, ArgumentError => e
+      stop_shipping(e.message)
     end
 
     desc 'fetch URL', 'Download a repository of packages served over HTTP, such as a private bundle'
@@ -305,6 +382,54 @@ module Lexicon
                'publish it there first, wait for the loader, or pass --force'
         end
         exit 1
+      end
+
+      def stop_shipping(reason)
+        puts '[ NOK ] '.red + reason
+        exit 1
+      end
+
+      # A step that does not pass stops everything: nothing goes further than what was verified
+      def shipping_step(title)
+        puts "── #{title}".cyan
+        stop_shipping("stopped at: #{title}") unless yield
+      end
+
+      def passes_check?(name, datasource, data:)
+        baseline = get('parameter.resources.root').join('check_baseline.yml')
+        tolerated = baseline.file? ? YAML.safe_load(baseline.read).fetch('tolerated', []) : []
+        checker = Contribution::Checker.new(datasources: get('datasource.all').transform_keys(&:to_s), definitions: packaged_definitions,
+                                            tolerated: tolerated)
+        findings = data ? built_data_findings(checker, name, datasource) : checker.static(name)
+        print_findings(name, findings)
+
+        findings.none? { |finding| finding.level == :error }
+      end
+
+      # Sends the latest packages, then waits until the serving side says they are in service, or why not
+      def deliver(names, publisher, place)
+        shipping_step("Publication (#{place}: #{publisher.target})") do
+          names.each { |name| puts "        #{name} #{publisher.publish(name)} sent" }
+        end
+        shipping_step("In service (#{place})") do
+          deadline = Time.now + options['timeout']
+          since = Time.now.utc
+          waiting = names
+          until waiting.empty?
+            waiting = waiting.reject { |name| publisher.in_service?(name) }
+            refused = publisher.failures.select do |failure|
+              waiting.include?(failure[:name].to_s) && Time.parse(failure[:at].to_s) >= since - 60
+            end
+            refused.each do |failure|
+              puts "        #{failure[:name]} #{failure[:version]} refused: #{Array(failure[:reasons]).join('; ')}".red
+            end
+            break if refused.any? || Time.now > deadline
+
+            sleep 10 unless waiting.empty?
+          end
+          puts "        still waiting for #{waiting.join(', ')} after #{options['timeout']} s" if waiting.any? && Time.now > deadline
+          waiting.empty?
+        end
       end
 
       def package_datasource(builder, datasource, definition_set, flavor: nil)

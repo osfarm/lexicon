@@ -24,6 +24,7 @@ feather,Plume,Feather,animal_derivative,feather,ton,aves,,,,,,,,,,uf08c-fire.svg
 fish_food,Nourriture pour poisson,Fish food,animal_food,animal_food,kilogram,actinopterygii,,,,,,,,,,uf0d8-matter.svg
 fish_medicine,Médicament pour poisson,Fish medicine,animal_medicine,animal_medicine,liter,actinopterygii,,,,,,,,,,uf0da-medkit.svg
 fuel,Essence,Fuel,fuel,fuel,liter,,,,,,,,,,,uf970-vial.svg
+non_road_diesel,Gazole non routier (GNR),Non-road diesel,fuel,fuel,liter,,,,,,,,,,,uf970-vial.svg
 gas,Gaz,Gas,gas,gas,kilogram,,,,,,,,,,,uf0d8-matter.svg
 goat_food,Nourriture pour caprin,Goat food,animal_food,animal_food,kilogram,capra_hircus,,,,,,,,,,uf0da-medkit.svg
 goat_medicine,Médicament pour caprin,Goat medicine,animal_medicine,animal_medicine,liter,capra_hircus,,,,,,,,,,uf970-vial.svg

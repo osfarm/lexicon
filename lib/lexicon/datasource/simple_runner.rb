@@ -110,6 +110,9 @@ module Lexicon
               log 'Normalize OK'.green + " #{datasource.name.to_s.yellow} in #{(Time.now - start).round(2)}s"
             rescue StandardError
               log("Error while normalizing #{datasource.name}".red)
+              # What was half written is set aside and the previous tables come back: a failed normalize
+              # leaves the datasource as it was
+              set_aside_and_restore(database, definition_set)
 
               raise
             ensure
@@ -227,6 +230,20 @@ module Lexicon
                 SET SCHEMA "lexicon"
             SQL
           end
+        end
+
+        # @param [Database::Database] database
+        # @param [Database::Schema::TableDefinitionSet] definition_set
+        def set_aside_and_restore(database, definition_set)
+          error_schema_name = error_schema(definition_set)
+          database.ensure_schema_empty(error_schema_name)
+          definition_set.definitions.select { |definition| database.table_exists?(definition.name, schema: :lexicon) }.each do |definition|
+            database.query(%(ALTER TABLE "lexicon"."#{definition.name}" SET SCHEMA "#{error_schema_name}"))
+          end
+          restore_backup(database, definition_set)
+          log("Previous tables of #{definition_set.name} are back; what failed is in '#{error_schema_name}'")
+        rescue StandardError => e
+          log("Could not restore #{definition_set.name}: #{e.message.lines.first.to_s.strip}".red)
         end
 
         # @param [Database::Database] database

@@ -57,6 +57,17 @@ can be run separately:
 ./lexicon normalize agropowa
 ```
 
+### A dataset that fits in a spreadsheet
+
+No Ruby is needed for a dataset that is one or several tables: a directory `data/contributions/<name>/` with a
+sheet (`dataset.yml`) and CSV files is enough. `./lexicon contribute <name>` reviews it and says what to correct.
+See [CONTRIBUER_UN_TABLEAU.md](CONTRIBUER_UN_TABLEAU.md) (in French).
+
+### Shipping
+
+`./lexicon ship <name>` chains the whole path (checks, build, package, local publication, wait for the loader) and
+stops at the first step that fails; `--production` goes on to the production once the dataset is in service locally.
+
 ### Declaring what a datasource publishes
 A datasource declares its output tables in `self.table_definitions(builder)`, and a few facts used when it is packaged (see [PUBLICATION.md](PUBLICATION.md)):
 

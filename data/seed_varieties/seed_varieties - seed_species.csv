@@ -103,3 +103,53 @@ id,name,specie
 582,NAVETTE FOURRAGERE,brassica_rapa_oleifera
 588,CAMELINE,camelina_sativa
 589,COTON,gossypium
+50,DACTYLE,dactylis
+51,FLEOLE DES PRES,phleum
+52,FETUQUE ELEVEE,festuca
+53,FETUQUE DES PRES,festuca
+54,FETUQUE ROUGE,festuca
+65,TREFLE HYBRIDE,trifolium
+68,TREFLE DE PERSE,trifolium
+74,VESCE VELUE,vicia_villosa
+75,LUPIN BLANC,lupinus
+76,LUPIN JAUNE,lupinus
+77,VESCE DE PANNONIE,vicia
+78,LUPIN A FEUILLES ETROITES,lupinus
+82,FETUQUE OVINE DURETTE,festuca
+83,PATURIN DES PRES,poa
+85,FLEOLE NOUEUSE,phleum
+93,PHACELIE,phacelia
+110,HARICOT D'ESPAGNE,phaseolus
+154,CARDON,cynara
+171,CIBOULE,allium_fistulosum
+509,AVOINE NUE,avena
+511,AVOINE RUDE,avena
+520,FETUQUE OVINE,festuca
+525,BROME CATHARTIQUE,bromus
+526,BROME SITCHENSIS,bromus
+530,PATURIN DES BOIS,poa
+535,TREFLE SOUTERRAIN,trifolium
+540,FETUQUE OVINE A FEUILLES MENUES,festuca
+551,LUZERNE BIGARREE,medicago
+560,SERRADELLE,ornithopus_sativus
+562,TREFLE DE MICHELI,trifolium
+563,TREFLE RABOTEUX,trifolium
+564,TREFLE RENFLE EN VESSIE,trifolium
+568,GESSE CHICHE,lathyrus
+573,SORGHO,sorghum
+574,SORGHO DU SOUDAN,sorghum
+575,SORGHO HYBRIDE (SOUDAN X BICOLOR),sorghum
+608,PLANTAIN,plantago
+23,CARTHAME,carthamus_tinctorius
+25,MOUTARDE BLANCHE,sinapis_alba
+26,MOUTARDE BRUNE,brassica_juncea
+55,FROMENTAL,arrhenatherum_elatius
+59,KOELERIE,koeleria
+98,SAINFOIN D'ESPAGNE,hedysarum_coronarium
+402,CHRYSANTHEME,chrysanthemum
+521,AGROSTIDE BLANCHE,agrostis_gigantea
+522,AGROSTIDE STOLONIFERE,agrostis_stolonifera
+523,AGROSTIDE TENUE,agrostis_capillaris
+524,AVOINE JAUNATRE,trisetum_flavescens
+531,VULPIN DES PRES,alopecurus_pratensis
+550,CANCHE CESPITEUSE,deschampsia_cespitosa

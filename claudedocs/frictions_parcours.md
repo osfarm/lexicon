@@ -19,4 +19,31 @@ charges à l'outil de contribution (`claudedocs/brainstorm_intrants.md`, F23).
 | 2026-10-07 | `fertilizers` | 3 | Un jeu dont les relevés s'additionnent n'a pas de place prévue pour son historique : les tables de build sont recréées à chaque `normalize` | Un mode « ajout » déclaré par la datasource, ou la relecture du dernier package faite par le socle |
 | 2026-10-07 | `fertilizers` | 3 | Une pagination mal lue a demandé une centaine de pages vides au marchand avant d'être vue | Un plafond de requêtes par collecte, et un compte rendu des pages lues |
 | 2026-10-07 | `fertilizers` | 3 | Un fichier CSV de règles avec une virgule dans une expression a cassé le chargement | Valider les fichiers de `data/` dans `check --static` |
+| 2026-10-07 | `seeds`, `phytosanitary_prices` | 3 | Trois jeux lisent la même page d'un marchand ; rien ne permet à une datasource de dire qu'elle réutilise la collecte d'une autre, il a fallu aller la chercher dans `raw/fertilizers/` | Des ressources collectées une fois et partagées entre datasources |
+| 2026-10-07 | `seeds` | 1 | Les lecteurs de marchands vivent dans la datasource `fertilizers` alors que trois jeux s'en servent | Un emplacement commun pour ce qui lit une source, hors des datasources |
+| 2026-10-07 | `seeds` | 4 | Le lien des espèces à la taxonomie n'est vérifiable que contre la base de service : même friction qu'au lot 2 | Idem |
+| 2026-10-07 | `seed_varieties` | 3 | Pour construire un jeu qui a une clé étrangère, il a fallu deviner la chaîne à construire avant lui (`translations`, puis `taxonomy`) à partir des messages d'erreur | `run <ds> --with-dependencies`, ou un message qui nomme le jeu manquant |
+| 2026-10-07 | `seed_varieties` | 3 | Une jointure écarte en silence 1 420 lignes de la source dont l'espèce n'est pas dans une table du dépôt | Compter et afficher ce qu'une jointure de `normalize` laisse de côté |
+| 2026-10-07 | `seed_varieties` | 5 | Rien ne dit, avant de publier, ce qui disparaît par rapport à la version en service (772 variétés) | Un résumé des lignes ajoutées et retirées dans `package` ou `status` |
+| 2026-10-07 | `prices` | 3 | Des dates à année sur deux chiffres dans un fichier de `data/` donnaient des prix datés de l'an 19, en service depuis longtemps | Un contrôle des plages de dates dans `check` |
+| 2026-10-07 | `prices` | 3 | Un jeu qui en lit quatre autres doit être reconstruit après eux ; rien n'ordonne la série | `run` qui suit les dépendances déclarées |
+| 2026-10-07 | `prices` | 4 | Des règles écrites en SQL dans `normalize` ne se testent que sur une base remplie | Une base d'essai pour les datasources, comme celle des tests du loader |
+
+## Ce que le lot 7 a traité (2026-10-07)
+
+| Friction | Réponse |
+|---|---|
+| `GRANT` invalide dans le script d'initialisation de la base | Ligne retirée |
+| Six commandes à enchaîner | `./lexicon ship` |
+| Rien ne dit quand le loader passera | `ship` attend la mise en service et affiche les raisons d'un refus |
+| Une erreur dans `normalize` laisse les tables à moitié écrites | Les tables précédentes sont remises, le reste est mis de côté |
+| Le squelette ne dit rien de `licence_exception` | Ajouté en commentaire |
+| Un fichier de `data/` mal formé n'est vu qu'au chargement | Pour les contributions tabulaires : `./lexicon contribute` |
+
+Restent ouvertes : l'API qui redémarre avant la création de son rôle, le résumé de ce que `run` a chargé, une route
+générique pour un jeu neuf, les pivots mesurés contre la base de service, l'utilitaire de téléchargement par lien,
+le mode « ajout » pour les jeux qui s'accumulent, le plafond de requêtes par collecte, les ressources partagées
+entre datasources, l'emplacement des lecteurs de marchands, `run` qui suit les dépendances, le compte de ce qu'une
+jointure écarte, le résumé des lignes ajoutées et retirées, le contrôle des plages de dates, une base d'essai pour
+les datasources.
 

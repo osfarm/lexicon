@@ -240,7 +240,7 @@ module Datasources
         return usable.values.flatten(1) unless check
 
         doubtful = usable.select { |merchant, offers| offers.size < MINIMUM_OFFERS.fetch(merchant) }
-        doubtful.each { |merchant, offers| logger.log("#{merchant}: #{offers.size} priced offers on #{day.basename}, at least #{MINIMUM_OFFERS.fetch(merchant)} expected: set aside".red) }
+        doubtful.each { |merchant, offers| logger.warn("#{merchant}: #{offers.size} priced offers on #{day.basename}, at least #{MINIMUM_OFFERS.fetch(merchant)} expected: set aside") }
         raise "No merchant gave enough offers on #{day.basename}: #{usable.transform_values(&:size)}" if doubtful.size == usable.size
 
         usable.reject { |merchant, _| doubtful.key?(merchant) }.values.flatten(1)

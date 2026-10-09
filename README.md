@@ -67,8 +67,18 @@ LEXICON_PUBLISH_TARGET=/lexicon/out/published
 LEXICON_PRODUCTION_TARGET=osfarm_lexicon:lexicon/packages
 ```
 
+One command chains all of it, waits for the loader and stops at the first step that fails:
+
+```sh
+./lexicon ship phytosanitary                # checks, build, package, local publication, wait
+./lexicon ship phytosanitary --production   # then the server
+```
+
 See [doc/PUBLICATION.md](doc/PUBLICATION.md) (in French) for the package format, the dependencies between
-datasets, and what to do when a publication is refused.
+datasets, the local serving stack, and what to do when a publication is refused.
+
+A dataset that fits in a spreadsheet needs no code: a sheet and CSV files in `data/contributions/<name>/`, reviewed
+by `./lexicon contribute <name>`. See [doc/CONTRIBUER_UN_TABLEAU.md](doc/CONTRIBUER_UN_TABLEAU.md) (in French).
 
 ### 3.Bundle a subset with a flavor
 

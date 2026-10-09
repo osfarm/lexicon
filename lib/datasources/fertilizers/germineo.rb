@@ -22,7 +22,9 @@ module Datasources
         [/\Aazote/i, :nitrogen], [/\Aphosphore/i, :phosphorus], [/\Apotasse/i, :potassium], [/\Asoufre/i, :sulfur],
         [/\Amagn[ée]si/i, :magnesium], [/\Acalcium/i, :calcium]
       ].freeze
-      UNITS = { 'tonne' => 'ton', 'litre' => 'liter', 'kg' => 'kilogram', 'kilo' => 'kilogram' }.freeze
+      UNITS = { 'tonne' => 'ton', 'litre' => 'liter', 'kg' => 'kilogram', 'kilo' => 'kilogram', 'quintal' => 'quintal',
+                'dose' => 'dose' }.freeze
+      Card = Struct.new(:id, :name, :url, :price, :unit, :packaging_label, :attributes, keyword_init: true)
       ARTICLE = %r{<article class="product-item[\s\S]*?</article>}.freeze
 
       # @param [String] html
@@ -39,24 +41,44 @@ module Datasources
         html.match?(ARTICLE) && html.include?("page=#{page + 1}")
       end
 
-      def self.offer(article, kind)
+      # @param [String] html
+      # @return [Array<Card>] the products of a page that show a price, whatever they are
+      def self.cards(html)
+        html.scan(ARTICLE).map { |article| card(article) }.compact
+      end
+
+      def self.card(article)
         link = article.match(/<a class="clickable-trigger[^"]*"\s+href="([^"]+)"\s+title="([^"]*)"/)
-        price = text(article[%r{<span class="tw-font-serif[^"]*">([\s\S]*?)</span>}, 1])[/[\d\s\u00a0\u202f.,]+(?=\s*€)/]
+        # A reduced price follows the one it replaces
+        price = text(article[%r{<span class="tw-font-serif[^"]*">([\s\S]*?)</span>}, 1]).scan(/[\d\s\u00a0\u202f.,]*\d(?=\s*€)/).last
         return nil if link.nil? || price.nil?
 
+        Card.new(id: link[1][/-(\d+)\z/, 1], name: text(link[2]), url: link[1], price: number(price),
+                 unit: UNITS[text(article)[/HT\s+par\s+(\w+)/, 1]],
+                 packaging_label: text(article[%r{<span class="tw-font-bold">([\s\S]*?)</span>}, 1]), attributes: attributes(article))
+      end
+
+      # @return [Hash{String => String}] rows of the table of a card: contents of a fertiliser, traits of a variety
+      def self.attributes(article)
+        article.scan(%r{<tr>\s*<td>([\s\S]*?)</td>\s*<td>([\s\S]*?)</td>\s*</tr>}).to_h { |label, value| [text(label), text(value)] }
+      end
+
+      def self.offer(article, kind)
+        card = card(article)
+        return nil if card.nil?
+
         Offer.new(
-          merchant: MERCHANT, source_id: link[1][/-(\d+)\z/, 1], product_ref: link[1][/-(\d+)\z/, 1], name: text(link[2]), kind: kind,
-          category: link[1].split('/')[-2], packaging: Offer.packaging(text(article[%r{<span class="tw-font-bold">([\s\S]*?)</span>}, 1])),
-          unit: UNITS[text(article)[/HT\s+par\s+(\w+)/, 1]], price: number(price), composition: composition(article),
-          url: link[1], negotiated: false
+          merchant: MERCHANT, source_id: card.id, product_ref: card.id, name: card.name, kind: kind,
+          category: card.url.split('/')[-2], packaging: Offer.packaging(card.packaging_label), unit: card.unit, price: card.price,
+          composition: composition(card.attributes), url: card.url, negotiated: false
         )
       end
 
       # Rows of the table of contents; the ones starting with a dash detail the row above
-      def self.composition(article)
-        article.scan(%r{<tr>\s*<td>([\s\S]*?)</td>\s*<td>([\s\S]*?)</td>\s*</tr>}).each_with_object({}) do |(label, value), found|
-          nutrient = NUTRIENTS.find { |pattern, _| text(label).match?(pattern) }&.last
-          amount = text(value)[/[\d.,]+(?=[^%]*%)/]
+      def self.composition(attributes)
+        attributes.each_with_object({}) do |(label, value), found|
+          nutrient = NUTRIENTS.find { |pattern, _| label.match?(pattern) }&.last
+          amount = value[/[\d.,]+(?=[^%]*%)/]
           found[nutrient] ||= number(amount) unless nutrient.nil? || amount.nil?
         end
       end
