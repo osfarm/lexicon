@@ -97,6 +97,7 @@ module Lexicon
           input[type=text], input[type=url], input[type=date], select { font: inherit; padding: 0.35rem 0.6rem; border: 1px solid var(--rule);
                  border-radius: 8px; background: #fff; max-width: 100%; }
           .fields input { width: 100%; }
+          .fields input[type=checkbox] { width: auto; }
           button { font: inherit; font-weight: 700; padding: 0.5rem 1.1rem; border: 0; border-radius: 8px; background: var(--main);
                    color: #fff; cursor: pointer; }
           button.quiet { background: #fff; color: var(--main); border: 1px solid var(--main); padding: 0.25rem 0.7rem; }
