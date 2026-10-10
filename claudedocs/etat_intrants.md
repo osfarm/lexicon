@@ -37,6 +37,11 @@ Tout ce qui suit est commité en local sur `v2` (lexicon) et `feature/inputs` (l
   `agricultural-enterprises` devient `establishments` (changement visible des clients de `/links/communes`), les
   descriptions MCP de `get_commune` et `get_enterprise`, le titre de `/enterprises/enterprises`. L'identificateur de
   parcelle garde son nom : il filtre bien les codes APE 01.
+- **Outil de contribution en ligne (2026-10-10, commité, non poussé)** : Q10 est tranchée. L'outil est servi sous
+  `/contribute/outil` aux détenteurs d'une clé, par le service `contribute` de la pile, relayé par l'API ; un jeu proposé
+  reste sur le serveur et un mainteneur le rapatrie (`contribute --proposed`, `--fetch`). Essayé de bout en bout sur la
+  pile locale. **Pas déployé** : il faut publier l'API, créer le dossier des contributions sur le serveur et définir
+  `LEXICON_CONTRIBUTE_SECRET` dans Dokploy (`doc/PUBLICATION.md` §17).
 - **`cadastre_owners`** : `has_enterprise_pm_owner` marque 88 % des parcelles de personnes morales ; elle ne distingue
   plus les exploitations. Si le besoin était « propriétaire agricole », il faut un filtre sur les codes APE 01 à 03.
 - **`weather`** a été reconstruit mais pas empaqueté (217 millions de lignes, contenu a priori inchangé).
@@ -64,7 +69,7 @@ Tout ce qui suit est commité en local sur `v2` (lexicon) et `feature/inputs` (l
 |---|---|
 | Données en production | Toutes publiées et en service : `fuel_prices` .1, `phytosanitary_substances` .1, `fertilizers` .2, `seeds` .6, `phytosanitary_prices` .1, `taxonomy` .1, `seed_varieties` .2, `variants` .2, `prices` .1, et les jeux reconstruits (`productions`, `industry_sector`, `rd_agri`, `budgets`, `technical_workflows`, `technical_workflow_sequences`) en .1, toutes datées 2026.10.07 |
 | Seul jeu périmé en production | `agroedi` : absent du poste de build |
-| Code `lexicon`, branche `v2` | Tout est commité en local (7 commits d'avance sur `origin/v2` au 2026-10-10), **non poussé** |
+| Code `lexicon`, branche `v2` | Tout est commité en local (8 commits d'avance sur `origin/v2` au 2026-10-10), **non poussé** |
 | Code `lexicon-rest-api`, branche `feature/inputs` | Lot 6 et guide du contributeur commités en local, **ni poussés, ni fusionnés, ni déployés** |
 | Production, côté code | Le loader tourne sur `origin/v2` d'avant ce chantier ; l'API sur la version 1.4.3, sans `/inputs` |
 | Pile locale | En marche, alignée sur la production pour les données |

@@ -48,6 +48,7 @@ module Lexicon
           header { background: var(--ink); color: #fff; padding: 0.8rem 1.25rem; }
           header a { color: #fff; text-decoration: none; font-weight: 700; }
           header span { color: #b9d3d6; margin-left: 0.75rem; }
+          header a.leave { float: right; font-weight: 400; text-decoration: underline; }
           main { max-width: 64rem; margin: 0 auto; padding: 1.5rem 1.25rem 6rem; }
           h1 { font-size: 1.6rem; margin: 0 0 0.25rem; }
           h2 { font-size: 1.2rem; margin: 2.2rem 0 0.5rem; }
@@ -221,6 +222,8 @@ module Lexicon
               act('/detecter', { file: button.dataset.file }, tables, 'Lecture de ' + button.dataset.file + ' en cours… quelques secondes pour un gros tableau.')
             } else if (button.dataset.act === 'lu') {
               act('/lu', {}, ['import'])
+            } else if (button.dataset.act === 'proposer' || button.dataset.act === 'retirer') {
+              act('/' + button.dataset.act, {}, ['relecture'])
             } else if (button.dataset.act === 'yaml') {
               act('/fiche', { sheet: part('yaml').value }, everything.filter((id) => id !== 'yaml'), 'Enregistrement et relecture…')
             }
@@ -245,19 +248,20 @@ module Lexicon
           }, 2000)
         JS
 
-        # @param [Array<Hash>] datasets name, errors, warnings and unreadable of each dataset
-        # @param [Hash] context token, writable, root
+        # @param [Array<Hash>] datasets name, errors, warnings, unreadable and proposed of each dataset
+        # @param [Hash] context token, writable, root, prefix (path the pages are served under) and hosted
+        #   (served online to the holder of a key, who proposes a dataset from the page)
         # @param [String, nil] problem why the dataset asked for was not created
         # @return [String]
         def index(datasets, context, problem: nil)
-          layout('Proposer un jeu de données', <<~HTML)
+          layout('Proposer un jeu de données', <<~HTML, context: context)
             <h1>Proposer un jeu de données</h1>
             <p class="soft">Donnez un nom à votre jeu, déposez votre tableau (CSV, Excel ou LibreOffice) : ses colonnes sont
               reconnues, il reste à dire d'où il vient. <a href="#{GUIDE}">Le guide du contributeur</a> en dit plus.</p>
             <h2>Commencer un jeu</h2>
             #{context[:writable] ? creation(context, problem) : read_only}
             <h2>Vos jeux</h2>
-            #{datasets.empty? ? '<p>Aucun jeu pour le moment.</p>' : list(datasets)}
+            #{datasets.empty? ? '<p>Aucun jeu pour le moment.</p>' : list(datasets, context)}
           HTML
         end
 
@@ -269,10 +273,14 @@ module Lexicon
           parts = parts(dataset, context)
           opening = context[:writable] ? '<form class="sheet">' : '<div>'
 
-          layout(dataset[:name], <<~HTML, data: { fingerprint: dataset[:fingerprint], token: context[:token] }, script: true)
-            <p><a href="/">← Tous les jeux</a></p>
+          place = context[:hosted] ? 'Votre jeu est gardé sur le serveur du Lexicon.' : "Dossier <code>data/contributions/#{name}/</code>."
+
+          data = { fingerprint: dataset[:fingerprint], token: context[:token] }
+
+          layout(dataset[:name], <<~HTML, data: data, script: true, context: context)
+            <p><a href="#{home(context)}">← Tous les jeux</a></p>
             <h1>#{name}</h1>
-            <p class="soft">Dossier <code>data/contributions/#{name}/</code>. Tout s'enregistre et se relit au fur et à mesure.
+            <p class="soft">#{place} Tout s'enregistre et se relit au fur et à mesure.
               <span id="etat"></span></p>
             <div id="relecture">#{parts[:relecture]}</div>
             <h2 id="tableaux"><b>1</b>Vos tableaux</h2>
@@ -292,7 +300,7 @@ module Lexicon
         def parts(dataset, context)
           tables = dataset[:tables].each_with_index.map { |table, index| columns(table, index, context) }.join
 
-          { fingerprint: dataset[:fingerprint], relecture: verdict(dataset) + findings(dataset),
+          { fingerprint: dataset[:fingerprint], relecture: verdict(dataset, context) + findings(dataset),
             import: imported(dataset[:import], context), libres: loose(dataset[:loose], context), colonnes: tables,
             champs: dataset[:sheet] ? fields(dataset[:sheet]) : '<p>La fiche ne se lit pas : la corriger ci-dessous.</p>',
             yaml: dataset[:raw] }
@@ -304,8 +312,11 @@ module Lexicon
             CGI.escapeHTML(value.to_s)
           end
 
-          def layout(title, content, data: {}, script: false)
+          def layout(title, content, data: {}, script: false, context: {})
             attributes = data.map { |key, value| %( data-#{key}="#{e(value)}") }.join
+            where = context[:hosted] ? 'contribuer, en ligne' : 'contribuer, sur ce poste'
+            # Online, the key of the visitor is kept by the API, which also forgets it
+            leave = context[:hosted] ? %(<a class="leave" href="#{context[:prefix]}/sortir">Fermer l’outil</a>) : ''
 
             <<~HTML
               <!doctype html>
@@ -313,12 +324,17 @@ module Lexicon
               <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
               <title>#{e(title)} · Lexicon</title><style>#{STYLE}</style></head>
               <body#{attributes}>
-              <header><a href="/">Lexicon</a><span>contribuer, sur ce poste</span></header>
+              <header><a href="#{home(context)}">Lexicon</a><span>#{where}</span>#{leave}</header>
               <div id="busy" role="status"></div>
               <main>#{content}</main>
               #{script ? "<script>#{SCRIPT}</script>" : ''}
               </body></html>
             HTML
+          end
+
+          # @return [String] address of the list of datasets
+          def home(context)
+            "#{context[:prefix]}/"
           end
 
           def counted(count, singular, plural)
@@ -329,9 +345,10 @@ module Lexicon
             %(<input type="hidden" name="token" value="#{e(context[:token])}">)
           end
 
-          def list(datasets)
+          def list(datasets, context)
             rows = datasets.map do |dataset|
-              %(<tr><td><a href="/jeux/#{CGI.escape(dataset[:name])}">#{e(dataset[:name])}</a></td><td>#{status(dataset)}</td></tr>)
+              link = %(<a href="#{context[:prefix]}/jeux/#{CGI.escape(dataset[:name])}">#{e(dataset[:name])}</a>)
+              "<tr><td>#{link}</td><td>#{status(dataset)}</td></tr>"
             end
 
             %(<div class="scroll"><table><thead><tr><th>Jeu</th><th>Relecture</th></tr></thead><tbody>#{rows.join}</tbody></table></div>)
@@ -342,6 +359,8 @@ module Lexicon
               '<span class="status nok">fiche illisible</span>'
             elsif dataset[:errors].positive?
               %(<span class="status nok">#{counted(dataset[:errors], 'point', 'points')} à corriger</span>)
+            elsif dataset[:proposed]
+              %(<span class="status ok">proposé le #{e(dataset[:proposed])}</span>)
             else
               '<span class="status ok">peut être proposé</span>'
             end
@@ -350,7 +369,7 @@ module Lexicon
           def creation(context, problem)
             <<~HTML
               #{problem ? %(<p class="problem">#{e(problem)}</p>) : ''}
-              <form method="post" action="/jeux">
+              <form method="post" action="#{context[:prefix]}/jeux">
                 #{token(context)}
                 <label>Nom du jeu, en minuscules, sans accent ni espace :
                   <input type="text" name="name" placeholder="releves_sol" required pattern="[a-z][a-z0-9_]*"></label>
@@ -364,16 +383,36 @@ module Lexicon
               '<code>./lexicon new &lt;nom&gt; --tabular</code>.</p>'
           end
 
-          def verdict(dataset)
+          def verdict(dataset, context = {})
             if dataset[:unreadable]
               %(<div class="verdict nok">La fiche ne se lit pas<p>#{e(dataset[:unreadable])}</p></div>)
             elsif dataset[:errors].any?
               %(<div class="verdict nok">#{counted(dataset[:errors].size, 'point', 'points')} à corriger avant de proposer le jeu</div>)
+            elsif context[:hosted]
+              proposal(dataset)
             else
               <<~HTML
                 <div class="verdict ok">Le jeu peut être proposé (#{e(dataset[:proposal].join(', '))})
                   <p>Envoyer le dossier par une demande de fusion sur le dépôt, ou à un mainteneur d'OSFarm. Rien n'est mis
                     en service sans sa relecture.</p></div>
+              HTML
+            end
+          end
+
+          # Online, a dataset is proposed from its page: a maintainer then fetches it and builds it
+          def proposal(dataset)
+            if dataset[:proposed]
+              <<~HTML
+                <div class="verdict ok">Jeu proposé le #{e(dataset[:proposed])}
+                  <p>Un mainteneur d'OSFarm va le relire. Ce que vous changez encore ici lui parviendra aussi. Rien n'est mis
+                    en service sans sa relecture.</p>
+                  <button type="button" class="quiet" data-act="retirer">Retirer la proposition</button></div>
+              HTML
+            else
+              <<~HTML
+                <div class="verdict ok">Le jeu peut être proposé (#{e(dataset[:proposal].join(', '))})
+                  <p>Un mainteneur d'OSFarm le relira avant toute mise en service.</p>
+                  <button type="button" data-act="proposer">Proposer ce jeu</button></div>
               HTML
             end
           end

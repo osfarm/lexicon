@@ -103,6 +103,9 @@ Elle n'a besoin d'aucune base de données et ne publie rien.
 ./lexicon contribute --web
 ```
 
+Sur un poste qui n'a jamais servi au Lexicon, il suffit de Docker et du dépôt : voir
+[INSTALL.md](INSTALL.md), « Contribution tool only ».
+
 Dans une page, <http://localhost:8787>, sans écrire la fiche à la main :
 
 1. donner un nom au jeu ;
@@ -125,14 +128,31 @@ seule valeur ne suit pas la règle reste du texte, et rien n'y est changé.
 L'interface ne répond que sur le poste (`127.0.0.1`) et n'écrit que dans `data/contributions/`. Un autre port :
 `LEXICON_CONTRIBUTE_PORT=8800 ./lexicon contribute --web`.
 
+### En ligne, sans rien installer
+
+Le même outil est servi sur <https://lexicon.osfarm.org/contribute/outil> aux détenteurs d'une clé d'API du Lexicon.
+On y entre avec sa clé ; chaque clé a son espace, où l'on ne voit que ses propres jeux, gardés sur le serveur. Un
+tableau déposé y pèse au plus 50 Mo, et une clé garde au plus 20 jeux. Quand la relecture ne trouve plus rien à
+corriger, le bouton « Proposer ce jeu » le signale aux mainteneurs ; « Retirer la proposition » revient en arrière.
+
 ## 5. Proposer
 
 Quand la commande répond `[ OK ]`, envoyer le dossier : par une demande de fusion sur le dépôt, ou à un
-mainteneur d'OSFarm. Rien n'est mis en service sans sa relecture.
+mainteneur d'OSFarm. En ligne, le bouton « Proposer ce jeu » suffit. Rien n'est mis en service sans la relecture
+d'un mainteneur.
 
 ## Côté mainteneur
 
 Le dossier suffit : au démarrage, Lexicon en fait une datasource comme les autres (`./lexicon list` la montre).
+
+Un jeu proposé en ligne se rapatrie d'abord sur le poste, d'où il suit le même chemin :
+
+```sh
+./lexicon contribute --proposed --production               # ce qui est proposé : <espace>/<nom>, auteur, description
+./lexicon contribute --fetch ab12cd34/releves_sol --production   # le dossier arrive dans data/contributions/releves_sol/
+```
+
+Sans `--production`, les deux commandes regardent la pile de service locale (`out/contributions`).
 
 ```sh
 ./lexicon contribute releves_sol            # la relecture

@@ -3,7 +3,8 @@
 #   docker compose -f docker-compose.server.yml -f docker-compose.server.local.yml up -d
 #
 # Variables, read from .env: POSTGRES_PASSWORD, LEXICON_PACKAGES_DIR (the local repository, out/published),
-# LEXICON_API_USER and LEXICON_API_PASSWORD as in production, MISTRAL_API_KEY for Duke (optional).
+# LEXICON_API_USER and LEXICON_API_PASSWORD as in production, MISTRAL_API_KEY for Duke (optional),
+# LEXICON_CONTRIBUTE_SECRET for the contribution tool online (optional; it keeps its datasets in out/contributions).
 # The project name keeps this stack apart from the build stack of docker-compose-dev.yml, which also has a `db`.
 name: lexicon-server
 
@@ -25,6 +26,15 @@ services:
       - ./lexicon-cli:/lexicon/lexicon-cli:ro
       - ./resources:/lexicon/resources:ro
       - ./VERSION:/lexicon/VERSION:ro
+
+  contribute:
+    build:
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+    volumes:
+      - ./lib:/lexicon/lib:ro
+      - ./lexicon-cli:/lexicon/lexicon-cli:ro
 
   packages:
     ports:

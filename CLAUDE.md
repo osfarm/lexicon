@@ -40,6 +40,8 @@ docker compose -f docker-compose-dev.yml down     # Stop dev containers
 ./lexicon new <name> --tabular    # v2: print the sheet of a tabular contribution (data/contributions/<name>/dataset.yml)
 ./lexicon contribute <name>       # v2: review a tabular contribution and say, in French, what to correct (no database needed)
 ./lexicon contribute --web        # v2: the same review in a local web page (http://localhost:8787), read again as the files change
+./lexicon contribute --proposed [--production]  # v2: datasets proposed with the tool served online
+./lexicon contribute --fetch <workspace>/<name> [--production]  # v2: bring one into data/contributions/<name>
 ./lexicon ship [names] [--production] [--no-build]  # v2: check, run, check, package, publish locally, wait for the loader; then production
 ./lexicon server sync [names]     # v2: put packages in service in the serving database (name or name@version)
 ./lexicon server sync a b --together  # v2: swap several packages in one transaction (all or none)
@@ -225,6 +227,11 @@ source and licence, columns with their types, key, pivots) and CSV files is a da
 nothing of sockets, `Pages` writes the HTML, `Server` is a small HTTP server on the standard library). The wrapper
 runs it in a container of its own, which publishes port 8787 on 127.0.0.1 and mounts `data/contributions` writable;
 every change asks for the token of the page, and a host name other than localhost is refused.
+The same tool is served online under `/contribute/outil` of the API (`doc/PUBLICATION.md` §17): the `contribute` service
+of the serving stack runs `./lexicon-cli contribute --web --hosted` (`Contribution::Web::Hosted`), which answers the API
+only (shared secret `LEXICON_CONTRIBUTE_SECRET`), keeps one directory per API key prefix and lets a contributor mark a
+dataset as proposed; `Contribution::Inbox` lists and fetches those from a maintainer's machine. Nothing proposed online
+is built by the server.
 A table dropped there goes through `Contribution::Import`: it reads CSV of any separator and encoding, Excel and
 LibreOffice (Roo), names the columns, guesses their types, rewrites the values the way those types are read, picks
 the key and the pivots, and says in French what it did; a column of codes stays text, a mixed column too.

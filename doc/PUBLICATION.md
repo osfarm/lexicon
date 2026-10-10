@@ -523,3 +523,39 @@ docker compose -f docker-compose.server.yml -f docker-compose.server.local.yml e
 Pour partir des données publiées, copier les packages publics de
 `https://lexicon-packages.osfarm.org` dans `out/published` : le loader les met
 en service à son passage suivant.
+
+## 17. Outil de contribution en ligne
+
+L'outil de `./lexicon contribute --web` est aussi servi sur le site, sous
+`/contribute/outil`, aux détenteurs d'une clé d'API. C'est le même code : le
+service `contribute` de `docker-compose.server.yml` le fait tourner avec
+`./lexicon-cli contribute --web --hosted`, et l'API le relaie.
+
+| Qui | Fait quoi |
+|---|---|
+| API (`lexicon-rest-api`) | Demande la clé, la garde dans un cookie limité à `/contribute/outil`, vérifie qu'elle est valable à chaque requête, puis relaie au service avec le préfixe de la clé comme nom d'espace |
+| Service `contribute` | Ne répond qu'à l'API : il est sur le réseau interne et refuse une requête sans le secret partagé. Un dossier par espace, un dossier par jeu |
+| Contributeur | Dépose son tableau, remplit la fiche, clique « Proposer ce jeu » : un fichier `proposed` daté est écrit dans le dossier du jeu |
+| Mainteneur | `./lexicon contribute --proposed --production`, puis `--fetch <espace>/<nom> --production` : le dossier arrive dans `data/contributions/`, où il est relu, construit et publié comme un autre |
+
+Rien de ce qui est déposé en ligne n'est construit ni mis en service par le
+serveur. Plafonds : 50 Mo par tableau, 20 jeux par clé.
+
+### Mise en place sur le serveur
+
+1. Créer le dossier qui garde les contributions, appartenant à l'utilisateur
+   de l'image (uid 1000), hors du dépôt de packages que sert le serveur de
+   fichiers : par défaut `contributions` à côté de `LEXICON_PACKAGES_DIR`,
+   sinon `LEXICON_CONTRIBUTIONS_DIR`.
+2. Dans Dokploy, définir `LEXICON_CONTRIBUTE_SECRET` (une longue chaîne au
+   hasard, par exemple `openssl rand -hex 24`) et redéployer la pile. Sans ce
+   secret, le service attend sans rien faire et la page dit que l'outil n'est
+   pas disponible.
+3. Sur le poste du mainteneur, dans `.env` :
+   `LEXICON_PRODUCTION_CONTRIBUTIONS_TARGET=osfarm_lexicon:lexicon/contributions`, par exemple
+   (le dossier du serveur, comme rsync le nomme).
+
+En local, `LEXICON_CONTRIBUTE_SECRET` dans `.env` suffit : la pile de service
+locale garde les contributions dans `out/contributions`, que les commandes
+`--proposed` et `--fetch` lisent sans `--production`
+(`LEXICON_CONTRIBUTIONS_TARGET` pour un autre dossier).

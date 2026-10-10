@@ -34,4 +34,13 @@ then
     lexicon_runner ./lexicon-cli "$@"
 fi
 
+# Bringing in a dataset proposed online writes in data/contributions too
+if [[ "$1" == "contribute" && " $* " == *" --fetch "* ]];
+then
+  mkdir -p data/contributions
+  exec docker compose -f docker-compose-dev.yml run --rm \
+    -v "$PWD/data/contributions:/lexicon/data/contributions:rw" \
+    lexicon_runner ./lexicon-cli "$@"
+fi
+
 exec docker compose -f docker-compose-dev.yml exec lexicon_runner ./lexicon-cli "$@"

@@ -55,6 +55,13 @@ module Lexicon
         raise TransferError.new(error.strip)
       end
 
+      # @param [String] source directory whose content is brought back
+      # @param [Pathname, String] destination
+      # @param [Array<String>] filters rsync include and exclude rules, in order
+      def fetch_directory(source, destination, filters: [])
+        run('-a', "--timeout=#{IO_TIMEOUT}", *filters, "#{source}/", "#{destination}/")
+      end
+
       # @param [Pathname, String] source
       # @param [String] destination
       # @return [Array<String>] files whose content differs or that are missing at the destination

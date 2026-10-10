@@ -51,6 +51,9 @@ Each datasource has its own package and its own version (`YYYY.MM.DD.N`). See [P
 - `./lexicon new <datasource>` Prints the skeleton of a new datasource.
 - `./lexicon new <name> --tabular` Prints the sheet of a tabular contribution, for `data/contributions/<name>/dataset.yml`. See [CONTRIBUER_UN_TABLEAU.md](CONTRIBUER_UN_TABLEAU.md).
 - `./lexicon contribute <name>` Reviews the tabular contribution of `data/contributions/<name>/` and says, in French, what its author has to correct. Needs no database and publishes nothing.
+- `./lexicon contribute --web` Serves that review in a local web page, http://localhost:8787, where a table is dropped and its sheet filled in a form.
+- `./lexicon contribute --proposed [--production]` Lists the datasets contributors proposed with the tool served online: workspace, name, author, description.
+- `./lexicon contribute --fetch <workspace>/<name> [--production] [--force]` Brings one of them into `data/contributions/<name>/`.
 - `./lexicon fetch <url> [--to dir]` Downloads a bundle served by the API, with the key in `LEXICON_API_KEY`.
 
 ## Serving side commands

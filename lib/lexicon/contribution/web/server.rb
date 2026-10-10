@@ -13,13 +13,18 @@ module Lexicon
         REASONS = { 200 => 'OK', 303 => 'See Other', 400 => 'Bad Request', 403 => 'Forbidden', 404 => 'Not Found',
                     413 => 'Payload Too Large', 422 => 'Unprocessable Entity', 500 => 'Internal Server Error' }.freeze
 
-        # @param [App] app
+        # Online, where the server is shared
+        HOSTED_MAXIMUM_BODY = 50 * 1024 * 1024
+
+        # @param [#call] app
         # @param [String] host
         # @param [Integer] port
-        def initialize(app, host:, port:)
+        # @param [Integer] maximum_body
+        def initialize(app, host:, port:, maximum_body: MAXIMUM_BODY)
           @app = app
           @host = host
           @port = port
+          @maximum_body = maximum_body
         end
 
         # Serves until interrupted.
@@ -57,7 +62,7 @@ module Lexicon
               headers[name.strip.downcase] = value.to_s.strip
             end
             length = headers['content-length'].to_i
-            return 413 if length > MAXIMUM_BODY
+            return 413 if length > @maximum_body
 
             App::Request.new(verb: verb, path: path, headers: headers, body: length.positive? ? client.read(length) : '')
           end

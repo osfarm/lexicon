@@ -2,6 +2,7 @@
 
 require 'csv'
 require 'digest'
+require 'fileutils'
 require 'json'
 require 'securerandom'
 require 'uri'
@@ -20,6 +21,10 @@ module Lexicon
         TOKEN_HEADER = 'x-lexicon-token'
         # Tables whose review is kept
         MEMORISED = 200
+        # Online, what the holder of a key may keep on the server
+        HOSTED_DATASETS = 20
+        # File that marks a dataset as proposed to the maintainers; it holds the date
+        PROPOSED = 'proposed'
         SHEET_FIELDS = %w[description author personal_data].freeze
         SOURCE_FIELDS = %w[name url provider licence licence_url date].freeze
 
@@ -30,9 +35,14 @@ module Lexicon
         # @param [Array<String>] taken names of the datasources that already exist
         # @param [String] token
         # @param [Pathname, nil] raw root of the raw directories, where a large table is kept
-        def initialize(root:, taken: [], token: SecureRandom.hex(16), raw: nil)
+        # @param [String] prefix path the pages are served under, when a proxy stands in front
+        # @param [Boolean] hosted served online to the holder of a key (see Hosted): any host name is answered,
+        #   and a dataset is proposed from its page
+        def initialize(root:, taken: [], token: SecureRandom.hex(16), raw: nil, prefix: '', hosted: false)
           @root = root
           @raw = raw
+          @prefix = prefix.chomp('/')
+          @hosted = hosted
           @taken = taken
           @token = token
           @pages = Pages.new
@@ -45,7 +55,7 @@ module Lexicon
         # @param [Request] request
         # @return [Response]
         def call(request)
-          return text(403, 'Cette interface ne répond que sur ce poste.') unless local?(request)
+          return text(403, 'Cette interface ne répond que sur ce poste.') unless @hosted || local?(request)
 
           segments = request.path.split('?').first.split('/').reject(&:empty?).map { |segment| URI.decode_www_form_component(segment) }
           return refused if request.verb != 'GET' && !allowed?(request)
@@ -79,11 +89,13 @@ module Lexicon
             when ['POST', 'detecter', 3] then detect(dir, form(request)['file'].to_s)
             when ['POST', 'lu', 3] then read(dir)
             when ['PUT', 'fichiers', 4] then answer_import(dir, file, request.body)
+            when ['POST', 'proposer', 3] then propose(dir, true)
+            when ['POST', 'retirer', 3] then propose(dir, false)
             end
           end
 
           def context
-            { token: @token, writable: writable?, root: @root }
+            { token: @token, writable: writable?, root: @root, prefix: @prefix, hosted: @hosted }
           end
 
           # The name of a host is checked so that another site cannot reach this one under its own name
@@ -131,12 +143,34 @@ module Lexicon
                         "« #{name} » : le nom d'un jeu est en minuscules, sans accent ni espace, comme releves_sol."
                       elsif @taken.include?(name) || @root.join(name).exist?
                         "Un jeu s'appelle déjà « #{name} »."
+                      elsif @hosted && datasets.size >= HOSTED_DATASETS
+                        "Vous avez déjà #{HOSTED_DATASETS} jeux ici : en retirer un, ou écrire à OSFarm."
                       end
             return html(@pages.index(summaries, context, problem: problem), status: 422) if problem
 
             @root.join(name).mkpath
             Sheet.write(@root.join(name), Scaffold.new.blank)
-            redirect("/jeux/#{name}")
+            redirect("#{@prefix}/jeux/#{name}")
+          end
+
+          # Online only, and only for a dataset the review accepts: the maintainers look for this mark
+          def propose(dir, proposed)
+            return nil unless @hosted
+
+            mark = dir.join(PROPOSED)
+            if !proposed
+              FileUtils.rm_f(mark)
+            elsif review_of(dir)[:errors].empty? && review_of(dir)[:unreadable].nil?
+              mark.write("#{Time.now.utc.strftime('%Y-%m-%d')}\n")
+            end
+            live(dir)
+          end
+
+          # @return [String, nil] the day the dataset was proposed
+          def proposed(dir)
+            mark = dir.join(PROPOSED)
+
+            mark.file? ? mark.read.strip[0, 10] : nil
           end
 
           # The parts of the page of a dataset, for the page to replace them where it stands
@@ -235,7 +269,8 @@ module Lexicon
           def summary(dir)
             review = review_of(dir)
 
-            { name: dir.basename.to_s, errors: review[:errors].size, warnings: review[:warnings].size, unreadable: review[:unreadable] }
+            { name: dir.basename.to_s, errors: review[:errors].size, warnings: review[:warnings].size, unreadable: review[:unreadable],
+              proposed: proposed(dir) }
           end
 
           # @return [Hash] everything the page of a dataset shows
@@ -245,7 +280,8 @@ module Lexicon
 
             review.merge(name: dir.basename.to_s, raw: dir.join(Sheet::FILE).read(encoding: 'bom|utf-8').scrub,
                          tables: tables.map { |table| table.to_h.merge(preview: preview(review[:sheet].path(table))) },
-                         loose: loose(dir, tables.map(&:file)), import: @imports[dir.basename.to_s], fingerprint: fingerprint(dir))
+                         loose: loose(dir, tables.map(&:file)), import: @imports[dir.basename.to_s], fingerprint: fingerprint(dir),
+                         proposed: proposed(dir))
           end
 
           # @return [Array<String>] files of the directory that could be tables and that the sheet does not describe

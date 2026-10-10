@@ -184,9 +184,20 @@ module Lexicon
     method_option :web, type: :boolean, default: false,
                         desc: 'Open the local web interface instead: every contribution, read again as its files change'
     method_option :port, type: :numeric, default: 8787, desc: 'Port the web interface listens on'
+    method_option :hosted, type: :boolean, default: false,
+                           desc: 'With --web, on the serving side: answer the API only, one workspace per API key'
+    method_option :proposed, type: :boolean, default: false, desc: 'List the datasets proposed online'
+    method_option :fetch, type: :string, banner: 'WORKSPACE/NAME',
+                          desc: 'Bring a dataset proposed online into data/contributions/NAME'
+    method_option :production, type: :boolean, default: false,
+                               desc: 'With --proposed or --fetch: look at LEXICON_PRODUCTION_CONTRIBUTIONS_TARGET'
+    method_option :force, type: :boolean, default: false, desc: 'With --fetch: replace the dataset already there'
 
     def contribute(name = nil)
+      return contribute_online if options['web'] && options['hosted']
       return contribute_on_the_web if options['web']
+      return proposed_contributions if options['proposed']
+      return fetch_contribution(options['fetch']) if options['fetch']
 
       if name.nil?
         puts '[ NOK ] '.red + 'Quel jeu relire ? ./lexicon contribute <nom>, ou ./lexicon contribute --web pour l’interface web.'
@@ -227,6 +238,56 @@ module Lexicon
         puts "Interface de contribution : #{address.green}  (Ctrl-C pour l'arrêter)"
         puts 'Le dossier des contributions est en lecture seule : la relecture seule est proposée.' unless app.writable?
         Contribution::Web::Server.new(app, host: ENV.fetch('LEXICON_CONTRIBUTE_BIND', '0.0.0.0'), port: options['port']).run
+      end
+
+      # The same interface on the serving side: the API relays to it the holders of a key
+      def contribute_online
+        root = Pathname.new(ENV.fetch('LEXICON_CONTRIBUTIONS_ROOT') { raise Thor::Error.new('LEXICON_CONTRIBUTIONS_ROOT is not set') })
+        app = Contribution::Web::Hosted.new(
+          root: root, secret: ENV.fetch('LEXICON_CONTRIBUTE_SECRET', ''), taken: get('datasource.all').keys.map(&:to_s),
+          prefix: ENV.fetch('LEXICON_CONTRIBUTE_PREFIX', '/contribute/outil')
+        )
+
+        puts "Contributions kept in #{root}, served to the API on port #{options['port']}"
+        Contribution::Web::Server.new(app, host: '0.0.0.0', port: options['port'],
+                                           maximum_body: Contribution::Web::Server::HOSTED_MAXIMUM_BODY).run
+      rescue ArgumentError => e
+        raise Thor::Error.new("#{e.message}: set LEXICON_CONTRIBUTE_SECRET, the same as the API")
+      end
+
+      def contribution_inbox
+        variable = options['production'] ? 'LEXICON_PRODUCTION_CONTRIBUTIONS_TARGET' : 'LEXICON_CONTRIBUTIONS_TARGET'
+        target = ENV.fetch(variable) do
+          raise Thor::Error.new("#{variable} is not set") if options['production']
+
+          get('parameter.root').join('out', 'contributions').to_s
+        end
+        puts "Contributions: #{target.yellow}#{' (production)' if options['production']}"
+
+        Contribution::Inbox.new(target: target)
+      end
+
+      def proposed_contributions
+        proposed = contribution_inbox.proposed
+        puts 'Aucun jeu proposé.' if proposed.empty?
+        proposed.each do |entry|
+          puts "#{"#{entry[:workspace]}/#{entry[:name]}".yellow}  proposé le #{entry[:proposed_on]}  #{entry[:author]}"
+          puts "    #{entry[:description]}" unless entry[:description].nil?
+        end
+        return if proposed.empty?
+
+        puts "\nPour en rapatrier un : ./lexicon contribute --fetch <espace>/<nom>#{' --production' if options['production']}"
+      rescue Packaging::Rsync::TransferError => e
+        raise Thor::Error.new(e.message)
+      end
+
+      def fetch_contribution(designation)
+        workspace, name = designation.to_s.split('/', 2)
+        dir = contribution_inbox.fetch(workspace, name, into: get('parameter.contributions.root'), force: options['force'])
+
+        puts '[  OK ] '.green + "#{name} est dans #{dir}. Le relire : ./lexicon contribute #{name}"
+      rescue ArgumentError, Packaging::Rsync::TransferError, SystemCallError => e
+        raise Thor::Error.new(e.message)
       end
     end
 

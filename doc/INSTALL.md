@@ -6,6 +6,8 @@
 - [Requirements](#requirements)
 - [Additional configuration for Docker](#additional-configuration-for-docker)
 - [Finally](#finally)
+- [Contribution tool only](#contribution-tool-only)
+- [Local serving stack](#local-serving-stack)
 - [Bonus](#bonus)
     - [S3 Storage](#s3-storage)
     - [Ekylibre database (_production_ commands)](#ekylibre-database-_production_-commands)
@@ -70,6 +72,25 @@ touch .env
 docker compose build --pull
 docker compose up
 ```
+
+## Contribution tool only
+To propose a dataset that fits in tables, nothing else than Git, Docker and the repository is needed: no data to
+download, no serving stack.
+
+```bash
+git clone https://github.com/osfarm/lexicon.git
+cd lexicon
+cp .env.dist .env
+./lexicon contribute --web
+```
+
+The first run builds the images, which takes a while, and starts the build database, which the tool does not use.
+The tool is then on http://localhost:8787: it answers on this machine only and writes in `data/contributions/`.
+`Ctrl-C` stops it; `LEXICON_CONTRIBUTE_PORT=8800 ./lexicon contribute --web` takes another port. What to do in
+the page is told, in French, in [CONTRIBUER_UN_TABLEAU.md](CONTRIBUER_UN_TABLEAU.md).
+
+Nothing to install at all: the same tool is served online, to the holders of an API key, on
+https://lexicon.osfarm.org/contribute/outil. How it is deployed: [PUBLICATION.md](PUBLICATION.md), §17.
 
 ## Local serving stack
 A package is tried on the machine before it goes to the server. `docker-compose.server.local.yml` runs the

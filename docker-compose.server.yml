@@ -16,6 +16,11 @@
 #   LEXICON_BACKUP_SECRET_KEY   secret key
 #   LEXICON_BACKUP_INTERVAL     seconds between two copies (default: 86400)
 #
+# Optional, for the contribution tool served online under /contribute/outil (the `contribute` service idles without):
+#   LEXICON_CONTRIBUTE_SECRET   secret shared by the API and the tool; any long random string
+#   LEXICON_CONTRIBUTIONS_DIR   directory of the host keeping what contributors propose (default: `contributions`
+#                               beside the packages). It must exist and belong to the user of the image (uid 1000)
+#
 # Domains are attached in Dokploy to `api` (port 8888) and `packages` (port 80).
 
 services:
@@ -160,6 +165,28 @@ services:
     networks:
       - lexicon
 
+  # The contribution tool, served online. It answers the API only, which checks the key of the visitor and names
+  # their workspace: it is on the internal network, and refuses a request that does not carry the shared secret.
+  contribute:
+    build:
+      context: .
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        if [ -z "$$LEXICON_CONTRIBUTE_SECRET" ]; then
+          echo "contribute: LEXICON_CONTRIBUTE_SECRET is not set, nothing to do"
+          exec sleep infinity
+        fi
+        exec ./lexicon-cli contribute --web --hosted
+    environment:
+      LEXICON_CONTRIBUTE_SECRET: ${LEXICON_CONTRIBUTE_SECRET:-}
+      LEXICON_CONTRIBUTIONS_ROOT: /contributions
+    volumes:
+      - ${LEXICON_CONTRIBUTIONS_DIR:-${LEXICON_PACKAGES_DIR:?}/../contributions}:/contributions
+    networks:
+      - lexicon
+
   api:
     image: ghcr.io/osfarm/lexicon-rest-api:latest
     # The tag moves with each release of the API: without this, a redeployment keeps the image already pulled
@@ -180,6 +207,9 @@ services:
       # Duke, the assistant of /tools/assistant: without a key the tool shows as unavailable
       ASSISTANT_API_KEY: ${ASSISTANT_API_KEY:-}
       ASSISTANT_MODEL: ${ASSISTANT_MODEL:-ministral-8b-latest}
+      # The contribution tool of /contribute/outil: without a secret the page shows it as unavailable
+      CONTRIBUTE_URL: http://contribute:8787
+      CONTRIBUTE_SECRET: ${LEXICON_CONTRIBUTE_SECRET:-}
     volumes:
       - ${LEXICON_PACKAGES_DIR:?}/_bundles:/bundles:ro
     depends_on:
