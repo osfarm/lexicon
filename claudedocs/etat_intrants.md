@@ -43,6 +43,13 @@ Tout ce qui suit est commité en local sur `v2` (lexicon) et `feature/inputs` (l
   pile locale. **Pas déployé** : il faut publier l'API, créer le dossier des contributions sur le serveur et définir
   `LEXICON_CONTRIBUTE_SECRET` dans Dokploy (`doc/PUBLICATION.md` §17). Gros tableaux (commité le 2026-10-10, non poussé) : envoi par morceaux
   de 4 Mo et lecture en arrière-plan, essayés avec les 43 Mo d'`alim_confiance` à travers l'API locale.
+- **Outils de l'API (2026-10-10, lexicon-rest-api)** : identificateur de parcelle et Duke refaits (commité), puis, **non
+  commité** : documentation `/documentation` complétée (63 routes), identificateur enrichi (eau à proximité, bâtiments,
+  prix et produit brut de la culture, usages phytosanitaires, documents de R&D, itinéraires techniques), pages
+  `/phytosanitary/usages` et `/production/technical-workflows`, et côté MCP les outils `get_parcel`, `get_crop_figures`,
+  `search_phytosanitary_products` avec des tableaux compacts pour `read_resource`. Dix-sept jeux en service ne sont
+  encore lus par aucune route (budgets, taxonomie, unités, signes de qualité, stades phénologiques, `alim_confiance`…).
+  Le même jour, la fiche lit davantage du paquet `hydrography` (BD TOPO) : habitations à moins de 100 m et la plus proche, mètres de haie en bordure, bois, vignes et vergers sur la parcelle ou à moins de 100 m, emprise au sol des bâtiments, et les points d'eau ponctuels (sources, fontaines) que la recherche d'eau ignorait. Le paquet ne garde ni la permanence ni la largeur des cours d'eau, jusqu'à l'édition suivante : `hydrography` 2026.10.10.1 (BD TOPO 3.5 du 2026-09-15, en service en local seulement) garde le statut des cours d'eau (police de l'eau, permanent, fossé, largeur), le nombre de logements et l'état des bâtiments, la hauteur des haies, et ajoute sites sensibles, espaces protégés, forêts publiques et lignes électriques (`doc/datasources/hydrography.md`). La fiche et `get_parcel` les lisent. Les propriétaires de la fiche ne dépendent plus de `EXPOSE_OWNERS` (variable retirée, y compris de `docker-compose.yml`) : une clé d'adhérent suffit, un anonyme lit « réservé aux adhérents », et une parcelle sans personne morale le dit.
 - **`cadastre_owners`** : `has_enterprise_pm_owner` marque 88 % des parcelles de personnes morales ; elle ne distingue
   plus les exploitations. Si le besoin était « propriétaire agricole », il faut un filtre sur les codes APE 01 à 03.
 - **`weather` (2026-10-10, commité, non poussé)** : Météo-France a déplacé ses fichiers horaires ; l'ancienne adresse

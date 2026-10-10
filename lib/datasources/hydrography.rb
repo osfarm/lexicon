@@ -1,38 +1,63 @@
 module Datasources
   class Hydrography < Base
-    LAST_UPDATED = "2024-09-15"
-    description 'hydro data from IGN (national BD TOPO GeoPackage)'
-    credits name: 'BD TOPO Hydrographie',
-            url: "https://geoservices.ign.fr/documentation/diffusion/telechargement-donnees-libres.html#bd-topo",
+    LAST_UPDATED = "2026-09-15"
+    description 'water, buildings, hedges, vegetation, sensitive sites, protected areas and power lines from IGN (national BD TOPO GeoPackage)'
+    credits name: 'BD TOPO',
+            url: "https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_BD-TOPO",
             provider: "IGN",
             licence: "Open Licence",
             licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
             updated_at: LAST_UPDATED
 
-    # BD TOPO Hydrographie is provided manually as one GeoPackage per layer:
-    # drop each `<layer>.gpkg` file into `raw/hydrography/` (e.g.
-    # `surface_hydrographique.gpkg`, `batiment.gpkg`, ...).
+    schema_revision 1
+
+    # The BD TOPO comes as one archive for metropolitan France, holding one
+    # GeoPackage per layer: extract each `<layer>.gpkg` named below into
+    # `raw/hydrography/` (see doc/datasources/hydrography.md).
     SCHEMA = 'hydrography'.freeze
 
-    WATER_LAYERS = %w(surface_hydrographique detail_hydrographique troncon_hydrographique cours_d_eau plan_d_eau).freeze
-    BUILDING_LAYERS = %w(batiment pylone).freeze
-    AREA_LAYERS = %w(haie zone_de_vegetation).freeze
-    LAYERS = (WATER_LAYERS + BUILDING_LAYERS + AREA_LAYERS).freeze
+    # The columns read from each layer: a layer is loaded with these alone
+    LAYERS = {
+      'surface_hydrographique' => %w(cleabs nature persistance position_par_rapport_au_sol etat_de_l_objet
+                                     cpx_toponyme_de_plan_d_eau cpx_toponyme_de_cours_d_eau cpx_toponyme_d_entite_de_transition),
+      'detail_hydrographique' => %w(cleabs nature toponyme),
+      'troncon_hydrographique' => %w(cleabs nature persistance fosse classe_de_largeur inventaire_police_de_l_eau
+                                     position_par_rapport_au_sol etat_de_l_objet
+                                     cpx_toponyme_de_cours_d_eau cpx_toponyme_d_entite_de_transition),
+      'cours_d_eau' => %w(cleabs toponyme caractere_permanent),
+      'plan_d_eau' => %w(cleabs nature toponyme caractere_permanent),
+      'batiment' => %w(cleabs nature usage_1 usage_2 construction_legere etat_de_l_objet nombre_de_logements hauteur),
+      'pylone' => %w(cleabs),
+      'haie' => %w(cleabs hauteur largeur),
+      'zone_de_vegetation' => %w(cleabs nature),
+      'zone_d_activite_ou_d_interet' => %w(cleabs categorie nature nature_detaillee toponyme etat_de_l_objet),
+      'parc_ou_reserve' => %w(cleabs nature toponyme),
+      'foret_publique' => %w(cleabs nature toponyme),
+      'ligne_electrique' => %w(cleabs voltage etat_de_l_objet)
+    }.freeze
+
+    # Places where vulnerable people stay, near which treatments are restricted:
+    # schools, hospitals, homes for the elderly and for disabled people
+    SENSITIVE_NATURES = [
+      'Enseignement primaire', 'Collège', 'Lycée', "Autre établissement d'enseignement",
+      "Structure d'accueil pour personnes handicapées",
+      'Maison de retraite', 'Hôpital', 'Etablissement hospitalier', 'Résidence autonomie'
+    ].freeze
 
     def collect
-      missing = LAYERS.reject { |layer| File.exist?(gpkg_path_for(layer)) }
+      missing = LAYERS.keys.reject { |layer| File.exist?(gpkg_path_for(layer)) }
       unless missing.empty?
         raise "Missing GeoPackage file(s) in #{dir}: #{missing.map { |l| "#{l}.gpkg" }.join(', ')}"
       end
 
-      LAYERS.each { |layer| logger.debug "Found GeoPackage: #{gpkg_path_for(layer)}" }
+      LAYERS.each_key { |layer| logger.debug "Found GeoPackage: #{gpkg_path_for(layer)}" }
     end
 
     def load
       database.ensure_schema(SCHEMA)
       conn = pg_connection_string
 
-      LAYERS.each do |layer|
+      LAYERS.each do |layer, columns|
         path = gpkg_path_for(layer)
         raise "Missing GeoPackage file: #{path}" unless File.exist?(path)
 
@@ -41,6 +66,7 @@ module Datasources
           ogr2ogr \
             -f PostgreSQL "#{conn}" \
             -overwrite \
+            -select #{columns.join(',')} \
             -lco SCHEMA=#{SCHEMA} \
             -lco GEOMETRY_NAME=geom \
             -lco FID=ogc_fid \
@@ -59,7 +85,13 @@ module Datasources
           reference_name character varying,
           nature character varying,
           shape postgis.geometry(MultiPolygon, 4326) NOT NULL,
-          centroid postgis.geometry(Point, 4326)
+          centroid postgis.geometry(Point, 4326),
+          kind character varying,
+          secondary_nature character varying,
+          dwellings_count integer,
+          height numeric(6,2),
+          light boolean,
+          state character varying
         );
         CREATE INDEX registered_cadastral_buildings_id ON registered_cadastral_buildings(id);
         CREATE INDEX registered_cadastral_buildings_reference_name ON registered_cadastral_buildings(reference_name);
@@ -75,7 +107,10 @@ module Datasources
           point postgis.geometry(Point,4326),
           shape postgis.geometry(MultiPolygon,4326),
           lines postgis.geometry(MultiLineString,4326),
-          centroid postgis.geometry(Point, 4326)
+          centroid postgis.geometry(Point, 4326),
+          kind character varying,
+          height numeric(6,2),
+          width numeric(6,2)
         );
         CREATE INDEX registered_area_items_id ON registered_area_items(id);
         CREATE INDEX registered_area_items_nature ON registered_area_items(nature);
@@ -93,7 +128,13 @@ module Datasources
           point postgis.geometry(Point,4326),
           shape postgis.geometry(MultiPolygon,4326),
           lines postgis.geometry(MultiLineString,4326),
-          centroid postgis.geometry(Point, 4326)
+          centroid postgis.geometry(Point, 4326),
+          permanent boolean,
+          persistence character varying,
+          ditch boolean,
+          width_class character varying,
+          water_police character varying,
+          underground boolean
         );
         CREATE INDEX registered_hydrographic_items_nature ON registered_hydrographic_items(nature);
         CREATE INDEX registered_hydrographic_items_shape ON registered_hydrographic_items USING GIST (shape);
@@ -104,64 +145,89 @@ module Datasources
     end
 
     def normalize
+      # A geometry is kept whole: dumping its parts under one id kept the first part only
+      whole = 'postgis.ST_Multi(postgis.ST_Force2D(geom))'
+      name_of = ->(column) { "CASE WHEN #{column} IS NOT NULL THEN jsonb_build_object('fra', #{column}) END" }
+      # Persistance of the BD TOPO: Permanent, Intermittent, Sec, Ephémère, Inconnue
+      permanent = "CASE WHEN persistance = 'Permanent' THEN true WHEN persistance IN ('Intermittent', 'Sec', 'Ephémère') THEN false END"
+      underground = "CASE WHEN position_par_rapport_au_sol ~ '^-?[0-9]+$' THEN position_par_rapport_au_sol::integer < 0 END"
+
       logger.debug "Load Water layers into registered_hydrographic_items..."
       query("INSERT INTO registered_hydrographic_items (id, name, nature, point)
-      SELECT CONCAT(cleabs, '_fra'),
-      CASE WHEN toponyme IS NOT NULL THEN jsonb_build_object('fra', toponyme) END,
+      SELECT CONCAT(cleabs, '_fra'), #{name_of.call('toponyme')},
       nature, (postgis.ST_Dump(postgis.ST_Force2D(geom))).geom
       FROM #{SCHEMA}.detail_hydrographique ON CONFLICT DO NOTHING")
 
-      query("INSERT INTO registered_hydrographic_items (id, name, nature, shape)
+      query("INSERT INTO registered_hydrographic_items (id, name, nature, shape, permanent, persistence, underground)
       SELECT CONCAT(cleabs, '_fra'),
-      CASE WHEN COALESCE(cpx_toponyme_de_plan_d_eau, cpx_toponyme_de_cours_d_eau, cpx_toponyme_d_entite_de_transition) IS NOT NULL
-        THEN jsonb_build_object('fra', COALESCE(cpx_toponyme_de_plan_d_eau, cpx_toponyme_de_cours_d_eau, cpx_toponyme_d_entite_de_transition))
-      END,
-      nature, postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
-      FROM #{SCHEMA}.surface_hydrographique ON CONFLICT DO NOTHING")
+      #{name_of.call('COALESCE(cpx_toponyme_de_plan_d_eau, cpx_toponyme_de_cours_d_eau, cpx_toponyme_d_entite_de_transition)')},
+      nature, #{whole}, #{permanent}, persistance, #{underground}
+      FROM #{SCHEMA}.surface_hydrographique
+      WHERE etat_de_l_objet = 'En service' ON CONFLICT DO NOTHING")
 
-      query("INSERT INTO registered_hydrographic_items (id, name, nature, lines)
+      query("INSERT INTO registered_hydrographic_items
+        (id, name, nature, lines, permanent, persistence, ditch, width_class, water_police, underground)
       SELECT CONCAT(cleabs, '_fra'),
-      CASE WHEN COALESCE(cpx_toponyme_de_cours_d_eau, cpx_toponyme_d_entite_de_transition) IS NOT NULL
-        THEN jsonb_build_object('fra', COALESCE(cpx_toponyme_de_cours_d_eau, cpx_toponyme_d_entite_de_transition))
-      END,
-      nature, postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
-      FROM #{SCHEMA}.troncon_hydrographique ON CONFLICT DO NOTHING")
+      #{name_of.call('COALESCE(cpx_toponyme_de_cours_d_eau, cpx_toponyme_d_entite_de_transition)')},
+      nature, #{whole}, #{permanent}, persistance, fosse,
+      NULLIF(NULLIF(classe_de_largeur, 'Sans objet'), 'En attente de mise à jour'),
+      inventaire_police_de_l_eau, #{underground}
+      FROM #{SCHEMA}.troncon_hydrographique
+      WHERE etat_de_l_objet = 'En service' ON CONFLICT DO NOTHING")
 
-      query("INSERT INTO registered_hydrographic_items (id, name, nature, lines)
-      SELECT CONCAT(cleabs, '_fra'),
-      CASE WHEN toponyme IS NOT NULL THEN jsonb_build_object('fra', toponyme) END,
-      'watercourse', postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
+      query("INSERT INTO registered_hydrographic_items (id, name, nature, lines, permanent)
+      SELECT CONCAT(cleabs, '_fra'), #{name_of.call('toponyme')},
+      'watercourse', #{whole}, caractere_permanent
       FROM #{SCHEMA}.cours_d_eau ON CONFLICT DO NOTHING")
 
-      query("INSERT INTO registered_hydrographic_items (id, name, nature, shape)
-      SELECT CONCAT(cleabs, '_fra'),
-      CASE WHEN toponyme IS NOT NULL THEN jsonb_build_object('fra', toponyme) END,
-      nature, postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
+      query("INSERT INTO registered_hydrographic_items (id, name, nature, shape, permanent)
+      SELECT CONCAT(cleabs, '_fra'), #{name_of.call('toponyme')},
+      nature, #{whole}, caractere_permanent
       FROM #{SCHEMA}.plan_d_eau ON CONFLICT DO NOTHING")
 
       logger.debug "Load Building layer into registered_cadastral_buildings..."
-      query("INSERT INTO registered_cadastral_buildings (reference_name, nature, shape)
-      SELECT cleabs, usage_1,
-      postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
-      FROM #{SCHEMA}.batiment ON CONFLICT DO NOTHING")
+      query("INSERT INTO registered_cadastral_buildings
+        (reference_name, nature, shape, kind, secondary_nature, dwellings_count, height, light, state)
+      SELECT cleabs, usage_1, #{whole},
+      nature, usage_2, nombre_de_logements, hauteur, construction_legere, etat_de_l_objet
+      FROM #{SCHEMA}.batiment")
 
       logger.debug "Load Area layers into registered_area_items..."
-      query("INSERT INTO registered_area_items (id, name, nature, lines)
-      SELECT CONCAT(cleabs, '_fra'), jsonb_build_object('fra', 'haie'), 'edge',
-      postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
+      query("INSERT INTO registered_area_items (id, name, nature, lines, height, width)
+      SELECT CONCAT(cleabs, '_fra'), jsonb_build_object('fra', 'haie'), 'edge', #{whole},
+      hauteur, largeur
       FROM #{SCHEMA}.haie ON CONFLICT DO NOTHING")
 
-      query("INSERT INTO registered_area_items (id, name, nature, shape)
-      SELECT CONCAT(cleabs, '_fra'),
-      CASE WHEN nature IS NOT NULL THEN jsonb_build_object('fra', nature) END,
-      'green_zone',
-      postgis.ST_Multi((postgis.ST_Dump(postgis.ST_Force2D(geom))).geom)
+      query("INSERT INTO registered_area_items (id, name, nature, shape, kind)
+      SELECT CONCAT(cleabs, '_fra'), #{name_of.call('nature')}, 'green_zone', #{whole}, nature
       FROM #{SCHEMA}.zone_de_vegetation ON CONFLICT DO NOTHING")
 
       query("INSERT INTO registered_area_items (id, name, nature, point)
       SELECT CONCAT(cleabs, '_fra'), jsonb_build_object('fra', 'pylone'), 'electric_pole',
       (postgis.ST_Dump(postgis.ST_Force2D(geom))).geom
       FROM #{SCHEMA}.pylone ON CONFLICT DO NOTHING")
+
+      natures = SENSITIVE_NATURES.map { |nature| "'#{nature.gsub("'", "''")}'" }.join(', ')
+      query("INSERT INTO registered_area_items (id, name, nature, shape, kind)
+      SELECT CONCAT(cleabs, '_fra'), #{name_of.call('toponyme')}, 'sensitive_site', #{whole},
+      COALESCE(nature_detaillee, nature)
+      FROM #{SCHEMA}.zone_d_activite_ou_d_interet
+      WHERE etat_de_l_objet = 'En service' AND nature IN (#{natures}) ON CONFLICT DO NOTHING")
+
+      # Natura 2000 sites are in registered_natural_zones already
+      query("INSERT INTO registered_area_items (id, name, nature, shape, kind)
+      SELECT CONCAT(cleabs, '_fra'), #{name_of.call('toponyme')}, 'protected_area', #{whole}, nature
+      FROM #{SCHEMA}.parc_ou_reserve
+      WHERE nature <> 'Site Natura 2000' ON CONFLICT DO NOTHING")
+
+      query("INSERT INTO registered_area_items (id, name, nature, shape, kind)
+      SELECT CONCAT(cleabs, '_fra'), #{name_of.call('toponyme')}, 'public_forest', #{whole}, nature
+      FROM #{SCHEMA}.foret_publique ON CONFLICT DO NOTHING")
+
+      query("INSERT INTO registered_area_items (id, name, nature, lines, kind)
+      SELECT CONCAT(cleabs, '_fra'), jsonb_build_object('fra', 'ligne électrique'), 'power_line', #{whole}, voltage
+      FROM #{SCHEMA}.ligne_electrique
+      WHERE etat_de_l_objet = 'En service' AND voltage <> 'Hors tension' ON CONFLICT DO NOTHING")
 
       logger.debug "Compute centroid on Building..."
       query("UPDATE lexicon.registered_cadastral_buildings SET centroid = postgis.ST_Centroid(shape) WHERE shape IS NOT NULL AND postgis.ST_IsValid(shape) = true")
