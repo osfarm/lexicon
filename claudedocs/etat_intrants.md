@@ -41,10 +41,14 @@ Tout ce qui suit est commité en local sur `v2` (lexicon) et `feature/inputs` (l
   `/contribute/outil` aux détenteurs d'une clé, par le service `contribute` de la pile, relayé par l'API ; un jeu proposé
   reste sur le serveur et un mainteneur le rapatrie (`contribute --proposed`, `--fetch`). Essayé de bout en bout sur la
   pile locale. **Pas déployé** : il faut publier l'API, créer le dossier des contributions sur le serveur et définir
-  `LEXICON_CONTRIBUTE_SECRET` dans Dokploy (`doc/PUBLICATION.md` §17).
+  `LEXICON_CONTRIBUTE_SECRET` dans Dokploy (`doc/PUBLICATION.md` §17). Gros tableaux (commité le 2026-10-10, non poussé) : envoi par morceaux
+  de 4 Mo et lecture en arrière-plan, essayés avec les 43 Mo d'`alim_confiance` à travers l'API locale.
 - **`cadastre_owners`** : `has_enterprise_pm_owner` marque 88 % des parcelles de personnes morales ; elle ne distingue
   plus les exploitations. Si le besoin était « propriétaire agricole », il faut un filtre sur les codes APE 01 à 03.
-- **`weather`** a été reconstruit mais pas empaqueté (217 millions de lignes, contenu a priori inchangé).
+- **`weather` (2026-10-10, commité, non poussé)** : Météo-France a déplacé ses fichiers horaires ; l'ancienne adresse
+  (`object.files.data.gouv.fr`) est figée au 24 juin 2026. `BASE_URL` pointe sur `meteofrance.s3.sbg.io.cloud.ovh.net`.
+  Reconstruit (34 min), empaqueté et en service en local en 2026.10.10.1 : 221,2 millions de relevés jusqu'au 10 octobre.
+  `collect` ne retélécharge pas un fichier déjà présent : retirer `raw/weather/weather_latest-*.zip` avant de reconstruire.
 - **Vérifié le 2026-10-10** : `PivotMeter` donne les mêmes chiffres que l'ancienne requête sur les 21 liens déclarés
   (les trois liens SIREN recomptés par intersection) ; la colonne `insee_code` tirée du code postal et du nom, construite
   de bout en bout sur les 71 549 lignes d'`alim_confiance`, trouve 95,7 % des lignes et aucun code faux.
@@ -69,7 +73,7 @@ Tout ce qui suit est commité en local sur `v2` (lexicon) et `feature/inputs` (l
 |---|---|
 | Données en production | Toutes publiées et en service : `fuel_prices` .1, `phytosanitary_substances` .1, `fertilizers` .2, `seeds` .6, `phytosanitary_prices` .1, `taxonomy` .1, `seed_varieties` .2, `variants` .2, `prices` .1, et les jeux reconstruits (`productions`, `industry_sector`, `rd_agri`, `budgets`, `technical_workflows`, `technical_workflow_sequences`) en .1, toutes datées 2026.10.07 |
 | Seul jeu périmé en production | `agroedi` : absent du poste de build |
-| Code `lexicon`, branche `v2` | Tout est commité en local (8 commits d'avance sur `origin/v2` au 2026-10-10), **non poussé** |
+| Code `lexicon`, branche `v2` | Tout est commité en local (10 commits d'avance sur `origin/v2` au 2026-10-10), **non poussé** |
 | Code `lexicon-rest-api`, branche `feature/inputs` | Lot 6 et guide du contributeur commités en local, **ni poussés, ni fusionnés, ni déployés** |
 | Production, côté code | Le loader tourne sur `origin/v2` d'avant ce chantier ; l'API sur la version 1.4.3, sans `/inputs` |
 | Pile locale | En marche, alignée sur la production pour les données |

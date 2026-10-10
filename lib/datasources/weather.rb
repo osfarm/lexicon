@@ -5,7 +5,7 @@ module Datasources
     description 'Historical weather'
     credits name: 'Données climatologiques de base - horaires', url: "https://meteo.data.gouv.fr/", provider: "Météo France", licence: "LO2.0", licence_url: "https://www.etalab.gouv.fr/licence-ouverte-open-licence", updated_at: "2025-05-23"
     
-    BASE_URL = "https://object.files.data.gouv.fr/meteofrance/data/synchro_ftp/BASE/HOR"
+    BASE_URL = "https://meteofrance.s3.sbg.io.cloud.ovh.net/data/synchro_ftp/BASE/HOR"
     
     PERIODS = ["latest-2025-2026", "previous-2020-2024", "2010-2019"].freeze
     
