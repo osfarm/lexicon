@@ -18,6 +18,7 @@
 #
 # Optional, for the contribution tool served online under /contribute/outil (the `contribute` service idles without):
 #   LEXICON_CONTRIBUTE_SECRET   secret shared by the API and the tool; any long random string
+#   LEXICON_CONTRIBUTE_MAXIMUM_MB   largest table accepted (default: 50)
 #   LEXICON_CONTRIBUTIONS_DIR   directory of the host keeping what contributors propose (default: `contributions`
 #                               beside the packages). It must exist and belong to the user of the image (uid 1000)
 #
@@ -182,6 +183,8 @@ services:
     environment:
       LEXICON_CONTRIBUTE_SECRET: ${LEXICON_CONTRIBUTE_SECRET:-}
       LEXICON_CONTRIBUTIONS_ROOT: /contributions
+      # Largest table accepted, in megabytes. Reading one takes about fifteen times its size in memory
+      LEXICON_CONTRIBUTE_MAXIMUM_MB: ${LEXICON_CONTRIBUTE_MAXIMUM_MB:-50}
     volumes:
       - ${LEXICON_CONTRIBUTIONS_DIR:-${LEXICON_PACKAGES_DIR:?}/../contributions}:/contributions
     networks:

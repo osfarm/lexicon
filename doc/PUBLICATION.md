@@ -539,7 +539,18 @@ service `contribute` de `docker-compose.server.yml` le fait tourner avec
 | Mainteneur | `./lexicon contribute --proposed --production`, puis `--fetch <espace>/<nom> --production` : le dossier arrive dans `data/contributions/`, où il est relu, construit et publié comme un autre |
 
 Rien de ce qui est déposé en ligne n'est construit ni mis en service par le
-serveur. Plafonds : 50 Mo par tableau, 20 jeux par clé.
+serveur. Plafonds : 50 Mo par tableau (`LEXICON_CONTRIBUTE_MAXIMUM_MB`), 20 jeux
+par clé.
+
+Un gros tableau ne tient pas dans une requête : l'API coupe ce qui reste
+30 secondes sans réponse, et un proxy coupe un envoi trop long. La page envoie
+donc un tableau de plus de 4 Mo par morceaux de 4 Mo
+(`PUT …/fichiers/<nom>?morceau=<i>&sur=<n>`), gardés hors du jeu jusqu'au
+dernier ; et un tableau de plus de 2 Mo est lu une fois la requête répondue, la
+page redemandant l'état du jeu jusqu'à ce qu'il soit lu. Un seul gros tableau
+est lu à la fois : la lecture prend environ quinze fois sa taille en mémoire
+(670 Mo pour 43 Mo), d'où le plafond. Mesure du 2026-10-10 en local, à travers
+l'API : 43 Mo et 71 549 lignes en 11 requêtes, la plus longue de 2,4 s.
 
 ### Mise en place sur le serveur
 

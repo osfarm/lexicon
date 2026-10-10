@@ -132,7 +132,9 @@ L'interface ne répond que sur le poste (`127.0.0.1`) et n'écrit que dans `data
 
 Le même outil est servi sur <https://lexicon.osfarm.org/contribute/outil> aux détenteurs d'une clé d'API du Lexicon.
 On y entre avec sa clé ; chaque clé a son espace, où l'on ne voit que ses propres jeux, gardés sur le serveur. Un
-tableau déposé y pèse au plus 50 Mo, et une clé garde au plus 20 jeux. Quand la relecture ne trouve plus rien à
+tableau déposé y pèse au plus 50 Mo, et une clé garde au plus 20 jeux. Un gros tableau part par morceaux et se lit
+en quelques dizaines de secondes : la page affiche l'avancement et se met à jour toute seule. Au-delà de 50 Mo,
+installer l'outil sur son poste, où le tableau se range dans `raw/<nom>/`. Quand la relecture ne trouve plus rien à
 corriger, le bouton « Proposer ce jeu » le signale aux mainteneurs ; « Retirer la proposition » revient en arrière.
 
 ## 5. Proposer

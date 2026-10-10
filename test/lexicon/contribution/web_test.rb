@@ -119,7 +119,7 @@ module Lexicon
 
         [dropped, saved, followed].each do |response|
           assert_equal 200, response.status
-          assert_equal %w[champs colonnes fingerprint import libres relecture yaml], JSON.parse(response.body).keys.sort
+          assert_equal %w[champs colonnes fingerprint import libres pending relecture yaml], JSON.parse(response.body).keys.sort
         end
         assert_includes JSON.parse(dropped.body)['relecture'], 'La fiche ne renseigne pas « description ».'
         refute_includes JSON.parse(saved.body)['relecture'], 'La fiche ne renseigne pas « description ».'
@@ -239,6 +239,72 @@ module Lexicon
         assert_equal "id\nm1\n", @root.join('releves_sol', 'mesures.csv').read
       ensure
         thread&.kill
+      end
+
+      def test_a_large_table_is_read_once_its_request_is_answered
+        dataset('releves_sol', "id,value\nr1,12.5\n")
+        lines = (1..120_000).map { |index| "r#{index},#{index}.5,station de mesure #{index}" }
+        large = "id,valeur,station\n#{lines.join("\n")}\n"
+        assert_operator large.bytesize, :>, Web::App::BACKGROUND_ABOVE
+
+        answer = put('/jeux/releves_sol/fichiers/grand.csv', large, 'x-lexicon-token' => 'secret')
+        before = get('/jeux/releves_sol/empreinte').body
+
+        assert_equal 200, answer.status
+        assert JSON.parse(answer.body)['pending']
+        assert_includes JSON.parse(answer.body)['import'], 'en cours de lecture'
+
+        @app.settle
+        state = JSON.parse(get('/jeux/releves_sol/etat').body)
+
+        refute state['pending']
+        assert_includes state['import'], '« grand.csv » est lu'
+        assert_includes state['colonnes'], '120000 lignes'
+        refute_equal before, get('/jeux/releves_sol/empreinte').body
+      end
+
+      def test_a_large_table_that_does_not_read_is_said_by_the_page
+        dataset('releves_sol', "id,value\nr1,12.5\n")
+
+        put('/jeux/releves_sol/fichiers/vide.csv', "\n" * (Web::App::BACKGROUND_ABOVE + 1), 'x-lexicon-token' => 'secret')
+        @app.settle
+        state = JSON.parse(get('/jeux/releves_sol/etat').body)
+
+        refute state['pending']
+        assert_includes state['import'], 'class="problem"'
+      end
+
+      def test_a_table_sent_in_parts_is_read_when_the_last_one_arrives
+        dataset('releves_sol', "id,value\nr1,12.5\n")
+        part = ->(index, count, body) { put("/jeux/releves_sol/fichiers/mesures.csv?morceau=#{index}&sur=#{count}", body, 'x-lexicon-token' => 'secret') }
+
+        assert_equal({ 'part' => 0 }, JSON.parse(part.call(0, 3, "id,valeur\nm1,1\n").body))
+        refute @root.join('releves_sol', 'mesures.csv').exist?
+        part.call(1, 3, "m2,2\n")
+        last = part.call(2, 3, "m3,3\n")
+        # The page gets its parts back, whether the table is still being read or already is
+        assert JSON.parse(last.body).key?('import')
+
+        @app.settle
+
+        assert_equal "id,valeur\nm1,1\nm2,2\nm3,3\n", @root.join('releves_sol', 'mesures.csv').read
+        assert_includes JSON.parse(get('/jeux/releves_sol/etat').body)['import'], '« mesures.csv » est lu'
+      end
+
+      def test_parts_out_of_order_too_large_or_of_another_format_are_refused
+        dataset('releves_sol', "id,value\nr1,12.5\n")
+        small = Web::App.new(root: @root, token: 'secret', maximum_upload: 20)
+        part = lambda do |app, file, index, body|
+          app.call(request('PUT', "/jeux/releves_sol/fichiers/#{file}?morceau=#{index}&sur=3", body, 'x-lexicon-token' => 'secret'))
+        end
+
+        assert_equal 409, part.call(@app, 'mesures.csv', 1, "m2,2\n").status
+        part.call(@app, 'mesures.csv', 0, "id\n")
+        assert_equal 409, part.call(@app, 'mesures.csv', 2, "m3\n").status
+        assert_equal 422, part.call(@app, 'notes.pdf', 0, 'x').status
+        assert_equal 200, part.call(small, 'mesures.csv', 0, "id,valeur\n").status
+        assert_equal 413, part.call(small, 'mesures.csv', 1, "m1,1\nm2,2\nm3,3\n").status
+        assert_equal 403, @app.call(request('PUT', '/jeux/releves_sol/fichiers/mesures.csv?morceau=0&sur=3', 'x')).status
       end
 
       private

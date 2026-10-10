@@ -231,7 +231,9 @@ The same tool is served online under `/contribute/outil` of the API (`doc/PUBLIC
 of the serving stack runs `./lexicon-cli contribute --web --hosted` (`Contribution::Web::Hosted`), which answers the API
 only (shared secret `LEXICON_CONTRIBUTE_SECRET`), keeps one directory per API key prefix and lets a contributor mark a
 dataset as proposed; `Contribution::Inbox` lists and fetches those from a maintainer's machine. Nothing proposed online
-is built by the server.
+is built by the server. No request waits for a large table: the page sends it in parts of 4 MB
+(`?morceau=<i>&sur=<n>`), and a table over 2 MB is read in a thread once the request is answered (`App#background`, one
+at a time), the page asking for the state until `pending` is false.
 A table dropped there goes through `Contribution::Import`: it reads CSV of any separator and encoding, Excel and
 LibreOffice (Roo), names the columns, guesses their types, rewrites the values the way those types are read, picks
 the key and the pivots, and says in French what it did; a column of codes stays text, a mixed column too.

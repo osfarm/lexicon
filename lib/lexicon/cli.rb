@@ -243,12 +243,13 @@ module Lexicon
       # The same interface on the serving side: the API relays to it the holders of a key
       def contribute_online
         root = Pathname.new(ENV.fetch('LEXICON_CONTRIBUTIONS_ROOT') { raise Thor::Error.new('LEXICON_CONTRIBUTIONS_ROOT is not set') })
+        megabytes = Integer(ENV.fetch('LEXICON_CONTRIBUTE_MAXIMUM_MB', '50'), 10)
         app = Contribution::Web::Hosted.new(
           root: root, secret: ENV.fetch('LEXICON_CONTRIBUTE_SECRET', ''), taken: get('datasource.all').keys.map(&:to_s),
-          prefix: ENV.fetch('LEXICON_CONTRIBUTE_PREFIX', '/contribute/outil')
+          prefix: ENV.fetch('LEXICON_CONTRIBUTE_PREFIX', '/contribute/outil'), maximum_upload: megabytes * 1024 * 1024
         )
 
-        puts "Contributions kept in #{root}, served to the API on port #{options['port']}"
+        puts "Contributions kept in #{root}, served to the API on port #{options['port']}, tables up to #{megabytes} MB"
         Contribution::Web::Server.new(app, host: '0.0.0.0', port: options['port'],
                                            maximum_body: Contribution::Web::Server::HOSTED_MAXIMUM_BODY).run
       rescue ArgumentError => e

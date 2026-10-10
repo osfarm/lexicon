@@ -18,13 +18,15 @@ module Lexicon
         # @param [String] secret what the API sends with every request
         # @param [String] prefix path the API serves the interface under
         # @param [Array<String>] taken names of the datasources that already exist
-        def initialize(root:, secret:, prefix:, taken: [])
+        # @param [Integer] maximum_upload size of the largest table accepted, in bytes
+        def initialize(root:, secret:, prefix:, taken: [], maximum_upload: Server::HOSTED_MAXIMUM_BODY)
           raise ArgumentError.new('The secret shared with the API is empty') if secret.to_s.strip.empty?
 
           @root = root
           @secret = secret
           @prefix = prefix
           @taken = taken
+          @maximum_upload = maximum_upload
           @apps = {}
           @lock = Mutex.new
         end
@@ -53,7 +55,7 @@ module Lexicon
               @apps[workspace] ||= begin
                 dir = @root.join(workspace)
                 dir.mkpath
-                App.new(root: dir, taken: @taken, prefix: @prefix, hosted: true)
+                App.new(root: dir, taken: @taken, prefix: @prefix, hosted: true, maximum_upload: @maximum_upload)
               end
             end
           end

@@ -194,13 +194,37 @@ module Lexicon
 
           const everything = ['relecture', 'import', 'libres', 'colonnes', 'champs', 'yaml']
           const tables = ['relecture', 'import', 'libres', 'colonnes', 'yaml']
+          // A large table is read once its request is answered: the page asks until it is
+          const settled = async (state) => {
+            while (state && state.pending) {
+              await new Promise((resolve) => setTimeout(resolve, 2000))
+              state = await fetch(at + '/etat').then((reply) => reply.json()).catch(() => state)
+            }
+            if (state) show(state, everything)
+          }
+          // A large table travels in parts: no request is long enough for a proxy to cut it
+          const CHUNK = 4 * 1024 * 1024
+          const upload = async (file) => {
+            const path = '/fichiers/' + encodeURIComponent(file.name)
+            if (file.size <= CHUNK) return ask('PUT', path, file)
+            const count = Math.ceil(file.size / CHUNK)
+            let state = null
+            for (let index = 0; index < count; index++) {
+              wait('Envoi de ' + file.name + ' : ' + Math.round(100 * index / count) + ' %')
+              state = await ask('PUT', path + '?morceau=' + index + '&sur=' + count, file.slice(index * CHUNK, (index + 1) * CHUNK))
+            }
+            return state
+          }
+          const reading = (name) => 'Lecture de ' + name + ' en cours : la page se met à jour toute seule, jusqu’à une minute pour un gros tableau.'
           const send = async (files) => {
             await flush()
             part('dropped').textContent = ''
             try {
               for (const file of files) {
-                wait('Lecture de ' + file.name + ' en cours… quelques secondes pour un gros tableau.')
-                show(await ask('PUT', '/fichiers/' + encodeURIComponent(file.name), file), tables)
+                wait('Lecture de ' + file.name + ' en cours…')
+                const state = await upload(file)
+                show(state, tables)
+                if (state.pending) { wait(reading(file.name)); await settled(state) }
               }
               done()
               part('tableaux').scrollIntoView({ behavior: 'smooth' })
@@ -210,7 +234,9 @@ module Lexicon
             await flush()
             if (message) wait(message)
             try {
-              show(await ask('POST', path, new URLSearchParams(fields)), parts)
+              const state = await ask('POST', path, new URLSearchParams(fields))
+              show(state, parts)
+              if (state.pending) { wait(reading(fields.file || 'ce tableau')); await settled(state) }
               done()
             } catch (error) { failed(error) }
           }
@@ -236,6 +262,9 @@ module Lexicon
             zone.addEventListener('dragleave', () => zone.classList.remove('over'))
             zone.addEventListener('drop', (event) => { event.preventDefault(); zone.classList.remove('over'); send(event.dataTransfer.files) })
           }
+
+          // The page was opened while a table was being read
+          if (page.pending === 'true') { wait(reading('un tableau')); settled({ pending: true }).then(done) }
 
           // A file changed on the disk, by a spreadsheet or an editor: the page follows
           setInterval(async () => {
@@ -275,7 +304,7 @@ module Lexicon
 
           place = context[:hosted] ? 'Votre jeu est gardé sur le serveur du Lexicon.' : "Dossier <code>data/contributions/#{name}/</code>."
 
-          data = { fingerprint: dataset[:fingerprint], token: context[:token] }
+          data = { fingerprint: dataset[:fingerprint], token: context[:token], pending: pending?(dataset) }
 
           layout(dataset[:name], <<~HTML, data: data, script: true, context: context)
             <p><a href="#{home(context)}">← Tous les jeux</a></p>
@@ -300,7 +329,7 @@ module Lexicon
         def parts(dataset, context)
           tables = dataset[:tables].each_with_index.map { |table, index| columns(table, index, context) }.join
 
-          { fingerprint: dataset[:fingerprint], relecture: verdict(dataset, context) + findings(dataset),
+          { fingerprint: dataset[:fingerprint], pending: pending?(dataset), relecture: verdict(dataset, context) + findings(dataset),
             import: imported(dataset[:import], context), libres: loose(dataset[:loose], context), colonnes: tables,
             champs: dataset[:sheet] ? fields(dataset[:sheet]) : '<p>La fiche ne se lit pas : la corriger ci-dessous.</p>',
             yaml: dataset[:raw] }
@@ -438,9 +467,15 @@ module Lexicon
           end
 
           # What the last import did, said until the contributor has read it
+          # @return [Boolean] whether a table of the dataset is being read in the background
+          def pending?(dataset)
+            dataset[:import].to_h[:pending] == true
+          end
+
           def imported(import, context)
             return '' if import.nil?
             return %(<p class="problem">#{e(import[:problem])}</p>) if import[:problem]
+            return %(<div class="done"><strong>« #{e(import[:file])} » est en cours de lecture…</strong></div>) if import[:pending]
 
             notes = import[:notes].map { |note| "<li>#{e(note)}</li>" }.join
             read = context[:writable] ? ' <button type="button" class="quiet" data-act="lu">J’ai lu</button>' : ''

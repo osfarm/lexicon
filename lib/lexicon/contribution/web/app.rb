@@ -5,6 +5,7 @@ require 'digest'
 require 'fileutils'
 require 'json'
 require 'securerandom'
+require 'tmpdir'
 require 'uri'
 
 module Lexicon
@@ -21,6 +22,11 @@ module Lexicon
         TOKEN_HEADER = 'x-lexicon-token'
         # Tables whose review is kept
         MEMORISED = 200
+        # A table larger than this is read once the request is answered: no request waits for a long reading,
+        # which a proxy in front would cut. The page asks until it is read.
+        BACKGROUND_ABOVE = 2 * 1024 * 1024
+        # Reading a large table takes hundreds of megabytes: one at a time, whoever asks
+        READING = Mutex.new
         # Online, what the holder of a key may keep on the server
         HOSTED_DATASETS = 20
         # File that marks a dataset as proposed to the maintainers; it holds the date
@@ -38,8 +44,14 @@ module Lexicon
         # @param [String] prefix path the pages are served under, when a proxy stands in front
         # @param [Boolean] hosted served online to the holder of a key (see Hosted): any host name is answered,
         #   and a dataset is proposed from its page
-        def initialize(root:, taken: [], token: SecureRandom.hex(16), raw: nil, prefix: '', hosted: false)
+        # @param [Integer] maximum_upload size of the largest table accepted, in bytes
+        def initialize(root:, taken: [], token: SecureRandom.hex(16), raw: nil, prefix: '', hosted: false,
+                       maximum_upload: Server::MAXIMUM_BODY)
           @root = root
+          @maximum_upload = maximum_upload
+          # Tables arriving in parts, and those being read after their request was answered
+          @uploads = {}
+          @workers = []
           @raw = raw
           @prefix = prefix.chomp('/')
           @hosted = hosted
@@ -61,6 +73,11 @@ module Lexicon
           return refused if request.verb != 'GET' && !allowed?(request)
 
           route(request, segments) || text(404, 'Cette page n’existe pas.')
+        end
+
+        # Waits for the tables being read in the background.
+        def settle
+          @workers.shift.join until @workers.empty?
         end
 
         # @return [Boolean] whether datasets can be created and changed from the pages
@@ -88,7 +105,7 @@ module Lexicon
             when ['POST', 'fiche', 3] then save_sheet(dir, form(request))
             when ['POST', 'detecter', 3] then detect(dir, form(request)['file'].to_s)
             when ['POST', 'lu', 3] then read(dir)
-            when ['PUT', 'fichiers', 4] then answer_import(dir, file, request.body)
+            when ['PUT', 'fichiers', 4] then receive(dir, file, request)
             when ['POST', 'proposer', 3] then propose(dir, true)
             when ['POST', 'retirer', 3] then propose(dir, false)
             end
@@ -225,7 +242,72 @@ module Lexicon
             kept.merge('key' => key, 'columns' => columns).merge(pivots.empty? ? {} : { 'pivots' => pivots })
           end
 
+          # A table comes whole, or in parts when it is large: `?morceau=<index>&sur=<count>`
+          def receive(dir, file, request)
+            query = URI.decode_www_form(request.path.split('?', 2)[1].to_s).to_h
+            part, parts = query.values_at('morceau', 'sur').map { |value| Integer(value.to_s, 10, exception: false) }
+
+            parts.nil? || part.nil? ? answer_import(dir, file, request.body) : receive_part(dir, file, request.body, part, parts)
+          rescue ArgumentError
+            answer_import(dir, file, request.body)
+          end
+
+          # Parts are kept out of the dataset until the last one: a half-sent table is never read
+          def receive_part(dir, file, content, part, parts)
+            unless Import::EXTENSIONS.include?(File.extname(file).downcase)
+              return text(422, "« #{file} » : ce format n'est pas lu. Formats lus : #{Import::EXTENSIONS.join(', ')}.")
+            end
+
+            key = [dir.to_s, file]
+            @uploads[key] = { expected: 0, path: Pathname.new(Dir.tmpdir).join("lexicon-upload-#{SecureRandom.hex(12)}") } if part.zero?
+            upload = @uploads[key]
+            return interrupted(key, file) if upload.nil? || upload[:expected] != part || part >= parts
+
+            File.open(upload[:path], part.zero? ? 'wb' : 'ab') { |stored| stored.write(content) }
+            upload[:expected] += 1
+            return too_large(key, file) if upload[:path].size > @maximum_upload
+            return json({ part: part }) if part < parts - 1
+
+            content = upload[:path].binread
+            forget(key)
+            background(dir, file) { import(dir, file, content) }
+          end
+
+          def interrupted(key, file)
+            forget(key)
+            text(409, "L'envoi de « #{file} » a été interrompu : déposer de nouveau le tableau.")
+          end
+
+          def too_large(key, file)
+            forget(key)
+            text(413, "« #{file} » dépasse #{@maximum_upload / (1024 * 1024)} Mo : c'est le plus gros tableau accepté ici.")
+          end
+
+          def forget(key)
+            upload = @uploads.delete(key)
+            FileUtils.rm_f(upload[:path]) unless upload.nil?
+          end
+
+          # Answers at once that the table is being read; what was found, or why it could not be read, is
+          # said by the page when it asks again
+          def background(dir, file)
+            name = dir.basename.to_s
+            @imports[name] = { file: file, notes: [], problem: nil, pending: true }
+            @workers << Thread.new do
+              READING.synchronize { yield }
+            rescue Import::Unreadable => e
+              @imports[name] = { file: file, notes: [], problem: e.message }
+            rescue Psych::Exception
+              @imports[name] = { file: file, notes: [], problem: 'La fiche ne se lit pas : la corriger d’abord.' }
+            rescue StandardError => e
+              @imports[name] = { file: file, notes: [], problem: "« #{file} » n'a pas pu être lu : #{e.message}" }
+            end
+            live(dir)
+          end
+
           def answer_import(dir, file, content)
+            return background(dir, file) { import(dir, file, content) } if content.bytesize > BACKGROUND_ABOVE
+
             import(dir, file, content)
             live(dir)
           rescue Import::Unreadable => e
@@ -238,6 +320,7 @@ module Lexicon
           def detect(dir, name)
             file = dir.children.find { |child| child.file? && child.basename.to_s == name }
             return nil if file.nil?
+            return background(dir, name) { import(dir, name, file.binread) } if file.size > BACKGROUND_ABOVE
 
             import(dir, name, file.binread)
             live(dir)
@@ -320,8 +403,10 @@ module Lexicon
           # @return [String] changes whenever a file of the dataset is added, removed or written
           def fingerprint(dir)
             files = dir.children.select(&:file?).sort
+            # A table being read, then read or refused, changes the page as a file does
+            reading = @imports[dir.basename.to_s].to_h.values_at(:file, :pending, :problem).join('|')
 
-            Digest::SHA1.hexdigest(files.map { |file| [file.basename, file.mtime.to_f, file.size].join('|') }.join("\n"))
+            Digest::SHA1.hexdigest([*files.map { |file| [file.basename, file.mtime.to_f, file.size].join('|') }, reading].join("\n"))
           end
 
           def html(body, status: 200)
