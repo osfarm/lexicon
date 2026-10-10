@@ -129,6 +129,9 @@ module Lexicon
         assert_includes insert, 'INSERT INTO registered_releve_sol ("id", "code_postal", "ville", "insee_code")'
         assert_includes insert, %(place.postal_code = trim(source."code_postal"))
         assert_includes insert, 'HAVING count(DISTINCT place.code) = 1'
+        # The name of the commune first, the names mail is delivered by otherwise
+        assert_includes insert, 'COALESCE((SELECT min(place.code)'
+        assert_equal [2, 1], %w[place.city_name place.city_delivery_name].map { |column| insert.scan(column).size }
       end
 
       def test_point_is_a_cell_holding_latitude_then_longitude
@@ -210,6 +213,23 @@ module Lexicon
         @root.join('casse', Sheet::FILE).write("description: [unclosed\n")
 
         assert_empty TabularDatasource.define_all(@root).map(&:datasource_name) - ['releve_sol']
+      end
+
+      def test_a_table_too_large_for_the_repository_is_read_in_the_raw_directory
+        raw = @root.join('raw')
+        raw.join('releve_sol').mkpath
+        sheet_of(SHEET, nil)
+        sheet = Sheet.load(@root.join('releve_sol'), raw: raw)
+
+        assert(Review.new(sheet).findings.any? { |finding| finding.message.include?("n'est pas dans le dossier, ni dans raw/releve_sol/") })
+
+        raw.join('releve_sol', 'releves.csv').write(CSV_FILE)
+        assert_equal raw.join('releve_sol', 'releves.csv'), sheet.path(sheet.tables.first)
+        assert_empty Review.new(sheet).findings.select { |finding| finding.level == :error }
+
+        # The file beside the sheet comes first
+        @root.join('releve_sol', 'releves.csv').write(CSV_FILE)
+        assert_equal @root.join('releve_sol', 'releves.csv'), sheet.path(sheet.tables.first)
       end
 
       def test_several_files_give_one_table_each

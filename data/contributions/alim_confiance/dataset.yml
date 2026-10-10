@@ -1,0 +1,71 @@
+description: résultats des contrôles sanitaires dans le secteur alimentaire
+author: David JOULIN, OSFarm
+source:
+  url: https://www.data.gouv.fr/datasets/resultats-des-controles-officiels-sanitaires-dispositif-dinformation-alimconfiance
+  licence: Licence Ouverte 2.0
+  licence_url: https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf
+  date: '2026-10-08'
+  name: AlimConfiance
+  provider: Ministère de l’Agriculture, de l’Agro-alimentaire et de la Souveraineté alimentaire
+tables:
+- file: export_alimconfiance.csv
+  key: code_ua
+  columns:
+    app_libelle_activite_etablissement: text
+    app_libelle_etablissement: text
+    code_postal: text
+    com_name: text
+    synthese_eval_sanit: text
+    date_inspection: date
+    geores: point
+    agrement: text
+    contexte_inspection: text
+    reg_name: text
+    dep_name: text
+    filtre: text
+    enseigne: text
+    raison_sociale: text
+    siret: text
+    libelle_etablissement: text
+    type_activite: text
+    code_ua: text
+    adresse_1_ua: text
+    adresse_2_ua: text
+    adresse_3_ua: text
+    adresse_activite: text
+    localite: text
+    code_commune: text
+    libelle_commune: text
+    app_id_regroupement_etablissement: text
+    app_libelle_regroupement_etablissement: text
+    numero_inspection: text
+    procede: text
+    destination: text
+    lieu: text
+    app_code_synthese_eval_sanit: integer
+    date_extraction: date
+    evaluation_globale: text
+    date_edition_ri: datetime
+    type_suite: text
+    conclusion_suite: text
+    denree: text
+    libelle_agrement: text
+    etat_autorisation: text
+    secteur_activite: text
+    date_de_cessation_bdnu: text
+    geo_resytal: point
+    geo_ban: point
+    geo_mobile: text
+    lieu_intervention: text
+    lieu_intervention_adresse: text
+    lieu_intervention_codepostal: text
+    lieu_intervention_ville: text
+    ods_type_activite: text
+    reg_code: text
+    dep_code: text
+    com_code: text
+  pivots:
+    siret: siret
+    dep_code: department
+    com_code: commune
+personal_data: Identifie un etablissement controlé

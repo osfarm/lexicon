@@ -85,6 +85,27 @@ module Datasources
           ) s ON true
       SQL
 
+      # Paris, Lyon et Marseille : le cadastre et SIRENE les codent par arrondissement, la fiche de la commune
+      # entière ajoute donc à ce qui porte son code ce que comptent ses arrondissements
+      PostalCodes::WHOLE_COMMUNES.each do |code, arrondissements|
+        query <<~SQL
+          UPDATE link_communes AS whole
+             SET cadastral_parcels_count = whole.cadastral_parcels_count + parts.parcels,
+                 cadastral_area_m2 = whole.cadastral_area_m2 + parts.area,
+                 enterprise_owner_parcels_count = whole.enterprise_owner_parcels_count + parts.enterprise_owner_parcels,
+                 enterprises_count = whole.enterprises_count + parts.enterprises
+            FROM (
+              SELECT COALESCE(sum(cadastral_parcels_count), 0) AS parcels,
+                     COALESCE(sum(cadastral_area_m2), 0) AS area,
+                     COALESCE(sum(enterprise_owner_parcels_count), 0) AS enterprise_owner_parcels,
+                     COALESCE(sum(enterprises_count), 0) AS enterprises
+                FROM link_communes
+               WHERE insee_code LIKE '#{arrondissements}'
+            ) AS parts
+           WHERE whole.insee_code = '#{code}'
+        SQL
+      end
+
       total = query('SELECT count(*) FROM link_communes').getvalue(0, 0)
       logger.debug "#{name} : #{total} communes"
     end

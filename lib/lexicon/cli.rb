@@ -200,7 +200,7 @@ module Lexicon
         exit 1
       end
 
-      sheet = Contribution::Sheet.load(dir)
+      sheet = Contribution::Sheet.load(dir, raw: get('parameter.raw.root'))
       findings = Contribution::Review.new(sheet).findings
       errors, warnings = findings.partition { |finding| finding.level == :error }
       errors.each { |finding| puts '  à corriger : '.red + finding.message }
@@ -220,7 +220,8 @@ module Lexicon
     no_commands do
       # The address is the one of the host when the wrapper says so: the port it publishes may differ
       def contribute_on_the_web
-        app = Contribution::Web::App.new(root: get('parameter.contributions.root'), taken: get('datasource.all').keys.map(&:to_s))
+        app = Contribution::Web::App.new(root: get('parameter.contributions.root'), raw: get('parameter.raw.root'),
+                                         taken: get('datasource.all').keys.map(&:to_s))
         address = ENV.fetch('LEXICON_CONTRIBUTE_URL', "http://localhost:#{options['port']}")
 
         puts "Interface de contribution : #{address.green}  (Ctrl-C pour l'arrêter)"

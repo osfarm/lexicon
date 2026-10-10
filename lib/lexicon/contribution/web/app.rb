@@ -29,8 +29,10 @@ module Lexicon
         # @param [Pathname] root directory holding one directory per contribution
         # @param [Array<String>] taken names of the datasources that already exist
         # @param [String] token
-        def initialize(root:, taken: [], token: SecureRandom.hex(16))
+        # @param [Pathname, nil] raw root of the raw directories, where a large table is kept
+        def initialize(root:, taken: [], token: SecureRandom.hex(16), raw: nil)
           @root = root
+          @raw = raw
           @taken = taken
           @token = token
           @pages = Pages.new
@@ -214,13 +216,15 @@ module Lexicon
           # Writes the table as a contribution expects it, and describes it in the sheet. Tables whose file
           # is gone leave the sheet: a contributor who replaces a file does not have to tidy up.
           def import(dir, name, content)
-            data = Sheet.load(dir).data
+            sheet = Sheet.load(dir, raw: @raw)
+            data = sheet.data
             result = Import.new(name, content).result
             entries = (data['tables'].is_a?(Array) ? data['tables'] : []).select { |entry| entry.is_a?(Hash) }
             former = entries.find { |entry| entry['file'] == result.file } || {}
             entry = former.slice('table').merge('file' => result.file, 'key' => result.key, 'columns' => result.columns)
             entry['pivots'] = result.pivots unless result.pivots.empty?
-            kept = entries.select { |other| other['file'] != result.file && dir.join(other['file'].to_s).file? }
+            present = sheet.tables.select { |table| sheet.path(table).file? }.map(&:file)
+            kept = entries.select { |other| other['file'] != result.file && present.include?(other['file'].to_s.strip) }
 
             dir.join(result.file).write(result.csv)
             Sheet.write(dir, data.merge('tables' => [*kept, entry]))
@@ -240,7 +244,7 @@ module Lexicon
             tables = review[:sheet] ? review[:sheet].tables : []
 
             review.merge(name: dir.basename.to_s, raw: dir.join(Sheet::FILE).read(encoding: 'bom|utf-8').scrub,
-                         tables: tables.map { |table| table.to_h.merge(preview: preview(dir.join(table.file))) },
+                         tables: tables.map { |table| table.to_h.merge(preview: preview(review[:sheet].path(table))) },
                          loose: loose(dir, tables.map(&:file)), import: @imports[dir.basename.to_s], fingerprint: fingerprint(dir))
           end
 
@@ -254,7 +258,7 @@ module Lexicon
           end
 
           def review_of(dir)
-            sheet = Sheet.load(dir)
+            sheet = Sheet.load(dir, raw: @raw)
             @memo.clear if @memo.size > MEMORISED
             errors, warnings = Review.new(sheet, memo: @memo).findings.partition { |finding| finding.level == :error }
 

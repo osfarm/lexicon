@@ -478,7 +478,8 @@ module Lexicon
 
       def register_datasources(container)
         # Tabular contributions have no Ruby file: their datasource is made from their sheet
-        Contribution::TabularDatasource.define_all(container.resolve('parameter.contributions.root'))
+        Contribution::TabularDatasource.define_all(container.resolve('parameter.contributions.root'),
+                                                   raw: container.resolve('parameter.raw.root'))
 
         Datasources.constants
                    .map { |c| Datasources.const_get(c) }

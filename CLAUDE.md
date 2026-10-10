@@ -183,7 +183,9 @@ with its meaning: `registered_cadastral_parcels.has_enterprise_pm_owner` and `li
 (a parcel one of whose owners is a company SIRENE knows). A query that joins `registered_enterprises` on `siren` must ask
 whether the SIREN exists, never join its establishments: a large owner has thousands of them. `PivotMeter` does the same
 when it measures a pivot. `postal_codes` reads the communes and the municipal arrondissements of ADMIN EXPRESS from its
-GeoPackage (`ogr2ogr`); `cadastre` downloads with `curl -L`, the site answering with a redirection.
+GeoPackage (`ogr2ogr`), and adds Paris, Lyon and Marseille as whole communes (75056, 69123, 13055) under each postal
+code of their arrondissements, which are all La Poste lists (`commune_links` adds to their record what their
+arrondissements count, the cadastre and SIRENE knowing only those); `cadastre` downloads with `curl -L`, the site answering with a redirection.
 
 Collected again and again: a datasource declares `source_date 'SELECT ...'` so that its package carries the date
 its data gives instead of the `updated_at` of `credits`, and `package` writes no new version when nothing
@@ -231,9 +233,11 @@ every change of the form is saved and reviewed at once, and `Review` takes a `me
 read again when its file or its description changes.
 A table without INSEE codes designates two columns under `pivots`, `commune_postal_code` and `commune_name`
 (`Sheet::PLACE_PARTS`): `TabularDatasource` then adds an `insee_code` column during normalize, found in
-`registered_postal_codes` by postal code and name (capitals, accents, punctuation and SAINT/ST ignored; no code when
-no commune or several match), declares it as a `commune` pivot and depends on `postal_codes`.
+`registered_postal_codes` by postal code and name (capitals, accents, punctuation and SAINT/ST ignored; the name of
+the commune first, the names mail is delivered by otherwise; no code when no commune or several match), declares it as a `commune` pivot and depends on `postal_codes`.
 A normalize that fails puts the previous tables back and leaves the half-written ones in `<name>__error`.
+A table too large for the repository is kept in `raw/<name>/` under the same file name, the sheet alone being committed
+(`alim_confiance`): `Sheet#path` looks beside the sheet first, in `raw/` otherwise.
 
 Inputs (fuel, fertilisers, seeds, plant protection products and their prices): overview and weekly routine in
 `doc/datasources/intrants.md`; state of the work and what remains in `claudedocs/etat_intrants.md`.

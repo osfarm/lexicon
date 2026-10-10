@@ -12,6 +12,10 @@ module Datasources
     # Lyon and Marseille, which the postal reference lists under their own code
     LAYERS = %w[commune arrondissement_municipal].freeze
 
+    # Paris, Lyon and Marseille as whole communes, and the codes of their arrondissements. The postal reference
+    # only lists the arrondissements, while many datasets give the code of the commune.
+    WHOLE_COMMUNES = { '75056' => '751__', '69123' => '6938_', '13055' => '132__' }.freeze
+
     def load
       load_csv(dir.join('postal_codes.csv'), 'postal_codes', col_sep: ';')
       execute("7z x #{dir.join('communes.7z')} -o#{dir}/archive -aoa")
@@ -70,6 +74,18 @@ module Datasources
             ligne_5
           FROM postal_codes.postal_codes
       SQL
+
+      # A whole commune bears each postal code of its arrondissements, under the name they are delivered by
+      WHOLE_COMMUNES.each do |code, arrondissements|
+        query <<-SQL
+          INSERT INTO registered_postal_codes (id, country, code, city_name, postal_code, city_delivery_name)
+            SELECT DISTINCT CONCAT('#{code}', '_', postal_code, '_', SUBSTR(REPLACE(city_delivery_name, ' ', ''), 1, 6), '_'),
+              'FR', '#{code}', city_delivery_name, postal_code, city_delivery_name
+            FROM registered_postal_codes
+            WHERE code LIKE '#{arrondissements}'
+              AND NOT EXISTS (SELECT 1 FROM registered_postal_codes WHERE code = '#{code}')
+        SQL
+      end
 
       # update shape
       query <<-SQL

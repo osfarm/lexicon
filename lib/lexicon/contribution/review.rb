@@ -54,7 +54,7 @@ module Lexicon
         def remembered(table)
           return table_findings(table) if @memo.nil?
 
-          file = @sheet.dir.join(table.file)
+          file = @sheet.path(table)
           stamp = !table.file.empty? && file.file? ? [file.mtime.to_f, file.size] : nil
           @memo[[file.to_s, stamp, table.to_h, @sheet.personal_data]] ||= table_findings(table)
         end
@@ -119,8 +119,10 @@ module Lexicon
 
         def table_findings(table)
           declared = declaration_findings(table)
-          file = @sheet.dir.join(table.file)
-          return [*declared, error("Le fichier « #{table.file} » n'est pas dans le dossier.")] unless !table.file.empty? && file.file?
+          file = @sheet.path(table)
+          elsewhere = @sheet.raw.nil? ? '' : ", ni dans raw/#{@sheet.name}/ où se range un tableau trop gros pour le dépôt"
+          missing = "Le fichier « #{table.file} » n'est pas dans le dossier#{elsewhere}."
+          return [*declared, error(missing)] unless !table.file.empty? && file.file?
 
           rows = read(file)
           unreadable = "Le fichier « #{table.file} » ne se lit pas comme un CSV en UTF-8, séparé par des virgules."

@@ -62,11 +62,14 @@ module Lexicon
       attr_reader :dir
       # @return [Hash] the sheet as written, keys as strings
       attr_reader :data
+      # @return [Pathname, nil] where a table too large for the repository is kept: the raw directory of the dataset
+      attr_reader :raw
 
       # @param [Pathname] dir directory of the contribution
+      # @param [Pathname, nil] raw root of the raw directories, one per datasource
       # @return [Sheet]
-      def self.load(dir)
-        new(dir, YAML.safe_load(dir.join(FILE).read, permitted_classes: [Date]) || {})
+      def self.load(dir, raw: nil)
+        new(dir, YAML.safe_load(dir.join(FILE).read, permitted_classes: [Date]) || {}, raw: raw&.join(dir.basename))
       end
 
       # @param [Hash] data the sheet, keys as strings
@@ -89,9 +92,21 @@ module Lexicon
 
       # @param [Pathname] dir
       # @param [Hash] data
-      def initialize(dir, data)
+      # @param [Pathname, nil] raw raw directory of the dataset
+      def initialize(dir, data, raw: nil)
         @dir = dir
         @data = data.is_a?(Hash) ? data : {}
+        @raw = raw
+      end
+
+      # @param [Table] table
+      # @return [Pathname] the file of a table: beside the sheet, or in the raw directory when it is not there.
+      #   A large table stays out of the repository that way, like the files a datasource downloads.
+      def path(table)
+        beside = dir.join(table.file)
+        return beside if raw.nil? || table.file.empty? || beside.file? || !raw.join(table.file).file?
+
+        raw.join(table.file)
       end
 
       # @return [String] name of the dataset: the one of its directory

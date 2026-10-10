@@ -13,10 +13,11 @@ module Lexicon
         # is left aside: `./lexicon contribute <name>` tells what is wrong with it.
         #
         # @param [Pathname] root
+        # @param [Pathname, nil] raw root of the raw directories, where a large table is kept
         # @return [Array<Class>]
-        def define_all(root)
+        def define_all(root, raw: nil)
           Sheet.directories(root).map do |dir|
-            define(Sheet.load(dir))
+            define(Sheet.load(dir, raw: raw))
           rescue Psych::Exception
             nil
           end.compact
@@ -98,10 +99,15 @@ module Lexicon
         end
 
         # @param [Hash] place columns holding the postal code and the name of a commune
-        # @return [String] the INSEE code of the one commune of that postal code that bears that name, under any
-        #   of the names the postal reference knows it by; no code when there is none, or more than one
+        # @return [String] the INSEE code of the one commune of that postal code that bears that name; failing
+        #   that, of the one known by that name where mail is delivered. No code when there is none, or more than
+        #   one. The name of the commune comes first: « Paris » is Paris, « Paris 15 » its arrondissement.
         def commune_sql(place)
-          names = %w[city_name city_delivery_name city_delivery_detail].map { |column| plain_sql("place.#{column}") }
+          "COALESCE(#{named_sql(place, %w[city_name])}, #{named_sql(place, %w[city_name city_delivery_name city_delivery_detail])})"
+        end
+
+        def named_sql(place, columns)
+          names = columns.map { |column| plain_sql("place.#{column}") }
 
           <<~SQL.strip
             (SELECT min(place.code)
@@ -140,8 +146,11 @@ module Lexicon
           end
       end
 
+      # A table kept in the raw directory is already where it is read
       def collect
-        FileUtils.cp(self.class.sheet.tables.map { |table| self.class.sheet.dir.join(table.file) }, dir)
+        files = self.class.sheet.tables.map { |table| self.class.sheet.path(table) }
+
+        FileUtils.cp(files.reject { |file| file.dirname.expand_path == Pathname.new(dir).expand_path }, dir)
       end
 
       def load

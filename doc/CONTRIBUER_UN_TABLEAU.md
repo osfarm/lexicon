@@ -17,6 +17,10 @@ data/contributions/releves_sol/
 └── releves.csv      le tableau
 ```
 
+Un tableau trop gros pour le dépôt (plusieurs dizaines de Mo) se range dans `raw/releves_sol/`, sous le même nom de
+fichier : `raw/` n'est pas versionné, seule la fiche est commitée. Lexicon lit le tableau à côté de la fiche d'abord,
+dans `raw/` sinon.
+
 ## 2. Le tableau
 
 Depuis un tableur, « Enregistrer sous » au format CSV, encodage UTF-8, séparateur virgule.
