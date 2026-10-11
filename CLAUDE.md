@@ -250,6 +250,8 @@ A table too large for the repository is kept in `raw/<name>/` under the same fil
 
 `phytosanitary_purchases` reads the yearly Parquet file of the SDES (purchases of plant protection products estimated commune by commune, from the BNV-D) with DuckDB, which `requirements.txt` brings into the runner image. It keeps the last five years of metropolitan France, one line per commune, year, product and substance, with three tables drawn from it (by commune, by commune and function, by substance for the country). Lines under statistical secrecy are counted per commune and year, never dropped silently. These are purchases, not uses (`doc/datasources/phytosanitary_purchases.md`).
 
+`pat` reads the sheets of the territorial food projects (projets alimentaires territoriaux) the observatory France PAT publishes on data.gouv.fr: one table of projects (holder, recognition level, themes, farming figures of the territory) and one of the communes each covers, which is how a project is tied to a place (`doc/datasources/pat.md`).
+
 Inputs (fuel, fertilisers, seeds, plant protection products and their prices): overview and weekly routine in
 `doc/datasources/intrants.md`; state of the work and what remains in `claudedocs/etat_intrants.md`.
 
