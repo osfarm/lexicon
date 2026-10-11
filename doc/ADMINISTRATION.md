@@ -37,7 +37,9 @@ Une clé n'est délivrée qu'à un adhérent OSFarm, et expire avec son adhésio
 Données réservées aujourd'hui : les prix relevés chez des marchands
 (`fertilizers`, `seeds`, `phytosanitary_prices`, sous `/inputs`), les propriétaires de parcelles
 (`cadastre_owners`), affichés dans l'outil d'identification de parcelle,
-les fiches par entreprise (`/links/enterprises/<SIREN>`), et deux
+les fiches par entreprise (`/links/enterprises/<SIREN>`), l'annuaire des
+exploitations certifiées HVE (`hve_farms`, qui nomme des personnes : sans clé,
+on lit leur nombre par commune, pas leur nom), et deux
 jeux dont la licence n'est pas ouverte : `agroedi` (propriétaire) et
 `vine_varieties` (CC BY-NC-SA, servi sous `/viticulture/vine-varieties`).
 
@@ -46,7 +48,20 @@ jeux dont la licence n'est pas ouverte : `agroedi` (propriétaire) et
 - `/catalog` : les jeux de données en service, avec licence, date de la
   source, taux de liaison et versions téléchargeables. Ouvert.
 - `/links/communes/<INSEE>` (ouvert) et `/links/enterprises/<SIREN>`
-  (adhérents) : les fiches pré-jointes.
+  (adhérents) : les fiches pré-jointes. La fiche d'une commune porte une
+  rubrique « Agriculture et alimentation » : aires de signes de qualité et
+  d'origine (AOC/AOP, IGP, IG), agriculture biologique de la commune et de son
+  intercommunalité, exploitations certifiées HVE, cantines et part de bio de
+  leurs achats déclarés, établissements d'enseignement agricole, projets
+  alimentaires territoriaux. Chaque partie n'apparaît que si son jeu est en
+  service. Les noms des exploitations HVE sont réservés aux adhérents.
+- `/tools/parcel-identifier` : l'identificateur de parcelle, vers lequel
+  renvoie le bouton de la page d'accueil. Il ajoute à ce qu'il disait déjà la
+  même rubrique pour la commune, les zones d'AOC viticole délimitées où se
+  trouve le point et, pour un adhérent, les propriétaires certifiés HVE.
+- `/tools/trainings` : trouver une formation agricole près d'un lieu (commune,
+  code postal ou code INSEE), par diplôme, spécialité et voie (scolaire,
+  apprentissage, continue, supérieur). Ouvert.
 - `/geographical-references/cap-parcels/history?longitude=…&latitude=…` : les
   cultures déclarées à la PAC en un point, campagne par campagne (2022 à
   2025). Ouvert. L'identificateur de parcelle les affiche aussi.
@@ -56,10 +71,17 @@ jeux dont la licence n'est pas ouverte : `agroedi` (propriétaire) et
   Réservés aux adhérents : les relevés et prix mensuels des engrais, des
   semences et des phytos, qui nomment les marchands.
 - `/mcp` : serveur MCP pour les agents IA, en HTTP sans session (un message
-  JSON-RPC par `POST`). Dix outils : `list_datasets`, `describe_dataset`,
-  `list_resources`, `read_resource`, `get_commune`, `get_enterprise`,
+  JSON-RPC par `POST`). Quinze outils : `list_datasets`, `describe_dataset`,
+  `list_resources`, `read_resource`, `get_parcel` (ce que dit
+  l'identificateur de parcelle en un point), `get_crop_figures` (chiffres d'une
+  production, avec sa page de documentation Triple Performance),
+  `search_phytosanitary_products`, `get_phytosanitary_purchases` (achats de
+  produits phytosanitaires d'une commune), `get_commune` (la fiche, rubrique
+  « Agriculture et alimentation » comprise), `get_enterprise`,
   `search_rd_documents`, `get_rd_document`, `get_crop_history`,
-  `get_input_price` (le dernier prix d'un intrant, et le coût d'une dose).
+  `get_input_price` (le dernier prix d'un intrant, et le coût d'une dose) et
+  `find_agricultural_trainings` (les établissements qui préparent à une
+  formation, du plus proche au plus lointain).
 
 Un agent passe par le même contrôle d'accès que tout appelant : sans clé, il
 est limité comme un anonyme et ne voit que les données ouvertes ; avec la clé
@@ -202,7 +224,10 @@ Trois façons de voir ce qui est en service :
 - `./lexicon status` depuis un poste de build.
 
 Un package `stale` (périmé) reste servi : il a été construit contre une
-version d'un référentiel qui a changé depuis, et doit être republié. Un échec
+version d'un référentiel qui a changé depuis, et doit être republié.
+`status.json` n'est écrit que par la boucle du loader, toutes les cinq
+minutes : après un `server sync` lancé à la main, il garde l'ancien état
+jusqu'au passage suivant. Un échec
 de chargement laisse toujours l'ancienne version en service ; sa raison est
 dans `status.json` et sur la page **Datasources**. Voir
 [PUBLICATION.md](PUBLICATION.md), §8.
@@ -339,7 +364,12 @@ les mots de passe coupés, PAM ne sert plus à authentifier.
   redémarrage.
 - Les noms des packages réservés sont visibles dans `index.json` et
   `status.json` ; leur contenu ne l'est pas.
-- L'interface d'administration est en français uniquement.
+- L'interface d'administration est en français uniquement, comme la rubrique
+  « Agriculture et alimentation » et l'outil de recherche de formation.
+- Le graphique de la page d'accueil (jeux de données et clés qui les relient)
+  défile horizontalement sous 1 600 pixels de large environ.
+- L'outil de recherche de formation lit cinq chiffres comme un code INSEE
+  avant de les lire comme un code postal.
 - Une clé créée ou révoquée est prise en compte par l'API sous 30 secondes.
 - Duke répond avec un petit modèle : il lui arrive de prêter à un document un
   contenu que son titre et son extrait ne disent pas. La liste des documents

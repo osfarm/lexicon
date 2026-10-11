@@ -329,7 +329,8 @@ brutal du serveur lui-même, il peut rester un fichier temporaire caché
 
 ## 9. Datasources réservées
 
-Une datasource qui déclare `scope :members` (`cadastre_owners`, `enterprise_links`, `agroedi`, `vine_varieties`)
+Une datasource qui déclare `scope :members` (`cadastre_owners`, `enterprise_links`, `hve_farms`, `agroedi`,
+`vine_varieties`, `fertilizers`, `seeds`, `phytosanitary_prices`)
 est publiée lisible par son seul propriétaire (droits `700` / `600`) :
 
 - le loader, qui tourne sous ce propriétaire, la met en service ;
@@ -448,6 +449,25 @@ reconstruire et republier après les datasources dont elles dépendent :
 ```
 
 L'API les sert sous `/links/communes/<INSEE>` et `/links/enterprises/<SIREN>`.
+
+La fiche d'une commune montre aussi ce que d'autres packages disent d'elle,
+sans que `commune_links` les recopie : l'API les lit au moment de répondre,
+et laisse de côté ceux qui ne sont pas en service.
+
+| Package | Ce que la fiche en tire | Accès |
+|---|---|---|
+| `quality_and_origin_signs` | aires AOC/AOP, IGP et IG qui couvrent la commune, en tout ou en partie | ouvert |
+| `organic_farming` | opérateurs, exploitations et surface bio de la commune ; surface et cheptel de son intercommunalité, où presque rien n'est secret | ouvert |
+| `hve_farms` | nombre d'exploitations certifiées HVE ; leur nom pour un adhérent | nombre ouvert, noms réservés |
+| `canteens` | cantines inscrites, déclarations de l'année, part médiane et part pondérée de bio | ouvert |
+| `agricultural_schools` | établissements de la commune, à défaut les plus proches, et le nombre de formations de chacun | ouvert |
+| `pat` | projets alimentaires territoriaux qui couvrent la commune | ouvert |
+
+Ces six packages se republient donc seuls, sans reconstruire `commune_links`.
+Deux réserves accompagnent les chiffres à l'écran : un chiffre bio de moins de
+trois exploitations est secret, et les parcelles d'une exploitation sont
+comptées dans la commune de son siège ; une commune sans déclaration de
+cantine n'est pas une commune sans cantine.
 
 ## 14. Catalogue et versions passées
 
@@ -635,7 +655,10 @@ partage.
    au plus autour d'un point, ou une liste d'identifiants), resserrée au
    besoin à une section cadastrale ou à une culture ; les données à joindre
    (commune, culture, propriétaires personnes morales, transactions, sol, eau
-   à proximité, zonages, projets alimentaires territoriaux). Une collecte
+   à proximité, zonages, projets alimentaires territoriaux, signes de qualité
+   et d'origine avec la zone d'AOC viticole où se trouve la parcelle,
+   agriculture biologique, Haute Valeur Environnementale, restauration
+   collective). Une collecte
    garde au plus 2 000 parcelles, un adhérent au plus 50 collectes.
 2. **Retravailler** : « Ouvrir sur la carte » ouvre la collecte dans l'éditeur
    (geojson.io, voir `editor/README.md`), qui l'enregistre d'un bouton. Les
