@@ -1,0 +1,6 @@
+# Static files of the editor, asked by the API only (internal network of the stack)
+:80 {
+	root * /srv
+	encode zstd gzip
+	file_server
+}

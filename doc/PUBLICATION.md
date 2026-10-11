@@ -570,3 +570,89 @@ En local, `LEXICON_CONTRIBUTE_SECRET` dans `.env` suffit : la pile de service
 locale garde les contributions dans `out/contributions`, que les commandes
 `--proposed` et `--fetch` lisent sans `--production`
 (`LEXICON_CONTRIBUTIONS_TARGET` pour un autre dossier).
+
+## 18. Espace adhérent et clés d'API
+
+Un adhérent gère lui-même ses clés sous `/account` de l'API : il en crée
+(cinq actives au plus), les nomme, les limite, les remplace et les révoque.
+Il n'y a pas d'inscription : son compte est ouvert par un administrateur.
+
+### Ouvrir un compte
+
+1. Dans `/admin/members`, « Nouvel adhérent » : nom, e-mail (son
+   identifiant), fin d'adhésion, plan.
+2. L'adhérent reçoit un e-mail avec un lien pour choisir son mot de passe,
+   valable sept jours et utilisable une fois. Les clés déjà délivrées à la
+   même adresse sont rattachées à son compte.
+3. Prolonger l'adhésion ou changer le plan d'un adhérent s'applique à ses
+   clés ; fermer son compte les révoque.
+
+### Limiter une clé
+
+L'adhérent peut restreindre chaque clé aux endroits d'où elle sert :
+
+- des **adresses IPv4** (`203.0.113.7`) ou des plages (`203.0.113.0/24`),
+  comparées à l'adresse que donne le proxy de confiance : c'est la protection
+  sûre, pour une clé utilisée par un serveur ;
+- des **domaines** (`app.exemple.org`, `*.exemple.org`), comparés à l'en-tête
+  `Origin` de l'appel, `Referer` à défaut : pour une clé utilisée depuis les
+  pages d'un site. Un navigateur dit vrai, un programme peut mentir.
+
+Sans adresse ni domaine, la clé sert de partout ; avec les deux, l'un suffit.
+Un appel hors périmètre reçoit `403`. Pour qu'une page d'un autre site puisse
+appeler, l'API répond aux requêtes `OPTIONS` et envoie
+`Access-Control-Allow-Origin: *` sur les données, jamais sur `/admin`,
+`/account` ni l'outil de contribution.
+
+### Mise en place sur le serveur
+
+Dans Dokploy, définir les trois variables puis redéployer le service `api` :
+
+| Variable | Exemple |
+|---|---|
+| `LEXICON_SMTP_URL` | `smtps://utilisateur:motdepasse@smtp.exemple.org:465` |
+| `LEXICON_MAIL_FROM` | `Lexicon <lexicon@exemple.org>` |
+| `LEXICON_PUBLIC_URL` | `https://lexicon.osfarm.org` |
+
+Sans elles rien ne casse et rien n'est envoyé : la page de l'administrateur
+affiche le lien d'invitation, à transmettre soi-même, et « mot de passe
+oublié » renvoie vers OSFarm. Les liens envoyés commencent toujours par
+`LEXICON_PUBLIC_URL`, jamais par l'adresse par laquelle une requête est
+arrivée.
+
+Les tables (`members`, `member_tokens`, `member_sessions`, et les colonnes
+ajoutées à `api_keys`) sont créées au démarrage de l'API dans le schéma
+`lexicon_access`.
+
+## 19. Collectes de parcelles
+
+Dans son espace (`/account/collections`), un adhérent rassemble des parcelles
+avec ce que le Lexicon sait de chacune, les retravaille sur une carte et les
+partage.
+
+1. **Collecter**, en trois étapes : un nom et un type de parcelles (cadastre
+   ou parcelles déclarées à la PAC) ; une zone (une commune, un cercle de 5 km
+   au plus autour d'un point, ou une liste d'identifiants), resserrée au
+   besoin à une section cadastrale ou à une culture ; les données à joindre
+   (commune, culture, propriétaires personnes morales, transactions, sol, eau
+   à proximité, zonages, projets alimentaires territoriaux). Une collecte
+   garde au plus 2 000 parcelles, un adhérent au plus 50 collectes.
+2. **Retravailler** : « Ouvrir sur la carte » ouvre la collecte dans l'éditeur
+   (geojson.io, voir `editor/README.md`), qui l'enregistre d'un bouton. Les
+   données sont lues au moment de la collecte et ne changent plus ensuite.
+3. **Exporter** en GeoJSON ou en tableau CSV.
+4. **Partager** : un lien public, impossible à deviner, donne la collecte à
+   lire (page, carte, téléchargements) à qui le reçoit, sans compte et sans
+   pouvoir la modifier. Arrêter le partage rend le lien inopérant. Une
+   collecte partagée donne tout ce qu'elle contient, propriétaires compris :
+   la page le rappelle avant de créer le lien.
+
+### L'éditeur
+
+Le service `editor` de la pile construit geojson.io sur des fonds libres
+(plan, photographies aériennes et cadastre de l'IGN, OpenStreetMap) et le
+sert en fichiers statiques ; l'API le relaie sous `/collections/editor/`
+(`EDITOR_URL`, déjà réglé par `docker-compose.server.yml`). Sa construction
+télécharge geojson.io, ses dépendances et une police : le premier
+déploiement prend quelques minutes. Sans ce service, les collectes
+fonctionnent, sans la carte.

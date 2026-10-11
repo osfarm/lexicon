@@ -22,6 +22,12 @@
 #   LEXICON_CONTRIBUTIONS_DIR   directory of the host keeping what contributors propose (default: `contributions`
 #                               beside the packages). It must exist and belong to the user of the image (uid 1000)
 #
+# Optional, for the member area of the API (/account), where a member manages their own keys. Without the three,
+# nothing is mailed: the administrator is shown the invitation link and passes it on by hand.
+#   LEXICON_SMTP_URL     SMTP server sending the mail: smtps://user:password@host:465, or smtp://host:587
+#   LEXICON_MAIL_FROM    sender of the mail: Lexicon <lexicon@example.org>
+#   LEXICON_PUBLIC_URL   address of the site the mailed links start with: https://lexicon.example.org
+#
 # Domains are attached in Dokploy to `api` (port 8888) and `packages` (port 80).
 
 services:
@@ -190,6 +196,15 @@ services:
     networks:
       - lexicon
 
+  # The map editor of the collections members gather (geojson.io on free backgrounds, see editor/README.md):
+  # static files, relayed by the API under /collections/editor/.
+  editor:
+    build:
+      context: ./editor
+    restart: unless-stopped
+    networks:
+      - lexicon
+
   api:
     image: ghcr.io/osfarm/lexicon-rest-api:latest
     # The tag moves with each release of the API: without this, a redeployment keeps the image already pulled
@@ -213,6 +228,12 @@ services:
       # The contribution tool of /contribute/outil: without a secret the page shows it as unavailable
       CONTRIBUTE_URL: http://contribute:8787
       CONTRIBUTE_SECRET: ${LEXICON_CONTRIBUTE_SECRET:-}
+      # The member area of /account: invitations and password links are mailed when the three are set
+      SMTP_URL: ${LEXICON_SMTP_URL:-}
+      MAIL_FROM: ${LEXICON_MAIL_FROM:-}
+      PUBLIC_URL: ${LEXICON_PUBLIC_URL:-}
+      # The map editor of the collections, relayed under /collections/editor/
+      EDITOR_URL: http://editor:80
     volumes:
       - ${LEXICON_PACKAGES_DIR:?}/_bundles:/bundles:ro
     depends_on:
