@@ -1,3 +1,6 @@
+require 'csv'
+require 'json'
+
 module Datasources
   class Base
     extend Forwardable
@@ -96,6 +99,37 @@ module Datasources
           zip_file.extract(f, f_path)
         end
       end
+    end
+
+    # The files a dataset of data.gouv.fr lists. Its description is kept beside the raw files, under `as`.
+    # @return [Array<Hash>] each with 'title', 'url', 'format', 'last_modified'
+    def data_gouv_resources(slug, as: 'dataset.json')
+      description = dir.join(as)
+      execute "curl -sSLf --retry 2 -o '#{description}' 'https://www.data.gouv.fr/api/1/datasets/#{slug}/'"
+      JSON.parse(description.read).fetch('resources')
+    end
+
+    # Downloads `url` as `file` of the raw directory, unless it is there already (`again: true` to replace it)
+    # @return [Pathname]
+    def fetch(url, file, again: false)
+      path = dir.join(file)
+      return path if path.size? && !again
+
+      FileUtils.mkdir_p(path.dirname)
+      execute "curl -sSLf --retry 2 -o '#{path}.part' '#{url}'"
+      raise "Nothing downloaded from #{url}" unless File.size?("#{path}.part")
+
+      File.rename("#{path}.part", path)
+      path
+    end
+
+    # Writes rows as a CSV file of the raw directory, read back with `load_csv`
+    def write_csv(file, headers, rows)
+      CSV.open(dir.join(file), 'w') do |csv|
+        csv << headers
+        rows.each { |row| csv << row }
+      end
+      dir.join(file)
     end
 
     def insert_translations(datasource, temp_table, table)

@@ -163,6 +163,8 @@ serve it. Bundles go to `_bundles/<flavor>/` with the same permissions and are h
 `lexicon` and `lexicon_meta` (default privileges cover the tables each swap brings in), owns `lexicon_access`,
 and can change nothing else.
 
+Members manage their own API keys under `/account` of the API (accounts opened by an administrator, invitation by mail, keys narrowed to IPv4 addresses or domains): the stack passes `LEXICON_SMTP_URL`, `LEXICON_MAIL_FROM` and `LEXICON_PUBLIC_URL` to the API (`doc/PUBLICATION.md` §18). Members also gather parcels into collections there, reworked in a map editor: `editor/` builds geojson.io on MapLibre GL and the backgrounds of the IGN (`port.py`, pinned to a commit of geojson.io), as the `editor` service the API relays under `/collections/editor/` (§19).
+
 Deployment: `docker-compose.server.yml` is the serving stack (db, loader, packages file server, API), deployed
 by Dokploy on the `osfarm_lexicon` server. `./lexicon publish` needs `rsync` in the runner image.
 
@@ -251,6 +253,8 @@ A table too large for the repository is kept in `raw/<name>/` under the same fil
 `phytosanitary_purchases` reads the yearly Parquet file of the SDES (purchases of plant protection products estimated commune by commune, from the BNV-D) with DuckDB, which `requirements.txt` brings into the runner image. It keeps the last five years of metropolitan France, one line per commune, year, product and substance, with three tables drawn from it (by commune, by commune and function, by substance for the country). Lines under statistical secrecy are counted per commune and year, never dropped silently. These are purchases, not uses (`doc/datasources/phytosanitary_purchases.md`).
 
 `pat` reads the sheets of the territorial food projects (projets alimentaires territoriaux) the observatory France PAT publishes on data.gouv.fr: one table of projects (holder, recognition level, themes, farming figures of the territory) and one of the communes each covers, which is how a project is tied to a place (`doc/datasources/pat.md`).
+
+Farming and food of a commune, five datasources the API gathers on the sheet of a commune (`doc/datasources/<name>.md` each). `quality_and_origin_signs` reads the lists of communes of the INAO (areas of AOC/AOP, IGP, IG), brings communes that merged back to those of today with the movements of the INSEE (`partial`, `former_communes`), and loads the zones delimited for wines under AOC. `hve_farms` is the directory of farms certified HVE, reserved to members because it names people, placed by SIRET. `organic_farming` reads the Agence Bio by commune and by intercommunality: a figure of fewer than three farms is secret (`masked`), and parcels are counted at the seat of the farm. `canteens` reads the register of « ma cantine » and its yearly declarations (shares of organic purchases), summed up by commune without an average. `agricultural_schools` reads RefEA from the portal of agricultural education: schools and what they prepare for.
 
 Inputs (fuel, fertilisers, seeds, plant protection products and their prices): overview and weekly routine in
 `doc/datasources/intrants.md`; state of the work and what remains in `claudedocs/etat_intrants.md`.

@@ -29,5 +29,9 @@ datasources:
   protected_water_zones: 5
   msa_populations: 5
   quality_and_origin_signs: 5
+  hve_farms: 5
+  organic_farming: 5
+  canteens: 8
+  agricultural_schools: 5
   administrative_areas: 5
   agricultural_pictures: 5
