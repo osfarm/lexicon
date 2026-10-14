@@ -57,6 +57,27 @@ module Lexicon
         index.dig(:datasources, name.to_sym, :current) || versions(name).last
       end
 
+      # @param [String] name
+      # @return [String, nil] the version the index designates, nil when it says nothing of the datasource
+      def designated(name)
+        index.dig(:datasources, name.to_sym, :current)
+      end
+
+      # Replaces the datasources of the index in one write: a reader sees all of the former ones or all of
+      # these. Nothing is written when they are the same.
+      #
+      # @param [Hash{String => Hash}] datasources for each name, :current and :versions
+      # @return [Boolean] whether the index changed
+      def write_index(datasources)
+        data = index
+        entries = datasources.transform_keys(&:to_sym)
+        return false if data[:datasources] == entries
+
+        write_atomically(data.merge(datasources: entries, updated_at: Time.now.utc.iso8601))
+
+        true
+      end
+
       # Designates the version to serve, and refreshes the versions the index lists for the datasource.
       #
       # @param [String] name
@@ -68,10 +89,7 @@ module Lexicon
         data[:datasources] = (data[:datasources] || {}).merge(name.to_sym => { current: version, versions: versions(name) })
         data[:updated_at] = Time.now.utc.iso8601
 
-        # Written aside then renamed: a reader never sees a partial index
-        temporary = root.join("#{INDEX_FILE}.tmp")
-        temporary.write("#{JSON.pretty_generate(data)}\n")
-        File.rename(temporary, root.join(INDEX_FILE))
+        write_atomically(data)
       end
 
       # @param [String] name
@@ -125,6 +143,13 @@ module Lexicon
           file = root.join(INDEX_FILE)
 
           file.file? ? JSON.parse(file.read, symbolize_names: true) : {}
+        end
+
+        # Written aside then renamed: a reader never sees a partial index
+        def write_atomically(data)
+          temporary = root.join("#{INDEX_FILE}.tmp")
+          temporary.write("#{JSON.pretty_generate(data)}\n")
+          File.rename(temporary, root.join(INDEX_FILE))
         end
 
         def sort_key(version)

@@ -341,31 +341,65 @@ Le nom du package reste visible dans `index.json` et `status.json`.
 
 ## 10. Bundles
 
-Un bundle est un dépôt de packages filtré par un flavor
-(`resources/flavors/<flavor>.yml` : datasources exclues, filtres SQL par
-table). Il se charge ailleurs avec le même loader.
+Un bundle est un dépôt de packages réduit par un flavor
+(`resources/flavors/<flavor>.yml`), à charger ailleurs. Il y en a deux sortes.
 
-```sh
-./lexicon bundle cultia                 # out/bundles/cultia/
-./lexicon bundle test units soil        # seulement certaines datasources
-./lexicon publish --bundle cultia       # envoi dans la zone privée du serveur
+### Bundle suivi
+
+Un flavor `tracked: true` nomme ses datasources sous `only`, entières, sans
+filtre. Son bundle est fait des packages **en service**, tels quels : mêmes
+versions, mêmes `sha256`. C'est le serveur qui le compose, et qui le tient à
+jour.
+
+```yaml
+# resources/flavors/cultia.yml
+name: cultia
+tracked: true
+only:
+  - prices
+  - units
+  - …
 ```
 
-Le bundle publié est servi par l'API sous
-`https://lexicon.osfarm.org/bundles/<flavor>/`, aux seules clés portant la
-portée `bundle:<flavor>`.
-
-Côté destinataire :
-
 ```sh
-LEXICON_API_KEY=lex_… ./lexicon fetch https://lexicon.osfarm.org/bundles/cultia
-LEXICON_SERVER_DATABASE_URL=postgres://… \
-LEXICON_PACKAGES_ROOT=out/bundles/cultia ./lexicon server sync
+./lexicon publish --bundle cultia [--production]   # envoie la définition : la liste des noms
+./lexicon status --bundles [--production]          # ce que le bundle désigne, ce qui est en service
+./lexicon bundle cultia                            # le compose ici, depuis out/packages, pour l'essayer
 ```
 
-`fetch` vérifie les `sha256` et attend quand le quota de la clé est atteint.
+`publish --bundle` refuse une définition qui ne se chargerait pas : une
+datasource dont une clé étrangère vise une datasource que le flavor ne nomme
+pas. Il n'envoie que `_bundles/<flavor>/bundle.json`.
 
-### Flavor paramétré
+À chaque tour du loader (`server watch`), après les chargements, chaque bundle
+défini reçoit des liens physiques vers les packages en service, puis son
+`index.json`, écrit en dernier. Rien n'est copié. Une datasource qui n'est pas
+en service garde dans le bundle la version qu'elle y avait, et
+`_bundles/<flavor>/state.json` dit ce qui manque. Le bundle garde les versions
+que le dépôt garde : `resources/retention.yml` vaut pour lui. `./lexicon server
+bundles` fait ce passage à la main.
+
+Il n'y a rien à faire après la publication d'une datasource. `./lexicon ship`
+vérifie, une fois la datasource en service, que les bundles qui la nomment
+désignent la même version ; sinon il le dit et sort en erreur, la datasource
+restant en service.
+
+Une datasource réservée (`scope :members`) n'entre dans un bundle que si le
+flavor la nomme : la portée `bundle:<flavor>` vaut alors accord.
+
+### Bundle filtré
+
+Un flavor sans `tracked` exclut des datasources (`without`) et filtre des
+tables en SQL. Son bundle est exporté de la base de build, avec ses propres
+versions, et envoyé entier :
+
+```sh
+./lexicon bundle test units soil        # out/bundles/test/, seulement certaines datasources
+./lexicon publish --bundle test         # envoi dans la zone privée du serveur
+```
+
+Il n'est pas mis à jour automatiquement : après la republication d'une
+datasource, le reconstruire et le republier.
 
 Un flavor peut contenir des paramètres `%{nom}`, à renseigner à la
 construction. `resources/flavors/around.yml` ne garde que ce qui entoure un
@@ -379,8 +413,22 @@ Le rayon est en degrés (0.10 ≈ 10 km). Les valeurs sont limitées aux nombres
 et aux mots simples : elles sont insérées dans du SQL. Un paramètre manquant
 arrête la commande. `--as` nomme le bundle (`out/bundles/ma-ferme/`).
 
-Un bundle n'est pas mis à jour automatiquement : après la republication d'une
-datasource, reconstruire et republier le bundle.
+### Télécharger un bundle
+
+Un bundle est servi par l'API sous
+`https://lexicon.osfarm.org/bundles/<flavor>/`, aux seules clés portant la
+portée `bundle:<flavor>` (`doc/ADMINISTRATION.md`).
+
+```sh
+LEXICON_API_KEY=lex_… ./lexicon fetch https://lexicon.osfarm.org/bundles/cultia
+LEXICON_SERVER_DATABASE_URL=postgres://… \
+LEXICON_PACKAGES_ROOT=out/bundles/cultia ./lexicon server sync
+```
+
+`fetch` vérifie les `sha256` et attend quand le quota de la clé est atteint.
+Qui charge un bundle sans cet outil lit `index.json` (la version de chaque
+jeu), puis, par jeu, `manifest.json`, `structure.sql`, `indexes.sql` et les
+fichiers de `data/` (§4).
 
 ## 11. Retour arrière et purge
 

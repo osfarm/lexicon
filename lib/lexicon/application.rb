@@ -386,6 +386,9 @@ module Lexicon
           register(:status_file, memoize: true) do
             Server::StatusFile.new(repository: container.resolve('packaging.repository'), meta: container.resolve('server.meta'))
           end
+          register(:bundles, memoize: true) do
+            Server::Bundles.new(repository: container.resolve('packaging.repository'), meta: container.resolve('server.meta'))
+          end
           register(:pruner, memoize: true) do
             Server::Pruner.new(
               repository: container.resolve('packaging.repository'),

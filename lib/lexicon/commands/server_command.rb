@@ -31,12 +31,26 @@ module Lexicon
         loop do
           begin
             loader.sync { |outcome| print_outcome(outcome) unless outcome.state == :up_to_date }
+            # Before the status file: when it says a version is in service, the bundles already designate it
+            assemble_bundles(quiet: true)
             get('server.status_file').write
             get('server.meta').record_repository(get('packaging.repository'))
           rescue Server::LoadFailure => e
             puts '[ NOK ] '.red + e.message
           end
           sleep options['interval']
+        end
+      end
+
+      desc 'bundles', 'Make the tracked bundles of the repository out of the packages in service'
+
+      def bundles
+        refusing_failures do
+          get('server.meta').setup
+          results = assemble_bundles(quiet: false)
+          puts 'No tracked bundle in the repository' if results.empty?
+
+          exit 1 if results.any? { |result| result.outcome.nil? || result.outcome.missing.any? }
         end
       end
 
@@ -84,6 +98,31 @@ module Lexicon
         def prepare
           get('server.meta').setup
           get('server.api_role')&.ensure
+        end
+
+        # @param [Boolean] quiet say nothing of a bundle that did not change
+        # @return [Array<Server::Bundles::Result>]
+        def assemble_bundles(quiet:)
+          get('server.bundles').assemble_all.each { |result| print_bundle(result, quiet: quiet) }
+        rescue SystemCallError => e
+          puts '[ NOK ] '.red + "bundles: #{e.message}"
+
+          []
+        end
+
+        # @param [Server::Bundles::Result] result
+        def print_bundle(result, quiet:)
+          label = "bundle #{result.name.yellow}"
+          return puts('[ NOK ] '.red + "#{label}: #{result.error}") if result.outcome.nil?
+
+          outcome = result.outcome
+          puts "[  == ] #{label} already made of the packages in service" if outcome.unchanged? && outcome.missing.empty? && !quiet
+          outcome.linked.each { |package| puts '[  OK ] '.green + "#{label}: #{package}" }
+          outcome.pruned.each { |package| puts "        #{label}: #{package} removed, no longer in the repository" }
+          outcome.removed.each { |name| puts "        #{label}: #{name} removed, no longer in its definition" }
+          return if quiet && outcome.unchanged?
+
+          outcome.missing.each { |entry| puts '[ NOK ] '.red + "#{label}: #{entry[:name]} #{entry[:reason]}" }
         end
 
         def refusing_failures

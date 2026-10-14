@@ -24,6 +24,11 @@ module Lexicon
         end
       end
 
+      # @return [Array<String>] names of the flavors of the directory
+      def names
+        dir.glob('*.yml').map { |file| file.basename('.yml').to_s }.sort
+      end
+
       private
 
         # @return [Pathname]
@@ -37,18 +42,37 @@ module Lexicon
           rescue_failure do
             data = YAML.safe_load(file.read)
 
-            if validator.valid?(data)
+            if !validator.valid?(data)
+              Failure(StandardError.new('The content of the flavor file seems invalid'))
+            elsif (reason = untrackable(data))
+              Failure(StandardError.new("The flavor #{data.fetch('name')} is tracked: #{reason}"))
+            else
               Success(
                 LexiconFlavor.new(
                   data.fetch('name'),
                   only: data.fetch('only', nil),
                   without: data.fetch('without', []),
-                  datasources: load_datasources(data.fetch('datasources', {}))
+                  datasources: load_datasources(data.fetch('datasources', {})),
+                  tracked: data.fetch('tracked', false)
                 )
               )
-            else
-              Failure(StandardError.new('The content of the flavor file seems invalid'))
             end
+          end
+        end
+
+        # The bundle of a tracked flavor is made of packages in service, as they are: it names them and
+        # cannot filter them.
+        #
+        # @return [String, nil] why the flavor cannot be tracked
+        def untrackable(data)
+          return nil unless data.fetch('tracked', false)
+
+          if data.fetch('only', nil).to_a.empty?
+            'it must name its datasources under `only`'
+          elsif data.fetch('without', []).any?
+            'it cannot exclude datasources with `without`'
+          elsif data.fetch('datasources', {}).any?
+            'it cannot filter tables'
           end
         end
 

@@ -60,6 +60,36 @@ module Lexicon
                            permissions: Rsync::PRIVATE)
       end
 
+      # Sends the definition of a tracked bundle: the serving side makes the bundle itself, out of the
+      # packages it has in service.
+      #
+      # @param [BundleDefinition] definition
+      def publish_definition(definition)
+        Dir.mktmpdir do |dir|
+          definition.write(Pathname.new(dir))
+          # As a directory: the one of the bundle is then created private, whatever the files it later holds
+          transfer.copy_directory(dir, "#{target}/#{BUNDLES_DIR}/#{definition.name}", permissions: Rsync::PRIVATE)
+        end
+      end
+
+      # @param [String] flavor
+      # @return [Boolean] whether the serving side has the definition of this bundle
+      def bundle_defined?(flavor)
+        remote_json("#{BUNDLES_DIR}/#{flavor}/#{BundleDefinition::FILE_NAME}").any?
+      end
+
+      # @param [String] flavor
+      # @return [Hash{String => Hash}] for each datasource of the bundle, :current and :versions
+      def bundle_index(flavor)
+        remote_json("#{BUNDLES_DIR}/#{flavor}/#{Repository::INDEX_FILE}").fetch(:datasources, {}).transform_keys(&:to_s)
+      end
+
+      # @param [String] flavor
+      # @return [Array<Hash>] what the serving side could not put in the bundle, each with :name and :reason
+      def bundle_missing(flavor)
+        remote_json("#{BUNDLES_DIR}/#{flavor}/#{BundleAssembler::STATE_FILE}").fetch(:missing, [])
+      end
+
       # @return [Hash{String => Hash}] for each datasource of the remote index, :current and :versions
       def published
         remote_index.fetch(:datasources, {}).transform_keys(&:to_s)
@@ -121,7 +151,7 @@ module Lexicon
         # @return [Hash] empty when the file does not exist
         def remote_json(name)
           Dir.mktmpdir do |dir|
-            file = Pathname.new(dir).join(name)
+            file = Pathname.new(dir).join(File.basename(name))
 
             transfer.fetch_file("#{target}/#{name}", file) ? JSON.parse(file.read, symbolize_names: true) : {}
           end

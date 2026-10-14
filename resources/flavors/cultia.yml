@@ -1,13 +1,25 @@
 ---
+# What Cultia loads. Tracked: the serving side keeps this bundle made of the packages in service.
+# A datasource enters it by being named here; what its foreign keys reference must be named too.
 name: cultia
-without:
-  - cap_beneficiaries
-  - enterprises
-  - graphic_parcels
-  - cadastre
-  - cadastre_owners
-  - cadastral_prices
-  - hydrography
-  - pesticide_frequency_indicator
-  - postal_codes
-  - weather
+tracked: true
+only:
+  - agricultural_pictures
+  - budgets
+  - chart_of_accounts
+  - enterprise_classifications
+  - fertilizers
+  - fuel_prices
+  - intervention_models
+  - open_nomenclature
+  - phytosanitary
+  - phytosanitary_prices
+  - prices
+  - productions
+  - rica
+  - seeds
+  - taxonomy
+  - technical_workflow_sequences
+  - technical_workflows
+  - units
+  - variants

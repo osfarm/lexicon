@@ -93,12 +93,7 @@ module Lexicon
       publisher = get(options['production'] ? 'packaging.production_publisher' : 'packaging.publisher')
       puts "Target: #{publisher.target.yellow}#{' (production)' if options['production']}"
 
-      if options['bundle']
-        publisher.publish_bundle(get('parameter.bundles.root').join(options['bundle']), options['bundle'])
-        puts '[  OK ] '.green + "bundle #{options['bundle'].yellow} published"
-
-        return
-      end
+      return publish_bundle(publisher, options['bundle']) if options['bundle']
 
       packages = (targets.empty? ? repository.names : targets).map { |target| target.split('@', 2) }
       refuse_packages_not_tried_locally(packages) if options['production'] && !options['force']
@@ -113,11 +108,14 @@ module Lexicon
 
     desc 'status', 'Latest local version of each package, the one published and the one in service'
     method_option :production, type: :boolean, default: false, desc: 'Look at LEXICON_PRODUCTION_TARGET instead of LEXICON_PUBLISH_TARGET'
+    method_option :bundles, type: :boolean, default: false, desc: 'Look at the tracked bundles instead: what each designates'
 
     def status
       repository = get('packaging.repository')
       publisher = get(options['production'] ? 'packaging.production_publisher' : 'packaging.publisher')
       puts "Target: #{publisher.target.yellow}#{' (production)' if options['production']}"
+      return bundles_status(publisher) if options['bundles']
+
       published = publisher.published
       in_service = publisher.in_service
 
@@ -312,7 +310,11 @@ module Lexicon
         names.all? { |name| package_datasource(get('packaging.builder'), datasources.fetch(name), packaged_definitions.fetch(name)) }
       end
       deliver(names, get('packaging.publisher'), 'local')
-      deliver(names, get('packaging.production_publisher'), 'production') if options['production']
+      follow_bundles(names, get('packaging.publisher'), 'local')
+      if options['production']
+        deliver(names, get('packaging.production_publisher'), 'production')
+        follow_bundles(names, get('packaging.production_publisher'), 'production')
+      end
       puts '[  OK ] '.green + "#{names.join(', ')} shipped#{' to production' if options['production']}"
     rescue Packaging::Rsync::TransferError, ArgumentError => e
       stop_shipping(e.message)
@@ -341,6 +343,8 @@ module Lexicon
     def bundle(flavor_name, *only)
       flavor = get('flavor.loader').load(flavor_name).unwrap!
                                    .with_parameters(options['set'], name: options['as'])
+      return assemble_bundle(flavor, only) if flavor.tracked?
+
       repository = Packaging::Repository.new(get('parameter.bundles.root').join(flavor.name))
       builder = get('packaging.builder_factory').call(repository)
 
@@ -428,6 +432,108 @@ module Lexicon
         puts label + name.yellow
         errors.each { |finding| puts "        #{'error'.red}: #{finding.message}" }
         warnings.each { |finding| puts "        warning: #{finding.message}" }
+      end
+
+      # @return [Array<Flavor::LexiconFlavor>] the flavors whose bundle the serving side keeps up to date
+      def tracked_flavors
+        loader = get('flavor.loader')
+
+        loader.names.map { |name| loader.load(name).unwrap! }.select(&:tracked?)
+      end
+
+      # @param [Flavor::LexiconFlavor] flavor
+      # @return [Packaging::BundleDefinition]
+      def bundle_definition(flavor)
+        Packaging::BundleDefinition.from_flavor(
+          flavor,
+          definitions: packaged_definitions.slice(*packaged_datasources.keys),
+          resolver: Packaging::DependencyResolver.new(get('database.schema.definitions'))
+        )
+      end
+
+      # A tracked bundle is made of the packages of the local repository, as the serving side makes it of
+      # the ones in service: to try it here before it is defined there.
+      def assemble_bundle(flavor, only)
+        raise ArgumentError.new("The flavor #{flavor.name} is tracked: its bundle holds all its datasources") if only.any?
+
+        repository = get('packaging.repository')
+        definition = bundle_definition(flavor)
+        root = get('parameter.bundles.root')
+        versions = definition.datasources.map { |name| [name, repository.current(name)] }.to_h
+        outcome = Packaging::BundleAssembler.new(source: repository, root: root).assemble(definition, versions: versions)
+
+        outcome.linked.each { |package| puts '[  OK ] '.green + package }
+        outcome.missing.each do |entry|
+          puts '[ NOK ] '.red + entry[:name].yellow + ": #{entry[:reason].sub('in service', 'in the local repository')}"
+        end
+        puts "Bundle #{flavor.name.yellow}: #{definition.datasources.size - outcome.missing.size} packages in #{root.join(flavor.name)}"
+        exit 1 if outcome.missing.any?
+      end
+
+      # A tracked flavor only sends its definition; any other bundle is sent whole, as it was built
+      def publish_bundle(publisher, name)
+        loader = get('flavor.loader')
+        flavor = loader.names.include?(name) ? loader.load(name).unwrap! : nil
+
+        if flavor&.tracked?
+          publisher.publish_definition(bundle_definition(flavor))
+          puts '[  OK ] '.green + "bundle #{name.yellow} defined: the serving side makes it of the packages it has in service"
+        else
+          publisher.publish_bundle(get('parameter.bundles.root').join(name), name)
+          puts '[  OK ] '.green + "bundle #{name.yellow} published"
+        end
+      end
+
+      def bundles_status(publisher)
+        in_service = publisher.in_service
+
+        tracked_flavors.each do |flavor|
+          unless publisher.bundle_defined?(flavor.name)
+            puts "#{flavor.name.yellow}: not defined there (./lexicon publish --bundle #{flavor.name})"
+            next
+          end
+
+          puts flavor.name.yellow
+          bundle = publisher.bundle_index(flavor.name)
+          missing = publisher.bundle_missing(flavor.name).map { |entry| [entry[:name].to_s, entry[:reason]] }.to_h
+          (flavor.only | bundle.keys).sort.each do |name|
+            version = bundle.dig(name, :current)
+            served = in_service.dig(name, :version)
+            notes = [
+              (" #{missing[name]}".red if missing.key?(name)),
+              (' behind'.red if !version.nil? && !served.nil? && version != served),
+              (' no longer in the flavor'.red unless flavor.only.include?(name))
+            ].compact.join
+
+            puts "  #{name.ljust(30)} bundle #{(version || '-').ljust(13)} in service #{served || '-'}#{notes}"
+          end
+        end
+      end
+
+      # Once the datasources are in service, the tracked bundles naming them must designate the same versions
+      def follow_bundles(names, publisher, place)
+        flavors = tracked_flavors.select { |flavor| (flavor.only & names).any? }
+        return if flavors.empty?
+
+        shipping_step("Bundles (#{place})") do
+          in_service = publisher.in_service
+
+          flavors.map do |flavor|
+            unless publisher.bundle_defined?(flavor.name)
+              puts "        #{flavor.name}: not defined there, nothing to follow"
+              next true
+            end
+
+            bundle = publisher.bundle_index(flavor.name)
+            (flavor.only & names).map do |name|
+              followed = bundle.dig(name, :current) == in_service.dig(name, :version)
+              puts "        #{flavor.name}: #{name} #{bundle.dig(name, :current) || '-'}" \
+                   "#{" is not #{in_service.dig(name, :version)}, the version in service".red unless followed}"
+
+              followed
+            end.all?
+          end.all?
+        end
       end
 
       # @return [Boolean] whether the package has been built

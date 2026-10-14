@@ -16,11 +16,20 @@ module Lexicon
       # @param [Array<String>, nil] only
       # @param [Array<String>] without
       # @param [Hash{String=>DatasourceFlavor}] datasources
-      def initialize(name, only: nil, without: [], datasources: [])
+      # @param [Boolean] tracked whether the serving side keeps the bundle of this flavor up to date
+      def initialize(name, only: nil, without: [], datasources: [], tracked: false)
         @name = name
         @only = only
         @without = without
         @datasources = datasources
+        @tracked = tracked
+      end
+
+      # A tracked flavor chooses whole datasources: its bundle is made of the packages in service themselves
+      #
+      # @return [Boolean]
+      def tracked?
+        @tracked
       end
 
       # @param [Array<String>, nil] only
@@ -36,7 +45,8 @@ module Lexicon
           name,
           only: merged_only,
           without: without,
-          datasources: datasources
+          datasources: datasources,
+          tracked: tracked?
         )
       end
 
@@ -76,7 +86,7 @@ module Lexicon
           DatasourceFlavor.new(datasource.name, tables: tables)
         end
 
-        LexiconFlavor.new(name || self.name, only: only, without: without, datasources: filled)
+        LexiconFlavor.new(name || self.name, only: only, without: without, datasources: filled, tracked: tracked?)
       end
     end
   end

@@ -32,6 +32,7 @@ docker compose -f docker-compose-dev.yml down     # Stop dev containers
 ./lexicon publish [names] --production  # v2: send to LEXICON_PRODUCTION_TARGET what is in service locally (--force to skip that)
 ./lexicon status [--production]   # v2: version of each package: local, published, in service (status.json of the loader)
 ./lexicon publish --bundle <flavor>  # v2: send a bundle to the private area of the serving side
+./lexicon status --bundles [--production]  # v2: what each tracked bundle designates, beside what is in service
 ./lexicon fetch <url>             # v2: download a bundle served by the API (key in LEXICON_API_KEY)
 ./lexicon bundle <flavor> [names] # v2: repository of packages filtered by a flavor, in out/bundles/<flavor>/
 ./lexicon bundle around --as my-farm --set longitude:-0.78 latitude:45.81 radius:0.10  # v2: parameterized flavor
@@ -48,6 +49,7 @@ docker compose -f docker-compose-dev.yml down     # Stop dev containers
 ./lexicon server status           # v2: versions in service, stale packages, last loads
 ./lexicon server watch            # v2: loop run by the loader container on the server
 ./lexicon server rollback <name>  # v2: put back the version a package replaced
+./lexicon server bundles          # v2: make the tracked bundles of the repository out of the packages in service
 ./lexicon server prune [--apply]  # v2: old versions (resources/retention.yml) and packages gone from the repository
 ./lexicon dump all                # Create versioned package in out/
 ./lexicon version bump [major|minor|patch]  # Bump version
@@ -158,6 +160,14 @@ with `licence_exception`, and carries a `search` tsvector column (accents remove
 as that owner, puts it in service, while the public file server, which runs as an unprivileged user, cannot
 serve it. Bundles go to `_bundles/<flavor>/` with the same permissions and are handed out by the API under
 `/bundles/<flavor>/` to the keys carrying `bundle:<flavor>`.
+
+Two kinds of bundles. A flavor `tracked: true` (`cultia`) names whole datasources under `only`, with no filter: its
+bundle is made of the packages in service themselves, by the serving side. `publish --bundle` only sends its
+definition (`Packaging::BundleDefinition`, refused when a foreign key leaves the list), `Server::Bundles` hard-links
+the packages in service into `_bundles/<flavor>/` at each turn of `server watch` (`Packaging::BundleAssembler`, index
+written last, `state.json` for what is missing), and `ship` checks the bundles naming a datasource designate the
+version it put in service. Any other flavor (`around`, `test`) filters: its bundle is exported from the build
+database and sent whole, as before.
 
 `Server::ApiRole` creates, when `LEXICON_API_PASSWORD` is set, the role the API connects with: it reads
 `lexicon` and `lexicon_meta` (default privileges cover the tables each swap brings in), owns `lexicon_access`,

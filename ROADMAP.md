@@ -54,6 +54,9 @@ Fait :
 - [x] Traductions et crédits par package ; `master_translations` et
       `datasource_credits` deviennent des vues côté serveur
 - [x] Bundles filtrés par flavor (`./lexicon bundle`)
+- [x] Bundles suivis (`tracked: true`, le flavor `cultia`) : composés par le
+      serveur à partir des packages en service, tenus à jour à chaque
+      chargement, vérifiés par `./lexicon ship`
 - [x] Pile de service déployée par Dokploy : base, loader, dépôt public, API
 - [x] Sauvegarde quotidienne du dépôt vers S3
 - [x] 38 datasources en service, cadastre et hydrographie compris

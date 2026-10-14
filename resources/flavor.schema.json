@@ -9,6 +9,9 @@
       "type": "string",
       "pattern": "^[a-z-]+$"
     },
+    "tracked": {
+      "type": "boolean"
+    },
     "only": {
       "oneOf": [
         {

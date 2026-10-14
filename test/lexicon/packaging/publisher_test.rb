@@ -92,6 +92,32 @@ module Lexicon
         assert_equal %w[owners units], Repository.new(@remote).names
       end
 
+      def test_the_definition_of_a_tracked_bundle_goes_alone_to_the_private_area
+        refute @publisher.bundle_defined?('farm')
+
+        @publisher.publish_definition(BundleDefinition.new(name: 'farm', datasources: %w[units], defined_at: Time.now))
+
+        bundle = @remote.join('_bundles/farm')
+        assert_equal ['bundle.json'], bundle.children.map { |child| child.basename.to_s }
+        assert_equal '700', mode(bundle)
+        assert_equal '600', mode(bundle.join('bundle.json'))
+        assert_equal %w[units], BundleDefinition.load(bundle.join('bundle.json')).datasources
+        assert @publisher.bundle_defined?('farm')
+      end
+
+      def test_what_a_bundle_designates_and_misses_is_read_from_the_serving_side
+        assert_empty @publisher.bundle_index('farm')
+        assert_empty @publisher.bundle_missing('farm')
+
+        bundle = @remote.join('_bundles/farm')
+        bundle.mkpath
+        bundle.join('index.json').write({ datasources: { units: { current: '2026.10.01.1', versions: ['2026.10.01.1'] } } }.to_json)
+        bundle.join('state.json').write({ missing: [{ name: 'prices', reason: 'not in service' }] }.to_json)
+
+        assert_equal '2026.10.01.1', @publisher.bundle_index('farm').dig('units', :current)
+        assert_equal [{ name: 'prices', reason: 'not in service' }], @publisher.bundle_missing('farm')
+      end
+
       def test_bundle_goes_to_the_private_area_and_is_not_a_datasource
         build('units', '2026.10.01.1')
         @repository.set_current('units', '2026.10.01.1')
