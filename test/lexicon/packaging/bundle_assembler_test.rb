@@ -80,6 +80,24 @@ module Lexicon
         assert_equal ['2026.10.02.1'], index.dig('datasources', 'units', 'versions')
       end
 
+      def test_a_package_exported_under_the_number_of_a_published_one_is_replaced_or_pruned
+        build('units', '2026.10.01.1')
+        build('units', '2026.10.02.1')
+        %w[2026.10.01.1 2026.10.02.1].each do |version|
+          exported = @bundle.package_dir('units', version)
+          exported.mkpath
+          exported.join('manifest.json').write('{"flavor": "farm"}')
+        end
+
+        outcome = assemble(%w[units], 'units' => '2026.10.02.1')
+
+        assert_equal ['units@2026.10.02.1'], outcome.linked
+        assert_equal ['units@2026.10.01.1'], outcome.pruned
+        assert_equal ['2026.10.02.1'], @bundle.versions('units')
+        assert_equal @source.package_dir('units', '2026.10.02.1').join('manifest.json').stat.ino,
+                     @bundle.package_dir('units', '2026.10.02.1').join('manifest.json').stat.ino
+      end
+
       def test_a_datasource_not_in_service_keeps_what_the_bundle_had
         build('units', '2026.10.01.1')
         build('prices', '2026.10.01.1')

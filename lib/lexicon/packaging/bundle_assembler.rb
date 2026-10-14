@@ -102,7 +102,7 @@ module Lexicon
         # @return [Boolean] false when the bundle already has the package
         def link_package(bundle, name, version)
           destination = bundle.package_dir(name, version)
-          return false if destination.join(Manifest::FILE_NAME).file?
+          return false if published?(bundle, name, version)
 
           origin = source.package_dir(name, version)
           work = bundle.datasource_dir(name).join("#{WORK_PREFIX}#{version}")
@@ -136,7 +136,7 @@ module Lexicon
             next if current.nil?
 
             kept, gone = bundle.versions(name).partition do |version|
-              version == current || !present.include?(name) || !source.manifest(name, version).nil?
+              !present.include?(name) || published?(bundle, name, version)
             end
             pruned.concat(gone.map { |version| [name, version] })
 
@@ -144,6 +144,15 @@ module Lexicon
           end
 
           [entries.compact.to_h, pruned]
+        end
+
+        # A version of the bundle is the package of the repository, not one of the same number made otherwise
+        # (a bundle once exported from the build database)
+        def published?(bundle, name, version)
+          mine = bundle.package_dir(name, version).join(Manifest::FILE_NAME)
+          theirs = source.package_dir(name, version).join(Manifest::FILE_NAME)
+
+          mine.file? && theirs.file? && FileUtils.compare_file(mine, theirs)
         end
 
         # @return [Array<String>] datasources the definition no longer names, taken out of the bundle
