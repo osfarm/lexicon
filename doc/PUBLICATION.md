@@ -379,6 +379,12 @@ en service garde dans le bundle la version qu'elle y avait, et
 que le dépôt garde : `resources/retention.yml` vaut pour lui. `./lexicon server
 bundles` fait ce passage à la main.
 
+Une version n'est gardée dans le bundle que si son manifest est celui du
+dépôt : envoyer la définition dans un dossier qui tenait un bundle filtré (de
+l'ancien format « envoyé entier ») le remplace sans le vider à la main. Les
+datasources hors liste partent, les packages exportés sous un numéro du dépôt
+sont remplacés ou retirés.
+
 Il n'y a rien à faire après la publication d'une datasource. `./lexicon ship`
 vérifie, une fois la datasource en service, que les bundles qui la nomment
 désignent la même version ; sinon il le dit et sort en erreur, la datasource

@@ -404,7 +404,7 @@ composé localement.
 5. **Relevés par marchand.** `fertilizers`, `seeds` et `phytosanitary_prices`
    arrivent entiers chez Cultia ; ce qui en est montré se décide là-bas.
 
-## 11. État (2026-10-13)
+## 11. État (2026-10-14)
 
 Lots 1 à 4 faits dans ce dépôt, testés (28 tests nouveaux, 242 en tout) et
 essayés sur une base et un dépôt jetables. Écarts avec ce qui précède :
@@ -421,6 +421,30 @@ essayés sur une base et un dépôt jetables. Écarts avec ce qui précède :
 - Dans `server watch`, un jeu manquant n'est affiché qu'au tour où le bundle
   change ; `state.json` et `status --bundles` le disent à tout moment.
 
-Restent le lot 5 (redéploiement du loader, `publish --bundle cultia
---production`, clé de Cultia) et le lot 6 (`cultia_back`).
+### Lot 5, mis en service le 2026-10-14
 
+- Pile redéployée, `publish --bundle cultia` envoyé (`LEXICON_PUBLISH_TARGET`
+  vise le serveur de production sur ce poste). Bundle composé au premier tour
+  du loader : 19 jeux, chacun à la version en service, liens physiques (même
+  inode que le dépôt), `700`/`600`, rien de manquant, 111 Mo.
+- **Ancien bundle (§ 10, point 2) : pas vidé à la main.** Le loader a retiré
+  seul les 12 jeux hors liste. Six jeux gardaient une version `2026.10.04.1`
+  exportée du build, au même numéro qu'une version du dépôt mais d'un autre
+  contenu : l'assembleur ne comparait que le numéro. Corrigé (`b6d749b`) : une
+  version n'est gardée que si son manifest est celui du dépôt.
+- Clé de Cultia créée (portée `bundle:cultia`) : 401 sans clé, 200 avec,
+  403 sur `/bundles/around/`. Téléchargement complet avec le code de
+  `cultia_back` : 19 jeux, `sha256` bons, ~285 000 lignes, 1 min 50 s, aucun
+  `429` (N4).
+- Une connexion coupée sans réponse au premier téléchargement :
+  `lexicon_bundle.py` retente désormais (`cultia_back` `d44e66a`).
+- Pas fait : `server sync` du bundle sur une base vide (recette, point 3).
+
+### Reste (lot 6, `cultia_back`)
+
+1. `python -m scripts.load_lexicon --update --reset` sur la base de staging,
+   commiter `lexicon/index.json`, faire passer les tests de `cultia_back`.
+2. Recenser les vues de `public` qui lisent `lexicon` (§ 10, point 4) et les
+   fichiers du front `cultia_app` qui nomment des tables du Lexicon.
+3. Production, puis `prisma db pull/generate`, puis retrait de
+   `lexicon/6.*-cultia` (C8).
