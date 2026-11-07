@@ -12,8 +12,8 @@ ce qu'elles disent « non poussé » ou « non déployé » ne l'est plus pour l
 |---|---|
 | Code `lexicon`, branche `v2` | Poussée, à jour avec `origin/v2` (dernier commit `d97cc35`, 2026-10-14, bundles suivis `cultia`). 35 commits d'avance sur `main`, fusionnée la dernière fois le 2026-10-03 (PR #4). Aucun commit depuis le 14 octobre |
 | Code `lexicon-rest-api` | `feature/inputs` fusionnée dans `main` (`bc93566`) ; version 1.6.2 étiquetée le 2026-11-01 ; à jour avec l'origine |
-| Déploiement en production | **Non vérifié** : ni le redéploiement de la pile dans Dokploy après la poussée de `v2`, ni l'API 1.6.2 en service, ni `/inputs` et `get_input_price` en ligne |
-| Paquets sur ce poste | `out/packages` ne contient rien après le 2026-10-04 : aucun paquet `fuel_prices`, `fertilizers`, `seeds`, `phytosanitary_prices` ; `raw/fertilizers/` est vide. Les versions du 7 au 11 octobre citées plus bas n'y sont pas : construites sur un autre poste ou effacées depuis, à éclaircir |
+| API en production | Vérifié le 2026-11-07 : **1.6.2 en service** (version des ressources des pages et `serverInfo` de `/mcp`). Répondent : `/inputs`, `/admin/forgot`, `/phytosanitary`, `/geographical-references/food-projects`, `/collections/editor/`, `/contribute/outil`, `/documentation`. `/mcp` offre ses 15 outils ; `get_input_price` « GNR » rend 1,6889 €/L HT au 2026-10-01. Non vérifié : l'outil de contribution au-delà de sa page d'accueil (il faut une clé d'adhérent : secret `LEXICON_CONTRIBUTE_SECRET` et dossier des contributions), l'affichage des nouvelles natures de `hydrography`, la version du code du loader |
+| Poste de build | Les intrants (et les paquets du 7 au 11 octobre) sont construits sur le **poste fixe i7 du bureau**, qui garde `raw/fertilizers/` et les paquets dont `fertilizers` reprend les relevés. Le portable n'a rien après le 2026-10-04 dans `out/packages` |
 | Collecte hebdomadaire | Aucune trace depuis le 12 octobre sur ce poste. `fertilizers` cumule ses relevés à partir du dernier paquet local : sans lui, une reconstruction repart des seules pages de `raw/fertilizers/` |
 | Tests | 26 fichiers, 252 tests, aucun échec (2026-11-07) |
 | Production (`./lexicon status`) | Tout ce qui est publié est en service. Intrants encore en versions du 2026-10-07 : la collecte hebdomadaire n'est pas arrivée en production depuis. `hydrography` 2026.10.10.1, `pat`, `phytosanitary_purchases` et les cinq jeux de la commune (2026-10-11) sont en service. `agroedi` 2026.10.04.2 est `stale` |
@@ -23,10 +23,10 @@ ce qu'elles disent « non poussé » ou « non déployé » ne l'est plus pour l
 ### À faire pour reprendre
 
 1. ~~Tests et état de la production~~ : faits le 2026-11-07, voir le tableau.
-2. Vérifier que la pile de production tourne sur `v2` à `d97cc35` et l'API en 1.6.2 (`https://lexicon.osfarm.org/inputs`,
-   `get_input_price` sur `/mcp`) ; redéployer dans Dokploy sinon.
-3. Retrouver les paquets des intrants du 7 au 11 octobre (ou la machine qui les a construits) avant de reprendre la
-   collecte hebdomadaire (`doc/datasources/intrants.md`, « Chaque semaine »).
+2. ~~API en production~~ : 1.6.2 en service, vérifiée le 2026-11-07. Reste à voir dans Dokploy que le loader a été
+   redéployé sur `v2` à jour.
+3. Sur le poste fixe i7 du bureau : `git pull` de `v2`, puis reprendre la collecte hebdomadaire
+   (`doc/datasources/intrants.md`, « Chaque semaine ») ; les prix en production datent du 2026-10-07.
 4. `hydrography` 2026.10.10.1 est déjà en service en production : vérifier que l'API en service lit bien ses nouvelles
    natures de zones (il attendait `feature/inputs`).
 5. Outil de contribution en ligne : créer le dossier des contributions sur le serveur et définir
