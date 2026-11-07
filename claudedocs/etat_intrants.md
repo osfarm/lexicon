@@ -10,22 +10,22 @@ ce qu'elles disent « non poussé » ou « non déployé » ne l'est plus pour l
 
 | Chose | État au 2026-11-07 |
 |---|---|
-| Code `lexicon`, branche `v2` | Poussée, à jour avec `origin/v2` (dernier commit `d97cc35`, 2026-10-14, bundles suivis `cultia`). 35 commits d'avance sur `main`, fusionnée la dernière fois le 2026-10-03 (PR #4). Aucun commit depuis le 14 octobre |
+| Code `lexicon`, branche `v2` | Poussée, à jour avec `origin/v2`. Dernier commit de code `d97cc35` (2026-10-14, bundles suivis `cultia`), puis seulement ces notes le 2026-11-07. 38 commits d'avance sur `main`, fusionnée la dernière fois le 2026-10-03 (PR #4) |
 | Code `lexicon-rest-api` | `feature/inputs` fusionnée dans `main` (`bc93566`) ; version 1.6.2 étiquetée le 2026-11-01 ; à jour avec l'origine |
 | API en production | Vérifié le 2026-11-07 : **1.6.2 en service** (version des ressources des pages et `serverInfo` de `/mcp`). Répondent : `/inputs`, `/admin/forgot`, `/phytosanitary`, `/geographical-references/food-projects`, `/collections/editor/`, `/contribute/outil`, `/documentation`. `/mcp` offre ses 15 outils ; `get_input_price` « GNR » rend 1,6889 €/L HT au 2026-10-01. Non vérifié : l'outil de contribution au-delà de sa page d'accueil (il faut une clé d'adhérent : secret `LEXICON_CONTRIBUTE_SECRET` et dossier des contributions), l'affichage des nouvelles natures de `hydrography`, la version du code du loader |
-| Poste de build | Les intrants (et les paquets du 7 au 11 octobre) sont construits sur le **poste fixe i7 du bureau**, qui garde `raw/fertilizers/` et les paquets dont `fertilizers` reprend les relevés. Le portable n'a rien après le 2026-10-04 dans `out/packages` |
-| Collecte hebdomadaire | Aucune trace depuis le 12 octobre sur ce poste. `fertilizers` cumule ses relevés à partir du dernier paquet local : sans lui, une reconstruction repart des seules pages de `raw/fertilizers/` |
+| Poste de build | Le **poste fixe du bureau** (`ionosphere-ia`). Il construit les intrants et les paquets du 7 au 11 octobre, et garde `raw/fertilizers/` et les paquets dont `fertilizers` reprend les relevés. Le portable n'a rien après le 2026-10-04 dans `out/packages` |
+| Collecte hebdomadaire | Jamais faite depuis la première : `raw/fertilizers/` n'a que `2026-10-07`, et `fertilizers` est en 2026.10.07.2 partout. Elle reprendra des relevés du paquet 2026.10.07.2 |
 | Tests | 26 fichiers, 252 tests, aucun échec (2026-11-07) |
 | Production (`./lexicon status`) | Tout ce qui est publié est en service. Intrants encore en versions du 2026-10-07 : la collecte hebdomadaire n'est pas arrivée en production depuis. `hydrography` 2026.10.10.1, `pat`, `phytosanitary_purchases` et les cinq jeux de la commune (2026-10-11) sont en service. `agroedi` 2026.10.04.2 est `stale` |
-| Ce poste | Sans pile locale : `LEXICON_PUBLISH_TARGET` y vise directement la production et `LEXICON_PRODUCTION_TARGET` n'est pas défini (`status --production` échoue, `status` lit la production). Ses paquets locaux sont plus anciens que ceux en service (« to publish » trompeur) : **ne rien publier depuis ce poste** |
-| Disque | 87 % occupé (236 Go libres) : voir « À nettoyer » |
+| Poste du bureau | Pile locale en marche (`LEXICON_PUBLISH_TARGET=/lexicon/out/published`, `LEXICON_PRODUCTION_TARGET=osfarm_lexicon:lexicon/packages`). `./lexicon status` du 2026-11-07 : chaque paquet local est publié et en service dans la pile locale, rien à publier. C'est d'ici que se font `ship` et `publish --production`. Disque 47 % occupé (1,9 To libres) |
+| Portable | Sans pile locale : `LEXICON_PUBLISH_TARGET` y vise directement la production et `LEXICON_PRODUCTION_TARGET` n'est pas défini. Ses paquets sont plus anciens que ceux en service (« to publish » trompeur) : **ne rien publier depuis le portable**. Disque 87 % occupé : voir « À nettoyer » |
 
 ### À faire pour reprendre
 
 1. ~~Tests et état de la production~~ : faits le 2026-11-07, voir le tableau.
 2. ~~API en production~~ : 1.6.2 en service, vérifiée le 2026-11-07. Reste à voir dans Dokploy que le loader a été
    redéployé sur `v2` à jour.
-3. Sur le poste fixe i7 du bureau : `git pull` de `v2`, puis reprendre la collecte hebdomadaire
+3. Sur le poste du bureau (déjà à jour avec `origin/v2`) : reprendre la collecte hebdomadaire
    (`doc/datasources/intrants.md`, « Chaque semaine ») ; les prix en production datent du 2026-10-07.
 4. `hydrography` 2026.10.10.1 est déjà en service en production : vérifier que l'API en service lit bien ses nouvelles
    natures de zones (il attendait `feature/inputs`).
