@@ -196,7 +196,11 @@ agricultural APE codes only), so that `siren` and `siret` pivots match any compa
 with its meaning: `registered_cadastral_parcels.has_enterprise_pm_owner` and `link_communes.enterprise_owner_parcels_count`
 (a parcel one of whose owners is a company SIRENE knows). A query that joins `registered_enterprises` on `siren` must ask
 whether the SIREN exists, never join its establishments: a large owner has thousands of them. `PivotMeter` does the same
-when it measures a pivot. `postal_codes` reads the communes and the municipal arrondissements of ADMIN EXPRESS from its
+when it measures a pivot. `cadastre_owners` reads the yearly MAJIC files of the DGFiP, dropped by hand in
+`raw/cadastre_owners/locaux_<year>/` and `parcelles_<year>/` (situation 2026; the parcels of the Orne, missing from
+it, are those of 2025), and writes `pm_owners_count` and `has_enterprise_pm_owner` of `registered_cadastral_parcels`
+after resetting them: changing the situation means repackaging `cadastre`, `enterprise_links` and `commune_links`
+(`doc/datasources/cadastre_owners.md`). `postal_codes` reads the communes and the municipal arrondissements of ADMIN EXPRESS from its
 GeoPackage (`ogr2ogr`), and adds Paris, Lyon and Marseille as whole communes (75056, 69123, 13055) under each postal
 code of their arrondissements, which are all La Poste lists (`commune_links` adds to their record what their
 arrondissements count, the cadastre and SIRENE knowing only those); `cadastre` downloads with `curl -L`, the site answering with a redirection.

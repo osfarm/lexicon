@@ -82,5 +82,9 @@ AMM dérogatoire qui entre dans E-Phy y prend sa ligne E-Phy.
 - Un produit retiré d'E-Phy dont une dérogation court (MOVENTO, DESOGERME le 2026-11-07) garde `state` `withdrawn` :
   un client qui exige un produit et un usage `authorized` ne voit pas cet usage.
 - Les décisions publiées avant la première collecte ne sont pas dans l'archive, sauf PDF déposé à la main.
-- La clé Mistral du compte lexicon@osfarm.org avait, le 2026-11-07, une limite de 0 requête par minute : aucune
-  décision n'a encore été lue par la collecte.
+- Première collecte, le 2026-11-07 (paquet 2026.11.07.1, en production le même jour) : 37 décisions sur la page,
+  toutes lues ; 30 gardées (51 usages), 7 refusées. MOVENTO : AMM lue 2110086, 2249997 sur la page. AMISTAR et
+  ESSEN'CIEL : stades BBCH mal lus (5010 et 9005 ; fin à 9 pour un début à 89 ou 91). AVADEX FACTOR, MERLIN FLEXX,
+  REVYONA, VINAIGRE D'ALCOOL : phrase d'usage sans `*` (« Bananier », « Orge désherbage »), que le contrôle refuse.
+- La clé Mistral est `MISTRAL_API_KEY` du `.env` du poste de build ; le conteneur `lexicon_runner` ne la lit qu'à sa
+  création : `docker compose -f docker-compose-dev.yml up -d --force-recreate lexicon_runner` après l'avoir changée.
