@@ -1,7 +1,33 @@
-# Intrants — état au 2026-10-09 au soir, et reprise
+# Intrants — état au 2026-11-07, et reprise
 
 Chantier cadré dans `brainstorm_intrants.md`, conçu lot par lot dans `design_intrants_lot1_gnr.md` à
 `design_intrants_lot7_contribution.md`. Vue d'ensemble des jeux : `doc/datasources/intrants.md`.
+
+## Point du 2026-11-07
+
+Constaté sur le poste ce jour-là. Les sections suivantes, écrites du 9 au 11 octobre, sont gardées comme historique ;
+ce qu'elles disent « non poussé » ou « non déployé » ne l'est plus pour le code.
+
+| Chose | État au 2026-11-07 |
+|---|---|
+| Code `lexicon`, branche `v2` | Poussée, à jour avec `origin/v2` (dernier commit `d97cc35`, 2026-10-14, bundles suivis `cultia`). 35 commits d'avance sur `main`, fusionnée la dernière fois le 2026-10-03 (PR #4). Aucun commit depuis le 14 octobre |
+| Code `lexicon-rest-api` | `feature/inputs` fusionnée dans `main` (`bc93566`) ; version 1.6.2 étiquetée le 2026-11-01 ; à jour avec l'origine |
+| Déploiement en production | **Non vérifié** : ni le redéploiement de la pile dans Dokploy après la poussée de `v2`, ni l'API 1.6.2 en service, ni `/inputs` et `get_input_price` en ligne |
+| Paquets sur ce poste | `out/packages` ne contient rien après le 2026-10-04 : aucun paquet `fuel_prices`, `fertilizers`, `seeds`, `phytosanitary_prices` ; `raw/fertilizers/` est vide. Les versions du 7 au 11 octobre citées plus bas n'y sont pas : construites sur un autre poste ou effacées depuis, à éclaircir |
+| Collecte hebdomadaire | Aucune trace depuis le 12 octobre sur ce poste. `fertilizers` cumule ses relevés à partir du dernier paquet local : sans lui, une reconstruction repart des seules pages de `raw/fertilizers/` |
+| Docker | Arrêté ce jour-là : tests, `./lexicon status --production` et pile locale non lancés |
+| Disque | 87 % occupé (236 Go libres) : voir « À nettoyer » |
+
+### À faire pour reprendre
+
+1. Démarrer Docker, lancer les tests, puis `./lexicon status --production` pour savoir ce qui est réellement en service.
+2. Vérifier que la pile de production tourne sur `v2` à `d97cc35` et l'API en 1.6.2 (`https://lexicon.osfarm.org/inputs`,
+   `get_input_price` sur `/mcp`) ; redéployer dans Dokploy sinon.
+3. Retrouver les paquets des intrants du 7 au 11 octobre (ou la machine qui les a construits) avant de reprendre la
+   collecte hebdomadaire (`doc/datasources/intrants.md`, « Chaque semaine »).
+4. Publier `hydrography` 2026.10.10.1 : il attendait le déploiement de `feature/inputs` de l'API, désormais fusionnée.
+5. Outil de contribution en ligne : créer le dossier des contributions sur le serveur et définir
+   `LEXICON_CONTRIBUTE_SECRET` dans Dokploy si ce n'est pas fait (`doc/PUBLICATION.md` §17).
 
 ## Depuis le 2026-10-07 (sessions des 8 et 9 octobre)
 
@@ -77,7 +103,7 @@ Tout ce qui suit est commité en local sur `v2` (lexicon) et `feature/inputs` (l
 - **À nettoyer** : le conteneur `lexicon-api-dev` (port 8890), qui fait double emploi avec l'API locale ; les schémas
   `enterprises` (10 Go de stock SIRENE brut) et `*__backup` de la base de build.
 
-## Où en est chaque chose
+## Où en est chaque chose (au 2026-10-11 ; voir le point du 2026-11-07 en tête)
 
 | Chose | État |
 |---|---|
@@ -126,6 +152,9 @@ docker run --rm -u 1000:1000 -e HOME=/tmp -v "$PWD:/app" -w /app oven/bun:alpine
 
 ### 2. Mise en production du code
 
+Au 2026-11-07, les étapes 1 et 2 sont faites côté dépôts (`v2` poussée, `feature/inputs` fusionnée, API 1.6.2
+étiquetée) ; les redéploiements et l'étape 3 restent à vérifier.
+
 1. `lexicon` : relire, commiter, pousser `v2`. Redéployer la pile dans Dokploy pour que le loader prenne le
    nouveau code (il n'en a pas besoin pour charger les packages déjà publiés).
 2. `lexicon-rest-api` : relire, commiter `feature/inputs`, fusionner dans `main`, publier une version
@@ -155,10 +184,12 @@ les relevés s'additionnent bien d'une semaine à l'autre.
 - Une seconde source de prix pour les produits phytosanitaires.
 - Les semences vendues à la dose.
 - Le runner de collecte sur le serveur.
-- Le dépôt d'une contribution sans poste de build (question Q10 du cadrage).
+- ~~Le dépôt d'une contribution sans poste de build (question Q10 du cadrage)~~ : tranchée le 2026-10-10, outil servi
+  sous `/contribute/outil` ; reste son déploiement.
 - Les frictions non traitées : fin de `frictions_parcours.md`.
 
 ## À nettoyer sur le poste
 
 - Le conteneur `lexicon-api-dev` (port 8890).
 - La clé d'adhérent « Poste de dev », créée dans la base de service locale seulement.
+- Dans la base de build, les schémas `enterprises` (10 Go de stock SIRENE brut) et `*__backup`.
