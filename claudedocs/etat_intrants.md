@@ -10,14 +10,14 @@ ce qu'elles disent « non poussé » ou « non déployé » ne l'est plus pour l
 
 | Chose | État au 2026-11-07 |
 |---|---|
-| Code `lexicon`, branche `v2` | Poussée, à jour avec `origin/v2`. Dernier commit de code `d97cc35` (2026-10-14, bundles suivis `cultia`), puis seulement ces notes le 2026-11-07. 38 commits d'avance sur `main`, fusionnée la dernière fois le 2026-10-03 (PR #4) |
+| Code `lexicon`, branche `v2` | Poussée. Le 2026-11-07 : dérogations de 120 jours de `phytosanitary` (`963c5a8`, écrites sur le portable), situation 2026 de `cadastre_owners` (`04c48ca`). Fusionnée dans `main` la dernière fois le 2026-10-03 (PR #4) |
 | Code `lexicon-rest-api` | `feature/inputs` fusionnée dans `main` (`bc93566`) ; version 1.6.2 étiquetée le 2026-11-01 ; à jour avec l'origine |
 | API en production | Vérifié le 2026-11-07 : **1.6.2 en service** (version des ressources des pages et `serverInfo` de `/mcp`). Répondent : `/inputs`, `/admin/forgot`, `/phytosanitary`, `/geographical-references/food-projects`, `/collections/editor/`, `/contribute/outil`, `/documentation`. `/mcp` offre ses 15 outils ; `get_input_price` « GNR » rend 1,6889 €/L HT au 2026-10-01. Non vérifié : l'outil de contribution au-delà de sa page d'accueil (il faut une clé d'adhérent : secret `LEXICON_CONTRIBUTE_SECRET` et dossier des contributions), l'affichage des nouvelles natures de `hydrography`, la version du code du loader |
 | Poste de build | Le **poste fixe du bureau** (`ionosphere-ia`). Il construit les intrants et les paquets du 7 au 11 octobre, et garde `raw/fertilizers/` et les paquets dont `fertilizers` reprend les relevés. Le portable n'a rien après le 2026-10-04 dans `out/packages` |
-| Collecte hebdomadaire | Jamais faite depuis la première : `raw/fertilizers/` n'a que `2026-10-07`, et `fertilizers` est en 2026.10.07.2 partout. Elle reprendra des relevés du paquet 2026.10.07.2 |
+| Collecte hebdomadaire | Reprise le 2026-11-07 (rien entre le 7 octobre et ce jour). Les relevés s'additionnent : `fertilizers` 2026.11.07.1 garde les 914 du 7 octobre et ajoute 1 013 du 7 novembre (1 927) |
 | Tests | 26 fichiers, 252 tests, aucun échec (2026-11-07) |
-| Production (`./lexicon status`) | Tout ce qui est publié est en service. Intrants encore en versions du 2026-10-07 : la collecte hebdomadaire n'est pas arrivée en production depuis. `hydrography` 2026.10.10.1, `pat`, `phytosanitary_purchases` et les cinq jeux de la commune (2026-10-11) sont en service. `agroedi` 2026.10.04.2 est `stale` |
-| Poste du bureau | Pile locale en marche (`LEXICON_PUBLISH_TARGET=/lexicon/out/published`, `LEXICON_PRODUCTION_TARGET=osfarm_lexicon:lexicon/packages`). `./lexicon status` du 2026-11-07 : chaque paquet local est publié et en service dans la pile locale, rien à publier. C'est d'ici que se font `ship` et `publish --production`. Disque 47 % occupé (1,9 To libres) |
+| Production (`./lexicon status`) | Le 2026-11-07, en service en 2026.11.07.1 : `fuel_prices`, `fertilizers`, `seeds`, `phytosanitary_prices`, `prices`, et `phytosanitary` avec ses dérogations (37 décisions lues par Mistral OCR, 30 gardées, 51 usages, 7 refusées). `cadastre`, `cadastre_owners`, `enterprise_links` et `commune_links` 2026.11.07.1 (situation 2026 des personnes morales) en service en local, envoyés en production depuis une autre session. `hydrography` 2026.10.10.1, `pat`, `phytosanitary_purchases` et les cinq jeux de la commune (2026-10-11) sont en service. `agroedi` 2026.10.04.2 est `stale` |
+| Poste du bureau | Pile locale en marche (`LEXICON_PUBLISH_TARGET=/lexicon/out/published`, `LEXICON_PRODUCTION_TARGET=osfarm_lexicon:lexicon/packages`). Clé Mistral dans `.env` (`MISTRAL_API_KEY`) ; recréer `lexicon_runner` après l'avoir changée. C'est d'ici que se font `ship` et `publish --production`. Disque 47 % occupé (1,9 To libres) |
 | Portable | Sans pile locale : `LEXICON_PUBLISH_TARGET` y vise directement la production et `LEXICON_PRODUCTION_TARGET` n'est pas défini. Ses paquets sont plus anciens que ceux en service (« to publish » trompeur) : **ne rien publier depuis le portable**. Disque 87 % occupé : voir « À nettoyer » |
 
 ### À faire pour reprendre
@@ -25,8 +25,10 @@ ce qu'elles disent « non poussé » ou « non déployé » ne l'est plus pour l
 1. ~~Tests et état de la production~~ : faits le 2026-11-07, voir le tableau.
 2. ~~API en production~~ : 1.6.2 en service, vérifiée le 2026-11-07. Reste à voir dans Dokploy que le loader a été
    redéployé sur `v2` à jour.
-3. Sur le poste du bureau (déjà à jour avec `origin/v2`) : reprendre la collecte hebdomadaire
-   (`doc/datasources/intrants.md`, « Chaque semaine ») ; les prix en production datent du 2026-10-07.
+3. ~~Collecte hebdomadaire~~ : reprise le 2026-11-07 sur le poste du bureau, en production le même jour. La suivante
+   le lundi (`doc/datasources/intrants.md`, « Chaque semaine »). Dérogations refusées à regarder : MOVENTO (AMM lue
+   2110086, 2249997 sur la page), AMISTAR et ESSEN'CIEL (stades BBCH mal lus), AVADEX FACTOR, MERLIN FLEXX, REVYONA,
+   VINAIGRE D'ALCOOL (phrase d'usage sans `*`).
 4. `hydrography` 2026.10.10.1 est déjà en service en production : vérifier que l'API en service lit bien ses nouvelles
    natures de zones (il attendait `feature/inputs`).
 5. Outil de contribution en ligne : créer le dossier des contributions sur le serveur et définir
