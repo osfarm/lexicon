@@ -15,17 +15,20 @@ ce qu'elles disent « non poussé » ou « non déployé » ne l'est plus pour l
 | Déploiement en production | **Non vérifié** : ni le redéploiement de la pile dans Dokploy après la poussée de `v2`, ni l'API 1.6.2 en service, ni `/inputs` et `get_input_price` en ligne |
 | Paquets sur ce poste | `out/packages` ne contient rien après le 2026-10-04 : aucun paquet `fuel_prices`, `fertilizers`, `seeds`, `phytosanitary_prices` ; `raw/fertilizers/` est vide. Les versions du 7 au 11 octobre citées plus bas n'y sont pas : construites sur un autre poste ou effacées depuis, à éclaircir |
 | Collecte hebdomadaire | Aucune trace depuis le 12 octobre sur ce poste. `fertilizers` cumule ses relevés à partir du dernier paquet local : sans lui, une reconstruction repart des seules pages de `raw/fertilizers/` |
-| Docker | Arrêté ce jour-là : tests, `./lexicon status --production` et pile locale non lancés |
+| Tests | 26 fichiers, 252 tests, aucun échec (2026-11-07) |
+| Production (`./lexicon status`) | Tout ce qui est publié est en service. Intrants encore en versions du 2026-10-07 : la collecte hebdomadaire n'est pas arrivée en production depuis. `hydrography` 2026.10.10.1, `pat`, `phytosanitary_purchases` et les cinq jeux de la commune (2026-10-11) sont en service. `agroedi` 2026.10.04.2 est `stale` |
+| Ce poste | Sans pile locale : `LEXICON_PUBLISH_TARGET` y vise directement la production et `LEXICON_PRODUCTION_TARGET` n'est pas défini (`status --production` échoue, `status` lit la production). Ses paquets locaux sont plus anciens que ceux en service (« to publish » trompeur) : **ne rien publier depuis ce poste** |
 | Disque | 87 % occupé (236 Go libres) : voir « À nettoyer » |
 
 ### À faire pour reprendre
 
-1. Démarrer Docker, lancer les tests, puis `./lexicon status --production` pour savoir ce qui est réellement en service.
+1. ~~Tests et état de la production~~ : faits le 2026-11-07, voir le tableau.
 2. Vérifier que la pile de production tourne sur `v2` à `d97cc35` et l'API en 1.6.2 (`https://lexicon.osfarm.org/inputs`,
    `get_input_price` sur `/mcp`) ; redéployer dans Dokploy sinon.
 3. Retrouver les paquets des intrants du 7 au 11 octobre (ou la machine qui les a construits) avant de reprendre la
    collecte hebdomadaire (`doc/datasources/intrants.md`, « Chaque semaine »).
-4. Publier `hydrography` 2026.10.10.1 : il attendait le déploiement de `feature/inputs` de l'API, désormais fusionnée.
+4. `hydrography` 2026.10.10.1 est déjà en service en production : vérifier que l'API en service lit bien ses nouvelles
+   natures de zones (il attendait `feature/inputs`).
 5. Outil de contribution en ligne : créer le dossier des contributions sur le serveur et définir
    `LEXICON_CONTRIBUTE_SECRET` dans Dokploy si ce n'est pas fait (`doc/PUBLICATION.md` §17).
 
