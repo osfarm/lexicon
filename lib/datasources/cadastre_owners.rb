@@ -1,20 +1,22 @@
 module Datasources
   class CadastreOwners < Base
-    description 'Cadastre owners (legal entities / personnes morales) — DGFiP MAJIC 2025'
+    description 'Cadastre owners (legal entities / personnes morales) — DGFiP MAJIC 2026'
     credits name: 'Fichier des locaux et parcelles des personnes morales',
             url: "https://www.data.gouv.fr/fr/datasets/fichiers-des-locaux-et-des-parcelles-des-personnes-morales/",
             provider: "DGFiP",
             licence: "Licence Ouverte 2.0",
             licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
-            updated_at: "2025-08-19"
+            updated_at: "2026-11-03"
     pivot :cadastral_parcel, table: :registered_cadastral_parcel_owners, column: :cadastral_parcel_id
     pivot :siren, table: :registered_cadastral_owners, column: :siren
     # Owners of parcels: reserved to OSFarm members
     scope :members
 
     SCHEMA = 'cadastre_owners'.freeze
-    LOCAUX_DIR = 'locaux_2025'.freeze
-    PARCELLES_DIR = 'parcelles_2025'.freeze
+    # Situation 2026, published on 2026-11-03. The DGFiP left out the parcels of the Orne (PM_26_NB_610.csv is in
+    # none of the three archives): parcelles_2026/ holds PM_25_NB_610.csv of the situation 2025 in its place.
+    LOCAUX_DIR = 'locaux_2026'.freeze
+    PARCELLES_DIR = 'parcelles_2026'.freeze
 
     def collect
       missing = []
@@ -278,6 +280,14 @@ module Datasources
         WHERE majic_number IS NOT NULL AND majic_number <> ''
           AND department IS NOT NULL AND TRIM(department) <> ''
           AND commune_code IS NOT NULL
+      SQL
+
+      # The cadastre table keeps the marks of the previous build: a parcel no longer owned by a company loses them.
+      logger.debug "Reset registered_cadastral_parcels.pm_owners_count and has_enterprise_pm_owner..."
+      query <<~SQL
+        UPDATE lexicon.registered_cadastral_parcels
+           SET pm_owners_count = 0, has_enterprise_pm_owner = false
+         WHERE pm_owners_count <> 0 OR has_enterprise_pm_owner
       SQL
 
       logger.debug "Update registered_cadastral_parcels.pm_owners_count..."
