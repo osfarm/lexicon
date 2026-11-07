@@ -212,6 +212,15 @@ E-Phy with the EIQ of Cornell and the HRAC mode of action, linked to products by
 `alias`); a toxicity is never carried to another salt or ester unless `data/phytosanitary_substances/aliases.csv`
 says so (`doc/datasources/phytosanitary_substances.md`).
 
+`phytosanitary` adds the derogations of 120 days (article 53) that E-Phy does not publish, from the page of the
+ministry of agriculture (`schema_revision 2`). `Datasources::Phytosanitary::Derogations`: `collect` keeps every PDF in
+`raw/phytosanitary/derogations/` (never emptied: the page drops a decision once ended) and has each read once by
+Mistral OCR (`MISTRAL_API_KEY`, kept as `<sha>.ocr.json`); `load` checks each reading against the text and the page
+(`Decision`) and writes raw tables (`Rows`) with no network; `normalize` adds products absent from E-Phy
+(`product_type` `DEROGATION`) and usages `DEROG:{amm}:{code}:{milieu}:{start}` with `is_derogation` and their dates,
+`authorized` only while in force on the day of the build. A product of E-Phy is never changed. Built every week with
+the inputs (`doc/datasources/phytosanitary.md`).
+
 `fertilizers` collects delivered prices every week from two merchants (Cereapro, Germineo) for the five places of
 `data/fertilizers/delivery_places.csv`. Readings add up: each build reads again the pages kept in
 `raw/fertilizers/<date>/` and the readings of the latest local package. `Catalog` tells which product an offer is

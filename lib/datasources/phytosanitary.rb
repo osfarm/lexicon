@@ -2,6 +2,12 @@ module Datasources
   class Phytosanitary < Base
     description 'Phytosanitary products database from Ephy'
     credits name: 'Catalogues des produits de protection des végétaux', url: "https://www.data.gouv.fr/fr/datasets/donnees-ouvertes-du-catalogue-e-phy-des-produits-phytopharmaceutiques-matieres-fertilisantes-et-supports-de-culture-adjuvants-produits-mixtes-et-melanges/", provider: "ANSES", licence: "Open Licence", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf", updated_at: "2026-09-01"
+    credits name: "Autorisations de mise sur le marché d'une durée maximale de 120 jours", url: Derogations::PAGE_URL, provider: "Ministère de l'Agriculture", licence: "Licence Ouverte 2.0", licence_url: "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf", updated_at: "2026-11-07"
+
+    # 2: derogations of 120 days (`is_derogation` and their dates on usages and products)
+    schema_revision 2
+    # The latest decision, of E-Phy or of a derogation: the package only changes when a decision does
+    source_date 'SELECT max(decision_date) FROM registered_phytosanitary_usages WHERE decision_date <= CURRENT_DATE'
 
     BASE_URL = "https://www.data.gouv.fr/api/1/datasets/r"
 
@@ -12,6 +18,8 @@ module Datasources
 
       # Collect each csv from Ekylibre
       FileUtils.cp Dir.glob('data/phytosanitary/*.csv'), dir #TO DO : add a command to generate execeptions and target_name_to_pfi_targets
+
+      collect_derogations
     end
 
     def load
@@ -45,6 +53,8 @@ module Datasources
       load_csv(dir.join('phytosanitary - exceptions.csv'), 'exceptions')
       load_csv(dir.join('phytosanitary - symbols.csv'), 'symbols')
       load_csv(dir.join('phytosanitary - target_name_to_pfi_targets.csv'), 'target_name_to_pfi_targets')
+
+      load_derogations
     end
 
     def self.table_definitions(builder)
@@ -80,7 +90,8 @@ module Datasources
           operator_protection_mentions text,
           firm_name character varying,
           product_type character varying,
-          record_checksum integer
+          record_checksum integer,
+          is_derogation boolean NOT NULL DEFAULT false
         );
 
         CREATE INDEX registered_phytosanitary_products_name ON registered_phytosanitary_products(name);
@@ -127,11 +138,16 @@ module Datasources
           spray_volume_max_dose_quantity numeric(19,4),
           spray_volume_max_dose_unit character varying,
           spray_volume_max_dose_unit_name character varying,
-          record_checksum integer
+          record_checksum integer,
+          is_derogation boolean NOT NULL DEFAULT false,
+          derogation_started_on date,
+          derogation_stopped_on date,
+          derogation_url character varying
         );
 
         CREATE INDEX registered_phytosanitary_usages_product_id ON registered_phytosanitary_usages(product_id);
         CREATE INDEX registered_phytosanitary_usages_species ON registered_phytosanitary_usages(species);
+        CREATE INDEX registered_phytosanitary_usages_derogation ON registered_phytosanitary_usages(product_id) WHERE is_derogation;
       SQL
 
       builder.table :registered_phytosanitary_risks, sql: <<-SQL
@@ -214,6 +230,8 @@ module Datasources
       FROM (SELECT * FROM lexicon.registered_phytosanitary_products WHERE product_type IN ('PPP', 'ADJUVANT', 'PRODUIT-MIXTE')) ppp
       WHERE lexicon.registered_phytosanitary_products.france_maaid = ppp.france_maaid"
 
+      normalize_derogations
+
       query <<-SQL
         INSERT INTO registered_phytosanitary_cropsets (id, name, label, crop_names, crop_labels) -- Insert cropsets
           SELECT n, name, CONCAT('{"fra":"', label_fr, '"}')::JSONB, CONCAT('{', crop_names, '}')::TEXT[], CONCAT('{"fra":"', crop_labels_fr, '"}')::JSONB
@@ -283,6 +301,137 @@ module Datasources
       hash_table("registered_phytosanitary_products")
       hash_table("registered_phytosanitary_risks")
       hash_table("registered_phytosanitary_cropsets")
+    end
+
+    # Derogations of 120 days: the page of the ministry, the PDF it lists, each read once by Mistral OCR. Nothing
+    # here stops the collect of E-Phy: what fails is said, and the archive keeps what was collected before.
+    def collect_derogations
+      archive = Derogations::Archive.new(dir.join('derogations'))
+      today = Date.today
+      collect_derogation_pdfs(archive, today)
+      read_derogations(archive)
+    end
+
+    def collect_derogation_pdfs(archive, today)
+      page = fetch(Derogations::PAGE_URL, "derogations/page_#{today.iso8601}.html", again: true)
+      notices = Derogations::Page.parse(page.read)
+      if notices.empty?
+        puts "No decision found in #{Derogations::PAGE_URL}: the page may have changed, the archive is kept".red
+        return
+      end
+
+      by_url = archive.entries.each_with_object({}) { |entry, found| found[entry.notice['pdf_url']] = entry.sha if entry.notice }
+      added = 0
+      notices.each do |notice|
+        sha = by_url[notice.pdf_url]
+        if sha.nil?
+          sha = archive.store(fetch(notice.pdf_url, 'derogations/incoming.pdf', again: true))
+          added += 1
+        end
+        archive.see(sha, notice, today)
+      rescue StandardError => e
+        puts "Derogation #{notice.amm} #{notice.name} not downloaded (#{notice.pdf_url}): #{e.message}".red
+      end
+      puts "Derogations: #{notices.size} decisions on the page, #{added} new"
+    rescue StandardError => e
+      puts "Derogations: the page could not be read (#{e.message}), the archive is kept".red
+    end
+
+    def read_derogations(archive)
+      unread = archive.entries.select { |entry| entry.ocr.nil? }
+      return if unread.empty?
+
+      api_key = ENV['MISTRAL_API_KEY'].presence
+      if api_key.nil?
+        puts "Derogations: #{unread.size} decisions not read, MISTRAL_API_KEY is not set".red
+        return
+      end
+
+      reader = Derogations::Reader.new(api_key: api_key)
+      unread.each do |entry|
+        archive.keep_ocr(entry.sha, reader.read(entry.pdf.binread))
+        puts "Derogation read: #{entry.notice&.dig('amm')} #{entry.notice&.dig('name')} (#{entry.sha})"
+      rescue Derogations::Reader::RateLimited => e
+        puts "Derogations: reading stopped, #{unread.size} decisions not read in all: #{e.message}".red
+        break
+      rescue StandardError => e
+        puts "Derogation #{entry.sha} not read: #{e.message}".red
+      end
+    end
+
+    # Checks every decision read and writes the raw tables, with no network
+    def load_derogations
+      decisions = Derogations::Archive.new(dir.join('derogations')).entries.filter_map do |entry|
+        entry.ocr && Derogations::Decision.new(sha: entry.sha, notice: entry.notice, ocr: entry.ocr)
+      end
+      units = YAML.load_file(Pathname.new(__dir__).join('phytosanitary', 'units.yml'))
+      rows = Derogations::Rows.new(decisions, today: Date.today, units: units)
+
+      { 'derogation_products' => [Derogations::Rows::PRODUCT_HEADERS, rows.products],
+        'derogation_usages' => [Derogations::Rows::USAGE_HEADERS, rows.usages],
+        'derogation_risks' => [Derogations::Rows::RISK_HEADERS, rows.risks],
+        'derogations_refused' => [Derogations::Rows::REFUSED_HEADERS, rows.refused_rows] }.each do |table, (headers, lines)|
+        load_csv(write_csv("#{table}.csv", headers, lines), table)
+      end
+
+      puts "Derogations: #{rows.decisions.size} decisions kept, #{rows.usages.size} usages, #{rows.refused.size} refused"
+      rows.refused.each { |decision| puts "  refused #{decision.sha} #{decision.name}: #{decision.errors.join(' ; ')}".red }
+    end
+
+    # Products absent from E-Phy, then usages. A product of E-Phy is never changed; the crop, target and treatment
+    # of a usage are those of an E-Phy usage of the same code when there is one.
+    def normalize_derogations
+      query <<~SQL
+        INSERT INTO registered_phytosanitary_products (id, reference_name, name, active_compounds, france_maaid,
+            mix_category_codes, in_field_reentry_delay, state, started_on, stopped_on, firm_name, product_type, is_derogation)
+          SELECT d.id::integer, d.reference_name, d.name, string_to_array(NULLIF(d.active_compounds, ''), ' | '), d.id,
+            string_to_array(d.mix_category_codes, ',')::integer[], (d.in_field_reentry_hours || ' hours')::interval,
+            d.state, d.started_on::date, d.stopped_on::date, d.firm_name, 'DEROGATION', true
+          FROM phytosanitary.derogation_products d
+        ON CONFLICT (id) DO NOTHING;
+
+        INSERT INTO registered_phytosanitary_risks (product_id, risk_code, risk_phrase)
+          SELECT r.product_id::integer, r.risk_code, r.risk_phrase
+          FROM phytosanitary.derogation_risks r
+          JOIN registered_phytosanitary_products p ON p.id = r.product_id::integer AND p.is_derogation
+        ON CONFLICT DO NOTHING;
+
+        WITH catalogue AS (
+          SELECT DISTINCT ON (lib_court) lib_court, ephy_usage_phrase, crop, crop_label_fra, target_name,
+            target_name_label_fra, treatment
+          FROM registered_phytosanitary_usages
+          WHERE NOT is_derogation AND lib_court IS NOT NULL
+          ORDER BY lib_court, (state = 'authorized') DESC, id
+        )
+        INSERT INTO registered_phytosanitary_usages (id, lib_court, product_id, ephy_usage_phrase, crop, crop_label_fra,
+            species, target_name, target_name_label_fra, treatment, dose_quantity, dose_unit, dose_unit_name,
+            dose_unit_factor, pre_harvest_delay, applications_count, development_stage_min, development_stage_max,
+            usage_conditions, untreated_buffer_aquatic, decision_date, state, is_derogation, derogation_started_on,
+            derogation_stopped_on, derogation_url)
+          SELECT d.id, d.lib_court::integer, d.product_id::integer,
+            COALESCE(c.ephy_usage_phrase, d.ephy_usage_phrase),
+            COALESCE(c.crop, jsonb_build_object('fra', d.crop_label_fra)),
+            COALESCE(c.crop_label_fra, d.crop_label_fra),
+            '{plant}',
+            COALESCE(c.target_name, jsonb_build_object('fra', d.target_name_label_fra)),
+            COALESCE(c.target_name_label_fra, d.target_name_label_fra),
+            COALESCE(c.treatment, CASE WHEN d.treatment IS NOT NULL THEN jsonb_build_object('fra', d.treatment) END),
+            d.dose_quantity::numeric, d.dose_unit, d.dose_unit_name, d.dose_unit_factor::real,
+            (d.pre_harvest_days || ' days')::interval, d.applications_count::integer,
+            d.development_stage_min::integer, d.development_stage_max::integer, d.usage_conditions,
+            d.untreated_buffer_aquatic::integer, d.decision_date::date, d.state, true, d.started_on::date,
+            d.stopped_on::date, d.url
+          FROM phytosanitary.derogation_usages d
+          LEFT JOIN catalogue c ON c.lib_court = d.lib_court::integer
+          WHERE EXISTS (SELECT 1 FROM registered_phytosanitary_products p WHERE p.id = d.product_id::integer);
+      SQL
+
+      unknown = query(<<~SQL).first['count']
+        SELECT count(*) FROM registered_phytosanitary_usages u
+        WHERE u.is_derogation AND NOT EXISTS (
+          SELECT 1 FROM registered_phytosanitary_usages e WHERE NOT e.is_derogation AND e.lib_court = u.lib_court)
+      SQL
+      puts "Derogations: #{unknown} usages whose code E-Phy does not know, crop drawn from their phrase" if unknown.to_i.positive?
     end
 
     def hash_table(table_name)

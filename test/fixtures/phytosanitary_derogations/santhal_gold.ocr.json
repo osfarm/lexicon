@@ -1,0 +1,102 @@
+{
+  "model": "hand-written from the PDF of cropivia_backend/docs (Mistral not reachable on 2026-11-07)",
+  "read_at": "2026-11-07T00:00:00Z",
+  "document_annotation": {
+    "amm": "2230002",
+    "name": "SANTHAL GOLD",
+    "titulaire": "SYNGENTA France S.A.\n1 avenue des prés\n78286 Guyancourt",
+    "substances": [
+      {
+        "substance": "Métalaxyl-M",
+        "value": "465,2",
+        "unit": "g/L"
+      }
+    ],
+    "danger_statements": [
+      {
+        "code": "H302",
+        "phrase": "Nocif en cas d'ingestion"
+      },
+      {
+        "code": "H319",
+        "phrase": "Provoque une sévère irritation des yeux"
+      }
+    ],
+    "conditions": [
+      "SP 1 : Ne pas polluer l'eau avec le produit ou son emballage.",
+      "Délai de rentrée : 24 heures",
+      "SPe 1 : Pour protéger les eaux souterraines, ne pas appliquer ce produit ou tout autre produit contenant du métalaxyl-M plus d'une année sur deux.",
+      "SPe 3 : Pour protéger les organismes aquatiques, respecter une zone non traitée de 5 mètres par rapport aux points d'eau."
+    ],
+    "derogation_start": "2026-07-02",
+    "derogation_end": "2026-10-30",
+    "usages": [
+      {
+        "code_usage": "16552204",
+        "libelle": "Fraisier*Trt Irrigation loc.* Champignons (pythiacées)",
+        "crop_restriction": "Pépinière de Fraisier",
+        "milieu": "Plein champ",
+        "dose_max": 0.47,
+        "unite_dose_max": "L/ha",
+        "max_application_phrase": "1 application tous les deux ans tous usages confondus",
+        "bbch_min": 11,
+        "bbch_max": 13,
+        "dar_jour": null
+      },
+      {
+        "code_usage": "16551201",
+        "libelle": "Fraisier*Trt Plants*Champignons (pythiacées)",
+        "crop_restriction": "Pépinière de Fraisier",
+        "milieu": "Plein champ",
+        "dose_max": 0.47,
+        "unite_dose_max": "L/ha",
+        "max_application_phrase": "1 application tous les deux ans tous usages confondus",
+        "bbch_min": 11,
+        "bbch_max": 13,
+        "dar_jour": null
+      },
+      {
+        "code_usage": "16552204",
+        "libelle": "Fraisier*Trt Irrigation loc.* Champignons (pythiacées)",
+        "crop_restriction": "Pépinière de Fraisier",
+        "milieu": "Sous abris",
+        "dose_max": 1,
+        "unite_dose_max": "L/ha",
+        "max_application_phrase": "1 application tous les deux ans tous usages confondus",
+        "bbch_min": 11,
+        "bbch_max": 13,
+        "dar_jour": null
+      },
+      {
+        "code_usage": "16551201",
+        "libelle": "Fraisier*Trt Plants*Champignons (pythiacées)",
+        "crop_restriction": "Pépinière de Fraisier",
+        "milieu": "Sous abris",
+        "dose_max": 1,
+        "unite_dose_max": "L/ha",
+        "max_application_phrase": "1 application tous les deux ans tous usages confondus",
+        "bbch_min": 11,
+        "bbch_max": 13,
+        "dar_jour": null
+      }
+    ]
+  },
+  "pages": [
+    {
+      "index": 0,
+      "markdown": "# DECISION D'AUTORISATION DE MISE SUR LE MARCHE D'UN PRODUIT PHYTOPHARMACEUTIQUE AU TITRE DE L'ARTICLE 53 DU REGLEMENT (CE) N°1107/2009\n\nL'autorisation de mise sur le marché du produit phytopharmaceutique ci-après est délivrée en France du 02/07/2026 au 30/10/2026 selon les dispositions précisées dans la présente décision.\n\n## 1- Informations générales sur le produit\n\n| Nom commercial | SANTHAL GOLD |\n| --- | --- |\n| Numéro d'AMM | 2230002 |\n| Seconds noms commerciaux | / |\n| Substance(s) active(s) | Métalaxyl-M |\n| Concentration de la substance(s) active(s) | 465,2 g/L |\n| Mentions de dangers du produit | H302 : Nocif en cas d'ingestion<br>H319 : Provoque une sévère irritation des yeux |\n| Titulaire de l'autorisation | SYNGENTA France S.A.<br>1 avenue des prés<br>78286 Guyancourt |\n\nN°AMM 2230002-SANTHAL GOLD 1/4"
+    },
+    {
+      "index": 1,
+      "markdown": "## 2- Conditions d'emploi\n\n| Dispositions générales | SP 1 : Ne pas polluer l'eau avec le produit ou son emballage. |\n| --- | --- |\n| Protection de l'opérateur et du travailleur | Délai de rentrée : 24 heures |\n\nN°AMM 2230002-SANTHAL GOLD 2/4"
+    },
+    {
+      "index": 2,
+      "markdown": "| Protection de l'eau et de l'environnement | SPe 1 : Pour protéger les eaux souterraines, ne pas appliquer ce produit ou tout autre produit contenant du métalaxyl-M plus d'une année sur deux. |\n| --- | --- |\n| Protection des organismes aquatiques | SPe 3 : Pour protéger les organismes aquatiques, respecter une zone non traitée de 5 mètres par rapport aux points d'eau. |\n\nN°AMM 2230002-SANTHAL GOLD 3/4"
+    },
+    {
+      "index": 3,
+      "markdown": "## 3- Usage(s) autorisé(s)\n\n| Code de l'usage | Libellé(s) de(s) usage(s) | Autorisé(s) uniquement sur la(es) culture(s) suivante(s) | Dose maximale d'emploi par application | Nombre maximum d'application(s) | Stade(s) d'application (BBCH) | Délai avant récolte |\n| --- | --- | --- | --- | --- | --- | --- |\n| 16552204 | Fraisier*Trt Irrigation loc.* Champignons (pythiacées) | Pépinière de Fraisier (Plein champ) | 0,47 L/ha | 1 application tous les deux ans tous usages confondus | Du stade BBCH 11 au stade BBCH 13 | / |\n| 16551201 | Fraisier*Trt Plants*Champignons (pythiacées) | Pépinière de Fraisier (Plein champ) | 0,47 L/ha | 1 application tous les deux ans tous usages confondus | Du stade BBCH 11 au stade BBCH 13 | / |\n| 16552204 | Fraisier*Trt Irrigation loc.* Champignons (pythiacées) | Pépinière de Fraisier (Sous abris) | 1 L/ha | 1 application tous les deux ans tous usages confondus | Du stade BBCH 11 au stade BBCH 13 | / |\n| 16551201 | Fraisier*Trt Plants*Champignons (pythiacées) | Pépinière de Fraisier (Sous abris) | 1 L/ha | 1 application tous les deux ans tous usages confondus | Du stade BBCH 11 au stade BBCH 13 | / |\n\nDate : le 2 juillet 2026\n\nN°AMM 2230002-SANTHAL GOLD 4/4"
+    }
+  ]
+}

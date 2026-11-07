@@ -43,14 +43,18 @@ Le lundi après-midi, après la publication de la DGEC :
 ```sh
 ./lexicon ship fuel_prices fertilizers seeds phytosanitary_prices
 ./lexicon ship prices
+./lexicon ship phytosanitary        # E-Phy et les dérogations de 120 jours (doc/datasources/phytosanitary.md)
 ```
 
 puis, une fois vérifié en local :
 
 ```sh
-./lexicon publish fuel_prices fertilizers seeds phytosanitary_prices prices --production
+./lexicon publish fuel_prices fertilizers seeds phytosanitary_prices prices phytosanitary --production
 ./lexicon status --production
 ```
+
+`phytosanitary` est là pour ses dérogations : une autorisation de 120 jours peut commencer et finir entre deux
+constructions mensuelles. Un lundi sans décision nouvelle ni changement d'E-Phy ne pose pas de version.
 
 Environ 170 pages sont demandées aux marchands, à une requête par seconde. Les pages sont gardées dans `raw/` :
 c'est, avec les packages, la mémoire des relevés.
