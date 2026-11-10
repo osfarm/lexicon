@@ -1,0 +1,137 @@
+region,sector,zone,subsector,months,pdf_2026,source
+auvergne-rhone-alpes,JEVI,,,3-10,7,draaf
+auvergne-rhone-alpes,arboriculture|cultures fruitières,Rhône-Alpes,|cultures fruitières,2-9,30,draaf
+auvergne-rhone-alpes,grandes cultures,Auvergne,,2-11,36,draaf
+auvergne-rhone-alpes,grandes cultures,Rhône-Alpes,,2-11,34,draaf
+auvergne-rhone-alpes,horticulture,,,3-10,7,draaf
+auvergne-rhone-alpes,maraîchage,,,3-10,20,draaf
+auvergne-rhone-alpes,petits fruits,,,4-9,6,draaf
+auvergne-rhone-alpes,viticulture,Auvergne,,4-8,9,draaf
+auvergne-rhone-alpes,viticulture,Rhône-Alpes,,3-7,20,draaf
+bourgogne-franche-comte,grandes cultures,,,1-12,37,draaf
+bourgogne-franche-comte,grandes cultures,|Franche-Comté,prairies,3-7,4,draaf
+bourgogne-franche-comte,horticulture,,,3-10,16,draaf
+bourgogne-franche-comte,maraîchage,,,4-9,9,draaf
+bourgogne-franche-comte,petits fruits,,cassis,3-7,8,draaf
+bourgogne-franche-comte,petits fruits,|Grand Sud-Ouest,myrtille,3-9,11,draaf
+bourgogne-franche-comte,viticulture,,,3-7,15,draaf
+bretagne,JEVI,,,3-10,9,draaf
+bretagne,arboriculture,,fruits à transformer|fruits transformés,3-9,22,draaf
+bretagne,cultures spéciales,,lin,3-10,10,draaf
+bretagne,cultures spéciales,,pomme de terre,5-9,7,draaf
+bretagne,grandes cultures,,,2-11,32,draaf
+bretagne,horticulture,,,2-11,10,draaf
+bretagne,maraîchage,,légumes de transformation,3-10,23,chambre
+bretagne,maraîchage,,légumes frais,3-10,19,draaf
+centre-val-de-loire,JEVI,,,3-10,8,draaf
+centre-val-de-loire,arboriculture,,,2-10,34,draaf
+centre-val-de-loire,cultures spéciales,,betterave,3-10,24,draaf
+centre-val-de-loire,cultures spéciales,,pomme de terre,5-9,17,draaf
+centre-val-de-loire,grandes cultures,,céréales à paille,1-12,16,draaf
+centre-val-de-loire,grandes cultures,,maïs,5-9,13,draaf
+centre-val-de-loire,grandes cultures,,oléagineux,1-12,25,draaf
+centre-val-de-loire,grandes cultures,,protéagineux,2-7,15,draaf
+centre-val-de-loire,horticulture,,,2-11,16,draaf
+centre-val-de-loire,maraîchage,,,3-10,22,draaf
+centre-val-de-loire,viticulture,,,3-7,15,draaf
+corse,JEVI,,,3-10,7,draaf
+corse,arboriculture,,agrumes et kiwi|agrumes et kiwis,4-10,8,draaf
+corse,arboriculture,,olivier|oléiculture,3-10,12,draaf
+corse,grandes cultures,,,3-9,6,draaf
+corse,maraîchage,,,3-9,11,draaf
+corse,viticulture,,,4-8,4,draaf
+grand-est,JEVI,,,3-10,9,draaf
+grand-est,arboriculture,Alsace,,2-10,24,draaf
+grand-est,arboriculture,Lorraine,,2-10,24,draaf
+grand-est,cultures spéciales,|Alsace,houblon,4-9,10,draaf
+grand-est,grandes cultures,Alsace,,2-11,35,draaf
+grand-est,grandes cultures,Champagne-Ardenne,,2-11,38,draaf
+grand-est,grandes cultures,Lorraine,,2-11,33,draaf
+grand-est,horticulture,,,2-11,15,draaf
+grand-est,maraîchage|légumes,,,3-10,22,draaf
+grand-est,viticulture,Alsace,,3-9,15,draaf
+grand-est,viticulture,Champagne-Ardenne|Champagne,|vigne,3-9,17,draaf
+grand-est,viticulture,Lorraine,,3-9,14,draaf
+hauts-de-france,JEVI,,,3-10,6,draaf
+hauts-de-france,arboriculture|arboriculture fruitière,,|pépins,2-9,26,draaf
+hauts-de-france,cultures spéciales,,lin,3-9,17,draaf
+hauts-de-france,cultures spéciales,,pomme de terre,4-9,29,draaf
+hauts-de-france,grandes cultures,,,2-11,43,draaf
+hauts-de-france,maraîchage|cultures légumières,,,3-10,27,draaf
+hauts-de-france,petits fruits,,fraise,3-9,13,draaf
+ile-de-france,arboriculture,,,2-9,24,draaf
+ile-de-france,grandes cultures,,,1-12,39,draaf
+ile-de-france,horticulture,,horticulture,2-11,15,draaf
+ile-de-france,horticulture,,pépinière,2-11,15,draaf
+ile-de-france,maraîchage,,,3-10,26,draaf
+normandie,JEVI,,,3-10,5,draaf
+normandie,arboriculture,,fruits à transformer|fruits transformés,3-9,21,draaf
+normandie,cultures spéciales,,betterave,3-10,23,draaf
+normandie,cultures spéciales,,lin,3-7,16,draaf
+normandie,cultures spéciales,,pomme de terre,4-9,16,draaf
+normandie,grandes cultures,,colza,1-12,23,draaf
+normandie,grandes cultures,,céréales,1-12,18,draaf
+normandie,grandes cultures,,protéagineux,2-7,13,draaf
+normandie,horticulture,,,2-11,15,draaf
+normandie,maraîchage|cultures légumières|légumes,,,2-11,30,draaf
+nouvelle-aquitaine,JEVI,,,3-10,6,draaf
+nouvelle-aquitaine,arboriculture,,fruits à noyau,2-10,23,draaf
+nouvelle-aquitaine,arboriculture,,kiwi,2-10,22,draaf
+nouvelle-aquitaine,arboriculture,Centre et Sud Nouvelle-Aquitaine|Sud Nouvelle-Aquitaine|Limousin,pommier-poirier|fruits à pépins,2-10,24,draaf
+nouvelle-aquitaine,arboriculture,Grand Sud-Ouest,châtaignier,4-10,10,draaf
+nouvelle-aquitaine,arboriculture,Grand Sud-Ouest,noix,4-10,11,draaf
+nouvelle-aquitaine,arboriculture,Nord Nouvelle-Aquitaine,pommier,2-10,20,draaf
+nouvelle-aquitaine,cultures spéciales,,pomme de terre,4-9,20,draaf
+nouvelle-aquitaine,grandes cultures,Aquitaine,,1-12,42,draaf
+nouvelle-aquitaine,grandes cultures,Limousin,,1-12,36,draaf
+nouvelle-aquitaine,grandes cultures,Poitou-Charentes,,1-12,40,draaf
+nouvelle-aquitaine,horticulture,Grand Sud-Ouest,,2-11,6,draaf
+nouvelle-aquitaine,maraîchage,,légumes de plein champ,3-10,0,draaf
+nouvelle-aquitaine,maraîchage,Nord Nouvelle-Aquitaine,,3-10,20,draaf
+nouvelle-aquitaine,maraîchage,Nord Nouvelle-Aquitaine,melon-pastèque|melon,4-9,20,draaf
+nouvelle-aquitaine,maraîchage,Sud Nouvelle-Aquitaine,,3-10,14,draaf
+nouvelle-aquitaine,maraîchage,Sud-Ouest,melon,4-9,11,draaf
+nouvelle-aquitaine,petits fruits,,fraise-framboise,3-10,14,draaf
+nouvelle-aquitaine,petits fruits,,myrtille,3-9,11,draaf
+nouvelle-aquitaine,viticulture,Charentes,,3-9,21,draaf
+nouvelle-aquitaine,viticulture,Haut-Poitou,,3-9,11,draaf
+nouvelle-aquitaine,viticulture,Limousin,,3-9,18,draaf
+nouvelle-aquitaine,viticulture,Nord Aquitaine,,3-9,22,draaf
+nouvelle-aquitaine,viticulture,Sud Aquitaine,,3-9,18,draaf
+occitanie,JEVI,,,3-10,1,draaf
+occitanie,arboriculture,Grand Sud-Ouest,châtaignier,4-10,8,draaf
+occitanie,arboriculture,Grand Sud-Ouest,noix,4-10,10,draaf
+occitanie,arboriculture,Languedoc-Roussillon,,2-10,18,draaf
+occitanie,arboriculture,Languedoc-Roussillon|Arc méditerranéen|,olivier|oléiculture,3-10,14,draaf
+occitanie,arboriculture,Midi-Pyrénées,,2-10,26,draaf
+occitanie,cultures spéciales,,ail,3-7,11,draaf
+occitanie,grandes cultures,Arc méditerranéen,,1-12,8,draaf
+occitanie,grandes cultures,Ouest-Occitanie,,1-12,43,draaf
+occitanie,horticulture,Grand Sud-Ouest,,2-11,4,draaf
+occitanie,maraîchage,Languedoc-Roussillon,,1-12,22,draaf
+occitanie,maraîchage,Midi-Pyrénées,,3-10,16,draaf
+occitanie,maraîchage,|Sud-Ouest,melon,4-9,13,draaf
+occitanie,viticulture,|Midi-Pyrénées,raisin de table,3-9,19,draaf
+occitanie,viticulture,Aveyron,,3-9,16,draaf
+occitanie,viticulture,Cahors,,3-9,18,draaf
+occitanie,viticulture,Fronton,,3-9,16,draaf
+occitanie,viticulture,Gaillac,,3-9,16,draaf
+occitanie,viticulture,Gascogne,,3-9,17,draaf
+occitanie,viticulture,Languedoc-Roussillon,,3-9,21,draaf
+pays-de-la-loire,JEVI,,,3-10,11,draaf
+pays-de-la-loire,arboriculture,,,2-10,23,draaf
+pays-de-la-loire,arboriculture,,fruits à transformer,3-9,23,draaf
+pays-de-la-loire,grandes cultures,,,1-12,38,draaf
+pays-de-la-loire,horticulture,,,2-11,13,draaf
+pays-de-la-loire,maraîchage,,,1-12,32,draaf
+pays-de-la-loire,viticulture,,,3-9,21,draaf
+provence-alpes-cote-d-azur,"cultures spéciales|PPAM|PAPAM|plantes à parfum, aromatiques et médicinales",,PPAM|lavande et lavandin|,4-8,5,draaf
+provence-alpes-cote-d-azur,JEVI,,,3-10,13,draaf
+provence-alpes-cote-d-azur,arboriculture,|Basse Durance et Alpin|Basse Durance,|cerisier,2-9,25,draaf
+provence-alpes-cote-d-azur,arboriculture,,amandier,2-7,6,draaf
+provence-alpes-cote-d-azur,arboriculture,|Arc méditerranéen,olivier|oléiculture,3-11,22,draaf
+provence-alpes-cote-d-azur,grandes cultures,Arc méditerranéen,,1-12,8,draaf
+provence-alpes-cote-d-azur,horticulture,,,1-12,14,draaf
+provence-alpes-cote-d-azur,maraîchage,,,1-12,22,draaf
+provence-alpes-cote-d-azur,maraîchage,,tomate d'industrie,4-8,4,draaf
+provence-alpes-cote-d-azur,viticulture,,,3-8,20,draaf

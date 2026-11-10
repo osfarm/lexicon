@@ -21,7 +21,7 @@ RUN mkdir /lexicon && \
         --uid "$UID" \
         "$USER" && \
     apt-get update && \
-    apt-get -y install postgis postgresql-client postgresql-contrib libpq-dev p7zip-full pigz libyajl-dev gdal-bin rsync openssh-client --no-install-recommends && \
+    apt-get -y install postgis postgresql-client postgresql-contrib libpq-dev p7zip-full pigz libyajl-dev gdal-bin rsync openssh-client poppler-utils --no-install-recommends && \
     apt-get -y install python3-setuptools python3-dev python3-pip --no-install-recommends
 
 WORKDIR /lexicon

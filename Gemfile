@@ -21,6 +21,7 @@ gem 'zeitwerk'
 
 # Utilities
 gem 'activesupport'
+gem 'anthropic', '~> 2.6'
 gem 'aws-sdk-s3'
 gem 'charlock_holmes'
 gem 'i18n'

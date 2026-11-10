@@ -1,0 +1,84 @@
+# Sites des DRAAF (DRIAAF en Île-de-France) où le collecteur BSV trouve les bulletins de santé du végétal, une entrée par région.
+# Tiré de l'inventaire du 2026-11-08 (claudedocs/bsv_essai/inventaire/, une fiche par région) ; les chambres sont reportées à plus tard.
+# Les identifiants des rubriques d'année changent chaque année : seules les racines sont listées, les années se découvrent sous elles.
+
+auvergne-rhone-alpes:
+  site: https://draaf.auvergne-rhone-alpes.agriculture.gouv.fr/
+  root: bulletin-de-sante-du-vegetal-r51.html
+  extra_roots: [archivage-2025-r1672.html]
+  archives_since: 2025
+  notes: rubriques recyclées d'une année à l'autre (année fausse dans le slug) ; une fois archivée, l'année tient dans un seul article « BSV 2025 » derrière un meta refresh ; 2022-2024 seulement à la chambre
+
+bourgogne-franche-comte:
+  site: https://draaf.bourgogne-franche-comte.agriculture.gouv.fr/
+  root: bulletins-de-sante-du-vegetal-bsv-r345.html
+  archives_since: 2018
+  notes: un article par filière et campagne qui grossit en place, derrière un meta refresh ; grandes cultures par saison à cheval sur deux ans ; le BSV myrtilles est national
+
+bretagne:
+  site: https://draaf.bretagne.agriculture.gouv.fr/
+  root: bulletins-de-sante-du-vegetal-bsv-r34.html
+  archives_since: 2016
+  notes: la DRAAF n'a plus les légumes de transformation depuis 2022 (seulement à la chambre) ; un article par bulletin, listes paginées par 8 et non chronologiques
+
+centre-val-de-loire:
+  site: https://draaf.centre-val-de-loire.agriculture.gouv.fr/
+  root: acces-au-bsv-r37.html
+  archives_since: 2015
+  notes: structure différente selon l'année (article par filière ou sous-rubrique par filière) ; slugs muets (nouvel-article-no-1969 = céréales à paille) ; articles hors BSV dans les rubriques 2024-2025
+
+corse:
+  site: https://draaf.corse.agriculture.gouv.fr/
+  root: les-bulletins-de-sante-du-vegetal-bsv-r53.html
+  archives_since: 2021
+  notes: viticulture lacunaire sur la DRAAF (4 PDF en 2026 contre 9 à la chambre, dont le robots.txt interdit les PDF à la lettre) ; coquilles dans les slugs
+
+grand-est:
+  site: https://draaf.grand-est.agriculture.gouv.fr/
+  root: bulletins-de-sante-du-vegetal-bsv-r75.html
+  archives_since: 2015
+  notes: rubriques à un seul article redirigées par meta refresh ; doublons suffixés -2 ; la zone se lit dans le nom du PDF (un PDF Alsace rangé sous Lorraine)
+
+hauts-de-france:
+  site: https://draaf.hauts-de-france.agriculture.gouv.fr/
+  root: les-bulletins-de-sante-du-vegetal-bsv-r37.html
+  archives_since: 2016
+  notes: un article par bulletin ; noms de PDF sans motif commun, parfois sans date ; date et numéro à prendre dans le titre de l'article
+
+ile-de-france:
+  site: https://driaaf.ile-de-france.agriculture.gouv.fr/
+  roots: [bulletins-de-sante-du-vegetal-bsv-r195.html, archives-bsv-r197.html]
+  archives_since: 2023
+  notes: PDF sans date ni souvent année dans le nom (suffixes -2, -3) ; les rubriques passent de r195 à r197 en fin d'année ; pépinière et horticulture mêlées dans une rubrique
+
+normandie:
+  site: https://draaf.normandie.agriculture.gouv.fr/
+  root: bulletin-de-sante-du-vegetal-r114.html
+  archives_since: 2015
+  notes: céréales et colza par campagne à cheval sur deux ans (deux rubriques par année civile) ; listes paginées par 5 ; articles mal classés ou publiés avant leur PDF
+
+nouvelle-aquitaine:
+  site: https://draaf.nouvelle-aquitaine.agriculture.gouv.fr/
+  root: bulletin-de-sante-du-vegetal-r71.html
+  archives_since: 2023
+  notes: une rubrique par année, un article par édition ; l'article 2026 contient aussi les bilans 2025 ; éditions Grand Sud-Ouest communes avec l'Occitanie
+
+occitanie:
+  site: https://draaf.occitanie.agriculture.gouv.fr/
+  root: bulletins-de-sante-du-vegetal-r103.html
+  archives_since: 2025
+  notes: un article cumulatif par édition et année, grandes cultures par campagne ; DRAAF en retard sur la chambre (olivier) ; archives DRAAF limitées à 2025
+
+pays-de-la-loire:
+  site: https://draaf.pays-de-la-loire.agriculture.gouv.fr/
+  pages: [bulletins-de-sante-du-vegetal-a162.html]
+  section_is_sector: true
+  archives_since: 2026
+  exclude: [note, biodiversite]
+  notes: page unique réécrite à chaque campagne, sans archives (ce qui n'est pas collecté pendant la campagne est perdu) ; viticulture sans filière dans le nom du PDF
+
+provence-alpes-cote-d-azur:
+  site: https://draaf.paca.agriculture.gouv.fr/
+  root: bulletins-de-sante-du-vegetal-bsv-r267.html
+  archives_since: 2015
+  notes: slugs et titres d'articles peu fiables (le nom du PDF l'est plus) ; bulletins d'alerte et numéros bis mêlés aux bulletins

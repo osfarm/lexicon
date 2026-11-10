@@ -1,0 +1,61 @@
+region,zone,department_codes,basis
+auvergne-rhone-alpes,,01|03|07|15|26|38|42|43|63|69|73|74,région
+auvergne-rhone-alpes,Auvergne,03|15|43|63,ancienne région
+auvergne-rhone-alpes,Rhône-Alpes,01|07|26|38|42|69|73|74,ancienne région
+auvergne-rhone-alpes,Auvergnat,03|15|43|63,territoire auvergnat des bulletins (ancienne région)
+auvergne-rhone-alpes,Rhônalpin,01|07|26|38|42|69|73|74,territoire rhônalpin des bulletins (ancienne région)
+auvergne-rhone-alpes,Auvergne-Rhône-Alpes,01|03|07|15|26|38|42|43|63|69|73|74,région
+bourgogne-franche-comte,,21|25|39|58|70|71|89|90,région
+bourgogne-franche-comte,Bourgogne,21|58|71|89,ancienne région
+bourgogne-franche-comte,Franche-Comté,25|39|70|90,ancienne région
+bourgogne-franche-comte,Doubs et Jura,25|39,départements
+bretagne,,22|29|35|56,région
+centre-val-de-loire,,18|28|36|37|41|45,région
+corse,,2A|2B,région
+grand-est,,08|10|51|52|54|55|57|67|68|88,région
+grand-est,Alsace,67|68,ancienne région
+grand-est,Champagne-Ardenne,08|10|51|52,ancienne région
+grand-est,Lorraine,54|55|57|88,ancienne région
+grand-est,Champagne,02|10|51|52|77,vignoble de Champagne (aire de l'AOC)
+grand-est,Lorraine-Barrois,52|54|55|57|88,à vérifier sur un bulletin (Lorraine et Barrois haut-marnais)
+grand-est,Bas-Rhin,67,département
+hauts-de-france,,02|59|60|62|80,région
+hauts-de-france,Valenciennes,59,à vérifier sur un bulletin (arrondissement de Valenciennes)
+ile-de-france,,75|77|78|91|92|93|94|95,région
+normandie,,14|27|50|61|76,région
+nouvelle-aquitaine,,16|17|19|23|24|33|40|47|64|79|86|87,région
+nouvelle-aquitaine,Aquitaine,24|33|40|47|64,ancienne région
+nouvelle-aquitaine,Limousin,19|23|87,ancienne région
+nouvelle-aquitaine,Poitou-Charentes,16|17|79|86,ancienne région
+nouvelle-aquitaine,Nord Nouvelle-Aquitaine,16|17|79|86|87,fiche d'inventaire
+nouvelle-aquitaine,Sud Nouvelle-Aquitaine,19|24|33|40|47|64,fiche d'inventaire
+nouvelle-aquitaine,Centre et Sud Nouvelle-Aquitaine,19|24|33|40|47|64,à vérifier sur un bulletin
+nouvelle-aquitaine,Nord Aquitaine,24|33,à vérifier sur un bulletin
+nouvelle-aquitaine,Sud Aquitaine,40|47|64,à vérifier sur un bulletin
+nouvelle-aquitaine,Haut-Poitou,79|86,à vérifier sur un bulletin
+nouvelle-aquitaine,Charentes,16|17,vignoble des Charentes
+nouvelle-aquitaine,Grand Sud-Ouest,09|12|16|17|19|23|24|31|32|33|40|46|47|64|65|79|81|82|86|87,Nouvelle-Aquitaine et Ouest-Occitanie
+nouvelle-aquitaine,Sud-Ouest,09|12|16|17|19|23|24|31|32|33|40|46|47|64|65|79|81|82|86|87,melon du Sud-Ouest : comme Grand Sud-Ouest
+occitanie,,09|11|12|30|31|32|34|46|48|65|66|81|82,région
+occitanie,Languedoc-Roussillon,11|30|34|48|66,ancienne région
+occitanie,Midi-Pyrénées,09|12|31|32|46|65|81|82,ancienne région
+occitanie,Ouest-Occitanie,09|12|31|32|46|65|81|82,ancienne région Midi-Pyrénées
+occitanie,Arc méditerranéen,04|05|06|11|13|30|34|66|83|84,Languedoc-Roussillon et PACA
+occitanie,Grand Sud-Ouest,09|12|16|17|19|23|24|31|32|33|40|46|47|64|65|79|81|82|86|87,Nouvelle-Aquitaine et Ouest-Occitanie
+occitanie,Gascogne,32|64|65,à vérifier sur un bulletin (Saint-Mont et Madiran)
+occitanie,Cahors,46,à vérifier sur un bulletin
+occitanie,Gaillac,81,à vérifier sur un bulletin
+occitanie,Fronton,31|82,à vérifier sur un bulletin (Fronton et Tarn-et-Garonne)
+occitanie,Aveyron,12,à vérifier sur un bulletin
+occitanie,Sud-Ouest,09|12|16|17|19|23|24|31|32|33|40|46|47|64|65|79|81|82|86|87,melon du Sud-Ouest : comme Grand Sud-Ouest
+occitanie,Cahors-Lot,46,vignoble de Cahors (Lot)
+occitanie,Gascogne - St Mont-Madiran,32|64|65,vignobles de Saint-Mont et Madiran
+occitanie,Fronton - Tarn-et-Garonne,31|82,vignoble de Fronton et Tarn-et-Garonne
+pays-de-la-loire,,44|49|53|72|85,région
+pays-de-la-loire,Grand Ouest,14|22|27|29|35|44|49|50|53|56|61|72|76|85,"Bretagne, Normandie, Pays de la Loire (fruits à transformer)"
+provence-alpes-cote-d-azur,,04|05|06|13|83|84,région
+provence-alpes-cote-d-azur,Arc méditerranéen,04|05|06|11|13|30|34|66|83|84,Languedoc-Roussillon et PACA
+provence-alpes-cote-d-azur,Basse Durance et Alpin,04|05|13|84,"Basse Durance (13, 84) et Alpin (04, 05), écrit dans le bulletin"
+provence-alpes-cote-d-azur,Basse Durance,13|84,écrit dans le bulletin
+provence-alpes-cote-d-azur,Bassin hyérois et vallées niçoises,06|83,départements du Var et des Alpes-Maritimes
+provence-alpes-cote-d-azur,Var et Alpes-Maritimes,06|83,départements
