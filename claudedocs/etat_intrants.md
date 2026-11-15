@@ -9,7 +9,7 @@ Hors intrants, mais sur la même routine hebdomadaire (`doc/datasources/bsv.md`,
 
 | Chose | État au 2026-11-15 |
 |---|---|
-| Code `lexicon`, branche `v2` | `cd970c4` (`bsv`), `6e1bc55` (`bsv_archive`, règle des dates) ; non poussés |
+| Code `lexicon`, branche `v2` | `cd970c4` (`bsv`), `6e1bc55` (`bsv_archive`, règle des dates), poussés le 2026-11-15 |
 | Production | `bsv` 2026.11.10.2 et `bsv_archive` 2026.11.10.1 en service |
 | API en production | **1.7.1 en service**, vérifiée le 2026-11-15 : `/bsv`, `/bsv/risks` (Agen + colza : 13 risques et la mise en garde), `/bsv/search` (bulletins d'aujourd'hui en tête), les deux outils MCP, la page d'accueil |
 | Coût | lecture par Haiku 5.5 en lots, environ 0,005 $ par bulletin à l'essai (19 bulletins, 0,09 $) ; la correction de tous les bulletins a coûté 4,35 $ ; garde-fous `LEXICON_BSV_MAX_NEW` et `LEXICON_BSV_MAX_FIX` |
