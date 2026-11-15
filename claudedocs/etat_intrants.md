@@ -3,6 +3,18 @@
 Chantier cadré dans `brainstorm_intrants.md`, conçu lot par lot dans `design_intrants_lot1_gnr.md` à
 `design_intrants_lot7_contribution.md`. Vue d'ensemble des jeux : `doc/datasources/intrants.md`.
 
+## Point du 2026-11-15 : bulletins de santé du végétal
+
+Hors intrants, mais sur la même routine hebdomadaire (`doc/datasources/bsv.md`, `doc/datasources/bsv_archive.md`).
+
+| Chose | État au 2026-11-15 |
+|---|---|
+| Code `lexicon`, branche `v2` | `cd970c4` (`bsv`), `6e1bc55` (`bsv_archive`, règle des dates) ; non poussés |
+| Production | `bsv` 2026.11.10.2 et `bsv_archive` 2026.11.10.1 en service |
+| API en production | **1.7.1 en service**, vérifiée le 2026-11-15 : `/bsv`, `/bsv/risks` (Agen + colza : 13 risques et la mise en garde), `/bsv/search` (bulletins d'aujourd'hui en tête), les deux outils MCP, la page d'accueil |
+| Coût | lecture par Haiku 5.5 en lots, environ 0,005 $ par bulletin à l'essai (19 bulletins, 0,09 $) ; la correction de tous les bulletins a coûté 4,35 $ ; garde-fous `LEXICON_BSV_MAX_NEW` et `LEXICON_BSV_MAX_FIX` |
+| Restes | deux corrections coupées, relancées à la prochaine collecte ; dans les bulletins d'aujourd'hui, la recherche classe par pertinence, pas par date |
+
 ## Point du 2026-11-07
 
 Constaté sur le poste ce jour-là. Les sections suivantes, écrites du 9 au 11 octobre, sont gardées comme historique ;

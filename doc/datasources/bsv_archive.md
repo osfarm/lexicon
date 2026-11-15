@@ -42,3 +42,9 @@ docker compose -f docker-compose-dev.yml exec -T lexicon_runner ./lexicon-cli ru
 
 `collect` télécharge `reportsOCR.zip` (173 Mo) une fois, dans `raw/bsv_archive/` ; `load` le lit sans le décompresser.
 Le corpus ne change plus : on ne le reconstruit que si `old_regions.csv` ou la lecture changent.
+
+## Côté API
+
+Cherché avec les bulletins d'aujourd'hui par `/bsv/search` et l'outil MCP `search_plant_health_bulletins`, toujours
+après eux ; un document se lit sous `/bsv/archive/<id>` (`lexicon-rest-api` 1.7.0, 2026-11-15). Il n'est pas sur la
+page d'accueil : il ne partage aucune clé avec les autres jeux.

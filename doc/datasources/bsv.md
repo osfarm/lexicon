@@ -138,3 +138,18 @@ Fait le 2026-11-09 : 17 375 bulletins depuis 2015 selon les régions (`archives_
 ```sh
 docker compose -f docker-compose-dev.yml exec -T -e LEXICON_BSV_SINCE=archives lexicon_runner ./lexicon-cli run bsv
 ```
+
+## Côté API
+
+Servi par `lexicon-rest-api` depuis la 1.7.0 (2026-11-15) :
+
+| Route ou outil | Ce qu'il rend |
+|---|---|
+| `/bsv/risks?commune=<insee>&crop=<nom>` | le dernier bulletin de chaque édition qui couvre le département de la commune (21 jours au plus, sinon le dernier, `stale`), ses risques du plus fort au plus faible et les stades à part |
+| `/bsv/search?q=<mots>` | les pages des bulletins d'aujourd'hui, puis l'archive de 1955–2016 ([`bsv_archive`](bsv_archive.md)) : les bulletins d'aujourd'hui viennent toujours en tête |
+| `/bsv/bulletins/<id>` | un bulletin, ses lignes et ses pages |
+| MCP `get_crop_health_risks`, `search_plant_health_bulletins` | les mêmes, pour un agent et pour Duke, qui cite les bulletins en sources |
+
+Chaque réponse qui montre des risques dit qu'ils ont été extraits par une IA du bulletin cité, qui fait foi.
+`registered_bsv_risk_places` n'est pas servi. La page d'accueil de l'API montre `bsv` parmi les cultures, relié par
+la production.

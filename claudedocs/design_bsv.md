@@ -331,9 +331,11 @@ Une ligne refusée par `Extraction` n'entre pas ; le bulletin garde ses autres l
   (`data/bsv/old_regions.csv`, F11).
 - Pas d'extraction de risques (décision). Construit une fois ; reconstruit seulement si le corpus change.
 
-## 6. Côté `lexicon-rest-api` (à concevoir dans ce dépôt-là)
+## 6. Côté `lexicon-rest-api`
 
-Ce que les tables permettent, pour cadrer :
+**Fait** : en service depuis la 1.7.0 (2026-11-15), la recherche classée bulletins d'aujourd'hui d'abord et
+la page d'accueil en 1.7.1 le même jour ; ce qui est servi est décrit dans `doc/datasources/bsv.md`, « Côté API ».
+Le cadrage d'origine :
 
 - `GET /bsv/risks?commune=<insee>&production=<name>&date=<AAAA-MM-JJ>` : les lignes du dernier bulletin de chaque
   filière qui couvre le département de la commune, à la date donnée, avec la citation et le lien du PDF.
@@ -364,15 +366,17 @@ Ce que les tables permettent, pour cadrer :
    **Fait le 2026-11-09** sur les 19 bulletins de l'essai (Haiku 0,09 $, Opus 0,64 $ pour 5) : 448 lignes, 8 refusées
    (citation absente du texte), contrôle Haiku/Opus 78 % des lignes retrouvées, 94 % de niveaux identiques. Le schéma
    ne doit pas dépasser 16 champs nullables (limite de l'API) : `page` et `remarques` sont obligatoires. Zadoks pris
-   tel quel comme BBCH (même code décimal pour les céréales), sans `zadoks.csv`. `Coverage` reste à faire.
+   tel quel comme BBCH (même code décimal pour les céréales), sans `zadoks.csv`. `Coverage` fait depuis.
 5. Toutes les régions, campagne 2026 (environ 2 400 bulletins, une dizaine de dollars avec Haiku), puis les
    archives disponibles (2015–2025 selon les régions, de l'ordre de 20 000 bulletins, moins d'une centaine de
    dollars), garde-fou relevé à la main. **Pays de la Loire d'abord** : sa page est réécrite chaque campagne.
 6. Relecture par David d'un échantillon des lignes publiées (Q9) ; `./lexicon ship bsv` en local, puis production
-   après accord.
-7. `bsv_archive`.
-8. `lexicon-rest-api` : routes et outil MCP (§6).
-9. Routine hebdomadaire : `./lexicon ship bsv` ajouté à `doc/datasources/intrants.md`, « Chaque semaine ».
+   après accord. **Fait** : relecture de 60 lignes ; plutôt qu'une relecture complète (48 $), une passe de
+   correction (`Correction`, 4,35 $ pour 4 810 bulletins) ; `bsv` en production le 2026-11-10, puis 2026.11.10.2
+   (dates d'en-tête impossibles écartées) le 2026-11-15.
+7. `bsv_archive` : **fait**, 40 828 documents, en production le 2026-11-15 (2026.11.10.1).
+8. `lexicon-rest-api` : routes et outil MCP (§6). **Fait**, 1.7.0 puis 1.7.1 le 2026-11-15.
+9. Routine hebdomadaire : `./lexicon ship bsv` ajouté à `doc/datasources/intrants.md`, « Chaque semaine ». **Fait**.
 
 ## 9. Points ouverts pour la mise en œuvre
 
