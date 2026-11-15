@@ -26,6 +26,8 @@ module Datasources
 
       # A line with no pest says the stage of the crop: its type is `stade`
       STAGE = 'stade'
+      # No bulletin de santé du végétal is older (the network began in 2009)
+      FIRST_YEAR = 2009
       # « stade phénologique », « stades et état des cultures »: a heading the model took for a pest
       STAGE_HEADING = /\Astades?\b/i
 
@@ -48,6 +50,12 @@ module Datasources
         @levels_changed = 0
         @levels_corrected = 0
         @lines_dropped = 0
+      end
+
+      # A date read in the header, unless it cannot be: before FIRST_YEAR, or more than a month after the bulletin
+      # was first seen (« 7777-07-07 », a bilan dated the end of a year still to come)
+      def self.plausible(date, first_seen_on)
+        date if date && date.year >= FIRST_YEAR && date <= Date.iso8601(first_seen_on) + 31
       end
 
       def build
@@ -117,7 +125,7 @@ module Datasources
           if extraction
             header = extraction.answer
             row.merge!('zone' => header['zone'], 'sector' => header['filiere'], 'subsector' => header['sous_filiere'],
-                       'number' => header['numero'], 'published_on' => extraction.published_on&.iso8601,
+                       'number' => header['numero'], 'published_on' => Rows.plausible(extraction.published_on, row['first_seen_on'])&.iso8601,
                        'nature' => header['nature'], 'model' => answer['model'], 'instructions_version' => answer['version'])
             departments = territory(row['region'], header, departments)
           end

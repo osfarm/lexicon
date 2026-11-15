@@ -1,0 +1,44 @@
+key,region,department_codes,kind,text_names
+alsace,grand-est,67|68,ancienne région,alsace
+aquitaine|aquitain,nouvelle-aquitaine,24|33|40|47|64,ancienne région,aquitaine
+auvergne,auvergne-rhone-alpes,03|15|43|63,ancienne région,auvergne
+basse normandie,normandie,14|50|61,ancienne région,basse normandie
+bourgogne,bourgogne-franche-comte,21|58|71|89,ancienne région,bourgogne
+bretagne,bretagne,22|29|35|56,ancienne région,bretagne
+centre,centre-val-de-loire,18|28|36|37|41|45,ancienne région,region centre
+champagne ardenne,grand-est,08|10|51|52,ancienne région,champagne ardenne
+corse,corse,2A|2B,ancienne région,corse
+franche comte,bourgogne-franche-comte,25|39|70|90,ancienne région,franche comte
+haute normandie,normandie,27|76,ancienne région,haute normandie
+ile de france|idf,ile-de-france,75|77|78|91|92|93|94|95,ancienne région,ile de france
+languedoc roussillon,occitanie,11|30|34|48|66,ancienne région,languedoc roussillon
+limousin,nouvelle-aquitaine,19|23|87,ancienne région,limousin
+lorraine,grand-est,54|55|57|88,ancienne région,lorraine
+midi pyrenees,occitanie,09|12|31|32|46|65|81|82,ancienne région,midi pyrenees
+nord pas de calais,hauts-de-france,59|62,ancienne région,nord pas de calais
+pays de la loire,pays-de-la-loire,44|49|53|72|85,ancienne région,pays de la loire
+picardie,hauts-de-france,02|60|80,ancienne région,picardie
+poitou charentes,nouvelle-aquitaine,16|17|79|86,ancienne région,poitou charentes
+paca|provence alpes cote d azur,provence-alpes-cote-d-azur,04|05|06|13|83|84,ancienne région,provence alpes cote d azur|paca
+rhone alpes,auvergne-rhone-alpes,01|07|26|38|42|69|73|74,ancienne région,rhone alpes
+guadeloupe,guadeloupe,971,région,guadeloupe
+martinique,martinique,972,région,martinique
+guyane,guyane,973,région,guyane
+reunion,la-reunion,974,région,ile de la reunion
+mayotte,mayotte,976,région,mayotte
+alsace champagne ardenne lorraine,grand-est,08|10|51|52|54|55|57|67|68|88,région,alsace champagne ardenne lorraine
+aquitaine limousin poitou charentes,nouvelle-aquitaine,16|17|19|23|24|33|40|47|64|79|86|87,région,aquitaine limousin poitou charentes
+auvergne rhone alpes,auvergne-rhone-alpes,01|03|07|15|26|38|42|43|63|69|73|74,région,auvergne rhone alpes
+bourgogne franche comte,bourgogne-franche-comte,21|25|39|58|70|71|89|90,région,bourgogne franche comte
+centre val de loire,centre-val-de-loire,18|28|36|37|41|45,région,centre val de loire
+languedoc roussillon midi pyrenees,occitanie,09|11|12|30|31|32|34|46|48|65|66|81|82,région,languedoc roussillon midi pyrenees
+nord pas de calais picardie,hauts-de-france,02|59|60|62|80,région,nord pas de calais picardie
+normandie,normandie,14|27|50|61|76,région,normandie
+charente,nouvelle-aquitaine,16,département,
+charente maritime,nouvelle-aquitaine,17,département,
+deux sevres,nouvelle-aquitaine,79,département,
+vienne,nouvelle-aquitaine,86,département,
+bas vivarais,auvergne-rhone-alpes,07,zone,
+lauragais,occitanie,11|31,zone,
+leucate fitou,occitanie,11,zone,
+limouxin,occitanie,11,zone,

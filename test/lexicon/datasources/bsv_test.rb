@@ -228,6 +228,15 @@ module Datasources
       assert_equal 'faible', Bsv::Levels.checked('faible', 'curseur sur FAIBLE ; la pression reste moyenne à forte')
     end
 
+    def test_a_date_before_the_bsv_or_well_after_the_bulletin_was_seen_is_not_kept
+      assert_equal Date.new(2026, 11, 5), Bsv::Rows.plausible(Date.new(2026, 11, 5), '2026-11-06')
+      assert_equal Date.new(2026, 12, 1), Bsv::Rows.plausible(Date.new(2026, 12, 1), '2026-11-06'), 'dated a few weeks ahead'
+      assert_nil Bsv::Rows.plausible(Date.new(7777, 7, 7), '2026-11-06')
+      assert_nil Bsv::Rows.plausible(Date.new(1900, 1, 1), '2026-11-06')
+      assert_nil Bsv::Rows.plausible(Date.new(2026, 12, 31), '2026-11-06'), 'a bilan dated the end of the year'
+      assert_nil Bsv::Rows.plausible(nil, '2026-11-06')
+    end
+
     def test_editions_take_the_bulletins_under_their_other_names
       editions = Tempfile.new(['editions', '.csv'])
       editions.write(<<~CSV)

@@ -44,17 +44,26 @@ Le lundi après-midi, après la publication de la DGEC :
 ./lexicon ship fuel_prices fertilizers seeds phytosanitary_prices
 ./lexicon ship prices
 ./lexicon ship phytosanitary        # E-Phy et les dérogations de 120 jours (doc/datasources/phytosanitary.md)
+./lexicon ship bsv                  # bulletins de santé du végétal de la semaine (doc/datasources/bsv.md)
 ```
 
 puis, une fois vérifié en local :
 
 ```sh
-./lexicon publish fuel_prices fertilizers seeds phytosanitary_prices prices phytosanitary --production
+./lexicon publish fuel_prices fertilizers seeds phytosanitary_prices prices phytosanitary bsv --production
 ./lexicon status --production
 ```
 
 `phytosanitary` est là pour ses dérogations : une autorisation de 120 jours peut commencer et finir entre deux
 constructions mensuelles. Un lundi sans décision nouvelle ni changement d'E-Phy ne pose pas de version.
+
+`bsv` n'est pas un intrant, mais il suit le même rythme. Il parcourt les sites des 13 DRAAF (une requête par
+seconde), fait lire les nouveaux bulletins par Haiku 5.5 en lot (environ 0,004 $ par bulletin, une centaine par
+semaine en saison ; au-delà de 300, rien n'est envoyé) et en fait relire cinq par Opus 5.5 pour le contrôle. Il
+lui faut `ANTHROPIC_API_KEY` dans `.env`. Le lot peut attendre jusqu'à 90 minutes, la normalisation une
+quarantaine : le lancer en tâche de fond. La sortie de `load` dit les cultures et les zones inconnues, la
+couverture des éditions attendues (`data/bsv/editions.csv`) et les éditions en retard : un « missing » ou un
+« late » nouveau se regarde avant de publier.
 
 Environ 170 pages sont demandées aux marchands, à une requête par seconde. Les pages sont gardées dans `raw/` :
 c'est, avec les packages, la mémoire des relevés.
