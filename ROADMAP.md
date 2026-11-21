@@ -57,6 +57,9 @@ Fait :
 - [x] Bundles suivis (`tracked: true`, le flavor `cultia`) : composés par le
       serveur à partir des packages en service, tenus à jour à chaque
       chargement, vérifiés par `./lexicon ship`
+- [ ] Bundle suivi `fourmy` (flavor défini le 21/11/2026) : ce que charge
+      Fourmy, jeux réservés compris (AgroEDI, prix des engrais, des phyto et
+      des semences) ; à publier (`./lexicon publish --bundle fourmy --production`)
 - [x] Pile de service déployée par Dokploy : base, loader, dépôt public, API
 - [x] Sauvegarde quotidienne du dépôt vers S3
 - [x] 38 datasources en service, cadastre et hydrographie compris

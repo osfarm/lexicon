@@ -1,0 +1,22 @@
+---
+# What Fourmy loads (github.com/ekylibre/fourmy, packages/lexicon/src/load.ts). Tracked: the serving side keeps this
+# bundle made of the packages in service. A datasource enters it by being named here; what its foreign keys
+# reference must be named too (productions → taxonomy, units; agroedi → productions; seed_varieties → taxonomy).
+# The datasources reserved to members (agroedi, fertilizers, phytosanitary_prices, seeds) are given to the keys
+# carrying bundle:fourmy.
+name: fourmy
+tracked: true
+only:
+  - agricultural_pictures
+  - agroedi
+  - eu_market_prices
+  - fertilizers
+  - phytosanitary
+  - phytosanitary_prices
+  - productions
+  - protected_natural_zones
+  - protected_water_zones
+  - seed_varieties
+  - seeds
+  - taxonomy
+  - units
