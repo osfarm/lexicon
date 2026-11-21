@@ -7,7 +7,7 @@ Ouvert. Construit chaque semaine avec les intrants (`intrants.md`, « Chaque sem
 | Source | Ce qu'elle apporte | Lecture |
 |---|---|---|
 | E-Phy (ANSES), data.gouv.fr | produits, usages, mentions de danger, permis de commerce parallèle | XML par `__init__.py`, CSV des usages |
-| Ministère de l'Agriculture, [AMM de 120 jours au plus](https://agriculture.gouv.fr/produits-phytopharmaceutiques-autorisations-de-mise-sur-le-marche-dune-duree-maximale-de-120-jours) | dérogations de l'article 53 du règlement (CE) 1107/2009 : usages qu'E-Phy ne publie pas, et produits qu'il ne connaît pas | page et PDF, lus par Mistral OCR (`Derogations`) |
+| Ministère de l'Agriculture, [AMM de 120 jours au plus](https://agriculture.gouv.fr/produits-phytopharmaceutiques-autorisations-de-mise-sur-le-marche-dune-duree-maximale-de-120-jours) | dérogations de l'article 53 du règlement (CE) 1107/2009 : usages qu'E-Phy ne publie pas, et produits qu'il ne connaît pas | page et PDF : texte des pages par PyMuPDF, champs par Claude Haiku 5.5 (`Derogations`) |
 | `data/phytosanitary/*.csv` | cropsets, exceptions de cultures, symboles, cibles PFI | fichiers du dépôt |
 
 Tables : `registered_phytosanitary_products`, `_usages`, `_risks`, `_cropsets`, `_symbols`,
@@ -22,8 +22,8 @@ dérogation y ajoute un usage), 10 n'y sont pas.
 ### Ce que fait chaque phase
 
 - **collect** : lit la page (gardée en `raw/phytosanitary/derogations/page_<date>.html`), télécharge les PDF qu'il
-  n'a pas, et fait lire par Mistral OCR ceux qui n'ont pas encore de lecture. Un échec (page changée, PDF absent,
-  Mistral indisponible) est affiché et n'arrête pas la collecte d'E-Phy.
+  n'a pas, et fait lire ceux qui n'ont pas encore de lecture. Un échec (page changée, PDF absent, API
+  indisponible) est affiché et n'arrête pas la collecte d'E-Phy.
 - **load** : contrôle chaque lecture et écrit les tables brutes `derogation_products`, `derogation_usages`,
   `derogation_risks` et `derogations_refused`, sans réseau.
 - **normalize** : ajoute les produits absents d'E-Phy, puis les usages, avant le rapprochement des espèces.
@@ -35,22 +35,25 @@ Chaque PDF y est nommé par son empreinte (24 premiers caractères du SHA-256), 
 
 - `<sha>.notice.json` : ce que la page en disait (cultures, organisme, substance, délivrance, échéance), le premier
   et le dernier jour où elle l'a listé ;
-- `<sha>.ocr.json` : la réponse de Mistral, champs (`document_annotation`) et texte des pages. Elle n'est demandée
-  qu'une fois : un build rejoué sans réseau ni clé redonne le même paquet.
+- `<sha>.ocr.json` : la lecture, champs (`document_annotation`) et texte des pages (`pages[].markdown`). Elle n'est
+  demandée qu'une fois (celles d'avant le 2026-11-21 sont de Mistral OCR, de même forme, et restent valables) : un
+  build rejoué sans réseau ni clé redonne le même paquet.
 
 Une décision qui n'est plus sur la page s'ajoute en déposant son PDF dans le répertoire ; la collecte suivante la lit.
 
 ### Lecture et contrôles
 
-Mistral OCR reçoit le PDF en base64 avec un schéma JSON strict (`Derogations::SCHEMA`) ; la clé est
-`MISTRAL_API_KEY` du `.env`. Une décision est **refusée**, et listée par `load` avec ses raisons, quand :
+Deux temps. `derogations/ocr.py` tire le texte de chaque page avec PyMuPDF (pymupdf4llm 2.1, qui écrit les tableaux
+d'usages en tableaux markdown, et fait lire par Tesseract en français une page sans couche texte). Puis Claude Haiku
+5.5 (`Derogations::MODEL`) reçoit ce texte, page par page, avec la consigne `Derogations::SYSTEM` et remplit le schéma
+JSON strict `Derogations::SCHEMA` (sortie structurée) ; la clé est `ANTHROPIC_API_KEY` du `.env`. Environ 6 000
+jetons par décision, moins d'un centime. Une décision est **refusée**, et listée par `load` avec ses raisons, quand :
 
 - l'AMM lue n'a pas 7 chiffres, ou diffère de celle de la page ou de celle du texte (« Numéro d'AMM ») ;
 - les dates lues diffèrent de celles du texte (« délivrée en France du … au … »), finissent avant de commencer, ou
   couvrent plus de 130 jours ;
 - elle n'a pas d'usage, ou un usage a un code qui n'est pas un nombre, une phrase sans `*`, une dose négative, un
   stade BBCH hors de 0 à 99 ;
-- elle a plus de 8 pages (limite de Mistral).
 
 Deux PDF d'une même décision (même AMM, même début : une décision corrigée) : celui que la page a listé en dernier
 l'emporte. Une même AMM à une autre date est une autre décision ; les deux restent.
@@ -86,5 +89,9 @@ AMM dérogatoire qui entre dans E-Phy y prend sa ligne E-Phy.
   toutes lues ; 30 gardées (51 usages), 7 refusées. MOVENTO : AMM lue 2110086, 2249997 sur la page. AMISTAR et
   ESSEN'CIEL : stades BBCH mal lus (5010 et 9005 ; fin à 9 pour un début à 89 ou 91). AVADEX FACTOR, MERLIN FLEXX,
   REVYONA, VINAIGRE D'ALCOOL : phrase d'usage sans `*` (« Bananier », « Orge désherbage »), que le contrôle refuse.
-- La clé Mistral est `MISTRAL_API_KEY` du `.env` du poste de build ; le conteneur `lexicon_runner` ne la lit qu'à sa
+- Lecture par PyMuPDF et Haiku 5.5, le 2026-11-21 (paquet 2026.11.21.2, sur un poste sans les lectures de Mistral) :
+  38 PDF, 37 décisions sur la page ; 34 gardées (58 usages), 4 refusées pour des erreurs des PDF eux-mêmes (MOVENTO,
+  ESSEN'CIEL, REVYONA, AMISTAR, comme avec Mistral). SYLLIT 544 SC écrit « du 11/08//2026 » : la barre doublée est
+  tolérée. 200 000 jetons lus, 94 000 écrits, 0,07 $.
+- La clé est `ANTHROPIC_API_KEY` du `.env` du poste de build (la même que `bsv`) ; le conteneur `lexicon_runner` ne la lit qu'à sa
   création : `docker compose -f docker-compose-dev.yml up -d --force-recreate lexicon_runner` après l'avoir changée.

@@ -3,7 +3,7 @@
 module Datasources
   class Phytosanitary
     module Derogations
-      # One decision read by Mistral OCR, checked before anything is built from it. The fields the model filled
+      # One decision read (`Reader`), checked before anything is built from it. The fields the model filled
       # (`document_annotation`) are compared with the text of the pages and with what the page of the ministry said:
       # a decision whose number, dates or usages do not agree is refused, never guessed.
       class Decision
@@ -11,7 +11,8 @@ module Datasources
                            :applications_phrase, :stage_min, :stage_max, :pre_harvest_days, keyword_init: true)
 
         AMM_IN_TEXT = /Num[ée]ro d[’'`]\s*AMM\W{0,40}?(\d{7})/i.freeze
-        DATES_IN_TEXT = %r{délivrée\s+en\s+France\s+du\s+(\d{1,2}/\d{1,2}/\d{4})\s+au\s+(\d{1,2}/\d{1,2}/\d{4})}im.freeze
+        # A slash doubled by the author (« du 11/08//2026 », SYLLIT 544 SC) does not change the date
+        DATES_IN_TEXT = %r{délivrée\s+en\s+France\s+du\s+(\d{1,2}/+\d{1,2}/+\d{4})\s+au\s+(\d{1,2}/+\d{1,2}/+\d{4})}im.freeze
         AQUATIC_BUFFER = /zone\s+non\s+trait[ée]e\s+de\s+(\d+)\s*m/i.freeze
 
         attr_reader :sha, :notice, :errors
@@ -107,14 +108,13 @@ module Datasources
 
           def check
             if @fields.empty?
-              errors << 'no fields read by Mistral OCR'
+              errors << 'no fields read'
               return
             end
 
             check_number
             check_dates
             check_usages
-            errors << "#{pages.size} pages, Mistral reads #{MAX_PAGES} at most" if pages.size > MAX_PAGES
           end
 
           def check_number
@@ -208,7 +208,7 @@ module Datasources
           end
 
           def date(value)
-            value = text(value)
+            value = text(value)&.squeeze('/')
             return nil if value.nil?
 
             if (match = value.match(%r{\A(\d{1,2})/(\d{1,2})/(\d{4})\z}))

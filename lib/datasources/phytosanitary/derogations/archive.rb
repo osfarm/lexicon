@@ -9,7 +9,8 @@ module Datasources
       #   page_<date>.html    the page of a collection
       #   <sha>.pdf           a decision, named by the first 24 characters of its SHA-256
       #   <sha>.notice.json   what the page said of it, with `first_seen_on` and `last_seen_on`
-      #   <sha>.ocr.json      the answer of Mistral OCR (`document_annotation`, `pages[].markdown`)
+      #   <sha>.ocr.json      the reading (`Reader`): fields (`document_annotation`) and text of the pages
+      #                       (`pages[].markdown`); the older ones were made by Mistral OCR, same shape
       #
       # A PDF dropped by hand in the directory (a decision no longer on the page) is read like the others.
       class Archive

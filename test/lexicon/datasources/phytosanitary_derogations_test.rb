@@ -100,6 +100,13 @@ module Datasources
       end
     end
 
+    def test_a_slash_doubled_in_the_text_does_not_change_the_dates
+      decision = santhal(text: ['du 02/07/2026', 'du 02/07//2026'])
+
+      assert decision.valid?, decision.errors.join(' ; ')
+      assert_equal Date.new(2026, 7, 2), decision.started_on
+    end
+
     def test_a_derogation_longer_than_120_days_is_refused
       assert_refused(/derogation of 182 days/) { |fields| fields['derogation_end'] = '2026-12-31' }
     end
@@ -113,7 +120,7 @@ module Datasources
     def test_nothing_read_is_refused
       decision = Derogations::Decision.new(sha: 'x', notice: nil, ocr: { 'pages' => [] })
 
-      assert_equal ['no fields read by Mistral OCR'], decision.errors
+      assert_equal ['no fields read'], decision.errors
     end
 
     # Rows
@@ -188,26 +195,49 @@ module Datasources
 
     # Reader
 
-    def test_request_sends_the_pdf_in_base64_with_the_schema
-      body = Derogations::Reader.new(api_key: 'key').body('%PDF')
+    def test_request_sends_the_text_of_the_pages_to_haiku_with_the_schema
+      reader = Derogations::Reader.new(client: nil)
+      params = reader.params([{ 'index' => 0, 'markdown' => 'Numéro d’AMM 2230002' }, { 'index' => 1, 'markdown' => 'Usages' }])
 
-      assert_equal 'mistral-ocr-latest', body[:model]
-      assert_equal 'data:application/pdf;base64,JVBERg==', body[:document][:document_url]
-      assert_equal Derogations::SCHEMA, body[:document_annotation_format][:json_schema][:schema]
-      assert body[:document_annotation_format][:json_schema][:strict]
+      assert_equal 'claude-haiku-5-5', params[:model]
+      assert_equal Derogations::SCHEMA, params[:output_config][:format][:schema]
+      assert_equal "<page numero=\"1\">\nNuméro d’AMM 2230002\n</page>\n<page numero=\"2\">\nUsages\n</page>",
+                   params[:messages].first[:content]
+    end
+
+    def test_the_schema_has_every_property_required_and_no_other
+      check = lambda do |schema|
+        next schema['anyOf'].each { |option| check.call(option) } if schema['anyOf']
+        next check.call(schema['items']) if schema['type'] == 'array'
+        next unless schema['type'] == 'object'
+
+        assert_equal false, schema['additionalProperties']
+        assert_equal schema['properties'].keys.sort, schema['required'].sort
+        schema['properties'].each_value { |property| check.call(property) }
+      end
+      check.call(Derogations::SCHEMA)
     end
 
     def test_answer_keeps_fields_and_text_of_the_pages
-      answer = Derogations::Reader.answer('model' => 'mistral-ocr-2512', 'document_annotation' => "```json\n{\"amm\": \"2230002\"}\n```",
-                                          'pages' => [{ 'index' => 0, 'markdown' => 'texte', 'images' => [] }])
+      message = { model: 'claude-haiku-5-5', stop_reason: 'end_turn', usage: { input_tokens: 3000, output_tokens: 400 },
+                  content: [{ type: 'thinking', thinking: '' }, { type: 'text', text: '{"amm": "2230002"}' }] }
+      text = { 'engine' => 'pymupdf4llm 0.2.0', 'pages' => [{ 'index' => 0, 'markdown' => 'texte', 'ocr' => false }] }
+      answer = Derogations::Reader.answer(message, text)
 
       assert_equal({ 'amm' => '2230002' }, answer['document_annotation'])
       assert_equal [{ 'index' => 0, 'markdown' => 'texte' }], answer['pages']
+      assert_equal 'claude-haiku-5-5', answer['model']
+      assert_equal 'pymupdf4llm 0.2.0', answer['ocr']
+      assert_equal({ 'input_tokens' => 3000, 'output_tokens' => 400 }, answer['usage'])
     end
 
-    def test_answer_with_no_fields_is_a_failure
+    def test_an_answer_cut_or_not_json_is_a_failure
+      text = { 'pages' => [{ 'index' => 0, 'markdown' => 'x' }] }
       assert_raises(Derogations::Reader::Failed) do
-        Derogations::Reader.answer('document_annotation' => 'not json', 'pages' => [{ 'markdown' => 'x' }])
+        Derogations::Reader.answer({ stop_reason: 'max_tokens', content: [{ type: 'text', text: '{"amm"' }] }, text)
+      end
+      assert_raises(Derogations::Reader::Failed) do
+        Derogations::Reader.answer({ stop_reason: 'end_turn', content: [{ type: 'text', text: 'not json' }] }, text)
       end
     end
 

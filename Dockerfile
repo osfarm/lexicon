@@ -21,8 +21,11 @@ RUN mkdir /lexicon && \
         --uid "$UID" \
         "$USER" && \
     apt-get update && \
-    apt-get -y install postgis postgresql-client postgresql-contrib libpq-dev p7zip-full pigz libyajl-dev gdal-bin rsync openssh-client poppler-utils --no-install-recommends && \
+    apt-get -y install postgis postgresql-client postgresql-contrib libpq-dev p7zip-full pigz libyajl-dev gdal-bin rsync openssh-client poppler-utils tesseract-ocr tesseract-ocr-fra --no-install-recommends && \
     apt-get -y install python3-setuptools python3-dev python3-pip --no-install-recommends
+
+# Tesseract for the scanned pages of the derogations of phytosanitary (ocr.py, through PyMuPDF)
+ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/5/tessdata
 
 WORKDIR /lexicon
 

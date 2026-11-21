@@ -303,8 +303,8 @@ module Datasources
       hash_table("registered_phytosanitary_cropsets")
     end
 
-    # Derogations of 120 days: the page of the ministry, the PDF it lists, each read once by Mistral OCR. Nothing
-    # here stops the collect of E-Phy: what fails is said, and the archive keeps what was collected before.
+    # Derogations of 120 days: the page of the ministry, the PDF it lists, each read once (text by `ocr.py`, fields
+    # by Claude Haiku). Nothing here stops the collect of E-Phy: what fails is said, and the archive keeps what was collected before.
     def collect_derogations
       archive = Derogations::Archive.new(dir.join('derogations'))
       today = Date.today
@@ -341,15 +341,14 @@ module Datasources
       unread = archive.entries.select { |entry| entry.ocr.nil? }
       return if unread.empty?
 
-      api_key = ENV['MISTRAL_API_KEY'].presence
-      if api_key.nil?
-        puts "Derogations: #{unread.size} decisions not read, MISTRAL_API_KEY is not set".red
+      if ENV['ANTHROPIC_API_KEY'].to_s.empty?
+        puts "Derogations: #{unread.size} decisions not read, ANTHROPIC_API_KEY is not set".red
         return
       end
 
-      reader = Derogations::Reader.new(api_key: api_key)
+      reader = Derogations::Reader.new(client: Anthropic::Client.new(max_retries: 4))
       unread.each do |entry|
-        archive.keep_ocr(entry.sha, reader.read(entry.pdf.binread))
+        archive.keep_ocr(entry.sha, reader.read(entry.pdf))
         puts "Derogation read: #{entry.notice&.dig('amm')} #{entry.notice&.dig('name')} (#{entry.sha})"
       rescue Derogations::Reader::RateLimited => e
         puts "Derogations: reading stopped, #{unread.size} decisions not read in all: #{e.message}".red

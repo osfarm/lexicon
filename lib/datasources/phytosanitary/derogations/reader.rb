@@ -1,102 +1,102 @@
 # frozen_string_literal: true
 
-require 'net/http'
+require 'open3'
 
 module Datasources
   class Phytosanitary
     module Derogations
-      # Reads a decision with Mistral OCR: the text of each page, and the fields of `SCHEMA` filled from it
-      # (`document_annotation`). The PDF is sent in base64, so it needs no public address.
+      # Reads a decision in two steps: `ocr.py` gives the text of each page (text layer of the PDF, Tesseract for a
+      # scan), then Claude Haiku fills the fields of `SCHEMA` from that text (structured output). What is kept has
+      # the shape the former readings of Mistral OCR had: `document_annotation` and `pages[].markdown`.
       class Reader
         class Failed < StandardError; end
-        # Mistral still refuses after the waits: the next decisions would be refused too
+        # The API still refuses after the retries of the SDK: the next decisions would be refused too
         class RateLimited < Failed; end
 
-        ENDPOINT = URI('https://api.mistral.ai/v1/ocr')
+        SCRIPT = Pathname.new(__dir__).join('ocr.py')
+        MAX_TOKENS = 16_000
 
-        # @param [String] api_key
+        # @param [#messages] client an Anthropic::Client
         # @param [String] model
-        # @param [Integer] timeout seconds
-        def initialize(api_key:, model: OCR_MODEL, timeout: 180)
-          @api_key = api_key
+        def initialize(client:, model: MODEL)
+          @client = client
           @model = model
-          @timeout = timeout
         end
 
-        # @param [String] pdf bytes
+        # @param [Pathname] pdf
         # @return [Hash] 'document_annotation' (Hash) and 'pages' (each with 'index' and 'markdown')
         def read(pdf)
-          payload = JSON.generate(body(pdf))
-          response = nil
-          RETRY_WAITS.each do |wait|
-            response = post(payload)
-            # A limit of 0 is a setting of the account, not a burst: waiting changes nothing
-            break unless response.code == '429' && wait && response['x-ratelimit-limit-req-minute'] != '0'
-
-            sleep(wait)
-          end
-          raise RateLimited.new("Mistral OCR still answers 429 (#{response['x-ratelimit-limit-req-minute'] || '?'} requests a minute allowed): #{response.body.to_s[0, 200]}") if response.code == '429'
-          raise Failed.new("Mistral OCR answered #{response.code}: #{response.body.to_s[0, 300]}") unless response.is_a?(Net::HTTPSuccess)
-
-          self.class.answer(JSON.parse(response.body))
-        rescue JSON::ParserError => e
-          raise Failed.new("Mistral OCR answered something that is not JSON: #{e.message[0, 200]}")
-        end
-
-        # Seconds waited before asking again when Mistral answers 429 (too many requests); nil: give up
-        RETRY_WAITS = [5, 20, 60, nil].freeze
-
-        def post(payload)
-          Net::HTTP.start(ENDPOINT.host, ENDPOINT.port, use_ssl: true, read_timeout: @timeout) do |http|
-            request = Net::HTTP::Post.new(ENDPOINT)
-            request['Authorization'] = "Bearer #{@api_key}"
-            request['Content-Type'] = 'application/json'
-            request.body = payload
-            http.request(request)
-          end
+          text = self.class.text(pdf)
+          message = self.class.hash(@client.messages.create(**params(text['pages'])))
+          self.class.answer(message, text)
+        rescue Anthropic::Errors::RateLimitError => e
+          raise RateLimited.new("Claude still answers 429: #{e.message[0, 200]}")
+        rescue Anthropic::Errors::APIError => e
+          raise Failed.new("Claude answered #{e.class.name.demodulize}: #{e.message[0, 300]}")
         end
 
         # @return [Hash] the body of the request
-        def body(pdf)
+        def params(pages)
           {
             model: @model,
-            document: { type: 'document_url', document_url: "data:application/pdf;base64,#{Base64.strict_encode64(pdf)}" },
-            document_annotation_format: {
-              type: 'json_schema',
-              json_schema: { name: 'derogation', description: INSTRUCTIONS, schema: SCHEMA, strict: true }
-            },
-            include_image_base64: false
+            max_tokens: MAX_TOKENS,
+            system_: SYSTEM,
+            output_config: { effort: 'medium', format: { type: 'json_schema', schema: SCHEMA } },
+            messages: [{ role: 'user', content: self.class.message(pages) }]
           }
+        end
+
+        # @param [Pathname] pdf
+        # @return [Hash] 'engine' and 'pages', as printed by `ocr.py`
+        def self.text(pdf)
+          out, err, status = Open3.capture3('python3', SCRIPT.to_s, pdf.to_s)
+          raise Failed.new("ocr.py failed: #{err.lines.last(3).join.strip[0, 300]}") unless status.success?
+
+          data = JSON.parse(out)
+          raise Failed.new('no text in the PDF, even read by Tesseract') if data['pages'].all? { |page| page['markdown'].to_s.strip.empty? }
+
+          data
+        rescue JSON::ParserError => e
+          raise Failed.new("ocr.py printed something that is not JSON: #{e.message[0, 200]}")
+        end
+
+        # @return [String] the pages, each in its tag
+        def self.message(pages)
+          pages.map { |page| "<page numero=\"#{page['index'].to_i + 1}\">\n#{page['markdown']}\n</page>" }.join("\n")
         end
 
         # Keeps what is read again later: the fields, and the text of the pages
-        # @param [Hash] data the answer of Mistral
+        # @param [Hash] message the answer of Claude, with symbol keys
+        # @param [Hash] text what `ocr.py` printed
         # @return [Hash]
-        def self.answer(data)
-          pages = data['pages']
-          raise Failed.new('Mistral OCR answered with no pages') unless pages.is_a?(Array) && pages.any?
+        def self.answer(message, text)
+          stop = message[:stop_reason].to_s
+          raise Failed.new("Claude stopped on #{stop}") unless stop == 'end_turn'
 
-          annotation = annotation(data['document_annotation'])
-          raise Failed.new('Mistral OCR answered with no document_annotation') if annotation.nil?
+          body = Array(message[:content]).select { |block| block[:type].to_s == 'text' }.map { |block| block[:text] }.join
+          annotation = JSON.parse(body)
+          raise Failed.new('Claude answered with no fields') unless annotation.is_a?(Hash)
 
           {
-            'model' => data['model'],
+            'model' => message[:model].to_s,
+            'ocr' => text['engine'],
             'read_at' => Time.now.utc.iso8601,
+            'usage' => message[:usage]&.slice(:input_tokens, :output_tokens)&.transform_keys(&:to_s),
             'document_annotation' => annotation,
-            'pages' => pages.map { |page| { 'index' => page['index'], 'markdown' => page['markdown'] } }
+            'pages' => text['pages'].map { |page| { 'index' => page['index'], 'markdown' => page['markdown'] } }
           }
+        rescue JSON::ParserError => e
+          raise Failed.new("Claude answered something that is not JSON: #{e.message[0, 200]}")
         end
 
-        # @return [Hash, nil] `document_annotation`, which Mistral gives as a JSON string
-        def self.annotation(value)
-          return value if value.is_a?(Hash)
-          return nil unless value.is_a?(String)
-
-          text = value.strip.sub(/\A```(?:json)?\s*/i, '').sub(/\s*```\z/, '')
-          parsed = JSON.parse(text)
-          parsed.is_a?(Hash) ? parsed : nil
-        rescue JSON::ParserError
-          nil
+        # The SDK answers with models, the tests with hashes: both read as hashes with symbol keys
+        def self.hash(object)
+          case object
+          when Hash then object.to_h { |key, item| [key.to_sym, hash(item)] }
+          when Array then object.map { |item| hash(item) }
+          when nil, String, Symbol, Numeric, true, false then object
+          else object.respond_to?(:to_h) ? hash(object.to_h) : object
+          end
         end
       end
     end
